@@ -6,6 +6,8 @@
 
 <link rel="stylesheet" href="https://unpkg.com/flickity-fade@1/flickity-fade.css">
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="./css/nice-select.css">
+
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
@@ -44,6 +46,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
+<script src="./js/jquery.nice-select.min.js"></script>
 
 <script src="dist/common.js?t=0731"></script>

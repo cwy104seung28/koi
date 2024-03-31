@@ -7,16 +7,19 @@
     <?php include 'html_head.php'; ?>
 </head>
 
-<body>
-    <div class="language-logo"><img src="./images/index-lan-logo.svg"></div>
-    <ul class="languageList">
-        <li>
-            <a href="javascript:;" class="ch">中文</a>
-        </li>
-        <li>
-            <a href="javascript:;" class="en">ENGLISH</a>
-        </li>
-    </ul>
+<body class="is-orange">
+    <div class="languageWrap flex-container align-center-middle">
+        <div class="language-logo"><img src="./images/index-lan-logo.svg"></div>
+        <ul class="languageList flex-container align-center-middle">
+            <li class="flex-container align-center-middle">
+                <a href="javascript:;" class="ch">中文</a>
+            </li>
+            <li class="flex-container align-center-middle">
+                <a href="javascript:;" class="en">ENGLISH</a>
+            </li>
+        </ul>
+    </div>
+
     <div class="logo"></div>
 </body>
 <?php include 'script.php'; ?>

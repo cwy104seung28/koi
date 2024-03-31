@@ -1,3 +1,4 @@
+<div id="preload" style="z-index: 100; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #fff;"></div>
 <nav class="flex-container align-justify">
     <div class="now-page flex-container align-middle">
         <div class="icon"><img src="./images/top-now.svg"></div>

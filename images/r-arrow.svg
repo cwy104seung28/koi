@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="29.31" height="25.51" viewBox="0 0 29.31 25.51">
+  <defs>
+    <style>
+      .d {
+        fill: #ea5504;
+      }
+
+      .e {
+        fill: none;
+        stroke: #ea5504;
+        stroke-miterlimit: 10;
+        stroke-width: 2.54px;
+      }
+    </style>
+  </defs>
+  <g id="c" data-name="圖層 4">
+    <g>
+      <line class="e" y1="12.76" x2="26.26" y2="12.76"/>
+      <path class="d" d="M8.93,24.93c-.38-.59-.2-1.37,.39-1.75L25.68,12.76,9.32,2.34c-.59-.38-.77-1.16-.39-1.75,.38-.59,1.17-.76,1.75-.39L28.72,11.69c.36,.23,.59,.64,.59,1.07s-.22,.84-.59,1.07L10.68,25.31c-.21,.13-.45,.2-.68,.2-.42,0-.83-.21-1.07-.59Z"/>
+    </g>
+  </g>
+</svg>
