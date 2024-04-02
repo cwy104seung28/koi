@@ -31,12 +31,12 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-<script src="js/DrawSVGPlugin.min.js"></script>
+<!-- <script src="js/DrawSVGPlugin.min.js"></script> -->
 <!-- <script src="js/luxy.js"></script>-->
 
 <script src="js/slick.min.js"></script>
-<script src="js/skrollr.min.js"></script>
-<script src="js/lottie.min.js"></script>
+<!--<script src="js/skrollr.min.js"></script>
+<script src="js/lottie.min.js"></script> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
 

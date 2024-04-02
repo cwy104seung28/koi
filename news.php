@@ -16,32 +16,49 @@
         <div class="head-area">
             <div class="en">NEWS</div>
         </div>
-        <div class="top-news flex-container align-middle align-justify">
-            <div class="article-area">
-                <div class="title">
-                    春节营业时间公告<br>
-                    即将迎来新年<br>
-                    谢谢大家对我们的支持与陪伴
+        <div class="top-news">
+            <a href="./news_detail.php" class="flex-container align-middle align-justify">
+                <div class="article-area">
+                    <div class="title">
+                        春节营业时间公告<br>
+                        即将迎来新年<br>
+                        谢谢大家对我们的支持与陪伴
+                    </div>
+                    <div class="more"><img src="./images/n-more.svg"></div>
                 </div>
-                <div class="more"><img src="./images/n-more.svg"></div>
-            </div>
-            <div class="pic-area">
-                <div class="cat">MEDIA</div>
-                <div class="date">(July 1 , 2023)</div>
-                <div class="pic"><img src="./images/news-top-pic-1.jpg"></div>
-            </div>
+                <div class="pic-area">
+                    <div class="cat">MEDIA</div>
+                    <div class="date">(July 1 , 2023)</div>
+                    <div class="pic"><img src="./images/news-top-pic-1.jpg"></div>
+                </div>
+            </a>
         </div>
         <div class="newsListWrap">
             <div class="news-inner flex-container">
                 <ul class="newsCatList">
                     <li class="current">
-                        <a href="javascript:">ALL</a>
+                        <a href="javascript:" class="flex-container align-middle">
+                            <div class="dot"></div>
+                            <div class="title">
+                                ALL
+                            </div>
+                        </a>
                     </li>
                     <li>
-                        <a href="javascript:">NEWS</a>
+                        <a href="javascript:" class="flex-container align-middle">
+                            <div class="dot"></div>
+                            <div class="title">
+                                NEWS
+                            </div>
+                        </a>
                     </li>
                     <li>
-                        <a href="javascript:">MEDIA</a>
+                        <a href="javascript:" class="flex-container align-middle">
+                            <div class="dot"></div>
+                            <div class="title">
+                                MEDIA
+                            </div>
+                        </a>
                     </li>
                 </ul>
                 <ul class="newsList">
