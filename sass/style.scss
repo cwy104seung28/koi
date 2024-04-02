@@ -51,7 +51,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 10;
 
     justify-content: space-between;
     background-color: transparent;
@@ -586,10 +586,12 @@ nav {
 
                 display: flex;
                 justify-content: space-between;
+
                 // height: 420px;
-                .slick-list{
+                .slick-list {
                     max-width: 520px;
                 }
+
                 li.slick-slide {
                     height: 160px;
                     padding-bottom: 25px;
@@ -625,7 +627,8 @@ nav {
                         line-height: 1.8;
                         color: #999999;
                     }
-                    &.slick-current{
+
+                    &.slick-current {
                         opacity: 1;
                     }
                 }
@@ -644,7 +647,8 @@ nav {
                     background-color: #000;
                     border-radius: 50%;
                     margin-bottom: 20px;
-                    &::after{
+
+                    &::after {
                         content: '';
                         border-radius: 50%;
                         position: absolute;
@@ -653,12 +657,13 @@ nav {
                         background-color: #faeede;
                         left: 50%;
                         top: 50%;
-                        transform: translate(-50%,-50%);
+                        transform: translate(-50%, -50%);
                         opacity: 0;
                         transition: 0.5s all;
                     }
-                    &.slick-active{
-                        &::after{
+
+                    &.slick-active {
+                        &::after {
                             opacity: 1;
                         }
                     }
@@ -667,6 +672,36 @@ nav {
         }
     }
 
+    .about-brandmap {
+        padding-top: 100px;
+
+        .title {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .brandmapWrap {
+            max-width: 1205px;
+            margin: 0 auto 30px;
+
+            .brandmap {
+                margin: 0 100px;
+
+                li {
+                    cursor: pointer;
+                    margin-right: 95px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        .brandmapList {
+            height: 868px;
+        }
+    }
 }
 
 .languageWrap {
@@ -2380,6 +2415,17 @@ footer {
             }
         }
     }
+}
+
+// vue
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
 }
 
 @keyframes footer {

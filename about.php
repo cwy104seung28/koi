@@ -9,7 +9,6 @@
     <?php include 'html_head.php'; ?>
 </head>
 
-
 <body>
     <?php include 'topmenu.php'; ?>
     <div class="aboutWrap">
@@ -147,7 +146,8 @@
                     <div class="en">
                         THE G<span class="orange">O</span>LDEN TRIANGLE<br>
                         PRINCIPLES THAT<br>
-                        K<span class="orange">O</span>I G<span class="orange">O</span><span class="orange">O</span>D TEA IS CRAFTED
+                        K<span class="orange">O</span>I G<span class="orange">O</span><span class="orange">O</span>D TEA
+                        IS CRAFTED
                         <div class="ch"></div>
                     </div>
                     <div class="ch">KOI好茶的黄金三角法则</div>
@@ -173,26 +173,63 @@
                 </ul>
             </div>
         </div>
+        <div class="about-brandmap" id='brand'>
+            <div class="title"><img src="./images/a-brand-map-title.svg" alt=""></div>
+            <div class="brandmapWrap flex-container align-middle align-justify">
+                <div class="prev"><img src="./images/a-prev.svg" alt=""></div>
+                <ul class="brandmap flex-container align-center-middle">
+                    <li @click="mapHandler(1)"><img src="./images/a-koi-the.svg" alt=""></li>
+                    <li @click="mapHandler(2)"><img src="./images/a-koi-express.svg" alt=""></li>
+                    <li @click="mapHandler(3)"><img src="./images/a-fifty.svg" alt=""></li>
+                    <li @click="mapHandler(4)"><img src="./images/a-koi-cafe.svg" alt=""></li>
+                    <li @click="mapHandler(5)"><img src="./images/a-koi-plus.svg" alt=""></li>
+                </ul>
+                <div class="next"><img src="./images/a-next.svg" alt=""></div>
+            </div>
+            <ul class="brandmapList">
+                <transition name="fade" mode="out-in">
+                    <li v-if="map == 1" key="map1"><img src="./images/a-map-1.jpg" alt=""></li>
+                    <li v-if="map == 2" key="map2"><img src="./images/a-map-2.jpg" alt=""></li>
+                    <li v-if="map == 3" key="map3"><img src="./images/a-map-3.jpg" alt=""></li>
+                    <li v-if="map == 4" key="map4"><img src="./images/a-map-4.jpg" alt=""></li>
+                    <li v-if="map == 5" key="map5"><img src="./images/a-map-5.jpg" alt=""></li>
+                </transition>
+            </ul>
+        </div>
     </div>
     <?php include 'footer.php'; ?>
 </body>
 <?php include 'script.php'; ?>
 
-
 </html>
-
 <script>
-    $('nav').addClass('is-move')
+    new Vue({
+        el: '#brand',
+        data: {
+            map: 1,
+        },
+        computed: {},
+        methods: {
+            mapHandler(i) {
+                this.map = i;
+            }
+        },
+        filters: {},
+        mounted() {
 
+        },
+        updated() { },
+    })
+    $('nav').addClass('is-move')
     var $tl = gsap.timeline({
         paused: true,
     });
     $tl.to(".text-area .letter-k", {
-            duration: 1,
-            scale: 1,
-            opacity: 1,
-            ease: Power1.easeIn,
-        })
+        duration: 1,
+        scale: 1,
+        opacity: 1,
+        ease: Power1.easeIn,
+    })
         .to(".text-area .letter-o", {
             duration: 0.75,
             scale: 1,
@@ -233,16 +270,15 @@
             y: 0,
             ease: Power1.easeIn,
         }, '<.1')
-    gsap.delayedCall(0.5, function() {
+    gsap.delayedCall(0.5, function () {
         $tl.play();
     });
-    gsap.delayedCall(2.5, function() {
+    gsap.delayedCall(2.5, function () {
         $('nav').removeClass('is-move')
     });
-
     let $tl_number = gsap.timeline({
-            paused: false,
-        })
+        paused: false,
+    })
         .add('number')
         .to(".number-area .hollow-1", {
             y: 324,
@@ -256,7 +292,6 @@
         .to(".number-area .hollow-4", {
             y: -324,
         }, 'number')
-
     ScrollTrigger.create({
         trigger: '.number-area',
         // toggleActions: "play reverse play reverse", //重覆觸發
@@ -266,11 +301,9 @@
         animation: $tl_number,
         scrub: 1,
     });
-
-
     let $tl_drink = gsap.timeline({
-            paused: false,
-        })
+        paused: false,
+    })
         .add('drink')
         .to(".drink-area li:nth-child(odd)", {
             y: '-100%',
@@ -281,8 +314,6 @@
         .to(".drink-area .bg-change", {
             opacity: 1,
         }, '<0.1')
-
-
     ScrollTrigger.create({
         trigger: '.drink-area',
         // toggleActions: "play reverse play reverse", //重覆觸發
@@ -292,10 +323,9 @@
         animation: $tl_drink,
         scrub: 1,
     });
-
     let $tl_info = gsap.timeline({
-            paused: false,
-        })
+        paused: false,
+    })
         .to(".about-info-preview .about-infoWrap", {
             opacity: 1,
         })
@@ -308,7 +338,6 @@
         animation: $tl_info,
         scrub: 1,
     });
-
     // let $tl_info_no = gsap.timeline({
     //         paused: false,
     //     })
@@ -333,21 +362,16 @@
         onLeaveBack() {
             $('.about-info-preview').removeClass('is-not-show');
         }
-
     });
-
     function horizonHandler(el) {
         let _x = $(el).outerWidth(true) - $(window).width()
         console.log(_x);
-
         let storenum = {
             n: 1
         }
-
         const $tl = gsap.timeline({
             paused: false,
         })
-
         if (_x > 0) {
             gsap.to(el, {
                 scrollTrigger: {
@@ -362,7 +386,7 @@
                     onUpdate: (self) => {
                         let $about = $(".about-infoWrap#horizontalWrap")
                         let m = $(window).width() / 2
-                        $about.children().each(function(i, el) {
+                        $about.children().each(function (i, el) {
                             let x = $(el).offset().left
                             if (x - m <= 0) {
                                 $(el).addClass("current").siblings().removeClass("current")
@@ -373,7 +397,6 @@
                 x: -_x,
                 ease: 'none'
             })
-
             ScrollTrigger.create({
                 toggleActions: "play pause resume reverse",
                 trigger: "#horizontalWrap",
@@ -386,10 +409,7 @@
             });
         }
     }
-
     horizonHandler('.about-infoWrap#horizontalWrap');
-
-
     $('.slick-article').slick({
         dots: true,
         speed: 1000,
@@ -401,16 +421,13 @@
         verticalSwiping: true,
         arrows: false,
     });
-    $('.slick-article').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    $('.slick-article').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         console.log(nextSlide);
-        $(`.triangle .triangle-${nextSlide+1}`).addClass('is-show').siblings().removeClass('is-show');
+        $(`.triangle .triangle-${nextSlide + 1}`).addClass('is-show').siblings().removeClass('is-show');
     });
-
     var dotNums = document.querySelectorAll(".slick-dots button");
-
     function removeText(item) {
         item.innerHTML = ""; // or put the text you need inside quotes
     }
-
     dotNums.forEach(removeText);
 </script>
