@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="645.05" height="610.38" viewBox="0 0 645.05 610.38">
+  <defs>
+    <style>
+      .d, .e {
+        fill: #fff;
+      }
+
+      .e {
+        font-family: RedHatDisplay-Medium, 'Red Hat Display';
+        font-size: 13px;
+      }
+
+      .f {
+        fill: #0d131a;
+      }
+    </style>
+  </defs>
+  <g id="c" data-name="layout">
+    <path class="f" d="M555.05,88.08c-28.97-27.75-62.9-49.23-101.79-64.43C414.35,8.45,371.61,.65,325.02,.27c-46.6-.38-89.47,6.85-128.6,21.69-39.15,14.84-73.43,35.91-102.83,63.18-29.42,27.28-52.28,59.25-68.58,95.89C8.71,217.68,.38,258.19,.01,302.54c-.36,43.8,7.31,84.3,23,121.49,15.7,37.2,38.02,69.68,66.99,97.42,28.96,27.76,63.03,49.38,102.21,64.86,39.16,15.49,82.04,23.42,128.65,23.8,46.03,.38,88.61-6.72,127.76-21.28,39.13-14.55,73.41-35.47,102.83-62.75,29.41-27.27,52.28-59.51,68.58-96.73,16.3-37.21,24.64-77.72,24.99-121.52,.36-44.35-7.3-85.14-23-122.33-15.7-37.2-38.03-69.66-66.99-97.42Zm-62.63,294.74c-9.45,22.67-22.66,42.5-39.64,59.48-16.98,17-36.6,30.03-58.85,39.11-22.26,9.09-46.57,13.52-72.95,13.3-26.39-.22-50.78-5.05-73.15-14.5-22.38-9.45-41.79-22.8-58.2-40.07-16.42-17.26-29.17-37.3-38.25-60.12-9.07-22.82-13.5-48.26-13.27-76.35,.23-28.07,5.07-53.45,14.52-76.12,9.45-22.67,22.52-42.48,39.23-59.49,16.69-16.99,36.31-30.03,58.85-39.11,22.52-9.09,46.98-13.52,73.37-13.3,26.38,.22,50.62,5.05,72.72,14.5,22.09,9.44,41.5,22.8,58.2,40.07,16.7,17.28,29.59,37.31,38.66,60.13,9.08,22.82,13.5,48.27,13.27,76.34s-5.07,53.45-14.52,76.12Z"/>
+    <text class="e" transform="translate(607.02 423.88) rotate(114.56) scale(1.03 1)"><tspan x="0" y="0">A</tspan></text>
+    <text class="e" transform="translate(602.61 433.39) rotate(115.98) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(600.93 436.89) rotate(117.38) scale(1.03 1)"><tspan x="0" y="0">B</tspan></text>
+    <text class="e" transform="translate(596.35 445.68) rotate(119.25) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(592.1 453.24) rotate(121.09) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(587.35 461.09) rotate(123) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(582.29 468.8) rotate(124.39) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(580.03 472.12) rotate(125.74) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(574.89 479.2) rotate(127.06) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(572.57 482.3) rotate(128.47) scale(1.03 1)"><tspan x="0" y="0">T</tspan></text>
+    <text class="e" transform="translate(567.61 488.54) rotate(130.07) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(562.01 495.17) rotate(131.82) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(556.52 501.25) rotate(133.08) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(553.86 504.11) rotate(134.33) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(548.11 509.95) rotate(135.57) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(545.35 512.69) rotate(136.89) scale(1.03 1)"><tspan x="0" y="0">d</tspan></text>
+    <text class="e" transform="translate(538.62 518.96) rotate(138.62) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(532.56 524.28) rotate(140.23) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(526.94 528.93) rotate(141.31) scale(1.03 1)"><tspan x="0" y="0">,</tspan></text>
+    <text class="e" transform="translate(523.47 531.7) rotate(142.14) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(520.39 534.11) rotate(143.46) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(512.99 539.56) rotate(145.25) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(505.88 544.48) rotate(147.03) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(498.14 549.48) rotate(148.85) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(490.25 554.2) rotate(150.15) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(486.75 556.21) rotate(150.93) scale(1.03 1)"><tspan x="0" y="0">i</tspan></text>
+    <text class="e" transform="translate(483.25 558.16) rotate(152.16) scale(1.03 1)"><tspan x="0" y="0">n</tspan></text>
+    <text class="e" transform="translate(475.57 562.21) rotate(153.86) scale(1.03 1)"><tspan x="0" y="0">g</tspan></text>
+    <text class="e" transform="translate(467.33 566.2) rotate(155.09) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(463.81 567.85) rotate(156.22) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(456.41 571.11) rotate(157.77) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(447.95 574.54) rotate(159.36) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(439.81 577.58) rotate(160.72) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(434.08 579.57) rotate(161.65) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(430.39 580.81) rotate(162.86) scale(1.03 1)"><tspan x="0" y="0">p</tspan></text>
+    <text class="e" transform="translate(421.58 583.49) rotate(164.26) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(416.12 585.04) rotate(165.57) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(407.28 587.3) rotate(167.2) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(398.27 589.31) rotate(168.37) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(394.34 590.13) rotate(169.48) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(385.77 591.74) rotate(171.31) scale(1.03 1)"><tspan x="0" y="0">m</tspan></text>
+    <text class="e" transform="translate(373.06 593.62) rotate(172.99) scale(1.03 1)"><tspan x="0" y="0">s</tspan></text>
+    <text class="e" transform="translate(365.78 594.49) rotate(173.9) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(361.91 594.92) rotate(174.87) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(353.89 595.64) rotate(176.34) scale(1.03 1)"><tspan x="0" y="0">w</tspan></text>
+    <text class="e" transform="translate(343.09 596.3) rotate(177.77) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(335.04 596.61) rotate(178.97) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(327.72 596.72) rotate(179.75) scale(1.03 1)"><tspan x="0" y="0">.</tspan></text>
+    <text class="e" transform="translate(323.27 596.74) rotate(-179.72) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(319.34 596.71) rotate(-179.11) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(315.45 596.64) rotate(-178.56) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(311.54 596.54) rotate(-178) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(307.62 596.4) rotate(-177.43) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(303.72 596.24) rotate(-176.36) scale(1.03 1)"><tspan x="0" y="0">A</tspan></text>
+    <text class="e" transform="translate(293.26 595.53) rotate(-175.26) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(289.37 595.23) rotate(-174.18) scale(1.03 1)"><tspan x="0" y="0">B</tspan></text>
+    <text class="e" transform="translate(279.49 594.2) rotate(-172.7) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(270.89 593.09) rotate(-171.24) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(261.79 591.67) rotate(-169.69) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(252.73 589.99) rotate(-168.56) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(248.78 589.2) rotate(-167.45) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(240.26 587.27) rotate(-166.34) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(236.46 586.36) rotate(-165.13) scale(1.03 1)"><tspan x="0" y="0">T</tspan></text>
+    <text class="e" transform="translate(228.74 584.32) rotate(-163.76) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(220.44 581.88) rotate(-162.22) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(212.63 579.34) rotate(-161.1) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(208.93 578.09) rotate(-159.96) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(201.23 575.24) rotate(-158.82) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(197.58 573.85) rotate(-157.67) scale(1.03 1)"><tspan x="0" y="0">d</tspan></text>
+    <text class="e" transform="translate(189.09 570.33) rotate(-156.15) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(181.71 567.06) rotate(-154.71) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(175.12 563.93) rotate(-153.73) scale(1.03 1)"><tspan x="0" y="0">,</tspan></text>
+    <text class="e" transform="translate(171.14 561.95) rotate(-152.96) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(167.66 560.2) rotate(-151.74) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(159.57 555.83) rotate(-150.05) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(152.07 551.49) rotate(-148.34) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(144.24 546.64) rotate(-146.55) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(136.57 541.52) rotate(-145.25) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(133.27 539.23) rotate(-144.45) scale(1.03 1)"><tspan x="0" y="0">i</tspan></text>
+    <text class="e" transform="translate(130 536.91) rotate(-143.2) scale(1.03 1)"><tspan x="0" y="0">n</tspan></text>
+    <text class="e" transform="translate(123.08 531.72) rotate(-141.43) scale(1.03 1)"><tspan x="0" y="0">g</tspan></text>
+    <text class="e" transform="translate(115.94 525.97) rotate(-140.13) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(112.95 523.49) rotate(-138.91) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(106.88 518.18) rotate(-137.22) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(100.19 511.97) rotate(-135.47) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(94.01 505.85) rotate(-133.98) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(89.83 501.48) rotate(-132.97) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(87.16 498.65) rotate(-131.62) scale(1.03 1)"><tspan x="0" y="0">p</tspan></text>
+    <text class="e" transform="translate(81.08 491.74) rotate(-130.05) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(77.42 487.41) rotate(-128.54) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(71.74 480.25) rotate(-126.63) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(66.28 472.84) rotate(-125.25) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(63.96 469.58) rotate(-123.91) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(59.07 462.34) rotate(-121.66) scale(1.03 1)"><tspan x="0" y="0">m</tspan></text>
+    <text class="e" transform="translate(52.41 451.4) rotate(-119.58) scale(1.03 1)"><tspan x="0" y="0">s</tspan></text>
+    <text class="e" transform="translate(48.83 445.04) rotate(-118.43) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(46.96 441.6) rotate(-117.19) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(43.27 434.44) rotate(-115.3) scale(1.03 1)"><tspan x="0" y="0">w</tspan></text>
+    <text class="e" transform="translate(38.71 424.7) rotate(-113.43) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(35.51 417.28) rotate(-111.75) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(32.83 410.53) rotate(-110.62) scale(1.03 1)"><tspan x="0" y="0">.</tspan></text>
+    <text class="e" transform="translate(31.27 406.35) rotate(-109.73) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(29.96 402.67) rotate(-108.9) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(28.7 398.97) rotate(-108.08) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(27.49 395.25) rotate(-107.25) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(26.35 391.53) rotate(-106.44) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(25.22 387.82) rotate(-104.95) scale(1.03 1)"><tspan x="0" y="0">A</tspan></text>
+    <text class="e" transform="translate(22.58 377.7) rotate(-103.47) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(21.65 373.91) rotate(-102.04) scale(1.03 1)"><tspan x="0" y="0">B</tspan></text>
+    <text class="e" transform="translate(19.6 364.2) rotate(-100.19) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(18.09 355.69) rotate(-98.44) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(16.75 346.58) rotate(-96.67) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(15.72 337.4) rotate(-95.42) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(15.33 333.43) rotate(-94.25) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(14.72 324.68) rotate(-93.1) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(14.49 320.78) rotate(-91.91) scale(1.03 1)"><tspan x="0" y="0">T</tspan></text>
+    <text class="e" transform="translate(14.22 312.82) rotate(-90.6) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(14.15 304.15) rotate(-89.19) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(14.29 295.94) rotate(-88.19) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(14.41 292.04) rotate(-87.16) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(14.84 283.82) rotate(-86.1) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(15.09 279.95) rotate(-84.94) scale(1.03 1)"><tspan x="0" y="0">d</tspan></text>
+    <text class="e" transform="translate(15.93 270.76) rotate(-83.34) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(16.87 262.77) rotate(-81.83) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(17.93 255.55) rotate(-80.79) scale(1.03 1)"><tspan x="0" y="0">,</tspan></text>
+    <text class="e" transform="translate(18.65 251.16) rotate(-79.98) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(19.31 247.33) rotate(-78.69) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(21.13 238.32) rotate(-76.89) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(23.11 229.89) rotate(-75.05) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(25.5 221) rotate(-73.11) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(28.22 212.2) rotate(-71.7) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(29.49 208.39) rotate(-70.84) scale(1.03 1)"><tspan x="0" y="0">i</tspan></text>
+    <text class="e" transform="translate(30.79 204.59) rotate(-69.47) scale(1.03 1)"><tspan x="0" y="0">n</tspan></text>
+    <text class="e" transform="translate(33.84 196.49) rotate(-67.53) scale(1.03 1)"><tspan x="0" y="0">g</tspan></text>
+    <text class="e" transform="translate(37.37 188.07) rotate(-66.29) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(38.95 184.48) rotate(-64.88) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(42.37 177.2) rotate(-63.18) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(46.5 169.07) rotate(-61.38) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(50.69 161.47) rotate(-59.87) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(53.76 156.21) rotate(-58.84) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(55.74 152.89) rotate(-57.49) scale(1.03 1)"><tspan x="0" y="0">p</tspan></text>
+    <text class="e" transform="translate(60.72 145.15) rotate(-55.9) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(63.89 140.45) rotate(-54.4) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(69.22 133.03) rotate(-52.49) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(74.87 125.75) rotate(-51.12) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(77.36 122.63) rotate(-49.8) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(82.98 115.96) rotate(-47.59) scale(1.03 1)"><tspan x="0" y="0">m</tspan></text>
+    <text class="e" transform="translate(91.67 106.54) rotate(-45.55) scale(1.03 1)"><tspan x="0" y="0">s</tspan></text>
+    <text class="e" transform="translate(96.82 101.33) rotate(-44.43) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(99.59 98.6) rotate(-43.24) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(105.46 93.07) rotate(-41.38) scale(1.03 1)"><tspan x="0" y="0">w</tspan></text>
+    <text class="e" transform="translate(113.57 85.98) rotate(-39.53) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(119.79 80.86) rotate(-37.93) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(125.56 76.39) rotate(-36.88) scale(1.03 1)"><tspan x="0" y="0">.</tspan></text>
+    <text class="e" transform="translate(129.12 73.73) rotate(-36.05) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(132.3 71.42) rotate(-35.28) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(135.48 69.18) rotate(-34.52) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(138.7 66.98) rotate(-33.75) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(141.95 64.81) rotate(-32.99) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(145.19 62.68) rotate(-31.6) scale(1.03 1)"><tspan x="0" y="0">A</tspan></text>
+    <text class="e" transform="translate(154.15 57.23) rotate(-30.21) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(157.49 55.26) rotate(-28.88) scale(1.03 1)"><tspan x="0" y="0">B</tspan></text>
+    <text class="e" transform="translate(166.2 50.48) rotate(-27.14) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(173.91 46.55) rotate(-25.48) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(182.23 42.6) rotate(-23.81) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(190.69 38.91) rotate(-22.62) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(194.38 37.36) rotate(-21.5) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(202.55 34.18) rotate(-20.38) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(206.19 32.8) rotate(-19.09) scale(1.03 1)"><tspan x="0" y="0">T</tspan></text>
+    <text class="e" transform="translate(213.74 30.19) rotate(-17.65) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(221.98 27.58) rotate(-16.08) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(229.89 25.34) rotate(-14.96) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(233.64 24.32) rotate(-13.85) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(241.64 22.38) rotate(-12.75) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(245.43 21.51) rotate(-11.58) scale(1.03 1)"><tspan x="0" y="0">d</tspan></text>
+    <text class="e" transform="translate(254.47 19.68) rotate(-10.06) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(262.42 18.28) rotate(-8.67) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(269.62 17.2) rotate(-7.77) scale(1.03 1)"><tspan x="0" y="0">,</tspan></text>
+    <text class="e" transform="translate(274.05 16.6) rotate(-7.08) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(277.89 16.11) rotate(-6.01) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(287.07 15.16) rotate(-4.58) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(295.71 14.48) rotate(-3.2) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(304.92 13.98) rotate(-1.82) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(314.14 13.72) rotate(-.85) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(318.17 13.66) rotate(-.27) scale(1.03 1)"><tspan x="0" y="0">i</tspan></text>
+    <text class="e" transform="translate(322.2 13.63) rotate(.65) scale(1.03 1)"><tspan x="0" y="0">n</tspan></text>
+    <text class="e" transform="translate(330.87 13.74) rotate(1.86) scale(1.03 1)"><tspan x="0" y="0">g</tspan></text>
+    <text class="e" transform="translate(340.05 14.07) rotate(2.81) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(343.94 14.25) rotate(3.7) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(352.02 14.78) rotate(4.99) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(361.11 15.58) rotate(6.36) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(369.75 16.57) rotate(7.54) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(375.75 17.38) rotate(8.34) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(379.61 17.93) rotate(9.42) scale(1.03 1)"><tspan x="0" y="0">p</tspan></text>
+    <text class="e" transform="translate(388.71 19.47) rotate(10.71) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(394.27 20.52) rotate(11.94) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(403.21 22.42) rotate(13.55) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(412.18 24.62) rotate(14.73) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(416.07 25.63) rotate(15.88) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(424.47 28) rotate(17.85) scale(1.03 1)"><tspan x="0" y="0">m</tspan></text>
+    <text class="e" transform="translate(436.66 31.99) rotate(19.73) scale(1.03 1)"><tspan x="0" y="0">s</tspan></text>
+    <text class="e" transform="translate(443.53 34.48) rotate(20.78) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(447.17 35.86) rotate(21.92) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(454.66 38.86) rotate(23.6) scale(1.03 1)"><tspan x="0" y="0">w</tspan></text>
+    <text class="e" transform="translate(464.53 43.21) rotate(25.34) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(471.81 46.67) rotate(26.85) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(478.3 49.98) rotate(27.86) scale(1.03 1)"><tspan x="0" y="0">.</tspan></text>
+    <text class="e" transform="translate(482.25 52.08) rotate(28.67) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(485.68 53.96) rotate(29.42) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(489.08 55.88) rotate(30.17) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(492.44 57.85) rotate(30.93) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(495.79 59.87) rotate(31.7) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(499.11 61.88) rotate(33.11) scale(1.03 1)"><tspan x="0" y="0">A</tspan></text>
+    <text class="e" transform="translate(507.85 67.65) rotate(34.54) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(511.06 69.83) rotate(35.93) scale(1.03 1)"><tspan x="0" y="0">B</tspan></text>
+    <text class="e" transform="translate(519.07 75.66) rotate(37.77) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(525.92 80.99) rotate(39.56) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(532.99 86.85) rotate(41.4) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(539.87 92.97) rotate(42.72) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(542.84 95.69) rotate(44.01) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(549.12 101.81) rotate(45.26) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(551.86 104.55) rotate(46.61) scale(1.03 1)"><tspan x="0" y="0">T</tspan></text>
+    <text class="e" transform="translate(557.35 110.35) rotate(48.17) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(563.1 116.8) rotate(49.89) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(568.37 123.11) rotate(51.15) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(570.8 126.11) rotate(52.41) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(575.79 132.66) rotate(53.68) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(578.1 135.77) rotate(55.05) scale(1.03 1)"><tspan x="0" y="0">d</tspan></text>
+    <text class="e" transform="translate(583.35 143.32) rotate(56.87) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(587.75 150.08) rotate(58.56) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(591.53 156.32) rotate(59.67) scale(1.03 1)"><tspan x="0" y="0">,</tspan></text>
+    <text class="e" transform="translate(593.76 160.15) rotate(60.53) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(595.7 163.53) rotate(61.88) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(600.01 171.64) rotate(63.69) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(603.84 179.42) rotate(65.48) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(607.65 187.79) rotate(67.37) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(611.16 196.32) rotate(68.73) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(612.61 200.07) rotate(69.59) scale(1.03 1)"><tspan x="0" y="0">i</tspan></text>
+    <text class="e" transform="translate(614.02 203.82) rotate(70.95) scale(1.03 1)"><tspan x="0" y="0">n</tspan></text>
+    <text class="e" transform="translate(616.83 212.01) rotate(72.84) scale(1.03 1)"><tspan x="0" y="0">g</tspan></text>
+    <text class="e" transform="translate(619.49 220.75) rotate(74.2) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(620.56 224.5) rotate(75.47) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(622.58 232.32) rotate(77.21) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(624.57 241.21) rotate(79) scale(1.03 1)"><tspan x="0" y="0">u</tspan></text>
+    <text class="e" transform="translate(626.2 249.73) rotate(80.46) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(627.19 255.73) rotate(81.43) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(627.78 259.56) rotate(82.68) scale(1.03 1)"><tspan x="0" y="0">p</tspan></text>
+    <text class="e" transform="translate(628.92 268.71) rotate(84.11) scale(1.03 1)"><tspan x="0" y="0">r</tspan></text>
+    <text class="e" transform="translate(629.51 274.33) rotate(85.42) scale(1.03 1)"><tspan x="0" y="0">o</tspan></text>
+    <text class="e" transform="translate(630.23 283.46) rotate(87.06) scale(1.03 1)"><tspan x="0" y="0">b</tspan></text>
+    <text class="e" transform="translate(630.67 292.65) rotate(88.2) scale(1.03 1)"><tspan x="0" y="0">l</tspan></text>
+    <text class="e" transform="translate(630.8 296.68) rotate(89.28) scale(1.03 1)"><tspan x="0" y="0">e</tspan></text>
+    <text class="e" transform="translate(630.93 305.42) rotate(91.07) scale(1.03 1)"><tspan x="0" y="0">m</tspan></text>
+    <text class="e" transform="translate(630.63 318.24) rotate(92.79) scale(1.03 1)"><tspan x="0" y="0">s</tspan></text>
+    <text class="e" transform="translate(630.25 325.57) rotate(93.79) scale(1.03 1)"><tspan x="0" y="0"> </tspan></text>
+    <text class="e" transform="translate(630 329.45) rotate(94.87) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(629.33 337.47) rotate(96.59) scale(1.03 1)"><tspan x="0" y="0">w</tspan></text>
+    <text class="e" transform="translate(628.05 348.18) rotate(98.37) scale(1.03 1)"><tspan x="0" y="0">a</tspan></text>
+    <text class="e" transform="translate(626.87 356.16) rotate(99.93) scale(1.03 1)"><tspan x="0" y="0">y</tspan></text>
+    <text class="e" transform="translate(625.59 363.34) rotate(100.98) scale(1.03 1)"><tspan x="0" y="0">.</tspan></text>
+    <g>
+      <g>
+        <polygon class="d" points="216.73 532.19 223.24 543.39 225.56 539.53 221.32 532.22 216.73 532.19"/>
+        <polygon class="d" points="229.94 532.3 219.71 549.21 224.29 549.25 234.5 532.33 229.94 532.3"/>
+      </g>
+      <rect class="d" x="329.74" y="533.13" width="3.96" height="17.11" transform="translate(4.45 -2.7) rotate(.47)"/>
+      <path class="d" d="M252.55,549.84c-1.01,0-1.9-.24-2.67-.68-.77-.45-1.37-1.07-1.81-1.86-.43-.79-.65-1.7-.64-2.71l.07-7.97,3.96,.03-.06,7.43c0,.7,.21,1.27,.63,1.7,.43,.44,.99,.66,1.69,.66,.5,0,.95-.08,1.35-.26,.39-.18,.72-.43,.98-.75l.07-8.75,3.96,.03-.11,12.93-3.96-.03v-.88c-.98,.74-2.14,1.11-3.47,1.1Z"/>
+      <path class="d" d="M264.19,549.69l.11-12.93,3.96,.03v1.3c.42-.52,.92-.91,1.49-1.17,.57-.26,1.21-.39,1.91-.39,.7,.02,1.2,.13,1.49,.33l-.03,3.45c-.26-.13-.55-.23-.88-.3-.33-.07-.66-.1-1-.11-.62,0-1.2,.13-1.73,.41-.53,.28-.96,.68-1.29,1.2l-.07,8.21-3.96-.03Z"/>
+      <path class="d" d="M294.53,549.23c1.08-.43,2.05-1.03,2.87-1.79,.82-.76,1.47-1.66,1.94-2.67,.47-1.01,.71-2.12,.72-3.3s-.21-2.32-.66-3.36c-.45-1.04-1.09-1.96-1.9-2.74-.81-.78-1.76-1.4-2.84-1.85-1.08-.44-2.26-.67-3.52-.69l-6.89-.06-.14,17,6.89,.06c1.26,.01,2.45-.2,3.53-.63Zm-6.29-3l.08-9.79,2.69,.02c.67,0,1.31,.14,1.89,.4,.58,.26,1.1,.62,1.54,1.06,.44,.45,.78,.98,1.03,1.58,.24,.6,.36,1.25,.35,1.94s-.14,1.31-.39,1.89c-.25,.58-.6,1.1-1.05,1.54-.45,.44-.97,.78-1.55,1.03-.58,.24-1.22,.36-1.89,.36l-2.69-.02Z"/>
+      <path class="d" d="M375.63,549.92c.9-.41,1.62-.99,2.12-1.74,.5-.74,.76-1.61,.77-2.59,0-.77-.21-1.48-.65-2.13-.44-.65-1.04-1.18-1.79-1.59l-.08-.04,.07-.05c.6-.41,1.08-.93,1.43-1.52,.35-.6,.53-1.25,.53-1.94,0-.93-.24-1.76-.73-2.48-.49-.72-1.18-1.29-2.05-1.7-.87-.41-1.91-.62-3.06-.63l-8.43-.07-.14,17,8.84,.07c1.19,0,2.26-.19,3.16-.6Zm-7.8-13.1l4.06,.03c.63,0,1.13,.17,1.5,.48,.37,.31,.55,.75,.55,1.28s-.19,.94-.57,1.26c-.37,.31-.88,.47-1.51,.47l-4.06-.03,.03-3.48Zm-.08,10.33l.03-3.73,4.43,.04c.66,0,1.19,.18,1.58,.52,.39,.34,.59,.8,.58,1.37s-.21,1.02-.6,1.36c-.39,.33-.93,.49-1.59,.49l-4.43-.04Z"/>
+      <path class="d" d="M389.05,550.71c-1.32-.01-2.51-.32-3.57-.92-1.06-.6-1.9-1.41-2.51-2.43-.61-1.02-.91-2.15-.9-3.41s.32-2.39,.92-3.39c.6-1.01,1.42-1.8,2.45-2.39,1.03-.59,2.17-.87,3.43-.86s2.39,.33,3.37,.94c.97,.62,1.74,1.46,2.29,2.52,.55,1.06,.82,2.28,.81,3.65v.98l-9.22-.08c.18,.41,.41,.77,.71,1.08,.3,.31,.66,.56,1.08,.73,.42,.17,.88,.26,1.37,.27,.54,0,1.03-.08,1.47-.24,.44-.17,.82-.4,1.13-.71l2.6,2.34c-.82,.68-1.66,1.17-2.52,1.47-.86,.3-1.83,.45-2.9,.44Zm-2.99-8.14l5.4,.04c-.13-.42-.32-.79-.59-1.09-.27-.3-.58-.54-.94-.72-.36-.17-.75-.26-1.17-.27s-.84,.07-1.2,.23c-.36,.16-.67,.39-.92,.69-.26,.3-.45,.67-.58,1.11Z"/>
+      <path class="d" d="M237.44,540.14c-3.77-.03-6.86,3.01-6.89,6.78-.03,3.77,3.01,6.86,6.78,6.89s6.86-3.01,6.89-6.78-3.01-6.86-6.78-6.89Zm3.13,6.86c-.01,1.76-1.46,3.18-3.21,3.16s-3.18-1.46-3.16-3.21,1.46-3.18,3.21-3.16,3.18,1.46,3.16,3.21Z"/>
+      <path class="d" d="M421.55,551.04c-1.55-.01-2.72-.37-3.5-1.07-.79-.7-1.17-1.72-1.16-3.08l.05-5.6-2.62-.02,.03-3.3,2.62,.02,.03-4.17,3.96,.03-.03,4.17,3.62,.03-.03,3.3-3.62-.03-.04,4.82c0,.57,.12,.98,.37,1.21,.25,.24,.69,.36,1.33,.37,.33,0,.62-.01,.89-.05,.27-.04,.57-.11,.89-.2l-.03,3.2c-.36,.11-.82,.2-1.37,.27-.56,.07-1.02,.1-1.39,.1Z"/>
+      <path class="d" d="M321.46,550.15l.11-12.93,3.96,.03-.11,12.93-3.96-.03Z"/>
+      <path class="d" d="M323.64,525.91c-2.51-.02-4.57,2-4.59,4.51-.02,2.51,2,4.57,4.51,4.59,2.51,.02,4.57-2,4.59-4.51s-2-4.57-4.51-4.59Zm1.48,4.56c0,.84-.69,1.51-1.53,1.51s-1.51-.69-1.51-1.53,.69-1.51,1.53-1.51,1.51,.69,1.51,1.53Z"/>
+      <path class="d" d="M408.27,542.62v1.7c-.81-1.28-2.41-2.02-4.07-2.03-3.45-.03-5.94,2.9-5.97,6.55s2.55,6.3,5.8,6.33c1.74,.01,3.34-.76,4.16-2.07l-.02,1.89,3.5,.03,.1-12.37-3.5-.03Zm-3.62,8.69c-1.54-.01-2.78-1.28-2.77-2.82s1.28-2.78,2.82-2.77,2.78,1.28,2.77,2.82-1.28,2.78-2.82,2.77Z"/>
+      <path class="d" d="M313.58,533.28v1.7c-.81-1.28-2.41-2.02-4.07-2.03-3.45-.03-5.94,2.9-5.97,6.55s2.55,6.3,5.8,6.33c1.74,.01,3.34-.76,4.16-2.07l-.02,1.89,3.5,.03,.1-12.37-3.5-.03Zm-3.62,8.81c-1.54-.01-2.78-1.28-2.77-2.82s1.28-2.78,2.82-2.77,2.78,1.28,2.77,2.82-1.28,2.78-2.82,2.77Z"/>
+      <polygon class="d" points="337.44 537.34 343.95 548.54 346.27 544.69 342.03 537.38 337.44 537.34"/>
+      <polygon class="d" points="350.65 537.45 340.24 554.65 344.8 554.69 355.2 537.49 350.65 537.45"/>
+    </g>
+  </g>
+</svg>
