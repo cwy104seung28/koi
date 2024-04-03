@@ -27,6 +27,223 @@
             A celebration, a date or just a relaxing break in the day, there is always a reason to get together around a cup of KOI tea. KOI brings joy to the world. Freshly brewed tea and flavorful ingredients, prepared with passion are the key to KOI’s authentic taste and the reason why people come back again and again.
         </div>
     </div>
+    <div class="index-text-area">
+        <div class="inner-text">
+            <ul class="bg-text-area">
+                <li>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                </li>
+                <li>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                    <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                </li>
+            </ul>
+            <div class="bottom-text">
+                <img src="./images/index-text-marquee.svg" alt="">
+            </div>
+            <div class="center-pic"><img src="./images/index-center-pic.png" alt=""></div>
+            <div class="center-circle"></div>
+        </div>
+    </div>
+    <div class="index-feature">
+        <ul class="featureList">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="feature-bgList">
+            <li>
+                <ul class="dot flex-container">
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="dot flex-container">
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="dot flex-container">
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="dot flex-container">
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                    <li><div><img src="./images/index-feature-pic-1-1.png" alt=""></div></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
     <div class="menu-link">
         <a href="./menu.php">
             <img src="./images/menu-link.svg" alt="">
@@ -99,7 +316,7 @@
                 paused: false,
             })
             if (_x > 0) {
-                gsap.to(el, {
+                gsap.timeline().to(el, {
                     scrollTrigger: {
                         toggleActions: "play pause resume reverse",
                         trigger: "#horizontalWrap",
@@ -108,20 +325,21 @@
                         pin: ".index-top-banner",
                         pinSpace: false,
                         scrub: true,
-                        markers: true,
-                        // onUpdate: (self) => {
-                        //     let $about = $(".index-top-banner #horizontalWrap")
-                        //     let m = $(window).width() / 2
-                        //     $about.children().each(function(i, el) {
-                        //         let x = $(el).offset().left
-                        //         if (x - m <= 0) {
-                        //             $(el).addClass("current").siblings().removeClass("current")
-                        //         }
-                        //     })
-                        // }
+                        // markers: true,
                     },
                     x: -_x,
                     ease: 'none'
+                }).to(".text-o", {
+                    scrollTrigger: {
+                        toggleActions: "play pause resume reverse",
+                        trigger: "#horizontalWrap",
+                        start: "top 0%",
+                        end: `+=${_x}`,
+                        pin: ".index-top-banner",
+                        pinSpace: false,
+                        scrub: 1,
+                    },
+                    rotation: 100,
                 })
                 ScrollTrigger.create({
                     toggleActions: "play pause resume reverse",
@@ -132,57 +350,32 @@
                     scrub: true,
                     // markers: true,
                     // animation: $tl,
-                });
+                })
             }
         }
         horizonHandler('.index-top-banner .top-text');
         $('.text-o-outter').css('animation', 'circle-rotate 15s linear infinite');
+
+        gsap.timeline().to('.center-pic', {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-text-area",
+                start: "top 0%",
+                end: "bottom 0%",
+                scrub: 1,
+                // markers: true,
+            },
+            rotation: 120,
+        }).to(".center-circle", {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-text-area",
+                start: "30% top",
+                end: "70% 0%",
+                scrub: 1,
+                // markers: true,
+            },
+            scale: 6,
+        })
     });
-
-
-            let _x = $(el).outerWidth(true) - $(window).width()
-            console.log(_x);
-            let storenum = {
-                n: 1
-            }
-            const $tl = gsap.timeline({
-                paused: false,
-            })
-            if (_x > 0) {
-                gsap.to(el, {
-                    scrollTrigger: {
-                        toggleActions: "play pause resume reverse",
-                        trigger: "#horizontalWrap",
-                        start: "top 0%",
-                        end: `+=${_x}`,
-                        pin: ".index-top-banner",
-                        pinSpace: false,
-                        scrub: true,
-                        markers: true,
-
-                    },
-                    x: -_x,
-                    ease: 'none'
-                })
-                ScrollTrigger.create({
-                    toggleActions: "play pause resume reverse",
-                    trigger: "#horizontalWrap",
-                    start: "top 0%",
-                    end: `+=${_x}`,
-                    pinSpace: false,
-                    scrub: true,
-                    // markers: true,
-                    // animation: $tl,
-                });
-                ScrollTrigger.create({
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".text-o",
-                    start: "top 0%",
-                    end: `+=${_x}`,
-                    rotate: `${_x/10}`,
-                    scrub: true,
-                    // markers: true,
-                    // animation: $tl,
-                })
-            }
 </script>
