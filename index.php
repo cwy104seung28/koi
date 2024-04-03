@@ -12,7 +12,7 @@
         <div class="language-logo"><img src="./images/index-lan-logo.svg"></div>
         <ul class="languageList flex-container align-center-middle">
             <li class="flex-container align-center-middle">
-                <a href="javascript:;" class="ch">中文</a>
+                <a href="./index-ch.php" class="ch">中文</a>
             </li>
             <li class="flex-container align-center-middle">
                 <a href="javascript:;" class="en">ENGLISH</a>
