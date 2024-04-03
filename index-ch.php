@@ -24,7 +24,9 @@
         <div class="scroll"><img src="./images/index-scroll.svg" alt=""></div>
         <div class="note">
             Happiness is to share special moments with friends.
-            A celebration, a date or just a relaxing break in the day, there is always a reason to get together around a cup of KOI tea. KOI brings joy to the world. Freshly brewed tea and flavorful ingredients, prepared with passion are the key to KOI’s authentic taste and the reason why people come back again and again.
+            A celebration, a date or just a relaxing break in the day, there is always a reason to get together around a
+            cup of KOI tea. KOI brings joy to the world. Freshly brewed tea and flavorful ingredients, prepared with
+            passion are the key to KOI’s authentic taste and the reason why people come back again and again.
         </div>
     </div>
     <div class="index-text-area">
@@ -274,7 +276,8 @@
                 </div>
                 <div class="deco top">
                     <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                        <path class="a"
+                            d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
                     </svg>
                 </div>
                 <div class="en">
@@ -285,7 +288,8 @@
                 </div>
                 <div class="deco bottom">
                     <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                        <path class="a"
+                            d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
                     </svg>
                 </div>
                 <div class="dot">
@@ -298,7 +302,8 @@
                 </div>
                 <div class="deco top">
                     <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                        <path class="a"
+                            d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
                     </svg>
                 </div>
                 <div class="en">
@@ -310,7 +315,8 @@
                 </div>
                 <div class="deco bottom">
                     <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                        <path class="a"
+                            d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
                     </svg>
                 </div>
                 <div class="dot">
@@ -323,7 +329,8 @@
                 </div>
                 <div class="deco top">
                     <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                        <path class="a"
+                            d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
                     </svg>
                 </div>
                 <div class="en">
@@ -333,7 +340,8 @@
                 <div class="ch">跳动冰块</div>
                 <div class="deco bottom">
                     <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                        <path class="a"
+                            d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
                     </svg>
                 </div>
                 <div class="dot">
@@ -346,7 +354,8 @@
                 </div>
                 <div class="deco top">
                     <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                        <path class="a"
+                            d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
                     </svg>
                 </div>
                 <div class="en">
@@ -356,7 +365,8 @@
                 <div class="ch">美味珍珠</div>
                 <div class="deco bottom">
                     <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                        <path class="a"
+                            d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
                     </svg>
                 </div>
                 <div class="dot">
@@ -433,6 +443,22 @@
             </li>
         </ul>
     </div>
+    <div class="index-drink">
+        <div class="bg">
+            <div class="note">
+                OUR<br>
+                RECOMMAND
+            </div>
+            <div class="en">
+                PEACH GREEN TEA<br>
+                BLACK TEA MACCHIATO
+            </div>
+            <div class="ch-flex flex-container align-middle">
+                <div class="ch">水蜜桃绿茶</div>
+                <div class="ch">红茶玛奇朵</div>
+            </div>
+        </div>
+    </div>
     <div class="menu-link">
         <a href="./menu.php">
             <img src="./images/menu-link.svg" alt="">
@@ -445,24 +471,24 @@
 </html>
 <script>
     // $('nav').addClass('is-move')
-    $(document).ready(function() {
-        window.onbeforeunload = function() {
+    $(document).ready(function () {
+        window.onbeforeunload = function () {
             //刷新后页面自动回到顶部
             document.documentElement.scrollTop = 0; //ie下
             document.body.scrollTop = 0; //非ie
         }
-        gsap.delayedCall(0.3, function() {
+        gsap.delayedCall(0.3, function () {
             $("html").addClass("is-lock")
         });
 
-        gsap.delayedCall(6, function() {
+        gsap.delayedCall(6, function () {
             $("html").removeClass("is-lock")
         });
     })
     $('footer').addClass('is-orange')
     let $tl_preload = gsap.timeline({
-            paused: false,
-        })
+        paused: false,
+    })
         .to(".index-preload .logo", {
             duration: 0.75,
             opacity: 1,
@@ -494,7 +520,7 @@
     // gsap.delayedCall(2.5, function() {
     //     $('nav').removeClass('is-move')
     // });
-    gsap.delayedCall(5.5, function() {
+    gsap.delayedCall(5.5, function () {
         function horizonHandler(el) {
             let _x = $(el).outerWidth(true) - $(window).width()
             console.log(_x);
