@@ -570,51 +570,51 @@
         }
         horizonHandler('.index-top-banner .top-text');
         $('.text-o-outter').css('animation', 'circle-rotate 15s linear infinite');
-
+        gsap.timeline().to('.center-pic', {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-text-area",
+                start: "top 0%",
+                end: "bottom 0%",
+                scrub: 1,
+                // markers: true,
+            },
+            rotation: 120,
+        }).to(".center-circle", {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-text-area",
+                start: "30% top",
+                end: "bottom top",
+                scrub: 1,
+                // markers: true,
+            },
+            scale: 6.5,
+        })
+        gsap.timeline().to('.index-feature .up', {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "top 0%",
+                end: "bottom 0%",
+                scrub:true,
+                markers: true,
+            },
+            y: '-50%'
+        })
+        to('.index-feature .down', {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "top 0%",
+                end: "bottom 0%",
+                scrub: 1,
+                markers: true,
+            },
+            y: '100%'
+        })
 
     });
 
-    gsap.timeline().to('.center-pic', {
-        scrollTrigger: {
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-text-area",
-            start: "top 0%",
-            end: "bottom 0%",
-            scrub: 1,
-            // markers: true,
-        },
-        rotation: 120,
-    }).to(".center-circle", {
-        scrollTrigger: {
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-text-area",
-            start: "30% top",
-            end: "70% 0%",
-            scrub: 1,
-            // markers: true,
-        },
-        scale: 6.5,
-    })
-    gsap.timeline().to('.index-feature .up', {
-        scrollTrigger: {
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-feature",
-            start: "top 0%",
-            end: "bottom 0%",
-            scrub: 1,
-            // markers: true,
-        },
-        y: '-100%'
-    })
-    to('.index-feature .down', {
-        scrollTrigger: {
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-feature",
-            start: "top 0%",
-            end: "bottom 0%",
-            scrub: 1,
-            // markers: true,
-        },
-        y: '100%'
-    })
+
 </script>
