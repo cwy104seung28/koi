@@ -93,12 +93,12 @@
             <ul class="footerList">
                 <li><a href="./index.php">首页</a></li>
                 <li><a href="./news.php">最新消息</a></li>
-                <li><a href="javascript:;">联络我们</a></li>
-                <li><a href="javascript:;">关于KOI</a></li>
-                <li><a href="javascript:;">全球据点</a></li>
-                <li><a href="javascript:;">菜单下载</a></li>
-                <li><a href="javascript:;">饮品列表</a></li>
-                <li><a href="javascript:;">伙伴招募</a></li>
+                <li><a href="./contact.php">联络我们</a></li>
+                <li><a href="./about.php">关于KOI</a></li>
+                <li><a href="./store.php">全球据点</a></li>
+                <li><a href="./menu.php">菜单下载</a></li>
+                <li><a href="./ourtea.php">饮品列表</a></li>
+                <li><a href="./recruit.php">伙伴招募</a></li>
             </ul>
         </div>
         <div class="info flex-container">

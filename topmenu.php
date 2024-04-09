@@ -51,25 +51,25 @@
                 </div>
                 <ul class="menuList-hover">
                     <li>
-                        <a href="javascript:;">首页</a>
+                        <a href="./main.php">首页</a>
                     </li>
                     <li>
-                        <a href="javascript:;">关于KOI</a>
+                        <a href="./about.php">关于KOI</a>
                     </li>
                     <li>
-                        <a href="javascript:;">饮品列表</a>
+                        <a href="./ourtea.php">饮品列表</a>
                     </li>
                     <li>
-                        <a href="javascript:;">最新消息</a>
+                        <a href="./news.php">最新消息</a>
                     </li>
                     <li>
-                        <a href="javascript:;">全球据点</a>
+                        <a href="./store.php">全球据点</a>
                     </li>
                     <li>
-                        <a href="javascript:;">伙伴招募</a>
+                        <a href="./recruit.php">伙伴招募</a>
                     </li>
                     <li>
-                        <a href="javascript:;">联络我们</a>
+                        <a href="./contact.php">联络我们</a>
                     </li>
                 </ul>
             </div>

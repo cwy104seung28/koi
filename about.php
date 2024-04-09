@@ -173,6 +173,66 @@
                 </ul>
             </div>
         </div>
+        <div class="about-event flex-container">
+            <ul class="pic-area" dir="rtl">
+                <li><img src="./images/a-event-pic-1.png" alt=""></li>
+                <li><img src="./images/a-event-pic-2.png" alt=""></li>
+                <li><img src="./images/a-event-pic-3.png" alt=""></li>
+                <li><img src="./images/a-event-pic-4.png" alt=""></li>
+            </ul>
+            <!-- <ul class="pic-area">
+                <li><img src="./images/a-event-pic-1.png" alt=""></li>
+                <li><img src="./images/a-event-pic-2.png" alt=""></li>
+                <li><img src="./images/a-event-pic-3.png" alt=""></li>
+                <li><img src="./images/a-event-pic-4.png" alt=""></li>
+            </ul> -->
+            <div class="article-area">
+                <!-- <ul class="article-inner">
+                    <li>
+                        <div class="number">2018</div>
+                        <div class="ch">KOI Thé 台中七期市政旗鉴店 开幕</div>
+                        <div class="en">Taichung 7th City Hall KOI Thé Grand Opening Of The Flagship Store</div>
+                    </li>
+                    <li>
+                        <div class="number">2023</div>
+                        <div class="ch">KOI Thé 上海首家手作店 開幕</div>
+                        <div class="en">Grand Opening of KOI Thé DIY Store in Shanghai</div>
+                    </li>
+                    <li>
+                        <div class="number">2020</div>
+                        <div class="ch">KOI Thé 台中七期市政旗鉴店 开幕</div>
+                        <div class="en">Taichung 7th City Hall KOI Thé Grand Opening Of The Flagship Store</div>
+                    </li>
+                    <li>
+                        <div class="number">2021</div>
+                        <div class="ch">KOI Thé 台中七期市政旗鉴店 开幕</div>
+                        <div class="en">Taichung 7th City Hall KOI Thé Grand Opening Of The Flagship Store</div>
+                    </li>
+                </ul> -->
+                <ul class="number">
+                    <li>2018</li>
+                    <li>2023</li>
+                    <li>2020</li>
+                    <li>2021</li>
+                </ul>
+                <ul class="ch">
+                    <li>KOI Thé 台中七期市政旗鉴店 开幕</li>
+                    <li>KOI Thé 上海首家手作店 開幕</li>
+                    <li>KOI Thé 台中七期市政旗鉴店 开幕</li>
+                    <li>KOI Thé 台中七期市政旗鉴店 开幕</li>
+                </ul>
+                <ul class="en">
+                    <li>Taichung 7th City Hall KOI Thé Grand Opening Of The Flagship Store</li>
+                    <li>Grand Opening of KOI Thé DIY Store in Shanghai</li>
+                    <li>Taichung 7th City Hall KOI Thé Grand Opening Of The Flagship Store</li>
+                    <li>Taichung 7th City Hall KOI Thé Grand Opening Of The Flagship Store</li>
+                </ul>
+                <div class="arrow-area flex-container align-middle align-right">
+                    <div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>
+                    <div class="next"><img src="./images/a-event-next.svg" alt=""></div>
+                </div>
+            </div>
+        </div>
         <div class="about-brandmap" id='brand'>
             <div class="title"><img src="./images/a-brand-map-title.svg" alt=""></div>
             <div class="brandmapWrap flex-container align-middle align-justify">
@@ -218,18 +278,18 @@
         mounted() {
 
         },
-        updated() { },
+        updated() {},
     })
     $('nav').addClass('is-move')
     var $tl = gsap.timeline({
         paused: true,
     });
     $tl.to(".text-area .letter-k", {
-        duration: 1,
-        scale: 1,
-        opacity: 1,
-        ease: Power1.easeIn,
-    })
+            duration: 1,
+            scale: 1,
+            opacity: 1,
+            ease: Power1.easeIn,
+        })
         .to(".text-area .letter-o", {
             duration: 0.75,
             scale: 1,
@@ -270,15 +330,15 @@
             y: 0,
             ease: Power1.easeIn,
         }, '<.1')
-    gsap.delayedCall(0.5, function () {
+    gsap.delayedCall(0.5, function() {
         $tl.play();
     });
-    gsap.delayedCall(2.5, function () {
+    gsap.delayedCall(2.5, function() {
         $('nav').removeClass('is-move')
     });
     let $tl_number = gsap.timeline({
-        paused: false,
-    })
+            paused: false,
+        })
         .add('number')
         .to(".number-area .hollow-1", {
             y: 324,
@@ -302,8 +362,8 @@
         scrub: 1,
     });
     let $tl_drink = gsap.timeline({
-        paused: false,
-    })
+            paused: false,
+        })
         .add('drink')
         .to(".drink-area li:nth-child(odd)", {
             y: '-100%',
@@ -324,8 +384,8 @@
         scrub: 1,
     });
     let $tl_info = gsap.timeline({
-        paused: false,
-    })
+            paused: false,
+        })
         .to(".about-info-preview .about-infoWrap", {
             opacity: 1,
         })
@@ -363,6 +423,7 @@
             $('.about-info-preview').removeClass('is-not-show');
         }
     });
+
     function horizonHandler(el) {
         let _x = $(el).outerWidth(true) - $(window).width()
         console.log(_x);
@@ -386,7 +447,7 @@
                     onUpdate: (self) => {
                         let $about = $(".about-infoWrap#horizontalWrap")
                         let m = $(window).width() / 2
-                        $about.children().each(function (i, el) {
+                        $about.children().each(function(i, el) {
                             let x = $(el).offset().left
                             if (x - m <= 0) {
                                 $(el).addClass("current").siblings().removeClass("current")
@@ -421,13 +482,77 @@
         verticalSwiping: true,
         arrows: false,
     });
-    $('.slick-article').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    $('.slick-article').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
         console.log(nextSlide);
         $(`.triangle .triangle-${nextSlide + 1}`).addClass('is-show').siblings().removeClass('is-show');
     });
     var dotNums = document.querySelectorAll(".slick-dots button");
+
     function removeText(item) {
         item.innerHTML = ""; // or put the text you need inside quotes
     }
     dotNums.forEach(removeText);
+
+    $('.about-event .pic-area').slick({
+        speed: 1250,
+        dots: false,
+        prevArrow: false,
+        nextArrow: false,
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        rtl: true,
+        // autoplay: true,
+        // autoplaySpeed: 2000,
+        // fade: true,
+        // vertical: true,
+        // verticalScrolling: true,
+        // draggable: false,
+        // nextArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`,
+        // prevArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`
+    });
+
+    // $('.arrow-area .prev').click(function() {
+    //     $('.about-event .pic-area').slick('slickPrev');
+    // })
+    // $('.arrow-area .next').click(function() {
+    //     $('.about-event .pic-area').slick('slickNext');
+    // })
+
+    $('.about-event .number').slick({
+        speed: 2000,
+        prevArrow: false,
+        nextArrow: false,
+        dots: false,
+        slidesToShow: 1,
+        fade: true,
+        asNavFor: '.about-event .ch, .about-event .en',
+
+
+    });
+    $('.arrow-area .prev').click(function() {
+        $('.about-event .number').slick('slickPrev');
+    })
+    $('.arrow-area .next').click(function() {
+        $('.about-event .number').slick('slickNext');
+    })
+    $('.about-event .ch').slick({
+        speed: 2000,
+        prevArrow: false,
+        nextArrow: false,
+        dots: false,
+        slidesToShow: 1,
+        fade: true,
+        // verticalScrolling: true,
+        // draggable: false,
+    });
+    $('.about-event .en').slick({
+        speed: 2000,
+        prevArrow: false,
+        nextArrow: false,
+        dots: false,
+        slidesToShow: 1,
+        fade: true,
+        // verticalScrolling: true,
+        // draggable: false,
+    });
 </script>

@@ -1,4 +1,4 @@
-@import 'foundation';
+@import "foundation";
 @import "reset";
 @import "base";
 @import "public";
@@ -8,7 +8,13 @@ $global-padding: 20px;
 $prototype-spacing-breakpoints: true;
 $prototype-spacers-count: 8;
 $breakpoint-classes: (small medium large xlarge xxlarge);
-$breakpoints: (small: 0px, medium: 640px, large: 1025px, xlarge: 1200px, xxlarge: 1600px, );
+$breakpoints: (
+    small: 0px,
+    medium: 640px,
+    large: 1025px,
+    xlarge: 1200px,
+    xxlarge: 1600px
+);
 @include foundation-xy-grid-classes;
 @include foundation-prototype-spacing;
 @include foundation-flex-classes;
@@ -34,6 +40,9 @@ body {
     &.is-orange {
         background-color: #f4ddbe;
     }
+    &.is-light-orange {
+        background-color: #f9efe1;
+    }
 }
 
 nav {
@@ -41,6 +50,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    max-height: 80px;
     z-index: 10;
     justify-content: space-between;
     background-color: transparent;
@@ -115,7 +125,7 @@ nav {
                 text-wrap: nowrap;
                 &::before {
                     position: absolute;
-                    content: '';
+                    content: "";
                     border-radius: 50%;
                     background-color: #0b1118;
                     left: -10px;
@@ -306,24 +316,26 @@ nav {
     background-color: #f4ddbe;
     position: relative;
     z-index: 3;
+    // overflow: hidden;
     .inner-text {
         position: sticky;
         top: 0;
     }
     .bg-text-area {
-        margin-bottom: 40px;
+        width: 100vw;
+        margin-bottom: 30px;
         li {
             display: inline-flex;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             &:nth-child(1),
             &:nth-child(8),
             &:nth-child(15) {
-                animation: marquee-left 10s linear infinite;
+                animation: marquee-left 18s linear infinite;
             }
             &:nth-child(2),
             &:nth-child(4),
             &:nth-child(9) {
-                animation: marquee-left 15s linear infinite;
+                animation: marquee-left 19s linear infinite;
             }
             &:nth-child(3),
             &:nth-child(7),
@@ -333,7 +345,7 @@ nav {
             &:nth-child(5),
             &:nth-child(10),
             &:nth-child(12) {
-                animation: marquee-left 12.5s linear infinite;
+                animation: marquee-left 24.5s linear infinite;
             }
             &:nth-child(6),
             &:nth-child(11),
@@ -341,7 +353,7 @@ nav {
                 animation: marquee-left 22.5s linear infinite;
             }
             &:nth-child(14) {
-                animation: marquee-left 17.5s linear infinite;
+                animation: marquee-left 21.5s linear infinite;
             }
             &:last-child {
                 margin-bottom: 0;
@@ -350,6 +362,18 @@ nav {
                 min-width: max-content;
                 min-height: fit-content;
                 margin-right: 40px;
+            }
+        }
+    }
+    .bottom-text {
+        display: inline-flex;
+        animation: marquee-left 25s linear infinite;
+        li {
+            min-width: max-content;
+            min-height: fit-content;
+            margin-right: 50px;
+            img {
+                min-height: max-content;
             }
         }
     }
@@ -370,26 +394,42 @@ nav {
     }
 }
 
+.index-feature-box {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    z-index: 3;
+    background-color: #f9efe1;
+}
+
 .index-feature {
-    height: 7000px;
+    height: 8000px;
     position: relative;
     z-index: 2;
     background-color: #f9efe1;
     // overflow: hidden;
+    // padding-top: 1000px;
+    padding-bottom: 200px;
+    // &:before {
+    //     position: absolute;
+    //     content: '';
+    // }
     .index-feature-inner {
         width: 100%;
-        height: 100vh;
+        height: 95vh;
         position: sticky;
-        top: 0;
+        top: 80px;
     }
     .featureList {
-        >li {
+        height: 3600px;
+        > li {
+            // height: 803px;
             width: fit-content;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 119px;
+            margin-bottom: 100px;
             &:last-child {
                 margin-bottom: 0;
             }
@@ -439,10 +479,15 @@ nav {
                     margin-bottom: 170px;
                 }
             }
+            span {
+                display: block;
+                text-align: center;
+            }
         }
     }
     .feature-bgList {
         width: 100%;
+        height: 3600px;
         // height: 100vh;
         // position: sticky;
         // top: 0;
@@ -453,11 +498,23 @@ nav {
             margin-left: 200px;
         }
     }
+    .is-sticky {
+        position: sticky;
+        top: 0;
+        // height: 100vh;
+        margin-bottom: 0px !important;
+    }
+    // .is-top {
+    //     margin-top: 80px;
+    // }
     .dot {
         padding: 0 55px;
-        >li {
+        > li {
+            max-height: 803px;
+            margin-bottom: 97px;
             div {
                 margin-bottom: 97px;
+                transform-origin: center;
             }
             // &:last-child {
             //     div {
@@ -467,62 +524,65 @@ nav {
         }
     }
     .down {
-        height: fit-content;
-        transform: translateY(-100%);
+        // opacity: 0;
+        // height: fit-content;
+        transform: translateY(calc(-100% + 25%));
     }
     .up {
-        height: fit-content;
-        transform: translateY(24%);
+        // height: fit-content;
+        transform: translateY(calc(100vh - 25.5%));
     }
 }
 
 .index-drink {
+    padding-top: 200px;
     position: relative;
     z-index: 3;
     background-color: #f9efe1;
-    .bg {
-        text-align: center;
-        .note {
-            font-family: $en-family;
-            font-size: 30px;
-            font-weight: 500;
-            color: #0b0b0b;
-            letter-spacing: 3px;
-            margin-bottom: 83px;
-        }
-        .en {
-            font-family: $en-family;
-            font-size: 73px;
-            color: #0b0b0b;
-            letter-spacing: 3px;
-            font-weight: 900;
-            line-height: 1.05;
-            margin-bottom: 15px;
-        }
-        .ch {
-            font-family: $ch-family;
-            font-size: 60px;
-            color: #0b0b0b;
-            letter-spacing: 3px;
-            font-weight: 900;
-            // line-height: 1.05;
-            &.left {
-                margin-right: 420px;
+    .drink-animation {
+        position: relative;
+        margin-bottom: 470px;
+        .bg {
+            text-align: center;
+            .note {
+                font-family: $en-family;
+                font-size: 30px;
+                font-weight: 500;
+                color: #0b0b0b;
+                letter-spacing: 3px;
+                margin-bottom: 83px;
+            }
+            .en {
+                font-family: $en-family;
+                font-size: 73px;
+                color: #0b0b0b;
+                letter-spacing: 3px;
+                font-weight: 900;
+                line-height: 1.05;
+                margin-bottom: 15px;
+            }
+            .ch {
+                font-family: $ch-family;
+                font-size: 60px;
+                color: #0b0b0b;
+                letter-spacing: 3px;
+                font-weight: 900;
+                // line-height: 1.05;
+                &.left {
+                    margin-right: 420px;
+                }
             }
         }
     }
-    .drink-animation {
-        margin-bottom: 470px;
-    }
     .items-area {
         position: absolute;
-        left: 49.5%;
-        top: 24.5%;
-        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 68%;
+
         div {
             position: absolute;
             width: max-content;
-            transition: 0.5s all;
+            transition: 0.3s all;
             opacity: 0;
             &.is-show {
                 opacity: 1;
@@ -556,7 +616,7 @@ nav {
             left: -76px;
             top: -3px;
             z-index: 5;
-            transition-delay: 0.075s;
+            transition-delay: 0.15s;
             transform: scale(0.15) translate(250px, -80px);
             transform-origin: left top;
         }
@@ -587,7 +647,7 @@ nav {
             left: -227px;
             top: 22px;
             z-index: 4;
-            transition-delay: 0.075s;
+            transition-delay: 0.15s;
             transform: scale(0.15) translate(140px, -100px);
             transform-origin: right top;
         }
@@ -595,6 +655,7 @@ nav {
             left: -300px;
             top: -148px;
             z-index: 2;
+            transition-delay: 0.05s;
             transform: scale(0.15) translate(150px, 58px);
             transform-origin: right;
         }
@@ -602,6 +663,7 @@ nav {
             left: 13px;
             top: -179px;
             z-index: 4;
+            transition-delay: 0.05s;
             transform: scale(0.15) translate(-100px, 38px);
             transform-origin: left;
         }
@@ -609,6 +671,7 @@ nav {
             left: -164px;
             top: -194px;
             z-index: 2;
+            transition-delay: 0.075s;
             transform: scale(0.15) translate(-200px, 16px);
             transform-origin: right;
         }
@@ -616,6 +679,7 @@ nav {
             left: -53px;
             top: -234px;
             z-index: 3;
+            transition-delay: 0.1s;
             transform: scale(0.15) translate(200px, 16px);
             transform-origin: left;
         }
@@ -624,13 +688,60 @@ nav {
         text-align: center;
         margin-bottom: 75px;
     }
+    .drinksList {
+        width: 100%;
+        height: 100%;
+        .swiper-wrapper {
+            > li {
+                &:nth-child(even) {
+                    margin-top: 65px;
+                }
+            }
+        }
+        .swiper-slide {
+            margin-right: 150px;
+            .pic-area {
+                width: 466px !important;
+                aspect-ratio: 1/1;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin-bottom: 10px;
+                .circle {
+                    padding: 11px;
+                    transition: 0.2s linear;
+                    pointer-events: none;
+                }
+            }
+            .article-area {
+                .icon {
+                    margin-right: 8px;
+                }
+                .ch {
+                    font-family: $ch-family;
+                    font-size: 26px;
+                    letter-spacing: 2px;
+                    font-weight: 800;
+                    color: #0b0b0b;
+                }
+                .en {
+                    font-family: $en-family;
+                    color: #da5e29;
+                    font-size: 12px;
+                    letter-spacing: 0.5px;
+                    font-style: italic;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
 }
 
 .index-news {
     position: relative;
     z-index: 3;
     background-color: #f9efe1;
-    padding: 100px 0 200px;
+    padding: 100px 0 150px;
     .head-area {
         margin-bottom: 70px;
         text-align: center;
@@ -867,9 +978,10 @@ nav {
         }
     }
     .about-ingredient {
+        height: 100vh;
         .pic-area {
             flex: 1 1 0;
-            height: 100vh;
+            height: 100%;
             background: url("../images/a-i-pic.jpg") no-repeat center/cover;
             .triangle {
                 width: 540px;
@@ -998,7 +1110,7 @@ nav {
                     border-radius: 50%;
                     margin-bottom: 20px;
                     &::after {
-                        content: '';
+                        content: "";
                         border-radius: 50%;
                         position: absolute;
                         width: 5px;
@@ -1016,6 +1128,152 @@ nav {
                         }
                     }
                 }
+            }
+        }
+    }
+    .about-event {
+        width: 100%;
+        height: 100vh;
+        background-color: #000000;
+        padding: 155px 150px 0 0px;
+        .pic-area {
+            flex: 1 1 0;
+            width: 389px;
+            height: 389px;
+            transform: rotate(45deg);
+            justify-content: right;
+            // direction: rtl;
+            margin-left: -350px;
+            margin-top: -50px;
+            li {
+                position: relative;
+                // width: 389px !important;
+                height: 389px;
+                margin-right: -300px;
+                img {
+                    transition: 0.5s all;
+                    filter: grayscale(1);
+                    transform: rotate(-45deg);
+                }
+                &.slick-current {
+                    img {
+                        filter: grayscale(0);
+                    }
+                }
+                @for $i from 1 through 4 {
+                    &:nth-child(#{$i}) {
+                        z-index: 5 - $i;
+                    }
+                }
+            }
+            // .slick-list{
+            //     height: 100vh;
+            // }
+            // .slick-track {
+            //     width: 798px !important;
+            // }
+        }
+        .article-area {
+            max-width: 520px;
+            flex: 1 1 0;
+            margin-left: 100px;
+            padding-top: 150px;
+            .number {
+                position: relative;
+                font-family: $en-family;
+                font-size: 145px;
+                letter-spacing: 2px;
+                color: #fff;
+                font-weight: 900;
+                margin-bottom: 45px;
+
+                li {
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 200px;
+                        background-color: #000;
+                        z-index: 1;
+                        transition: 0.75s all;
+                    }
+                    &.slick-current {
+                        &::before {
+                            height: 0px;
+                        }
+                    }
+                }
+            }
+            .ch {
+                position: relative;
+                font-family: $ch-family;
+                font-size: 20px;
+                letter-spacing: 2px;
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 20px;
+
+                li {
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 200px;
+                        background-color: #000;
+                        z-index: 1;
+                        transition: 0.75s all;
+                    }
+                    &.slick-current {
+                        &::before {
+                            height: 0px;
+                        }
+                    }
+                }
+            }
+            .en {
+                position: relative;
+                max-width: 520px;
+                height: 130px;
+                font-family: $en-family;
+                font-size: 18px;
+                letter-spacing: 1px;
+                line-height: 1.4;
+                color: #fff;
+
+                li {
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 200px;
+                        background-color: #000;
+                        z-index: 1;
+                        transition: 0.75s all;
+                    }
+                    &.slick-current {
+                        &::before {
+                            height: 0px;
+                        }
+                    }
+                }
+            }
+        }
+        .arrow-area {
+            max-width: 520px;
+            div {
+                cursor: pointer;
+            }
+            .prev {
+                margin-right: 75px;
             }
         }
     }
@@ -1062,7 +1320,7 @@ nav {
         letter-spacing: 1px;
     }
     .languageList {
-        >li {
+        > li {
             width: 167px;
             height: 167px;
             border-radius: 50%;
@@ -1100,11 +1358,13 @@ nav {
         margin: 0 auto;
     }
     .article-area {
+        max-width: 456px;
         flex: 1 1 0;
         font-family: $en-family;
         font-size: 42px;
         font-weight: 900;
         letter-spacing: 1px;
+        margin-right: 235px;
         .orange {
             color: #ff4d00;
         }
@@ -1114,6 +1374,16 @@ nav {
             font-weight: 600;
             letter-spacing: 2px;
             margin-top: 65px;
+            line-height: 1.5;
+        }
+        .other {
+            font-family: $ch-family;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-top: 50px;
+            color: #ff4d00;
+            line-height: 1.5;
         }
     }
     .form-area {
@@ -1122,6 +1392,7 @@ nav {
         .formList {
             margin-bottom: 95px;
             li {
+                cursor: pointer;
                 .title {
                     position: relative;
                     font-size: 30px;
@@ -1130,13 +1401,12 @@ nav {
                     color: $black;
                     &::after {
                         position: absolute;
-                        content: '';
-                        width: 100%;
+                        content: "";
+                        width: 0%;
                         height: 5px;
-                        bottom: -5px;
+                        bottom: -7px;
                         left: 0;
                         background-color: #ff4d00;
-                        opacity: 0;
                         transition: 0.5s all;
                     }
                 }
@@ -1149,7 +1419,7 @@ nav {
                     position: relative;
                     &::before {
                         position: absolute;
-                        content: '';
+                        content: "";
                         width: 11px;
                         height: 11px;
                         border-radius: 50%;
@@ -1165,7 +1435,7 @@ nav {
             input[type="radio"] {
                 display: none;
             }
-            input[type="radio"]:checked+label {
+            input[type="radio"]:checked + label {
                 .radio {
                     &::before {
                         opacity: 1;
@@ -1173,26 +1443,27 @@ nav {
                 }
                 .title {
                     &::after {
-                        opacity: 1;
+                        width: 100%;
                     }
                 }
             }
         }
         form {
             .title-area {
+                margin-bottom: 60px;
                 .line {
                     width: 6px;
                     background-color: #f7e0c0;
                     margin-right: 15px;
                 }
-                margin-bottom: 60px;
+
                 .en {
                     font-family: $en-family;
-                    font-size: 24px;
+                    font-size: 30px;
                     letter-spacing: 1px;
-                    color: $black;
+                    color: #0c131b;
                     font-weight: 900;
-                    margin-bottom: 12px;
+                    margin-bottom: 7px;
                 }
                 .ch {
                     font-family: $ch-family;
@@ -1272,7 +1543,7 @@ nav {
                         // }
                         &::after {
                             position: absolute;
-                            content: '';
+                            content: "";
                             width: calc(100% - 28px);
                             height: 1px;
                             background-color: $black;
@@ -1287,12 +1558,10 @@ nav {
                         }
                         &:hover {
                             background-color: $black;
-                            ;
                             color: #fff;
                         }
                         &:focus {
                             background-color: $black;
-                            ;
                             color: #fff;
                         }
                     }
@@ -1328,7 +1597,7 @@ nav {
             line-height: 0.72;
             &::after {
                 position: absolute;
-                content: '';
+                content: "";
                 width: calc(100% - 20px);
                 height: 2px;
                 background-color: $black;
@@ -1339,7 +1608,7 @@ nav {
     }
     .menuList {
         font-family: $ch-family;
-        >li {
+        > li {
             margin-bottom: 80px;
             border-bottom: 1px solid $black;
             padding-bottom: 100px;
@@ -1361,7 +1630,7 @@ nav {
     }
     .linkList {
         margin-top: 10px;
-        >li {
+        > li {
             margin-bottom: 70px;
             a {
                 justify-content: right;
@@ -1729,7 +1998,7 @@ nav {
                     padding-bottom: 1px;
                     &::after {
                         position: absolute;
-                        content: '';
+                        content: "";
                         left: 0;
                         bottom: -3px;
                         width: 0%;
@@ -1793,7 +2062,7 @@ nav {
                 flex: 2 1 0;
                 max-width: 144px;
                 width: 100%;
-                transition: .5s ease-in;
+                transition: 0.5s ease-in;
                 margin-right: 200px;
             }
             li {
@@ -1830,7 +2099,7 @@ nav {
         &.current {
             &::after {
                 position: absolute;
-                content: '';
+                content: "";
                 width: 6px;
                 height: 6px;
                 background-color: #f9eddd;
@@ -1925,7 +2194,7 @@ nav {
 }
 
 .our-teaWrap {
-    padding: 85px 0 0;
+    padding: 85px 0 370px;
     .head-area {
         .title {
             width: fit-content;
@@ -1935,7 +2204,7 @@ nav {
             letter-spacing: 3px;
             font-size: 415px;
         }
-        .drinkWrap {
+        .drinkListWrap {
             position: relative;
             padding-top: 166px;
             overflow: hidden;
@@ -1948,12 +2217,12 @@ nav {
                 li {
                     width: max-content;
                     margin-right: 70px;
-                    // animation: wave2 7.5s infinite linear;
-                    // @for $i from 1 through 12 {
-                    //     &:nth-child(#{$i}) {
-                    //         animation-delay: 0.25s * $i;
-                    //     }
-                    // }
+                    animation: wave2 7.5s infinite linear;
+                    @for $i from 1 through 12 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: 1s * $i;
+                        }
+                    }
                     // &:nth-child(odd) {
                     //     animation: wave-up 5s ease-in-out infinite;
                     // }
@@ -2011,7 +2280,8 @@ nav {
                             color: #fff;
                         }
                     }
-                    &:hover {}
+                    &:hover {
+                    }
                     img {
                         // min-width: fit-content;
                         min-height: max-content;
@@ -2069,7 +2339,7 @@ nav {
                 }
                 &:after {
                     position: absolute;
-                    content: '';
+                    content: "";
                     width: 0%;
                     height: 6px;
                     background-color: #ea5504;
@@ -2107,31 +2377,206 @@ nav {
     .drinkWrap {
         position: relative;
         padding: 168px 0 173px 147px;
-        .drinkList {
+        .drinkWrapList {
+            max-width: 1150px;
+            > li {
+                margin-bottom: 200px;
+                &:nth-child(odd) {
+                    .title {
+                        .icon {
+                            right: -128px;
+                            bottom: -120px;
+                        }
+                    }
+
+                    .drinkList {
+                        > li {
+                            &:nth-child(5) {
+                                margin-top: 160px;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(even) {
+                    .title {
+                        .icon {
+                            bottom: -120px;
+                        }
+                    }
+                    .drinkList {
+                        > li {
+                            &:nth-child(1) {
+                                margin-top: 160px;
+                            }
+                        }
+                    }
+                }
+            }
             .title {
+                width: fit-content;
+                position: relative;
                 margin-bottom: 55px;
                 .ch {
                     font-family: $ch-family;
                     font-size: 22px;
                     letter-spacing: 20px;
                     color: #000;
-                    font-weight: 600;
+                    font-weight: 800;
                     margin-bottom: 18px;
                 }
                 .en {
                     font-family: $en-family;
-                    font-size: 76px;
+                    font-size: 92px;
                     font-weight: 900;
                     letter-spacing: 5px;
                     color: #000;
+                }
+                .icon {
+                    position: absolute;
+                }
+            }
+            .drinkList {
+                display: flex;
+                flex-direction: column;
+                max-height: 780px;
+                flex-wrap: wrap;
+                li {
+                    width: fit-content;
+                    cursor: pointer;
+                    margin-bottom: 50px;
+                    .region {
+                        font-family: $en-family;
+                        font-size: 12px;
+                        font-style: italic;
+                        font-weight: 500;
+                        color: #ea5406;
+                        margin-bottom: 15px;
+                    }
+                    .ch {
+                        font-family: $ch-family;
+                        font-size: 16px;
+                        letter-spacing: 0px;
+                        color: #000;
+                        font-weight: 600;
+                        margin-bottom: 8px;
+                    }
+                    .en {
+                        font-family: $en-family;
+                        font-size: 24px;
+                        font-weight: 900;
+                        letter-spacing: 1px;
+                        color: #000;
+                        margin-bottom: 18px;
+                    }
+
+                    .content {
+                        font-family: $ch-family;
+                        font-size: 12px;
+                        letter-spacing: 0px;
+                        color: #999999;
+                        font-weight: 500;
+                    }
                 }
             }
         }
         .menu-drinkList {
             position: absolute;
             top: 170px;
-            right: 50px;
+            right: 70px;
             z-index: 2;
+            .menu {
+                margin-bottom: 20px;
+            }
+            .drink-fixedList {
+                li {
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                    transition: 0.5s all;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    .dot {
+                        width: 10px;
+                        height: 10px;
+                        background-color: #ff4d00;
+                        border-radius: 50%;
+                        margin-right: 15px;
+                        // opacity: 0;
+                        transition: 0.5s all;
+                    }
+                    .title {
+                        position: relative;
+                        width: fit-content;
+                        font-size: 17px;
+                        font-weight: 600;
+                        font-family: $ch-family;
+                        color: #ff4d00;
+                        letter-spacing: 1px;
+                        padding-bottom: 1px;
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            left: 0;
+                            bottom: -6px;
+                            width: 0%;
+                            height: 5px;
+                            background-color: #ff4d00;
+                            transition: 0.5s all;
+                        }
+                    }
+                    &.current {
+                        opacity: 1 !important;
+                        .dot {
+                            opacity: 1;
+                        }
+                        .title {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    &:hover {
+                        .dot {
+                            opacity: 1;
+                        }
+                        .title {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .drinkList-pic {
+            position: absolute;
+            top: 410px;
+            right: 0;
+            width: 400px;
+            height: 650px;
+            ul {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: 0.5s all;
+                &.is-show {
+                    opacity: 1;
+                }
+                li {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: 0.5s all;
+                    &.is-show {
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 }
@@ -2198,7 +2643,7 @@ nav {
                     padding-bottom: 1px;
                     &::after {
                         position: absolute;
-                        content: '';
+                        content: "";
                         left: 0;
                         bottom: -3px;
                         width: 0%;
@@ -2239,7 +2684,7 @@ nav {
             position: relative;
             padding-top: 25px;
             @for $i from 1 through 13 {
-                @if($i%3==2) {
+                @if ($i%3==2) {
                     &:nth-child(#{$i}) {
                         margin-top: 35px;
                     }
@@ -2305,7 +2750,7 @@ nav {
             }
         }
         .pic {
-            mask: url('../images/s-mask.svg') no-repeat;
+            mask: url("../images/s-mask.svg") no-repeat;
             cursor: pointer;
             img {
                 transition: 0.5s all;
@@ -2337,7 +2782,7 @@ nav {
             flex-direction: column;
             .pic {
                 text-align: center;
-                mask: url('../images/s-fancy-mask.svg') no-repeat;
+                mask: url("../images/s-fancy-mask.svg") no-repeat;
                 margin-bottom: 45px;
             }
             .back {
@@ -2355,6 +2800,7 @@ nav {
     position: fixed;
     right: 30px;
     bottom: 100px;
+    z-index: 5;
 }
 
 .back {
@@ -2379,13 +2825,19 @@ nav {
 }
 
 footer {
-    width: 100%;
+    width: 100vw;
     background-color: transparent;
     padding: 100px 78px 0 68px;
     position: relative;
     z-index: 3;
     &.is-orange {
         background-color: #f4ddbe;
+    }
+    &.is-white {
+        background-color: #fff;
+    }
+    &.is-light-orange {
+        background-color: #f9efe1;
     }
     .top {
         .marquee {
@@ -2492,7 +2944,7 @@ footer {
 // vue
 .fade-enter-active,
 .fade-leave-active {
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .fade-enter,

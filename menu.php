@@ -401,7 +401,7 @@
             </li>
         </ul>
         <div class="back">
-            <a href="./product.php" class="flex-container align-middle">
+            <a href="./ourtea.php" class="flex-container align-middle">
                 <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="54.15" height="47.14" viewBox="0 0 54.15 47.14">
                     <g id="c" data-name="設計">
                         <g>
