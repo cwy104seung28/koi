@@ -3277,6 +3277,7 @@ footer {
     padding: 100px 78px 0 68px;
     position: relative;
     z-index: 3;
+    overflow: hidden;
     &.is-orange {
         background-color: #f4ddbe;
     }

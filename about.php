@@ -179,10 +179,10 @@
                 <li><img src="./images/a-event-pic-2.png" alt=""></li>
                 <li><img src="./images/a-event-pic-3.png" alt=""></li>
                 <li><img src="./images/a-event-pic-4.png" alt=""></li>
-                <li><img src="./images/a-event-pic-1.png" alt=""></li>
+                <!-- <li><img src="./images/a-event-pic-1.png" alt=""></li>
                 <li><img src="./images/a-event-pic-2.png" alt=""></li>
                 <li><img src="./images/a-event-pic-3.png" alt=""></li>
-                <li><img src="./images/a-event-pic-4.png" alt=""></li>
+                <li><img src="./images/a-event-pic-4.png" alt=""></li> -->
             </ul>
             <!-- <ul class="pic-area">
                 <li><img src="./images/a-event-pic-1.png" alt=""></li>
@@ -582,7 +582,7 @@
         dots: false,
         prevArrow: false,
         nextArrow: false,
-        slidesToShow: 8,
+        slidesToShow: 10,
         slidesToScroll: 1,
         rtl: true,
         // autoplay: true,
