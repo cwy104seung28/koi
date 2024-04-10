@@ -86,7 +86,11 @@
         </div>
     </div>
     <div class="bottom flex-container">
-        <div class="bear"><img src="./images/bear.svg"></div>
+        <div class="bear">
+            <div class="head"><img src="./images/b-head.svg" alt=""></div>
+            <div class="body"><img src="./images/b-body.svg" alt=""></div>
+            <div class="drink"><img src="./images/b-drink.svg" alt=""></div>
+        </div>
         <div class="list flex-container">
             <div class="logo"><img src="./images/footer-logo.svg"></div>
             <div class="note">(NAVIGATION)</div>

@@ -103,6 +103,50 @@
             </section>
         </div>
         <div class="apply-area">
+            <div class="apply-fancy">
+                <div class="fancy-inner">
+                    <div class="top-area">
+                        <div class="title">履历投递 </div>
+                        <div class="content">
+                            为确保履历投递成功，下列应征管道请择一投递履历，<br>
+                            切勿重复投递履历，谢谢。
+                        </div>
+                    </div>
+                    <ul class="applyList">
+                        <li>
+                            <a href="javascript:;">
+                                <div class="title">104招募连结</div>
+                                <div class="arrow">
+                                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="29.31" height="25.51" viewBox="0 0 29.31 25.51">
+                                        <g id="c" data-name="圖層 4">
+                                            <g>
+                                                <line class="e" y1="12.76" x2="26.26" y2="12.76" />
+                                                <path class="d" d="M8.93,24.93c-.38-.59-.2-1.37,.39-1.75L25.68,12.76,9.32,2.34c-.59-.38-.77-1.16-.39-1.75,.38-.59,1.17-.76,1.75-.39L28.72,11.69c.36,.23,.59,.64,.59,1.07s-.22,.84-.59,1.07L10.68,25.31c-.21,.13-.45,.2-.68,.2-.42,0-.83-.21-1.07-.59Z" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="note">Email直接投递履历连结</div>
+                                <div class="title">globalcareers@koicafe.com </div>
+                                <div class="arrow">
+                                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="29.31" height="25.51" viewBox="0 0 29.31 25.51">
+                                        <g id="c" data-name="圖層 4">
+                                            <g>
+                                                <line class="e" y1="12.76" x2="26.26" y2="12.76" />
+                                                <path class="d" d="M8.93,24.93c-.38-.59-.2-1.37,.39-1.75L25.68,12.76,9.32,2.34c-.59-.38-.77-1.16-.39-1.75,.38-.59,1.17-.76,1.75-.39L28.72,11.69c.36,.23,.59,.64,.59,1.07s-.22,.84-.59,1.07L10.68,25.31c-.21,.13-.45,.2-.68,.2-.42,0-.83-.21-1.07-.59Z" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div class="head-area">
                 <div class="en top">“Apply</div>
                 <div class="en bottom">NOW!”
@@ -111,30 +155,6 @@
                         茶饮是我们凝聚在此的共同语言
                     </div>
                 </div>
-            </div>
-            <div class="apply-fancy">
-                <div class="top-area">
-                    <div class="title">履历投递 </div>
-                    <div class="content">
-                        为确保履历投递成功，下列应征管道请择一投递履历，<br>
-                        切勿重复投递履历，谢谢。
-                    </div>
-                </div>
-                <ul class="applyList">
-                    <li>
-                        <a href="javascript:;">
-                            <div class="title">104招募连结</div>
-                            <div class="arrow"><img src="./images/r-arrow.svg"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <div class="note">Email直接投递履历连结</div>
-                            <div class="title">globalcareers@koicafe.com </div>
-                            <div class="arrow"><img src="./images/r-arrow.svg"></div>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
@@ -164,4 +184,56 @@
             $('.apply-fancy').removeClass('is-show');
         }
     });
+
+    gsap.timeline()
+        .to('.apply-fancy .fancy-inner', {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".apply-area",
+                start: "15% 25%",
+                end: "25% 25%",
+                scrub: 1,
+                // markers: true,
+            },
+            y: 0,
+            opacity: 1,
+        })
+        .to('.apply-fancy .fancy-inner .top-area', {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".apply-area",
+                start: "30% 25%",
+                end: "40% 25%",
+                scrub: 1,
+                // markers: true,
+            },
+            y: 0,
+            opacity: 1,
+        })
+        .to('.apply-fancy .fancy-inner .applyList li:first-child', {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".apply-area",
+                start: "35% 25%",
+                end: "45% 25%",
+                scrub: 1,
+                // markers: true,
+            },
+            // stagger:0.2,
+            y: 0,
+            opacity: 1,
+        })
+        .to('.apply-fancy .fancy-inner .applyList li:last-child', {
+            scrollTrigger: {
+                toggleActions: "play pause resume reverse",
+                trigger: ".apply-area",
+                start: "35% 25%",
+                end: "60% 25%",
+                scrub: 1,
+                // markers: true,
+            },
+            // delay: 0.5,
+            y: 0,
+            opacity: 1,
+        })
 </script>

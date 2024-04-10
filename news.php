@@ -211,10 +211,20 @@
             </ul>
         </div>
         <div class="menu-link">
-            <a href="./menu.php">
-                <img src="./images/menu-link.svg" alt="">
-            </a>
+            <div class="circle">
+                <div class="menu"><img src="./images/m-menu.svg" alt=""></div>
+                <div class="store"><img src="./images/m-store.svg" alt=""></div>
+            </div>
+            <div class="hover-link">
+                <div class="menu"><a href="./menu.php"><img src="./images/m-hover-menu.svg" alt=""></a></div>
+                <div class="store"><a href="./store.php"><img src="./images/m-hover-store.svg" alt=""></a></div>
+            </div>
+            <div class="bear">
+                <div class="drink"><img src="./images/b-drink-menu.svg" alt=""></div>
+                <div class="big-body"><img src="./images/b-big-body.svg" alt=""></div>
+            </div>
         </div>
+
     </div>
     <?php include 'footer.php'; ?>
 </body>

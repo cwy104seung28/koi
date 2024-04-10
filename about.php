@@ -55,7 +55,7 @@
                                 <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
                             </div>
                             <div class="content">
-                                坚持使用传统茶壶煮茶，自制专属器皿，水量、茶叶及温度的完美比例控制，使调茶师能精准掌握每一口茶汤的绝佳口感。即使身处世界各地，也能随时喝到令人回味无穷的好茶。
+                                鲜采茶叶，唯有高质量茶叶所泡出的浓郁茶香，才能战胜所有挑剔的味蕾。黄金珍珠，天然原料制成，使用不同水温交替烹煮，以确保每颗珍珠的透明饱满和Q弹美味。
                             </div>
                         </div>
                         <div class="pic-area"><img src="./images/a-info-pic-1.png" alt=""></div>
@@ -76,7 +76,7 @@
                         <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
                     </div>
                     <div class="content">
-                        坚持使用传统茶壶煮茶，自制专属器皿，水量、茶叶及温度的完美比例控制，使调茶师能精准掌握每一口茶汤的绝佳口感。即使身处世界各地，也能随时喝到令人回味无穷的好茶。
+                        鲜采茶叶，唯有高质量茶叶所泡出的浓郁茶香，才能战胜所有挑剔的味蕾。黄金珍珠，天然原料制成，使用不同水温交替烹煮，以确保每颗珍珠的透明饱满和Q弹美味。
                     </div>
                 </div>
                 <div class="pic-area"><img src="./images/a-info-pic-1.png" alt=""></div>
@@ -93,7 +93,7 @@
                         <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
                     </div>
                     <div class="content">
-                        鲜采茶叶，唯有高质量茶叶所泡出的浓郁茶香，才能战胜所有挑剔的味蕾。黄金珍珠，天然原料制成，使用不同水温交替烹煮，以确保每颗珍珠的透明饱满和Q弹美味。
+                        坚持使用传统茶壶煮茶，自制专属器皿，水量、茶叶及温度的完美比例控制，使调茶师能精准掌握每一口茶汤的绝佳口感。即使身处世界各地，也能随时喝到令人回味无穷的好茶。
                     </div>
                 </div>
                 <div class="pic-area"><img src="./images/a-info-pic-2.png" alt=""></div>
@@ -136,9 +136,9 @@
         <div class="about-ingredient flex-container">
             <div class="pic-area">
                 <div class="triangle">
-                    <div class="one triangle-1 is-show">茶汤</div>
-                    <div class="two triangle-2">甜度</div>
-                    <div class="three triangle-3">冰块</div>
+                    <div data-tri="1" class="one triangle-1 is-show">茶汤</div>
+                    <div data-tri="2" class="two triangle-2">甜度</div>
+                    <div data-tri="3" class="three triangle-3">冰块</div>
                 </div>
             </div>
             <div class="article-area">
@@ -179,13 +179,32 @@
                 <li><img src="./images/a-event-pic-2.png" alt=""></li>
                 <li><img src="./images/a-event-pic-3.png" alt=""></li>
                 <li><img src="./images/a-event-pic-4.png" alt=""></li>
+                <li><img src="./images/a-event-pic-1.png" alt=""></li>
+                <li><img src="./images/a-event-pic-2.png" alt=""></li>
+                <li><img src="./images/a-event-pic-3.png" alt=""></li>
+                <li><img src="./images/a-event-pic-4.png" alt=""></li>
             </ul>
             <!-- <ul class="pic-area">
                 <li><img src="./images/a-event-pic-1.png" alt=""></li>
                 <li><img src="./images/a-event-pic-2.png" alt=""></li>
                 <li><img src="./images/a-event-pic-3.png" alt=""></li>
                 <li><img src="./images/a-event-pic-4.png" alt=""></li>
+                <li><img src="./images/a-event-pic-1.png" alt=""></li>
+                <li><img src="./images/a-event-pic-2.png" alt=""></li>
+                <li><img src="./images/a-event-pic-3.png" alt=""></li>
+                <li><img src="./images/a-event-pic-4.png" alt=""></li>
             </ul> -->
+            <!-- <div class="pic-area">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/a-event-pic-1.png"></div>
+                        <div class="swiper-slide"><img src="./images/a-event-pic-2.png"></div>
+                        <div class="swiper-slide"><img src="./images/a-event-pic-3.png"></div>
+                        <div class="swiper-slide"><img src="./images/a-event-pic-4.png"></div>
+                    </div>
+                </div>
+            </div> -->
+
             <div class="article-area">
                 <!-- <ul class="article-inner">
                     <li>
@@ -236,15 +255,33 @@
         <div class="about-brandmap" id='brand'>
             <div class="title"><img src="./images/a-brand-map-title.svg" alt=""></div>
             <div class="brandmapWrap flex-container align-middle align-justify">
-                <div class="prev"><img src="./images/a-prev.svg" alt=""></div>
+                <div class="prev" @click="mapPrev()">
+                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                        <g id="d" data-name="設計">
+                            <g>
+                                <line class="c" x1="34.68" y1="15.09" x2="3.61" y2="15.09" />
+                                <path class="b" d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07s-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
                 <ul class="brandmap flex-container align-center-middle">
-                    <li @click="mapHandler(1)"><img src="./images/a-koi-the.svg" alt=""></li>
-                    <li @click="mapHandler(2)"><img src="./images/a-koi-express.svg" alt=""></li>
-                    <li @click="mapHandler(3)"><img src="./images/a-fifty.svg" alt=""></li>
-                    <li @click="mapHandler(4)"><img src="./images/a-koi-cafe.svg" alt=""></li>
-                    <li @click="mapHandler(5)"><img src="./images/a-koi-plus.svg" alt=""></li>
+                    <li @click="mapHandler(1)" :class="[{'current': map == 1 }]"><img src="./images/a-koi-the.svg" alt=""></li>
+                    <li @click="mapHandler(2)" :class="[{'current': map == 2 }]"><img src="./images/a-koi-express.svg" alt=""></li>
+                    <li @click="mapHandler(3)" :class="[{'current': map == 3 }]"><img src="./images/a-fifty.svg" alt=""></li>
+                    <li @click="mapHandler(4)" :class="[{'current': map == 4 }]"><img src="./images/a-koi-cafe.svg" alt=""></li>
+                    <li @click="mapHandler(5)" :class="[{'current': map == 5 }]"><img src="./images/a-koi-plus.svg" alt=""></li>
                 </ul>
-                <div class="next"><img src="./images/a-next.svg" alt=""></div>
+                <div class="next" @click="mapNext()">
+                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                        <g id="d" data-name="設計">
+                            <g>
+                                <line class="c" y1="15.09" x2="31.07" y2="15.09" />
+                                <path class="b" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
             </div>
             <ul class="brandmapList">
                 <transition name="fade" mode="out-in">
@@ -272,7 +309,19 @@
         methods: {
             mapHandler(i) {
                 this.map = i;
-            }
+            },
+            mapNext() {
+                this.map++;
+                if (this.map > 5) {
+                    this.map = 1;
+                }
+            },
+            mapPrev() {
+                this.map--;
+                if (this.map < 1) {
+                    this.map = 5;
+                }
+            },
         },
         filters: {},
         mounted() {
@@ -284,35 +333,55 @@
     var $tl = gsap.timeline({
         paused: true,
     });
-    $tl.to(".text-area .letter-k", {
+    $tl.to(".text-area .letter-k img", {
+            duration: 0,
+            opacity: 1,
+        }, '<0.3').to(".text-area .letter-k", {
             duration: 1,
             scale: 1,
-            opacity: 1,
+            // opacity: 1,
             ease: Power1.easeIn,
-        })
+        }, '<0')
+        // .add('o')
+        .to(".text-area .letter-o img", {
+            duration: 0,
+            opacity: 1,
+        }, '<.35')
         .to(".text-area .letter-o", {
             duration: 0.75,
             scale: 1,
-            opacity: 1,
+            // opacity: 1,
             x: 0,
             y: 0,
             ease: Power1.easeIn,
-        }, '<.35')
+        }, '<0')
+        .to(".text-area .letter-i img", {
+            duration: 0,
+            opacity: 1,
+        }, '<.25')
         .to(".text-area .letter-i", {
             duration: 0.75,
             scale: 1,
-            opacity: 1,
+            // opacity: 1,
             x: 0,
             y: 0,
             ease: Power1.easeIn,
-        }, '<.25')
+        }, '<0')
+        .to(".text-area .letter-t img", {
+            duration: 0,
+            opacity: 1,
+        }, '<.1')
         .to(".text-area .letter-t", {
             duration: 0.75,
             scale: 1,
-            opacity: 1,
+            // opacity: 1,
             x: 0,
             y: 0,
             ease: Power1.easeIn,
+        }, '<0')
+        .to(".text-area .letter-h img", {
+            duration: 0,
+            opacity: 1,
         }, '<.1')
         .to(".text-area .letter-h", {
             duration: 0.75,
@@ -321,6 +390,10 @@
             x: 0,
             y: 0,
             ease: Power1.easeIn,
+        }, '<0')
+        .to(".text-area .letter-e img", {
+            duration: 0,
+            opacity: 1,
         }, '<.1')
         .to(".text-area .letter-e", {
             duration: 0.75,
@@ -329,7 +402,8 @@
             x: 0,
             y: 0,
             ease: Power1.easeIn,
-        }, '<.1')
+        }, '<0')
+
     gsap.delayedCall(0.5, function() {
         $tl.play();
     });
@@ -356,7 +430,7 @@
         trigger: '.number-area',
         // toggleActions: "play reverse play reverse", //重覆觸發
         start: "20% center",
-        end: "60% center",
+        end: "25% center",
         // markers: true,
         animation: $tl_number,
         scrub: 1,
@@ -449,8 +523,12 @@
                         let m = $(window).width() / 2
                         $about.children().each(function(i, el) {
                             let x = $(el).offset().left
-                            if (x - m <= 0) {
-                                $(el).addClass("current").siblings().removeClass("current")
+                            // if (x - m <= 0) {
+                            //     $(el).addClass("current").siblings().removeClass("current")
+                            // }
+                            // console.log(x);
+                            if (x < -100) {
+                                $(el).children('.pic-area').css('transform', `rotate(${x/20}deg)`)
                             }
                         })
                     }
@@ -492,6 +570,12 @@
         item.innerHTML = ""; // or put the text you need inside quotes
     }
     dotNums.forEach(removeText);
+    $('div[data-tri]').click(function(e) {
+        e.preventDefault();
+        var slideTri = $(this).data('tri');
+        $('.slick-article').slick('slickGoTo', slideTri - 1);
+    });
+
 
     $('.about-event .pic-area').slick({
         speed: 1250,
@@ -510,6 +594,10 @@
         // nextArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`,
         // prevArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`
     });
+    // var swiper = new Swiper(".mySwiper", {
+    //     slidesPerView: 'auto',
+    //     spaceBetween: -250,
+    // });
 
     // $('.arrow-area .prev').click(function() {
     //     $('.about-event .pic-area').slick('slickPrev');
@@ -517,6 +605,60 @@
     // $('.arrow-area .next').click(function() {
     //     $('.about-event .pic-area').slick('slickNext');
     // })
+    // var slides = [];
+
+    // Append images to the slides array
+    // $('.about-event .pic-area li').each(function() {
+    //     "use strict";
+    //     slides.push($(this));
+    // });
+
+    // function slideshow() {
+
+    //     "use strict";
+
+    //     var $current = slides[0],
+    //         $next = slides[1];
+
+    //     setInterval(function() {
+
+    //         // Slide animation
+    //         $current.css('opacity', '0');
+    //         $next.css('transform', 'translate3d(0, 0, 0)');
+    //         setTimeout(function() {
+    //             $current.css('transform', 'translate3d(-100%, 0, 0)');
+    //         }, 250);
+    //         setTimeout(function() {
+    //             $current.css('opacity', '1');
+    //         }, 500);
+
+    //         setTimeout(function() {
+    //             // Reorder slides
+    //             slides.push($current);
+    //             slides.shift();
+
+    //             // Reestablish slide variables
+    //             $current = slides[0];
+    //             $next = slides[1];
+
+    //             // Reset position of slide
+    //             setTimeout(function() {
+    //                 slides[3].css('transform', 'translate3d(100%, 0, 0)');
+    //                 setTimeout(function() {
+    //                     slides[3].css('z-index', 1);
+    //                 }, 1000);
+    //                 $current.css('z-index', 0);
+    //             }, 1000); // END: setTimeout()
+    //             slides[3].css('z-index', -1) //<======= place here =========
+    //         }, 4000); // END: setInterval()
+    //     }, 1000);
+
+
+
+
+    // } // END: slideshow()
+
+    // slideshow();
 
     $('.about-event .number').slick({
         speed: 2000,

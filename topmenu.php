@@ -16,7 +16,7 @@
             <div class="name"><?php echo $menu; ?></div>
             <div class="page">(<span class="now"><?php echo $number; ?></span>/<span class="total">07</span>)</div>
         </div>
-        <div class="logo"><img src="./images/logo.svg"></div>
+        <div class="logo"><a href="./main.php"><img src="./images/logo.svg"></a></div>
         <div class="menuWrap" id="mouseTarget">
             <div class="menu">
                 <div class="circle"><img src="./images/menu.svg"></div>

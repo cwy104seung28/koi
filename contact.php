@@ -24,40 +24,45 @@
         </transition>
         <div class="contact-area flex-container align-justify">
             <div class="article-area">
-                <transition name="fade" mode="out-in">
-                    <div class="content" v-if="cat == 1" key="content1">
-                        ANY QUESTI<span class="orange">O</span>NS?<br>
-                        PLEASE FEEL<br>
-                        FREE T<span class="orange">O</span><br>
-                        C<span class="orange">O</span>NTACT US<br>
-                        HERE.
-                        <div class="note">感谢您的来信，我们将尽快回覆您</div>
-                    </div>
-                    <div class="content" v-if="cat == 2" key="content2">
-                        THANK Y<span class="orange">O</span>U<br>
-                        F<span class="orange">O</span>R YOUR L<span class="orange">O</span>VE<br>
-                        F<span class="orange">O</span>R K<span class="orange">O</span>I THÉ
-                        <div class="note">感谢您对KOI的喜爱，欲了解海外合作信息，请完整填写以下表格提供相关信息帮助我们进行合作评估。</div>
-                        <div class="other flex-container">
-                            <div class="dot">＊</div>
-                            <div class="text">
-                                现阶段下列地区暂不开放合作：新加坡、马来西亚、
-                                柬埔寨、越南
-                            </div>
+                <!-- <transition name="fade" mode="out-in">
+                   
+                </transition> -->
+                <div class="content content-1" v-if="cat == 1" key="content1">
+                    <ul class="change">
+                        <li class="inner">ANY QUESTI<span class="orange">O</span>NS?</li>
+                        <li class="inner">PLEASE FEEL</li>
+                        <li class="inner">FREE T<span class="orange">O</span></li>
+                        <li class="inner">C<span class="orange">O</span>NTACT US</li>
+                        <li class="inner">HERE.</li>
+                    </ul>
+                    <div class="note">感谢您的来信，我们将尽快回覆您</div>
+                </div>
+                <div class="content content-2" v-if="cat == 2" key="content2">
+                    <ul class="change">
+                        <li class="inner">THANK Y<span class="orange">O</span>U</li>
+                        <li class="inner">F<span class="orange">O</span>R YOUR L<span class="orange">O</span>VE</li>
+                        <li class="inner">F<span class="orange">O</span>R K<span class="orange">O</span>I THÉ</li>
+                    </ul>
+                    <div class="note">感谢您对KOI的喜爱，欲了解海外合作信息，请完整填写以下表格提供相关信息帮助我们进行合作评估。</div>
+                    <div class="other flex-container">
+                        <div class="dot">＊</div>
+                        <div class="text">
+                            现阶段下列地区暂不开放合作：新加坡、马来西亚、
+                            柬埔寨、越南
                         </div>
                     </div>
-                </transition>
+                </div>
             </div>
             <div class="form-area">
                 <ul class="formList flex-container align-justify">
-                    <li class="flex-container align-middle" @click='catHandler(1)'>
+                    <li class="flex-container align-middle" data-list="1" @click='catHandler(1)'>
                         <input type="radio" name="contact" id="option1" checked>
                         <label for="option1" class="flex-container align-middle">
                             <div class="radio"></div>
                             <div class="title">联络我们</div>
                         </label>
                     </li>
-                    <li class="flex-container align-middle" @click='catHandler(2)'>
+                    <li class="flex-container align-middle" data-list="2" @click='catHandler(2)'>
                         <input type="radio" name="contact" id="option2">
                         <label for="option2" class="flex-container align-middle">
                             <div class="radio"></div>
@@ -229,6 +234,71 @@
         filters: {},
         mounted() {
             $('.ask-select').niceSelect();
+            gsap.registerPlugin(ScrollTrigger);
+            let $tl_title = gsap.timeline({
+                    paused: true,
+                })
+                .to(".head-area .en", {
+                    duration: 1,
+                    y: 0,
+                    rotation: 0,
+                    ease: Power2.easeOut,
+                })
+
+            gsap.delayedCall(1, function() {
+                $tl_title.play();
+            });
+            let $tl_content = gsap.timeline({
+                    paused: true,
+                })
+                // .from(CSSRulePlugin.getRule(".contactWrap .article-area .change .inner::before"), {
+                //     duration: 0.5,
+                //     cssRule: {
+                //         scaleX: 0
+                //     },
+                //     // scaleY: 1,
+                //     stagger: 0.2,
+                //     transformOrigin: 'left',
+                //     ease: Power2.easeOut,
+                // })
+                .add('start')
+                .to(CSSRulePlugin.getRule(".contactWrap .article-area .change .inner::before"), {
+                    duration: 0.5,
+                    transformOrigin: 'left',
+                    cssRule: {
+                        scaleX: 1
+                    },
+                    // stagger: 0.2,
+                    ease: Power2.easeOut,
+                }, 'start')
+                .to(CSSRulePlugin.getRule(".contactWrap .article-area .change .inner::after"), {
+                    duration: 0.5,
+                    transformOrigin: 'right',
+                    cssRule: {
+                        scaleX: 0
+                    },
+                    // stagger: 0.2,
+                    ease: Power2.easeOut,
+                }, 'start')
+                .to(CSSRulePlugin.getRule(".contactWrap .article-area .change .inner::before"), {
+                    duration: 0.5,
+                    transformOrigin: 'right',
+                    cssRule: {
+                        scaleX: 0
+                    },
+                    // scale: -1,
+                    // stagger: 0.2,
+                    ease: Power2.easeOut,
+                })
+
+
+            gsap.delayedCall(1, function() {
+                $tl_content.play();
+            });
+
+            $('.formList li').click(function() {
+                $tl_content.restart();
+            })
         },
         updated() {},
     })
