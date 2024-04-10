@@ -329,6 +329,8 @@
         },
         updated() {},
     })
+
+    $('footer').addClass('is-light-orange')
     $('nav').addClass('is-move')
     var $tl = gsap.timeline({
         paused: true,
@@ -582,7 +584,7 @@
         dots: false,
         prevArrow: false,
         nextArrow: false,
-        slidesToShow: 10,
+        slidesToShow: 9,
         slidesToScroll: 1,
         rtl: true,
         // autoplay: true,

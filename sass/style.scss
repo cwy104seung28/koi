@@ -914,6 +914,7 @@ nav {
 }
 
 .aboutWrap {
+    // padding-bottom: 230px;
     .about-animation {
         .text-area {
             width: 100%;
@@ -1256,7 +1257,7 @@ nav {
             transform: rotate(35deg);
             // justify-content: right;
             direction: rtl;
-            margin-left: -80px;
+            margin-left: -120px;
             margin-top: 160px;
             &::before {
                 position: absolute;
@@ -2499,7 +2500,7 @@ nav {
 }
 
 .our-teaWrap {
-    padding: 85px 0 370px;
+    padding: 85px 0 170px;
     .head-area {
         .title {
             width: fit-content;
@@ -3274,7 +3275,7 @@ nav {
 footer {
     width: 100vw;
     background-color: transparent;
-    padding: 100px 78px 55 68px;
+    padding: 250px 78px 55px 68px;
     position: relative;
     z-index: 3;
     overflow: hidden;
