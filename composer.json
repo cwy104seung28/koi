@@ -1,7 +1,7 @@
 {
     "require": {
         "php": "^7",
-        "ext-pdo_meysql": "*",
+        "ext-pdo_mysql": "*",
         "ext-gd": "*"
     }
 }
