@@ -1256,7 +1256,7 @@ nav {
             transform: rotate(35deg);
             // justify-content: right;
             direction: rtl;
-            margin-left: -505px;
+            margin-left: -80px;
             margin-top: 160px;
             &::before {
                 position: absolute;
@@ -1272,7 +1272,7 @@ nav {
                 // position: absolute;
                 // transform: translate3d(100%, 0, 0);
                 z-index: 1;
-                transition: 1s all;
+                // transition: 1s all;
                 margin-left: -150px;
                 img {
                     transition: 0.5s all;
