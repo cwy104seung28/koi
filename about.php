@@ -174,36 +174,25 @@
             </div>
         </div>
         <div class="about-event flex-container">
-            <ul class="pic-area" dir="rtl">
+            <ul class="pic-area">
                 <li><img src="./images/a-event-pic-1.png" alt=""></li>
                 <li><img src="./images/a-event-pic-2.png" alt=""></li>
                 <li><img src="./images/a-event-pic-3.png" alt=""></li>
                 <li><img src="./images/a-event-pic-4.png" alt=""></li>
-                <!-- <li><img src="./images/a-event-pic-1.png" alt=""></li>
+                <li><img src="./images/a-event-pic-1.png" alt=""></li>
                 <li><img src="./images/a-event-pic-2.png" alt=""></li>
                 <li><img src="./images/a-event-pic-3.png" alt=""></li>
-                <li><img src="./images/a-event-pic-4.png" alt=""></li> -->
+                <li><img src="./images/a-event-pic-4.png" alt=""></li>
+                <li><img src="./images/a-event-pic-1.png" alt=""></li>
+                <li><img src="./images/a-event-pic-2.png" alt=""></li>
+                <li><img src="./images/a-event-pic-3.png" alt=""></li>
+                <li><img src="./images/a-event-pic-4.png" alt=""></li>
+                <li><img src="./images/a-event-pic-1.png" alt=""></li>
+                <li><img src="./images/a-event-pic-2.png" alt=""></li>
+                <li><img src="./images/a-event-pic-3.png" alt=""></li>
+                <li><img src="./images/a-event-pic-4.png" alt=""></li>
             </ul>
-            <!-- <ul class="pic-area">
-                <li><img src="./images/a-event-pic-1.png" alt=""></li>
-                <li><img src="./images/a-event-pic-2.png" alt=""></li>
-                <li><img src="./images/a-event-pic-3.png" alt=""></li>
-                <li><img src="./images/a-event-pic-4.png" alt=""></li>
-                <li><img src="./images/a-event-pic-1.png" alt=""></li>
-                <li><img src="./images/a-event-pic-2.png" alt=""></li>
-                <li><img src="./images/a-event-pic-3.png" alt=""></li>
-                <li><img src="./images/a-event-pic-4.png" alt=""></li>
-            </ul> -->
-            <!-- <div class="pic-area">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="./images/a-event-pic-1.png"></div>
-                        <div class="swiper-slide"><img src="./images/a-event-pic-2.png"></div>
-                        <div class="swiper-slide"><img src="./images/a-event-pic-3.png"></div>
-                        <div class="swiper-slide"><img src="./images/a-event-pic-4.png"></div>
-                    </div>
-                </div>
-            </div> -->
+
 
             <div class="article-area">
                 <!-- <ul class="article-inner">
@@ -336,11 +325,11 @@
         paused: true,
     });
     $tl.to(".text-area", {
-            duration: 1,
-            scale: 1,
-            // opacity: 1,
-            ease: Power3.easeOut,
-        })
+        duration: 1,
+        scale: 1,
+        // opacity: 1,
+        ease: Power3.easeOut,
+    })
     // $tl.to(".text-area .letter-k img", {
     //         duration: 0,
     //         opacity: 1,
@@ -585,108 +574,141 @@
     });
 
 
-    $('.about-event .pic-area').slick({
-        speed: 1250,
-        dots: false,
-        prevArrow: false,
-        nextArrow: false,
-        slidesToShow: 9,
-        slidesToScroll: 1,
-        rtl: true,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
-        // fade: true,
-        // vertical: true,
-        // verticalScrolling: true,
-        // draggable: false,
-        // nextArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`,
-        // prevArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`
-    });
-    // var swiper = new Swiper(".mySwiper", {
-    //     slidesPerView: 'auto',
-    //     spaceBetween: -250,
+    // $('.about-event .pic-area').slick({
+    //     speed: 1250,
+    //     dots: false,
+    //     prevArrow: false,
+    //     nextArrow: false,
+    //     slidesToShow: 9,
+    //     slidesToScroll: 1,
+    //     rtl: true,
+    //     // autoplay: true,
+    //     // autoplaySpeed: 2000,
+    //     // fade: true,
+    //     // vertical: true,
+    //     // verticalScrolling: true,
+    //     // draggable: false,
+    //     // nextArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`,
+    //     // prevArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`
     // });
 
+    var $carousel = $('.about-event .pic-area').flickity({
+        // options
+        cellAlign: 'center',
+        // contain: true,
+        wrapAround: true,
+        prevNextButtons: false,
+        pageDots: false,
+        rightToLeft: true,
+        draggable: false,
+        // asNavFor: '.about-event .number, .about-event .ch, .about-event .en'
+    });
+    $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
+    $carousel.on('change.flickity', function(event, index) {
+        $('.about-event .pic-area li').removeClass('is-show');
+        // $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
+        console.log(index);
+        if (index == 11) {
+            // $('.about-event .pic-area li:nth-child(1)').addClass('is-show')
+            $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
+            $('.about-event .pic-area li:nth-child(13)').css('z-index', '4')
+            $('.about-event .pic-area li:nth-child(14)').css('z-index', '3')
+            $('.about-event .pic-area li:nth-child(15)').css('z-index', '2')
+            $('.about-event .pic-area li:nth-child(16)').css('z-index', '1')
+            // for (var $num = 13; $num <= 16; $num++) {
+            //     $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${22 - $num}`);
+            // }
+        }
+        else if (index == 13) {
+            $('.about-event .pic-area li:nth-child(1)').addClass('is-show')
+            $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show')
+            $('.about-event .pic-area li:nth-child(1)').css('z-index', '4')
+            $('.about-event .pic-area li:nth-child(2)').css('z-index', '3')
+            $('.about-event .pic-area li:nth-child(3)').css('z-index', '2')
+            $('.about-event .pic-area li:nth-child(4)').css('z-index', '1')
+            for (var $num = 13; $num <= 16; $num++) {
+                $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${22 - $num}`);
+            }
+        } else if (index == 14) {
+            $('.about-event .pic-area li:nth-child(1)').addClass('is-show').next().addClass('is-show')
+            $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show')
+
+        } else if (index == 15) {
+            $('.about-event .pic-area li:nth-child(1)').addClass('is-show').next().addClass('is-show').next().addClass('is-show')
+            $('.about-event .pic-area li.is-selected').addClass('is-show')
+            $('.about-event .pic-area li:nth-child(16)').css('z-index','6');
+            $('.about-event .pic-area li:nth-child(1)').css('z-index', '4')
+            $('.about-event .pic-area li:nth-child(2)').css('z-index', '3')
+            $('.about-event .pic-area li:nth-child(3)').css('z-index', '2')
+            $('.about-event .pic-area li:nth-child(4)').css('z-index', '1')
+        } else if (index == 0) {
+            $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
+            // $('.about-event .pic-area li:nth-child(5)').css('z-index', '4')
+            // $('.about-event .pic-area li:nth-child(6)').css('z-index', '3')
+            // $('.about-event .pic-area li:nth-child(7)').css('z-index', '2')
+            // $('.about-event .pic-area li:nth-child(8)').css('z-index', '1')
+            // $('.about-event .pic-area li:nth-child(1)').css('z-index', '16')
+            // $('.about-event .pic-area li:nth-child(2)').css('z-index', '15')
+            // $('.about-event .pic-area li:nth-child(3)').css('z-index', '14')
+            // $('.about-event .pic-area li:nth-child(4)').css('z-index', '13')
+            for (var $num = 1; $num <= 16; $num++) {
+                $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${17 - $num}`);
+            }
+            // for (var $num = 4; $num < 16; $num++){
+            //     $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${16 - $num}`);
+            // }
+        } else {
+            $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
+        }
+    });
+
+    var $carousel_num = $('.about-event .number').flickity({
+        // options
+        cellAlign: 'left',
+        // contain: true,
+        wrapAround: true,
+        prevNextButtons: false,
+        pageDots: false,
+        fade: true,
+    });
+    var $carousel_ch = $('.about-event .ch').flickity({
+        // options
+        cellAlign: 'left',
+        // contain: true,
+        wrapAround: true,
+        prevNextButtons: false,
+        pageDots: false,
+        fade: true,
+    });
+    var $carousel_en = $('.about-event .en').flickity({
+        // options
+        cellAlign: 'left',
+        // contain: true,
+        wrapAround: true,
+        prevNextButtons: false,
+        pageDots: false,
+        fade: true,
+    });
+    $('.arrow-area .prev').on('click', function() {
+        $carousel.flickity('previous');
+        $carousel_num.flickity('previous');
+        $carousel_ch.flickity('previous');
+        $carousel_en.flickity('previous');
+    });
+    $('.arrow-area .next').on('click', function() {
+        $carousel.flickity('next');
+        $carousel_num.flickity('next');
+        $carousel_ch.flickity('next');
+        $carousel_en.flickity('next');
+    });
     // $('.arrow-area .prev').click(function() {
-    //     $('.about-event .pic-area').slick('slickPrev');
+    //     $('.about-event .number').slick('slickPrev');
     // })
     // $('.arrow-area .next').click(function() {
-    //     $('.about-event .pic-area').slick('slickNext');
+    //     $('.about-event .number').slick('slickNext');
     // })
-    // var slides = [];
-
-    // Append images to the slides array
-    // $('.about-event .pic-area li').each(function() {
-    //     "use strict";
-    //     slides.push($(this));
-    // });
-
-    // function slideshow() {
-
-    //     "use strict";
-
-    //     var $current = slides[0],
-    //         $next = slides[1];
-
-    //     setInterval(function() {
-
-    //         // Slide animation
-    //         $current.css('opacity', '0');
-    //         $next.css('transform', 'translate3d(0, 0, 0)');
-    //         setTimeout(function() {
-    //             $current.css('transform', 'translate3d(-100%, 0, 0)');
-    //         }, 250);
-    //         setTimeout(function() {
-    //             $current.css('opacity', '1');
-    //         }, 500);
-
-    //         setTimeout(function() {
-    //             // Reorder slides
-    //             slides.push($current);
-    //             slides.shift();
-
-    //             // Reestablish slide variables
-    //             $current = slides[0];
-    //             $next = slides[1];
-
-    //             // Reset position of slide
-    //             setTimeout(function() {
-    //                 slides[3].css('transform', 'translate3d(100%, 0, 0)');
-    //                 setTimeout(function() {
-    //                     slides[3].css('z-index', 1);
-    //                 }, 1000);
-    //                 $current.css('z-index', 0);
-    //             }, 1000); // END: setTimeout()
-    //             slides[3].css('z-index', -1) //<======= place here =========
-    //         }, 4000); // END: setInterval()
-    //     }, 1000);
-
-
-
-
-    // } // END: slideshow()
-
-    // slideshow();
-
-    $('.about-event .number').slick({
-        speed: 2000,
-        prevArrow: false,
-        nextArrow: false,
-        dots: false,
-        slidesToShow: 1,
-        fade: true,
-        asNavFor: '.about-event .ch, .about-event .en',
-
-
-    });
-    $('.arrow-area .prev').click(function() {
-        $('.about-event .number').slick('slickPrev');
-    })
-    $('.arrow-area .next').click(function() {
-        $('.about-event .number').slick('slickNext');
-    })
     $('.about-event .ch').slick({
-        speed: 2000,
+        speed: 1000,
         prevArrow: false,
         nextArrow: false,
         dots: false,
@@ -696,7 +718,7 @@
         // draggable: false,
     });
     $('.about-event .en').slick({
-        speed: 2000,
+        speed: 1000,
         prevArrow: false,
         nextArrow: false,
         dots: false,
