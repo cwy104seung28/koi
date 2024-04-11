@@ -571,6 +571,7 @@ nav {
     .drink-animation {
         position: relative;
         margin-bottom: 470px;
+        zoom: 1.1;
         .bg {
             text-align: center;
             .note {
@@ -801,7 +802,7 @@ nav {
     position: relative;
     z-index: 3;
     background-color: #f9efe1;
-    padding: 100px 0 300px;
+    padding: 100px 0 150px;
     .head-area {
         margin-bottom: 70px;
         text-align: center;
@@ -919,30 +920,32 @@ nav {
         .text-area {
             width: 100%;
             height: 100vh;
+            transform: scale(10);
             div {
+                // transform: scale(5);
                 margin: 0 12px;
-                img {
-                    opacity: 0;
-                }
+                // img {
+                //     opacity: 0;
+                // }
             }
-            .letter-k {
-                transform: scale(5);
-            }
-            .letter-o {
-                transform: scale(4) translateX(75px);
-            }
-            .letter-i {
-                transform: scale(4) translate(100px, 50px);
-            }
-            .letter-t {
-                transform: scale(4) translate(125px, 50px);
-            }
-            .letter-h {
-                transform: scale(4) translate(150px, 50px);
-            }
-            .letter-e {
-                transform: scale(4) translate(200px, 50px);
-            }
+            // .letter-k {
+            //     transform: scale(5);
+            // }
+            // .letter-o {
+            //     transform: scale(4) translateX(75px);
+            // }
+            // .letter-i {
+            //     transform: scale(4) translate(100px, 50px);
+            // }
+            // .letter-t {
+            //     transform: scale(4) translate(125px, 50px);
+            // }
+            // .letter-h {
+            //     transform: scale(4) translate(150px, 50px);
+            // }
+            // .letter-e {
+            //     transform: scale(4) translate(200px, 50px);
+            // }
             .space {
                 width: 120px;
             }
@@ -1555,7 +1558,7 @@ nav {
         margin-bottom: 230px;
     }
     .contact-area {
-        max-width: 1560px;
+        max-width: 1340px;
         margin: 0 auto;
     }
     .article-area {
@@ -1622,7 +1625,6 @@ nav {
         .formList {
             margin-bottom: 95px;
             li {
-                cursor: pointer;
                 .title {
                     position: relative;
                     font-size: 30px;
@@ -1661,11 +1663,17 @@ nav {
                         transition: 0.5s all;
                     }
                 }
+                label {
+                    cursor: pointer;
+                    opacity: 0.35;
+                    transition: 0.5s all;
+                }
             }
             input[type="radio"] {
                 display: none;
             }
             input[type="radio"]:checked + label {
+                opacity: 1;
                 .radio {
                     &::before {
                         opacity: 1;
@@ -1809,6 +1817,34 @@ nav {
             }
             .submit {
                 margin-top: 145px;
+                cursor: pointer;
+                .arrow {
+                    transition: 0.5s all;
+                }
+                .d {
+                    fill: #0c131b;
+                    transition: 0.5s all;
+                }
+
+                .e {
+                    fill: none;
+                    stroke: #0c131b;
+                    stroke-miterlimit: 10;
+                    stroke-width: 3px;
+                    transition: 0.5s all;
+                }
+                &:hover {
+                    .d {
+                        fill: #ea5406;
+                    }
+
+                    .e {
+                        stroke: #ea5406;
+                    }
+                    .arrow {
+                        transform: translateX(20px);
+                    }
+                }
             }
         }
     }
@@ -1862,7 +1898,7 @@ nav {
             }
             .inner {
                 transform-origin: left;
-                transform: translateY(250%) rotate(10deg);
+                transform: translateY(235%) rotate(10deg);
             }
             .en {
                 font-size: 30px;
@@ -1920,6 +1956,32 @@ nav {
                 stroke-miterlimit: 10;
                 stroke-width: 3px;
                 transition: 0.3s all;
+            }
+        }
+    }
+    .back {
+        a {
+            flex-direction: column;
+        }
+        #b {
+            transition: 0.5s all;
+        }
+        .d {
+            fill: $black;
+            transition: 0.5s all;
+        }
+        .text {
+            font-size: 28px;
+            font-weight: 700;
+            font-family: $en-family;
+            margin-top: 15px;
+        }
+        &:hover {
+            #b {
+                transform: translateX(20px);
+            }
+            .d {
+                fill: #ea5406;
             }
         }
     }
@@ -2082,7 +2144,7 @@ nav {
         }
     }
     .apply-area {
-        padding: 175px 90px 500px;
+        padding: 175px 90px 180px;
         height: 5000px;
         .apply-fancy {
             pointer-events: none;
@@ -2509,10 +2571,11 @@ nav {
             font-weight: 900;
             letter-spacing: 3px;
             font-size: 415px;
+            margin-bottom: -60px;
         }
         .drinkListWrap {
             position: relative;
-            padding-top: 166px;
+            padding-top: 130px;
             overflow: hidden;
             background-color: #f6ac2d;
             .drink {
@@ -2523,12 +2586,72 @@ nav {
                 li {
                     width: max-content;
                     margin-right: 70px;
-                    animation: wave2 7.5s infinite linear;
-                    @for $i from 1 through 12 {
-                        &:nth-child(#{$i}) {
-                            animation-delay: 1s * $i;
-                        }
+                    // animation: wave2 7.5s infinite linear;
+                    // @for $i from 1 through 4 {
+                    //     &:nth-child(#{$i}) {
+                    //         // animation-delay: 1s * $i;
+                    //         margin-bottom: -(($i - 1) * 50px);
+                    //     }
+                    // }
+                    // @for $i from 5 through 6 {
+                    //     &:nth-child(#{$i}) {
+                    //         // animation-delay: 1s * $i;
+                    //         margin-bottom: -((7 - $i) * 50px);
+                    //     }
+                    // }
+                    // @for $i from 7 through 10 {
+                    //     &:nth-child(#{$i}) {
+                    //         // animation-delay: 1s * $i;
+                    //         margin-bottom: -(($i - 7) * 50px);
+                    //     }
+                    // }
+                    // @for $i from 11 through 12 {
+                    //     &:nth-child(#{$i}) {
+                    //         // animation-delay: 1s * $i;
+                    //         margin-bottom: -((13 - $i) * 50px);
+                    //     }
+                    // }
+                    // @for $i from 6 through 8 {
+                    //     &:nth-child(#{$i}) {
+                    //         // animation-delay: 1s * $i;
+                    //         margin-bottom: -(($i - 6) * 50px);
+                    //     }
+                    // }
+                    // @for $i from 9 through 12 {
+                    //     &:nth-child(#{$i}) {
+                    //         // animation-delay: 1s * $i;
+                    //         margin-bottom: -((12 - $i) * 50px);
+                    //     }
+                    // }
+                    &:nth-child(1),
+                    &:nth-child(7) {
+                        animation: drink-1 5s linear infinite;
                     }
+                    &:nth-child(2),
+                    &:nth-child(8) {
+                        animation: drink-2 5s linear infinite;
+                    }
+                    &:nth-child(3),
+                    &:nth-child(9) {
+                        animation: drink-3 5s linear infinite;
+                    }
+                    &:nth-child(4),
+                    &:nth-child(10) {
+                        animation: drink-4 5s linear infinite;
+                    }
+                    &:nth-child(5),
+                    &:nth-child(11) {
+                        animation: drink-5 5s linear infinite;
+                    }
+                    &:nth-child(6),
+                    &:nth-child(12) {
+                        animation: drink-6 5s linear infinite;
+                    }
+                    // @for $i from 1 through 12 {
+                    //     &:nth-child(#{$i}) {
+                    //         animation-delay: 0.25s * $i;
+                    //     }
+                    // }
                     // &:nth-child(odd) {
                     //     animation: wave-up 5s ease-in-out infinite;
                     // }
@@ -2600,11 +2723,47 @@ nav {
                 left: 50%;
                 bottom: 30px;
                 transform: translateX(-50%);
+                .arrow {
+                    transition: 0.5s all;
+                }
+                .d {
+                    fill: #0c131b;
+                    transition: 0.5s all;
+                }
+
+                .e {
+                    fill: none;
+                    stroke: #0c131b;
+                    stroke-miterlimit: 10;
+                    stroke-width: 3px;
+                    transition: 0.5s all;
+                }
+                &:hover {
+                    .d {
+                        fill: #ea5406;
+                    }
+
+                    .e {
+                        stroke: #ea5406;
+                    }
+                    .arrow {
+                        transform: translateY(7px);
+                    }
+                }
             }
         }
     }
     .new-drinkWrap {
+        height: 100vh;
         padding: 95px 150px 67px;
+        .vegas-content-scrollable {
+            overflow: hidden;
+        }
+        .vegas-content {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
         .title {
             margin-right: 20px;
             .ch {
@@ -2628,6 +2787,9 @@ nav {
             height: 725px;
             margin-right: 180px;
             animation: circle-rotate 60s infinite linear;
+            li {
+                animation: circle-rotate 60s infinite linear;
+            }
         }
         .new-drink {
             display: flex;
@@ -2638,7 +2800,16 @@ nav {
                 margin-bottom: 35px;
                 cursor: pointer;
                 position: relative;
+                transition: 0.5s all;
+                opacity: 0.5;
                 &:hover {
+                    opacity: 1;
+                    &:after {
+                        width: 100%;
+                    }
+                }
+                &.current {
+                    opacity: 1;
                     &:after {
                         width: 100%;
                     }
@@ -2683,11 +2854,57 @@ nav {
     .drinkWrap {
         position: relative;
         padding: 168px 0 173px 147px;
+        .drink-changeList {
+            position: relative;
+        }
+        .slick-dots {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            li {
+                position: relative;
+                height: auto;
+                border-bottom: none;
+                padding: 0;
+                font-size: 0;
+                width: 12px;
+                height: 12px;
+                background-color: #000;
+                border-radius: 50%;
+                margin-right: 18px;
+                cursor: pointer;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &::after {
+                    content: "";
+                    border-radius: 50%;
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    background-color: #faeede;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    transition: 0.5s all;
+                }
+                &.slick-active {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
         .drinkWrapList {
             max-width: 1150px;
             > li {
                 margin-bottom: 200px;
                 &:nth-child(odd) {
+                    .slick-dots {
+                        left: 0;
+                        bottom: 0;
+                    }
                     .title {
                         .icon {
                             right: -128px;
@@ -2698,12 +2915,26 @@ nav {
                     .drinkList {
                         > li {
                             &:nth-child(5) {
+                                margin-top: 130px;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(1) {
+                    .drinkList {
+                        max-height: 800px;
+                        > li {
+                            &:nth-child(5) {
                                 margin-top: 160px;
                             }
                         }
                     }
                 }
                 &:nth-child(even) {
+                    .slick-dots {
+                        right: 100px;
+                        bottom: 0;
+                    }
                     .title {
                         .icon {
                             bottom: -120px;
@@ -2712,7 +2943,7 @@ nav {
                     .drinkList {
                         > li {
                             &:nth-child(1) {
-                                margin-top: 160px;
+                                margin-top: 130px;
                             }
                         }
                     }
@@ -2744,7 +2975,7 @@ nav {
             .drinkList {
                 display: flex;
                 flex-direction: column;
-                max-height: 780px;
+                max-height: 778px;
                 flex-wrap: wrap;
                 li {
                     width: fit-content;
@@ -2777,8 +3008,8 @@ nav {
 
                     .content {
                         font-family: $ch-family;
-                        font-size: 12px;
-                        letter-spacing: 0px;
+                        font-size: 14px;
+                        letter-spacing: 0.5px;
                         color: #999999;
                         font-weight: 500;
                     }
@@ -3146,11 +3377,14 @@ nav {
 .menu-link {
     width: 141px;
     height: 150px;
-    position: fixed;
+    // position: fixed;
+    // right: 30px;
+    // bottom: 100px;
+    position: absolute;
+    top: 75vh;
     right: 30px;
-    bottom: 100px;
     z-index: 5;
-    transition: 0.5s all;
+    // transition: 0.5s all;
     cursor: pointer;
 
     // overflow: hidden;
@@ -3247,27 +3481,6 @@ nav {
         }
         .hover-link {
             transform: translate(0, 0);
-        }
-    }
-}
-
-.back {
-    a {
-        flex-direction: column;
-    }
-    .d {
-        fill: $black;
-        transition: 0.3s all;
-    }
-    .text {
-        font-size: 28px;
-        font-weight: 700;
-        font-family: $en-family;
-        margin-top: 15px;
-    }
-    &:hover {
-        .d {
-            fill: #ea5406;
         }
     }
 }
@@ -3395,7 +3608,7 @@ footer {
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 10px 30px;
                 font-size: 13px;
-                font-weight: 500;
+                font-weight: 600;
                 letter-spacing: 1px;
                 height: fit-content;
             }
@@ -3409,6 +3622,11 @@ footer {
             letter-spacing: 1px;
             .top {
                 margin-bottom: 55px;
+                transition: 0.5s all;
+                cursor: pointer;
+                &:hover {
+                    transform: translateY(-20px);
+                }
             }
             .copyright {
                 margin-bottom: 6px;
@@ -3501,5 +3719,97 @@ footer {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes drink-1 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(150px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes drink-2 {
+    0% {
+        transform: translateY(50px);
+    }
+    17% {
+        transform: translateY(0px);
+    }
+    67% {
+        transform: translateY(150px);
+    }
+    // 75% {
+    //     transform: translateY(150px);
+    // }
+    100% {
+        transform: translateY(50px);
+    }
+}
+@keyframes drink-3 {
+    0% {
+        transform: translateY(100px);
+    }
+    33% {
+        transform: translateY(0px);
+    }
+    83% {
+        transform: translateY(150px);
+    }
+    // 75% {
+    //     transform: translateY(150px);
+    // }
+    100% {
+        transform: translateY(100px);
+    }
+}
+@keyframes drink-4 {
+    0% {
+        transform: translateY(150px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(150px);
+    }
+}
+
+@keyframes drink-5 {
+    0% {
+        transform: translateY(50px);
+    }
+    33% {
+        transform: translateY(150px);
+    }
+    83% {
+        transform: translateY(0px);
+    }
+    // 75% {
+    //     transform: translateY(150px);
+    // }
+    100% {
+        transform: translateY(50px);
+    }
+}
+@keyframes drink-6 {
+    0% {
+        transform: translateY(100px);
+    }
+    17% {
+        transform: translateY(150px);
+    }
+    67% {
+        transform: translateY(0px);
+    }
+    // 75% {
+    //     transform: translateY(150px);
+    // }
+    100% {
+        transform: translateY(100px);
     }
 }

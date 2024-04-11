@@ -103,11 +103,43 @@
                     </li>
                 </ul>
                 <div class="scroll-down">
-                    <img src="./images/t-scroll.svg" alt="">
+                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="170.03" height="55.27" viewBox="0 0 170.03 55.27">
+                        <g id="c" data-name="設計">
+                            <g>
+                                <g>
+                                    <path class="d" d="M3.56,55.27c-1.15-.67-2.03-1.56-2.64-2.67-.61-1.11-.92-2.38-.92-3.81s.31-2.7,.92-3.82c.61-1.12,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27,1.25,1.73,2.21,2.3l-.76,.91Z" />
+                                    <path class="d" d="M13.24,52.4c-.78,0-1.54-.15-2.27-.46-.73-.31-1.37-.74-1.93-1.3l.9-1.04c.53,.52,1.08,.91,1.63,1.16,.55,.25,1.14,.38,1.74,.38,.48,0,.89-.07,1.25-.2,.36-.13,.64-.33,.83-.58,.2-.25,.29-.54,.29-.85,0-.44-.15-.77-.46-1.01-.31-.23-.82-.41-1.53-.53l-1.64-.27c-.9-.16-1.57-.45-2.01-.87s-.67-.98-.67-1.68c0-.56,.15-1.05,.45-1.48,.3-.42,.72-.75,1.27-.99,.55-.23,1.18-.35,1.9-.35s1.41,.11,2.09,.34c.69,.23,1.3,.56,1.86,.99l-.81,1.12c-1.05-.8-2.12-1.2-3.21-1.2-.43,0-.8,.06-1.12,.18-.32,.12-.56,.29-.74,.51-.18,.22-.27,.47-.27,.76,0,.4,.14,.71,.41,.92,.27,.21,.72,.36,1.34,.46l1.58,.27c1.04,.17,1.8,.47,2.28,.91,.48,.44,.73,1.04,.73,1.81,0,.6-.16,1.12-.49,1.58s-.78,.8-1.37,1.06-1.27,.38-2.04,.38Z" />
+                                    <path class="d" d="M22.46,52.39c-.68,0-1.3-.16-1.86-.49-.56-.33-1-.77-1.32-1.33-.32-.56-.48-1.18-.48-1.88s.16-1.31,.49-1.87c.33-.55,.77-1,1.32-1.33,.56-.33,1.17-.5,1.85-.5,.54,0,1.06,.1,1.56,.31s.93,.5,1.29,.87l-.87,.97c-.27-.3-.57-.52-.91-.67s-.69-.22-1.05-.22c-.43,0-.82,.11-1.17,.32-.35,.21-.63,.51-.83,.88-.21,.37-.31,.79-.31,1.25s.1,.87,.31,1.25c.21,.37,.48,.67,.84,.89,.35,.22,.75,.33,1.19,.33,.36,0,.71-.07,1.02-.22,.32-.14,.62-.36,.9-.64l.85,.9c-.37,.38-.8,.68-1.29,.88s-1,.31-1.53,.31Z" />
+                                    <path class="d" d="M27.03,52.26v-7.13h1.4v.91c.22-.34,.5-.6,.83-.79s.71-.29,1.13-.29c.29,0,.53,.05,.71,.13v1.26c-.13-.06-.27-.1-.41-.12-.14-.02-.28-.03-.42-.03-.41,0-.77,.11-1.09,.33-.32,.22-.57,.54-.76,.96v4.77h-1.4Z" />
+                                    <path class="d" d="M35.84,52.4c-.69,0-1.32-.16-1.88-.49-.57-.33-1.01-.77-1.34-1.33-.33-.56-.49-1.19-.49-1.88s.16-1.32,.49-1.88c.33-.56,.77-1.01,1.34-1.34,.56-.33,1.19-.5,1.88-.5s1.33,.17,1.89,.5c.56,.33,1,.78,1.33,1.34,.33,.56,.49,1.18,.49,1.88s-.16,1.32-.49,1.88c-.33,.56-.77,1-1.33,1.33-.56,.33-1.19,.49-1.89,.49Zm0-1.23c.44,0,.83-.11,1.19-.33,.35-.22,.63-.52,.84-.89,.21-.37,.31-.79,.31-1.26s-.1-.87-.32-1.24c-.21-.37-.49-.67-.84-.89-.35-.22-.74-.34-1.18-.34s-.83,.11-1.18,.34c-.35,.22-.63,.52-.84,.89-.21,.37-.32,.78-.32,1.24s.1,.89,.31,1.26c.21,.37,.49,.67,.84,.89,.36,.22,.75,.33,1.19,.33Z" />
+                                    <path class="d" d="M41.51,52.26v-9.8l1.4-.27v10.07h-1.4Z" />
+                                    <path class="d" d="M45.19,52.26v-9.8l1.4-.27v10.07h-1.4Z" />
+                                    <path class="d" d="M55.48,52.39c-.69,0-1.22-.16-1.58-.48-.36-.32-.55-.79-.55-1.41v-4.19h-1.51v-1.18h1.51v-1.82l1.39-.34v2.16h2.1v1.18h-2.1v3.86c0,.36,.08,.62,.24,.78,.16,.15,.43,.23,.81,.23,.2,0,.37-.01,.52-.04,.15-.03,.32-.07,.5-.13v1.18c-.19,.07-.4,.11-.65,.15-.25,.03-.47,.05-.68,.05Z" />
+                                    <path class="d" d="M61.77,52.4c-.69,0-1.32-.16-1.88-.49-.56-.33-1.01-.77-1.34-1.33-.33-.56-.49-1.19-.49-1.88s.16-1.32,.49-1.88c.33-.56,.77-1.01,1.34-1.34,.56-.33,1.19-.5,1.88-.5s1.33,.17,1.89,.5c.56,.33,1,.78,1.33,1.34,.33,.56,.49,1.18,.49,1.88s-.16,1.32-.49,1.88c-.33,.56-.77,1-1.33,1.33-.56,.33-1.19,.49-1.89,.49Zm0-1.23c.44,0,.84-.11,1.19-.33s.63-.52,.84-.89c.21-.37,.31-.79,.31-1.26s-.1-.87-.31-1.24c-.21-.37-.49-.67-.84-.89-.35-.22-.74-.34-1.18-.34s-.83,.11-1.18,.34c-.35,.22-.63,.52-.84,.89-.21,.37-.32,.78-.32,1.24s.1,.89,.31,1.26c.21,.37,.48,.67,.84,.89,.35,.22,.75,.33,1.19,.33Z" />
+                                    <path class="d" d="M74.41,52.39c-.7,0-1.33-.16-1.9-.49-.57-.33-1.01-.77-1.34-1.33-.33-.56-.5-1.18-.5-1.88s.16-1.3,.48-1.85c.32-.56,.75-1,1.29-1.33s1.14-.5,1.81-.5,1.25,.17,1.76,.5,.92,.78,1.22,1.34c.3,.57,.46,1.2,.46,1.91v.39h-5.61c.07,.39,.22,.74,.44,1.05,.22,.31,.5,.55,.84,.73,.34,.18,.71,.27,1.11,.27,.34,0,.68-.05,1-.16s.59-.26,.8-.47l.9,.88c-.42,.32-.85,.55-1.29,.71-.44,.15-.93,.23-1.46,.23Zm-2.32-4.28h4.21c-.06-.37-.18-.7-.38-.99-.2-.29-.45-.51-.74-.67-.29-.16-.61-.24-.96-.24s-.68,.08-.98,.24c-.3,.16-.55,.38-.75,.67-.2,.29-.33,.62-.4,1Z" />
+                                    <path class="d" d="M78.34,52.26l2.77-3.65-2.66-3.47h1.64l1.83,2.44,1.83-2.44h1.58l-2.63,3.46,2.8,3.67h-1.64l-1.97-2.63-1.97,2.63h-1.58Z" />
+                                    <path class="d" d="M87.01,55.12v-9.98h1.39v.69c.6-.53,1.33-.8,2.18-.8,.67,0,1.28,.16,1.83,.49,.55,.33,.98,.77,1.29,1.32,.32,.55,.48,1.17,.48,1.86s-.16,1.31-.48,1.87c-.32,.56-.76,1-1.3,1.32s-1.16,.49-1.84,.49c-.39,0-.77-.06-1.13-.19-.36-.13-.7-.31-1.01-.54v3.47h-1.4Zm3.39-3.96c.46,0,.87-.11,1.23-.32s.65-.51,.86-.88c.21-.37,.32-.79,.32-1.25s-.11-.89-.32-1.26c-.21-.37-.5-.67-.86-.88-.36-.21-.77-.32-1.23-.32-.4,0-.77,.07-1.12,.22s-.63,.36-.87,.63v3.22c.23,.26,.52,.47,.88,.62,.35,.15,.72,.22,1.11,.22Z" />
+                                    <path class="d" d="M96.14,52.26v-9.8l1.4-.27v10.07h-1.4Z" />
+                                    <path class="d" d="M103.21,52.4c-.69,0-1.32-.16-1.88-.49-.56-.33-1.01-.77-1.34-1.33-.33-.56-.49-1.19-.49-1.88s.16-1.32,.49-1.88c.33-.56,.77-1.01,1.34-1.34,.56-.33,1.19-.5,1.88-.5s1.33,.17,1.89,.5c.56,.33,1,.78,1.33,1.34,.33,.56,.49,1.18,.49,1.88s-.16,1.32-.49,1.88c-.33,.56-.77,1-1.33,1.33-.56,.33-1.19,.49-1.89,.49Zm0-1.23c.44,0,.84-.11,1.19-.33s.63-.52,.84-.89c.21-.37,.31-.79,.31-1.26s-.1-.87-.31-1.24c-.21-.37-.49-.67-.84-.89-.35-.22-.74-.34-1.18-.34s-.83,.11-1.18,.34c-.35,.22-.63,.52-.84,.89-.21,.37-.32,.78-.32,1.24s.1,.89,.31,1.26c.21,.37,.48,.67,.84,.89,.35,.22,.75,.33,1.19,.33Z" />
+                                    <path class="d" d="M108.88,52.26v-7.13h1.4v.91c.22-.34,.5-.6,.83-.79s.71-.29,1.13-.29c.29,0,.53,.05,.71,.13v1.26c-.13-.06-.27-.1-.41-.12-.14-.02-.28-.03-.42-.03-.41,0-.77,.11-1.09,.33-.32,.22-.57,.54-.76,.96v4.77h-1.4Z" />
+                                    <path class="d" d="M117.71,52.39c-.7,0-1.33-.16-1.9-.49-.57-.33-1.01-.77-1.34-1.33-.33-.56-.5-1.18-.5-1.88s.16-1.3,.48-1.85c.32-.56,.75-1,1.29-1.33s1.14-.5,1.81-.5,1.25,.17,1.76,.5,.92,.78,1.22,1.34c.3,.57,.46,1.2,.46,1.91v.39h-5.61c.07,.39,.22,.74,.44,1.05,.22,.31,.5,.55,.84,.73,.34,.18,.71,.27,1.11,.27,.34,0,.68-.05,1-.16s.59-.26,.8-.47l.9,.88c-.42,.32-.85,.55-1.29,.71-.44,.15-.93,.23-1.46,.23Zm-2.32-4.28h4.21c-.06-.37-.18-.7-.38-.99-.2-.29-.45-.51-.74-.67-.29-.16-.61-.24-.96-.24s-.68,.08-.98,.24c-.3,.16-.55,.38-.75,.67-.2,.29-.33,.62-.4,1Z" />
+                                    <path class="d" d="M126.5,52.26v-7.13h1.4v.69c.53-.55,1.2-.83,2-.83,.49,0,.92,.11,1.29,.32,.38,.21,.68,.5,.9,.87,.3-.39,.65-.69,1.05-.89,.4-.2,.85-.3,1.36-.3,.53,0,1,.12,1.39,.35,.4,.23,.71,.56,.94,.98,.23,.42,.34,.91,.34,1.46v4.48h-1.4v-4.24c0-.56-.15-1-.44-1.32-.29-.32-.69-.48-1.2-.48-.35,0-.66,.08-.94,.24-.28,.16-.52,.4-.73,.73,.02,.09,.03,.19,.04,.29,0,.1,.01,.21,.01,.31v4.48h-1.39v-4.24c0-.56-.15-1-.44-1.32-.29-.32-.69-.48-1.2-.48-.34,0-.64,.07-.91,.22s-.5,.36-.7,.65v5.18h-1.4Z" />
+                                    <path class="d" d="M142.81,52.4c-.69,0-1.32-.16-1.88-.49-.56-.33-1.01-.77-1.34-1.33-.33-.56-.49-1.19-.49-1.88s.16-1.32,.49-1.88c.33-.56,.77-1.01,1.34-1.34,.56-.33,1.19-.5,1.88-.5s1.33,.17,1.89,.5c.56,.33,1,.78,1.33,1.34,.33,.56,.49,1.18,.49,1.88s-.16,1.32-.49,1.88c-.33,.56-.77,1-1.33,1.33-.56,.33-1.19,.49-1.89,.49Zm0-1.23c.44,0,.84-.11,1.19-.33,.36-.22,.63-.52,.84-.89,.21-.37,.31-.79,.31-1.26s-.11-.87-.31-1.24c-.21-.37-.49-.67-.84-.89-.35-.22-.74-.34-1.18-.34s-.83,.11-1.18,.34c-.35,.22-.63,.52-.84,.89-.21,.37-.31,.78-.31,1.24s.1,.89,.31,1.26c.21,.37,.48,.67,.84,.89,.35,.22,.75,.33,1.19,.33Z" />
+                                    <path class="d" d="M148.48,52.26v-7.13h1.4v.91c.22-.34,.5-.6,.83-.79,.33-.19,.71-.29,1.13-.29,.29,0,.53,.05,.71,.13v1.26c-.13-.06-.27-.1-.41-.12-.14-.02-.28-.03-.42-.03-.41,0-.78,.11-1.09,.33-.32,.22-.57,.54-.76,.96v4.77h-1.4Z" />
+                                    <path class="d" d="M157.31,52.39c-.7,0-1.33-.16-1.9-.49-.56-.33-1.01-.77-1.34-1.33-.33-.56-.5-1.18-.5-1.88s.16-1.3,.48-1.85,.75-1,1.29-1.33c.54-.33,1.14-.5,1.81-.5s1.25,.17,1.76,.5c.51,.33,.92,.78,1.23,1.34,.3,.57,.46,1.2,.46,1.91v.39h-5.61c.07,.39,.22,.74,.44,1.05,.22,.31,.5,.55,.84,.73,.34,.18,.71,.27,1.11,.27,.34,0,.68-.05,1-.16,.32-.11,.59-.26,.81-.47l.9,.88c-.42,.32-.85,.55-1.29,.71-.44,.15-.93,.23-1.46,.23Zm-2.32-4.28h4.21c-.06-.37-.18-.7-.38-.99-.2-.29-.45-.51-.74-.67-.29-.16-.61-.24-.96-.24s-.68,.08-.98,.24c-.3,.16-.55,.38-.75,.67-.2,.29-.33,.62-.4,1Z" />
+                                    <path class="d" d="M166.47,42.25c1.15,.67,2.03,1.56,2.64,2.67s.92,2.38,.92,3.81-.31,2.7-.92,3.82-1.49,2-2.64,2.67l-.76-.9c.96-.58,1.7-1.35,2.21-2.31,.51-.96,.77-2.05,.77-3.28s-.26-2.3-.77-3.27c-.51-.97-1.25-1.73-2.21-2.3l.76-.91Z" />
+                                </g>
+                                <g class="arrow">
+                                    <line class="e" x1="85.33" x2="85.33" y2="31.07" />
+                                    <path class="d" d="M70.93,10.57c.7-.45,1.63-.24,2.07,.46l12.33,19.36,12.33-19.36c.45-.7,1.37-.91,2.07-.46,.7,.45,.9,1.38,.46,2.07l-13.59,21.34c-.28,.43-.75,.69-1.27,.69s-.99-.26-1.27-.69l-13.59-21.34c-.16-.25-.23-.53-.23-.81,0-.5,.25-.98,.69-1.27Z" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>
-        <div class="new-drinkWrap flex-container align-center" style="background: url('./images/t-new-drink-bg.jpg') no-repeat center/cover;">
+        <div class="new-drinkWrap flex-container align-center">
             <div class="title">
                 <div class="ch">最新饮品</div>
                 <div class="en">
@@ -115,21 +147,23 @@
                     DRINKS
                 </div>
             </div>
-            <div class="pic">
-                <img src="./images/t-new-drink-center.png" alt="">
-            </div>
+            <ul class="pic">
+                <li> <img src="./images/t-new-drink-center.png" alt=""></li>
+                <li> <img src="./images/t-new-drink-center-2.png" alt=""></li>
+                <li> <img src="./images/t-new-drink-center.png" alt=""></li>
+            </ul>
             <ul class="new-drink">
-                <li>
+                <li data-drink="1" class="current">
                     <div class="region">/ CHINA</div>
                     <div class="ch">香栗波霸奶茶</div>
                     <div class="en">Jumbo Chestnut Milk Tea</div>
                 </li>
-                <li>
+                <li data-drink="2">
                     <div class="region">/ CHINA</div>
-                    <div class="ch">荞麦茶拿铁</div>
-                    <div class="en">Buckwheat Tea Latte</div>
+                    <div class="ch">柿柿如意果绿</div>
+                    <div class="en">Persimmon Green Tea</div>
                 </li>
-                <li>
+                <li data-drink="3">
                     <div class="region">/ CHINA</div>
                     <div class="ch">芋泥米香奶茶</div>
                     <div class="en">Taro Ricey Milk Tea</div>
@@ -146,56 +180,208 @@
                             EXCLUSIVE
                         </div>
                     </div>
-                    <ul class="drinkList">
-                        <li data-drink="1">
-                            <div class="region">/ CHINA</div>
-                            <div class="ch">荞麦茶拿铁</div>
-                            <div class="en">Buckwheat Tea Latte</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="2">
-                            <div class="region">/ CHINA</div>
-                            <div class="ch">芋泥米香奶茶</div>
-                            <div class="en">Taro Ricey Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="3">
-                            <div class="region">/ CHINA</div>
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="4">
-                            <div class="region">/ CHINA</div>
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="5">
-                            <div class="region">/ CHINA</div>
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="6">
-                            <div class="region">/ CHINA</div>
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="7">
-                            <div class="region">/ CHINA</div>
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="8">
-                            <div class="region">/ CHINA</div>
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                    </ul>
+                    <div class="drink-changeList">
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">荞麦茶拿铁</div>
+                                <div class="en">Buckwheat Tea Latte</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">芋泥米香奶茶</div>
+                                <div class="en">Taro Ricey Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="region">/ JAPAN</div>
+                                <div class="ch">草莓茉莉绿茶</div>
+                                <div class="en">Strawberry Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="region">/ MALAYSIA</div>
+                                <div class="ch">黑熔岩奶茶</div>
+                                <div class="en">Dark Lava Milk Tea </div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">草莓乳酪奶绿</div>
+                                <div class="en">Strawberry Cheesy Green Tea</div>
+                                <div class="content">一起喝草莓 ! 快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁 !</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">芋泥米香拿铁</div>
+                                <div class="en">Taro Ricey Tea Latte</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="region">/ JAPAN</div>
+                                <div class="ch">水蜜桃乳酪奶绿</div>
+                                <div class="en">Peach Cheesy Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="region">/ MALAYSIA</div>
+                                <div class="ch">芋泥米香拿铁</div>
+                                <div class="en">Taro Ricey Tea Latte</div>
+                                <div class="content">添加令人著迷的巧克力醬和巧克力小麥脆脆，滿足對甜食的渴望~</div>
+                            </li>
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">草莓乳酪奶绿</div>
+                                <div class="en">Strawberry Cheesy Green Tea</div>
+                                <div class="content">一起喝草莓 ! 快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁 !</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">芋泥米香拿铁</div>
+                                <div class="en">Taro Ricey Tea Latte</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="region">/ JAPAN</div>
+                                <div class="ch">水蜜桃乳酪奶绿</div>
+                                <div class="en">Peach Cheesy Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="region">/ MALAYSIA</div>
+                                <div class="ch">芋泥米香拿铁</div>
+                                <div class="en">Taro Ricey Tea Latte</div>
+                                <div class="content">添加令人著迷的巧克力醬和巧克力小麥脆脆，滿足對甜食的渴望~</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">荞麦茶拿铁</div>
+                                <div class="en">Buckwheat Tea Latte</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">芋泥米香奶茶</div>
+                                <div class="en">Taro Ricey Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="region">/ JAPAN</div>
+                                <div class="ch">草莓茉莉绿茶</div>
+                                <div class="en">Strawberry Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="region">/ MALAYSIA</div>
+                                <div class="ch">黑熔岩奶茶</div>
+                                <div class="en">Dark Lava Milk Tea </div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">荞麦茶拿铁</div>
+                                <div class="en">Buckwheat Tea Latte</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">芋泥米香奶茶</div>
+                                <div class="en">Taro Ricey Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="region">/ JAPAN</div>
+                                <div class="ch">草莓茉莉绿茶</div>
+                                <div class="en">Strawberry Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="region">/ MALAYSIA</div>
+                                <div class="ch">黑熔岩奶茶</div>
+                                <div class="en">Dark Lava Milk Tea </div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">草莓乳酪奶绿</div>
+                                <div class="en">Strawberry Cheesy Green Tea</div>
+                                <div class="content">一起喝草莓 ! 快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁 !</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">芋泥米香拿铁</div>
+                                <div class="en">Taro Ricey Tea Latte</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="region">/ JAPAN</div>
+                                <div class="ch">水蜜桃乳酪奶绿</div>
+                                <div class="en">Peach Cheesy Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="region">/ MALAYSIA</div>
+                                <div class="ch">芋泥米香拿铁</div>
+                                <div class="en">Taro Ricey Tea Latte</div>
+                                <div class="content">添加令人著迷的巧克力醬和巧克力小麥脆脆，滿足對甜食的渴望~</div>
+                            </li>
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">草莓乳酪奶绿</div>
+                                <div class="en">Strawberry Cheesy Green Tea</div>
+                                <div class="content">一起喝草莓 ! 快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁 !</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">芋泥米香拿铁</div>
+                                <div class="en">Taro Ricey Tea Latte</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="region">/ JAPAN</div>
+                                <div class="ch">水蜜桃乳酪奶绿</div>
+                                <div class="en">Peach Cheesy Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="region">/ MALAYSIA</div>
+                                <div class="ch">芋泥米香拿铁</div>
+                                <div class="en">Taro Ricey Tea Latte</div>
+                                <div class="content">添加令人著迷的巧克力醬和巧克力小麥脆脆，滿足對甜食的渴望~</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">荞麦茶拿铁</div>
+                                <div class="en">Buckwheat Tea Latte</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="region">/ CHINA</div>
+                                <div class="ch">芋泥米香奶茶</div>
+                                <div class="en">Taro Ricey Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="region">/ JAPAN</div>
+                                <div class="ch">草莓茉莉绿茶</div>
+                                <div class="en">Strawberry Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="region">/ MALAYSIA</div>
+                                <div class="ch">黑熔岩奶茶</div>
+                                <div class="en">Dark Lava Milk Tea </div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li data-where="1">
                     <div class="title">
@@ -206,48 +392,176 @@
                         </div>
                         <div class="icon"><img src="./images/index-drink-icon-1.svg" alt=""></div>
                     </div>
-                    <ul class="drinkList">
-                        <li data-drink="1">
-                            <div class="ch">荞麦茶拿铁</div>
-                            <div class="en">Buckwheat Tea Latte</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="2">
-                            <div class="ch">芋泥米香奶茶</div>
-                            <div class="en">Taro Ricey Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="3">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="4">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="5">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="6">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="7">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="8">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                    </ul>
+                    <div class="drink-changeList">
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="ch">茉莉绿茶</div>
+                                <div class="en">Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">阿萨姆红茶</div>
+                                <div class="en">Black Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">黄金乌龙茶</div>
+                                <div class="en">Golden Oolong Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="ch">黑熔岩奶茶</div>
+                                <div class="en">Dark Lava Milk Tea </div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="ch">水蜜桃绿茶</div>
+                                <div class="en">Peach Green Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="ch">金桔柠檬绿茶</div>
+                                <div class="en">Lemon Lime Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="ch">百香果鲜果绿茶</div>
+                                <div class="en">Passion Fruit Green Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="ch">荔枝红茶</div>
+                                <div class="en">Lychee Black Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="ch">茉莉绿茶</div>
+                                <div class="en">Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="ch">水蜜桃绿茶</div>
+                                <div class="en">Peach Green Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">阿萨姆红茶</div>
+                                <div class="en">Black Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="ch">金桔柠檬绿茶</div>
+                                <div class="en">Lemon Lime Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">黄金乌龙茶</div>
+                                <div class="en">Golden Oolong Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="ch">百香果鲜果绿茶</div>
+                                <div class="en">Passion Fruit Green Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="ch">黑熔岩奶茶</div>
+                                <div class="en">Dark Lava Milk Tea </div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="ch">荔枝红茶</div>
+                                <div class="en">Lychee Black Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="ch">茉莉绿茶</div>
+                                <div class="en">Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">阿萨姆红茶</div>
+                                <div class="en">Black Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">黄金乌龙茶</div>
+                                <div class="en">Golden Oolong Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="ch">黑熔岩奶茶</div>
+                                <div class="en">Dark Lava Milk Tea </div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="ch">水蜜桃绿茶</div>
+                                <div class="en">Peach Green Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="ch">金桔柠檬绿茶</div>
+                                <div class="en">Lemon Lime Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="ch">百香果鲜果绿茶</div>
+                                <div class="en">Passion Fruit Green Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="ch">荔枝红茶</div>
+                                <div class="en">Lychee Black Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="ch">茉莉绿茶</div>
+                                <div class="en">Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="ch">水蜜桃绿茶</div>
+                                <div class="en">Peach Green Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">阿萨姆红茶</div>
+                                <div class="en">Black Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="ch">金桔柠檬绿茶</div>
+                                <div class="en">Lemon Lime Green Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">黄金乌龙茶</div>
+                                <div class="en">Golden Oolong Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="ch">百香果鲜果绿茶</div>
+                                <div class="en">Passion Fruit Green Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="ch">黑熔岩奶茶</div>
+                                <div class="en">Dark Lava Milk Tea </div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="ch">荔枝红茶</div>
+                                <div class="en">Lychee Black Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li data-where="2">
                     <div class="title">
@@ -257,48 +571,178 @@
                         </div>
                         <div class="icon"><img src="./images/index-drink-icon-2.svg" alt=""></div>
                     </div>
-                    <ul class="drinkList">
-                        <li data-drink="1">
-                            <div class="ch">荞麦茶拿铁</div>
-                            <div class="en">Buckwheat Tea Latte</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="2">
-                            <div class="ch">芋泥米香奶茶</div>
-                            <div class="en">Taro Ricey Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="3">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="4">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="5">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="6">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="7">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li data-drink="8">
-                            <div class="ch">香栗波霸奶茶</div>
-                            <div class="en">Jumbo Chestnut Milk Tea</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                    </ul>
+                    <div class="drink-changeList">
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="ch">奶茶</div>
+                                <div class="en">Milk Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">黄金珍奶</div>
+                                <div class="en">Golden Bubble Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">乌龙奶茶</div>
+                                <div class="en">Oolong Milk Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="ch">榛果奶茶</div>
+                                <div class="en">Hazelnut Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="ch">焦糖奶茶</div>
+                                <div class="en">Caramel Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="ch">巧克力奶茶</div>
+                                <div class="en">Chocolate Milk</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="ch">蜂蜜奶茶</div>
+                                <div class="en">Honey Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="ch">鲜奶绿茶</div>
+                                <div class="en">Green Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="5">
+                                <div class="ch">焦糖奶茶</div>
+                                <div class="en">Caramel Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="ch">巧克力奶茶</div>
+                                <div class="en">Chocolate Milk</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="ch">蜂蜜奶茶</div>
+                                <div class="en">Honey Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="ch">鲜奶绿茶</div>
+                                <div class="en">Green Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="1">
+                                <div class="ch">奶茶</div>
+                                <div class="en">Milk Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">黄金珍奶</div>
+                                <div class="en">Golden Bubble Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">乌龙奶茶</div>
+                                <div class="en">Oolong Milk Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="ch">榛果奶茶</div>
+                                <div class="en">Hazelnut Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="ch">奶茶</div>
+                                <div class="en">Milk Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">黄金珍奶</div>
+                                <div class="en">Golden Bubble Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">乌龙奶茶</div>
+                                <div class="en">Oolong Milk Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="ch">榛果奶茶</div>
+                                <div class="en">Hazelnut Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="ch">焦糖奶茶</div>
+                                <div class="en">Caramel Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="ch">巧克力奶茶</div>
+                                <div class="en">Chocolate Milk</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="ch">蜂蜜奶茶</div>
+                                <div class="en">Honey Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="ch">鲜奶绿茶</div>
+                                <div class="en">Green Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="5">
+                                <div class="ch">焦糖奶茶</div>
+                                <div class="en">Caramel Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="ch">巧克力奶茶</div>
+                                <div class="en">Chocolate Milk</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="ch">蜂蜜奶茶</div>
+                                <div class="en">Honey Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="ch">鲜奶绿茶</div>
+                                <div class="en">Green Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+                            <li data-drink="1">
+                                <div class="ch">奶茶</div>
+                                <div class="en">Milk Tea</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">黄金珍奶</div>
+                                <div class="en">Golden Bubble Milk Tea</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">乌龙奶茶</div>
+                                <div class="en">Oolong Milk Tea</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="ch">榛果奶茶</div>
+                                <div class="en">Hazelnut Milk Tea</div>
+                                <div class="content">添加令人着迷的巧克力酱和巧克力小麦脆脆，满足对甜食的渴望~</div>
+                            </li>
+
+                        </ul>
+                    </div>
                 </li>
                 <li data-where="3">
                     <div class="title">
@@ -308,23 +752,67 @@
                         </div>
                         <div class="icon"><img src="./images/index-drink-icon-5.svg" alt=""></div>
                     </div>
-                    <ul class="drinkList">
-                        <li>
-                            <div class="ch">葡萄柚汁</div>
-                            <div class="en">Grapefruit Juice</div>
-                            <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
-                        </li>
-                        <li>
-                            <div class="ch">柠檬梅子汁</div>
-                            <div class="en">Lemon Plum Juice</div>
-                            <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
-                        </li>
-                        <li>
-                            <div class="ch">八冰茶</div>
-                            <div class="en">No.8 Juice</div>
-                            <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
-                        </li>
-                    </ul>
+                    <div class="drink-changeList">
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="ch">葡萄柚汁</div>
+                                <div class="en">Grapefruit Juice</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">柠檬梅子汁</div>
+                                <div class="en">Lemon Plum Juice</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">八冰茶</div>
+                                <div class="en">No.8 Juice</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="4">
+                                <div class="ch">葡萄柚汁</div>
+                                <div class="en">Grapefruit Juice</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="5">
+                                <div class="ch">柠檬梅子汁</div>
+                                <div class="en">Lemon Plum Juice</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="6">
+                                <div class="ch">八冰茶</div>
+                                <div class="en">No.8 Juice</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                            <li data-drink="7">
+                                <div class="ch">葡萄柚汁</div>
+                                <div class="en">Grapefruit Juice</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="8">
+                                <div class="ch">柠檬梅子汁</div>
+                                <div class="en">Lemon Plum Juice</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                        </ul>
+                        <ul class="drinkList">
+                            <li data-drink="1">
+                                <div class="ch">葡萄柚汁</div>
+                                <div class="en">Grapefruit Juice</div>
+                                <div class="content">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
+                            </li>
+                            <li data-drink="2">
+                                <div class="ch">柠檬梅子汁</div>
+                                <div class="en">Lemon Plum Juice</div>
+                                <div class="content">嚼得到的芋头颗粒配上软滑细腻米香奶冻，明天约上Homie一起Citywalk</div>
+                            </li>
+                            <li data-drink="3">
+                                <div class="ch">八冰茶</div>
+                                <div class="en">No.8 Juice</div>
+                                <div class="content">选用颗粒饱满苦荞冲泡的汤色纯洁明亮，融合纯牛奶，口感舒适香醇双口</div>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
             <div class="menu-drinkList">
@@ -404,6 +892,77 @@
 
 <script>
     $('footer').addClass('is-white');
+
+    // $('.new-drink li').click(function() {
+
+    // })
+    $(".new-drinkWrap").vegas({
+        timer: false,
+        autoplay: false,
+        // delay: 2000,
+        transitionDuration: 1000,
+        slides: [{
+                src: "./images/t-new-drink-bg.jpg"
+            }, {
+                src: "./images/t-new-drink-bg-2.jpg"
+            },
+            {
+                src: "./images/t-new-drink-bg.jpg"
+            }
+        ],
+    });
+    $('.new-drinkWrap .pic').slick({
+        dots: false,
+        speed: 1500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        autoplay: true,
+        prevArrow: false,
+        nextArrow: false,
+    });
+
+    $('.new-drinkWrap .pic').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        console.log(nextSlide);
+        $(".new-drinkWrap").vegas('jump', nextSlide);
+        $(`.new-drink li:nth-child(${nextSlide + 1})`).addClass('current').siblings().removeClass('current');
+    });
+    var clickLock = false;
+
+    $('.new-drink li[data-drink]').click(function(e) {
+        e.preventDefault();
+        if (clickLock) return;
+        clickLock = true;
+
+        var slideDrink = $(this).data('drink');
+        $(this).addClass('current').siblings().removeClass('current');
+        $('.new-drinkWrap .pic').slick('slickGoTo', slideDrink - 1);
+        $(".new-drinkWrap").vegas('jump', slideDrink - 1);
+
+        gsap.delayedCall(2, function() {
+            clickLock = false;
+        });
+    });
+    $('.drink-changeList').each(function(i, el) {
+        $(el).slick({
+            dots: true,
+            speed: 1000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            // autoplay: true,
+            prevArrow: false,
+            nextArrow: false,
+        });
+    })
+    var dotNums = document.querySelectorAll(".slick-dots button");
+
+    function removeText(item) {
+        item.innerHTML = ""; // or put the text you need inside quotes
+    }
+    dotNums.forEach(removeText);
+
+
     ScrollTrigger.create({
         toggleActions: "play pause resume reverse", //重覆觸發
         trigger: ".menu-drinkList",

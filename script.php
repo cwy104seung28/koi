@@ -51,4 +51,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css">
+<script src="./js/vegas.js"></script>
+
 <script src="dist/common.js?t=0731"></script>

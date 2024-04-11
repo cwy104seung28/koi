@@ -451,9 +451,9 @@
             paused: true,
         })
         .to(CSSRulePlugin.getRule(".menuListWrap .head-area::after"), {
-            duration: 0.25,
+            duration: 1,
             width: '100%',
-            ease: Power2.easeOut,
+            ease: Power3.easeOut,
         })
         .to(".head-area .en", {
             duration: 0.75,
@@ -462,10 +462,10 @@
             ease: Power2.easeOut,
         }, '<0.5')
         .to(CSSRulePlugin.getRule(".menuListWrap .menuList .menu-inner::after"), {
-            duration: 0.25,
+            duration: 1,
             width: '100%',
             stagger: 0.3,
-            ease: Power2.easeOut,
+            ease: Power3.easeOut,
         })
         .to(".menuList>li .inner", {
             duration: 1.5,
@@ -473,7 +473,7 @@
             rotation: 0,
             stagger: 0.1,
             ease: Power2.easeOut,
-        }, '<0.5')
+        }, '<0')
 
 
 

@@ -335,81 +335,87 @@
     var $tl = gsap.timeline({
         paused: true,
     });
-    $tl.to(".text-area .letter-k img", {
-            duration: 0,
-            opacity: 1,
-        }, '<0.3').to(".text-area .letter-k", {
+    $tl.to(".text-area", {
             duration: 1,
             scale: 1,
             // opacity: 1,
-            ease: Power1.easeIn,
-        }, '<0')
-        // .add('o')
-        .to(".text-area .letter-o img", {
-            duration: 0,
-            opacity: 1,
-        }, '<.35')
-        .to(".text-area .letter-o", {
-            duration: 0.75,
-            scale: 1,
-            // opacity: 1,
-            x: 0,
-            y: 0,
-            ease: Power1.easeIn,
-        }, '<0')
-        .to(".text-area .letter-i img", {
-            duration: 0,
-            opacity: 1,
-        }, '<.25')
-        .to(".text-area .letter-i", {
-            duration: 0.75,
-            scale: 1,
-            // opacity: 1,
-            x: 0,
-            y: 0,
-            ease: Power1.easeIn,
-        }, '<0')
-        .to(".text-area .letter-t img", {
-            duration: 0,
-            opacity: 1,
-        }, '<.1')
-        .to(".text-area .letter-t", {
-            duration: 0.75,
-            scale: 1,
-            // opacity: 1,
-            x: 0,
-            y: 0,
-            ease: Power1.easeIn,
-        }, '<0')
-        .to(".text-area .letter-h img", {
-            duration: 0,
-            opacity: 1,
-        }, '<.1')
-        .to(".text-area .letter-h", {
-            duration: 0.75,
-            scale: 1,
-            opacity: 1,
-            x: 0,
-            y: 0,
-            ease: Power1.easeIn,
-        }, '<0')
-        .to(".text-area .letter-e img", {
-            duration: 0,
-            opacity: 1,
-        }, '<.1')
-        .to(".text-area .letter-e", {
-            duration: 0.75,
-            scale: 1,
-            opacity: 1,
-            x: 0,
-            y: 0,
-            ease: Power1.easeIn,
-        }, '<0')
+            ease: Power3.easeOut,
+        })
+    // $tl.to(".text-area .letter-k img", {
+    //         duration: 0,
+    //         opacity: 1,
+    //     }, '<0.3').to(".text-area .letter-k", {
+    //         duration: 1,
+    //         scale: 1,
+    //         // opacity: 1,
+    //         ease: Power1.easeIn,
+    //     }, '<0')
+    //     // .add('o')
+    //     .to(".text-area .letter-o img", {
+    //         duration: 0,
+    //         opacity: 1,
+    //     }, '<.35')
+    //     .to(".text-area .letter-o", {
+    //         duration: 0.75,
+    //         scale: 1,
+    //         // opacity: 1,
+    //         x: 0,
+    //         y: 0,
+    //         ease: Power1.easeIn,
+    //     }, '<0')
+    //     .to(".text-area .letter-i img", {
+    //         duration: 0,
+    //         opacity: 1,
+    //     }, '<.25')
+    //     .to(".text-area .letter-i", {
+    //         duration: 0.75,
+    //         scale: 1,
+    //         // opacity: 1,
+    //         x: 0,
+    //         y: 0,
+    //         ease: Power1.easeIn,
+    //     }, '<0')
+    //     .to(".text-area .letter-t img", {
+    //         duration: 0,
+    //         opacity: 1,
+    //     }, '<.1')
+    //     .to(".text-area .letter-t", {
+    //         duration: 0.75,
+    //         scale: 1,
+    //         // opacity: 1,
+    //         x: 0,
+    //         y: 0,
+    //         ease: Power1.easeIn,
+    //     }, '<0')
+    //     .to(".text-area .letter-h img", {
+    //         duration: 0,
+    //         opacity: 1,
+    //     }, '<.1')
+    //     .to(".text-area .letter-h", {
+    //         duration: 0.75,
+    //         scale: 1,
+    //         opacity: 1,
+    //         x: 0,
+    //         y: 0,
+    //         ease: Power1.easeIn,
+    //     }, '<0')
+    //     .to(".text-area .letter-e img", {
+    //         duration: 0,
+    //         opacity: 1,
+    //     }, '<.1')
+    //     .to(".text-area .letter-e", {
+    //         duration: 0.75,
+    //         scale: 1,
+    //         opacity: 1,
+    //         x: 0,
+    //         y: 0,
+    //         ease: Power1.easeIn,
+    //     }, '<0')
 
     gsap.delayedCall(0.5, function() {
         $tl.play();
     });
-    gsap.delayedCall(2.5, function() {
+    gsap.delayedCall(1.5, function() {
         $('nav').removeClass('is-move')
     });
     let $tl_number = gsap.timeline({

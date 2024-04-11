@@ -202,7 +202,7 @@
             scrollTrigger: {
                 toggleActions: "play pause resume reverse",
                 trigger: ".apply-area",
-                start: "30% 25%",
+                start: "20% 25%",
                 end: "40% 25%",
                 scrub: 1,
                 // markers: true,
@@ -214,7 +214,7 @@
             scrollTrigger: {
                 toggleActions: "play pause resume reverse",
                 trigger: ".apply-area",
-                start: "35% 25%",
+                start: "25% 25%",
                 end: "45% 25%",
                 scrub: 1,
                 // markers: true,
@@ -227,7 +227,7 @@
             scrollTrigger: {
                 toggleActions: "play pause resume reverse",
                 trigger: ".apply-area",
-                start: "35% 25%",
+                start: "30% 25%",
                 end: "60% 25%",
                 scrub: 1,
                 // markers: true,
