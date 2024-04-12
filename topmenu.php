@@ -6,7 +6,7 @@
     <div id="preload" style="z-index: 100; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #fff;"></div>
 <?php endif ?>
 <?php if ($now == 'INDEX') : ?>
-    <nav class="is-move flex-container align-justify">
+    <nav class="is-clip flex-container align-justify">
     <?php else : ?>
         <nav class="flex-container align-justify">
         <?php endif ?>

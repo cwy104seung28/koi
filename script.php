@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-<link rel="stylesheet" href="css/slick.css">
+<link rel="stylesheet" href="./css/swiper-bundle.min.css">
+<link rel="stylesheet" href="./css/slick.css">
 <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
 
 <link rel="stylesheet" href="https://unpkg.com/flickity-fade@1/flickity-fade.css">
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="./css/flickity.css">
 <link rel="stylesheet" href="./css/nice-select.css">
 
 
@@ -20,10 +20,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js"></script>
 
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="./js/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
 
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="./js/flickity.pkgd.min.js"></script>
 
 <script src="https://unpkg.com/flickity-sync@2.0.0/flickity-sync.js"></script>
 

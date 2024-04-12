@@ -135,6 +135,11 @@
         </ul>
         <div class="about-ingredient flex-container">
             <div class="pic-area">
+                <ul class="bg">
+                    <li><img src="./images/a-i-pic-2.jpg"></li>
+                    <li><img src="./images/a-i-pic.jpg"></li>
+                    <li><img src="./images/a-i-pic.jpg"></li>
+                </ul>
                 <div class="triangle">
                     <div data-tri="1" class="one triangle-1 is-show">茶汤</div>
                     <div data-tri="2" class="two triangle-2">甜度</div>
@@ -273,13 +278,11 @@
                 </div>
             </div>
             <ul class="brandmapList">
-                <transition name="fade" mode="out-in">
-                    <li v-if="map == 1" key="map1"><img src="./images/a-map-1.jpg" alt=""></li>
-                    <li v-if="map == 2" key="map2"><img src="./images/a-map-2.jpg" alt=""></li>
-                    <li v-if="map == 3" key="map3"><img src="./images/a-map-3.jpg" alt=""></li>
-                    <li v-if="map == 4" key="map4"><img src="./images/a-map-4.jpg" alt=""></li>
-                    <li v-if="map == 5" key="map5"><img src="./images/a-map-5.jpg" alt=""></li>
-                </transition>
+                <li :class="[{'is-show': map == 1}]" key="map1" style="background-image: url('./images/a-map-1.jpg')"></li>
+                <li :class="[{'is-show': map == 2}]" key="map2" style="background-image: url('./images/a-map-2.jpg')"></li>
+                <li :class="[{'is-show': map == 3}]" key="map3" style="background-image: url('./images/a-map-3.jpg')"></li>
+                <li :class="[{'is-show': map == 4}]" key="map4" style="background-image: url('./images/a-map-4.jpg')"></li>
+                <li :class="[{'is-show': map == 5}]" key="map5" style="background-image: url('./images/a-map-5.jpg')"></li>
             </ul>
         </div>
     </div>
@@ -325,10 +328,10 @@
         paused: true,
     });
     $tl.to(".text-area", {
-        duration: 1,
+        duration: 1.25,
         scale: 1,
         // opacity: 1,
-        ease: Power3.easeOut,
+        ease: Power4.easeOut,
     })
     // $tl.to(".text-area .letter-k img", {
     //         duration: 0,
@@ -442,16 +445,28 @@
         .to(".drink-area li:nth-child(even)", {
             y: '100%',
         }, 'drink')
+    let $tl_drink_bg = gsap.timeline({
+            paused: false,
+        })
         .to(".drink-area .bg-change", {
             opacity: 1,
-        }, '<0.1')
+        }, '<0')
     ScrollTrigger.create({
         trigger: '.drink-area',
         // toggleActions: "play reverse play reverse", //重覆觸發
-        start: "10% center",
-        end: "bottom center",
+        start: "10% 40%",
+        end: "bottom 40%",
         // markers: true,
         animation: $tl_drink,
+        scrub: 1,
+    });
+    ScrollTrigger.create({
+        trigger: '.drink-area',
+        // toggleActions: "play reverse play reverse", //重覆觸發
+        start: "10% 70%",
+        end: "bottom 70%",
+        // markers: true,
+        animation: $tl_drink_bg,
         scrub: 1,
     });
     let $tl_info = gsap.timeline({
@@ -556,6 +571,7 @@
         vertical: true,
         verticalSwiping: true,
         arrows: false,
+        asNavFor: '.about-ingredient .bg',
     });
     $('.slick-article').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
         console.log(nextSlide);
@@ -572,7 +588,16 @@
         var slideTri = $(this).data('tri');
         $('.slick-article').slick('slickGoTo', slideTri - 1);
     });
-
+    $('.about-ingredient .bg').slick({
+        dots: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        fade: true,
+        arrows: false,
+    });
 
     // $('.about-event .pic-area').slick({
     //     speed: 1250,
@@ -618,8 +643,7 @@
             // for (var $num = 13; $num <= 16; $num++) {
             //     $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${22 - $num}`);
             // }
-        }
-        else if (index == 13) {
+        } else if (index == 13) {
             $('.about-event .pic-area li:nth-child(1)').addClass('is-show')
             $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show')
             $('.about-event .pic-area li:nth-child(1)').css('z-index', '4')
@@ -636,7 +660,7 @@
         } else if (index == 15) {
             $('.about-event .pic-area li:nth-child(1)').addClass('is-show').next().addClass('is-show').next().addClass('is-show')
             $('.about-event .pic-area li.is-selected').addClass('is-show')
-            $('.about-event .pic-area li:nth-child(16)').css('z-index','6');
+            $('.about-event .pic-area li:nth-child(16)').css('z-index', '6');
             $('.about-event .pic-area li:nth-child(1)').css('z-index', '4')
             $('.about-event .pic-area li:nth-child(2)').css('z-index', '3')
             $('.about-event .pic-area li:nth-child(3)').css('z-index', '2')

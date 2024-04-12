@@ -540,73 +540,70 @@
                     </div>
                 </div>
             </div>
-            <div data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
+            <div class="drink-outter" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
                 <div class="head-area"><img src="./images/index-drinks-title.svg"></div>
-                <div class="drinksList swiper mySwiper">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide">
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-1.jpg')">
-                                <div class="circle">
-                                    <img src="./images/index-drink-circle-1.png" alt="">
-                                </div>
+                <ul class="drinksList flex-container" id="drinkHorizontal">
+                    <li>
+                        <div class="pic-area" style="background-image: url('./images/index-drink-pic-1.jpg')">
+                            <div class="circle">
+                                <img src="./images/index-drink-circle-1.png" alt="">
                             </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-1.svg" alt=""></div>
-                                <div class="ch">茶</div>
-                                <div class="en">(Flavored Tea)</div>
+                        </div>
+                        <div class="article-area flex-container">
+                            <div class="icon"><img src="./images/index-drink-cat-1.svg" alt=""></div>
+                            <div class="ch">茶</div>
+                            <div class="en">(Flavored Tea)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic-area" style="background-image: url('./images/index-drink-pic-2.jpg')">
+                            <div class="circle">
+                                <img src="./images/index-drink-circle-2.png" alt="">
                             </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-2.jpg')">
-                                <div class="circle">
-                                    <img src="./images/index-drink-circle-2.png" alt="">
-                                </div>
+                        </div>
+                        <div class="article-area flex-container">
+                            <div class="icon"><img src="./images/index-drink-cat-2.svg" alt=""></div>
+                            <div class="ch">奶茶</div>
+                            <div class="en">(Milk Tea)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic-area" style="background-image: url('./images/index-drink-pic-3.jpg')">
+                            <div class="circle">
+                                <img src="./images/index-drink-circle-3.png" alt="">
                             </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-2.svg" alt=""></div>
-                                <div class="ch">奶茶</div>
-                                <div class="en">(Milk Tea)</div>
+                        </div>
+                        <div class="article-area flex-container">
+                            <div class="icon"><img src="./images/index-drink-cat-3.svg" alt=""></div>
+                            <div class="ch">茶拿鐵</div>
+                            <div class="en">(Tea Latte)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic-area" style="background-image: url('./images/index-drink-pic-4.jpg')">
+                            <div class="circle">
+                                <img src="./images/index-drink-circle-4.png" alt="">
                             </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-3.jpg')">
-                                <div class="circle">
-                                    <img src="./images/index-drink-circle-3.png" alt="">
-                                </div>
+                        </div>
+                        <div class="article-area flex-container">
+                            <div class="icon"><img src="./images/index-drink-cat-4.svg" alt=""></div>
+                            <div class="ch">瑪奇朵</div>
+                            <div class="en">(Signature Macchiato)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic-area" style="background-image: url('./images/index-drink-pic-5.jpg')">
+                            <div class="circle">
+                                <img src="./images/index-drink-circle-5.png" alt="">
                             </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-3.svg" alt=""></div>
-                                <div class="ch">茶拿鐵</div>
-                                <div class="en">(Tea Latte)</div>
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-4.jpg')">
-                                <div class="circle">
-                                    <img src="./images/index-drink-circle-4.png" alt="">
-                                </div>
-                            </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-4.svg" alt=""></div>
-                                <div class="ch">瑪奇朵</div>
-                                <div class="en">(Signature Macchiato)</div>
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-5.jpg')">
-                                <div class="circle">
-                                    <img src="./images/index-drink-circle-5.png" alt="">
-                                </div>
-                            </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-5.svg" alt=""></div>
-                                <div class="ch">果汁</div>
-                                <div class="en">(Juice)</div>
-                            </div>
-                        </li>
-                    </ul>
-                    <!-- <div class="swiper-pagination"></div> -->
-                </div>
+                        </div>
+                        <div class="article-area flex-container">
+                            <div class="icon"><img src="./images/index-drink-cat-5.svg" alt=""></div>
+                            <div class="ch">果汁</div>
+                            <div class="en">(Juice)</div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="index-news" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
@@ -749,7 +746,7 @@
             document.documentElement.scrollTop = 0; //ie下
             document.body.scrollTop = 0; //非ie
         }
-        $("html").addClass("is-lock")
+        // $("html").addClass("is-lock")
 
         gsap.delayedCall(6, function() {
             $("html").removeClass("is-lock")
@@ -790,8 +787,8 @@
             ease: Power2.easeOut,
         }, 'logo')
         .to("nav", {
-            className: "+=flex-container align-justify"
-        }, '<1.25')
+            className: "+=not-clip flex-container align-justify"
+        }, '<0.65')
         .to(".index-top-banner .top-text", {
             duration: 1.5,
             x: 0,
@@ -855,7 +852,6 @@
                     // markers: true,
                     // animation: $tl,
                 })
-                console.log(_x);
             }
         }
         horizonHandler('.index-top-banner .top-text');
@@ -922,7 +918,7 @@
                     toggleActions: "play pause resume reverse",
                     trigger: ".index-feature",
                     start: "75% 0%",
-                    end: "85% 0%",
+                    end: "90% 0%",
                     scrub: 1,
                     // markers: true,
                 },
@@ -933,7 +929,7 @@
                     toggleActions: "play pause resume reverse",
                     trigger: ".index-feature",
                     start: "75% 0%",
-                    end: "85% 0%",
+                    end: "90% 0%",
                     scrub: 1,
                     // markers: true,
                 },
@@ -982,14 +978,41 @@
             },
         })
     });
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 155,
-        centeredSlides: true,
-        // loop: true,
-    });
+    // var swiper = new Swiper(".mySwiper", {
+    //     slidesPerView: 3,
+    //     spaceBetween: 155,
+    //     centeredSlides: true,
+    //     // loop: true,
+    // });
 
-    var time = 0;
+    function drinkHorizon(el) {
+        let _x = $(el).outerWidth(true) - $(window).width()
+        console.log(_x);
+        let storenum = {
+            n: 1
+        }
+        const $tl = gsap.timeline({
+            paused: false,
+        })
+        if (_x > 0) {
+            gsap.timeline().to(el, {
+                scrollTrigger: {
+                    toggleActions: "play pause resume reverse",
+                    trigger: "#drinkHorizontal",
+                    start: "top 0%",
+                    end: `+=${_x}`,
+                    pin: ".drink-outter",
+                    pinSpace: false,
+                    scrub: true,
+                    // markers: true,
+                },
+                x: -_x,
+                ease: 'none'
+            })
+        }
+    }
+    drinkHorizon('.drinksList');
+
     $('.drinksList .swiper-slide .pic-area').each(function(i, el) {
         // $(el).hover(function() {
         //     time++;

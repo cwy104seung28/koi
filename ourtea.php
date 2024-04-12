@@ -14,7 +14,10 @@
     <?php include 'topmenu.php'; ?>
     <div class="our-teaWrap">
         <div class="head-area">
-            <div class="title">OUR TEA</div>
+            <div class="inner">
+                <div class="en">OUR TEA</div>
+            </div>
+
             <div class="drinkListWrap">
                 <ul class="drink">
                     <li>
@@ -892,10 +895,45 @@
 
 <script>
     $('footer').addClass('is-white');
+    let $tl_title = gsap.timeline({
+            paused: true,
+        })
+        .to(".head-area .en", {
+            duration: 1,
+            y: 0,
+            rotation: 0,
+            ease: Power2.easeOut,
+        })
 
-    // $('.new-drink li').click(function() {
+    gsap.delayedCall(1, function() {
+        $tl_title.play();
+    });
 
-    // })
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    var transitionArray = ['slideLeft', 'slideRight', 'slideUp', 'slideDown']
+    $(".drinkListWrap").vegas({
+        timer: false,
+        autoplay: true,
+        delay: 3000,
+        transitionDuration: 500,
+        slides: [{
+                src: "./images/t-top-bg-1.jpg"
+            },
+            {
+                src: "./images/t-top-bg-2.jpg"
+            },
+            {
+                src: "./images/t-top-bg-3.jpg"
+            },
+            {
+                src: "./images/t-top-bg-4.jpg"
+            }
+        ],
+        transition: [transitionArray[getRandomInt(4)], transitionArray[getRandomInt(4)], transitionArray[getRandomInt(4)], transitionArray[getRandomInt(4)]]
+    });
+
     $(".new-drinkWrap").vegas({
         timer: false,
         autoplay: false,
