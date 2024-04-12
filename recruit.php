@@ -154,13 +154,31 @@
                 </div>
             </div>
             <div class="head-area">
-                <div class="en top">“Apply</div>
-                <div class="en bottom">NOW!”
-                    <div class="ch">
-                        我们来自不同地方，我们激荡不同文化；<br>
-                        茶饮是我们凝聚在此的共同语言
+                <div class="head-1">
+                    <div class="en top">“Apply</div>
+                </div>
+                <div class="head-2">
+                    <div class="en bottom">NOW!”
+                        <div class="ch">
+                            我们来自不同地方，我们激荡不同文化；<br>
+                            茶饮是我们凝聚在此的共同语言
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="menu-link">
+            <div class="circle">
+                <div class="menu"><img src="./images/m-menu.svg" alt=""></div>
+                <div class="store"><img src="./images/m-store.svg" alt=""></div>
+            </div>
+            <div class="hover-link">
+                <div class="menu"><a href="./menu.php"><img src="./images/m-hover-menu.svg" alt=""></a></div>
+                <div class="store"><a href="./store.php"><img src="./images/m-hover-store.svg" alt=""></a></div>
+            </div>
+            <div class="bear">
+                <div class="drink"><img src="./images/b-drink-menu.svg" alt=""></div>
+                <div class="big-body"><img src="./images/b-big-body.svg" alt=""></div>
             </div>
         </div>
     </div>
@@ -174,12 +192,12 @@
     let $tl_title = gsap.timeline({
             paused: true,
         })
-        .to(".head-area .en.top", {
+        .to(".recruit-top .head-area .en.top", {
             duration: 1,
             y: 0,
             rotation: 0,
             ease: Power2.easeOut,
-        }).to(".head-area .en.bottom", {
+        }).to(".recruit-top .head-area .en.bottom", {
             duration: 1,
             y: 0,
             rotation: 0,
@@ -190,6 +208,25 @@
         $tl_title.play();
     });
 
+
+    let $tl_apply = gsap.timeline({
+            paused: true,
+        })
+        .to(".apply-area .head-area .en.top", {
+            duration: 1,
+            y: 0,
+            rotation: 0,
+            ease: Power2.easeOut,
+        }).to(".apply-area .head-area .en.bottom", {
+            duration: 1,
+            y: 0,
+            rotation: 0,
+            ease: Power2.easeOut,
+        }, '<0.25')
+
+
+
+
     ScrollTrigger.create({
         trigger: '.apply-area',
         // toggleActions: "play none none none",
@@ -198,6 +235,7 @@
         // markers: true,
         onEnter: () => {
             $('.apply-fancy').addClass('is-show');
+            $tl_apply.play();
         },
         onLeave: () => {
             $('.apply-fancy').removeClass('is-show');
@@ -261,4 +299,15 @@
             y: 0,
             opacity: 1,
         })
+
+    ScrollTrigger.create({
+        toggleActions: "play pause resume reverse", //重覆觸發
+        trigger: ".menu-link",
+        endTrigger: ".recruitWrap",
+        start: "top 72%",
+        end: "bottom 72%",
+        scrub: 1,
+        pin: true,
+        // markers: true,
+    });
 </script>

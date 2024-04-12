@@ -541,7 +541,25 @@
                 </div>
             </div>
             <div class="drink-outter" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
-                <div class="head-area"><img src="./images/index-drinks-title.svg"></div>
+                <div class="head-area">
+                    <div class="deco top">
+                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="114.89" height="12.97" viewBox="0 0 114.89 12.97">
+                            <g id="_計" data-name="設計">
+                                <path class="cls-1" d="M1.21,8.14c.08,.48,.45,.86,.93,.94,14.22,2.4,33.95,3.89,55.76,3.89,21.51,0,40.73-1.43,54.85-3.74,.48-.08,.86-.46,.93-.94l1.19-7.34c.08-.46-.32-.86-.78-.78-14.25,2.45-34.16,3.97-56.2,3.97S15.1,2.55,.8,.01C.33-.07-.07,.33,0,.79l1.2,7.34Z" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="overflow">
+                        <div class="en">DRINK</div>
+                    </div>
+                    <div class="deco bottom">
+                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="75.19" height="14.36" viewBox="0 0 75.19 14.36">
+                            <g id="_計" data-name="設計">
+                                <path class="cls-1" d="M0,.8l1.28,7.78c.07,.43,.37,.78,.79,.91,10.35,3.17,22.73,4.88,35.5,4.88s25.16-1.72,35.51-4.9c.41-.13,.72-.48,.79-.91l1.3-7.76c.08-.51-.39-.92-.88-.76-10.62,3.43-23.38,5.29-36.72,5.29S11.51,3.51,.89,.04C.4-.12-.07,.29,0,.8Z" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
                 <ul class="drinksList" id="drinkHorizontal">
                     <li>
                         <div class="pic-area" style="background-image: url('./images/index-drink-pic-1.jpg')">
@@ -607,7 +625,25 @@
             </div>
         </div>
         <div class="index-news" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
-            <div class="head-area"><img src="./images/index-news-title.svg" alt=""></div>
+            <div class="head-area">
+                <div class="deco top">
+                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="114.89" height="12.97" viewBox="0 0 114.89 12.97">
+                        <g id="_計" data-name="設計">
+                            <path class="cls-1" d="M1.21,8.14c.08,.48,.45,.86,.93,.94,14.22,2.4,33.95,3.89,55.76,3.89,21.51,0,40.73-1.43,54.85-3.74,.48-.08,.86-.46,.93-.94l1.19-7.34c.08-.46-.32-.86-.78-.78-14.25,2.45-34.16,3.97-56.2,3.97S15.1,2.55,.8,.01C.33-.07-.07,.33,0,.79l1.2,7.34Z" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="overflow">
+                    <div class="en">NEWS</div>
+                </div>
+                <div class="deco bottom">
+                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="75.19" height="14.36" viewBox="0 0 75.19 14.36">
+                        <g id="_計" data-name="設計">
+                            <path class="cls-1" d="M0,.8l1.28,7.78c.07,.43,.37,.78,.79,.91,10.35,3.17,22.73,4.88,35.5,4.88s25.16-1.72,35.51-4.9c.41-.13,.72-.48,.79-.91l1.3-7.76c.08-.51-.39-.92-.88-.76-10.62,3.43-23.38,5.29-36.72,5.29S11.51,3.51,.89,.04C.4-.12-.07,.29,0,.8Z" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
             <ul class="top-newsList">
                 <li>
                     <a href="./news_detail.php" class="flex-container">
@@ -746,7 +782,7 @@
             document.documentElement.scrollTop = 0; //ie下
             document.body.scrollTop = 0; //非ie
         }
-        // $("html").addClass("is-lock")
+        $("html").addClass("is-lock")
     })
     $('footer').addClass('is-light-orange')
 
@@ -979,7 +1015,7 @@
                     scrollTrigger: {
                         toggleActions: "play pause resume reverse",
                         trigger: "#drinkHorizontal",
-                        start: "top 34%",
+                        start: "top 35%",
                         end: `+=${_x}`,
                         pin: ".drink-outter",
                         pinSpace: false,
@@ -1013,13 +1049,48 @@
 
 
         ScrollTrigger.create({
-            toggleActions: "play pause resume reverse", //重覆觸發
+            toggleActions: "play resume resume resume", //重覆觸發
             trigger: ".menu-link",
             endTrigger: ".indexWrap",
             start: "top 75%",
             end: "100% 75%",
-            scrub: 1,
+            scrub: true,
             pin: true,
+            // markers: true,
+        });
+        let $tl_drink = gsap.timeline({
+                paused: true,
+            })
+            .to(".drink-outter .overflow .en", {
+                duration: 1,
+                y: 0,
+                rotation: 0,
+                ease: Power2.easeOut,
+            })
+        ScrollTrigger.create({
+            toggleActions: "play resume resume resume", //重覆觸發
+            trigger: ".drink-outter .head-area",
+            start: "top 80%",
+            end: "bottom 80%",
+            animation: $tl_drink,
+            // markers: true,
+        });
+
+        let $tl_news = gsap.timeline({
+                paused: true,
+            })
+            .to(".index-news .overflow .en", {
+                duration: 1,
+                y: 0,
+                rotation: 0,
+                ease: Power2.easeOut,
+            })
+        ScrollTrigger.create({
+            toggleActions: "play pause resume reverse", //重覆觸發
+            trigger: ".index-news",
+            start: "top 80%",
+            end: "bottom 80%",
+            animation: $tl_news,
             // markers: true,
         });
 

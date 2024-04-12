@@ -570,7 +570,7 @@ nav {
     .down {
         // opacity: 0;
         // height: fit-content;
-        transform: translateY(calc(-100% + 25%));
+        transform: translateY(calc(-100% + 25.5%));
     }
     .up {
         // height: fit-content;
@@ -762,8 +762,27 @@ nav {
         }
     }
     .head-area {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
         text-align: center;
         margin-bottom: 75px;
+        .overflow{
+            overflow: hidden;
+            margin: 17px 0 20px;
+            .en{
+                font-family: $en-family;
+                font-size: 45px;
+                letter-spacing: 1px;
+                color: #0b0b0b;
+                font-weight: 900;
+                transform-origin: left;
+                transform: translateY(100%) rotate(10deg);
+            }
+        }
+        .cls-1 {
+            fill: #008F67;
+        }
     }
     .drinksList {
         display: inline-flex;
@@ -825,6 +844,22 @@ nav {
     .head-area {
         margin-bottom: 70px;
         text-align: center;
+        .overflow{
+            overflow: hidden;
+            margin: 17px 0 20px;
+            .en{
+                font-family: $en-family;
+                font-size: 45px;
+                letter-spacing: 1px;
+                color: #0b0b0b;
+                font-weight: 900;
+                transform-origin: left;
+                transform: translateY(100%) rotate(10deg);
+            }
+        }
+        .cls-1 {
+            fill: #ECAE4B;
+        }
     }
     .top-newsList {
         max-width: 1485px;
@@ -1501,6 +1536,22 @@ nav {
         .title {
             text-align: center;
             margin-bottom: 100px;
+            .overflow{
+                overflow: hidden;
+                margin: 37px 0 43px;
+                .en{
+                    font-family: $en-family;
+                    font-size: 55px;
+                    letter-spacing: 1px;
+                    color: #0b0b0b;
+                    font-weight: 900;
+                    transform-origin: left;
+                    transform: translate(10px, 100%) rotate(10deg);
+                }
+            }
+            .cls-1 {
+                fill: #54c0e8;
+            }
         }
         .brandmapWrap {
             max-width: 1400px;
@@ -2369,9 +2420,14 @@ nav {
         .head-area {
             position: sticky;
             top: 130px;
+            .head-1,.head-2{
+                overflow: hidden;
+            }
             .en {
                 font-size: 300px;
                 line-height: 0.95;
+                transform-origin: left;
+                transform: translateY(100%) rotate(10deg);
             }
             .ch {
                 font-family: $ch-family;
@@ -2719,6 +2775,15 @@ nav {
         .shareList {
             li {
                 margin-right: 25px;
+                .d {
+                    fill: #9e9e9f;
+                    transition: 0.5s all;
+                }
+                &:hover{
+                    .d {
+                        fill: #ea5406;
+                    }
+                }
                 &:last-child {
                     margin-right: 0;
                 }
