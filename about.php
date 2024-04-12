@@ -173,7 +173,9 @@
                     <li>
                         <div class="en">Ice</div>
                         <div class="ch">冰块</div>
-                        <div class="content">冰块冰块冰块冰块冰块冰块</div>
+                        <div class="content">
+                            采用硬度较高的冰块，精准地控制用量，不仅保留茶汤的原始风味，还能带来清新宜人的口感体验
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -799,7 +801,7 @@
         trigger: ".menu-link",
         endTrigger: ".aboutWrap",
         start: "top 78.5%",
-            end: "100% 78.5%",
+        end: "100% 78.5%",
         scrub: 1,
         pin: true,
         // markers: true,
