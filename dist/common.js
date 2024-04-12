@@ -237,6 +237,13 @@ mouseTarget.addEventListener("mouseout", e => {
 	console.log(hoverLock);
 });
 
+$("footer .top").on("click", function () {
+	gsap.to(window, {
+		duration: 2,
+		scrollTo: 0,
+		ease: 'power2.inOut'
+	});
+});
 // mouseTarget.addEventListener("mouseover", (e) => {
 // 	if (hoverLock) return;
 // 	hoverLock = true;

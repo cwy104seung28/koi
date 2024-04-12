@@ -542,7 +542,7 @@
             </div>
             <div class="drink-outter" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
                 <div class="head-area"><img src="./images/index-drinks-title.svg"></div>
-                <ul class="drinksList flex-container" id="drinkHorizontal">
+                <ul class="drinksList" id="drinkHorizontal">
                     <li>
                         <div class="pic-area" style="background-image: url('./images/index-drink-pic-1.jpg')">
                             <div class="circle">
@@ -717,22 +717,22 @@
                 </li>
             </ul>
         </div>
-        <div class="menu-link">
-            <div class="circle">
-                <div class="menu"><img src="./images/m-menu.svg" alt=""></div>
-                <div class="store"><img src="./images/m-store.svg" alt=""></div>
-            </div>
-            <div class="hover-link">
-                <div class="menu"><a href="./menu.php"><img src="./images/m-hover-menu.svg" alt=""></a></div>
-                <div class="store"><a href="./store.php"><img src="./images/m-hover-store.svg" alt=""></a></div>
-            </div>
-            <div class="bear">
-                <div class="drink"><img src="./images/b-drink-menu.svg" alt=""></div>
-                <div class="big-body"><img src="./images/b-big-body.svg" alt=""></div>
-            </div>
+
+    </div>
+    <div class="menu-link">
+        <div class="circle">
+            <div class="menu"><img src="./images/m-menu.svg" alt=""></div>
+            <div class="store"><img src="./images/m-store.svg" alt=""></div>
+        </div>
+        <div class="hover-link">
+            <div class="menu"><a href="./menu.php"><img src="./images/m-hover-menu.svg" alt=""></a></div>
+            <div class="store"><a href="./store.php"><img src="./images/m-hover-store.svg" alt=""></a></div>
+        </div>
+        <div class="bear">
+            <div class="drink"><img src="./images/b-drink-menu.svg" alt=""></div>
+            <div class="big-body"><img src="./images/b-big-body.svg" alt=""></div>
         </div>
     </div>
-
     <?php include 'footer.php'; ?>
 </body>
 <?php include 'script.php'; ?>
@@ -747,20 +747,6 @@
             document.body.scrollTop = 0; //非ie
         }
         // $("html").addClass("is-lock")
-
-        gsap.delayedCall(6, function() {
-            $("html").removeClass("is-lock")
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse", //重覆觸發
-                trigger: ".menu-link",
-                endTrigger: ".indexWrap",
-                start: "top 75%",
-                end: "bottom 75%",
-                scrub: 1,
-                pin: true,
-                // markers: true,
-            });
-        });
     })
     $('footer').addClass('is-light-orange')
 
@@ -803,10 +789,11 @@
             opacity: 1,
         })
 
-    // gsap.delayedCall(2.5, function() {
-    //     $('nav').removeClass('is-move')
-    // });
+
     gsap.delayedCall(6, function() {
+        $("html").removeClass("is-lock")
+        $('nav').removeClass('not-clip')
+
         function horizonHandler(el) {
             let _x = $(el).outerWidth(true) - $(window).width()
             console.log(_x);
@@ -977,6 +964,65 @@
                 // })
             },
         })
+
+        function drinkHorizon(el) {
+            let _x = $(el).outerWidth(true) - $(window).width()
+            console.log(_x);
+            let storenum = {
+                n: 1
+            }
+            const $tl = gsap.timeline({
+                paused: false,
+            })
+            if (_x > 0) {
+                gsap.timeline().to(el, {
+                    scrollTrigger: {
+                        toggleActions: "play pause resume reverse",
+                        trigger: "#drinkHorizontal",
+                        start: "top 34%",
+                        end: `+=${_x}`,
+                        pin: ".drink-outter",
+                        pinSpace: false,
+                        scrub: true,
+                        // markers: true,
+                    },
+                    x: -_x,
+                    ease: 'none'
+                })
+            }
+        }
+        drinkHorizon('.drinksList');
+
+        $('.drinksList li .pic-area').each(function(i, el) {
+            var $tl_circle = gsap.timeline({
+                    paused: true,
+                })
+                .to($(this).children('.circle'), {
+                    duration: 15,
+                    rotation: 360,
+                    ease: 'none',
+                    repeat: -1,
+                    repeatDelay: 0.05,
+                })
+            $(el).hover(function() {
+                $tl_circle.play();
+            }, function() {
+                $tl_circle.pause();
+            });
+        })
+
+
+        ScrollTrigger.create({
+            toggleActions: "play pause resume reverse", //重覆觸發
+            trigger: ".menu-link",
+            endTrigger: ".indexWrap",
+            start: "top 75%",
+            end: "100% 75%",
+            scrub: 1,
+            pin: true,
+            // markers: true,
+        });
+
     });
     // var swiper = new Swiper(".mySwiper", {
     //     slidesPerView: 3,
@@ -985,56 +1031,9 @@
     //     // loop: true,
     // });
 
-    function drinkHorizon(el) {
-        let _x = $(el).outerWidth(true) - $(window).width()
-        console.log(_x);
-        let storenum = {
-            n: 1
-        }
-        const $tl = gsap.timeline({
-            paused: false,
-        })
-        if (_x > 0) {
-            gsap.timeline().to(el, {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: "#drinkHorizontal",
-                    start: "top 0%",
-                    end: `+=${_x}`,
-                    pin: ".drink-outter",
-                    pinSpace: false,
-                    scrub: true,
-                    // markers: true,
-                },
-                x: -_x,
-                ease: 'none'
-            })
-        }
-    }
-    drinkHorizon('.drinksList');
 
-    $('.drinksList .swiper-slide .pic-area').each(function(i, el) {
-        // $(el).hover(function() {
-        //     time++;
-        //     $(this).children('.circle').css('transform', `rotate(${time/10}deg)`);
-        //     console.log(1);
-        // });
-        var $tl_circle = gsap.timeline({
-                paused: true,
-            })
-            .to($(this).children('.circle'), {
-                duration: 15,
-                rotation: 360,
-                ease: 'none',
-                repeat: -1,
-                repeatDelay: 0.05,
-            })
-        $(el).hover(function() {
-            $tl_circle.play();
-        }, function() {
-            $tl_circle.pause();
-        });
-    })
+
+
 
     $('.top-newsList').slick({
         dots: true,

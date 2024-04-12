@@ -92,5 +92,14 @@
 </html>
 
 <script>
-
+    ScrollTrigger.create({
+        toggleActions: "play pause resume reverse", //重覆觸發
+        trigger: ".menu-link",
+        endTrigger: ".newsDetailWrap",
+        start: "top 72%",
+        end: "bottom 72%",
+        scrub: 1,
+        pin: true,
+        // markers: true,
+    });
 </script>

@@ -592,15 +592,15 @@ nav {
             text-align: center;
             .note {
                 font-family: $en-family;
-                font-size: 30px;
+                font-size: 36px;
                 font-weight: 500;
                 color: #0b0b0b;
                 letter-spacing: 3px;
-                margin-bottom: 83px;
+                margin-bottom: 65px;
             }
             .en {
                 font-family: $en-family;
-                font-size: 73px;
+                font-size: 88px;
                 color: #0b0b0b;
                 letter-spacing: 3px;
                 font-weight: 900;
@@ -611,8 +611,8 @@ nav {
                 font-family: $ch-family;
                 font-size: 60px;
                 color: #0b0b0b;
-                letter-spacing: 3px;
-                font-weight: 900;
+                letter-spacing: 5px;
+                font-weight: 700;
                 // line-height: 1.05;
                 &.left {
                     margin-right: 420px;
@@ -766,6 +766,8 @@ nav {
         margin-bottom: 75px;
     }
     .drinksList {
+        display: inline-flex;
+        margin-left: 725px;
         // width: 100%;
         // height: 100%;
         // .swiper-wrapper {
@@ -776,6 +778,7 @@ nav {
         //     }
         // }
         li {
+            min-width: 466px;
             margin-right: 150px;
             .pic-area {
                 width: 466px !important;
@@ -2109,12 +2112,17 @@ nav {
 .recruitWrap {
     .head-area {
         position: relative;
+        .head-1, .head-2{
+            overflow: hidden;
+        }
         .en {
             width: fit-content;
             position: relative;
             font-family: $en-family;
             font-weight: 900;
             letter-spacing: 3px;
+            transform-origin: left;
+            transform: translateY(100%) rotate(10deg);
             &.top {
                 margin-bottom: 10px;
             }
@@ -2122,14 +2130,16 @@ nav {
                 margin-left: auto;
             }
             .note {
-                position: absolute;
-                right: 10px;
-                top: -10px;
+                // position: absolute;
+                // right: 10px;
+                // top: -10px;
                 font-size: 15px;
                 font-weight: 400;
                 color: #ea5406;
                 letter-spacing: 0.5px;
                 font-style: italic;
+                text-align: right;
+                margin-right: 10px;
             }
         }
     }
@@ -2380,6 +2390,7 @@ nav {
     .head-area {
         position: relative;
         margin-bottom: -90px;
+        overflow: hidden;
         .en {
             width: fit-content;
             position: relative;
@@ -2387,6 +2398,8 @@ nav {
             font-weight: 900;
             letter-spacing: 3px;
             font-size: 335px;
+            transform-origin: left;
+            transform: translateY(100%) rotate(10deg);
         }
     }
     .top-news {
@@ -3288,12 +3301,18 @@ nav {
     margin-bottom: -90px;
     .head-area {
         position: relative;
-        width: fit-content;
-        font-family: $en-family;
-        font-weight: 900;
-        letter-spacing: 10px;
-        font-size: 335px;
+
         margin-bottom: 220px;
+        overflow: hidden;
+        .en {
+            width: fit-content;
+            font-family: $en-family;
+            font-weight: 900;
+            letter-spacing: 10px;
+            font-size: 335px;
+            transform-origin: left;
+            transform: translateY(100%) rotate(10deg);
+        }
         .note {
             position: absolute;
             right: -50px;
@@ -3757,7 +3776,7 @@ footer {
         }
         .list {
             flex: 5 1 0;
-            margin-top: 75px;
+            margin-top: 95px;
             .logo {
                 margin-right: 130px;
             }
@@ -3768,13 +3787,21 @@ footer {
                 font-style: italic;
             }
             .footerList {
+                font-family: $ch-family;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 10px 30px;
-                font-size: 13px;
-                font-weight: 600;
+                font-size: 15px;
+                font-weight: 500;
                 letter-spacing: 1px;
                 height: fit-content;
+                li{
+                    color: #0b0b0b;
+                    transition: 0.3s all;
+                    &:hover{
+                        color: #ea5406;
+                    }
+                }
             }
         }
         .info {
@@ -3786,14 +3813,54 @@ footer {
             letter-spacing: 1px;
             .top {
                 margin-bottom: 55px;
-                transition: 0.5s all;
                 cursor: pointer;
-                &:hover {
-                    transform: translateY(-20px);
+                #footer{
+                    transform: translateY(20px);
                 }
+                .arrow{
+                    transition: 0.5s all;
+                }
+                .cls-1 {
+                    fill: none;
+                    stroke: #0d131a;
+                    stroke-miterlimit: 10;
+                    stroke-width: 3px;
+                    transition: 0.5s all;
+                }
+
+                .cls-2 {
+                    fill: #0d131a;
+                    transition: 0.5s all;
+                }
+                
+                &:hover {
+                    .arrow{
+                        transform: translateY(-20px);
+                    }
+                    .cls-1 {
+                        stroke: #ea5406;
+                    }
+    
+                    .cls-2 {
+                        fill: #ea5406;
+                    }
+                }
+            }
+            .other{
+                font-family: $en-family;
+                font-size: 12px;
+                letter-spacing: 0.5px;
+                font-weight: 600;
             }
             .copyright {
                 margin-bottom: 6px;
+                color: #0D131A;
+            }
+            .siteby{
+                color: #83817E;
+            }
+            .ch{
+                font-family: $ch-family;
             }
         }
     }

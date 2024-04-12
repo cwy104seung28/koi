@@ -15,11 +15,17 @@
     <div class="recruitWrap">
         <div class="recruit-top">
             <div class="head-area">
-                <div class="en top">We Want</div>
-                <div class="en bottom">YOU!
-                    <div class="note">RECRUIT</div>
-                    <div class="bear"><img src="./images/recruit-bear.svg"></div>
+                <div class="head-1">
+                    <div class="en top">We Want</div>
                 </div>
+                <div class="head-2">
+                    <div class="en bottom">
+                        <div class="note">RECRUIT</div>
+                        YOU!
+                    </div>
+                </div>
+
+                <div class="bear"><img src="./images/recruit-bear.svg"></div>
             </div>
             <div class="recruitList">
                 <div class="title">
@@ -165,6 +171,25 @@
 </html>
 
 <script>
+    let $tl_title = gsap.timeline({
+            paused: true,
+        })
+        .to(".head-area .en.top", {
+            duration: 1,
+            y: 0,
+            rotation: 0,
+            ease: Power2.easeOut,
+        }).to(".head-area .en.bottom", {
+            duration: 1,
+            y: 0,
+            rotation: 0,
+            ease: Power2.easeOut,
+        }, '<0.25')
+
+    gsap.delayedCall(1, function() {
+        $tl_title.play();
+    });
+
     ScrollTrigger.create({
         trigger: '.apply-area',
         // toggleActions: "play none none none",

@@ -14,8 +14,10 @@
     <?php include 'topmenu.php'; ?>
     <div class="storeWrap">
         <div class="head-area">
-            STORE
-            <div class="note">600</div>
+            <div class="en">
+                STORE
+                <div class="note">600</div>
+            </div>
         </div>
         <div class="storeListWrap flex-container align-justify">
             <div class="storeCat-area">
@@ -574,4 +576,18 @@
     $(".store-fancy .back").on("click", function() {
         $('.store-fancy').removeClass('is-show');
     })
+
+    let $tl_title = gsap.timeline({
+            paused: true,
+        })
+        .to(".head-area .en", {
+            duration: 1,
+            y: 0,
+            rotation: 0,
+            ease: Power2.easeOut,
+        })
+
+    gsap.delayedCall(1, function() {
+        $tl_title.play();
+    });
 </script>

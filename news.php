@@ -300,5 +300,27 @@
 </html>
 
 <script>
+    let $tl_title = gsap.timeline({
+            paused: true,
+        })
+        .to(".head-area .en", {
+            duration: 1,
+            y: 0,
+            rotation: 0,
+            ease: Power2.easeOut,
+        })
 
+    gsap.delayedCall(1, function() {
+        $tl_title.play();
+    });
+    ScrollTrigger.create({
+        toggleActions: "play pause resume reverse", //重覆觸發
+        trigger: ".menu-link",
+        endTrigger: ".newsWrap",
+        start: "top 72%",
+        end: "bottom 72%",
+        scrub: 1,
+        pin: true,
+        // markers: true,
+    });
 </script>
