@@ -304,8 +304,8 @@
         toggleActions: "play pause resume reverse", //重覆觸發
         trigger: ".menu-link",
         endTrigger: ".recruitWrap",
-        start: "top 72%",
-        end: "bottom 72%",
+        start: "top 79%",
+        end: "100% 79%",
         scrub: 1,
         pin: true,
         // markers: true,
