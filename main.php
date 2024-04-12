@@ -1052,8 +1052,8 @@
             toggleActions: "play resume resume resume", //重覆觸發
             trigger: ".menu-link",
             endTrigger: ".indexWrap",
-            start: "top 79%",
-            end: "100% 79%",
+            start: "top 78.5%",
+            end: "100% 78.5%",
             scrub: true,
             pin: true,
             // markers: true,

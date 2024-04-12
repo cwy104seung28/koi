@@ -91,9 +91,9 @@
                             </div>
                             <div class="pic">
                                 <img src="./images/n-pic-1.jpg" alt="">
-                                <div class="pic-hover">
+                                <!-- <div class="pic-hover">
                                     <img src="./images/n-pic-1.jpg" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </li>
@@ -110,9 +110,9 @@
                             </div>
                             <div class="pic">
                                 <img src="./images/n-pic-2.jpg" alt="">
-                                <div class="pic-hover">
+                                <!-- <div class="pic-hover">
                                     <img src="./images/n-pic-2.jpg"" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </li>
@@ -130,9 +130,9 @@
                                         </div>
                                         <div class="pic">
                                             <img src="./images/n-pic-3.jpg" alt="">
-                                            <div class="pic-hover">
+                                            <!-- <div class="pic-hover">
                                                 <img src="./images/n-pic-3.jpg"" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </li>
@@ -150,9 +150,9 @@
                                                     </div>
                                                     <div class="pic">
                                                         <img src="./images/n-pic-4.jpg" alt="">
-                                                        <div class="pic-hover">
+                                                        <!-- <div class="pic-hover">
                                                             <img src="./images/n-pic-4.jpg"" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </li>
@@ -169,9 +169,9 @@
                                                                 </div>
                                                                 <div class="pic">
                                                                     <img src="./images/n-pic-5.jpg" alt="">
-                                                                    <div class="pic-hover">
+                                                                    <!-- <div class="pic-hover">
                                                                         <img src="./images/n-pic-5.jpg"" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </li>
@@ -187,9 +187,9 @@
                                                                             </div>
                                                                             <div class="pic">
                                                                                 <img src="./images/n-pic-6.jpg" alt="">
-                                                                                <div class="pic-hover">
+                                                                                <!-- <div class="pic-hover">
                                                                                     <img src="./images/n-pic-6.jpg"" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </li>
@@ -206,9 +206,9 @@
                                                                                         </div>
                                                                                         <div class="pic">
                                                                                             <img src="./images/n-pic-7.jpg" alt="">
-                                                                                            <div class="pic-hover">
+                                                                                            <!-- <div class="pic-hover">
                                                                                                 <img src="./images/n-pic-7.jpg"" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </li>
@@ -225,9 +225,9 @@
                                                                                                     </div>
                                                                                                     <div class="pic">
                                                                                                         <img src="./images/n-pic-8.jpg" alt="">
-                                                                                                        <div class="pic-hover">
+                                                                                                        <!-- <div class="pic-hover">
                                                                                                             <img src="./images/n-pic-8.jpg"" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </li>
@@ -244,9 +244,9 @@
                                                                                                                 </div>
                                                                                                                 <div class="pic">
                                                                                                                     <img src="./images/n-pic-9.jpg" alt="">
-                                                                                                                    <div class="pic-hover">
+                                                                                                                    <!-- <div class="pic-hover">
                                                                                                                         <img src="./images/n-pic-9.jpg"" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </li>
@@ -263,9 +263,9 @@
                                                                                                                             </div>
                                                                                                                             <div class="pic">
                                                                                                                                 <img src="./images/n-pic-10.jpg" alt="">
-                                                                                                                                <div class="pic-hover">
+                                                                                                                                <!-- <div class="pic-hover">
                                                                                                                                     <img src="./images/n-pic-10.jpg" alt="">
-                                                                                                                                </div>
+                                                                                                                                </div> -->
                                                                                                                             </div>
                                                                                                                         </a>
                     </li>
@@ -317,8 +317,8 @@
         toggleActions: "play pause resume reverse", //重覆觸發
         trigger: ".menu-link",
         endTrigger: ".newsWrap",
-        start: "top 79%",
-        end: "100% 79%",
+        start: "top 78.5%",
+        end: "100% 78.5%",
         scrub: 1,
         pin: true,
         // markers: true,

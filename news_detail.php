@@ -128,8 +128,8 @@
         toggleActions: "play pause resume reverse", //重覆觸發
         trigger: ".menu-link",
         endTrigger: ".newsDetailWrap",
-        start: "top 79%",
-        end: "100% 79%",
+        start: "top 78.5%",
+        end: "100% 78.5%",
         scrub: 1,
         pin: true,
         // markers: true,
