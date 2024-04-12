@@ -193,6 +193,10 @@ nav {
                 font-weight: 600;
                 transform-origin: right;
                 text-wrap: nowrap;
+                transition: 0.5s all;
+                &:hover {
+                    color: #fff;
+                }
                 @for $i from 1 through 7 {
                     &:nth-child(#{$i}) {
                         transform: rotate(-11deg * $i);
@@ -767,10 +771,10 @@ nav {
         // align-items: center;
         text-align: center;
         margin-bottom: 75px;
-        .overflow{
+        .overflow {
             overflow: hidden;
             margin: 17px 0 20px;
-            .en{
+            .en {
                 font-family: $en-family;
                 font-size: 45px;
                 letter-spacing: 1px;
@@ -781,7 +785,7 @@ nav {
             }
         }
         .cls-1 {
-            fill: #008F67;
+            fill: #008f67;
         }
     }
     .drinksList {
@@ -799,6 +803,9 @@ nav {
         li {
             min-width: 466px;
             margin-right: 150px;
+            &:nth-child(even) {
+                margin-top: 65px;
+            }
             .pic-area {
                 width: 466px !important;
                 aspect-ratio: 1/1;
@@ -844,10 +851,10 @@ nav {
     .head-area {
         margin-bottom: 70px;
         text-align: center;
-        .overflow{
+        .overflow {
             overflow: hidden;
             margin: 17px 0 20px;
-            .en{
+            .en {
                 font-family: $en-family;
                 font-size: 45px;
                 letter-spacing: 1px;
@@ -858,7 +865,7 @@ nav {
             }
         }
         .cls-1 {
-            fill: #ECAE4B;
+            fill: #ecae4b;
         }
     }
     .top-newsList {
@@ -1022,7 +1029,7 @@ nav {
         }
         .drink-area {
             position: relative;
-            height: 3000px;
+            height: 2500px;
             background-color: #faeede;
             padding: 0 120px;
             // overflow: hidden;
@@ -1293,6 +1300,8 @@ nav {
                 }
             }
             .slick-dots {
+                position: relative;
+                z-index: 6;
                 li {
                     position: relative;
                     height: auto;
@@ -1536,10 +1545,10 @@ nav {
         .title {
             text-align: center;
             margin-bottom: 100px;
-            .overflow{
+            .overflow {
                 overflow: hidden;
                 margin: 37px 0 43px;
-                .en{
+                .en {
                     font-family: $en-family;
                     font-size: 55px;
                     letter-spacing: 1px;
@@ -2054,25 +2063,27 @@ nav {
     }
     .menuList {
         font-family: $ch-family;
+        opacity: 0;
+        transform: translateY(20px);
         .menu-inner {
             position: relative;
             margin-bottom: 80px;
             // border-bottom: 1px solid $black;
             padding-bottom: 100px;
-            overflow: hidden;
+            // overflow: hidden;
             &::after {
                 position: absolute;
                 content: "";
-                width: 0%;
+                width: 100%;
                 height: 1px;
                 background-color: $black;
                 left: 0px;
                 bottom: 0;
             }
-            .inner {
-                transform-origin: left;
-                transform: translateY(235%) rotate(10deg);
-            }
+            // .inner {
+            //     transform-origin: left;
+            //     transform: translateY(235%) rotate(10deg);
+            // }
             .en {
                 font-size: 30px;
                 font-weight: 900;
@@ -2163,7 +2174,8 @@ nav {
 .recruitWrap {
     .head-area {
         position: relative;
-        .head-1, .head-2{
+        .head-1,
+        .head-2 {
             overflow: hidden;
         }
         .en {
@@ -2374,6 +2386,7 @@ nav {
                     transform: translateY(30px);
                     padding: 30px 7px 10px;
                     border-bottom: 1px solid $black;
+                    transition: 0.5s all;
                     .title {
                         font-size: 30px;
                         color: $black;
@@ -2381,6 +2394,7 @@ nav {
                         font-family: $ch-family;
                         letter-spacing: 3px;
                         margin-bottom: 15px;
+                        transition: 0.5s all;
                     }
                     .note {
                         font-family: $ch-family;
@@ -2388,6 +2402,7 @@ nav {
                         letter-spacing: 1px;
                         color: $black;
                         margin-bottom: 10px;
+                        transition: 0.5s all;
                     }
                     .arrow {
                         transition: 0.5s all;
@@ -2403,7 +2418,16 @@ nav {
                             stroke-width: 2.54px;
                             transition: 0.5s all;
                         }
-                        &:hover {
+                    }
+                    &:hover {
+                        border-bottom: 1px solid #ea5504;
+                        .title {
+                            color: #ea5504;
+                        }
+                        .note {
+                            color: #ea5504;
+                        }
+                        .arrow {
                             transform: translateX(10px);
                             .d {
                                 fill: #ea5504;
@@ -2420,7 +2444,8 @@ nav {
         .head-area {
             position: sticky;
             top: 130px;
-            .head-1,.head-2{
+            .head-1,
+            .head-2 {
                 overflow: hidden;
             }
             .en {
@@ -2618,6 +2643,7 @@ nav {
                 letter-spacing: 2px;
                 line-height: 1.9;
                 font-weight: 600;
+                transition: 0.5s all;
             }
             .pic {
                 position: relative;
@@ -2645,10 +2671,13 @@ nav {
                     width: 100%;
                 }
                 &:hover {
-                    .pic {
-                        .pic-hover {
-                            opacity: 1;
-                        }
+                    // .pic {
+                    //     .pic-hover {
+                    //         opacity: 1;
+                    //     }
+                    // }
+                    .title {
+                        color: #ea5406;
                     }
                 }
             }
@@ -2779,7 +2808,7 @@ nav {
                     fill: #9e9e9f;
                     transition: 0.5s all;
                 }
-                &:hover{
+                &:hover {
                     .d {
                         fill: #ea5406;
                     }
@@ -3265,6 +3294,20 @@ nav {
             z-index: 2;
             .menu {
                 margin-bottom: 20px;
+                &:hover {
+                    .arrow {
+                        transform: translateY(10px);
+                    }
+                    .d {
+                        fill: #ff4d00;
+                    }
+                }
+                .arrow {
+                    transition: 0.5s all;
+                }
+                .d {
+                    transition: 0.5s all;
+                }
             }
             .drink-fixedList {
                 li {
@@ -3860,10 +3903,10 @@ footer {
                 font-weight: 500;
                 letter-spacing: 1px;
                 height: fit-content;
-                li{
+                li {
                     color: #0b0b0b;
                     transition: 0.3s all;
-                    &:hover{
+                    &:hover {
                         color: #ea5406;
                     }
                 }
@@ -3879,10 +3922,10 @@ footer {
             .top {
                 margin-bottom: 55px;
                 cursor: pointer;
-                #footer{
+                #footer {
                     transform: translateY(20px);
                 }
-                .arrow{
+                .arrow {
                     transition: 0.5s all;
                 }
                 .cls-1 {
@@ -3897,21 +3940,21 @@ footer {
                     fill: #0d131a;
                     transition: 0.5s all;
                 }
-                
+
                 &:hover {
-                    .arrow{
+                    .arrow {
                         transform: translateY(-20px);
                     }
                     .cls-1 {
                         stroke: #ea5406;
                     }
-    
+
                     .cls-2 {
                         fill: #ea5406;
                     }
                 }
             }
-            .other{
+            .other {
                 font-family: $en-family;
                 font-size: 12px;
                 letter-spacing: 0.5px;
@@ -3919,12 +3962,12 @@ footer {
             }
             .copyright {
                 margin-bottom: 6px;
-                color: #0D131A;
+                color: #0d131a;
             }
-            .siteby{
-                color: #83817E;
+            .siteby {
+                color: #83817e;
             }
-            .ch{
+            .ch {
                 font-family: $ch-family;
             }
         }

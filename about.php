@@ -497,8 +497,8 @@
     ScrollTrigger.create({
         trigger: '.drink-area',
         // toggleActions: "play reverse play reverse", //重覆觸發
-        start: "10% 40%",
-        end: "bottom 40%",
+        start: "10% 30%",
+        end: "bottom 30%",
         // markers: true,
         animation: $tl_drink,
         scrub: 1,

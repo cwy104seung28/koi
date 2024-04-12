@@ -484,19 +484,25 @@
             rotation: 0,
             ease: Power2.easeOut,
         }, '<0.5')
-        .to(CSSRulePlugin.getRule(".menuListWrap .menuList .menu-inner::after"), {
+        .to(".menuList", {
             duration: 1,
-            width: '100%',
-            stagger: 0.3,
-            ease: Power3.easeOut,
-        })
-        .to(".menuList>li .inner", {
-            duration: 1.5,
             y: 0,
-            rotation: 0,
-            stagger: 0.1,
+            opacity: 1,
             ease: Power2.easeOut,
-        }, '<0')
+        })
+    // .to(CSSRulePlugin.getRule(".menuListWrap .menuList .menu-inner::after"), {
+    //     duration: 1,
+    //     width: '100%',
+    //     stagger: 0.3,
+    //     ease: Power3.easeOut,
+    // })
+    // .to(".menuList>li .inner", {
+    //     duration: 1.5,
+    //     y: 0,
+    //     rotation: 0,
+    //     stagger: 0.1,
+    //     ease: Power2.easeOut,
+    // }, '<0')
 
 
 
