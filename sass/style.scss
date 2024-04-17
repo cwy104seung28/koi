@@ -365,33 +365,34 @@ nav {
         li {
             display: inline-flex;
             margin-bottom: 18px;
+            // animation-delay: 0.5s;
             &:nth-child(1),
             &:nth-child(8),
             &:nth-child(15) {
-                animation: marquee-left 18s linear infinite;
+                animation: marquee-left 18s 0.5s linear infinite;
             }
             &:nth-child(2),
             &:nth-child(4),
             &:nth-child(9) {
-                animation: marquee-left 19s linear infinite;
+                animation: marquee-left 19s 0.5s linear infinite;
             }
             &:nth-child(3),
             &:nth-child(7),
             &:nth-child(16) {
-                animation: marquee-left 20s linear infinite;
+                animation: marquee-left 20s 0.5s linear infinite;
             }
             &:nth-child(5),
             &:nth-child(10),
             &:nth-child(12) {
-                animation: marquee-left 24.5s linear infinite;
+                animation: marquee-left 24.5s 0.5s linear infinite;
             }
             &:nth-child(6),
             &:nth-child(11),
             &:nth-child(13) {
-                animation: marquee-left 22.5s linear infinite;
+                animation: marquee-left 22.5s 0.5s linear infinite;
             }
             &:nth-child(14) {
-                animation: marquee-left 21.5s linear infinite;
+                animation: marquee-left 21.5s 0.5s linear infinite;
             }
             &:last-child {
                 margin-bottom: 0;
@@ -444,6 +445,8 @@ nav {
         opacity: 0;
     }
     .index-feature-inner {
+        top: 0px;
+        padding-top: 80px;
         .featureList {
             min-width: 405px;
         }
