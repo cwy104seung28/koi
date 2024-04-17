@@ -305,7 +305,7 @@
         trigger: ".menu-link",
         endTrigger: ".recruitWrap",
         start: "top 78.5%",
-        end: "100% 78.5%",
+         end: "100% 100%",
         scrub: 1,
         pin: true,
         // markers: true,

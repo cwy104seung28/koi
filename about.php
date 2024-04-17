@@ -298,11 +298,132 @@
                 </div>
             </div>
             <ul class="brandmapList">
-                <li :class="[{'is-show': map == 1}]" key="map1" style="background-image: url('./images/a-map-1.jpg')"></li>
-                <li :class="[{'is-show': map == 2}]" key="map2" style="background-image: url('./images/a-map-2.jpg')"></li>
-                <li :class="[{'is-show': map == 3}]" key="map3" style="background-image: url('./images/a-map-3.jpg')"></li>
-                <li :class="[{'is-show': map == 4}]" key="map4" style="background-image: url('./images/a-map-4.jpg')"></li>
-                <li :class="[{'is-show': map == 5}]" key="map5" style="background-image: url('./images/a-map-5.jpg')"></li>
+                <transition name="fade" mode="out-in">
+                    <li v-if="map == 1" key="map1">
+                        <div class="pin japan">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 日 本 )</div>
+                            </a>
+                        </div>
+                        <div class="pin china">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 中 国)</div>
+                            </a>
+                        </div>
+                        <div class="pin bangladesh">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 孟加拉 )</div>
+                            </a>
+                        </div>
+                        <div class="pin myanmar">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 缅 甸 )</div>
+                            </a>
+                        </div>
+                        <div class="pin thailand">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 泰 国 )</div>
+                            </a>
+                        </div>
+                        <div class="pin cambodia">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 柬埔寨 )</div>
+                            </a>
+                        </div>
+                        <div class="pin vietnam">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 越 南 )</div>
+                            </a>
+                        </div>
+                        <div class="pin philippines">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 菲律賓 )</div>
+                            </a>
+                        </div>
+                        <div class="pin malaysia">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 马来西亚 )</div>
+                            </a>
+                        </div>
+                        <div class="pin singapore">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 新加坡 )</div>
+                            </a>
+                        </div>
+                        <div class="pin indonesia">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 印尼 )</div>
+                            </a>
+                        </div>
+                        <div class="pin dubai">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 迪 拜)</div>
+                            </a>
+                        </div>
+                        <div class="pin usa">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 美 国)</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li v-if="map == 2" key="map2">
+                        <div class="pin thailand">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 泰 国 )</div>
+                            </a>
+                        </div>
+                        <div class="pin vietnam">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 越 南 )</div>
+                            </a>
+                        </div>
+                        <div class="pin singapore">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 新加坡 )</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li v-if="map == 3" key="map3">
+                        <div class="pin usa">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 美 国)</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li v-if="map == 4" key="map4">
+                        <div class="pin vietnam">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 越 南 )</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li v-if="map == 5" key="map5">
+                        <div class="pin china">
+                            <a href="./store.php">
+                                <div class="dot"></div>
+                                <div class="name">( 中 国)</div>
+                            </a>
+                        </div>
+                    </li>
+                </transition>
             </ul>
         </div>
         <div class="menu-link">
@@ -801,7 +922,7 @@
         trigger: ".menu-link",
         endTrigger: ".aboutWrap",
         start: "top 78.5%",
-        end: "100% 78.5%",
+        end: "100% 100%",
         scrub: 1,
         pin: true,
         // markers: true,
