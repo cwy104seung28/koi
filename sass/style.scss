@@ -435,22 +435,43 @@ nav {
 .index-feature-box {
     position: relative;
     width: 100%;
-    height: 1000px;
-    z-index: 3;
+    height: 3000px;
+    z-index: 4;
     background-color: #f9efe1;
-    .index-feature-inner{
+    margin-top: -200px;
+    opacity: 1;
+    &.is-not-show{
+        opacity: 0;
+    }
+    .index-feature-inner {
+        .featureList {
+            min-width: 405px;
+        }
         .down {
             transform: translateY(0);
+        }
+        .up, .down{
+            div{
+                transform: scale(0);
+            }
         }
     }
 }
 
 .index-feature {
-    height: 9000px;
+    margin-top: calc(-140vh - 200px);
+    height: 12000px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     background-color: #f9efe1;
-
+    .index-feature-inner {
+        opacity: 0;
+    }
+    &.is-show{
+        .index-feature-inner {
+            opacity: 1;
+        }  
+    }
 }
 .index-feature-inner {
     width: 100%;

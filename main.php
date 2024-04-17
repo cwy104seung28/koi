@@ -234,7 +234,7 @@
             </div>
         </div>
         <div class="index-feature-box">
-            <!-- <div class="index-feature-inner flex-container align-justify">
+            <div class="index-feature-inner flex-container align-justify">
                 <ul class="feature-bgList flex-container align-justify left">
                     <li class="up">
                         <ul class="dot">
@@ -309,7 +309,7 @@
                         </ul>
                     </li>
                 </ul>
-            </div> -->
+            </div>
         </div>
         <div class="index-feature">
             <div class="index-feature-inner flex-container align-justify">
@@ -853,14 +853,14 @@
 </html>
 <script>
     // $('nav').addClass('is-move')
-    // $(document).ready(function() {
-    //     window.onbeforeunload = function() {
-    //         //刷新后页面自动回到顶部
-    //         document.documentElement.scrollTop = 0; //ie下
-    //         document.body.scrollTop = 0; //非ie
-    //     }
-    //     $("html").addClass("is-lock")
-    // })
+    $(document).ready(function() {
+        window.onbeforeunload = function() {
+            //刷新后页面自动回到顶部
+            document.documentElement.scrollTop = 0; //ie下
+            document.body.scrollTop = 0; //非ie
+        }
+        $("html").addClass("is-lock")
+    })
     $('footer').addClass('is-light-orange')
 
     let $tl_preload = gsap.timeline({
@@ -991,139 +991,301 @@
             scale: 6.5,
         })
 
-        gsap.timeline()
+        // gsap.timeline()
+        //     .fromTo('.index-feature .up', {
+        //         y: '0%'
+        //     }, {
+        //         scrollTrigger: {
+        //             toggleActions: "play pause resume reverse",
+        //             trigger: ".index-feature",
+        //             start: "5% 0%",
+        //             end: "20% 0%",
+        //             scrub: 1,
+        //             markers: true,
+        //         },
+        //         y: '-25%'
+        //     })
+        //     .fromTo('.index-feature .down', {
+        //         y: '-74.5%'
+        //     }, {
+        //         scrollTrigger: {
+        //             toggleActions: "play pause resume reverse",
+        //             trigger: ".index-feature",
+        //             start: "5% 0%",
+        //             end: "20% 0%",
+        //             scrub: 1,
+        //             // markers: true,
+        //         },
+        //         y: '-50%'
+        //     }).fromTo('.index-feature .up', {
+        //         y: '-25%'
+        //     }, {
+        //         scrollTrigger: {
+        //             toggleActions: "play pause resume reverse",
+        //             trigger: ".index-feature",
+        //             start: "25% 0%",
+        //             end: "45% 0%",
+        //             scrub: 1,
+        //             markers: true,
+        //         },
+        //         y: '-50%'
+        //     })
+        //     .fromTo('.index-feature .down', {
+        //         y: '-50%'
+        //     }, {
+        //         scrollTrigger: {
+        //             toggleActions: "play pause resume reverse",
+        //             trigger: ".index-feature",
+        //             start: "25% 0%",
+        //             end: "45% 0%",
+        //             scrub: 1,
+        //             // markers: true,
+        //         },
+        //         y: '-25%'
+        //     }).fromTo('.index-feature .up', {
+        //         y: '-50%'
+        //     }, {
+        //         scrollTrigger: {
+        //             toggleActions: "play pause resume reverse",
+        //             trigger: ".index-feature",
+        //             start: "50% 0%",
+        //             end: "74% 0%",
+        //             scrub: 1,
+        //             markers: true,
+        //         },
+        //         y: '-75%'
+        //     })
+        //     .fromTo('.index-feature .down', {
+        //         y: '-25%'
+        //     }, {
+        //         scrollTrigger: {
+        //             toggleActions: "play pause resume reverse",
+        //             trigger: ".index-feature",
+        //             start: "50% 0%",
+        //             end: "74% 0%",
+        //             scrub: 1,
+        //             // markers: true,
+        //         },
+        //         y: '0%'
+        //     })
+        //     .fromTo('.index-feature .up', {
+        //         scale: 1,
+        //     }, {
+        //         scrollTrigger: {
+        //             toggleActions: "play pause resume reverse",
+        //             trigger: ".index-feature",
+        //             start: "75% 0%",
+        //             end: "90% 0%",
+        //             scrub: 1,
+        //             // markers: true,
+        //         },
+        //         scale: 0,
+        //     })
+        //     .fromTo('.index-feature .down', {
+        //         scale: 1,
+        //     }, {
+        //         scrollTrigger: {
+        //             toggleActions: "play pause resume reverse",
+        //             trigger: ".index-feature",
+        //             start: "75% 0%",
+        //             end: "90% 0%",
+        //             scrub: 1,
+        //             // markers: true,
+        //         },
+        //         scale: 0,
+        //     })
+        const $tl_drink_box = gsap.timeline({
+                paused: false,
+            }).to('.index-feature-box .up div', {
+                scale: 1,
+            })
+            .to('.index-feature-box .down div', {
+                scale: 1,
+            }, '<0')
+        ScrollTrigger.create({
+            toggleActions: "play pause resume reverse",
+            trigger: ".index-feature-box",
+            start: "5% 0%",
+            end: "50% 0%",
+            scrub: 1,
+            // markers: true,
+            animation: $tl_drink_box,
+        })
+
+
+        ScrollTrigger.create({
+            toggleActions: "play pause resume reverse",
+            trigger: ".index-feature",
+            start: "5% 0%",
+            end: "90% 0%",
+            // markers: true,
+            onEnter() {
+                $('.index-feature-box').addClass('is-not-show');
+                $('.index-feature').addClass('is-show');
+            },
+            // onLeave() {
+            //     $('.index-feature-box').removeClass('is-not-show');
+            // },
+            onEnterBack() {
+                $('.index-feature-box').addClass('is-not-show');
+                $('.index-feature').addClass('is-show');
+            },
+            onLeaveBack() {
+                $('.index-feature-box').removeClass('is-not-show');
+                $('.index-feature').removeClass('is-show');
+            }
+        });
+
+        // gsap.timeline()
+        //     .from('.index-feature .index-feature-inner', {
+        //         opacity: 0,
+        //         duration: 0,
+        //         ease: 'none'
+        //     }).to('.index-feature .index-feature-inner', {
+        //         scrollTrigger: {
+        //             toggleActions: "play pause resume reverse",
+        //             trigger: ".index-feature",
+        //             start: "5% 0%",
+        //             end: "90% 0%",
+        //             // scrub: 1,
+        //             // markers: true,
+        //         },
+        //         opacity: 1,
+        //         // duration: 0,
+        //         // ease: 'none'
+        //     })
+
+        // const $tl_drink_start1 = gsap.timeline({
+        //     paused: true,
+        // })
+        // .to('.index-feature .index-feature-inner', {
+        //     opacity: 1,
+        //     duration: 0,
+        // })
+
+
+        // const $tl_drink_start2 = gsap.timeline({
+        //     paused: true,
+        // }).to('.index-feature-box',{
+        //     opacity: 0,
+        //     duration: 0,
+        // })
+
+        // ScrollTrigger.create({
+        //     toggleActions: "play pause resume reverse",
+        //     trigger: ".index-feature",
+        //     start: "5% 0%",
+        //     end: "90% 0%",
+        //     // scrub: 1,
+        //     // markers: true,
+        //     animation: $tl_drink_start1,
+        // })
+        // ScrollTrigger.create({
+        //     toggleActions: "play pause resume reverse",
+        //     trigger: ".index-feature",
+        //     start: "5% 0%",
+        //     end: "90% 0%",
+        //     // scrub: 1,
+        //     // markers: true,
+        //     animation: $tl_drink_start2,
+        // })
+
+        
+        const $tl_drink3 = gsap.timeline({
+                paused: false,
+            })
             .fromTo('.index-feature .up', {
-                y: '-0%'
+                y: '-50%'
             }, {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-feature",
-                    start: "5% 0%",
-                    end: "20% 0%",
-                    scrub: 1,
-                    markers: true,
-                },
+                y: '-75%'
+            })
+            .fromTo('.index-feature .down', {
+                y: '-25%'
+            }, {
+                y: '0%'
+            }, "<0")
+
+        const $tl_drink2 = gsap.timeline({
+                paused: false,
+            })
+            .fromTo('.index-feature .up', {
+                y: '-25%'
+            }, {
+                y: '-50%'
+            })
+            .fromTo('.index-feature .down', {
+                y: '-50%'
+            }, {
+                y: '-25%'
+            }, "<0")
+
+
+
+        const $tl_drink1 = gsap.timeline({
+                paused: false,
+            })
+            .fromTo('.index-feature .up', {
+                y: '0%'
+            }, {
                 y: '-25%'
             })
             .fromTo('.index-feature .down', {
                 y: '-74.5%'
             }, {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-feature",
-                    start: "5% 0%",
-                    end: "20% 0%",
-                    scrub: 1,
-                    // markers: true,
-                },
                 y: '-50%'
-            })
-            // .from('.index-feature .up', {
-            //     y: '-0%'
-            // })
-            // .to('.index-feature .up', {
-            //     scrollTrigger: {
-            //         toggleActions: "play pause resume reverse",
-            //         trigger: ".index-feature",
-            //         start: "5% 0%",
-            //         end: "20% 0%",
-            //         scrub: 1,
-            //         markers: true,
-            //     },
-            //     y: '-25%'
-            // })
-            // .from('.index-feature .down', {
-            //     y: '-74.5%'
-            // })
-            // .to('.index-feature .down', {
-            //     scrollTrigger: {
-            //         toggleActions: "play pause resume reverse",
-            //         trigger: ".index-feature",
-            //         start: "5% 0%",
-            //         end: "20% 0%",
-            //         scrub: 1,
-            //         // markers: true,
-            //     },
-            //     y: '-50%'
-            // })
-            .from('.index-feature .up', {
-                y: '-25%'
-            })
-            .to('.index-feature .up', {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-feature",
-                    start: "25% 0%",
-                    end: "45% 0%",
-                    scrub: 1,
-                    // markers: true,
-                },
-                y: '-50%'
-            })
-            .from('.index-feature .down', {
-                y: '-50%'
-            })
-            .to('.index-feature .down', {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-feature",
-                    start: "25% 0%",
-                    end: "45% 0%",
-                    scrub: 1,
-                    // markers: true,
-                },
-                y: '-25%'
-            })
-            .from('.index-feature .up', {
-                y: '-50%'
-            })
-            .to('.index-feature .up', {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-feature",
-                    start: "50% 0%",
-                    end: "70% 0%",
-                    scrub: 1,
-                    // markers: true,
-                },
-                y: '-75%'
-            })
-            .from('.index-feature .down', {
-                y: '-25%'
-            })
-            .to('.index-feature .down', {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-feature",
-                    start: "50% 0%",
-                    end: "70% 0%",
-                    scrub: 1,
-                    // markers: true,
-                },
-                y: '0%'
-            })
-            .to('.index-feature .up div', {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-feature",
-                    start: "75% 0%",
-                    end: "90% 0%",
-                    scrub: 1,
-                    // markers: true,
-                },
+            }, "<0")
+
+
+        const $tl_drink4 = gsap.timeline({
+                paused: false,
+            }).to('.index-feature .up div', {
                 scale: 0,
             })
             .to('.index-feature .down div', {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-feature",
-                    start: "75% 0%",
-                    end: "90% 0%",
-                    scrub: 1,
-                    // markers: true,
-                },
                 scale: 0,
-            })
+            }, '<0')
+
+        ScrollTrigger.create({
+            toggleActions: "play pause resume reverse",
+            trigger: ".index-feature",
+            start: "5% 0%",
+            end: "20% 0%",
+            scrub: true,
+            // markers: true,
+            animation: $tl_drink1,
+        })
+
+
+        ScrollTrigger.create({
+            toggleActions: "play pause resume reverse",
+            trigger: ".index-feature",
+            start: "25% 0%",
+            end: "45% 0%",
+            scrub: true,
+            // markers: true,
+            animation: $tl_drink2,
+        })
+
+        ScrollTrigger.create({
+            toggleActions: "play pause resume reverse",
+            trigger: ".index-feature",
+            start: "50% 0%",
+            end: "74% 0%",
+            scrub: true,
+            // markers: true,
+            animation: $tl_drink3,
+        })
+
+        ScrollTrigger.create({
+            toggleActions: "play pause resume reverse",
+            trigger: ".index-feature",
+            start: "75% 0%",
+            end: "90% 0%",
+            scrub: 1,
+            // markers: true,
+            animation: $tl_drink4,
+        })
+
 
 
         ScrollTrigger.create({
