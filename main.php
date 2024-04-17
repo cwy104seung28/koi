@@ -1118,7 +1118,7 @@
             trigger: ".index-feature",
             start: "5% 0%",
             end: "90% 0%",
-            markers: true,
+            // markers: true,
             onEnter() {
                 $('.index-feature-box').addClass('is-not-show');
                 $('.index-feature').addClass('is-show');
