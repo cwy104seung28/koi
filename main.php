@@ -1291,8 +1291,8 @@
         ScrollTrigger.create({
             // toggleActions: "play resume resume resume",
             trigger: ".index-drink",
-            start: "top 30%",
-            end: "bottom 30%",
+            start: "7% 0%",
+            end: "bottom 0%",
             // markers: true,
             // animation: $tl_drink,
             // scrub: 1,
