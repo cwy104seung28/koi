@@ -26,7 +26,7 @@ ini_set('date.timezone', 'Asia/Taipei');
 
 // 後台懶得改成用class的方式
 define("HOSTNAME", "mysqlsh --sql --host=sfo1.clusters.zeabur.com --port=31104 --user=root --password=3Jh6AY4T2xPg9ovLiCFd5a10c8l7uIRM --schema=zeabur");
-define("DATABASE", "zeabur");
+define("DATABASE", "koi");
 define("USERNAME", "root");
 define("PASSWORD", "3Jh6AY4T2xPg9ovLiCFd5a10c8l7uIRM");
 
