@@ -479,17 +479,17 @@
 
     $('footer').addClass('is-light-orange')
     $('nav').addClass('is-move')
-    $(document).ready(function() {
-        window.onbeforeunload = function() {
-            //刷新后页面自动回到顶部
-            document.documentElement.scrollTop = 0; //ie下
-            document.body.scrollTop = 0; //非ie
-        }
-        $("html").addClass("is-lock")
-    })
-    gsap.delayedCall(2, function() {
-        $("html").removeClass("is-lock")
-    })
+    // $(document).ready(function() {
+    //     window.onbeforeunload = function() {
+    //         //刷新后页面自动回到顶部
+    //         document.documentElement.scrollTop = 0; //ie下
+    //         document.body.scrollTop = 0; //非ie
+    //     }
+    //     $("html").addClass("is-lock")
+    // })
+    // gsap.delayedCall(2, function() {
+    //     $("html").removeClass("is-lock")
+    // })
     var $tl = gsap.timeline({
         paused: true,
     });

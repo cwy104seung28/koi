@@ -9,31 +9,12 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
 if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsCover') {
     $fileType   = "file_type='newsCover' AND";
-} else if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'doctorCover') {
-    $fileType   = "file_type='doctorCover' AND";
-} else if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'caseCover') {
-    $fileType   = "file_type='caseCover' AND";
+} else if (isset($_REQUEST['type']) && $_REQUEST['type']=='newsTopCover'){
+    $fileType   = "file_type='newsTopCover' AND";
+} else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="newsInnerCover")){
+    $fileType = "file_type='newsInnerCover' AND";
 }
-else if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'clinicCover') {
-    $fileType   = "file_type='clinicCover' AND";
-}
-else if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'serviceCover') {
-    $fileType   = "file_type='serviceCover' AND";
-}
-else if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'serviceListCover') {
-    $fileType   = "file_type='serviceListCover' AND";
-}
-else if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'serviceQACover') {
-    $fileType   = "file_type='serviceQACover' AND";
-}
-else if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'teamCover') {
-    $fileType   = "file_type='teamCover' AND";
-}
-// else if (isset($_REQUEST['type']) && $_REQUEST['type']=='productExposedCatCover'){
-//     $fileType   = "file_type='productExposedCatCover' AND";
-// } else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="newsCover")){
-//     $fileType = "file_type='newsCover' AND";
-// } else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="eventCover")){
+//else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="eventCover")){
 //     $fileType = "file_type='eventCover' AND";
 // } else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="sampleCover")){
 //     $fileType = "file_type='sampleCover' AND";

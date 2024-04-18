@@ -42,12 +42,12 @@ function creatTablBottom()
 <div id="cmsMenu">
 	<ul>
 		<?php if ($row_RecLevelAuthority['a_2'] == '1') { ?>
-			<li id="main_menu_6" class="main_menu <?php if ($menu_is == 'service') : ?>main_menu_now<?php endif ?>">
-				<a href="service_list.php">
-					<div>服務項目</div>
+			<li id="main_menu_6" class="main_menu <?php if ($menu_is == 'news') : ?>main_menu_now<?php endif ?>">
+				<a href="news_list.php">
+					<div>最新消息</div>
 				</a>
 			</li>
-			<li id="main_menu_7" class="main_menu <?php if ($menu_is == 'team') : ?>main_menu_now<?php endif ?>">
+			<!-- <li id="main_menu_7" class="main_menu <?php if ($menu_is == 'team') : ?>main_menu_now<?php endif ?>">
 				<a href="team_list.php">
 					<div>醫師團隊</div>
 				</a>
@@ -72,7 +72,7 @@ function creatTablBottom()
 				<a href="clinic_list.php">
 					<div>月班表</div>
 				</a>
-			</li>
+			</li> -->
 		<?php } ?>
 
 		<!--<?php if ($row_RecLevelAuthority['a_6'] == '1') { ?>
@@ -101,11 +101,11 @@ function creatTablBottom()
 
 
 	<?php if ($row_RecLevelAuthority['a_10'] == '1') { ?>
-		<li id="main_menu_10" class="main_menu <?php if ($menu_is == 'search') : ?>main_menu_now<?php endif ?>">
+		<!-- <li id="main_menu_10" class="main_menu <?php if ($menu_is == 'search') : ?>main_menu_now<?php endif ?>">
 			<a href="search_list.php">
 				<div>SEO區</div>
 			</a>
-		</li>
+		</li> -->
 	<?php } ?>
 
 	</ul>

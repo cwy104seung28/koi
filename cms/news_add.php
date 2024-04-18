@@ -45,6 +45,18 @@ $ifFile = 0;
 
     <?php require_once('script.php'); ?>
     <?php require_once('head.php'); ?>
+
+    <style>
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: all .2s;
+        }
+
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -74,8 +86,8 @@ $ifFile = 0;
                                         <td>
                                             <table width="100%" border="0" cellpadding="5" cellspacing="3">
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">分類</td>
-                                                    <td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">分類</td>
+                                                    <td width="532">
                                                         <select name="d_class2" id="d_class2" class="chosen-select">
                                                             <?php do { ?>
                                                                 <option value="<?php echo $row_RecnewsC['c_id'] ?>" <?php if (!(strcmp($row_RecnewsC['c_id'], $G_selected1))) {
@@ -92,7 +104,7 @@ $ifFile = 0;
                                                             ?>
                                                         </select>
                                                     </td>
-                                                    <td bgcolor="#e5ecf6">&nbsp;</td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
@@ -103,24 +115,72 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">簡述</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(電腦版)</td>
                                                     <td width="532">
-                                                        <input name="d_class3" type="text" class="table_data" id="d_class3" size="80" />
+                                                        <select name="d_class3" id="d_class3" class="chosen-select">
+                                                            <option value="no">否</option>
+                                                            <option value="yes">是</option>
+                                                        </select>
+
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
-                                                    <td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(手機版)</td>
+                                                    <td width="532">
+                                                        <select name="d_class4" id="d_class4" class="chosen-select">
+                                                            <option value="no">否</option>
+                                                            <option value="yes">是</option>
+                                                        </select>
+
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內頁第一屏是否為影片</td>
+                                                    <td width="532">
+                                                        <select name="d_class5" id="d_class5" class="chosen-select">
+                                                            <option value="no">否</option>
+                                                            <option value="yes">是</option>
+                                                        </select>
+
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">影片連結</td>
+                                                    <td width="532">
+                                                        <input name="d_class6" type="text" class="table_data" id="d_class6" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p class="red_letter">
+                                                            *若無影片則無需填寫
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否要在全部分類中置頂?</td>
+                                                    <td width="532">
+                                                        <select name="d_class7" id="d_class7" class="chosen-select">
+                                                            <option value="no">否</option>
+                                                            <option value="yes">是</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
+                                                    <td width="532">
                                                         <textarea name="d_content" cols="90" rows="30" class="tiny table_data" id="d_content"></textarea>
                                                     </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*小斷行請按Shift+Enter。
                                                             <br /> 輸入區域的右下角可以調整輸入空間的大小。
                                                         </p>
                                                     </td>
                                                 </tr>
-                                                <tr>
+
+                                                <!-- <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">描述</td>
                                                     <td width="532">
                                                         <textarea name="d_description" cols="60" rows="4" class="table_data" id="d_description"></textarea>
@@ -147,17 +207,17 @@ $ifFile = 0;
                                                         <textarea name="d_schema" cols="60" rows="4" class="table_data" id="d_schema"></textarea>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">時間</td>
-                                                    <td>
+                                                    <td width="532">
                                                         <input name="d_date" type="text" class="table_data" id="d_date" value="<?php echo date("Y-m-d H:i:s"); ?>" size="50" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在網頁顯示</td>
-                                                    <td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在網頁顯示</td>
+                                                    <td width="532">
                                                         <label>
                                                             <select name="d_active" class="table_data" id="d_active">
                                                                 <option value="1">顯示</option>
@@ -165,13 +225,13 @@ $ifFile = 0;
                                                             </select>
                                                         </label>
                                                     </td>
-                                                    <td bgcolor="#e5ecf6">&nbsp;</td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p>上傳封面圖片</p>
                                                     </td>
-                                                    <td>
+                                                    <td width="532">
                                                         <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
                                                             <tr>
                                                                 <td> <span class="table_data">選擇圖片：</span>
@@ -183,48 +243,58 @@ $ifFile = 0;
                                                             </tr>
                                                         </table>
                                                     </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*
                                                             <?php echo $imagesSize['newsCover']['note']; ?>
                                                         </p>
                                                     </td>
                                                 </tr>
-                                                <!-- <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>上傳圖片</p>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p>上傳置頂封面圖片</p>
                                                     </td>
-                                                    <td>
-                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable">
+                                                    <td width="532">
+                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
                                                             <tr>
                                                                 <td> <span class="table_data">選擇圖片：</span>
-                                                                    <input name="image[]" type="file" class="table_data" id="image1" multiple />
+                                                                    <input name="imageTopCover[]" type="file" class="table_data" id="imageTopCover1" />
                                                                     <br>
                                                                     <span class="table_data">圖片說明：</span>
-                                                                    <input name="image_title[]" type="text" class="table_data" id="image_title1"> </td>
-                                                            </tr>
-                                                        </table>
-                                                        <table width="100%" border="0" cellspacing="5" cellpadding="2">
-                                                            <tr>
-                                                                <td height="28">
-                                                                    <table border="0" cellspacing="2" cellpadding="2">
-                                                                        <tr>
-                                                                            <td><a href="javascript:addField()"><img src="image/add.png" width="16" height="16" border="0"></a></td>
-                                                                            <td><a href="javascript:addField()" class="table_data">新增圖片</a></td>
-                                                                            <td class="red_letter">&nbsp;</td>
-                                                                        </tr>
-                                                                    </table>
+                                                                    <input name="imageTopCover_title[]" type="text" class="table_data" id="imageTopCover_title1">
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                     </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">* 可上傳多張照片。</p>
-                                                        <p class="red_letter">* 若要排序照片，請於新增完成後，至該筆資料編輯區排序。</p>
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*
-                                                            <?php echo $imagesSize[$_SESSION['nowMenu']]['note']; ?>
+                                                            <?php echo $imagesSize['newsTopCover']['note']; ?>
                                                         </p>
                                                     </td>
-                                                </tr> -->
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p>上傳內頁封面圖片</p>
+                                                    </td>
+                                                    <td width="532">
+                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
+                                                            <tr>
+                                                                <td> <span class="table_data">選擇圖片：</span>
+                                                                    <input name="imageInnerCover[]" type="file" class="table_data" id="imageInnerCover1" />
+                                                                    <br>
+                                                                    <span class="table_data">圖片說明：</span>
+                                                                    <input name="imageInnerCover_title[]" type="text" class="table_data" id="imageInnerCover_title1">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p class="red_letter">*
+                                                            <?php echo $imagesSize['newsInnerCover']['note']; ?>
+                                                            <br>
+                                                            若內容有影片，則不須上傳內頁封面
+                                                        </p>
+                                                    </td>
+                                                </tr>
                                                 <?php if ($ifFile) { ?>
                                                     <tr>
                                                         <td align="center" bgcolor="#e5ecf6" class="table_col_title">
@@ -289,8 +359,12 @@ $ifFile = 0;
 </body>
 
 </html>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 <script src="jquery/chosen_v1.8.5/chosen.jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- <script type="text/javascript" src="ckeditor/ckeditor.js"></script> -->
 
 <script type="text/javascript">
     $(".chosen-select").chosen({
@@ -354,7 +428,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_class1, d_class2, d_class3, d_class4, d_class5, d_class6, d_tag, d_description, d_head, d_body, d_schema, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_class1, :d_class2, :d_class3, :d_class4, :d_class5, :d_class6, :d_tag, :d_description, :d_head, :d_body, :d_schema, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_class1, d_class2, d_class3, d_class4, d_class5, d_class6, d_class7, d_tag, d_description, d_head, d_body, d_schema, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_class1, :d_class2, :d_class3, :d_class4, :d_class5, :d_class6, :d_class7, :d_tag, :d_description, :d_head, :d_body, :d_schema, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -367,6 +441,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $stat->bindParam(':d_class4', $_POST['d_class4'], PDO::PARAM_STR);
     $stat->bindParam(':d_class5', $_POST['d_class5'], PDO::PARAM_STR);
     $stat->bindParam(':d_class6', $_POST['d_class6'], PDO::PARAM_STR);
+    $stat->bindParam(':d_class7', $_POST['d_class7'], PDO::PARAM_STR);
     $stat->bindParam(':d_tag', $_POST['d_tag'], PDO::PARAM_STR);
     $stat->bindParam(':d_description', $_POST['d_description'], PDO::PARAM_STR);
     $stat->bindParam(':d_head', $_POST['d_head'], PDO::PARAM_STR);
@@ -414,6 +489,46 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
         $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
         $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
         $stat->bindParam(':file_type', $type = 'newsCover', PDO::PARAM_STR);
+        $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
+        $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
+        $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
+        $stat->execute();
+
+        $_SESSION["change_image"] = 1;
+    }
+
+    // TopCover
+    $image_result2 = image_process($conn, $_FILES['imageTopCover'], $_REQUEST['imageTopCover_title'], $menu_is, "add", $imagesSize['newsTopCover']['IW'], $imagesSize['newsTopCover']['IH']);
+
+    for ($j = 1; $j < count($image_result2); $j++) {
+        $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
+
+        $stat = $conn->prepare($insertSQL);
+        $stat->bindParam(':file_name', $image_result[$j][0], PDO::PARAM_STR);
+        $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
+        $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
+        $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
+        $stat->bindParam(':file_type', $type = 'newsTopCover', PDO::PARAM_STR);
+        $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
+        $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
+        $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
+        $stat->execute();
+
+        $_SESSION["change_image"] = 1;
+    }
+
+    // InnerCover
+    $image_result3 = image_process($conn, $_FILES['imageInnerCover'], $_REQUEST['imageInnerCover_title'], $menu_is, "add", $imagesSize['newsInnerCover']['IW'], $imagesSize['newsInnerCover']['IH']);
+
+    for ($j = 1; $j < count($image_result3); $j++) {
+        $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
+
+        $stat = $conn->prepare($insertSQL);
+        $stat->bindParam(':file_name', $image_result[$j][0], PDO::PARAM_STR);
+        $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
+        $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
+        $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
+        $stat->bindParam(':file_type', $type = 'newsInnerCover', PDO::PARAM_STR);
         $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
         $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
         $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);

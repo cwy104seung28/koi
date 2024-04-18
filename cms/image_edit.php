@@ -27,63 +27,22 @@ if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsCover') {
     $not = $imagesSize['newsCover']['note'];
     $IWidth = $imagesSize['newsCover']['IW'];
     $IHeight = $imagesSize['newsCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'doctorCover') {
-    $type = $_REQUEST['type'];
-    $fileType = "file_type='doctorCover' AND";
-    $not = $imagesSize['doctorCover']['note'];
-    $IWidth = $imagesSize['doctorCover']['IW'];
-    $IHeight = $imagesSize['doctorCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'caseCover') {
-    $type = $_REQUEST['type'];
-    $fileType = "file_type='caseCover' AND";
-    $not = $imagesSize['caseCover']['note'];
-    $IWidth = $imagesSize['caseCover']['IW'];
-    $IHeight = $imagesSize['caseCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'clinicCover') {
-    $type = $_REQUEST['type'];
-    $fileType = "file_type='clinicCover' AND";
-    $not = $imagesSize['clinicCover']['note'];
-    $IWidth = $imagesSize['clinicCover']['IW'];
-    $IHeight = $imagesSize['clinicCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'serviceCover') {
-    $type = $_REQUEST['type'];
-    $fileType = "file_type='serviceCover' AND";
-    $not = $imagesSize['serviceCover']['note'];
-    $IWidth = $imagesSize['serviceCover']['IW'];
-    $IHeight = $imagesSize['serviceCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'serviceListCover') {
-    $type = $_REQUEST['type'];
-    $fileType = "file_type='serviceListCover' AND";
-    $not = $imagesSize['serviceListCover']['note'];
-    $IWidth = $imagesSize['serviceListCover']['IW'];
-    $IHeight = $imagesSize['serviceListCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'serviceQACover') {
-    $type = $_REQUEST['type'];
-    $fileType = "file_type='serviceQACover' AND";
-    $not = $imagesSize['serviceQACover']['note'];
-    $IWidth = $imagesSize['serviceQACover']['IW'];
-    $IHeight = $imagesSize['serviceQACover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'teamCover') {
-    $type = $_REQUEST['type'];
-    $fileType = "file_type='teamCover' AND";
-    $not = $imagesSize['teamCover']['note'];
-    $IWidth = $imagesSize['teamCover']['IW'];
-    $IHeight = $imagesSize['teamCover']['IH'];
-}
+} 
 
-// elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'productExposedCatCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='productExposedCatCover' AND";
-//     $not = $imagesSize['productExposedCatCover']['note'];
-//     $IWidth = $imagesSize['productExposedCatCover']['IW'];
-//     $IHeight = $imagesSize['productExposedCatCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='newsCover' AND";
-//     $not = $imagesSize['newsCover']['note'];
-//     $IWidth = $imagesSize['newsCover']['IW'];
-//     $IHeight = $imagesSize['newsCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'eventCover') {
+elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsTopCover') {
+    $type = $_REQUEST['type'];
+    $fileType = "file_type='newsTopCover' AND";
+    $not = $imagesSize['newsTopCover']['note'];
+    $IWidth = $imagesSize['newsTopCover']['IW'];
+    $IHeight = $imagesSize['newsTopCover']['IH'];
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsInnerCover') {
+    $type = $_REQUEST['type'];
+    $fileType = "file_type='newsInnerCover' AND";
+    $not = $imagesSize['newsInnerCover']['note'];
+    $IWidth = $imagesSize['newsInnerCover']['IW'];
+    $IHeight = $imagesSize['newsInnerCover']['IH'];
+}
+// elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'eventCover') {
 //     $type = $_REQUEST['type'];
 //     $fileType = "file_type='eventCover' AND";
 //     $not = $imagesSize['eventCover']['note'];

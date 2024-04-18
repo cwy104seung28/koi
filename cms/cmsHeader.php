@@ -2,7 +2,7 @@
   <tr>
     <td rowspan="2" align="left">
       <!-- <span class="cms-art-logo-name"><img src="../images/logo-green.svg" width="190"></span> -->
-      <span class="cms-art-logo-text">花千樹形象美學診所</span>
+      <span class="cms-art-logo-text">KOI Thé</span>
         <!-- <a href="<?= $_SERVER['PHP_SELF'] ?>?lang=<?= $lanlink ?>"><span style="font-size: 12px;
         float: right;
         padding-top: 15px;

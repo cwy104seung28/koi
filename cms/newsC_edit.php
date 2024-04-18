@@ -69,15 +69,15 @@ $menu_is = "news";
                                                                 <td>
                                                                     <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">名稱</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
                                                                             <td width="516">
                                                                                 <input name="c_title" type="text" class="table_data" id="c_title" value="<?php echo $row_RecnewsC['c_title']; ?>" size="50" />
                                                                                 <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecnewsC['c_id']; ?>" />
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
-                                                                        <!-- <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
+                                                                        <tr>
+                                                                            <!-- <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
                                                                             <td width="516">
                                                                                 <input name="c_title_en" type="text" class="table_data" id="c_title_en" value="<?php echo $row_RecnewsC['c_title_en']; ?>" size="50" />
                                                                             </td>
@@ -131,14 +131,14 @@ $menu_is = "news";
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
-    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_slug=:c_slug, c_class=:c_class, c_content=:c_content, c_link=:c_link, c_active=:c_active WHERE c_id=:c_id";
+    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_slug=:c_slug, c_class=:c_class, c_link=:c_link, c_active=:c_active WHERE c_id=:c_id";
 
     $sth = $conn->prepare($updateSQL);
     $sth->bindParam(':c_title', $_POST['c_title'], PDO::PARAM_STR);
     $sth->bindParam(':c_title_en', $_POST['c_title_en'], PDO::PARAM_STR);
     $sth->bindParam(':c_slug', generate_slug($_POST['c_title']), PDO::PARAM_STR);
     $sth->bindParam(':c_class', $_POST['c_class'], PDO::PARAM_STR);
-    $sth->bindParam(':c_content', $_POST['c_content'], PDO::PARAM_STR);
+    // $sth->bindParam(':c_content', $_POST['c_content'], PDO::PARAM_STR);
     $sth->bindParam(':c_link', $_POST['c_link'], PDO::PARAM_STR);
     $sth->bindParam(':c_active', $_POST['c_active'], PDO::PARAM_INT);
     $sth->bindParam(':c_id', $_POST['c_id'], PDO::PARAM_INT);

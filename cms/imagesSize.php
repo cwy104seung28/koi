@@ -5,45 +5,55 @@ $maxFileSize = "<br />$uploadFileSize";
 
 $imagesSize = [
     "newsCover" => [
-        'IW' => 1066,
-        'IH' => 696,
-        'note' => "圖片請上傳寬 1066pixel、高 696pixel之圖檔。 $maxFileSize",
+        'IW' => 144,
+        'IH' => 180,
+        'note' => "圖片請上傳寬 144pixel、高 180pixel之圖檔。 $maxFileSize",
     ],
-    "doctorCover" => [
-        'IW' => 1066,
-        'IH' => 696,
-        'note' => "圖片請上傳寬 1066pixel、高 696pixel之圖檔。 $maxFileSize",
+    "newsTopCover" => [
+        'IW' => 716,
+        'IH' => 402,
+        'note' => "圖片請上傳寬 716pixel、高 402pixel之圖檔。 $maxFileSize",
     ],
-    "caseCover" => [
-        'IW' => 1066,
-        'IH' => 696,
-        'note' => "圖片請上傳寬 1066pixel、高 696pixel之圖檔。 $maxFileSize",
+    "newsInnerCover" => [
+        'IW' => 1724,
+        'IH' => 970,
+        'note' => "圖片請上傳寬 1724pixel、高 970pixel之圖檔。 $maxFileSize",
     ],
-    "clinicCover" => [
-        'IW' => 1600,
-        'IH' => 872,
-        'note' => "圖片請上傳寬 1600pixel、高 872pixel之圖檔。 $maxFileSize",
-    ],
-    "serviceListCover" => [
-        'IW' => 1920,
-        'IH' => 600,
-        'note' => "圖片請上傳寬 1920pixel、高 600pixel之圖檔。 $maxFileSize",
-    ],
-    "serviceCover" => [
-        'IW' => 1920,
-        'IH' => 600,
-        'note' => "圖片請上傳寬 1920pixel、高 600pixel之圖檔。 $maxFileSize",
-    ],
-    "serviceQACover" => [
-        'IW' => 424,
-        'IH' => 546,
-        'note' => "圖片請上傳寬 424pixel、高 546pixel之圖檔。 $maxFileSize",
-    ],
-    "teamCover" => [
-        'IW' => 444,
-        'IH' => 400,
-        'note' => "圖片請上傳寬 444pixel、高 400pixel之圖檔。 $maxFileSize",
-    ],
+    // "doctorCover" => [
+    //     'IW' => 1066,
+    //     'IH' => 696,
+    //     'note' => "圖片請上傳寬 1066pixel、高 696pixel之圖檔。 $maxFileSize",
+    // ],
+    // "caseCover" => [
+    //     'IW' => 1066,
+    //     'IH' => 696,
+    //     'note' => "圖片請上傳寬 1066pixel、高 696pixel之圖檔。 $maxFileSize",
+    // ],
+    // "clinicCover" => [
+    //     'IW' => 1600,
+    //     'IH' => 872,
+    //     'note' => "圖片請上傳寬 1600pixel、高 872pixel之圖檔。 $maxFileSize",
+    // ],
+    // "serviceListCover" => [
+    //     'IW' => 1920,
+    //     'IH' => 600,
+    //     'note' => "圖片請上傳寬 1920pixel、高 600pixel之圖檔。 $maxFileSize",
+    // ],
+    // "serviceCover" => [
+    //     'IW' => 1920,
+    //     'IH' => 600,
+    //     'note' => "圖片請上傳寬 1920pixel、高 600pixel之圖檔。 $maxFileSize",
+    // ],
+    // "serviceQACover" => [
+    //     'IW' => 424,
+    //     'IH' => 546,
+    //     'note' => "圖片請上傳寬 424pixel、高 546pixel之圖檔。 $maxFileSize",
+    // ],
+    // "teamCover" => [
+    //     'IW' => 444,
+    //     'IH' => 400,
+    //     'note' => "圖片請上傳寬 444pixel、高 400pixel之圖檔。 $maxFileSize",
+    // ],
     // "gallery" => [
     //     'IW' => 1170,
     //     'IH' => 640,
