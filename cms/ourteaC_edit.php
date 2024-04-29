@@ -2,7 +2,7 @@
 
 <?php
 if (!1) {
-    header("Location: doctorC_list.php");
+    header("Location: ourteaC_list.php");
 }
 
 $editFormAction = $_SERVER['PHP_SELF'];
@@ -10,20 +10,20 @@ if (isset($_SERVER['QUERY_STRING'])) {
     $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
-$colname_RecdoctorC = "-1";
+$colname_RecourteaC = "-1";
 if (isset($_GET['c_id'])) {
-    $colname_RecdoctorC = $_GET['c_id'];
+    $colname_RecourteaC = $_GET['c_id'];
 }
 
-$query_RecdoctorC = "SELECT * FROM class_set WHERE c_id = :c_id";
+$query_RecourteaC = "SELECT * FROM class_set WHERE c_id = :c_id";
 
-$RecdoctorC = $conn->prepare($query_RecdoctorC);
-$RecdoctorC->bindParam(':c_id', $colname_RecdoctorC, PDO::PARAM_INT);
-$RecdoctorC->execute();
-$row_RecdoctorC = $RecdoctorC->fetch();
-$totalRows_RecdoctorC = $RecdoctorC->rowCount();
+$RecourteaC = $conn->prepare($query_RecourteaC);
+$RecourteaC->bindParam(':c_id', $colname_RecourteaC, PDO::PARAM_INT);
+$RecourteaC->execute();
+$row_RecourteaC = $RecourteaC->fetch();
+$totalRows_RecourteaC = $RecourteaC->rowCount();
 
-$menu_is = "doctor";
+$menu_is = "ourtea";
 
 ?>
 
@@ -69,17 +69,17 @@ $menu_is = "doctor";
                                                                 <td>
                                                                     <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">名稱</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
                                                                             <td width="516">
-                                                                                <input name="c_title" type="text" class="table_data" id="c_title" value="<?php echo $row_RecdoctorC['c_title']; ?>" size="50" />
-                                                                                <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecdoctorC['c_id']; ?>" />
+                                                                                <input name="c_title" type="text" class="table_data" id="c_title" value="<?php echo $row_RecourteaC['c_title']; ?>" size="50" />
+                                                                                <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecourteaC['c_id']; ?>" />
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
-                                                                        <!-- <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
+                                                                        <tr>
+                                                                            <!-- <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
                                                                             <td width="516">
-                                                                                <input name="c_title_en" type="text" class="table_data" id="c_title_en" value="<?php echo $row_RecdoctorC['c_title_en']; ?>" size="50" />
+                                                                                <input name="c_title_en" type="text" class="table_data" id="c_title_en" value="<?php echo $row_RecourteaC['c_title_en']; ?>" size="50" />
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr> -->
@@ -87,8 +87,8 @@ $menu_is = "doctor";
                                                                             <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active" class="table_data" id="c_active">
-                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecdoctorC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
-                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecdoctorC[ 'c_active']))) {echo "selected";} ?>>公佈</option>
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecourteaC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecourteaC[ 'c_active']))) {echo "selected";} ?>>公佈</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
@@ -131,20 +131,20 @@ $menu_is = "doctor";
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
-    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_slug=:c_slug, c_class=:c_class, c_content=:c_content, c_link=:c_link, c_active=:c_active WHERE c_id=:c_id";
+    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_slug=:c_slug, c_class=:c_class, c_link=:c_link, c_active=:c_active WHERE c_id=:c_id";
 
     $sth = $conn->prepare($updateSQL);
     $sth->bindParam(':c_title', $_POST['c_title'], PDO::PARAM_STR);
     $sth->bindParam(':c_title_en', $_POST['c_title_en'], PDO::PARAM_STR);
     $sth->bindParam(':c_slug', generate_slug($_POST['c_title']), PDO::PARAM_STR);
     $sth->bindParam(':c_class', $_POST['c_class'], PDO::PARAM_STR);
-    $sth->bindParam(':c_content', $_POST['c_content'], PDO::PARAM_STR);
+    // $sth->bindParam(':c_content', $_POST['c_content'], PDO::PARAM_STR);
     $sth->bindParam(':c_link', $_POST['c_link'], PDO::PARAM_STR);
     $sth->bindParam(':c_active', $_POST['c_active'], PDO::PARAM_INT);
     $sth->bindParam(':c_id', $_POST['c_id'], PDO::PARAM_INT);
     $sth->execute();
 
-    $updateGoTo = "doctorC_list.php";
+    $updateGoTo = "ourteaC_list.php";
     if (isset($_SERVER['QUERY_STRING'])) {
         $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
         $updateGoTo .= $_SERVER['QUERY_STRING'] . "&pageNum=" . $_SESSION["ToPage"];

@@ -1297,6 +1297,9 @@
             // animation: $tl_drink,
             // scrub: 1,
             onEnter() {
+                $('.index-drink .bg .note').addClass('is-show');
+                $('.index-drink .bg .en').addClass('is-show');
+                $('.index-drink .bg .ch').addClass('is-show');
                 $('.index-drink .items-area div').addClass('is-show');
 
                 var scene = document.getElementById('scene');

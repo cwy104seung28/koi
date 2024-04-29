@@ -441,7 +441,7 @@ nav {
     background-color: #f9efe1;
     margin-top: -200px;
     opacity: 1;
-    &.is-not-show{
+    &.is-not-show {
         opacity: 0;
     }
     .index-feature-inner {
@@ -453,8 +453,9 @@ nav {
         .down {
             transform: translateY(0);
         }
-        .up, .down{
-            div{
+        .up,
+        .down {
+            div {
                 transform: scale(0);
             }
         }
@@ -470,10 +471,10 @@ nav {
     .index-feature-inner {
         opacity: 0;
     }
-    &.is-show{
+    &.is-show {
         .index-feature-inner {
             opacity: 1;
-        }  
+        }
     }
 }
 .index-feature-inner {
@@ -625,6 +626,13 @@ nav {
                 color: #0b0b0b;
                 letter-spacing: 3px;
                 margin-bottom: 65px;
+                opacity: 0;
+                transform: scale(0);
+                transition: 0.5s all;
+                &.is-show {
+                    opacity: 1;
+                    transform: scale(1);
+                }
             }
             .en {
                 font-family: $en-family;
@@ -634,6 +642,13 @@ nav {
                 font-weight: 900;
                 line-height: 1.05;
                 margin-bottom: 15px;
+                opacity: 0;
+                transform: scale(0);
+                transition: 0.5s all;
+                &.is-show {
+                    opacity: 1;
+                    transform: scale(1);
+                }
             }
             .ch {
                 font-family: $ch-family;
@@ -642,6 +657,13 @@ nav {
                 letter-spacing: 5px;
                 font-weight: 700;
                 // line-height: 1.05;
+                opacity: 0;
+                transform: scale(0);
+                transition: 0.5s all;
+                &.is-show {
+                    opacity: 1;
+                    transform: scale(1);
+                }
                 &.left {
                     margin-right: 420px;
                 }

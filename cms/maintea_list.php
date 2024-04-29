@@ -1,29 +1,29 @@
 <?php require_once('../Connections/connect2data.php'); ?>
 
 <?php
-$menu_is = "history";
+$menu_is = "maintea";
 
 $currentPage = $_SERVER["PHP_SELF"];
 
-$maxRows_Rechistory = 10;
+$maxRows_Recmaintea = 10;
 $pageNum = 0;
 if (isset($_GET['pageNum'])) {
     $pageNum = $_GET['pageNum'];
 }
-$startRow_Rechistory = $pageNum * $maxRows_Rechistory;
+$startRow_Recmaintea = $pageNum * $maxRows_Recmaintea;
 
-$query_Rechistory = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' ORDER BY d_sort ASC, d_date DESC";
-$query_limit_Rechistory = sprintf("%s LIMIT %d, %d", $query_Rechistory, $startRow_Rechistory, $maxRows_Rechistory);
-$Rechistory = $conn->query($query_limit_Rechistory);
-$row_Rechistory = $Rechistory->fetch();
+$query_Recmaintea = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' ORDER BY d_sort ASC, d_date DESC";
+$query_limit_Recmaintea = sprintf("%s LIMIT %d, %d", $query_Recmaintea, $startRow_Recmaintea, $maxRows_Recmaintea);
+$Recmaintea = $conn->query($query_limit_Recmaintea);
+$row_Recmaintea = $Recmaintea->fetch();
 
 if (isset($_GET['totalRows'])) {
     $totalRows = $_GET['totalRows'];
 } else {
-    $all_Rechistory = $conn->query($query_Rechistory);
-    $totalRows = $all_Rechistory->rowCount();
+    $all_Recmaintea = $conn->query($query_Recmaintea);
+    $totalRows = $all_Recmaintea->rowCount();
 }
-$totalPages = ceil($totalRows / $maxRows_Rechistory) - 1;
+$totalPages = ceil($totalRows / $maxRows_Recmaintea) - 1;
 $_SESSION['totalRows'] = $totalRows;
 $TotalPage = $totalPages;
 
@@ -65,7 +65,7 @@ else if ($R_pageNum > $totalPages) {
 
 //如果指定的頁面大於資料所擁有的頁面,轉到最大的頁面
 if ($R_pageNum > $totalPages && $R_pageNum != 0) {
-    header("Location:history_list.php?pageNum=" . $totalPages);
+    header("Location:maintea_list.php?pageNum=" . $totalPages);
 }
 
 //修改排序
@@ -81,12 +81,12 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
     $sort_num = 1;
 
-    $query_Rechistory = "SELECT * FROM data_set WHERE d_class1 = 'history' ORDER BY d_sort ASC, d_date DESC";
-    $Rechistory = $conn->query($query_Rechistory);
-    $row_Rechistory = $Rechistory->fetch();
+    $query_Recmaintea = "SELECT * FROM data_set WHERE d_class1 = 'maintea' ORDER BY d_sort ASC, d_date DESC";
+    $Recmaintea = $conn->query($query_Recmaintea);
+    $row_Recmaintea = $Recmaintea->fetch();
 
     do {
-        if ($row_Rechistory['d_sort'] == 0) {} else if ($row_Rechistory['d_id'] == $_GET['now_d_id']) {
+        if ($row_Recmaintea['d_sort'] == 0) {} else if ($row_Recmaintea['d_id'] == $_GET['now_d_id']) {
             // echo '<pre>'; print_r($sort_num); echo '</pre>';
 
         } else if ($sort_num == $_GET['change_num']) {
@@ -97,7 +97,7 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
             $stat = $conn->prepare($updateSQL);
             $stat->bindParam(':d_sort', $sort_num, PDO::PARAM_INT);
-            $stat->bindParam(':d_id', $row_Rechistory['d_id'], PDO::PARAM_INT);
+            $stat->bindParam(':d_id', $row_Recmaintea['d_id'], PDO::PARAM_INT);
             $stat->execute();
 
             $sort_num++;
@@ -106,14 +106,14 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
             $stat = $conn->prepare($updateSQL);
             $stat->bindParam(':d_sort', $sort_num, PDO::PARAM_INT);
-            $stat->bindParam(':d_id', $row_Rechistory['d_id'], PDO::PARAM_INT);
+            $stat->bindParam(':d_id', $row_Recmaintea['d_id'], PDO::PARAM_INT);
             $stat->execute();
 
             // echo '<pre>'; print_r($sort_num); echo '</pre>';
 
             $sort_num++;
         }
-    } while ($row_Rechistory = $Rechistory->fetch());
+    } while ($row_Recmaintea = $Recmaintea->fetch());
 
     $updateSQL = "UPDATE data_set SET d_sort=:d_sort WHERE d_id=:d_id";
 
@@ -123,9 +123,9 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
     $stat->execute();
 
     if ($G_changeSort == 1) {
-        header("Location:history_list.php?pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows']);
+        header("Location:maintea_list.php?pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows']);
     } else if ($G_delchangeSort == 1) {
-        header("Location:history_list.php?pageNum=" . $_GET['pageNum']);
+        header("Location:maintea_list.php?pageNum=" . $_GET['pageNum']);
     }
 }
 
@@ -182,7 +182,7 @@ require_once('display_page.php');
                                     <td><img src="image/spacer.gif" width="1" height="1" /></td>
                                 </tr>
                             </table>
-                            <form action="history_process.php" method="post" name="form1" id="form1">
+                            <form action="maintea_process.php" method="post" name="form1" id="form1">
                                 <?php if ($totalRows > 0) { // Show if recordset not empty ?>
                                 <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
                                     <tr>
@@ -199,8 +199,8 @@ require_once('display_page.php');
                                     do {
                                         $i++;
                                         $colname_RecImage = "-1";
-                                        if (isset($row_Rechistory['d_id'])) {
-                                          $colname_RecImage = $row_Rechistory['d_id'];
+                                        if (isset($row_Recmaintea['d_id'])) {
+                                          $colname_RecImage = $row_Recmaintea['d_id'];
                                         }
                                         $query_RecImage = "SELECT * FROM file_set WHERE file_type='image' AND file_d_id = :file_d_id";
                                         $RecImage = $conn->prepare($query_RecImage);
@@ -211,17 +211,17 @@ require_once('display_page.php');
                                     ?>
                                     <tr <?php if ($i%2==0): ?>bgcolor='#E4E4E4'<?php endif ?>>
                                         <td align="center" class="table_data">
-                                            <a href="history_edit.php?d_id=<?php echo $row_Rechistory['d_id']; ?>">
-                                                <?php echo $row_Rechistory['d_date']; ?>
+                                            <a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
+                                                <?php echo $row_Recmaintea['d_date']; ?>
                                             </a>
                                         </td>
                                         <td align="center" class="table_data">
-                                            <select name="d_sort" id="d_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows; ?>','<?php echo $row_Rechistory['d_id']; ?>',this.options[this.selectedIndex].value)">
-                                                <option value="0" <?php if (!(strcmp(0, $row_Rechistory[ 'd_sort']))) {echo "selected"; } ?>>至頂</option>
+                                            <select name="d_sort" id="d_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows; ?>','<?php echo $row_Recmaintea['d_id']; ?>',this.options[this.selectedIndex].value)">
+                                                <option value="0" <?php if (!(strcmp(0, $row_Recmaintea[ 'd_sort']))) {echo "selected"; } ?>>至頂</option>
                                                 <?php
                                                 for($j=1;$j<=($totalRows);$j++) {
                                                     echo "<option value=\"".$j."\" ";
-                                                    if (!(strcmp($j, $row_Rechistory['d_sort']))) {echo "selected=\"selected\"";}
+                                                    if (!(strcmp($j, $row_Recmaintea['d_sort']))) {echo "selected=\"selected\"";}
                                                     echo ">".$j."</option>";
                                                 }
                                                 $_SESSION['totalRows']=$totalRows;
@@ -229,11 +229,11 @@ require_once('display_page.php');
                                             </select>
                                         </td>
                                         <td align="center" class="table_data">
-                                            <a href="history_edit.php?d_id=<?php echo $row_Rechistory['d_id']; ?>">
-                                                <?php echo $row_Rechistory['d_title']; ?>
+                                            <a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
+                                                <?php echo $row_Recmaintea['d_title']; ?>
                                             </a>
                                         </td>
-                                        <!-- <td align="center" class="table_data"><a href="history_edit.php?d_id=<?php echo $row_Rechistory['d_id']; ?>">
+                                        <!-- <td align="center" class="table_data"><a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
                                             <?php if ($totalRows_RecImage==0): ?>
                                                 <img src="image/default_image_s.jpg">
                                             <?php else: ?>
@@ -242,17 +242,17 @@ require_once('display_page.php');
                                         </a></td> -->
                                         <td align="center" class="table_data">
                                             <?php  //list使用
-                                            if($row_Rechistory['d_active']) {
-                                                echo "<a href='".$row_Rechistory['d_active']."' rel='".$row_Rechistory['d_id']."' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                            if($row_Recmaintea['d_active']) {
+                                                echo "<a href='".$row_Recmaintea['d_active']."' rel='".$row_Recmaintea['d_id']."' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
                                             } else {
-                                                echo "<a href='".$row_Rechistory['d_active']."' rel='".$row_Rechistory['d_id']."' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                echo "<a href='".$row_Recmaintea['d_active']."' rel='".$row_Recmaintea['d_id']."' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
                                             }
                                             ?>
                                         </td>
-                                        <td align="center" class="table_data"><a href="history_edit.php?d_id=<?php echo $row_Rechistory['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
-                                        <td align="center" class="table_data"><a href="history_del.php?d_id=<?php echo $row_Rechistory['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
+                                        <td align="center" class="table_data"><a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
+                                        <td align="center" class="table_data"><a href="maintea_del.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
                                     </tr>
-                                    <?php } while ($row_Rechistory = $Rechistory->fetch()); ?>
+                                    <?php } while ($row_Recmaintea = $Recmaintea->fetch()); ?>
                                 </table>
                                 <?php } // Show if recordset not empty ?>
                             </form>
@@ -284,6 +284,6 @@ require_once('display_page.php');
 <script type="text/javascript">
     function changeSort(pageNum, totalRows, now_d_id, change_num) { //v1.0
         //alert(pageNum+"+"+totalPages);
-        window.location.href = "history_list.php?pageNum=" + pageNum + "&totalRows=" + totalRows + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num;
+        window.location.href = "maintea_list.php?pageNum=" + pageNum + "&totalRows=" + totalRows + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num;
     }
 </script>

@@ -1,40 +1,40 @@
 <?php require_once '../Connections/connect2data.php';?>
 
 <?php
-$colname_Rechistory = "-1";
+$colname_Recmaintea = "-1";
 if (isset($_GET['d_id'])) {
-    $colname_Rechistory = $_GET['d_id'];
+    $colname_Recmaintea = $_GET['d_id'];
 }
 
-$query_Rechistory = "SELECT * FROM data_set WHERE d_id = :d_id";
-$Rechistory = $conn->prepare($query_Rechistory);
-$Rechistory->bindParam(':d_id', $colname_Rechistory, PDO::PARAM_INT);
-$Rechistory->execute();
-$row_Rechistory = $Rechistory->fetch();
-$totalRows = $Rechistory->rowCount();
+$query_Recmaintea = "SELECT * FROM data_set WHERE d_id = :d_id";
+$Recmaintea = $conn->prepare($query_Recmaintea);
+$Recmaintea->bindParam(':d_id', $colname_Recmaintea, PDO::PARAM_INT);
+$Recmaintea->execute();
+$row_Recmaintea = $Recmaintea->fetch();
+$totalRows = $Recmaintea->rowCount();
 
 $query_RecImage = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'image'";
 $RecImage = $conn->prepare($query_RecImage);
-$RecImage->bindParam(':file_d_id', $colname_Rechistory, PDO::PARAM_INT);
+$RecImage->bindParam(':file_d_id', $colname_Recmaintea, PDO::PARAM_INT);
 $RecImage->execute();
 $row_RecImage = $RecImage->fetch();
 $totalRows_RecImage = $RecImage->rowCount();
 
-$query_RecCover = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'historyCover'";
+$query_RecCover = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'mainteaCover'";
 $RecCover = $conn->prepare($query_RecCover);
-$RecCover->bindParam(':file_d_id', $colname_Rechistory, PDO::PARAM_INT);
+$RecCover->bindParam(':file_d_id', $colname_Recmaintea, PDO::PARAM_INT);
 $RecCover->execute();
 $row_RecCover = $RecCover->fetch();
 $totalRows_RecCover = $RecCover->rowCount();
 
 $query_RecFile = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'file'";
 $RecFile = $conn->prepare($query_RecFile);
-$RecFile->bindParam(':file_d_id', $colname_Rechistory, PDO::PARAM_INT);
+$RecFile->bindParam(':file_d_id', $colname_Recmaintea, PDO::PARAM_INT);
 $RecFile->execute();
 $row_RecFile = $RecFile->fetch();
 $totalRows_RecFile = $RecFile->rowCount();
 
-$menu_is = "history";
+$menu_is = "maintea";
 
 ?>
 
@@ -76,8 +76,8 @@ $menu_is = "history";
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">年份</td>
                                                     <td width="532" class="table_data">
-                                                        <?php echo $row_Rechistory['d_title']; ?>
-                                                        <input name="d_id" type="hidden" id="d_id" value="<?php echo $row_Rechistory['d_id']; ?>" />
+                                                        <?php echo $row_Recmaintea['d_title']; ?>
+                                                        <input name="d_id" type="hidden" id="d_id" value="<?php echo $row_Recmaintea['d_id']; ?>" />
                                                         <input name="delsure" type="hidden" id="delsure" value="1" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
@@ -85,14 +85,14 @@ $menu_is = "history";
                                                 <tr>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
                                                     <td class="table_data">
-                                                        <?php echo nl2br($row_Rechistory['d_content']); ?>
+                                                        <?php echo nl2br($row_Recmaintea['d_content']); ?>
                                                     </td>
                                                     <td bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">日期</td>
                                                     <td width="532" class="table_data">
-                                                        <?php echo $row_Rechistory['d_date']; ?>
+                                                        <?php echo $row_Recmaintea['d_date']; ?>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
@@ -225,7 +225,7 @@ if ((isset($_REQUEST['d_id'])) && ($_REQUEST['d_id'] != "") && (isset($_REQUEST[
     $sth->bindParam(':d_id', $_POST['d_id'], PDO::PARAM_INT);
     $sth->execute();
 
-    $deleteGoTo = "history_list.php?delchangeSort=1";
+    $deleteGoTo = "maintea_list.php?delchangeSort=1";
     if (isset($_SERVER['QUERY_STRING'])) {
         $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";
         $deleteGoTo .= $_SERVER['QUERY_STRING'] . "&pageNum=" . $_SESSION["ToPage"];

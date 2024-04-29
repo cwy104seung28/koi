@@ -2,40 +2,40 @@
 
 <?php
 if (!1) {
-    header("Location: serviceQA_list.php");
+    header("Location: ourtea_list.php");
 }
 
-$colname_Recservice = "-1";
+$colname_Recourtea = "-1";
 if (isset($_GET['d_id'])) {
-    $colname_Recservice = $_GET['d_id'];
+    $colname_Recourtea = $_GET['d_id'];
 }
 
-$query_Recservice = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 = class_set.c_id WHERE d_id = :d_id";
-$Recservice = $conn->prepare($query_Recservice);
-$Recservice->bindParam(':d_id', $colname_Recservice, PDO::PARAM_INT);
-$Recservice->execute();
-$row_Recservice = $Recservice->fetch();
-$totalRows_Recservice = $Recservice->rowCount();
+$query_Recourtea = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 = class_set.c_id WHERE d_id = :d_id";
+$Recourtea = $conn->prepare($query_Recourtea);
+$Recourtea->bindParam(':d_id', $colname_Recourtea, PDO::PARAM_INT);
+$Recourtea->execute();
+$row_Recourtea = $Recourtea->fetch();
+$totalRows_Recourtea = $Recourtea->rowCount();
 
 $query_RecImage = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'image'";
 $RecImage = $conn->prepare($query_RecImage);
-$RecImage->bindParam(':file_d_id', $colname_Recservice, PDO::PARAM_INT);
+$RecImage->bindParam(':file_d_id', $colname_Recourtea, PDO::PARAM_INT);
 $RecImage->execute();
 $row_RecImage = $RecImage->fetch();
 $totalRows_RecImage = $RecImage->rowCount();
 
-$query_RecserviceC = "SELECT * FROM class_set WHERE c_parent = 'serviceC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
-$RecserviceC = $conn->prepare($query_RecserviceC);
-$RecserviceC->execute();
-$row_RecserviceC = $RecserviceC->fetch();
-$totalRows_RecserviceC = $RecserviceC->rowCount();
+$query_RecourteaC = "SELECT * FROM class_set WHERE c_parent = 'ourteaC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
+$RecourteaC = $conn->prepare($query_RecourteaC);
+$RecourteaC->execute();
+$row_RecourteaC = $RecourteaC->fetch();
+$totalRows_RecourteaC = $RecourteaC->rowCount();
 
 $G_selected1 = '';
-if (isset($_SESSION['selected_serviceC'])) {
-    $G_selected1 = $_SESSION['selected_serviceC'] = $row_Recservice['d_class2'];
+if (isset($_SESSION['selected_ourteaC'])) {
+    $G_selected1 = $_SESSION['selected_ourteaC'] = $row_Recourtea['d_class2'];
 }
 
-$menu_is = "service";
+$menu_is = "ourtea";
 
 ?>
 
@@ -79,13 +79,13 @@ $menu_is = "service";
                                                     <td class="table_data">
                                                         <?php
                                                         do {
-                                                            if (!(strcmp($row_RecserviceC['c_id'], $row_Recservice['d_class2']))) {
-                                                            echo $row_RecserviceC['c_title'];
+                                                            if (!(strcmp($row_RecourteaC['c_id'], $row_Recourtea['d_class2']))) {
+                                                            echo $row_RecourteaC['c_title'];
                                                             }
-                                                        } while ($row_RecserviceC = $RecserviceC->fetch());
-                                                        $rows = $RecserviceC->rowCount();
+                                                        } while ($row_RecourteaC = $RecourteaC->fetch());
+                                                        $rows = $RecourteaC->rowCount();
                                                         if($rows > 0) {
-                                                        $RecserviceC->execute();
+                                                        $RecourteaC->execute();
                                                         }
                                                         ?>
                                                     </td>
@@ -94,14 +94,14 @@ $menu_is = "service";
                                                 <tr>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
                                                     <td class="table_data">
-                                                        <?php echo $row_Recservice['d_title']; ?>
+                                                        <?php echo $row_Recourtea['d_title']; ?>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">時間</td>
                                                     <td class="table_data">
-                                                        <?php echo $row_Recservice['d_date']; ?>
+                                                        <?php echo $row_Recourtea['d_date']; ?>
                                                     </td>
                                                     <td bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
@@ -117,7 +117,7 @@ $menu_is = "service";
                                         </td>
                                     </tr>
                                 </table>
-                                <input name="d_id" type="hidden" id="d_id" value="<?php echo $row_Recservice['d_id']; ?>" />
+                                <input name="d_id" type="hidden" id="d_id" value="<?php echo $row_Recourtea['d_id']; ?>" />
                                 <input name="delsure" type="hidden" id="delsure" value="1" />
                             </form>
                             <table width="100%" height="1" border="0" align="center" cellpadding="0" cellspacing="0" class="buttom_dot_line">
@@ -178,7 +178,7 @@ if ((isset($_REQUEST['d_id'])) && ($_REQUEST['d_id'] != "") && (isset($_REQUEST[
     $sth->bindParam(':d_id', $_POST['d_id'], PDO::PARAM_INT);
     $sth->execute();
 
-    $deleteGoTo = "serviceQA_list.php?delchangeSort=1&selected1=" . $G_selected1 . "&selected2=" . $G_selected2;
+    $deleteGoTo = "ourtea_list.php?delchangeSort=1&selected1=" . $G_selected1 . "&selected2=" . $G_selected2;
     if (isset($_SERVER['QUERY_STRING'])) {
         $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";
         $deleteGoTo .= $_SERVER['QUERY_STRING'] . "&pageNum=" . $_SESSION["ToPage"];

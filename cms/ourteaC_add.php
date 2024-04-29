@@ -2,7 +2,7 @@
 
 <?php
 if (!1) {
-    header("Location: doctorC_list.php");
+    header("Location: ourteaC_list.php");
 }
 
 $editFormAction = $_SERVER['PHP_SELF'];
@@ -10,7 +10,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
     $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
-$menu_is = "doctor";
+$menu_is = "ourtea";
 
 ?>
 
@@ -50,10 +50,10 @@ $menu_is = "doctor";
                                         <td>
                                             <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">名稱</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
                                                     <td width="532">
                                                         <input name="c_title" type="text" class="table_data" id="c_title" size="50">
-                                                        <input name="c_parent" type="hidden" id="c_parent" value="doctorC" />
+                                                        <input name="c_parent" type="hidden" id="c_parent" value="ourteaC" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
@@ -106,15 +106,15 @@ $menu_is = "doctor";
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO class_set (c_title, c_title_en, c_slug, c_class, c_parent, c_content, c_link, c_active) VALUES (:c_title, :c_title_en, :c_slug, :c_class, :c_parent, :c_content, :c_link, :c_active)";
+    $insertSQL = "INSERT INTO class_set (c_title, c_title_en, c_slug, c_class, c_parent, c_link, c_active) VALUES (:c_title, :c_title_en, :c_slug, :c_class, :c_parent, :c_link, :c_active)";
 
     $sth = $conn->prepare($insertSQL);
     $sth->bindParam(':c_title', $_POST['c_title'], PDO::PARAM_STR);
     $sth->bindParam(':c_title_en', $_POST['c_title_en'], PDO::PARAM_STR);
-    $sth->bindParam(':c_slug', generate_slug($_POST['c_title']), PDO::PARAM_STR);;
+    $sth->bindParam(':c_slug', generate_slug($_POST['c_title']), PDO::PARAM_STR);
     $sth->bindParam(':c_class', $_POST['c_class'], PDO::PARAM_INT);
     $sth->bindParam(':c_parent', $_POST['c_parent'], PDO::PARAM_STR);
-    $sth->bindParam(':c_content', $_POST['c_content'], PDO::PARAM_STR);
+    // $sth->bindParam(':c_content', $_POST['c_content'], PDO::PARAM_STR);
     $sth->bindParam(':c_link', $_POST['c_link'], PDO::PARAM_STR);
     $sth->bindParam(':c_active', $_POST['c_active'], PDO::PARAM_INT);
     $sth->execute();
@@ -122,7 +122,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     //找到insert ID
     $new_data_num = $conn->lastInsertId();
 
-    $insertGoTo = "doctorC_list.php?pageNum=0&totalRows_RecdoctorC=" . ($_SESSION['totalRows'] + 1) . "&changeSort=1&now_c_id=" . $new_data_num . "&change_num=1";
+    $insertGoTo = "ourteaC_list.php?pageNum=0&totalRows_RecourteaC=" . ($_SESSION['totalRows'] + 1) . "&changeSort=1&now_c_id=" . $new_data_num . "&change_num=1";
     if (isset($_SERVER['QUERY_STRING'])) {
         $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
         $insertGoTo .= $_SERVER['QUERY_STRING'];

@@ -2,22 +2,22 @@
 
 <?php
 if (!1) {
-    header("Location: doctorC_list.php");
+    header("Location: ourteaC_list.php");
 }
 
-$colname_RecdoctorC = "-1";
+$colname_RecourteaC = "-1";
 if (isset($_GET['c_id'])) {
-    $colname_RecdoctorC = $_GET['c_id'];
+    $colname_RecourteaC = $_GET['c_id'];
 }
 
-$query_RecdoctorC = "SELECT * FROM class_set WHERE c_id=:c_id";
-$RecdoctorC = $conn->prepare($query_RecdoctorC);
-$RecdoctorC->bindParam(':c_id', $colname_RecdoctorC, PDO::PARAM_INT);
-$RecdoctorC->execute();
-$row_RecdoctorC = $RecdoctorC->fetch();
-$totalRows_RecdoctorC = $RecdoctorC->rowCount();
+$query_RecourteaC = "SELECT * FROM class_set WHERE c_id=:c_id";
+$RecourteaC = $conn->prepare($query_RecourteaC);
+$RecourteaC->bindParam(':c_id', $colname_RecourteaC, PDO::PARAM_INT);
+$RecourteaC->execute();
+$row_RecourteaC = $RecourteaC->fetch();
+$totalRows_RecourteaC = $RecourteaC->rowCount();
 
-$menu_is = "doctor";
+$menu_is = "ourtea";
 
 ?>
 
@@ -57,10 +57,10 @@ $menu_is = "doctor";
                                         <td>
                                             <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">名稱</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
                                                     <td width="532" class="table_data">
-                                                        <?php echo $row_RecdoctorC['c_title']; ?>
-                                                        <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecdoctorC['c_id']; ?>" />
+                                                        <?php echo $row_RecourteaC['c_title']; ?>
+                                                        <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecourteaC['c_id']; ?>" />
                                                         <input name="delsure" type="hidden" id="delsure" value="1" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
@@ -102,7 +102,7 @@ if ((isset($_REQUEST['c_id'])) && ($_REQUEST['c_id'] != "") && (isset($_REQUEST[
     $sth->bindParam(':c_id', $_REQUEST['c_id'], PDO::PARAM_INT);
     $sth->execute();
 
-    $deleteGoTo = "doctorC_list.php?delchangeSort=1";
+    $deleteGoTo = "ourteaC_list.php?delchangeSort=1";
 
     if (isset($_SERVER['QUERY_STRING'])) {
         $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";

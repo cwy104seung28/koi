@@ -1,51 +1,51 @@
 <?php require_once('../Connections/connect2data.php'); ?>
 
 <?php
-$menu_is = "doctor";
+$menu_is = "ourtea";
 
 $currentPage = $_SERVER["PHP_SELF"];
 
-$maxRows_Recdoctor = 50;
+$maxRows_Recourtea = 50;
 $pageNum = 0;
 if (isset($_GET['pageNum'])) {
     $pageNum = $_GET['pageNum'];
 }else{
     $_GET['pageNum'] = 0;
 }
-$startRow_Recdoctor = $pageNum * $maxRows_Recdoctor;
+$startRow_Recourtea = $pageNum * $maxRows_Recourtea;
 
-$query_RecdoctorC = "SELECT * FROM class_set WHERE c_parent = 'doctorC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
-$RecdoctorC = $conn->query($query_RecdoctorC);
-$row_RecdoctorC = $RecdoctorC->fetch();
-$totalRowsC = $RecdoctorC->rowCount();
+$query_RecourteaC = "SELECT * FROM class_set WHERE c_parent = 'ourteaC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
+$RecourteaC = $conn->query($query_RecourteaC);
+$row_RecourteaC = $RecourteaC->fetch();
+$totalRowsC = $RecourteaC->rowCount();
 
 $G_selected1 = '';
 if (isset($_GET['selected1'])) {
-    $_SESSION['selected_doctorC'] = $G_selected1 = $_GET['selected1'];
+    $_SESSION['selected_ourteaC'] = $G_selected1 = $_GET['selected1'];
 } else {
-    $G_selected1 = $_SESSION['selected_doctorC'] = $row_RecdoctorC['c_id'];
+    $G_selected1 = $_SESSION['selected_ourteaC'] = $row_RecourteaC['c_id'];
 }
 
-$query_Recdoctor = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 =class_set.c_id WHERE d_class1 = 'doctor' AND d_class2='" . $G_selected1 . "' ORDER BY d_sort ASC, d_date DESC";
-$query_limit_Recdoctor = sprintf("%s LIMIT %d, %d", $query_Recdoctor, $startRow_Recdoctor, $maxRows_Recdoctor);
-$Recdoctor = $conn->query($query_limit_Recdoctor);
-$row_Recdoctor = $Recdoctor->fetch();
-//$_SESSION['selected_doctor']=$G_selected2;
-//echo $query_Recdoctor;
+$query_Recourtea = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 =class_set.c_id WHERE d_class1 = 'ourtea' AND d_class2='" . $G_selected1 . "' ORDER BY d_sort ASC, d_date DESC";
+$query_limit_Recourtea = sprintf("%s LIMIT %d, %d", $query_Recourtea, $startRow_Recourtea, $maxRows_Recourtea);
+$Recourtea = $conn->query($query_limit_Recourtea);
+$row_Recourtea = $Recourtea->fetch();
+//$_SESSION['selected_ourtea']=$G_selected2;
+//echo $query_Recourtea;
 
 $S_original_selected = '';
 if (isset($_SESSION['original_selected'])) {
     $S_original_selected = $_SESSION['original_selected'];
 }
-$all_Recdoctor = $conn->query($query_Recdoctor);
-$totalRows = $all_Recdoctor->rowCount();
+$all_Recourtea = $conn->query($query_Recourtea);
+$totalRows = $all_Recourtea->rowCount();
 
-$all_Recdoctor = $conn->query($query_Recdoctor);
-$totalRows = $all_Recdoctor->rowCount();
-$totalPages_Recdoctor = ceil($totalRows / $maxRows_Recdoctor) - 1;
-$TotalPage = $totalPages_Recdoctor;
+$all_Recourtea = $conn->query($query_Recourtea);
+$totalRows = $all_Recourtea->rowCount();
+$totalPages_Recourtea = ceil($totalRows / $maxRows_Recourtea) - 1;
+$TotalPage = $totalPages_Recourtea;
 
-$queryString_Recdoctor = "";
+$queryString_Recourtea = "";
 if (!empty($_SERVER['QUERY_STRING'])) {
     $params = explode("&", $_SERVER['QUERY_STRING']);
     $newParams = array();
@@ -56,10 +56,10 @@ if (!empty($_SERVER['QUERY_STRING'])) {
         }
     }
     if (count($newParams) != 0) {
-        $queryString_Recdoctor = "&" . htmlentities(implode("&", $newParams));
+        $queryString_Recourtea = "&" . htmlentities(implode("&", $newParams));
     }
 }
-$queryString_Recdoctor = sprintf("&totalRows=%d%s", $totalRows, $queryString_Recdoctor);
+$queryString_Recourtea = sprintf("&totalRows=%d%s", $totalRows, $queryString_Recourtea);
 
 // ====================================================================
 
@@ -75,15 +75,15 @@ else if ($R_pageNum < 0) {
     $_SESSION["ToPage"] = 0;
 }
 //若指定指定的分頁超過總分頁數則顯示最後一頁
-else if ($R_pageNum > $totalPages_Recdoctor) {
+else if ($R_pageNum > $totalPages_Recourtea) {
     $_SESSION["ToPage"] = $TotalPage;
 } else {
     $_SESSION["ToPage"] = $R_pageNum;
 }
 
 //如果指定的頁面大於資料所擁有的頁面,轉到最大的頁面
-if ($R_pageNum > $totalPages_Recdoctor && $R_pageNum != 0) {
-    header("Location:doctor_list.php?pageNum=" . $totalPages_Recdoctor);
+if ($R_pageNum > $totalPages_Recourtea && $R_pageNum != 0) {
+    header("Location:ourtea_list.php?pageNum=" . $totalPages_Recourtea);
 }
 
 //修改排序
@@ -99,14 +99,14 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
     $sort_num = 1;
 
-    $query_Recdoctor = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 =class_set.c_id WHERE d_class1 = 'doctor' AND d_class2='" . $G_selected1 . "' ORDER BY d_sort ASC, d_date DESC";
-    $_SESSION['selected_doctorC'] = $G_selected1;
+    $query_Recourtea = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 =class_set.c_id WHERE d_class1 = 'ourtea' AND d_class2='" . $G_selected1 . "' ORDER BY d_sort ASC, d_date DESC";
+    $_SESSION['selected_ourteaC'] = $G_selected1;
 
-    $Recdoctor = $conn->query($query_Recdoctor);
-    $row_Recdoctor = $Recdoctor->fetch();
+    $Recourtea = $conn->query($query_Recourtea);
+    $row_Recourtea = $Recourtea->fetch();
 
     do {
-        if ($row_Recdoctor['d_sort'] == 0) {} else if ($row_Recdoctor['d_id'] == $_GET['now_d_id']) {
+        if ($row_Recourtea['d_sort'] == 0) {} else if ($row_Recourtea['d_id'] == $_GET['now_d_id']) {
             //echo 'sort_num(now_d_id) = '.$sort_num."<br/>";
 
         } else if ($sort_num == $_GET['change_num']) {
@@ -117,7 +117,7 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
             $stat = $conn->prepare($updateSQL);
             $stat->bindParam(':d_sort', $sort_num, PDO::PARAM_INT);
-            $stat->bindParam(':d_id', $row_Recdoctor['d_id'], PDO::PARAM_INT);
+            $stat->bindParam(':d_id', $row_Recourtea['d_id'], PDO::PARAM_INT);
             $stat->execute();
 
             $sort_num++;
@@ -126,15 +126,15 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
             $stat = $conn->prepare($updateSQL);
             $stat->bindParam(':d_sort', $sort_num, PDO::PARAM_INT);
-            $stat->bindParam(':d_id', $row_Recdoctor['d_id'], PDO::PARAM_INT);
+            $stat->bindParam(':d_id', $row_Recourtea['d_id'], PDO::PARAM_INT);
             $stat->execute();
 
             // echo $sort_num . "<br/>";
-            // echo $row_Recdoctor['d_title'] . "->" . $sort_num . "<br/>";
+            // echo $row_Recourtea['d_title'] . "->" . $sort_num . "<br/>";
 
             $sort_num++;
         }
-    } while ($row_Recdoctor = $Recdoctor->fetch());
+    } while ($row_Recourtea = $Recourtea->fetch());
 
     $updateSQL = "UPDATE data_set SET d_sort=:d_sort WHERE d_id=:d_id";
 
@@ -145,12 +145,12 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
     if ($G_changeSort == 1) {
         if (isset($_GET['now_d_id'])) {
-            header("Location:doctor_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows'] . "#" . $_GET['now_d_id']);
+            header("Location:ourtea_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows'] . "#" . $_GET['now_d_id']);
         } else {
-            header("Location:doctor_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows']);
+            header("Location:ourtea_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows']);
         }
     } else if ($G_delchangeSort == 1) {
-        header("Location:doctor_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum']);
+        header("Location:ourtea_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum']);
     }
 }
 
@@ -192,12 +192,12 @@ require_once 'display_page.php';
                                     <td width="874"><span class="table_data">分類：
                                         <select name="select1" id="select1" class="chosen-select">
                                             <?php do {?>
-                                                <option value="<?php echo $row_RecdoctorC['c_id']?>"<?php if (!(strcmp($row_RecdoctorC['c_id'], $G_selected1))) {echo "selected=\"selected\"";} ?>><?php echo $row_RecdoctorC['c_title']?><?php //echo $row_RecdoctorC['c_id']?></option>
+                                                <option value="<?php echo $row_RecourteaC['c_id']?>"<?php if (!(strcmp($row_RecourteaC['c_id'], $G_selected1))) {echo "selected=\"selected\"";} ?>><?php echo $row_RecourteaC['c_title']?><?php //echo $row_RecourteaC['c_id']?></option>
                                                 <?php
-                                            } while ($row_RecdoctorC = $RecdoctorC->fetch());
-                                            $rows = $RecdoctorC->rowCount();
+                                            } while ($row_RecourteaC = $RecourteaC->fetch());
+                                            $rows = $RecourteaC->rowCount();
                                             if($rows > 0) {
-                                                $RecdoctorC->execute();
+                                                $RecourteaC->execute();
                                             }
                                             ?>
                                         </select>
@@ -212,12 +212,12 @@ require_once 'display_page.php';
                                 <tr>
                                     <td width="739" align="right" class="page_display">
                                         <!-------顯示頁選擇與分頁設定開始---------->
-                                        <?php displayPages($pageNum, $queryString_Recdoctor, $totalPages_Recdoctor, $totalRows, $currentPage); ?>
+                                        <?php displayPages($pageNum, $queryString_Recourtea, $totalPages_Recourtea, $totalRows, $currentPage); ?>
                                         <!-------顯示頁選擇與分頁設定結束---------->
                                     </td>
                                     <td width="110" align="right" class="page_display">
                                         <?php if ($totalRows > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_Recdoctor+1)); ?>
+                                        <?php echo (($pageNum+1)."/".($totalPages_Recourtea+1)); ?>
                                         <?php } // Show if recordset not empty ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
@@ -230,7 +230,7 @@ require_once 'display_page.php';
                                     <td><img src="image/spacer.gif" width="1" height="1" /></td>
                                 </tr>
                             </table>
-                            <form action="doctor_process.php" method="post" name="form1" id="form1">
+                            <form action="ourtea_process.php" method="post" name="form1" id="form1">
                                 <?php if ($totalRows > 0) { // Show if recordset not empty ?>
                                 <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
                                     <tr>
@@ -247,10 +247,10 @@ require_once 'display_page.php';
                                     do {
                                         $i++;
                                         $colname_RecImage = "-1";
-                                        if (isset($row_Recdoctor['d_id'])) {
-                                          $colname_RecImage = $row_Recdoctor['d_id'];
+                                        if (isset($row_Recourtea['d_id'])) {
+                                          $colname_RecImage = $row_Recourtea['d_id'];
                                         }
-                                        $query_RecImage = "SELECT * FROM file_set  WHERE file_type='doctorCover' AND file_d_id = ".$row_Recdoctor['d_id'];
+                                        $query_RecImage = "SELECT * FROM file_set  WHERE file_type='ourteaCover' AND file_d_id = ".$row_Recourtea['d_id'];
                                         $RecImage = $conn->query($query_RecImage);
                                         $row_RecImage = $RecImage->fetch();
                                         $totalRows_RecImage = $RecImage->rowCount();
@@ -259,19 +259,19 @@ require_once 'display_page.php';
                                         <td align="center" class="table_data">
                                             <?php
                                             if(1){
-                                                echo '<a href="doctor_edit.php?d_id='.$row_Recdoctor['d_id'].'">'.$row_Recdoctor['d_date'].'</a>';
+                                                echo '<a href="ourtea_edit.php?d_id='.$row_Recourtea['d_id'].'">'.$row_Recourtea['d_date'].'</a>';
                                             }else{
-                                                echo $row_Recdoctor['d_date'];
+                                                echo $row_Recourtea['d_date'];
                                             }
                                             ?>
                                         </td>
                                         <td align="center" class="table_data">
-                                            <select name="d_sort" id="d_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows; ?>','<?php echo $row_Recdoctor['d_id']; ?>',this.options[this.selectedIndex].value,<?= $G_selected1 ?>)">
-                                                <option value="0" <?php if (!(strcmp(0, $row_Recdoctor[ 'd_sort']))) {echo "selected";} ?>>至頂</option>
+                                            <select name="d_sort" id="d_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows; ?>','<?php echo $row_Recourtea['d_id']; ?>',this.options[this.selectedIndex].value,<?= $G_selected1 ?>)">
+                                                <option value="0" <?php if (!(strcmp(0, $row_Recourtea[ 'd_sort']))) {echo "selected";} ?>>至頂</option>
                                                 <?php
                                                 for($j=1;$j<=($totalRows);$j++) {
                                                     echo "<option value=\"".$j."\" ";
-                                                    if (!(strcmp($j, $row_Recdoctor['d_sort']))) {echo "selected=\"selected\"";}
+                                                    if (!(strcmp($j, $row_Recourtea['d_sort']))) {echo "selected=\"selected\"";}
                                                     echo ">".$j."</option>";
                                                 }
                                                 ?>
@@ -279,11 +279,11 @@ require_once 'display_page.php';
                                             <?php $_SESSION['totalRows']=$totalRows; ?>
                                         </td>
                                         <td align="center" class="table_data">
-                                            <a href="doctor_edit.php?d_id=<?php echo $row_Recdoctor['d_id']; ?>">
-                                                <?php echo $row_Recdoctor['d_title']; ?>
+                                            <a href="ourtea_edit.php?d_id=<?php echo $row_Recourtea['d_id']; ?>">
+                                                <?php echo $row_Recourtea['d_title']; ?>
                                             </a>
                                         </td>
-                                        <td align="center" class="table_data"><a href="doctor_edit.php?d_id=<?php echo $row_Recdoctor['d_id']; ?>">
+                                        <td align="center" class="table_data"><a href="ourtea_edit.php?d_id=<?php echo $row_Recourtea['d_id']; ?>">
                                             <?php if ($totalRows_RecImage==0): ?>
                                                 <img src="image/default_image_s.jpg">
                                             <?php else: ?>
@@ -292,17 +292,17 @@ require_once 'display_page.php';
                                         </a></td>
                                         <td align="center" class="table_data">
                                             <?php  //list使用
-                                            if($row_Recdoctor['d_active']) {
-                                                echo "<a href='".$row_Recdoctor['d_active']."' rel='".$row_Recdoctor['d_id']."' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                            if($row_Recourtea['d_active']) {
+                                                echo "<a href='".$row_Recourtea['d_active']."' rel='".$row_Recourtea['d_id']."' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
                                             } else {
-                                                echo "<a href='".$row_Recdoctor['d_active']."' rel='".$row_Recdoctor['d_id']."' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                echo "<a href='".$row_Recourtea['d_active']."' rel='".$row_Recourtea['d_id']."' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
                                             }
                                             ?>
                                         </td>
-                                        <td align="center" class="table_data"><a href="doctor_edit.php?d_id=<?php echo $row_Recdoctor['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
-                                        <td align="center" class="table_data"><a href="doctor_del.php?d_id=<?php echo $row_Recdoctor['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
+                                        <td align="center" class="table_data"><a href="ourtea_edit.php?d_id=<?php echo $row_Recourtea['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
+                                        <td align="center" class="table_data"><a href="ourtea_del.php?d_id=<?php echo $row_Recourtea['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
                                     </tr>
-                                    <?php } while ($row_Recdoctor = $Recdoctor->fetch()); ?>
+                                    <?php } while ($row_Recourtea = $Recourtea->fetch()); ?>
                                 </table>
                                 <?php } // Show if recordset not empty ?>
                             </form>
@@ -310,12 +310,12 @@ require_once 'display_page.php';
                                 <tr>
                                     <td width="739" align="right" class="page_display">
                                         <!-------顯示頁選擇與分頁設定開始---------->
-                                        <?php displayPages($pageNum, $queryString_Recdoctor, $totalPages_Recdoctor, $totalRows, $currentPage); ?>
+                                        <?php displayPages($pageNum, $queryString_Recourtea, $totalPages_Recourtea, $totalRows, $currentPage); ?>
                                         <!-------顯示頁選擇與分頁設定結束---------->
                                     </td>
                                     <td width="110" align="right" class="page_display">
                                         <?php if ($totalRows > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_Recdoctor+1)); ?>
+                                        <?php echo (($pageNum+1)."/".($totalPages_Recourtea+1)); ?>
                                         <?php } // Show if recordset not empty ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
@@ -344,12 +344,12 @@ require_once 'display_page.php';
     });
 
 	function changeSort(pageNum, totalRows, now_d_id, change_num, selected1) {
-	    window.location.href = "doctor_list.php?selected1=" + selected1 + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num + "&pageNum=" + pageNum + "&totalRows=" + totalRows;
+	    window.location.href = "ourtea_list.php?selected1=" + selected1 + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num + "&pageNum=" + pageNum + "&totalRows=" + totalRows;
 	}
 
 	$(document).ready(function() {
 		$('#select1').change(function() {
-			window.location.href = "doctor_list.php?changeSort=1&selected1="+$(this).val();
+			window.location.href = "ourtea_list.php?changeSort=1&selected1="+$(this).val();
 		});
 	});
 </script>

@@ -19,6 +19,16 @@ $imagesSize = [
         'IH' => 970,
         'note' => "圖片請上傳寬 1724pixel、高 970pixel之圖檔。 $maxFileSize",
     ],
+    "mainteaCenterCover" => [
+        'IW' => 725,
+        'IH' => 725,
+        'note' => "圖片請上傳寬 725pixel、高 725pixel之圖檔。 $maxFileSize",
+    ],
+    "mainteaCover" => [
+        'IW' => 1903,
+        'IH' => 909,
+        'note' => "圖片請上傳寬 1903pixel、高 909pixel之圖檔。 $maxFileSize",
+    ],
     // "doctorCover" => [
     //     'IW' => 1066,
     //     'IH' => 696,

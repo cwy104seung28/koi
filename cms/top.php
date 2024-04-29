@@ -42,17 +42,22 @@ function creatTablBottom()
 <div id="cmsMenu">
 	<ul>
 		<?php if ($row_RecLevelAuthority['a_2'] == '1') { ?>
-			<li id="main_menu_6" class="main_menu <?php if ($menu_is == 'news') : ?>main_menu_now<?php endif ?>">
+			<li id="main_menu_1" class="main_menu <?php if ($menu_is == 'news') : ?>main_menu_now<?php endif ?>">
 				<a href="news_list.php">
 					<div>最新消息</div>
 				</a>
 			</li>
-			<!-- <li id="main_menu_7" class="main_menu <?php if ($menu_is == 'team') : ?>main_menu_now<?php endif ?>">
-				<a href="team_list.php">
-					<div>醫師團隊</div>
+			<li id="main_menu_2" class="main_menu <?php if ($menu_is == 'recruit') : ?>main_menu_now<?php endif ?>">
+				<a href="recruit_list.php">
+					<div>人才招募</div>
 				</a>
 			</li>
-			<li id="main_menu_2" class="main_menu <?php if ($menu_is == 'news') : ?>main_menu_now<?php endif ?>">
+			<li id="main_menu_3" class="main_menu <?php if ($menu_is == 'maintea'||$menu_is == 'ourtea') : ?>main_menu_now<?php endif ?>">
+				<a href="ourtea_list.php">
+					<div>飲品介紹</div>
+				</a>
+			</li>
+			<!--<li id="main_menu_2" class="main_menu <?php if ($menu_is == 'news') : ?>main_menu_now<?php endif ?>">
 				<a href="news_list.php">
 					<div>最新消息</div>
 				</a>
@@ -120,20 +125,21 @@ if ($menu_is == "news") {
 		header("Location:first.php");
 	}
 	creatTablBottom();
-} else if ($menu_is == "doctor") {
+} else if ($menu_is == "recruit") {
 
 	creatTableTop();
-	creatAll('醫師專欄', 'doctor');
-	creatAll('分類', 'doctorC');
+	creatAll('人才招募', 'recruit');
+	// creatAll('分類', 'recruitC');
 	if ($row_RecLevelAuthority['a_2'] == '0') {
 		header("Location:first.php");
 	}
 	creatTablBottom();
-} else if ($menu_is == "case") {
+} else if ($menu_is == "maintea"||$menu_is == "ourtea") {
 
 	creatTableTop();
-	creatAll('案例分享', 'case');
-	creatAll('分類', 'caseC');
+	creatAll('主打飲品', 'maintea');
+	creatAll('飲品介紹', 'ourtea');
+	creatAll('分類', 'ourteaC');
 	if ($row_RecLevelAuthority['a_2'] == '0') {
 		header("Location:first.php");
 	}

@@ -1,46 +1,46 @@
 <?php require_once('../Connections/connect2data.php'); ?>
 
 <?php
-$menu_is = "case";
+$menu_is = "ourtea";
 
 $currentPage = $_SERVER["PHP_SELF"];
 
-$maxRows_ReccaseC = 15;
+$maxRows_RecourteaC = 15;
 $pageNum = 0;
 if (isset($_GET['pageNum'])) {
     $pageNum = $_GET['pageNum'];
 }
-$startRow_ReccaseC = $pageNum * $maxRows_ReccaseC;
+$startRow_RecourteaC = $pageNum * $maxRows_RecourteaC;
 
-$query_ReccaseC = "SELECT * FROM class_set WHERE c_parent = 'caseC' ORDER BY c_sort ASC, c_id DESC";
-$query_limit_ReccaseC = sprintf("%s LIMIT %d, %d", $query_ReccaseC, $startRow_ReccaseC, $maxRows_ReccaseC);
-$ReccaseC = $conn->query($query_limit_ReccaseC);
-$row_ReccaseC = $ReccaseC->fetch();
+$query_RecourteaC = "SELECT * FROM class_set WHERE c_parent = 'ourteaC' ORDER BY c_sort ASC, c_id DESC";
+$query_limit_RecourteaC = sprintf("%s LIMIT %d, %d", $query_RecourteaC, $startRow_RecourteaC, $maxRows_RecourteaC);
+$RecourteaC = $conn->query($query_limit_RecourteaC);
+$row_RecourteaC = $RecourteaC->fetch();
 
-if (isset($_GET['totalRows_ReccaseC'])) {
-    $totalRows_ReccaseC = $_GET['totalRows_ReccaseC'];
+if (isset($_GET['totalRows_RecourteaC'])) {
+    $totalRows_RecourteaC = $_GET['totalRows_RecourteaC'];
 } else {
-    $all_ReccaseC = $conn->query($query_ReccaseC);
-    $totalRows_ReccaseC = $all_ReccaseC->rowCount();
+    $all_RecourteaC = $conn->query($query_RecourteaC);
+    $totalRows_RecourteaC = $all_RecourteaC->rowCount();
 }
-$totalPages_ReccaseC = ceil($totalRows_ReccaseC / $maxRows_ReccaseC) - 1;
-$TotalPage = $totalPages_ReccaseC;
+$totalPages_RecourteaC = ceil($totalRows_RecourteaC / $maxRows_RecourteaC) - 1;
+$TotalPage = $totalPages_RecourteaC;
 
-$queryString_ReccaseC = "";
+$queryString_RecourteaC = "";
 if (!empty($_SERVER['QUERY_STRING'])) {
     $params = explode("&", $_SERVER['QUERY_STRING']);
     $newParams = array();
     foreach ($params as $param) {
         if (stristr($param, "pageNum") == false &&
-            stristr($param, "totalRows_ReccaseC") == false) {
+            stristr($param, "totalRows_RecourteaC") == false) {
             array_push($newParams, $param);
         }
     }
     if (count($newParams) != 0) {
-        $queryString_ReccaseC = "&" . htmlentities(implode("&", $newParams));
+        $queryString_RecourteaC = "&" . htmlentities(implode("&", $newParams));
     }
 }
-$queryString_ReccaseC = sprintf("&totalRows_ReccaseC=%d%s", $totalRows_ReccaseC, $queryString_ReccaseC);
+$queryString_RecourteaC = sprintf("&totalRows_RecourteaC=%d%s", $totalRows_RecourteaC, $queryString_RecourteaC);
 
 // ====================================================================
 
@@ -56,15 +56,15 @@ else if ($R_pageNum < 0) {
     $_SESSION["ToPage"] = 0;
 }
 //若指定指定的分頁超過總分頁數則顯示最後一頁
-else if ($R_pageNum > $totalPages_ReccaseC) {
+else if ($R_pageNum > $totalPages_RecourteaC) {
     $_SESSION["ToPage"] = $TotalPage;
 } else {
     $_SESSION["ToPage"] = $R_pageNum;
 }
 
 //如果指定的頁面大於資料所擁有的頁面,轉到最大的頁面
-if ($R_pageNum > $totalPages_ReccaseC && $R_pageNum != 0) {
-    header("Location:caseC_list.php?pageNum=" . $totalPages_ReccaseC);
+if ($R_pageNum > $totalPages_RecourteaC && $R_pageNum != 0) {
+    header("Location:ourteaC_list.php?pageNum=" . $totalPages_RecourteaC);
 }
 
 //修改排序
@@ -80,12 +80,12 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
     $sort_num = 1;
 
-    $query_ReccaseC = "SELECT * FROM class_set WHERE c_parent = 'caseC' ORDER BY c_sort ASC, c_id DESC";
-    $ReccaseC = $conn->query($query_ReccaseC);
-    $row_ReccaseC = $ReccaseC->fetch();
+    $query_RecourteaC = "SELECT * FROM class_set WHERE c_parent = 'ourteaC' ORDER BY c_sort ASC, c_id DESC";
+    $RecourteaC = $conn->query($query_RecourteaC);
+    $row_RecourteaC = $RecourteaC->fetch();
 
     do {
-        if ($row_ReccaseC['c_sort'] == 0) {} else if ($row_ReccaseC['c_id'] == $_GET['now_c_id']) {
+        if ($row_RecourteaC['c_sort'] == 0) {} else if ($row_RecourteaC['c_id'] == $_GET['now_c_id']) {
             // echo $sort_num . "<br/>";
 
         } else if ($sort_num == $_GET['change_num']) {
@@ -96,7 +96,7 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
             $stat = $conn->prepare($updateSQL);
             $stat->bindParam(':c_sort', $sort_num, PDO::PARAM_INT);
-            $stat->bindParam(':c_id', $row_ReccaseC['c_id'], PDO::PARAM_INT);
+            $stat->bindParam(':c_id', $row_RecourteaC['c_id'], PDO::PARAM_INT);
             $stat->execute();
 
             $sort_num++;
@@ -105,15 +105,15 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
             $stat = $conn->prepare($updateSQL);
             $stat->bindParam(':c_sort', $sort_num, PDO::PARAM_INT);
-            $stat->bindParam(':c_id', $row_ReccaseC['c_id'], PDO::PARAM_INT);
+            $stat->bindParam(':c_id', $row_RecourteaC['c_id'], PDO::PARAM_INT);
             $stat->execute();
 
             // echo $sort_num . "<br/>";
-            // echo $row_ReccaseC['title'] . "->" . $sort_num . "<br/>";
+            // echo $row_RecourteaC['title'] . "->" . $sort_num . "<br/>";
 
             $sort_num++;
         }
-    } while ($row_ReccaseC = $ReccaseC->fetch());
+    } while ($row_RecourteaC = $RecourteaC->fetch());
 
     $updateSQL = "UPDATE class_set SET c_sort=:c_sort WHERE c_id=:c_id";
 
@@ -123,9 +123,9 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
     $stat->execute();
 
     if ($G_changeSort == 1) {
-        header("Location:caseC_list.php?pageNum=" . $_GET['pageNum'] . "&totalRows_ReccaseC=" . $_GET['totalRows_ReccaseC']);
+        header("Location:ourteaC_list.php?pageNum=" . $_GET['pageNum'] . "&totalRows_RecourteaC=" . $_GET['totalRows_RecourteaC']);
     } else if ($G_delchangeSort == 1) {
-        header("Location:caseC_list.php?pageNum=" . $_GET['pageNum']);
+        header("Location:ourteaC_list.php?pageNum=" . $_GET['pageNum']);
     }
 }
 
@@ -156,7 +156,7 @@ require_once('display_page.php');
                                 <tr>
                                     <td width="140" class="list_title">列表</td>
                                     <td width="884"><span class="no_data">
-                                    <?php if ($totalRows_ReccaseC == 0) { // Show if recordset empty ?>
+                                    <?php if ($totalRows_RecourteaC == 0) { // Show if recordset empty ?>
                                     <strong>目前資料庫中沒有任何資料</strong>
                                     <?php } // Show if recordset empty ?>
                                     </span></td>
@@ -166,16 +166,16 @@ require_once('display_page.php');
                                 <tr>
                                     <td width="739" align="right" class="page_display">
                                         <!-------顯示頁選擇與分頁設定開始---------->
-                                        <?php displayPages($pageNum, $queryString_ReccaseC, $totalPages_ReccaseC, $totalRows_ReccaseC, $currentPage); ?>
+                                        <?php displayPages($pageNum, $queryString_RecourteaC, $totalPages_RecourteaC, $totalRows_RecourteaC, $currentPage); ?>
                                         <!-------顯示頁選擇與分頁設定結束---------->
                                     </td>
                                     <td width="110" align="right" class="page_display">
-                                        <?php if ($totalRows_ReccaseC > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_ReccaseC+1)); ?>
+                                        <?php if ($totalRows_RecourteaC > 0) { // Show if recordset not empty ?> 頁數:
+                                        <?php echo (($pageNum+1)."/".($totalPages_RecourteaC+1)); ?>
                                         <?php } // Show if recordset not empty ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
-                                        <?php echo $totalRows_ReccaseC ?> </td>
+                                        <?php echo $totalRows_RecourteaC ?> </td>
                                     <td width="24" align="right">&nbsp;</td>
                                 </tr>
                             </table>
@@ -184,8 +184,8 @@ require_once('display_page.php');
                                     <td><img src="image/spacer.gif" width="1" height="1" /></td>
                                 </tr>
                             </table>
-                            <form action="caseC_process.php" method="post" name="form1" id="form1">
-                                <?php if ($totalRows_ReccaseC > 0) { // Show if recordset not empty ?>
+                            <form action="ourteaC_process.php" method="post" name="form1" id="form1">
+                                <?php if ($totalRows_RecourteaC > 0) { // Show if recordset not empty ?>
                                 <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
                                     <tr>
                                         <td width="100" align="center" class="table_title">排序</td>
@@ -199,8 +199,8 @@ require_once('display_page.php');
                                     do {
                                         $i++;
                                         $colname_RecImage = "-1";
-                                        if (isset($row_ReccaseC['c_id'])) {
-                                          $colname_RecImage = $row_ReccaseC['c_id'];
+                                        if (isset($row_RecourteaC['c_id'])) {
+                                          $colname_RecImage = $row_RecourteaC['c_id'];
                                         }
                                         $query_RecImage = sprintf("SELECT * FROM file_set WHERE file_type='brandImage' AND file_d_id = %s", $colname_RecImage);
                                         $RecImage = $conn->query($query_RecImage);
@@ -209,36 +209,36 @@ require_once('display_page.php');
                                     ?>
                                     <tr <?php if ($i%2==0): ?>bgcolor='#E4E4E4'<?php endif ?>>
                                         <td align="center" class="table_data">
-                                            <select name="c_sort" id="c_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows_ReccaseC; ?>','<?php echo $row_ReccaseC['c_id']; ?>',this.options[this.selectedIndex].value)">
-                                                <option value="0" <?php if (!(strcmp(0, $row_ReccaseC[ 'c_sort']))) {echo "selected";} ?>>至頂</option>
+                                            <select name="c_sort" id="c_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows_RecourteaC; ?>','<?php echo $row_RecourteaC['c_id']; ?>',this.options[this.selectedIndex].value)">
+                                                <option value="0" <?php if (!(strcmp(0, $row_RecourteaC[ 'c_sort']))) {echo "selected";} ?>>至頂</option>
                                                 <?php
-                                                for ($j = 1; $j <= ($totalRows_ReccaseC); $j++) {
+                                                for ($j = 1; $j <= ($totalRows_RecourteaC); $j++) {
                                                     echo "<option value=\"" . $j . "\" ";
-                                                    if (!(strcmp($j, $row_ReccaseC['c_sort']))) {echo "selected=\"selected\"";}
+                                                    if (!(strcmp($j, $row_RecourteaC['c_sort']))) {echo "selected=\"selected\"";}
                                                     echo ">" . $j . "</option>";
                                                 }
                                                 ?>
                                             </select>
-                                            <?php $_SESSION['totalRows']=$totalRows_ReccaseC; ?>
+                                            <?php $_SESSION['totalRows']=$totalRows_RecourteaC; ?>
                                         </td>
                                         <td align="center" class="table_data">
-                                            <a href="caseC_edit.php?c_id=<?php echo $row_ReccaseC['c_id']; ?>">
-                                                <?php echo $row_ReccaseC['c_title']; ?>
+                                            <a href="ourteaC_edit.php?c_id=<?php echo $row_RecourteaC['c_id']; ?>">
+                                                <?php echo $row_RecourteaC['c_title']; ?>
                                             </a>
                                         </td>
                                         <td align="center" class="table_data">
                                             <?php  //list使用
-                                            if($row_ReccaseC['c_active']) {
-                                                echo "<a href='".$row_ReccaseC['c_active']."' rel='".$row_ReccaseC['c_id']."' class='activeChC'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                            if($row_RecourteaC['c_active']) {
+                                                echo "<a href='".$row_RecourteaC['c_active']."' rel='".$row_RecourteaC['c_id']."' class='activeChC'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
                                             } else {
-                                                echo "<a href='".$row_ReccaseC['c_active']."' rel='".$row_ReccaseC['c_id']."' class='activeChC'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                echo "<a href='".$row_RecourteaC['c_active']."' rel='".$row_RecourteaC['c_id']."' class='activeChC'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
                                             }
                                             ?>
                                         </td>
-                                        <td align="center" class="table_data"><a href="caseC_edit.php?c_id=<?php echo $row_ReccaseC['c_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
-                                        <td align="center" class="table_data"><a href="caseC_del.php?c_id=<?php echo $row_ReccaseC['c_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
+                                        <td align="center" class="table_data"><a href="ourteaC_edit.php?c_id=<?php echo $row_RecourteaC['c_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
+                                        <td align="center" class="table_data"><a href="ourteaC_del.php?c_id=<?php echo $row_RecourteaC['c_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
                                     </tr>
-                                    <?php } while ($row_ReccaseC = $ReccaseC->fetch()); ?>
+                                    <?php } while ($row_RecourteaC = $RecourteaC->fetch()); ?>
                                 </table>
                                 <?php } // Show if recordset not empty ?>
                             </form>
@@ -246,16 +246,16 @@ require_once('display_page.php');
                                 <tr>
                                     <td width="739" align="right" class="page_display">
                                         <!-------顯示頁選擇與分頁設定開始---------->
-                                        <?php displayPages($pageNum, $queryString_ReccaseC, $totalPages_ReccaseC, $totalRows_ReccaseC, $currentPage); ?>
+                                        <?php displayPages($pageNum, $queryString_RecourteaC, $totalPages_RecourteaC, $totalRows_RecourteaC, $currentPage); ?>
                                         <!-------顯示頁選擇與分頁設定結束---------->
                                     </td>
                                     <td width="110" align="right" class="page_display">
-                                        <?php if ($totalRows_ReccaseC > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_ReccaseC+1)); ?>
+                                        <?php if ($totalRows_RecourteaC > 0) { // Show if recordset not empty ?> 頁數:
+                                        <?php echo (($pageNum+1)."/".($totalPages_RecourteaC+1)); ?>
                                         <?php } // Show if recordset not empty ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
-                                        <?php echo $totalRows_ReccaseC ?> </td>
+                                        <?php echo $totalRows_RecourteaC ?> </td>
                                     <td width="24" align="right">&nbsp;</td>
                                 </tr>
                             </table>
@@ -270,7 +270,7 @@ require_once('display_page.php');
 </html>
 
 <script type="text/javascript">
-    function changeSort(pageNum, totalRows_ReccaseC, now_c_id, change_num) {
-        window.location.href = "caseC_list.php?pageNum=" + pageNum + "&totalRows_ReccaseC=" + totalRows_ReccaseC + "&changeSort=1" + "&now_c_id=" + now_c_id + "&change_num=" + change_num;
+    function changeSort(pageNum, totalRows_RecourteaC, now_c_id, change_num) {
+        window.location.href = "ourteaC_list.php?pageNum=" + pageNum + "&totalRows_RecourteaC=" + totalRows_RecourteaC + "&changeSort=1" + "&now_c_id=" + now_c_id + "&change_num=" + change_num;
     }
 </script>

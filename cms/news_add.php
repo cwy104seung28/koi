@@ -435,7 +435,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $stat->bindParam(':d_title_en', $_POST['d_title_en'], PDO::PARAM_STR);
     $stat->bindParam(':d_slug', generate_slug($_POST['d_title']), PDO::PARAM_STR);
     $stat->bindParam(':d_content', $_POST['d_content'], PDO::PARAM_STR);
-    $stat->bindParam(':d_class1', $class1 = 'news', PDO::PARAM_STR);
+    $stat->bindParam(':d_class1', $_POST['d_class1'], PDO::PARAM_STR);
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_class3', $_POST['d_class3'], PDO::PARAM_STR);
     $stat->bindParam(':d_class4', $_POST['d_class4'], PDO::PARAM_STR);
