@@ -25,7 +25,7 @@ ini_set('date.timezone', 'Asia/Taipei');
 
 
 // 後台懶得改成用class的方式
-define("HOSTNAME", "sfo1.clusters.zeabur.com");
+define("HOSTNAME", "sfo1.clusters.zeabur.com:31104");
 define("DATABASE", "koi");
 define("USERNAME", "root");
 define("PASSWORD", "3Jh6AY4T2xPg9ovLiCFd5a10c8l7uIRM");

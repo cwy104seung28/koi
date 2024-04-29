@@ -172,32 +172,15 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(手機版)</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">影片連結</td>
                                                     <td width="532">
-                                                        <select name="d_class4" id="d_class4" class="chosen-select">
-                                                            <option value="no" <?php if ($row_Recnews['d_class4'] == 'no') {
-                                                                                    echo "selected";
-                                                                                } ?>>否</option>
-                                                            <option value="yes" <?php if ($row_Recnews['d_class4'] == 'yes') {
-                                                                                    echo "selected";
-                                                                                } ?>>是</option>
-                                                        </select>
+                                                        <input name="d_class6" type="text" class="table_data" id="d_class6" value="<?php echo $row_Recnews['d_class6']; ?>" size="80">
                                                     </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內頁第一屏是否為影片</td>
-                                                    <td width="532">
-                                                        <select name="d_class5" id="d_class5" class="chosen-select">
-                                                            <option value="no" <?php if ($row_Recnews['d_class5'] == 'no') {
-                                                                                    echo "selected";
-                                                                                } ?>>否</option>
-                                                            <option value="yes" <?php if ($row_Recnews['d_class5'] == 'yes') {
-                                                                                    echo "selected";
-                                                                                } ?>>是</option>
-                                                        </select>
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p class="red_letter">
+                                                            *若無影片則無需填寫
+                                                        </p>
                                                     </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否要在全部分類中置頂?</td>
@@ -213,17 +196,7 @@ $ifFile = 0;
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">影片連結</td>
-                                                    <td width="532">
-                                                        <input name="d_class6" type="text" class="table_data" id="d_class6" value="<?php echo $row_Recnews['d_class6']; ?>" size="80">
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">
-                                                            *若無影片則無需填寫
-                                                        </p>
-                                                    </td>
-                                                </tr>
+
                                                 <tr>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
                                                     <td class="table_data"><textarea name="d_content" cols="60" rows="8" class="table_data tiny" id="d_content"><?php echo $row_Recnews['d_content']; ?></textarea></td>

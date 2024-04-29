@@ -117,7 +117,7 @@ $ifFile = 0;
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(電腦版)</td>
                                                     <td width="532">
-                                                        <select name="d_class3" id="d_class3" class="chosen-select">
+                                                        <select name="d_data1" id="d_data1" class="chosen-select">
                                                             <option value="no">否</option>
                                                             <option value="yes">是</option>
                                                         </select>
@@ -128,7 +128,7 @@ $ifFile = 0;
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(手機版)</td>
                                                     <td width="532">
-                                                        <select name="d_class4" id="d_class4" class="chosen-select">
+                                                        <select name="d_data2" id="d_data2" class="chosen-select">
                                                             <option value="no">否</option>
                                                             <option value="yes">是</option>
                                                         </select>
@@ -139,7 +139,7 @@ $ifFile = 0;
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內頁第一屏是否為影片</td>
                                                     <td width="532">
-                                                        <select name="d_class5" id="d_class5" class="chosen-select">
+                                                        <select name="d_data3" id="d_data3" class="chosen-select">
                                                             <option value="no">否</option>
                                                             <option value="yes">是</option>
                                                         </select>
@@ -150,7 +150,7 @@ $ifFile = 0;
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">影片連結</td>
                                                     <td width="532">
-                                                        <input name="d_class6" type="text" class="table_data" id="d_class6" size="80" />
+                                                        <input name="d_data4" type="text" class="table_data" id="d_data4" size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">
@@ -161,7 +161,7 @@ $ifFile = 0;
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否要在全部分類中置頂?</td>
                                                     <td width="532">
-                                                        <select name="d_class7" id="d_class7" class="chosen-select">
+                                                        <select name="d_data5" id="d_data5" class="chosen-select">
                                                             <option value="no">否</option>
                                                             <option value="yes">是</option>
                                                         </select>
@@ -428,7 +428,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_class1, d_class2, d_class3, d_class4, d_class5, d_class6, d_class7, d_tag, d_description, d_head, d_body, d_schema, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_class1, :d_class2, :d_class3, :d_class4, :d_class5, :d_class6, :d_class7, :d_tag, :d_description, :d_head, :d_body, :d_schema, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_class1, d_data1, d_data2, d_data3, d_data4, d_data5, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_class1, :d_data1, :d_data2, :d_data3, :d_data4, :d_data5, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -436,17 +436,15 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $stat->bindParam(':d_slug', generate_slug($_POST['d_title']), PDO::PARAM_STR);
     $stat->bindParam(':d_content', $_POST['d_content'], PDO::PARAM_STR);
     $stat->bindParam(':d_class1', $_POST['d_class1'], PDO::PARAM_STR);
-    $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
-    $stat->bindParam(':d_class3', $_POST['d_class3'], PDO::PARAM_STR);
-    $stat->bindParam(':d_class4', $_POST['d_class4'], PDO::PARAM_STR);
-    $stat->bindParam(':d_class5', $_POST['d_class5'], PDO::PARAM_STR);
-    $stat->bindParam(':d_class6', $_POST['d_class6'], PDO::PARAM_STR);
-    $stat->bindParam(':d_class7', $_POST['d_class7'], PDO::PARAM_STR);
-    $stat->bindParam(':d_tag', $_POST['d_tag'], PDO::PARAM_STR);
-    $stat->bindParam(':d_description', $_POST['d_description'], PDO::PARAM_STR);
-    $stat->bindParam(':d_head', $_POST['d_head'], PDO::PARAM_STR);
-    $stat->bindParam(':d_body', $_POST['d_body'], PDO::PARAM_STR);
-    $stat->bindParam(':d_schema', $_POST['d_schema'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data1', $_POST['d_data1'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data2', $_POST['d_data2'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data3', $_POST['d_data3'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data4', $_POST['d_data4'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data5', $_POST['d_data5'], PDO::PARAM_STR);
+    // $stat->bindParam(':d_description', $_POST['d_description'], PDO::PARAM_STR);
+    // $stat->bindParam(':d_head', $_POST['d_head'], PDO::PARAM_STR);
+    // $stat->bindParam(':d_body', $_POST['d_body'], PDO::PARAM_STR);
+    // $stat->bindParam(':d_schema', $_POST['d_schema'], PDO::PARAM_STR);
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
     $stat->execute();
@@ -455,27 +453,27 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     //----------插入圖片資料到資料庫begin(須放入插入主資料後)----------
 
     //找到insert ID
-    $new_data_num = $conn->lastInsertId();
+    // $new_data_num = $conn->lastInsertId();
 
-    //一般附圖
-    $image_result = image_process($conn, $_FILES['image'], $_REQUEST['image_title'], $menu_is, "add", $imagesSize[$_SESSION['nowMenu']]['IW'], $imagesSize[$_SESSION['nowMenu']]['IH']);
+    // //一般附圖
+    // $image_result = image_process($conn, $_FILES['image'], $_REQUEST['image_title'], $menu_is, "add", $imagesSize[$_SESSION['nowMenu']]['IW'], $imagesSize[$_SESSION['nowMenu']]['IH']);
 
-    for ($j = 1; $j < count($image_result); $j++) {
-        $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
+    // for ($j = 1; $j < count($image_result); $j++) {
+    //     $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
 
-        $stat = $conn->prepare($insertSQL);
-        $stat->bindParam(':file_name', $image_result[$j][0], PDO::PARAM_STR);
-        $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
-        $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
-        $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
-        $stat->bindParam(':file_type', $type = 'image', PDO::PARAM_STR);
-        $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
-        $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
-        $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
-        $stat->execute();
+    //     $stat = $conn->prepare($insertSQL);
+    //     $stat->bindParam(':file_name', $image_result[$j][0], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_type', $type = 'image', PDO::PARAM_STR);
+    //     $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
+    //     $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
+    //     $stat->execute();
 
-        $_SESSION["change_image"] = 1;
-    }
+    //     $_SESSION["change_image"] = 1;
+    // }
 
     // Cover
     $image_result = image_process($conn, $_FILES['imageCover'], $_REQUEST['imageCover_title'], $menu_is, "add", $imagesSize['newsCover']['IW'], $imagesSize['newsCover']['IH']);
