@@ -6,10 +6,6 @@ storage
 .node-gyp
 .npm
 node_modules
-source
-upload_image
-upload_file
-thumbs
 .rar
 .zip
 .cache
