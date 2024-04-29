@@ -282,12 +282,12 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, d_class1, d_title_en, d_class2, d_date, d_active) VALUES (:d_title, :d_class1, :d_title_en, :d_class2, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_class1, d_class2, d_date, d_active) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
-    $stat->bindParam(':d_class1', $_POST['d_class1'], PDO::PARAM_STR);
     $stat->bindParam(':d_title_en', $_POST['d_title_en'], PDO::PARAM_STR);
+    $stat->bindParam(':d_class1', $_POST['d_class1'], PDO::PARAM_STR);
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
