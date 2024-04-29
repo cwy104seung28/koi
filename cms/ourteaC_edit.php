@@ -29,13 +29,15 @@ $menu_is = "ourtea";
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php require_once('cmsTitle.php'); ?></title>
 
     <?php require_once('script.php'); ?>
-    <?php require_once('head.php');?>
+    <?php require_once('head.php'); ?>
 </head>
+
 <body>
     <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -69,7 +71,7 @@ $menu_is = "ourtea";
                                                                 <td>
                                                                     <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文名稱</td>
                                                                             <td width="516">
                                                                                 <input name="c_title" type="text" class="table_data" id="c_title" value="<?php echo $row_RecourteaC['c_title']; ?>" size="50" />
                                                                                 <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecourteaC['c_id']; ?>" />
@@ -77,18 +79,22 @@ $menu_is = "ourtea";
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <!-- <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
                                                                             <td width="516">
                                                                                 <input name="c_title_en" type="text" class="table_data" id="c_title_en" value="<?php echo $row_RecourteaC['c_title_en']; ?>" size="50" />
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                                        </tr> -->
+                                                                        </tr>
                                                                         <tr>
                                                                             <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active" class="table_data" id="c_active">
-                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecourteaC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
-                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecourteaC[ 'c_active']))) {echo "selected";} ?>>公佈</option>
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecourteaC['c_active']))) {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>不公佈</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecourteaC['c_active']))) {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>公佈</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
@@ -126,6 +132,7 @@ $menu_is = "ourtea";
         </tr>
     </table>
 </body>
+
 </html>
 
 <?php

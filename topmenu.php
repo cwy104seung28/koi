@@ -1,7 +1,9 @@
 <?php if ($now == 'INDEX') : ?>
     <div id="index-preload" class="index-preload flex-container align-center-middle">
-        <div class="logo"><img src="./images/index-preload-logo.svg" alt=""></div>
+        <!-- <div class="logo"><img src="./images/index-preload-logo.svg" alt=""></div> -->
+        <video src="https://player.vimeo.com/progressive_redirect/playback/940733319/rendition/1080p/file.mp4?loc=external&log_user=0&signature=f81590f1c9d43f0ae52ef3d09ab35d5b5adda858ecdf960232b0eb7b97409f6a" autoplay muted playsinline></video>
     </div>
+    
 <?php else : ?>
     <div id="preload" style="z-index: 100; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #fff;"></div>
 <?php endif ?>

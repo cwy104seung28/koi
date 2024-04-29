@@ -107,107 +107,30 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data" id="d_title" size="80" />
-                                                        <input name="d_tag" type="hidden" id="d_tag" value="" />
+                                                        <input name="d_class1" type="hidden" id="d_class1" value="<?php echo $menu_is; ?>" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(電腦版)</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
                                                     <td width="532">
-                                                        <select name="d_class3" id="d_class3" class="chosen-select">
-                                                            <option value="no">否</option>
-                                                            <option value="yes">是</option>
-                                                        </select>
-
+                                                        <input name="d_title_en" type="text" class="table_data" id="d_title_en" size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(手機版)</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">簡述</td>
                                                     <td width="532">
-                                                        <select name="d_class4" id="d_class4" class="chosen-select">
-                                                            <option value="no">否</option>
-                                                            <option value="yes">是</option>
-                                                        </select>
-
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內頁第一屏是否為影片</td>
-                                                    <td width="532">
-                                                        <select name="d_class5" id="d_class5" class="chosen-select">
-                                                            <option value="no">否</option>
-                                                            <option value="yes">是</option>
-                                                        </select>
-
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">影片連結</td>
-                                                    <td width="532">
-                                                        <input name="d_class6" type="text" class="table_data" id="d_class6" size="80" />
+                                                    <input name="d_data1" class="table_data" id="d_data1"/>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">
-                                                            *若無影片則無需填寫
+                                                        <p class="red_letter">*建議在30字以內
                                                         </p>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否要在全部分類中置頂?</td>
-                                                    <td width="532">
-                                                        <select name="d_class7" id="d_class7" class="chosen-select">
-                                                            <option value="no">否</option>
-                                                            <option value="yes">是</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
-                                                    <td width="532">
-                                                        <textarea name="d_content" cols="90" rows="30" class="tiny table_data" id="d_content"></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*小斷行請按Shift+Enter。
-                                                            <br /> 輸入區域的右下角可以調整輸入空間的大小。
-                                                        </p>
-                                                    </td>
-                                                </tr>
-
-                                                <!-- <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">描述</td>
-                                                    <td width="532">
-                                                        <textarea name="d_description" cols="60" rows="4" class="table_data" id="d_description"></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">head</td>
-                                                    <td width="532">
-                                                        <textarea name="d_head" cols="60" rows="4" class="table_data" id="d_head"></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">body</td>
-                                                    <td width="532">
-                                                        <textarea name="d_body" cols="60" rows="4" class="table_data" id="d_body"></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">schema</td>
-                                                    <td width="532">
-                                                        <textarea name="d_schema" cols="60" rows="4" class="table_data" id="d_schema"></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr> -->
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">時間</td>
                                                     <td width="532">

@@ -13,6 +13,13 @@ if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsCover') {
     $fileType   = "file_type='newsTopCover' AND";
 } else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="newsInnerCover")){
     $fileType = "file_type='newsInnerCover' AND";
+}else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="mainteaCenterCover")){
+    $fileType = "file_type='mainteaCenterCover' AND";
+}else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="mainteaCover")){
+    $fileType = "file_type='mainteaCover' AND";
+}
+else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="ourteaCover")){
+    $fileType = "file_type='ourteaCover' AND";
 }
 //else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="eventCover")){
 //     $fileType = "file_type='eventCover' AND";

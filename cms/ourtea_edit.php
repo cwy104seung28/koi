@@ -36,20 +36,6 @@ $RecCover->execute();
 $row_RecCover = $RecCover->fetch();
 $totalRows_RecCover = $RecCover->rowCount();
 
-$query_RecTopCover = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'ourteaTopCover'";
-$RecTopCover = $conn->prepare($query_RecTopCover);
-$RecTopCover->bindParam(':file_d_id', $colname_Recourtea, PDO::PARAM_INT);
-$RecTopCover->execute();
-$row_RecTopCover = $RecTopCover->fetch();
-$totalRows_RecTopCover = $RecTopCover->rowCount();
-
-$query_RecInnerCover = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'ourteaInnerCover'";
-$RecInnerCover = $conn->prepare($query_RecInnerCover);
-$RecInnerCover->bindParam(':file_d_id', $colname_Recourtea, PDO::PARAM_INT);
-$RecInnerCover->execute();
-$row_RecInnerCover = $RecInnerCover->fetch();
-$totalRows_RecInnerCover = $RecInnerCover->rowCount();
-
 $query_RecourteaC = "SELECT * FROM class_set WHERE c_parent = 'ourteaC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
 $RecourteaC = $conn->prepare($query_RecourteaC);
 $RecourteaC->execute();
@@ -121,8 +107,8 @@ $ifFile = 0;
                                                         <select name="d_class2" id="d_class2" class="chosen-select">
                                                             <?php do { ?>
                                                                 <option value="<?php echo $row_RecourteaC['c_id'] ?>" <?php if (!(strcmp($row_RecourteaC['c_id'], $row_Recourtea['d_class2']))) {
-                                                                                                                        echo "selected";
-                                                                                                                    } ?>>
+                                                                                                                            echo "selected";
+                                                                                                                        } ?>>
                                                                     <?php echo $row_RecourteaC['c_title'] ?>
                                                                 </option>
                                                             <?php
@@ -144,123 +130,23 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6"> </td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(電腦版)</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
                                                     <td width="532">
-                                                        <select name="d_class3" id="d_class3" class="chosen-select">
-                                                            <option value="no" <?php if ($row_Recourtea['d_class3'] == 'no') {
-                                                                                    echo "selected";
-                                                                                } ?>>否</option>
-                                                            <option value="yes" <?php if ($row_Recourtea['d_class3'] == 'yes') {
-                                                                                    echo "selected";
-                                                                                } ?>>是</option>
-                                                        </select>
+                                                        <input name="d_title_en" type="text" class="table_data" value="<?php echo $row_Recourtea['d_title']; ?>" id="d_title_en" size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(手機版)</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">簡述</td>
                                                     <td width="532">
-                                                        <select name="d_class4" id="d_class4" class="chosen-select">
-                                                            <option value="no" <?php if ($row_Recourtea['d_class4'] == 'no') {
-                                                                                    echo "selected";
-                                                                                } ?>>否</option>
-                                                            <option value="yes" <?php if ($row_Recourtea['d_class4'] == 'yes') {
-                                                                                    echo "selected";
-                                                                                } ?>>是</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(手機版)</td>
-                                                    <td width="532">
-                                                        <select name="d_class4" id="d_class4" class="chosen-select">
-                                                            <option value="no" <?php if ($row_Recourtea['d_class4'] == 'no') {
-                                                                                    echo "selected";
-                                                                                } ?>>否</option>
-                                                            <option value="yes" <?php if ($row_Recourtea['d_class4'] == 'yes') {
-                                                                                    echo "selected";
-                                                                                } ?>>是</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內頁第一屏是否為影片</td>
-                                                    <td width="532">
-                                                        <select name="d_class5" id="d_class5" class="chosen-select">
-                                                            <option value="no" <?php if ($row_Recourtea['d_class5'] == 'no') {
-                                                                                    echo "selected";
-                                                                                } ?>>否</option>
-                                                            <option value="yes" <?php if ($row_Recourtea['d_class5'] == 'yes') {
-                                                                                    echo "selected";
-                                                                                } ?>>是</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否要在全部分類中置頂?</td>
-                                                    <td width="532">
-                                                        <select name="d_class7" id="d_class7" class="chosen-select">
-                                                            <option value="no" <?php if ($row_Recourtea['d_class7'] == 'no') {
-                                                                                    echo "selected";
-                                                                                } ?>>否</option>
-                                                            <option value="yes" <?php if ($row_Recourtea['d_class7'] == 'yes') {
-                                                                                    echo "selected";
-                                                                                } ?>>是</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">影片連結</td>
-                                                    <td width="532">
-                                                        <input name="d_class6" type="text" class="table_data" id="d_class6" value="<?php echo $row_Recourtea['d_class6']; ?>" size="80">
+                                                        <input name="d_data1" class="table_data" id="d_data1" value="<?php echo $row_Recourtea['d_title']; ?>" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">
-                                                            *若無影片則無需填寫
+                                                        <p class="red_letter">*建議在30字以內
                                                         </p>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
-                                                    <td class="table_data"><textarea name="d_content" cols="60" rows="8" class="table_data tiny" id="d_content"><?php echo $row_Recourtea['d_content']; ?></textarea></td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*小斷行請按Shift+Enter。<br />
-                                                            輸入區域的右下角可以調整輸入空間的大小。</p>
-                                                    </td>
-                                                </tr>
 
-                                                <!-- <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">描述</td>
-                                                    <td>
-                                                        <textarea name="d_description" cols="60" rows="4" class="table_data" id="d_description"><?php echo $row_Recourtea['d_description']; ?></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6"> </td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">head</td>
-                                                    <td>
-                                                        <textarea name="d_head" cols="60" rows="4" class="table_data" id="d_head"><?php echo $row_Recourtea['d_head']; ?></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6"> </td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">body</td>
-                                                    <td>
-                                                        <textarea name="d_body" cols="60" rows="4" class="table_data" id="d_body"><?php echo $row_Recourtea['d_body']; ?></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6"> </td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">schema</td>
-                                                    <td>
-                                                        <textarea name="d_schema" cols="60" rows="4" class="table_data" id="d_schema"><?php echo $row_Recourtea['d_schema']; ?></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6"> </td>
-                                                </tr> -->
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">時間</td>
                                                     <td>
@@ -337,151 +223,6 @@ $ifFile = 0;
                                                             </p>
                                                         </td>
                                                     </tr>
-                                                <?php } // Show if recordset not empty 
-                                                ?>
-                                                <?php if ($totalRows_RecTopCover > 0) { // Show if recordset not empty 
-                                                ?>
-                                                    <tr>
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前置頂封面圖片<a name="imageEdit" id="imageEdit"></a></td>
-                                                        <td>
-                                                            <?php do { ?>
-                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                    <tr>
-                                                                        <td width="100" rowspan="2" align="center"><a href="../<?php echo $row_RecTopCover['file_link1'] . '?' . (mt_rand(1, 100000) / 100000); ?>" class="fancyboxImg" rel="group" title="<?php echo $row_RecTopCover['file_title']; ?>"><img src="../<?php echo $row_RecTopCover['file_link2'] . '?' . (mt_rand(1, 100000) / 100000); ?>" alt="" class="image_frame" /></a></td>
-                                                                        <td align="left" class="table_data">&nbsp;圖片說明：
-                                                                            <?php echo $row_RecTopCover['file_title']; ?>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td align="left" class="table_data">&nbsp;</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td align="center"><a href="image_edit.php?file_id=<?php echo $row_RecTopCover['file_id'] . '&type=ourteaTopCover'; ?>" class="fancyboxEdit" title="修改圖片"><img src="image/media_edit.gif" width="16" height="16" title="修改圖片" /></a><a href="image_del.php?file_id=<?php echo $row_RecTopCover['file_id'] . '&type=ourteaTopCover'; ?>" class="fancyboxEdit" title="刪除圖片"><img src="image/media_delete.gif" width="16" height="16" title="刪除圖片" /></a></td>
-                                                                        <td align="center">&nbsp;</td>
-                                                                    </tr>
-                                                                </table>
-                                                            <?php } while ($row_RecTopCover = $RecTopCover->fetch()); ?>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p class="red_letter">*
-                                                                <?php echo $imagesSize['ourteaTopCover']['note']; ?>
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                <?php } // Show if recordset not empty 
-                                                ?>
-                                                <?php if ($totalRows_RecTopCover == 0) { // Show if recordset not empty 
-                                                ?>
-                                                    <tr>
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p>上傳置頂封面圖片</p>
-                                                        </td>
-                                                        <td>
-                                                            <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
-                                                                <tr>
-                                                                    <td> <span class="table_data">選擇圖片：</span>
-                                                                        <input name="imageTopCover[]" type="file" class="table_data" id="imageTopCover1" />
-                                                                        <br>
-                                                                        <span class="table_data">圖片說明：</span>
-                                                                        <input name="imageTopCover_title[]" type="text" class="table_data" id="imageTopCover_title1">
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p class="red_letter">*
-                                                                <?php echo $imagesSize['ourteaTopCover']['note']; ?>
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                <?php } // Show if recordset not empty 
-                                                ?>
-
-                                                <?php if ($totalRows_RecInnerCover > 0) { // Show if recordset not empty 
-                                                ?>
-                                                    <tr>
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前置頂封面圖片<a name="imageEdit" id="imageEdit"></a></td>
-                                                        <td>
-                                                            <?php do { ?>
-                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                    <tr>
-                                                                        <td width="100" rowspan="2" align="center"><a href="../<?php echo $row_RecInnerCover['file_link1'] . '?' . (mt_rand(1, 100000) / 100000); ?>" class="fancyboxImg" rel="group" title="<?php echo $row_RecInnerCover['file_title']; ?>"><img src="../<?php echo $row_RecInnerCover['file_link2'] . '?' . (mt_rand(1, 100000) / 100000); ?>" alt="" class="image_frame" /></a></td>
-                                                                        <td align="left" class="table_data">&nbsp;圖片說明：
-                                                                            <?php echo $row_RecInnerCover['file_title']; ?>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td align="left" class="table_data">&nbsp;</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td align="center"><a href="image_edit.php?file_id=<?php echo $row_RecInnerCover['file_id'] . '&type=ourteaInnerCover'; ?>" class="fancyboxEdit" title="修改圖片"><img src="image/media_edit.gif" width="16" height="16" title="修改圖片" /></a><a href="image_del.php?file_id=<?php echo $row_RecInnerCover['file_id'] . '&type=ourteaInnerCover'; ?>" class="fancyboxEdit" title="刪除圖片"><img src="image/media_delete.gif" width="16" height="16" title="刪除圖片" /></a></td>
-                                                                        <td align="center">&nbsp;</td>
-                                                                    </tr>
-                                                                </table>
-                                                            <?php } while ($row_RecInnerCover = $RecInnerCover->fetch()); ?>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p class="red_letter">*
-                                                                <?php echo $imagesSize['ourteaInnerCover']['note']; ?>
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                <?php } // Show if recordset not empty 
-                                                ?>
-                                                <?php if ($totalRows_RecInnerCover == 0) { // Show if recordset not empty 
-                                                ?>
-                                                    <tr>
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p>上傳置頂封面圖片</p>
-                                                        </td>
-                                                        <td>
-                                                            <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
-                                                                <tr>
-                                                                    <td> <span class="table_data">選擇圖片：</span>
-                                                                        <input name="imageInnerCover[]" type="file" class="table_data" id="imageInnerCover1" />
-                                                                        <br>
-                                                                        <span class="table_data">圖片說明：</span>
-                                                                        <input name="imageInnerCover_title[]" type="text" class="table_data" id="imageInnerCover_title1">
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p class="red_letter">*
-                                                                <?php echo $imagesSize['ourteaInnerCover']['note']; ?>
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                <?php } // Show if recordset not empty 
-                                                ?>
-
-
-                                                <?php if ($totalRows_RecImage > 0) { // Show if recordset not empty 
-                                                ?>
-                                                    <!-- <tr id="imageEdit">
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前圖片</td>
-                                                    <td id="draggable">
-                                                        <?php do { ?>
-                                                        <table width="30%" style="display:inline-table; padding:0 12px 12px 0;" border="0" cellspacing="0" cellpadding="0" data-id="<?= $row_RecImage['file_id'] ?>">
-                                                            <tr>
-                                                                <td width="100" rowspan="2" align="center"><a href="../<?php echo $row_RecImage['file_link1']; ?>" class="fancyboxImg" rel="group" title="<?php echo $row_RecImage['file_title']; ?>"><img src="../<?php echo $row_RecImage['file_link2']; ?>" alt="" class="image_frame"/></a></td>
-                                                                <td align="left" class="table_data">&nbsp;圖片說明：
-                                                                    <?php echo $row_RecImage['file_title']; ?>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" class="table_data">&nbsp;</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center"><a href="image_edit.php?file_id=<?php echo $row_RecImage['file_id']; ?>" class="fancyboxEdit" title="修改圖片"><img src="image/media_edit.gif" width="16" height="16" title="修改圖片"/></a><a href="image_del.php?file_id=<?php echo $row_RecImage['file_id']; ?>" class="fancyboxEdit" title="刪除圖片"><img src="image/media_delete.gif" width="16" height="16" title="刪除圖片"/></a></td>
-                                                            </tr>
-                                                        </table>
-                                                        <?php } while ($row_RecImage = $RecImage->fetch()); ?>
-                                                    </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">* 若要排序照片，請直接施拉即可。</p>
-                                                    </td>
-                                                </tr> -->
                                                 <?php } // Show if recordset not empty 
                                                 ?>
                                                 <?php if (1) { // Show if recordset not empty 

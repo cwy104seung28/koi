@@ -110,7 +110,7 @@ $ifFile = 0;
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data" id="d_title" size="80" />
-                                                        <input name="d_tag" type="hidden" id="d_tag" value="" />
+                                                        <input name="d_class1" type="hidden" id="d_class1" value="<?php echo $menu_is; ?>" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>

@@ -42,61 +42,27 @@ elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsTopCover') {
     $IWidth = $imagesSize['newsInnerCover']['IW'];
     $IHeight = $imagesSize['newsInnerCover']['IH'];
 }
-// elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'eventCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='eventCover' AND";
-//     $not = $imagesSize['eventCover']['note'];
-//     $IWidth = $imagesSize['eventCover']['IW'];
-//     $IHeight = $imagesSize['eventCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'sampleCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='sampleCover' AND";
-//     $not = $imagesSize['sampleCover']['note'];
-//     $IWidth = $imagesSize['sampleCover']['IW'];
-//     $IHeight = $imagesSize['sampleCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'centerlockCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='centerlockCover' AND";
-//     $not = $imagesSize['centerlockCover']['note'];
-//     $IWidth = $imagesSize['centerlockCover']['IW'];
-//     $IHeight = $imagesSize['centerlockCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'sampleHiddenCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='sampleHiddenCover' AND";
-//     $not = $imagesSize['sampleHiddenCover']['note'];
-//     $IWidth = $imagesSize['sampleHiddenCover']['IW'];
-//     $IHeight = $imagesSize['sampleHiddenCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'centerlockHiddenCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='centerlockHiddenCover' AND";
-//     $not = $imagesSize['centerlockHiddenCover']['note'];
-//     $IWidth = $imagesSize['centerlockHiddenCover']['IW'];
-//     $IHeight = $imagesSize['centerlockHiddenCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'sampleExposedCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='sampleExposedCover' AND";
-//     $not = $imagesSize['sampleExposedCover']['note'];
-//     $IWidth = $imagesSize['sampleExposedCover']['IW'];
-//     $IHeight = $imagesSize['sampleExposedCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'centerlockExposedCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='centerlockExposedCover' AND";
-//     $not = $imagesSize['centerlockExposedCover']['note'];
-//     $IWidth = $imagesSize['centerlockExposedCover']['IW'];
-//     $IHeight = $imagesSize['centerlockExposedCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'polishingHiddenCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='polishingHiddenCover' AND";
-//     $not = $imagesSize['polishingHiddenCover']['note'];
-//     $IWidth = $imagesSize['polishingHiddenCover']['IW'];
-//     $IHeight = $imagesSize['polishingHiddenCover']['IH'];
-// } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'polishingExposedCover') {
-//     $type = $_REQUEST['type'];
-//     $fileType = "file_type='polishingExposedCover' AND";
-//     $not = $imagesSize['polishingExposedCover']['note'];
-//     $IWidth = $imagesSize['polishingExposedCover']['IW'];
-//     $IHeight = $imagesSize['polishingExposedCover']['IH'];
-// }
+elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mainteaCover') {
+    $type = $_REQUEST['type'];
+    $fileType = "file_type='mainteaCover' AND";
+    $not = $imagesSize['mainteaCover']['note'];
+    $IWidth = $imagesSize['mainteaCover']['IW'];
+    $IHeight = $imagesSize['mainteaCover']['IH'];
+}
+elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mainCenterCover') {
+    $type = $_REQUEST['type'];
+    $fileType = "file_type='mainCenterCover' AND";
+    $not = $imagesSize['mainCenterCover']['note'];
+    $IWidth = $imagesSize['mainCenterCover']['IW'];
+    $IHeight = $imagesSize['mainCenterCover']['IH'];
+}elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'ourteaCover') {
+    $type = $_REQUEST['type'];
+    $fileType = "file_type='ourteaCover' AND";
+    $not = $imagesSize['ourteaCover']['note'];
+    $IWidth = $imagesSize['ourteaCover']['IW'];
+    $IHeight = $imagesSize['ourteaCover']['IH'];
+}
+
 else {
     $type = '-1';
     $fileType = "file_type='image' AND";

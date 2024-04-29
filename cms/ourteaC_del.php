@@ -57,7 +57,7 @@ $menu_is = "ourtea";
                                         <td>
                                             <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文名稱</td>
                                                     <td width="532" class="table_data">
                                                         <?php echo $row_RecourteaC['c_title']; ?>
                                                         <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecourteaC['c_id']; ?>" />

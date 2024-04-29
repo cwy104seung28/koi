@@ -863,24 +863,55 @@
     })
     $('footer').addClass('is-light-orange')
 
+    // 舊的
+    // let $tl_preload = gsap.timeline({
+    //         paused: false,
+    //     })
+    //     .to(".index-preload .logo", {
+    //         duration: 0.75,
+    //         opacity: 1,
+    //         ease: Power2.easeIn,
+    //     })
+    //     .add('logo')
+    //     .to(".index-preload .logo", {
+    //         delay: 2,
+    //         duration: 2,
+    //         y: '-400',
+    //         scale: 1.5,
+    //         ease: Power2.easeOut,
+    //     }, 'logo')
+    //     .to(".index-top-banner", {
+    //         delay: 2,
+    //         duration: 1.5,
+    //         y: 0,
+    //         ease: Power2.easeOut,
+    //     }, 'logo')
+    //     .to("nav", {
+    //         className: "+=not-clip flex-container align-justify"
+    //     }, '<0.65')
+    //     .to(".index-top-banner .top-text", {
+    //         duration: 1.5,
+    //         x: 0,
+    //         ease: Power3.easeOut,
+    //     }, '<0.5')
+    //     .from(".menu-link", {
+    //         duration: 0.5,
+    //         opacity: 0,
+    //         ease: Power2.easeOut,
+    //     })
+    //     .to(".menu-link", {
+    //         opacity: 1,
+    //     })
+
+    // gsap.delayedCall(6, function() {
+    //     $('.index-preload video').addClass('not-show');
+    // })
+
     let $tl_preload = gsap.timeline({
             paused: false,
         })
-        .to(".index-preload .logo", {
-            duration: 0.75,
-            opacity: 1,
-            ease: Power2.easeIn,
-        })
-        .add('logo')
-        .to(".index-preload .logo", {
-            delay: 2,
-            duration: 2,
-            y: '-400',
-            scale: 1.5,
-            ease: Power2.easeOut,
-        }, 'logo')
         .to(".index-top-banner", {
-            delay: 2,
+            delay: 6.5,
             duration: 1.5,
             y: 0,
             ease: Power2.easeOut,
@@ -902,8 +933,7 @@
             opacity: 1,
         })
 
-
-    gsap.delayedCall(6, function() {
+    gsap.delayedCall(10, function() {
         $("html").removeClass("is-lock")
         $('nav').removeClass('not-clip')
 
@@ -1190,7 +1220,7 @@
         //     animation: $tl_drink_start2,
         // })
 
-        
+
         const $tl_drink3 = gsap.timeline({
                 paused: false,
             })
@@ -1291,9 +1321,9 @@
         ScrollTrigger.create({
             // toggleActions: "play resume resume resume",
             trigger: ".index-drink",
-            start: "7% 0%",
-            end: "bottom 0%",
-            // markers: true,
+            start: "10% 20%",
+            end: "bottom 20%",
+            markers: true,
             // animation: $tl_drink,
             // scrub: 1,
             onEnter() {
