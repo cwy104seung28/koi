@@ -1323,7 +1323,7 @@
             trigger: ".index-drink",
             start: "10% 20%",
             end: "bottom 20%",
-            markers: true,
+            // markers: true,
             // animation: $tl_drink,
             // scrub: 1,
             onEnter() {
