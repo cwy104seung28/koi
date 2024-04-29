@@ -91,8 +91,8 @@ $ifFile = 0;
                                                         <select name="d_class2" id="d_class2" class="chosen-select">
                                                             <?php do { ?>
                                                                 <option value="<?php echo $row_RecourteaC['c_id'] ?>" <?php if (!(strcmp($row_RecourteaC['c_id'], $G_selected1))) {
-                                                                                                                        echo "selected";
-                                                                                                                    } ?>>
+                                                                                                                            echo "selected";
+                                                                                                                        } ?>>
                                                                     <?php echo $row_RecourteaC['c_title'] ?>
                                                                 </option>
                                                             <?php
@@ -124,12 +124,19 @@ $ifFile = 0;
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">簡述</td>
                                                     <td width="532">
-                                                    <input name="d_data1" class="table_data" id="d_data1"/>
+                                                        <input name="d_data1" type="text" class="table_data" id="d_data1" size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*建議在30字以內
                                                         </p>
                                                     </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">地區</td>
+                                                    <td width="532">
+                                                        <input name="d_data2" type="text" class="table_data" id="d_data2" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">時間</td>
@@ -351,7 +358,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_class1, d_class2, d_class3, d_class4, d_class5, d_class6, d_class7, d_tag, d_description, d_head, d_body, d_schema, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_class1, :d_class2, :d_class3, :d_class4, :d_class5, :d_class6, :d_class7, :d_tag, :d_description, :d_head, :d_body, :d_schema, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_class1, d_class2, d_class3, d_date, d_active) VALUES (:d_title, :d_class1, :d_class2, :d_class3, :d_class4, :d_class5, :d_class6, :d_class7, :d_tag, :d_description, :d_head, :d_body, :d_schema, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
