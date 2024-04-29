@@ -7,7 +7,7 @@
     <?php include 'html_head.php'; ?>
 </head>
 
-<body class="is-orange">
+<body>
     <div class="languageWrap flex-container align-center-middle">
         <div class="language-logo"><img src="./images/index-lan-logo.svg"></div>
         <ul class="languageList flex-container align-center-middle">
