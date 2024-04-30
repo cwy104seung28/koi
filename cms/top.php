@@ -57,6 +57,11 @@ function creatTablBottom()
 					<div>飲品介紹</div>
 				</a>
 			</li>
+			<li id="main_menu_4" class="main_menu <?php if ($menu_is == 'menu') : ?>main_menu_now<?php endif ?>">
+				<a href="menu_list.php">
+					<div>菜單下載</div>
+				</a>
+			</li>
 			<!--<li id="main_menu_2" class="main_menu <?php if ($menu_is == 'news') : ?>main_menu_now<?php endif ?>">
 				<a href="news_list.php">
 					<div>最新消息</div>
@@ -144,50 +149,16 @@ if ($menu_is == "news") {
 		header("Location:first.php");
 	}
 	creatTablBottom();
-} else if ($menu_is == "clinic") {
+}  else if ($menu_is == "menu") {
 
 	creatTableTop();
-	creatAll('月班表', 'clinic');
+	creatAll('菜單下載', 'menu');
+	creatAll('國家分類', 'menuC');
 	if ($row_RecLevelAuthority['a_2'] == '0') {
 		header("Location:first.php");
 	}
 	creatTablBottom();
-} else if ($menu_is == "service") {
-
-	creatTableTop();
-	creatAll('服務項目四大項', 'serviceC');
-	creatAll('服務項目', 'service');
-	creatAll('服務項目QA', 'serviceQA');
-	if ($row_RecLevelAuthority['a_2'] == '0') {
-		header("Location:first.php");
-	}
-	creatTablBottom();
-} else if ($menu_is == "team") {
-
-	creatTableTop();
-	creatAll('醫師團隊', 'team');
-	if ($row_RecLevelAuthority['a_2'] == '0') {
-		header("Location:first.php");
-	}
-	creatTablBottom();
-} else if ($menu_is == "search") {
-
-	creatTableTop();
-	creatAll('SEO區', 'search');
-	if ($row_RecLevelAuthority['a_10'] == '0') {
-		header("Location:first.php");
-	}
-	creatTablBottom();
-} else if ($menu_is == "authority") {
-
-	creatTableTop();
-	creatAll('管理員', 'authority');
-	creatAll('權限管理群組', 'authorityC');
-	if ($row_RecLevelAuthority['a_1'] == '0') {
-		header("Location:first.php");
-	}
-	creatTablBottom();
-}
+} 
 ?>
 
 <div style="clear:both; height:20px;"></div>

@@ -2,7 +2,7 @@
 
 <?php
 if (!1) {
-    header("Location: newsC_list.php");
+    header("Location: menuC_list.php");
 }
 
 $editFormAction = $_SERVER['PHP_SELF'];
@@ -10,20 +10,20 @@ if (isset($_SERVER['QUERY_STRING'])) {
     $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
-$colname_RecnewsC = "-1";
+$colname_RecmenuC = "-1";
 if (isset($_GET['c_id'])) {
-    $colname_RecnewsC = $_GET['c_id'];
+    $colname_RecmenuC = $_GET['c_id'];
 }
 
-$query_RecnewsC = "SELECT * FROM class_set WHERE c_id = :c_id";
+$query_RecmenuC = "SELECT * FROM class_set WHERE c_id = :c_id";
 
-$RecnewsC = $conn->prepare($query_RecnewsC);
-$RecnewsC->bindParam(':c_id', $colname_RecnewsC, PDO::PARAM_INT);
-$RecnewsC->execute();
-$row_RecnewsC = $RecnewsC->fetch();
-$totalRows_RecnewsC = $RecnewsC->rowCount();
+$RecmenuC = $conn->prepare($query_RecmenuC);
+$RecmenuC->bindParam(':c_id', $colname_RecmenuC, PDO::PARAM_INT);
+$RecmenuC->execute();
+$row_RecmenuC = $RecmenuC->fetch();
+$totalRows_RecmenuC = $RecmenuC->rowCount();
 
-$menu_is = "news";
+$menu_is = "menu";
 
 ?>
 
@@ -69,26 +69,26 @@ $menu_is = "news";
                                                                 <td>
                                                                     <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文名稱</td>
                                                                             <td width="516">
-                                                                                <input name="c_title" type="text" class="table_data" id="c_title" value="<?php echo $row_RecnewsC['c_title']; ?>" size="50" />
-                                                                                <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecnewsC['c_id']; ?>" />
+                                                                                <input name="c_title" type="text" class="table_data" id="c_title" value="<?php echo $row_RecmenuC['c_title']; ?>" size="50" />
+                                                                                <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecmenuC['c_id']; ?>" />
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
-                                                                         <!-- <tr>
-                                                                           <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
+                                                                        <tr>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文名稱</td>
                                                                             <td width="516">
-                                                                                <input name="c_title_en" type="text" class="table_data" id="c_title_en" value="<?php echo $row_RecnewsC['c_title_en']; ?>" size="50" />
+                                                                                <input name="c_title_en" type="text" class="table_data" id="c_title_en" value="<?php echo $row_RecmenuC['c_title_en']; ?>" size="50" />
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                                        </tr> -->
+                                                                        </tr>
                                                                         <tr>
                                                                             <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active" class="table_data" id="c_active">
-                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecnewsC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
-                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecnewsC[ 'c_active']))) {echo "selected";} ?>>公佈</option>
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecmenuC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecmenuC[ 'c_active']))) {echo "selected";} ?>>公佈</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
@@ -144,7 +144,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     $sth->bindParam(':c_id', $_POST['c_id'], PDO::PARAM_INT);
     $sth->execute();
 
-    $updateGoTo = "newsC_list.php";
+    $updateGoTo = "menuC_list.php";
     if (isset($_SERVER['QUERY_STRING'])) {
         $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
         $updateGoTo .= $_SERVER['QUERY_STRING'] . "&pageNum=" . $_SESSION["ToPage"];

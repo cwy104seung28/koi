@@ -5,7 +5,7 @@
 
 <?php
 if (!1) {
-    header("Location: ourtea_list.php");
+    header("Location: menu_list.php");
 }
 
 $editFormAction = $_SERVER['PHP_SELF'];
@@ -14,21 +14,21 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 $G_selected1 = '';
-if (isset($_SESSION['selected_ourteaC'])) {
-    $G_selected1 = $_SESSION['selected_ourteaC'];
+if (isset($_SESSION['selected_menuC'])) {
+    $G_selected1 = $_SESSION['selected_menuC'];
 }
 
-$query_RecourteaC = "SELECT * FROM class_set WHERE c_parent = 'ourteaC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
-$RecourteaC = $conn->query($query_RecourteaC);
-$row_RecourteaC = $RecourteaC->fetch();
-$totalRows_RecourteaC = $RecourteaC->rowCount();
+$query_RecmenuC = "SELECT * FROM class_set WHERE c_parent = 'menuC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
+$RecmenuC = $conn->query($query_RecmenuC);
+$row_RecmenuC = $RecmenuC->fetch();
+$totalRows_RecmenuC = $RecmenuC->rowCount();
 
-$query_RecourteaY = "SELECT * FROM class_set WHERE c_parent = 'ourteaY' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
-$RecourteaY = $conn->query($query_RecourteaY);
-$row_RecourteaY = $RecourteaY->fetch();
-$totalRows_RecourteaY = $RecourteaY->rowCount();
+$query_RecmenuY = "SELECT * FROM class_set WHERE c_parent = 'menuY' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
+$RecmenuY = $conn->query($query_RecmenuY);
+$row_RecmenuY = $RecmenuY->fetch();
+$totalRows_RecmenuY = $RecmenuY->rowCount();
 
-$menu_is = "ourtea";
+$menu_is = "menu";
 $_SESSION['nowMenu'] = $menu_is;
 $ifFile = 0;
 
@@ -90,16 +90,16 @@ $ifFile = 0;
                                                     <td width="532">
                                                         <select name="d_class2" id="d_class2" class="chosen-select">
                                                             <?php do { ?>
-                                                                <option value="<?php echo $row_RecourteaC['c_id'] ?>" <?php if (!(strcmp($row_RecourteaC['c_id'], $G_selected1))) {
-                                                                                                                            echo "selected";
-                                                                                                                        } ?>>
-                                                                    <?php echo $row_RecourteaC['c_title'] ?>
+                                                                <option value="<?php echo $row_RecmenuC['c_id'] ?>" <?php if (!(strcmp($row_RecmenuC['c_id'], $G_selected1))) {
+                                                                                                                        echo "selected";
+                                                                                                                    } ?>>
+                                                                    <?php echo $row_RecmenuC['c_title'] ?>
                                                                 </option>
                                                             <?php
-                                                            } while ($row_RecourteaC = $RecourteaC->fetch());
-                                                            $rows = $RecourteaC->rowCount();
+                                                            } while ($row_RecmenuC = $RecmenuC->fetch());
+                                                            $rows = $RecmenuC->rowCount();
                                                             if ($rows > 0) {
-                                                                $RecourteaC->execute();
+                                                                $RecmenuC->execute();
                                                             }
                                                             ?>
                                                         </select>
@@ -107,7 +107,7 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data" id="d_title" size="80" />
                                                         <input name="d_class1" type="hidden" id="d_class1" value="<?php echo $menu_is; ?>" />
@@ -115,29 +115,99 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(電腦版)</td>
                                                     <td width="532">
-                                                        <input name="d_title_en" type="text" class="table_data" id="d_title_en" size="80" />
+                                                        <select name="d_data1" id="d_data1" class="chosen-select">
+                                                            <option value="no">否</option>
+                                                            <option value="yes">是</option>
+                                                        </select>
+
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">簡述</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否出現在首頁的最新消息區?(手機版)</td>
                                                     <td width="532">
-                                                        <input name="d_data1" type="text" class="table_data" id="d_data1" size="80" />
+                                                        <select name="d_data2" id="d_data2" class="chosen-select">
+                                                            <option value="no">否</option>
+                                                            <option value="yes">是</option>
+                                                        </select>
+
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內頁第一屏是否為影片</td>
+                                                    <td width="532">
+                                                        <select name="d_data3" id="d_data3" class="chosen-select">
+                                                            <option value="no">否</option>
+                                                            <option value="yes">是</option>
+                                                        </select>
+
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">影片連結</td>
+                                                    <td width="532">
+                                                        <input name="d_data4" type="text" class="table_data" id="d_data4" size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*建議在30字以內
+                                                        <p class="red_letter">
+                                                            *若無影片則無需填寫
                                                         </p>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">地區</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">是否要在全部分類中置頂?</td>
                                                     <td width="532">
-                                                        <input name="d_data2" type="text" class="table_data" id="d_data2" size="80" />
+                                                        <select name="d_data5" id="d_data5" class="chosen-select">
+                                                            <option value="no">否</option>
+                                                            <option value="yes">是</option>
+                                                        </select>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
+                                                    <td width="532">
+                                                        <textarea name="d_content" cols="90" rows="30" class="tiny table_data" id="d_content"></textarea>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p class="red_letter">*小斷行請按Shift+Enter。
+                                                            <br /> 輸入區域的右下角可以調整輸入空間的大小。
+                                                        </p>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">描述</td>
+                                                    <td width="532">
+                                                        <textarea name="d_description" cols="60" rows="4" class="table_data" id="d_description"></textarea>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">head</td>
+                                                    <td width="532">
+                                                        <textarea name="d_head" cols="60" rows="4" class="table_data" id="d_head"></textarea>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">body</td>
+                                                    <td width="532">
+                                                        <textarea name="d_body" cols="60" rows="4" class="table_data" id="d_body"></textarea>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">schema</td>
+                                                    <td width="532">
+                                                        <textarea name="d_schema" cols="60" rows="4" class="table_data" id="d_schema"></textarea>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr> -->
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">時間</td>
                                                     <td width="532">
@@ -175,7 +245,7 @@ $ifFile = 0;
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*
-                                                            <?php echo $imagesSize['ourteaCover']['note']; ?>
+                                                            <?php echo $imagesSize['menuCover']['note']; ?>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -197,7 +267,7 @@ $ifFile = 0;
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*
-                                                            <?php echo $imagesSize['ourteaTopCover']['note']; ?>
+                                                            <?php echo $imagesSize['menuTopCover']['note']; ?>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -219,7 +289,7 @@ $ifFile = 0;
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*
-                                                            <?php echo $imagesSize['ourteaInnerCover']['note']; ?>
+                                                            <?php echo $imagesSize['menuInnerCover']['note']; ?>
                                                             <br>
                                                             若內容有影片，則不須上傳內頁封面
                                                         </p>
@@ -358,15 +428,23 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, :d_title_en, d_class1, d_data1, d_data2, d_date, d_active) VALUES (:d_title, :d_title_en, :d_class1, :d_data1, :d_data2, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_class1, d_data1, d_data2, d_data3, d_data4, d_data5, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_class1, :d_data1, :d_data2, :d_data3, :d_data4, :d_data5, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
     $stat->bindParam(':d_title_en', $_POST['d_title_en'], PDO::PARAM_STR);
+    $stat->bindParam(':d_slug', generate_slug($_POST['d_title']), PDO::PARAM_STR);
+    $stat->bindParam(':d_content', $_POST['d_content'], PDO::PARAM_STR);
     $stat->bindParam(':d_class1', $_POST['d_class1'], PDO::PARAM_STR);
     $stat->bindParam(':d_data1', $_POST['d_data1'], PDO::PARAM_STR);
     $stat->bindParam(':d_data2', $_POST['d_data2'], PDO::PARAM_STR);
-
+    $stat->bindParam(':d_data3', $_POST['d_data3'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data4', $_POST['d_data4'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data5', $_POST['d_data5'], PDO::PARAM_STR);
+    // $stat->bindParam(':d_description', $_POST['d_description'], PDO::PARAM_STR);
+    // $stat->bindParam(':d_head', $_POST['d_head'], PDO::PARAM_STR);
+    // $stat->bindParam(':d_body', $_POST['d_body'], PDO::PARAM_STR);
+    // $stat->bindParam(':d_schema', $_POST['d_schema'], PDO::PARAM_STR);
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
     $stat->execute();
@@ -375,30 +453,30 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     //----------插入圖片資料到資料庫begin(須放入插入主資料後)----------
 
     //找到insert ID
-    $new_data_num = $conn->lastInsertId();
+    // $new_data_num = $conn->lastInsertId();
 
-    //一般附圖
-    $image_result = image_process($conn, $_FILES['image'], $_REQUEST['image_title'], $menu_is, "add", $imagesSize[$_SESSION['nowMenu']]['IW'], $imagesSize[$_SESSION['nowMenu']]['IH']);
+    // //一般附圖
+    // $image_result = image_process($conn, $_FILES['image'], $_REQUEST['image_title'], $menu_is, "add", $imagesSize[$_SESSION['nowMenu']]['IW'], $imagesSize[$_SESSION['nowMenu']]['IH']);
 
-    for ($j = 1; $j < count($image_result); $j++) {
-        $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
+    // for ($j = 1; $j < count($image_result); $j++) {
+    //     $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
 
-        $stat = $conn->prepare($insertSQL);
-        $stat->bindParam(':file_name', $image_result[$j][0], PDO::PARAM_STR);
-        $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
-        $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
-        $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
-        $stat->bindParam(':file_type', $type = 'image', PDO::PARAM_STR);
-        $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
-        $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
-        $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
-        $stat->execute();
+    //     $stat = $conn->prepare($insertSQL);
+    //     $stat->bindParam(':file_name', $image_result[$j][0], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_type', $type = 'image', PDO::PARAM_STR);
+    //     $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
+    //     $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
+    //     $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
+    //     $stat->execute();
 
-        $_SESSION["change_image"] = 1;
-    }
+    //     $_SESSION["change_image"] = 1;
+    // }
 
     // Cover
-    $image_result = image_process($conn, $_FILES['imageCover'], $_REQUEST['imageCover_title'], $menu_is, "add", $imagesSize['ourteaCover']['IW'], $imagesSize['ourteaCover']['IH']);
+    $image_result = image_process($conn, $_FILES['imageCover'], $_REQUEST['imageCover_title'], $menu_is, "add", $imagesSize['menuCover']['IW'], $imagesSize['menuCover']['IH']);
 
     for ($j = 1; $j < count($image_result); $j++) {
         $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
@@ -408,7 +486,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
         $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
         $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
         $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
-        $stat->bindParam(':file_type', $type = 'ourteaCover', PDO::PARAM_STR);
+        $stat->bindParam(':file_type', $type = 'menuCover', PDO::PARAM_STR);
         $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
         $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
         $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
@@ -418,7 +496,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     }
 
     // TopCover
-    $image_result2 = image_process($conn, $_FILES['imageTopCover'], $_REQUEST['imageTopCover_title'], $menu_is, "add", $imagesSize['ourteaTopCover']['IW'], $imagesSize['ourteaTopCover']['IH']);
+    $image_result2 = image_process($conn, $_FILES['imageTopCover'], $_REQUEST['imageTopCover_title'], $menu_is, "add", $imagesSize['menuTopCover']['IW'], $imagesSize['menuTopCover']['IH']);
 
     for ($j = 1; $j < count($image_result2); $j++) {
         $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
@@ -428,7 +506,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
         $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
         $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
         $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
-        $stat->bindParam(':file_type', $type = 'ourteaTopCover', PDO::PARAM_STR);
+        $stat->bindParam(':file_type', $type = 'menuTopCover', PDO::PARAM_STR);
         $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
         $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
         $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
@@ -438,7 +516,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     }
 
     // InnerCover
-    $image_result3 = image_process($conn, $_FILES['imageInnerCover'], $_REQUEST['imageInnerCover_title'], $menu_is, "add", $imagesSize['ourteaInnerCover']['IW'], $imagesSize['ourteaInnerCover']['IH']);
+    $image_result3 = image_process($conn, $_FILES['imageInnerCover'], $_REQUEST['imageInnerCover_title'], $menu_is, "add", $imagesSize['menuInnerCover']['IW'], $imagesSize['menuInnerCover']['IH']);
 
     for ($j = 1; $j < count($image_result3); $j++) {
         $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
@@ -448,7 +526,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
         $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
         $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
         $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
-        $stat->bindParam(':file_type', $type = 'ourteaInnerCover', PDO::PARAM_STR);
+        $stat->bindParam(':file_type', $type = 'menuInnerCover', PDO::PARAM_STR);
         $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
         $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
         $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
@@ -460,7 +538,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
     //----------插入檔案資料到資料庫begin(須放入插入主資料後)----------
     if ($ifFile) {
-        $file_result = file_process($conn, "ourteaFile", "add");
+        $file_result = file_process($conn, "menuFile", "add");
 
         for ($j = 0; $j < count($file_result); $j++) {
             $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_type, file_d_id, file_title) VALUES (:file_name, :file_link1, :file_type, :file_d_id, :file_title)";
@@ -476,8 +554,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     }
     //----------插入檔案資料到資料庫end----------
 
-    $_SESSION['original_selected'] = $_SESSION['selected_ourteaC'];
-    $insertGoTo = "ourtea_list.php?selected1=" . $_POST['d_class2'] . "&pageNum=0&totalRows=" . ($_SESSION['totalRows'] + 1) . "&changeSort=1&now_d_id=" . $new_data_num . "&change_num=1";
+    $_SESSION['original_selected'] = $_SESSION['selected_menuC'];
+    $insertGoTo = "menu_list.php?selected1=" . $_POST['d_class2'] . "&pageNum=0&totalRows=" . ($_SESSION['totalRows'] + 1) . "&changeSort=1&now_d_id=" . $new_data_num . "&change_num=1";
 
     if (isset($_SERVER['QUERY_STRING'])) {
         $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
