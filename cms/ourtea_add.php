@@ -179,41 +179,6 @@ $ifFile = 0;
                                                         </p>
                                                     </td>
                                                 </tr>
-                                                <?php if ($ifFile) { ?>
-                                                    <tr>
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p>上傳檔案</p>
-                                                        </td>
-                                                        <td>
-                                                            <table border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable2">
-                                                                <tr>
-                                                                    <td> <span class="table_data">選擇檔案：</span>
-                                                                        <input name="upfile[]" type="file" class="table_data" id="upfile1" />
-                                                                        <br>
-                                                                        <span class="table_data">檔案說明：</span>
-                                                                        <input name="upfile_title[]" type="text" class="table_data" id="upfile_title1">
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            <table width="100%" border="0" cellspacing="5" cellpadding="2">
-                                                                <tr>
-                                                                    <td>
-                                                                        <table border="0" cellspacing="2" cellpadding="2">
-                                                                            <tr>
-                                                                                <td width="16"><a href="javascript:addField2()"><img src="image/add.png" width="16" height="16" border="0"></a></td>
-                                                                                <td width="48"><a href="javascript:addField2()" class="table_data">新增檔案</a></td>
-                                                                                <td width="390" class="red_letter">&nbsp;</td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p><span class="red_letter">*上傳之檔案請勿超過2M。</span></p>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
                                             </table>
                                         </td>
                                     </tr>
@@ -312,7 +277,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, :d_title_en, d_class1, d_data1, d_data2, d_date, d_active) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_data1, :d_data2, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, :d_title_en, d_class1, d_class2, d_data1, d_data2, d_date, d_active) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_data1, :d_data2, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
