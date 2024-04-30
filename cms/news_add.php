@@ -428,7 +428,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_class1, d_data1, d_data2, d_data3, d_data4, d_data5, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_class1, :d_data1, :d_data2, :d_data3, :d_data4, :d_data5, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_class1, d_class2, d_data1, d_data2, d_data3, d_data4, d_data5, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_class1, :d_class2, :d_data1, :d_data2, :d_data3, :d_data4, :d_data5, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -436,6 +436,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $stat->bindParam(':d_slug', generate_slug($_POST['d_title']), PDO::PARAM_STR);
     $stat->bindParam(':d_content', $_POST['d_content'], PDO::PARAM_STR);
     $stat->bindParam(':d_class1', $_POST['d_class1'], PDO::PARAM_STR);
+    $stat->bindParam(':d_class2', $_POST['d_class1'], PDO::PARAM_STR);
     $stat->bindParam(':d_data1', $_POST['d_data1'], PDO::PARAM_STR);
     $stat->bindParam(':d_data2', $_POST['d_data2'], PDO::PARAM_STR);
     $stat->bindParam(':d_data3', $_POST['d_data3'], PDO::PARAM_STR);

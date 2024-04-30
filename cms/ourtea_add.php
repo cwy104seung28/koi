@@ -159,7 +159,7 @@ $ifFile = 0;
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>上傳封面圖片</p>
+                                                        <p>上傳飲料圖片</p>
                                                     </td>
                                                     <td width="532">
                                                         <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
@@ -176,52 +176,6 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*
                                                             <?php echo $imagesSize['ourteaCover']['note']; ?>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>上傳置頂封面圖片</p>
-                                                    </td>
-                                                    <td width="532">
-                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
-                                                            <tr>
-                                                                <td> <span class="table_data">選擇圖片：</span>
-                                                                    <input name="imageTopCover[]" type="file" class="table_data" id="imageTopCover1" />
-                                                                    <br>
-                                                                    <span class="table_data">圖片說明：</span>
-                                                                    <input name="imageTopCover_title[]" type="text" class="table_data" id="imageTopCover_title1">
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*
-                                                            <?php echo $imagesSize['ourteaTopCover']['note']; ?>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>上傳內頁封面圖片</p>
-                                                    </td>
-                                                    <td width="532">
-                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
-                                                            <tr>
-                                                                <td> <span class="table_data">選擇圖片：</span>
-                                                                    <input name="imageInnerCover[]" type="file" class="table_data" id="imageInnerCover1" />
-                                                                    <br>
-                                                                    <span class="table_data">圖片說明：</span>
-                                                                    <input name="imageInnerCover_title[]" type="text" class="table_data" id="imageInnerCover_title1">
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*
-                                                            <?php echo $imagesSize['ourteaInnerCover']['note']; ?>
-                                                            <br>
-                                                            若內容有影片，則不須上傳內頁封面
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -358,12 +312,13 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, :d_title_en, d_class1, d_data1, d_data2, d_date, d_active) VALUES (:d_title, :d_title_en, :d_class1, :d_data1, :d_data2, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, :d_title_en, d_class1, d_data1, d_data2, d_date, d_active) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_data1, :d_data2, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
     $stat->bindParam(':d_title_en', $_POST['d_title_en'], PDO::PARAM_STR);
     $stat->bindParam(':d_class1', $_POST['d_class1'], PDO::PARAM_STR);
+    $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_data1', $_POST['d_data1'], PDO::PARAM_STR);
     $stat->bindParam(':d_data2', $_POST['d_data2'], PDO::PARAM_STR);
 
