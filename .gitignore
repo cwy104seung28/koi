@@ -14,8 +14,7 @@ _gsdata_
 .DS_Store
 .DS_Store?
 logs
-source
-upload_image
-upload_file
-thumbs
-# images/SVG/gude-2024-03-29.log
+# source
+# upload_image
+# upload_file
+# thumbs
