@@ -1,10 +1,3 @@
-<?php require_once('./Connections/connect2data.php'); 
-require_once 'Connections/connect2data.php';
-require_once 'paginator.class.php';
-
-$work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 AND d_active=1 ORDER BY d_sort ASC, d_date DESC");
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,26 +42,26 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                     <div class="content flex-container">
                         <div class="name">单店管理</div>
                         <div>店经理</div>
-                        <div><?= $work['d_data1'];?></div>
-                        <div><?= $work['d_data5'];?></div>
+                        <div>3,288</div>
+                        <div>1,872</div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">多店管理</div>
                         <div>区域经理</div>
-                        <div><?= $work['d_data2'];?></div>
-                        <div><?= $work['d_data6'];?></div>
+                        <div>4,120</div>
+                        <div>2,500</div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">单国域管理</div>
                         <div>营运经理</div>
-                        <div><?= $work['d_data3'];?></div>
-                        <div><?= $work['d_data7'];?></div>
+                        <div>5,680</div>
+                        <div>3,500</div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">多国域管理</div>
                         <div>营运总监/营运长</div>
-                        <div><?= $work['d_data4'];?></div>
-                        <div><?= $work['d_data8'];?></div>
+                        <div>5,680 以上</div>
+                        <div>3,500 以上</div>
                     </div>
                 </div>
                 <div class="note">
