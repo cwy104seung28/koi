@@ -277,7 +277,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, :d_title_en, d_class1, d_class2, d_data1, d_data2, d_date, d_active) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_data1, :d_data2, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_class1, d_class2, d_data1, d_data2, d_date, d_active) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_data1, :d_data2, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
