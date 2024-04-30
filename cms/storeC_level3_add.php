@@ -132,9 +132,12 @@ $menu_is = "store";
 </script>
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-    $insertSQL = "INSERT INTO class_set (c_title, c_level, c_parent, c_link, c_active) VALUES (:c_title, :c_level, :c_parent, :c_link, :c_active)";
+    $insertSQL = "INSERT INTO class_set (c_title, c_title_en, c_slug, c_class, c_level, c_parent, c_link, c_active) VALUES (:c_title, :c_title_en, :c_slug, :c_class, :c_level, :c_parent, :c_link, :c_active)";
     $sth = $conn->prepare($insertSQL);
     $sth->bindParam(':c_title', $_POST['c_title'], PDO::PARAM_STR);
+    $sth->bindParam(':c_title_en', $_POST['c_title_en'], PDO::PARAM_STR);
+    $sth->bindParam(':c_slug', generate_slug($_POST['c_title']), PDO::PARAM_STR);
+    $sth->bindParam(':c_class', $_POST['c_class'], PDO::PARAM_INT);
     $sth->bindParam(':c_level', $_POST['c_level'], PDO::PARAM_INT);
     $sth->bindParam(':c_parent', $_POST['c_parent'], PDO::PARAM_STR);
     $sth->bindParam(':c_link', $_POST['c_link'], PDO::PARAM_INT);
