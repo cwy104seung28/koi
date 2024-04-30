@@ -34,5 +34,10 @@ $imagesSize = [
         'IH' => 566,
         'note' => "圖片請上傳寬 400pixel、高 566pixel之圖檔。 $maxFileSize",
     ],
+    "storeCover" => [
+        'IW' => 466,
+        'IH' => 466,
+        'note' => "圖片請上傳寬 466pixel、高 466pixel之圖檔。 $maxFileSize",
+    ],
 ];
 ?>

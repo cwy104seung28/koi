@@ -10,10 +10,23 @@ $G_selected1 = '';
 if (isset($_SESSION['selected_storeC_level3'])) {
     $G_selected1 = $_SESSION['selected_storeC_level3'];
 }
+$G_selected2 = '';
+if (isset($_SESSION['selected_storeC_level3'])) {
+    $G_selected2 = $_SESSION['selected_storeC_level3'];
+}
+//主分類
 $query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level='1' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
 $RecstoreC = $conn->query($query_RecstoreC);
 $row_RecstoreC = $RecstoreC->fetch();
 $totalRows_RecstoreC = $RecstoreC->rowCount();
+
+//次分類
+$query_Recstore_level2C = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level='2' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
+$Recstore_level2C = $conn->query($query_Recstore_level2C);
+$row_Recstore_level2C = $Recstore_level2C->fetch();
+$totalRows_Recstore_level2C = $Recstore_level2C->rowCount();
+
+
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
     $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
@@ -22,13 +35,15 @@ $menu_is = "store";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php require_once('cmsTitle.php'); ?></title>
     <link rel="stylesheet" href="jquery/chosen_v1.8.5/chosen.css">
     <?php require_once('script.php'); ?>
-    <?php require_once('head.php');?>
+    <?php require_once('head.php'); ?>
 </head>
+
 <body>
     <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -60,14 +75,31 @@ $menu_is = "store";
                                                     <td>
                                                         <select name="c_link" id="c_link" class="chosen-select">
                                                             <?php do { ?>
-                                                            <option value="<?php echo $row_RecstoreC['c_id']?>" <?php if (!(strcmp($row_RecstoreC[ 'c_id'], $G_selected1))) {echo "selected";} ?>>
-                                                                <?php echo $row_RecstoreC['c_title']?>
-                                                            </option>
+                                                                <option value="<?php echo $row_RecstoreC['c_id'] ?>" <?php if (!(strcmp($row_RecstoreC['c_id'], $G_selected1))) {
+                                                                                                                            echo "selected";
+                                                                                                                        } ?>>
+                                                                    <?php echo $row_RecstoreC['c_title'] ?>
+                                                                </option>
                                                             <?php
                                                             } while ($row_RecstoreC = $RecstoreC->fetch());
                                                             $rows = $RecstoreC->rowCount();
-                                                            if($rows > 0) {
+                                                            if ($rows > 0) {
                                                                 $RecstoreC->execute();
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                        <select name="c_data1" id="c_data1" class="chosen-select">
+                                                            <?php do { ?>
+                                                                <option value="<?php echo $row_Recstore_level2C['c_id'] ?>" <?php if (!(strcmp($row_Recstore_level2C['c_id'], $G_selected2))) {
+                                                                                                                            echo "selected";
+                                                                                                                        } ?>>
+                                                                    <?php echo $row_Recstore_level2C['c_title'] ?>
+                                                                </option>
+                                                            <?php
+                                                            } while ($row_Recstore_level2C = $Recstore_level2C->fetch());
+                                                            $rows = $Recstore_level2C->rowCount();
+                                                            if ($rows > 0) {
+                                                                $Recstore_level2C->execute();
                                                             }
                                                             ?>
                                                         </select>
@@ -120,6 +152,7 @@ $menu_is = "store";
         </tr>
     </table>
 </body>
+
 </html>
 <script src="jquery/chosen_v1.8.5/chosen.jquery.js"></script>
 <script>
@@ -132,7 +165,7 @@ $menu_is = "store";
 </script>
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-    $insertSQL = "INSERT INTO class_set (c_title, c_title_en, c_slug, c_class, c_level, c_parent, c_link, c_active) VALUES (:c_title, :c_title_en, :c_slug, :c_class, :c_level, :c_parent, :c_link, :c_active)";
+    $insertSQL = "INSERT INTO class_set (c_title, c_title_en, c_slug, c_class, c_level, c_parent, c_data1, c_link, c_active) VALUES (:c_title, :c_title_en, :c_slug, :c_class, :c_level, :c_parent, :c_data1, :c_link, :c_active)";
     $sth = $conn->prepare($insertSQL);
     $sth->bindParam(':c_title', $_POST['c_title'], PDO::PARAM_STR);
     $sth->bindParam(':c_title_en', $_POST['c_title_en'], PDO::PARAM_STR);
@@ -140,6 +173,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $sth->bindParam(':c_class', $_POST['c_class'], PDO::PARAM_INT);
     $sth->bindParam(':c_level', $_POST['c_level'], PDO::PARAM_INT);
     $sth->bindParam(':c_parent', $_POST['c_parent'], PDO::PARAM_STR);
+    $sth->bindParam(':c_data1', $_POST['c_data1'], PDO::PARAM_STR);
     $sth->bindParam(':c_link', $_POST['c_link'], PDO::PARAM_INT);
     $sth->bindParam(':c_active', $_POST['c_active'], PDO::PARAM_INT);
     $sth->execute();

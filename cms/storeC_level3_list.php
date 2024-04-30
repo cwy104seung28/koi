@@ -15,13 +15,30 @@ $G_selected1 = '';
 if (isset($_GET['selected1'])) {
     $_SESSION['selected_storeC_level3'] = $G_selected1 = $_GET['selected1'];
     $G_selected1_SQL = "AND c_link=" . $_GET['selected1'];
+    $G_selected1_SQL = "AND c_link=" . $_GET['selected1'];
 } else if ($row_RecstoreC_level1['c_id']) {
     $_SESSION['selected_storeC_level3'] = $G_selected1 = $row_RecstoreC_level1['c_id'];
     $G_selected1_SQL = "AND c_link=" . $row_RecstoreC_level1['c_id'];
 } else{
     $G_selected1_SQL = "AND c_link=-1";
 }
-$query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level='2' $G_selected1_SQL ORDER BY c_sort ASC, c_id DESC";
+
+$query_RecstoreC_level2 = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level='2' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
+$RecstoreC_level2 = $conn->query($query_RecstoreC_level2);
+$row_RecstoreC_level2 = $RecstoreC_level2->fetch();
+$G_selected2 = '';
+if (isset($_GET['selected2'])) {
+    $_SESSION['selected_storeC_level3'] = $G_selected2 = $_GET['selected2'];
+    $G_selected2_SQL = "AND c_data1=" . $_GET['selected2'];
+    $G_selected2_SQL = "AND c_data1=" . $_GET['selected2'];
+} else if ($row_RecstoreC_level2['c_id']) {
+    $_SESSION['selected_storeC_level3'] = $G_selected2 = $row_RecstoreC_level2['c_id'];
+    $G_selected2_SQL = "AND c_data1=" . $row_RecstoreC_level2['c_id'];
+} else{
+    $G_selected2_SQL = "AND c_data1=-1";
+}
+
+$query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level='3' $G_selected1_SQL $G_selected2_SQL ORDER BY c_sort ASC, c_id DESC";
 $query_limit_RecstoreC = sprintf("%s LIMIT %d, %d", $query_RecstoreC, $startRow_RecstoreC, $maxRows_RecstoreC);
 $RecstoreC = $conn->query($query_limit_RecstoreC);
 $row_RecstoreC = $RecstoreC->fetch();
@@ -82,7 +99,7 @@ if (isset($_GET['delchangeSort'])) {
 }
 if ($G_changeSort == 1 || $G_delchangeSort == 1) {
     $sort_num = 1;
-    $query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level='2' $G_selected1_SQL ORDER BY c_sort ASC, c_id DESC";
+    $query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level='2' $G_selected2_SQL ORDER BY c_sort ASC, c_id DESC";
     $RecstoreC = $conn->query($query_RecstoreC);
     $row_RecstoreC = $RecstoreC->fetch();
     do {
@@ -115,14 +132,16 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
     $stat->execute();
     if ($G_changeSort == 1) {
         if (isset($_GET['now_c_id'])) {
-            header("Location:storeC_level3_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows_RecstoreC'] . "#" . $_GET['now_c_id']);
+            header("Location:storeC_level3_list.php?selected1=" . $G_selected1 . "&selected2=" . $G_selected2 . "&pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows_RecstoreC'] . "#" . $_GET['now_c_id']);
         } else {
-            header("Location:storeC_level3_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows_RecstoreC']);
+            header("Location:storeC_level3_list.php?selected1=" . $G_selected1 . "&selected2=" . $G_selected2 . "&pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows_RecstoreC']);
         }
     } else if ($G_delchangeSort == 1) {
-        header("Location:storeC_level3_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum']);
+        header("Location:storeC_level3_list.php?selected1=" . $G_selected1 . "&selected2=" . $G_selected2 . "&pageNum=" . $_GET['pageNum']);
     }
 }
+
+
 require_once('display_page.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -159,6 +178,15 @@ require_once('display_page.php');
                                                     <?= 'selected' ?>
                                                 <?php endif ?>>
                                                     <?php echo $row_RecstoreC_level1['c_title'] ?>
+                                                </option>
+                                            <?php endwhile ?>
+                                        </select>
+                                        <select name="select2" id="select2" class="chosen-select">
+                                            <?php $RecstoreC_level2->execute(); while($row_RecstoreC_level2 = $RecstoreC_level2->fetch()): ?>
+                                                <option value="<?php echo $row_RecstoreC_level2['c_id']?>" <?php if (!(strcmp($row_RecstoreC_level2['c_id'], $G_selected2))): ?>
+                                                    <?= 'selected' ?>
+                                                <?php endif ?>>
+                                                    <?php echo $row_RecstoreC_level2['c_title'] ?>
                                                 </option>
                                             <?php endwhile ?>
                                         </select>
@@ -276,8 +304,8 @@ require_once('display_page.php');
 </html>
 <script src="jquery/chosen_v1.8.5/chosen.jquery.js"></script>
 <script type="text/javascript">
-    function changeSort(pageNum, totalRows_RecstoreC, now_c_id, change_num, selected1) {
-        window.location.href = "storeC_level3_list.php?selected1=" + selected1 + "&pageNum=" + pageNum + "&totalRows_RecstoreC=" + totalRows_RecstoreC + "&changeSort=1" + "&now_c_id=" + now_c_id + "&change_num=" + change_num;
+    function changeSort(pageNum, totalRows_RecstoreC, now_c_id, change_num, selected1, selected2) {
+        window.location.href = "storeC_level3_list.php?selected1=" + selected1 + " + &selected2=" + selected2 + "&pageNum=" + pageNum + "&totalRows_RecstoreC=" + totalRows_RecstoreC + "&changeSort=1" + "&now_c_id=" + now_c_id + "&change_num=" + change_num;
     }
     $(".chosen-select").chosen({
         disable_search_threshold: 6,
@@ -286,6 +314,6 @@ require_once('display_page.php');
         width: "auto"
     });
     $('#select1').change(function() {
-        window.location.href = "storeC_level3_list.php?changeSort=1&selected1="+$(this).val();
+        window.location.href = "storeC_level3_list.php?changeSort=1&selected1="+$(this).val()+"selected2="+$(this).val();
     });
 </script>
