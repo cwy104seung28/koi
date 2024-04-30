@@ -168,7 +168,18 @@ if ($menu_is == "news") {
 		header("Location:first.php");
 	}
 	creatTablBottom();
-}  else if ($menu_is == "contact" || $menu_is == "oversea") {
+}  else if ($menu_is == "store") {
+
+	creatTableTop();
+	creatAll('分店資訊', 'store');
+	creatAll('國家', 'storeC');
+	creatAll('地區', 'storeC_level2');
+	creatAll('店家', 'storeC_level3');
+	if ($row_RecLevelAuthority['a_2'] == '0') {
+		header("Location:first.php");
+	}
+	creatTablBottom();
+} else if ($menu_is == "contact" || $menu_is == "oversea") {
 
 	creatTableTop();
 	creatSet('聯絡我們', 'contact');
