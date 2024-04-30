@@ -62,6 +62,16 @@ function creatTablBottom()
 					<div>菜單下載</div>
 				</a>
 			</li>
+			<li id="main_menu_5" class="main_menu <?php if ($menu_is == 'store') : ?>main_menu_now<?php endif ?>">
+				<a href="store_list.php">
+					<div>分店資訊</div>
+				</a>
+			</li>
+			<li id="main_menu_6" class="main_menu <?php if ($menu_is == 'contact'||$menu_is == 'oversea') : ?>main_menu_now<?php endif ?>">
+				<a href="contact_list.php">
+					<div>聯絡我們</div>
+				</a>
+			</li>
 			<!--<li id="main_menu_2" class="main_menu <?php if ($menu_is == 'news') : ?>main_menu_now<?php endif ?>">
 				<a href="news_list.php">
 					<div>最新消息</div>
@@ -154,6 +164,15 @@ if ($menu_is == "news") {
 	creatTableTop();
 	creatAll('菜單下載', 'menu');
 	creatAll('國家分類', 'menuC');
+	if ($row_RecLevelAuthority['a_2'] == '0') {
+		header("Location:first.php");
+	}
+	creatTablBottom();
+}  else if ($menu_is == "contact" || $menu_is == "oversea") {
+
+	creatTableTop();
+	creatSet('聯絡我們', 'contact');
+	creatSet('海外合作', 'oversea');
 	if ($row_RecLevelAuthority['a_2'] == '0') {
 		header("Location:first.php");
 	}

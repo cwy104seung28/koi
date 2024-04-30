@@ -1,29 +1,29 @@
 <?php require_once('../Connections/connect2data.php'); ?>
 
 <?php
-$menu_is = "contact";
+$menu_is = "oversea";
 
 $currentPage = $_SERVER["PHP_SELF"];
 
-$maxRows_Reccontact = 20;
+$maxRows_Recoversea = 20;
 $pageNum = 0;
 if (isset($_GET['pageNum'])) {
   $pageNum = $_GET['pageNum'];
 }
-$startRow_Reccontact = $pageNum * $maxRows_Reccontact;
+$startRow_Recoversea = $pageNum * $maxRows_Recoversea;
 
-$query_Reccontact = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' ORDER BY d_date DESC";
-$query_limit_Reccontact = sprintf("%s LIMIT %d, %d", $query_Reccontact, $startRow_Reccontact, $maxRows_Reccontact);
-$Reccontact = $conn->query($query_limit_Reccontact);
-$row_Reccontact = $Reccontact->fetch();
+$query_Recoversea = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' ORDER BY d_date DESC";
+$query_limit_Recoversea = sprintf("%s LIMIT %d, %d", $query_Recoversea, $startRow_Recoversea, $maxRows_Recoversea);
+$Recoversea = $conn->query($query_limit_Recoversea);
+$row_Recoversea = $Recoversea->fetch();
 
 if (isset($_GET['totalRows'])) {
   $totalRows = $_GET['totalRows'];
 } else {
-  $all_Reccontact = $conn->query($query_Reccontact);
-  $totalRows = $all_Reccontact->rowCount();
+  $all_Recoversea = $conn->query($query_Recoversea);
+  $totalRows = $all_Recoversea->rowCount();
 }
-$totalPages = ceil($totalRows / $maxRows_Reccontact) - 1;
+$totalPages = ceil($totalRows / $maxRows_Recoversea) - 1;
 $_SESSION['totalRows'] = $totalRows;
 $TotalPage = $totalPages;
 
@@ -65,7 +65,7 @@ else if ($R_pageNum > $totalPages) {
 
 //如果指定的頁面大於資料所擁有的頁面,轉到最大的頁面
 if ($R_pageNum > $totalPages && $R_pageNum != 0) {
-  header("Location:contact_list.php?pageNum=" . $totalPages);
+  header("Location:oversea_list.php?pageNum=" . $totalPages);
 }
 
 //修改排序
@@ -81,12 +81,12 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
   $sort_num = 1;
 
-  $query_Reccontact = "SELECT * FROM data_set WHERE d_class1 = 'contact' ORDER BY d_date DESC";
-  $Reccontact = $conn->query($query_Reccontact);
-  $row_Reccontact = $Reccontact->fetch();
+  $query_Recoversea = "SELECT * FROM data_set WHERE d_class1 = 'oversea' ORDER BY d_date DESC";
+  $Recoversea = $conn->query($query_Recoversea);
+  $row_Recoversea = $Recoversea->fetch();
 
   do {
-    if ($row_Reccontact['d_sort'] == 0) {} else if ($row_Reccontact['d_id'] == $_GET['now_d_id']) {
+    if ($row_Recoversea['d_sort'] == 0) {} else if ($row_Recoversea['d_id'] == $_GET['now_d_id']) {
             // echo '<pre>'; print_r($sort_num); echo '</pre>';
 
     } else if ($sort_num == $_GET['change_num']) {
@@ -97,7 +97,7 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
       $stat = $conn->prepare($updateSQL);
       $stat->bindParam(':d_sort', $sort_num, PDO::PARAM_INT);
-      $stat->bindParam(':d_id', $row_Reccontact['d_id'], PDO::PARAM_INT);
+      $stat->bindParam(':d_id', $row_Recoversea['d_id'], PDO::PARAM_INT);
       $stat->execute();
 
       $sort_num++;
@@ -106,14 +106,14 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
       $stat = $conn->prepare($updateSQL);
       $stat->bindParam(':d_sort', $sort_num, PDO::PARAM_INT);
-      $stat->bindParam(':d_id', $row_Reccontact['d_id'], PDO::PARAM_INT);
+      $stat->bindParam(':d_id', $row_Recoversea['d_id'], PDO::PARAM_INT);
       $stat->execute();
 
             // echo '<pre>'; print_r($sort_num); echo '</pre>';
 
       $sort_num++;
     }
-  } while ($row_Reccontact = $Reccontact->fetch());
+  } while ($row_Recoversea = $Recoversea->fetch());
 
   $updateSQL = "UPDATE data_set SET d_sort=:d_sort WHERE d_id=:d_id";
 
@@ -123,9 +123,9 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
   $stat->execute();
 
   if ($G_changeSort == 1) {
-    header("Location:contact_list.php?pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows']);
+    header("Location:oversea_list.php?pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows']);
   } else if ($G_delchangeSort == 1) {
-    header("Location:contact_list.php?pageNum=" . $_GET['pageNum']);
+    header("Location:oversea_list.php?pageNum=" . $_GET['pageNum']);
   }
 }
 
@@ -182,13 +182,13 @@ require_once('display_page.php');
                   <td><img src="image/spacer.gif" width="1" height="1" /></td>
                 </tr>
               </table>
-              <form action="contact_process.php" method="post" name="form1" id="form1">
+              <form action="oversea_process.php" method="post" name="form1" id="form1">
                 <?php if ($totalRows > 0) { // Show if recordset not empty ?>
                   <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
                     <tr>
                       <td width="150" align="center" class="table_title">日期</td>
                       <td width="150" align="center" class="table_title">姓名</td>
-                      <td width="300" align="center" class="table_title">询问类别</td>
+                      <td width="300" align="center" class="table_title">您代表的公司名称</td>
                       <td width="40" align="center" class="table_title">編輯</td>
                       <td width="40" align="center" class="table_title">刪除</td>
                     </tr>
@@ -197,10 +197,10 @@ require_once('display_page.php');
                     do {
                       $i++;
                       $colname_RecImage = "-1";
-                      if (isset($row_Reccontact['d_id'])) {
-                        $colname_RecImage = $row_Reccontact['d_id'];
+                      if (isset($row_Recoversea['d_id'])) {
+                        $colname_RecImage = $row_Recoversea['d_id'];
                       }
-                      $query_RecImage = "SELECT * FROM file_set WHERE file_type='contactCover' AND file_d_id = :file_d_id";
+                      $query_RecImage = "SELECT * FROM file_set WHERE file_type='overseaCover' AND file_d_id = :file_d_id";
                       $RecImage = $conn->prepare($query_RecImage);
                       $RecImage->bindParam(':file_d_id', $colname_RecImage, PDO::PARAM_STR);
                       $RecImage->execute();
@@ -209,24 +209,24 @@ require_once('display_page.php');
                       ?>
                       <tr <?php if ($i%2==0): ?>bgcolor='#E4E4E4'<?php endif ?>>
                         <td align="center" class="table_data">
-                          <a href="contact_edit.php?d_id=<?php echo $row_Reccontact['d_id']; ?>">
-                            <?php echo $row_Reccontact['d_date']; ?>
+                          <a href="oversea_edit.php?d_id=<?php echo $row_Recoversea['d_id']; ?>">
+                            <?php echo $row_Recoversea['d_date']; ?>
                           </a>
                         </td>
                         <td align="center" class="table_data">
-                          <a href="contact_edit.php?d_id=<?php echo $row_Reccontact['d_id']; ?>">
-                            <?php echo $row_Reccontact['d_title']; ?>
+                          <a href="oversea_edit.php?d_id=<?php echo $row_Recoversea['d_id']; ?>">
+                            <?php echo $row_Recoversea['d_title']; ?>
                           </a>
                         </td>
                         <td align="center" class="table_data">
-                          <a href="contact_edit.php?d_id=<?php echo $row_Reccontact['d_id']; ?>">
-                            <?php echo $row_Reccontact['d_data4']; ?>
+                          <a href="oversea_edit.php?d_id=<?php echo $row_Recoversea['d_id']; ?>">
+                            <?php echo $row_Recoversea['d_data4']; ?>
                           </a>
                         </td>
-                        <td align="center" class="table_data"><a href="contact_edit.php?d_id=<?php echo $row_Reccontact['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
-                        <td align="center" class="table_data"><a href="contact_del.php?d_id=<?php echo $row_Reccontact['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
+                        <td align="center" class="table_data"><a href="oversea_edit.php?d_id=<?php echo $row_Recoversea['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
+                        <td align="center" class="table_data"><a href="oversea_del.php?d_id=<?php echo $row_Recoversea['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
                       </tr>
-                    <?php } while ($row_Reccontact = $Reccontact->fetch()); ?>
+                    <?php } while ($row_Recoversea = $Recoversea->fetch()); ?>
                   </table>
                 <?php } // Show if recordset not empty ?>
               </form>
@@ -257,6 +257,6 @@ require_once('display_page.php');
 <script type="text/javascript">
   function changeSort(pageNum, totalRows, now_d_id, change_num) { //v1.0
     //alert(pageNum+"+"+totalPages);
-    window.location.href = "contact_list.php?pageNum=" + pageNum + "&totalRows=" + totalRows + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num;
+    window.location.href = "oversea_list.php?pageNum=" + pageNum + "&totalRows=" + totalRows + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num;
   }
 </script>

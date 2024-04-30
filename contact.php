@@ -1,3 +1,9 @@
+<?php
+
+require_once 'Connections/connect2data.php';
+$_SESSION['checkPost'] = 0;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,7 +90,7 @@
                             地 区
                         </div>
                         <div>
-                            <input type="text" name="address" id="address">
+                            <input type="text" name="area" id="area">
                         </div>
                     </div>
                     <div class="item">
@@ -121,7 +127,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="submit">
+                    <div class="submit" id="submit1">
                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="97.35" height="76.5" viewBox="0 0 97.35 76.5">
                             <g id="c" data-name="設計">
                                 <g>
@@ -153,7 +159,7 @@
                             姓名
                         </div>
                         <div>
-                            <input type="text" name="name" id="name">
+                            <input type="text" name="o-name" id="o-name">
                         </div>
                     </div>
                     <div class="item">
@@ -161,7 +167,7 @@
                             电子信箱
                         </div>
                         <div>
-                            <input type="text" name="email" id="email">
+                            <input type="text" name="o-email" id="o-email">
                         </div>
                     </div>
 
@@ -170,7 +176,7 @@
                             现居国家
                         </div>
                         <div>
-                            <input type="text" name="country" id="country">
+                            <input type="text" name="o-country" id="o-country">
                         </div>
                     </div>
 
@@ -179,7 +185,7 @@
                             您准备在该项经营上投入多少钱？
                         </div>
                         <div>
-                            <select name="ask" id="ask" class="ask-select">
+                            <select name="o-ask" id="o-ask" class="ask-select">
                                 <option value="USD 300,000">
                                     <span class="ch">USD 300,000</span>
                                 </option>
@@ -211,10 +217,10 @@
                             您代表的公司名称
                         </div>
                         <div>
-                            <input type="text" name="company" id="company">
+                            <input type="text" name="o-company" id="o-company">
                         </div>
                     </div>
-                    <div class="submit">
+                    <div class="submit" id="submit2">
                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="97.35" height="76.5" viewBox="0 0 97.35 76.5">
                             <g id="c" data-name="設計">
                                 <g>
@@ -278,7 +284,7 @@
                 trigger: ".menu-link",
                 endTrigger: ".contactWrap",
                 start: "top 78.5%",
-                 end: "100% 100%",
+                end: "100% 100%",
                 scrub: 1,
                 pin: true,
                 // markers: true,
@@ -341,18 +347,136 @@
                 })
 
 
-            // gsap.delayedCall(1, function() {
-            //     $tl_content.play();
-            // });
+            $("#contactForm1").validate({
+                ignore: [],
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    area: {
+                        required: true,
+                    },
+                    phone: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                    },
+                    ask: {
+                        required: true,
+                    },
+                },
 
-            // $('.formList li').each(function(i, el) {
-            //     $(el).on('click', function() {
-            //         var _list = $(this).data('list');
-            //         gsap.delayedCall(0.5, function() {
-            //             $(`#contactForm${_list} .ask-select`).niceSelect();
-            //         });
-            //     })
-            // })
+                messages: {
+                    name: {
+                        required: "必填欄位"
+                    },
+                    area: {
+                        required: "必填欄位"
+                    },
+                    phone: {
+                        required: "必填欄位",
+                    },
+                    email: {
+                        required: "必填欄位",
+                    },
+                    ask: {
+                        required: "必填欄位"
+                    },
+
+                },
+
+                // errorPlacement: function(label, element) {
+                //     label.addClass('contact-form-error');
+                //     label.insertAfter(element);
+                // },
+                // wrapper: 'div'
+            })
+
+            $("#submit1").click(function() {
+                if ($("#contactForm1").valid() == true) {
+                    var answer = confirm("您確認要送出您所填寫的資訊嗎？");
+                    if (answer) {
+                        $.ajax({
+                            type: "POST",
+                            url: "./contactMail.php",
+                            data: $("#contactForm1").serialize(),
+                            beforeSend: function() {},
+                            success: function(data) {
+                                // console.log("data: ", data)
+                                // $(".contact-finish").addClass("is-finish");
+                            }
+                        });
+                    }
+                }
+            })
+
+            
+            $("#contactForm2").validate({
+                ignore: [],
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                    },
+                    country: {
+                        required: true,
+                    },
+                    ask: {
+                        required: true,
+                    },
+                    company: {
+                        required: true,
+                    },
+                   
+
+                },
+
+                messages: {
+                    name: {
+                        required: "必填欄位"
+                    },
+                    area: {
+                        required: "必填欄位"
+                    },
+                    phone: {
+                        required: "必填欄位",
+                    },
+                    email: {
+                        required: "必填欄位",
+                    },
+                    ask: {
+                        required: "必填欄位"
+                    },
+
+                },
+
+                // errorPlacement: function(label, element) {
+                //     label.addClass('contact-form-error');
+                //     label.insertAfter(element);
+                // },
+                // wrapper: 'div'
+            })
+
+            $("#submit2").click(function() {
+                if ($("#contactForm2").valid() == true) {
+                    var answer = confirm("您確認要送出您所填寫的資訊嗎？");
+                    if (answer) {
+                        $.ajax({
+                            type: "POST",
+                            url: "./overseaMail.php",
+                            data: $("#contactForm2").serialize(),
+                            beforeSend: function() {},
+                            success: function(data) {
+                                // console.log("data: ", data)
+                                // $(".contact-finish").addClass("is-finish");
+                            }
+                        });
+                    }
+                }
+            })
         },
         updated() {},
     })

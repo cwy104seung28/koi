@@ -18,7 +18,7 @@ $RecData->execute();
 $row_RecData = $RecData->fetch();
 $totalRows_RecData = $RecData->rowCount();
 
-$menu_is = "contact";
+$menu_is = "oversea";
 
 ?>
 
@@ -69,27 +69,27 @@ $menu_is = "contact";
                     <td>
                       <table width="100%" border="0" cellspacing="3" cellpadding="5" id="forcolor">
                         <tr>
-                          <td width="23%" align="center" class="table_title">聯絡人姓名</td>
+                          <td width="23%" align="center" class="table_title">姓名</td>
                           <td width="78%" class="table_data"><?php echo (isset($row_RecData['d_title'])) ? $row_RecData['d_title'] : '無'; ?></td>
                         </tr>
                         <tr>
-                          <td align="center" class="table_title">地区</td>
+                          <td align="center" class="table_title">电子信箱</td>
                           <td class="table_data"><?php echo (isset($row_RecData['d_data1'])) ? $row_RecData['d_data1'] : '無'; ?></td>
                         </tr>
                         <tr>
-                          <td align="center" class="table_title">联络电话</td>
+                          <td align="center" class="table_title">现居国家</td>
                           <td class="table_data"><?php echo (isset($row_RecData['d_data2'])) ? $row_RecData['d_data2'] : '無'; ?></td>
                         </tr>
                         <tr>
-                          <td align="center" class="table_title">电子信箱</td>
+                          <td align="center" class="table_title">您准备在该项经营上投入多少钱？</td>
                           <td class="table_data"><?php echo (isset($row_RecData['d_data3'])) ? $row_RecData['d_data3'] : '無'; ?></td>
                         </tr>
                         <tr>
-                          <td align="center" class="table_title">询问类别</td>
+                          <td align="center" class="table_title">您代表的公司名称</td>
                           <td class="table_data"><?php echo (isset($row_RecData['d_data4'])) ? $row_RecData['d_data4'] : '無'; ?></td>
                         </tr>
                         <tr>
-                          <td align="center" class="table_title">時間</td>
+                          <td align="center" class="table_title">諮詢時間</td>
                           <td class="table_data"><?php echo $row_RecData['d_date']; ?></td>
                         </tr>
                       </table>
@@ -142,7 +142,7 @@ if ((isset($_REQUEST['d_id'])) && ($_REQUEST['d_id'] != "") && (isset($_REQUEST[
   $sth->bindParam(':d_id', $_REQUEST['d_id'], PDO::PARAM_INT);
   $sth->execute();
 
-  $deleteGoTo = "contact_list.php?delchangeSort=1";
+  $deleteGoTo = "oversea_list.php?delchangeSort=1";
   if (isset($_SERVER['QUERY_STRING'])) {
     $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";
     $deleteGoTo .= $_SERVER['QUERY_STRING'] . "&pageNum=" . $_SESSION["ToPage"];
