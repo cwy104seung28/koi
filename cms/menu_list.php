@@ -237,7 +237,6 @@ require_once 'display_page.php';
                                         <td width="142" align="center" class="table_title">日期</td>
                                         <td width="74" align="center" class="table_title">排序</td>
                                         <td width="470" align="center" class="table_title">標題</td>
-                                        <td width="140" align="center" class="table_title">圖片</td>
                                         <td width="60" align="center" class="table_title">在網頁顯示</td>
                                         <td width="30" align="center" class="table_title">編輯</td>
                                         <td width="30" align="center" class="table_title">刪除</td>
@@ -283,13 +282,6 @@ require_once 'display_page.php';
                                                 <?php echo $row_Recmenu['d_title']; ?>
                                             </a>
                                         </td>
-                                        <td align="center" class="table_data"><a href="menu_edit.php?d_id=<?php echo $row_Recmenu['d_id']; ?>">
-                                            <?php if ($totalRows_RecImage==0): ?>
-                                                <img src="image/default_image_s.jpg">
-                                            <?php else: ?>
-                                                <img src="../<?= $row_RecImage['file_link2'] ?>">
-                                            <?php endif ?>
-                                        </a></td>
                                         <td align="center" class="table_data">
                                             <?php  //list使用
                                             if($row_Recmenu['d_active']) {

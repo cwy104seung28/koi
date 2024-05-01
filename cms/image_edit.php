@@ -49,18 +49,25 @@ elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mainteaCover') {
     $IWidth = $imagesSize['mainteaCover']['IW'];
     $IHeight = $imagesSize['mainteaCover']['IH'];
 }
-elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mainCenterCover') {
+elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mainteaCenterCover') {
     $type = $_REQUEST['type'];
-    $fileType = "file_type='mainCenterCover' AND";
-    $not = $imagesSize['mainCenterCover']['note'];
-    $IWidth = $imagesSize['mainCenterCover']['IW'];
-    $IHeight = $imagesSize['mainCenterCover']['IH'];
+    $fileType = "file_type='mainteaCenterCover' AND";
+    $not = $imagesSize['mainteaCenterCover']['note'];
+    $IWidth = $imagesSize['mainteaCenterCover']['IW'];
+    $IHeight = $imagesSize['mainteaCenterCover']['IH'];
 }elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'ourteaCover') {
     $type = $_REQUEST['type'];
     $fileType = "file_type='ourteaCover' AND";
     $not = $imagesSize['ourteaCover']['note'];
     $IWidth = $imagesSize['ourteaCover']['IW'];
     $IHeight = $imagesSize['ourteaCover']['IH'];
+}
+elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'ourteaIconCover') {
+    $type = $_REQUEST['type'];
+    $fileType = "file_type='ourteaIconCover' AND";
+    $not = $imagesSize['ourteaIconCover']['note'];
+    $IWidth = $imagesSize['ourteaIconCover']['IW'];
+    $IHeight = $imagesSize['ourteaIconCover']['IH'];
 }
 
 else {

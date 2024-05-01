@@ -6,6 +6,9 @@ $maxRows_Recstore = 20;
 $pageNum = 0;
 if (isset($_GET['pageNum'])) {
     $pageNum = $_GET['pageNum'];
+    if ($pageNum == null) {
+        $pageNum = 0;
+    }
 }
 $startRow_Recstore = $pageNum * $maxRows_Recstore;
 // 主分類
@@ -31,33 +34,14 @@ $totalRowsC = $RecstoreC_level2->rowCount();
 $G_selected2 = '';
 if (isset($_GET['selected2'])) {
     $_SESSION['selected_storeC_level2'] = $G_selected2 = $_GET['selected2'];
-    $G_selected2_SQL = "AND c_data1=" . $_GET['selected2'];
+    $G_selected2_SQL = "AND d_class2=" . $_GET['selected2'];
 } else if ($row_RecstoreC_level2['c_id']) {
     $_SESSION['selected_storeC_level2'] = $G_selected2 = $row_RecstoreC_level2['c_id'];
-    $G_selected2_SQL = "AND c_data1=" . $row_RecstoreC_level2['c_id'];
+    $G_selected2_SQL = "AND d_class2=" . $row_RecstoreC_level2['c_id'];
 } else{
-    $G_selected2_SQL = "AND c_data1=-1";
+    $G_selected2_SQL = "AND d_class2=-1";
 }
-
-
-// 第三分類
-$query_RecstoreC_level3 = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_active='1' AND c_level='3' $G_selected1_SQL $G_selected2_SQL ORDER BY c_sort ASC, c_id DESC";
-$RecstoreC_level3 = $conn->query($query_RecstoreC_level3);
-$row_RecstoreC_level3 = $RecstoreC_level3->fetch();
-$totalRowsC = $RecstoreC_level3->rowCount();
-$G_selected3 = '';
-if (isset($_GET['selected3'])) {
-    $_SESSION['selected_storeC_level3'] = $G_selected3 = $_GET['selected3'];
-    $G_selected3_SQL = "AND d_class2=" . $_GET['selected3'];
-} else if ($row_RecstoreC_level3['c_id']) {
-    $_SESSION['selected_storeC_level3'] = $G_selected3 = $row_RecstoreC_level3['c_id'];
-    $G_selected3_SQL = "AND d_class2=" . $row_RecstoreC_level3['c_id'];
-} else{
-    $G_selected3_SQL = "AND d_class2=-1";
-}
-
-
-$query_Recstore = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 =class_set.c_id WHERE d_class1 = 'store' $G_selected3_SQL ORDER BY d_sort ASC, d_date DESC";
+$query_Recstore = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 =class_set.c_id WHERE d_class1 = 'store' $G_selected2_SQL ORDER BY d_sort ASC, d_date DESC";
 $query_limit_Recstore = sprintf("%s LIMIT %d, %d", $query_Recstore, $startRow_Recstore, $maxRows_Recstore);
 $Recstore = $conn->query($query_limit_Recstore);
 $row_Recstore = $Recstore->fetch();
@@ -65,7 +49,6 @@ $S_original_selected = '';
 if (isset($_SESSION['original_selected'])) {
     $S_original_selected = $_SESSION['original_selected'];
 }
-
 $all_Recstore = $conn->query($query_Recstore);
 $totalRows = $all_Recstore->rowCount();
 $all_Recstore = $conn->query($query_Recstore);
@@ -210,25 +193,12 @@ require_once 'display_page.php';
                                                 ?>
                                             </select>
                                         </span>
-                                        <span class="table_data" style="margin-left: 10px;">區域：
+                                        <span class="table_data" style="margin-left: 10px;">次分類：
                                             <select name="select2" id="select2" class="chosen-select">
                                                 <?php do {?>
                                                     <option value="<?php echo $row_RecstoreC_level2['c_id']?>"<?php if (!(strcmp($row_RecstoreC_level2['c_id'], $G_selected2))) {echo "selected=\"selected\"";} ?>><?php echo $row_RecstoreC_level2['c_title']?></option>
                                                     <?php
                                                 } while ($row_RecstoreC_level2 = $RecstoreC_level2->fetch());
-                                                $rows = $RecstoreC_level2->rowCount();
-                                                if($rows > 0) {
-                                                    $RecstoreC_level2->execute();
-                                                }
-                                                ?>
-                                            </select>
-                                        </span>
-                                        <span class="table_data" style="margin-left: 10px;">店家：
-                                            <select name="select2" id="select2" class="chosen-select">
-                                                <?php do {?>
-                                                    <option value="<?php echo $row_RecstoreC_level3['c_id']?>"<?php if (!(strcmp($row_RecstoreC_level3['c_id'], $G_selected2))) {echo "selected=\"selected\"";} ?>><?php echo $row_RecstoreC_level3['c_title']?></option>
-                                                    <?php
-                                                } while ($row_RecstoreC_level3 = $RecstoreC_level3->fetch());
                                                 $rows = $RecstoreC_level2->rowCount();
                                                 if($rows > 0) {
                                                     $RecstoreC_level2->execute();

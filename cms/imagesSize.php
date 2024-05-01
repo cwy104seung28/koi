@@ -34,6 +34,11 @@ $imagesSize = [
         'IH' => 566,
         'note' => "圖片請上傳寬 400pixel、高 566pixel之圖檔。 $maxFileSize",
     ],
+    "ourteaIconCover" => [
+        'IW' => 38,
+        'IH' => 44,
+        'note' => "圖片請上傳寬 38pixel、高 44pixel之圖檔。 $maxFileSize",
+    ],
     "storeCover" => [
         'IW' => 466,
         'IH' => 466,

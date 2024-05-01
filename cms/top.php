@@ -174,7 +174,7 @@ if ($menu_is == "news") {
 	creatAll('分店資訊', 'store');
 	creatAll('國家', 'storeC');
 	creatAll('地區', 'storeC_level2');
-	creatAll('店家', 'storeC_level3');
+	// creatAll('店家', 'storeC_level3');
 	if ($row_RecLevelAuthority['a_2'] == '0') {
 		header("Location:first.php");
 	}

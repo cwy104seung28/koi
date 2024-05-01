@@ -55,6 +55,26 @@ $menu_is = "store";
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
+                                                <!-- <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td width="532">
+                                                        <input name="c_title_en" type="text" class="table_data" id="c_title_en" size="50">
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr> -->
+                                                <!-- <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">TYPE</td>
+                                                    <td width="532">
+                                                        <input name="c_data1" type="text" class="table_data" id="c_data1" size="50">
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr> -->
+                                                <!-- <tr>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
+                                                    <td><textarea name="c_content" cols="60" rows="8" class="table_data" id="c_content"></textarea></td>
+                                                    <td bgcolor="#e5ecf6" class="table_col_title"><p class="red_letter">*小斷行請按Shift+Enter。<br />
+                                                    輸入區域的右下角可以調整輸入空間的大小。</p></td>
+                                                </tr> -->
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">狀態</td>
                                                     <td width="532">
@@ -65,6 +85,27 @@ $menu_is = "store";
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
+                                                <!-- <tr>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p>上傳圖片</p>
+                                                    </td>
+                                                    <td>
+                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
+                                                            <tr>
+                                                                <td> <span class="table_data">選擇圖片：</span>
+                                                                    <input name="imageCover[]" type="file" class="table_data" id="imageCover1" />
+                                                                    <br>
+                                                                    <span class="table_data">圖片說明：</span>
+                                                                    <input name="imageCover_title[]" type="text" class="table_data" id="imageCover_title1"> </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p class="red_letter">*
+                                                            <?php echo $imagesSize['storeCatCover']['note'];?>
+                                                        </p>
+                                                    </td>
+                                                </tr> -->
                                             </table>
                                         </td>
                                     </tr>
@@ -107,23 +148,23 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $sth->bindParam(':c_active', $_POST['c_active'], PDO::PARAM_INT);
     $sth->execute();
     //找到insert ID
-    // $new_data_num = $conn->lastInsertId();
-    // // Cover
-    // $image_result = image_process($conn, $_FILES['imageCover'], $_REQUEST['imageCover_title'], $menu_is, "add", $imagesSize['storeCatCover']['IW'], $imagesSize['storeCatCover']['IH']);
-    // for ($j = 1; $j < count($image_result); $j++) {
-    //     $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
-    //     $stat = $conn->prepare($insertSQL);
-    //     $stat->bindParam(':file_name', $image_result[$j][0], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_type', $type = 'storeCatCover', PDO::PARAM_STR);
-    //     $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
-    //     $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
-    //     $stat->execute();
-    //     $_SESSION["change_image"] = 1;
-    // }
+    $new_data_num = $conn->lastInsertId();
+    // Cover
+    $image_result = image_process($conn, $_FILES['imageCover'], $_REQUEST['imageCover_title'], $menu_is, "add", $imagesSize['storeCatCover']['IW'], $imagesSize['storeCatCover']['IH']);
+    for ($j = 1; $j < count($image_result); $j++) {
+        $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
+        $stat = $conn->prepare($insertSQL);
+        $stat->bindParam(':file_name', $image_result[$j][0], PDO::PARAM_STR);
+        $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
+        $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
+        $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
+        $stat->bindParam(':file_type', $type = 'storeCatCover', PDO::PARAM_STR);
+        $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
+        $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
+        $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
+        $stat->execute();
+        $_SESSION["change_image"] = 1;
+    }
     //----------插入圖片資料到資料庫end----------
     $insertGoTo = "storeC_list.php?pageNum=0&totalRows_RecstoreC=" . ($_SESSION['totalRows'] + 1) . "&changeSort=1&now_c_id=" . $new_data_num . "&change_num=1";
     if (isset($_SERVER['QUERY_STRING'])) {

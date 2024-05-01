@@ -74,20 +74,13 @@ $menu_is = "maintea";
                                         <td>
                                             <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">年份</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">名稱</td>
                                                     <td width="532" class="table_data">
                                                         <?php echo $row_Recmaintea['d_title']; ?>
                                                         <input name="d_id" type="hidden" id="d_id" value="<?php echo $row_Recmaintea['d_id']; ?>" />
                                                         <input name="delsure" type="hidden" id="delsure" value="1" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
-                                                    <td class="table_data">
-                                                        <?php echo nl2br($row_Recmaintea['d_content']); ?>
-                                                    </td>
-                                                    <td bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">日期</td>
@@ -98,7 +91,7 @@ $menu_is = "maintea";
                                                 </tr>
                                                 <?php if ($totalRows_RecCover > 0) { // Show if recordset not empty ?>
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前封面圖片</td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前飲料圖片</td>
                                                     <td>
                                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                             <tr>

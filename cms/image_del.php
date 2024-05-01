@@ -21,6 +21,9 @@ if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsCover') {
 else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="ourteaCover")){
     $fileType = "file_type='ourteaCover' AND";
 }
+else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="ourteaIconCover")){
+    $fileType = "file_type='ourteaIconCover' AND";
+}
 //else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="eventCover")){
 //     $fileType = "file_type='eventCover' AND";
 // } else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="sampleCover")){

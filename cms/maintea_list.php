@@ -188,8 +188,8 @@ require_once('display_page.php');
                                     <tr>
                                         <td width="150" align="center" class="table_title">日期</td>
                                         <td width="60" align="center" class="table_title">排序</td>
-                                        <td align="center" class="table_title">年份</td>
-                                        <!-- <td width="90" align="center" class="table_title">圖片</td> -->
+                                        <td align="center" class="table_title">飲料名稱</td>
+                                        <td width="90" align="center" class="table_title">圖片</td>
                                         <td width="40" align="center" class="table_title">狀態</td>
                                         <td width="40" align="center" class="table_title">編輯</td>
                                         <td width="40" align="center" class="table_title">刪除</td>
@@ -202,7 +202,7 @@ require_once('display_page.php');
                                         if (isset($row_Recmaintea['d_id'])) {
                                           $colname_RecImage = $row_Recmaintea['d_id'];
                                         }
-                                        $query_RecImage = "SELECT * FROM file_set WHERE file_type='image' AND file_d_id = :file_d_id";
+                                        $query_RecImage = "SELECT * FROM file_set WHERE file_type='mainteaCover' AND file_d_id = :file_d_id";
                                         $RecImage = $conn->prepare($query_RecImage);
                                         $RecImage->bindParam(':file_d_id', $colname_RecImage, PDO::PARAM_STR);
                                         $RecImage->execute();
@@ -233,13 +233,13 @@ require_once('display_page.php');
                                                 <?php echo $row_Recmaintea['d_title']; ?>
                                             </a>
                                         </td>
-                                        <!-- <td align="center" class="table_data"><a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
+                                        <td align="center" class="table_data"><a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
                                             <?php if ($totalRows_RecImage==0): ?>
                                                 <img src="image/default_image_s.jpg">
                                             <?php else: ?>
                                                 <img src="../<?= $row_RecImage['file_link2'] ?>">
                                             <?php endif ?>
-                                        </a></td> -->
+                                        </a></td>
                                         <td align="center" class="table_data">
                                             <?php  //list使用
                                             if($row_Recmaintea['d_active']) {

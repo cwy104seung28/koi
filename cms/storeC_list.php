@@ -1,4 +1,4 @@
-<?php require_once('../Connections/connect2data.php'); ?>
+<?php require_once ('../Connections/connect2data.php'); ?>
 <?php
 $menu_is = "store";
 $currentPage = $_SERVER["PHP_SELF"];
@@ -6,6 +6,9 @@ $maxRows_RecstoreC = 15;
 $pageNum = 0;
 if (isset($_GET['pageNum'])) {
     $pageNum = $_GET['pageNum'];
+    if ($pageNum == null) {
+        $pageNum = 0;
+    }
 }
 $startRow_RecstoreC = $pageNum * $maxRows_RecstoreC;
 $query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level='1' ORDER BY c_sort ASC, c_id DESC";
@@ -25,8 +28,10 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     $params = explode("&", $_SERVER['QUERY_STRING']);
     $newParams = array();
     foreach ($params as $param) {
-        if (stristr($param, "pageNum") == false &&
-            stristr($param, "totalRows_RecstoreC") == false) {
+        if (
+            stristr($param, "pageNum") == false &&
+            stristr($param, "totalRows_RecstoreC") == false
+        ) {
             array_push($newParams, $param);
         }
     }
@@ -72,7 +77,8 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
     $RecstoreC = $conn->query($query_RecstoreC);
     $row_RecstoreC = $RecstoreC->fetch();
     do {
-        if ($row_RecstoreC['c_sort'] == 0) {} else if ($row_RecstoreC['c_id'] == $_GET['now_c_id']) {
+        if ($row_RecstoreC['c_sort'] == 0) {
+        } else if ($row_RecstoreC['c_id'] == $_GET['now_c_id']) {
             // echo $sort_num . "<br/>";
         } else if ($sort_num == $_GET['change_num']) {
             // echo $sort_num . "<br/>";
@@ -105,22 +111,26 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
         header("Location:storeC_list.php?pageNum=" . $_GET['pageNum']);
     }
 }
-require_once('display_page.php');
+require_once ('display_page.php');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><?php require_once('cmsTitle.php'); ?></title>
-    <?php require_once('script.php'); ?>
-    <?php require_once('head.php');?>
+    <title><?php require_once ('cmsTitle.php'); ?></title>
+    <?php require_once ('script.php'); ?>
+    <?php require_once ('head.php'); ?>
 </head>
+
 <body>
     <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
             <td align="center">
-                <?php require_once('cmsHeader.php'); ?>
-                <?php require_once('top.php'); ?>
+                <?php require_once ('cmsHeader.php'); ?>
+                <?php require_once ('top.php'); ?>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td align="left">
@@ -129,13 +139,14 @@ require_once('display_page.php');
                                 <tr>
                                     <td width="140" class="list_title">列表</td>
                                     <td width="884"><span class="no_data">
-                                    <?php if ($totalRows_RecstoreC == 0) { // Show if recordset empty ?>
-                                    <strong>目前資料庫中沒有任何資料</strong>
-                                    <?php } // Show if recordset empty ?>
-                                    </span></td>
+                                            <?php if ($totalRows_RecstoreC == 0) { // Show if recordset empty ?>
+                                                <strong>目前資料庫中沒有任何資料</strong>
+                                            <?php } // Show if recordset empty ?>
+                                        </span></td>
                                 </tr>
                             </table>
-                            <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1"
+                                class="list_title_table">
                                 <tr>
                                     <td width="739" align="right" class="page_display">
                                         <!-------顯示頁選擇與分頁設定開始---------->
@@ -144,11 +155,12 @@ require_once('display_page.php');
                                     </td>
                                     <td width="110" align="right" class="page_display">
                                         <?php if ($totalRows_RecstoreC > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_RecstoreC+1)); ?>
+                                            <?php echo (($pageNum + 1) . "/" . ($totalPages_RecstoreC + 1)); ?>
                                         <?php } // Show if recordset not empty ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
-                                        <?php echo $totalRows_RecstoreC ?> </td>
+                                        <?php echo $totalRows_RecstoreC ?>
+                                    </td>
                                     <td width="24" align="right">&nbsp;</td>
                                 </tr>
                             </table>
@@ -159,71 +171,81 @@ require_once('display_page.php');
                             </table>
                             <form action="storeC_process.php" method="post" name="form1" id="form1">
                                 <?php if ($totalRows_RecstoreC > 0) { // Show if recordset not empty ?>
-                                <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
-                                    <tr>
-                                        <td width="100" align="center" class="table_title">排序</td>
-                                        <td align="center" class="table_title">名稱</td>
-                                        <!-- <td width="140" align="center" class="table_title">圖片</td> -->
-                                        <td width="40" align="center" class="table_title">狀態</td>
-                                        <td width="40" align="center" class="table_title">編輯</td>
-                                        <td width="40" align="center" class="table_title">刪除</td>
-                                    </tr>
-                                    <?php
-                                    $i=0;
-                                    do {
-                                        $i++;
-                                        $colname_RecImage = "-1";
-                                        if (isset($row_RecstoreC['c_id'])) {
-                                          $colname_RecImage = $row_RecstoreC['c_id'];
-                                        }
-                                        $query_RecImage = sprintf("SELECT * FROM file_set WHERE file_type='storeCatCover' AND file_d_id = %s", $colname_RecImage);
-                                        $RecImage = $conn->query($query_RecImage);
-                                        $row_RecImage = $RecImage->fetch();
-                                        $totalRows_RecImage = $RecImage->rowCount();
-                                    ?>
-                                    <tr <?php if ($i%2==0): ?>bgcolor='#E4E4E4'<?php endif ?>>
-                                        <td align="center" class="table_data">
-                                            <select name="c_sort" id="c_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows_RecstoreC; ?>','<?php echo $row_RecstoreC['c_id']; ?>',this.options[this.selectedIndex].value)">
-                                                <option value="0" <?php if (!(strcmp(0, $row_RecstoreC[ 'c_sort']))) {echo "selected";} ?>>至頂</option>
-                                                <?php
-                                                for ($j = 1; $j <= ($totalRows_RecstoreC); $j++) {
-                                                    echo "<option value=\"" . $j . "\" ";
-                                                    if (!(strcmp($j, $row_RecstoreC['c_sort']))) {echo "selected=\"selected\"";}
-                                                    echo ">" . $j . "</option>";
-                                                }
-                                                ?>
-                                            </select>
-                                            <?php $_SESSION['totalRows']=$totalRows_RecstoreC; ?>
-                                        </td>
-                                        <td align="center" class="table_data">
-                                            <a href="storeC_edit.php?c_id=<?php echo $row_RecstoreC['c_id']; ?>">
-                                                <?php echo $row_RecstoreC['c_title']; ?>
-                                            </a>
-                                        </td>
-                                        <!-- <td align="center" class="table_data"><a href="storeC_edit.php?c_id=<?php echo $row_RecstoreC['c_id']; ?>">
-                                            <?php if ($totalRows_RecImage==0): ?>
+                                    <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
+                                        <tr>
+                                            <td width="100" align="center" class="table_title">排序</td>
+                                            <td align="center" class="table_title">名稱</td>
+                                            <!-- <td width="140" align="center" class="table_title">圖片</td> -->
+                                            <td width="40" align="center" class="table_title">狀態</td>
+                                            <td width="40" align="center" class="table_title">編輯</td>
+                                            <td width="40" align="center" class="table_title">刪除</td>
+                                        </tr>
+                                        <?php
+                                        $i = 0;
+                                        do {
+                                            $i++;
+                                            $colname_RecImage = "-1";
+                                            if (isset($row_RecstoreC['c_id'])) {
+                                                $colname_RecImage = $row_RecstoreC['c_id'];
+                                            }
+                                            $query_RecImage = sprintf("SELECT * FROM file_set WHERE file_type='storeCatCover' AND file_d_id = %s", $colname_RecImage);
+                                            $RecImage = $conn->query($query_RecImage);
+                                            $row_RecImage = $RecImage->fetch();
+                                            $totalRows_RecImage = $RecImage->rowCount();
+                                            ?>
+                                            <tr <?php if ($i % 2 == 0): ?>bgcolor='#E4E4E4' <?php endif ?>>
+                                                <td align="center" class="table_data">
+                                                    <select name="c_sort" id="c_sort"
+                                                        onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows_RecstoreC; ?>','<?php echo $row_RecstoreC['c_id']; ?>',this.options[this.selectedIndex].value)">
+                                                        <option value="0" <?php if (!(strcmp(0, $row_RecstoreC['c_sort']))) {
+                                                            echo "selected";
+                                                        } ?>>至頂</option>
+                                                        <?php
+                                                        for ($j = 1; $j <= ($totalRows_RecstoreC); $j++) {
+                                                            echo "<option value=\"" . $j . "\" ";
+                                                            if (!(strcmp($j, $row_RecstoreC['c_sort']))) {
+                                                                echo "selected=\"selected\"";
+                                                            }
+                                                            echo ">" . $j . "</option>";
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                    <?php $_SESSION['totalRows'] = $totalRows_RecstoreC; ?>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <a href="storeC_edit.php?c_id=<?php echo $row_RecstoreC['c_id']; ?>">
+                                                        <?php echo $row_RecstoreC['c_title']; ?>
+                                                    </a>
+                                                </td>
+                                                <!-- <td align="center" class="table_data"><a href="storeC_edit.php?c_id=<?php echo $row_RecstoreC['c_id']; ?>">
+                                            <?php if ($totalRows_RecImage == 0): ?>
                                                 <img src="image/default_image_s.jpg">
                                             <?php else: ?>
                                                 <img src="../<?= $row_RecImage['file_link2'] ?>">
                                             <?php endif ?>
                                         </a></td> -->
-                                        <td align="center" class="table_data">
-                                            <?php  //list使用
-                                            if($row_RecstoreC['c_active']) {
-                                                echo "<a href='".$row_RecstoreC['c_active']."' rel='".$row_RecstoreC['c_id']."' class='activeChC'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
-                                            } else {
-                                                echo "<a href='".$row_RecstoreC['c_active']."' rel='".$row_RecstoreC['c_id']."' class='activeChC'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
-                                            }
-                                            ?>
-                                        </td>
-                                        <td align="center" class="table_data"><a href="storeC_edit.php?c_id=<?php echo $row_RecstoreC['c_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
-                                        <td align="center" class="table_data"><a href="storeC_del.php?c_id=<?php echo $row_RecstoreC['c_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
-                                    </tr>
-                                    <?php } while ($row_RecstoreC = $RecstoreC->fetch()); ?>
-                                </table>
+                                                <td align="center" class="table_data">
+                                                    <?php  //list使用
+                                                            if ($row_RecstoreC['c_active']) {
+                                                                echo "<a href='" . $row_RecstoreC['c_active'] . "' rel='" . $row_RecstoreC['c_id'] . "' class='activeChC'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                                            } else {
+                                                                echo "<a href='" . $row_RecstoreC['c_active'] . "' rel='" . $row_RecstoreC['c_id'] . "' class='activeChC'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                            }
+                                                            ?>
+                                                </td>
+                                                <td align="center" class="table_data"><a
+                                                        href="storeC_edit.php?c_id=<?php echo $row_RecstoreC['c_id']; ?>"><img
+                                                            src="image/pencil.png" width="16" height="16" /></a></td>
+                                                <td align="center" class="table_data"><a
+                                                        href="storeC_del.php?c_id=<?php echo $row_RecstoreC['c_id']; ?>"><img
+                                                            src="image/cross.png" width="16" height="16" /></a></td>
+                                            </tr>
+                                        <?php } while ($row_RecstoreC = $RecstoreC->fetch()); ?>
+                                    </table>
                                 <?php } // Show if recordset not empty ?>
                             </form>
-                            <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1"
+                                class="list_title_table">
                                 <tr>
                                     <td width="739" align="right" class="page_display">
                                         <!-------顯示頁選擇與分頁設定開始---------->
@@ -232,11 +254,12 @@ require_once('display_page.php');
                                     </td>
                                     <td width="110" align="right" class="page_display">
                                         <?php if ($totalRows_RecstoreC > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_RecstoreC+1)); ?>
+                                            <?php echo (($pageNum + 1) . "/" . ($totalPages_RecstoreC + 1)); ?>
                                         <?php } // Show if recordset not empty ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
-                                        <?php echo $totalRows_RecstoreC ?> </td>
+                                        <?php echo $totalRows_RecstoreC ?>
+                                    </td>
                                     <td width="24" align="right">&nbsp;</td>
                                 </tr>
                             </table>
@@ -248,6 +271,7 @@ require_once('display_page.php');
         </tr>
     </table>
 </body>
+
 </html>
 <script type="text/javascript">
     function changeSort(pageNum, totalRows_RecstoreC, now_c_id, change_num) {

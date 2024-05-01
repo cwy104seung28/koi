@@ -179,35 +179,6 @@ $ifFile = 0;
                                                         </p>
                                                     </td>
                                                 </tr>
-
-                                                <!-- <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">描述</td>
-                                                    <td width="532">
-                                                        <textarea name="d_description" cols="60" rows="4" class="table_data" id="d_description"></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">head</td>
-                                                    <td width="532">
-                                                        <textarea name="d_head" cols="60" rows="4" class="table_data" id="d_head"></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">body</td>
-                                                    <td width="532">
-                                                        <textarea name="d_body" cols="60" rows="4" class="table_data" id="d_body"></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">schema</td>
-                                                    <td width="532">
-                                                        <textarea name="d_schema" cols="60" rows="4" class="table_data" id="d_schema"></textarea>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr> -->
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">時間</td>
                                                     <td width="532">
@@ -295,41 +266,6 @@ $ifFile = 0;
                                                         </p>
                                                     </td>
                                                 </tr>
-                                                <?php if ($ifFile) { ?>
-                                                    <tr>
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p>上傳檔案</p>
-                                                        </td>
-                                                        <td>
-                                                            <table border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable2">
-                                                                <tr>
-                                                                    <td> <span class="table_data">選擇檔案：</span>
-                                                                        <input name="upfile[]" type="file" class="table_data" id="upfile1" />
-                                                                        <br>
-                                                                        <span class="table_data">檔案說明：</span>
-                                                                        <input name="upfile_title[]" type="text" class="table_data" id="upfile_title1">
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            <table width="100%" border="0" cellspacing="5" cellpadding="2">
-                                                                <tr>
-                                                                    <td>
-                                                                        <table border="0" cellspacing="2" cellpadding="2">
-                                                                            <tr>
-                                                                                <td width="16"><a href="javascript:addField2()"><img src="image/add.png" width="16" height="16" border="0"></a></td>
-                                                                                <td width="48"><a href="javascript:addField2()" class="table_data">新增檔案</a></td>
-                                                                                <td width="390" class="red_letter">&nbsp;</td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p><span class="red_letter">*上傳之檔案請勿超過2M。</span></p>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
                                             </table>
                                         </td>
                                     </tr>
@@ -436,7 +372,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $stat->bindParam(':d_slug', generate_slug($_POST['d_title']), PDO::PARAM_STR);
     $stat->bindParam(':d_content', $_POST['d_content'], PDO::PARAM_STR);
     $stat->bindParam(':d_class1', $_POST['d_class1'], PDO::PARAM_STR);
-    $stat->bindParam(':d_class2', $_POST['d_class1'], PDO::PARAM_STR);
+    $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_data1', $_POST['d_data1'], PDO::PARAM_STR);
     $stat->bindParam(':d_data2', $_POST['d_data2'], PDO::PARAM_STR);
     $stat->bindParam(':d_data3', $_POST['d_data3'], PDO::PARAM_STR);
@@ -453,28 +389,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
     //----------插入圖片資料到資料庫begin(須放入插入主資料後)----------
 
-    //找到insert ID
-    // $new_data_num = $conn->lastInsertId();
-
-    // //一般附圖
-    // $image_result = image_process($conn, $_FILES['image'], $_REQUEST['image_title'], $menu_is, "add", $imagesSize[$_SESSION['nowMenu']]['IW'], $imagesSize[$_SESSION['nowMenu']]['IH']);
-
-    // for ($j = 1; $j < count($image_result); $j++) {
-    //     $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
-
-    //     $stat = $conn->prepare($insertSQL);
-    //     $stat->bindParam(':file_name', $image_result[$j][0], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_type', $type = 'image', PDO::PARAM_STR);
-    //     $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
-    //     $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
-    //     $stat->execute();
-
-    //     $_SESSION["change_image"] = 1;
-    // }
+    // 找到insert ID
+    $new_data_num = $conn->lastInsertId();
 
     // Cover
     $image_result = image_process($conn, $_FILES['imageCover'], $_REQUEST['imageCover_title'], $menu_is, "add", $imagesSize['newsCover']['IW'], $imagesSize['newsCover']['IH']);
@@ -497,9 +413,9 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     }
 
     // TopCover
-    $image_result2 = image_process($conn, $_FILES['imageTopCover'], $_REQUEST['imageTopCover_title'], $menu_is, "add", $imagesSize['newsTopCover']['IW'], $imagesSize['newsTopCover']['IH']);
+    $image_result = image_process($conn, $_FILES['imageTopCover'], $_REQUEST['imageTopCover_title'], $menu_is, "add", $imagesSize['newsTopCover']['IW'], $imagesSize['newsTopCover']['IH']);
 
-    for ($j = 1; $j < count($image_result2); $j++) {
+    for ($j = 1; $j < count($image_result); $j++) {
         $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
 
         $stat = $conn->prepare($insertSQL);
@@ -517,9 +433,9 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     }
 
     // InnerCover
-    $image_result3 = image_process($conn, $_FILES['imageInnerCover'], $_REQUEST['imageInnerCover_title'], $menu_is, "add", $imagesSize['newsInnerCover']['IW'], $imagesSize['newsInnerCover']['IH']);
+    $image_result = image_process($conn, $_FILES['imageInnerCover'], $_REQUEST['imageInnerCover_title'], $menu_is, "add", $imagesSize['newsInnerCover']['IW'], $imagesSize['newsInnerCover']['IH']);
 
-    for ($j = 1; $j < count($image_result3); $j++) {
+    for ($j = 1; $j < count($image_result); $j++) {
         $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
 
         $stat = $conn->prepare($insertSQL);

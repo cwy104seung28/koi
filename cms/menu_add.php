@@ -282,7 +282,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     //----------插入圖片資料到資料庫begin(須放入插入主資料後)----------
 
     //找到insert ID
-    // $new_data_num = $conn->lastInsertId();
+    $new_data_num = $conn->lastInsertId();
 
     // //一般附圖
     // $image_result = image_process($conn, $_FILES['image'], $_REQUEST['image_title'], $menu_is, "add", $imagesSize[$_SESSION['nowMenu']]['IW'], $imagesSize[$_SESSION['nowMenu']]['IH']);
@@ -328,7 +328,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
     //----------插入檔案資料到資料庫begin(須放入插入主資料後)----------
     if ($ifFile) {
-        $file_result = file_process($conn, "menuFile", "add");
+        $file_result = file_process($conn, "menu", "add");
 
         for ($j = 0; $j < count($file_result); $j++) {
             $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_type, file_d_id, file_title) VALUES (:file_name, :file_link1, :file_type, :file_d_id, :file_title)";

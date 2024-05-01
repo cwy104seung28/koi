@@ -77,7 +77,7 @@ $config = array(
     |
 	NOTE: 上線要改成 /source/
     */
-    'upload_dir' => '/flowertreeofficial/source/',
+    'upload_dir' => '/koi/source/',
     /*
     |--------------------------------------------------------------------------
     | relative path from filemanager folder to upload folder
@@ -108,7 +108,7 @@ $config = array(
     | DO NOT put inside upload folder
     |
     */
-    'thumbs_upload_dir' => '/thumbs/',
+    'thumbs_upload_dir' => '/koi/thumbs/',
 
 
     /*

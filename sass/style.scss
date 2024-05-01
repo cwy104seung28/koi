@@ -629,15 +629,21 @@ nav {
 }
 
 .index-drink {
-    padding-top: 400px;
+    // padding-top: 400px;
+
     position: relative;
     z-index: 3;
     background-color: #f9efe1;
     padding-bottom: 250px;
+    .drink-inner{
+
+        height: 2000px;
+    }
     .drink-animation {
         position: relative;
         margin-bottom: 470px;
-        // zoom: 1.1;
+        position: sticky;
+        top: 20%;
         .bg {
             text-align: center;
             .note {
@@ -3383,6 +3389,7 @@ nav {
                     font-weight: 900;
                     letter-spacing: 5px;
                     color: #000;
+                    max-width: 500px;
                 }
                 .icon {
                     position: absolute;
@@ -3395,6 +3402,7 @@ nav {
                 flex-wrap: wrap;
                 li {
                     width: fit-content;
+                    min-height: 107px;
                     cursor: pointer;
                     margin-bottom: 50px;
                     .region {
