@@ -27,9 +27,7 @@ if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsCover') {
     $not = $imagesSize['newsCover']['note'];
     $IWidth = $imagesSize['newsCover']['IW'];
     $IHeight = $imagesSize['newsCover']['IH'];
-} 
-
-elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsTopCover') {
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsTopCover') {
     $type = $_REQUEST['type'];
     $fileType = "file_type='newsTopCover' AND";
     $not = $imagesSize['newsTopCover']['note'];
@@ -41,36 +39,43 @@ elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsTopCover') {
     $not = $imagesSize['newsInnerCover']['note'];
     $IWidth = $imagesSize['newsInnerCover']['IW'];
     $IHeight = $imagesSize['newsInnerCover']['IH'];
-}
-elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mainteaCover') {
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mainteaCover') {
     $type = $_REQUEST['type'];
     $fileType = "file_type='mainteaCover' AND";
     $not = $imagesSize['mainteaCover']['note'];
     $IWidth = $imagesSize['mainteaCover']['IW'];
     $IHeight = $imagesSize['mainteaCover']['IH'];
-}
-elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mainteaCenterCover') {
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mainteaCenterCover') {
     $type = $_REQUEST['type'];
     $fileType = "file_type='mainteaCenterCover' AND";
     $not = $imagesSize['mainteaCenterCover']['note'];
     $IWidth = $imagesSize['mainteaCenterCover']['IW'];
     $IHeight = $imagesSize['mainteaCenterCover']['IH'];
-}elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'ourteaCover') {
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'ourteaCover') {
     $type = $_REQUEST['type'];
     $fileType = "file_type='ourteaCover' AND";
     $not = $imagesSize['ourteaCover']['note'];
     $IWidth = $imagesSize['ourteaCover']['IW'];
     $IHeight = $imagesSize['ourteaCover']['IH'];
-}
-elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'ourteaIconCover') {
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'ourteaIndexCover') {
+    $type = $_REQUEST['type'];
+    $fileType = "file_type='ourteaIndexCover' AND";
+    $not = $imagesSize['ourteaIndexCover']['note'];
+    $IWidth = $imagesSize['ourteaIndexCover']['IW'];
+    $IHeight = $imagesSize['ourteaIndexCover']['IH'];
+}elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'ourteaIconCover') {
     $type = $_REQUEST['type'];
     $fileType = "file_type='ourteaIconCover' AND";
     $not = $imagesSize['ourteaIconCover']['note'];
     $IWidth = $imagesSize['ourteaIconCover']['IW'];
     $IHeight = $imagesSize['ourteaIconCover']['IH'];
-}
-
-else {
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'storeCover') {
+    $type = $_REQUEST['type'];
+    $fileType = "file_type='storeCover' AND";
+    $not = $imagesSize['storeCover']['note'];
+    $IWidth = $imagesSize['storeCover']['IW'];
+    $IHeight = $imagesSize['storeCover']['IH'];
+} else {
     $type = '-1';
     $fileType = "file_type='image' AND";
     $not = $imagesSize[$_SESSION['nowMenu']]['note'];
@@ -147,7 +152,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     }
     //----------插入圖片資料到資料庫end----------
 
-    if ($_REQUEST['type'] == 'serviceListCover') {
+    if ($_REQUEST['type'] == 'ourteaIconCover') {
         $updateGoTo = $_SESSION['nowPage'] . "?c_id=" . $_POST['file_c_id'] . "#imageEdit";
     } else {
         $updateGoTo = $_SESSION['nowPage'] . "?d_id=" . $_POST['file_d_id'] . "#imageEdit";
@@ -212,7 +217,11 @@ $totalRows_RecImage = $RecImage->rowCount();
                             <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title"><span class="table_data">圖片說明</span></td>
                             <td width="532"><input name="file_title" type="text" class="table_data" id="file_title" value="<?php echo $row_RecImage['file_title']; ?>" size="50">
                                 <input name="file_id" type="hidden" id="file_id" value="<?php echo $row_RecImage['file_id']; ?>" />
-                                <input name="file_d_id" type="hidden" id="file_d_id" value="<?php echo $row_RecImage['file_d_id']; ?>" />
+                                <?php if ($type == 'ourteaIconCover') : ?>
+                                    <input name="file_c_id" type="hidden" id="file_c_id" value="<?php echo $row_RecImage['file_c_id']; ?>" />
+                                <?php else : ?>
+                                    <input name="file_d_id" type="hidden" id="file_d_id" value="<?php echo $row_RecImage['file_d_id']; ?>" />
+                                <?php endif ?>
                             </td>
                             <td width="250" bgcolor="#e5ecf6"></td>
                         </tr>

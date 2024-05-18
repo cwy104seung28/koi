@@ -16,13 +16,15 @@ $menu_is = "news";
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php require_once('cmsTitle.php'); ?></title>
 
     <?php require_once('script.php'); ?>
-    <?php require_once('head.php');?>
+    <?php require_once('head.php'); ?>
 </head>
+
 <body>
     <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -65,11 +67,21 @@ $menu_is = "news";
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr> -->
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">狀態</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示狀態</td>
                                                     <td width="532">
                                                         <select name="c_active" class="table_data" id="c_active">
-                                                            <option value="1">公佈</option>
-                                                            <option value="0">不公佈</option>
+                                                            <option value="1">顯示</option>
+                                                            <option value="0">不顯示</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示狀態</td>
+                                                    <td width="532">
+                                                        <select name="c_active_en" class="table_data" id="c_active_en">
+                                                            <option value="1">顯示</option>
+                                                            <option value="0">不顯示</option>
                                                         </select>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
@@ -101,6 +113,7 @@ $menu_is = "news";
         </tr>
     </table>
 </body>
+
 </html>
 
 <?php

@@ -18,6 +18,26 @@ function activeData(rel, href, obj) {
 		}
 	});
 }
+function activeDataEn(rel, href, obj) {
+	var src = '';
+	$.ajax({
+		type: "POST",
+		url: "activeEn_process.php",
+		data: {
+			d_id: rel,
+			active: href
+		},
+		success: function(data) {
+			obj.attr('href', data);
+			if (data == 1) {
+				src = "image/accept.png";
+			} else {
+				src = "image/delete.png";
+			}
+			obj.find('img').attr('src', src);
+		}
+	});
+}
 
 function activeDataU(rel, href, obj) {
 	var src = '';
@@ -103,6 +123,27 @@ function activeDataC(rel, href, obj) {
 	});
 }
 
+function activeDataCEn(rel, href, obj) {
+	var src = '';
+	$.ajax({
+		type: "POST",
+		url: "activeCEn_process.php",
+		data: {
+			c_id: rel,
+			active: href
+		},
+		success: function(data) {
+			obj.attr('href', data);
+			if (data == 1) {
+				src = "image/accept.png";
+			} else {
+				src = "image/delete.png";
+			}
+			obj.find('img').attr('src', src);
+		}
+	});
+}
+
 function activeDataT(rel, href, obj) {
 	var src = '';
 	$.ajax({
@@ -129,6 +170,10 @@ $(document).ready(function() {
 		activeData($(this).attr('rel'), $(this).attr('href'), $(this));
 		return false;
 	});
+	$('.activeEn').click(function() {
+		activeDataEn($(this).attr('rel'), $(this).attr('href'), $(this));
+		return false;
+	});
 
 	$('.activeChU').click(function() {
 		activeDataU($(this).attr('rel'), $(this).attr('href'), $(this));
@@ -151,7 +196,10 @@ $(document).ready(function() {
 		activeDataC($(this).attr('rel'), $(this).attr('href'), $(this));
 		return false;
 	});
-
+	$('.activeEnC').click(function() {
+		activeDataCEn($(this).attr('rel'), $(this).attr('href'), $(this));
+		return false;
+	});
 	//services class
 	$('.activeChT').click(function() {
 		activeDataT($(this).attr('rel'), $(this).attr('href'), $(this));

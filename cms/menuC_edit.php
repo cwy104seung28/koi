@@ -84,7 +84,7 @@ $menu_is = "menu";
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">狀態</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active" class="table_data" id="c_active">
                                                                                     <option value="0" <?php if (!(strcmp(0, $row_RecmenuC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>

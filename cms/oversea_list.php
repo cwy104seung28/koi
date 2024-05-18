@@ -154,7 +154,7 @@ require_once('display_page.php');
               <!-- InstanceBeginEditable name="編輯區域" -->
               <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td width="30%" class="list_title">聯絡我們列表</td>
+                  <td width="30%" class="list_title">海外合作列表</td>
                   <td><span class="no_data">
                     <?php if ($totalRows == 0) { // Show if recordset empty ?>
                       <strong>抱歉!找不到任何資料~</strong>

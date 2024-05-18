@@ -3,6 +3,8 @@
 require_once 'Connections/connect2data.php';
 $_SESSION['checkPost'] = 0;
 
+$storeCat = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_level=1 AND c_active=1 ORDER BY c_sort ASC");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +92,14 @@ $_SESSION['checkPost'] = 0;
                             地 区
                         </div>
                         <div>
-                            <input type="text" name="area" id="area">
+                            <!-- <input type="text" name="area" id="area"> -->
+                            <select name="area" id="area" class="ask-select">
+                                <?php foreach ($storeCat as $storeC) : ?>
+                                    <option value="<?= $storeC['c_title'] ?>">
+                                        <span class="ch"><?= $storeC['c_title'] ?></span>
+                                    </option>
+                                <?php endforeach ?>
+                            </select>
                         </div>
                     </div>
                     <div class="item">
@@ -411,7 +420,7 @@ $_SESSION['checkPost'] = 0;
                 }
             })
 
-            
+
             $("#contactForm2").validate({
                 ignore: [],
                 rules: {
@@ -430,7 +439,7 @@ $_SESSION['checkPost'] = 0;
                     company: {
                         required: true,
                     },
-                   
+
 
                 },
 

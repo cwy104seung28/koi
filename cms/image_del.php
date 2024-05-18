@@ -21,8 +21,14 @@ if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsCover') {
 else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="ourteaCover")){
     $fileType = "file_type='ourteaCover' AND";
 }
+elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'ourteaIndexCover') {
+    $fileType = "file_type='ourteaIndexCover' AND";
+}
 else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="ourteaIconCover")){
     $fileType = "file_type='ourteaIconCover' AND";
+}
+else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="storeCover")){
+    $fileType = "file_type='storeCover' AND";
 }
 //else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="eventCover")){
 //     $fileType = "file_type='eventCover' AND";
@@ -176,7 +182,7 @@ if ((isset($_POST['file_id'])) && ($_POST['file_id'] != "") && (isset($_POST['de
     $sth->bindParam(':file_id', $_POST['file_id'], PDO::PARAM_INT);
     $sth->execute();
 
-    if ($_REQUEST['type'] == "serviceListCover") {
+    if ($_REQUEST['type'] == "ourteaIconCover") {
         $deleteGoTo = $_SESSION['nowPage'] . "?c_id=" . $row_RecImage['file_c_id'] . "#imageEdit";
     } else {
         $deleteGoTo = $_SESSION['nowPage'] . "?d_id=" . $row_RecImage['file_d_id'] . "#imageEdit";

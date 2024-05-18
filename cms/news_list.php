@@ -238,7 +238,8 @@ require_once 'display_page.php';
                                         <td width="74" align="center" class="table_title">排序</td>
                                         <td width="470" align="center" class="table_title">標題</td>
                                         <td width="140" align="center" class="table_title">圖片</td>
-                                        <td width="60" align="center" class="table_title">在網頁顯示</td>
+                                        <td width="45" align="center" class="table_title">中文網頁顯示狀態</td>
+                                        <td width="45" align="center" class="table_title">英文網頁顯示狀態</td>
                                         <td width="30" align="center" class="table_title">編輯</td>
                                         <td width="30" align="center" class="table_title">刪除</td>
                                     </tr>
@@ -296,6 +297,15 @@ require_once 'display_page.php';
                                                 echo "<a href='".$row_Recnews['d_active']."' rel='".$row_Recnews['d_id']."' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
                                             } else {
                                                 echo "<a href='".$row_Recnews['d_active']."' rel='".$row_Recnews['d_id']."' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td align="center" class="table_data">
+                                            <?php  //list使用
+                                            if($row_Recnews['d_active_en']) {
+                                                echo "<a href='".$row_Recnews['d_active_en']."' rel='".$row_Recnews['d_id']."' class='activeEn'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                            } else {
+                                                echo "<a href='".$row_Recnews['d_active_en']."' rel='".$row_Recnews['d_id']."' class='activeEn'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
                                             }
                                             ?>
                                         </td>

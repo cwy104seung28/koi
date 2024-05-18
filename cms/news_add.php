@@ -107,10 +107,17 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data" id="d_title" size="80" />
                                                         <input name="d_class1" type="hidden" id="d_class1" value="<?php echo $menu_is; ?>" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td width="532">
+                                                        <input name="d_title_en" type="text" class="table_data" id="d_title_en" size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
@@ -169,9 +176,20 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內容(中文版網頁)</td>
                                                     <td width="532">
                                                         <textarea name="d_content" cols="90" rows="30" class="tiny table_data" id="d_content"></textarea>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p class="red_letter">*小斷行請按Shift+Enter。
+                                                            <br /> 輸入區域的右下角可以調整輸入空間的大小。
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內容(英文版網頁)</td>
+                                                    <td width="532">
+                                                        <textarea name="d_content_en" cols="90" rows="30" class="tiny table_data" id="d_content_en"></textarea>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*小斷行請按Shift+Enter。
@@ -187,10 +205,22 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在網頁顯示</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示狀態</td>
                                                     <td width="532">
                                                         <label>
                                                             <select name="d_active" class="table_data" id="d_active">
+                                                                <option value="1">顯示</option>
+                                                                <option value="0">不顯示</option>
+                                                            </select>
+                                                        </label>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示狀態</td>
+                                                    <td width="532">
+                                                        <label>
+                                                            <select name="d_active_en" class="table_data" id="d_active_en">
                                                                 <option value="1">顯示</option>
                                                                 <option value="0">不顯示</option>
                                                             </select>
@@ -261,8 +291,6 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*
                                                             <?php echo $imagesSize['newsInnerCover']['note']; ?>
-                                                            <br>
-                                                            若內容有影片，則不須上傳內頁封面
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -364,13 +392,14 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_class1, d_class2, d_data1, d_data2, d_data3, d_data4, d_data5, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_class1, :d_class2, :d_data1, :d_data2, :d_data3, :d_data4, :d_data5, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_slug, d_content, d_content_en, d_class1, d_class2, d_data1, d_data2, d_data3, d_data4, d_data5, d_date, d_active) VALUES (:d_title, :d_title_en, :d_slug, :d_content, :d_content_en, :d_class1, :d_class2, :d_data1, :d_data2, :d_data3, :d_data4, :d_data5, :d_date, :d_active)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
     $stat->bindParam(':d_title_en', $_POST['d_title_en'], PDO::PARAM_STR);
     $stat->bindParam(':d_slug', generate_slug($_POST['d_title']), PDO::PARAM_STR);
     $stat->bindParam(':d_content', $_POST['d_content'], PDO::PARAM_STR);
+    $stat->bindParam(':d_content_en', $_POST['d_content_en'], PDO::PARAM_STR);
     $stat->bindParam(':d_class1', $_POST['d_class1'], PDO::PARAM_STR);
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_data1', $_POST['d_data1'], PDO::PARAM_STR);

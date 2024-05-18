@@ -141,10 +141,20 @@ $ifFile = 0;
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6"
-                                                        class="table_col_title">標題</td>
+                                                        class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data"
                                                             id="d_title" value="<?php echo $row_Recnews['d_title']; ?>"
+                                                            size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6"> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6"
+                                                        class="table_col_title">英文標題</td>
+                                                    <td width="532">
+                                                        <input name="d_title_en" type="text" class="table_data"
+                                                            id="d_title_en" value="<?php echo $row_Recnews['d_title_en']; ?>"
                                                             size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6"> </td>
@@ -225,10 +235,22 @@ $ifFile = 0;
                                                 </tr>
 
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容(中文版網頁)</td>
                                                     <td class="table_data"><textarea name="d_content" cols="60" rows="8"
                                                             class="table_data tiny"
                                                             id="d_content"><?php echo $row_Recnews['d_content']; ?></textarea>
+                                                    </td>
+                                                    <td bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p class="red_letter">*小斷行請按Shift+Enter。<br />
+                                                            輸入區域的右下角可以調整輸入空間的大小。</p>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容(英文版網頁)</td>
+                                                    <td class="table_data"><textarea name="d_content_en" cols="60" rows="8"
+                                                            class="table_data tiny"
+                                                            id="d_content_en"><?php echo $row_Recnews['d_content_en']; ?></textarea>
                                                     </td>
                                                     <td bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">*小斷行請按Shift+Enter。<br />
@@ -246,7 +268,7 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在網頁顯示
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示狀態
                                                     </td>
                                                     <td>
                                                         <select name="d_active" class="table_data" id="d_active">
@@ -254,6 +276,21 @@ $ifFile = 0;
                                                                 echo "selected";
                                                             } ?>>不顯示</option>
                                                             <option value="1" <?php if (!(strcmp(1, $row_Recnews['d_active']))) {
+                                                                echo "selected";
+                                                            } ?>>顯示</option>
+                                                        </select>
+                                                    </td>
+                                                    <td bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示狀態
+                                                    </td>
+                                                    <td>
+                                                        <select name="d_active_en" class="table_data" id="d_active_en">
+                                                            <option value="0" <?php if (!(strcmp(0, $row_Recnews['d_active_en']))) {
+                                                                echo "selected";
+                                                            } ?>>不顯示</option>
+                                                            <option value="1" <?php if (!(strcmp(1, $row_Recnews['d_active_en']))) {
                                                                 echo "selected";
                                                             } ?>>顯示</option>
                                                         </select>
@@ -676,13 +713,14 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
-    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_slug=:d_slug, d_content=:d_content, d_class2=:d_class2, d_data1=:d_data1, d_data2=:d_data2, d_data3=:d_data3, d_data4=:d_data4, d_data5=:d_data5, d_date=:d_date, d_active=:d_active WHERE d_id=:d_id";
+    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_slug=:d_slug, d_content=:d_content, d_content_en=:d_content_en, d_class2=:d_class2, d_data1=:d_data1, d_data2=:d_data2, d_data3=:d_data3, d_data4=:d_data4, d_data5=:d_data5, d_date=:d_date, d_active=:d_active WHERE d_id=:d_id";
 
     $stat = $conn->prepare($updateSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
     $stat->bindParam(':d_title_en', $_POST['d_title_en'], PDO::PARAM_STR);
     $stat->bindParam(':d_slug', generate_slug($_POST['d_title']), PDO::PARAM_STR);
     $stat->bindParam(':d_content', $_POST['d_content'], PDO::PARAM_STR);
+    $stat->bindParam(':d_content_en', $_POST['d_content_en'], PDO::PARAM_STR);
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_data1', $_POST['d_data1'], PDO::PARAM_STR);
     $stat->bindParam(':d_data2', $_POST['d_data2'], PDO::PARAM_STR);

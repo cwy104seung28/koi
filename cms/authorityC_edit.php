@@ -65,6 +65,77 @@ $menu_is = "authority";
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
+
+                                                <tr>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">最新消息</td>
+                                                    <td>
+                                                        <select name="a_2" class="table_data" id="a_2" title="<?php echo $row_RecAuthorityC['a_1']; ?>">
+                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_2']))) {echo "selected";} ?>>允許</option>
+                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_2']))) {echo "selected";} ?>>不允許</option>
+                                                        </select>
+                                                    </td>
+                                                    <td bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">人才招募</td>
+                                                    <td width="532">
+                                                        <select name="a_3" class="table_data" id="a_3">
+                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_3']))) {echo "selected";} ?>>允許</option>
+                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_3']))) {echo "selected";} ?>>不允許</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">飲品介紹</td>
+                                                    <td width="532">
+                                                        <select name="a_4" class="table_data" id="a_4">
+                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_4']))) {echo "selected";} ?>>允許</option>
+                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_4']))) {echo "selected";} ?>>不允許</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">菜單下載</td>
+                                                    <td width="532">
+                                                        <select name="a_5" class="table_data" id="a_5">
+                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_5']))) {echo "selected";} ?>>允許</option>
+                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_5']))) {echo "selected";} ?>>不允許</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">全球據點</td>
+                                                    <td width="532">
+                                                        <select name="a_6" class="table_data" id="a_6">
+                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_6']))) {echo "selected";} ?>>允許</option>
+                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_6']))) {echo "selected";} ?>>不允許</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">聯絡我們</td>
+                                                    <td width="532">
+                                                        <select name="a_7" class="table_data" id="a_7">
+                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_7']))) {echo "selected";} ?>>允許</option>
+                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_7']))) {echo "selected";} ?>>不允許</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">海外合作</td>
+                                                    <td width="532">
+                                                        <select name="a_8" class="table_data" id="a_8">
+                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_8']))) {echo "selected";} ?>>允許</option>
+                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_8']))) {echo "selected";} ?>>不允許</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">權限管理</td>
                                                     <td width="532">
@@ -75,77 +146,7 @@ $menu_is = "authority";
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
-                                                <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">news</td>
-                                                    <td>
-                                                        <select name="a_2" class="table_data" id="a_2" title="<?php echo $row_RecAuthorityC['a_1']; ?>">
-                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_2']))) {echo "selected";} ?>>允許</option>
-                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_2']))) {echo "selected";} ?>>不允許</option>
-                                                        </select>
-                                                    </td>
-                                                    <td bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">Approach</td>
-                                                    <td width="532">
-                                                        <select name="a_3" class="table_data" id="a_3">
-                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_3']))) {echo "selected";} ?>>允許</option>
-                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_3']))) {echo "selected";} ?>>不允許</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">store</td>
-                                                    <td width="532">
-                                                        <select name="a_4" class="table_data" id="a_4">
-                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_4']))) {echo "selected";} ?>>允許</option>
-                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_4']))) {echo "selected";} ?>>不允許</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">Journal</td>
-                                                    <td width="532">
-                                                        <select name="a_5" class="table_data" id="a_5">
-                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_5']))) {echo "selected";} ?>>允許</option>
-                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_5']))) {echo "selected";} ?>>不允許</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">Brand School</td>
-                                                    <td width="532">
-                                                        <select name="a_6" class="table_data" id="a_6">
-                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_6']))) {echo "selected";} ?>>允許</option>
-                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_6']))) {echo "selected";} ?>>不允許</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">Contact Us</td>
-                                                    <td width="532">
-                                                        <select name="a_7" class="table_data" id="a_7">
-                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_7']))) {echo "selected";} ?>>允許</option>
-                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_7']))) {echo "selected";} ?>>不允許</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">Year</td>
-                                                    <td width="532">
-                                                        <select name="a_8" class="table_data" id="a_8">
-                                                            <option value="1" <?php if (!(strcmp(1, $row_RecAuthorityC[ 'a_8']))) {echo "selected";} ?>>允許</option>
-                                                            <option value="0" <?php if (!(strcmp(0, $row_RecAuthorityC[ 'a_8']))) {echo "selected";} ?>>不允許</option>
-                                                        </select>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
-                                                <tr>
+                                                <!-- <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">Footer</td>
                                                     <td width="532">
                                                         <select name="a_9" class="table_data" id="a_9">
@@ -164,7 +165,7 @@ $menu_is = "authority";
                                                         </select>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
+                                                </tr> -->
                                             </table>
                                         </td>
                                     </tr>

@@ -2,7 +2,7 @@
 require_once 'Connections/connect2data.php';
 require_once 'paginator.class.php';
 
-$cat = $DB->query("SELECT * FROM class_set WHERE c_parent='menuC' AND c_active=1 ORDER BY c_sort ASC");
+$cat = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_active=1 ORDER BY c_sort ASC");
 
 //page end
 ?>

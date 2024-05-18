@@ -31,8 +31,10 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     $params = explode("&", $_SERVER['QUERY_STRING']);
     $newParams = array();
     foreach ($params as $param) {
-        if (stristr($param, "pageNum") == false &&
-            stristr($param, "totalRows_RecourteaC") == false) {
+        if (
+            stristr($param, "pageNum") == false &&
+            stristr($param, "totalRows_RecourteaC") == false
+        ) {
             array_push($newParams, $param);
         }
     }
@@ -85,7 +87,8 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
     $row_RecourteaC = $RecourteaC->fetch();
 
     do {
-        if ($row_RecourteaC['c_sort'] == 0) {} else if ($row_RecourteaC['c_id'] == $_GET['now_c_id']) {
+        if ($row_RecourteaC['c_sort'] == 0) {
+        } else if ($row_RecourteaC['c_id'] == $_GET['now_c_id']) {
             // echo $sort_num . "<br/>";
 
         } else if ($sort_num == $_GET['change_num']) {
@@ -135,13 +138,15 @@ require_once('display_page.php');
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php require_once('cmsTitle.php'); ?></title>
 
     <?php require_once('script.php'); ?>
-    <?php require_once('head.php');?>
+    <?php require_once('head.php'); ?>
 </head>
+
 <body>
     <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -156,10 +161,12 @@ require_once('display_page.php');
                                 <tr>
                                     <td width="140" class="list_title">列表</td>
                                     <td width="884"><span class="no_data">
-                                    <?php if ($totalRows_RecourteaC == 0) { // Show if recordset empty ?>
-                                    <strong>目前資料庫中沒有任何資料</strong>
-                                    <?php } // Show if recordset empty ?>
-                                    </span></td>
+                                            <?php if ($totalRows_RecourteaC == 0) { // Show if recordset empty 
+                                            ?>
+                                                <strong>目前資料庫中沒有任何資料</strong>
+                                            <?php } // Show if recordset empty 
+                                            ?>
+                                        </span></td>
                                 </tr>
                             </table>
                             <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
@@ -170,9 +177,11 @@ require_once('display_page.php');
                                         <!-------顯示頁選擇與分頁設定結束---------->
                                     </td>
                                     <td width="110" align="right" class="page_display">
-                                        <?php if ($totalRows_RecourteaC > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_RecourteaC+1)); ?>
-                                        <?php } // Show if recordset not empty ?>
+                                        <?php if ($totalRows_RecourteaC > 0) { // Show if recordset not empty 
+                                        ?> 頁數:
+                                            <?php echo (($pageNum + 1) . "/" . ($totalPages_RecourteaC + 1)); ?>
+                                        <?php } // Show if recordset not empty 
+                                        ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
                                         <?php echo $totalRows_RecourteaC ?> </td>
@@ -185,62 +194,78 @@ require_once('display_page.php');
                                 </tr>
                             </table>
                             <form action="ourteaC_process.php" method="post" name="form1" id="form1">
-                                <?php if ($totalRows_RecourteaC > 0) { // Show if recordset not empty ?>
-                                <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
-                                    <tr>
-                                        <td width="100" align="center" class="table_title">排序</td>
-                                        <td align="center" class="table_title">名稱</td>
-                                        <td width="40" align="center" class="table_title">狀態</td>
-                                        <td width="40" align="center" class="table_title">編輯</td>
-                                        <td width="40" align="center" class="table_title">刪除</td>
-                                    </tr>
-                                    <?php
-                                    $i=0;
-                                    do {
-                                        $i++;
-                                        $colname_RecImage = "-1";
-                                        if (isset($row_RecourteaC['c_id'])) {
-                                          $colname_RecImage = $row_RecourteaC['c_id'];
-                                        }
-                                        $query_RecImage = sprintf("SELECT * FROM file_set WHERE file_type='brandImage' AND file_d_id = %s", $colname_RecImage);
-                                        $RecImage = $conn->query($query_RecImage);
-                                        $row_RecImage = $RecImage->fetch();
-                                        $totalRows_RecImage = $RecImage->rowCount();
-                                    ?>
-                                    <tr <?php if ($i%2==0): ?>bgcolor='#E4E4E4'<?php endif ?>>
-                                        <td align="center" class="table_data">
-                                            <select name="c_sort" id="c_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows_RecourteaC; ?>','<?php echo $row_RecourteaC['c_id']; ?>',this.options[this.selectedIndex].value)">
-                                                <option value="0" <?php if (!(strcmp(0, $row_RecourteaC[ 'c_sort']))) {echo "selected";} ?>>至頂</option>
-                                                <?php
-                                                for ($j = 1; $j <= ($totalRows_RecourteaC); $j++) {
-                                                    echo "<option value=\"" . $j . "\" ";
-                                                    if (!(strcmp($j, $row_RecourteaC['c_sort']))) {echo "selected=\"selected\"";}
-                                                    echo ">" . $j . "</option>";
-                                                }
-                                                ?>
-                                            </select>
-                                            <?php $_SESSION['totalRows']=$totalRows_RecourteaC; ?>
-                                        </td>
-                                        <td align="center" class="table_data">
-                                            <a href="ourteaC_edit.php?c_id=<?php echo $row_RecourteaC['c_id']; ?>">
-                                                <?php echo $row_RecourteaC['c_title']; ?>
-                                            </a>
-                                        </td>
-                                        <td align="center" class="table_data">
-                                            <?php  //list使用
-                                            if($row_RecourteaC['c_active']) {
-                                                echo "<a href='".$row_RecourteaC['c_active']."' rel='".$row_RecourteaC['c_id']."' class='activeChC'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
-                                            } else {
-                                                echo "<a href='".$row_RecourteaC['c_active']."' rel='".$row_RecourteaC['c_id']."' class='activeChC'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                <?php if ($totalRows_RecourteaC > 0) { // Show if recordset not empty 
+                                ?>
+                                    <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
+                                        <tr>
+                                            <td width="100" align="center" class="table_title">排序</td>
+                                            <td align="center" class="table_title">名稱</td>
+                                            <td width="50" align="center" class="table_title">中文網頁顯示狀態</td>
+                                            <td width="50" align="center" class="table_title">英文網頁顯示狀態</td>
+                                            <td width="40" align="center" class="table_title">編輯</td>
+                                            <td width="40" align="center" class="table_title">刪除</td>
+                                        </tr>
+                                        <?php
+                                        $i = 0;
+                                        do {
+                                            $i++;
+                                            $colname_RecImage = "-1";
+                                            if (isset($row_RecourteaC['c_id'])) {
+                                                $colname_RecImage = $row_RecourteaC['c_id'];
                                             }
-                                            ?>
-                                        </td>
-                                        <td align="center" class="table_data"><a href="ourteaC_edit.php?c_id=<?php echo $row_RecourteaC['c_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
-                                        <td align="center" class="table_data"><a href="ourteaC_del.php?c_id=<?php echo $row_RecourteaC['c_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
-                                    </tr>
-                                    <?php } while ($row_RecourteaC = $RecourteaC->fetch()); ?>
-                                </table>
-                                <?php } // Show if recordset not empty ?>
+                                            $query_RecImage = sprintf("SELECT * FROM file_set WHERE file_type='brandImage' AND file_d_id = %s", $colname_RecImage);
+                                            $RecImage = $conn->query($query_RecImage);
+                                            $row_RecImage = $RecImage->fetch();
+                                            $totalRows_RecImage = $RecImage->rowCount();
+                                        ?>
+                                            <tr <?php if ($i % 2 == 0) : ?>bgcolor='#E4E4E4' <?php endif ?>>
+                                                <td align="center" class="table_data">
+                                                    <select name="c_sort" id="c_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows_RecourteaC; ?>','<?php echo $row_RecourteaC['c_id']; ?>',this.options[this.selectedIndex].value)">
+                                                        <option value="0" <?php if (!(strcmp(0, $row_RecourteaC['c_sort']))) {
+                                                                                echo "selected";
+                                                                            } ?>>至頂</option>
+                                                        <?php
+                                                        for ($j = 1; $j <= ($totalRows_RecourteaC); $j++) {
+                                                            echo "<option value=\"" . $j . "\" ";
+                                                            if (!(strcmp($j, $row_RecourteaC['c_sort']))) {
+                                                                echo "selected=\"selected\"";
+                                                            }
+                                                            echo ">" . $j . "</option>";
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                    <?php $_SESSION['totalRows'] = $totalRows_RecourteaC; ?>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <a href="ourteaC_edit.php?c_id=<?php echo $row_RecourteaC['c_id']; ?>">
+                                                        <?php echo $row_RecourteaC['c_title']; ?>
+                                                    </a>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <?php  //list使用
+                                                    if ($row_RecourteaC['c_active']) {
+                                                        echo "<a href='" . $row_RecourteaC['c_active'] . "' rel='" . $row_RecourteaC['c_id'] . "' class='activeChC'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    } else {
+                                                        echo "<a href='" . $row_RecourteaC['c_active'] . "' rel='" . $row_RecourteaC['c_id'] . "' class='activeChC'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <?php  //list使用
+                                                    if ($row_RecourteaC['c_active_en']) {
+                                                        echo "<a href='" . $row_RecourteaC['c_active_en'] . "' rel='" . $row_RecourteaC['c_id'] . "' class='activeEnC'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    } else {
+                                                        echo "<a href='" . $row_RecourteaC['c_active_en'] . "' rel='" . $row_RecourteaC['c_id'] . "' class='activeEnC'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td align="center" class="table_data"><a href="ourteaC_edit.php?c_id=<?php echo $row_RecourteaC['c_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
+                                                <td align="center" class="table_data"><a href="ourteaC_del.php?c_id=<?php echo $row_RecourteaC['c_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
+                                            </tr>
+                                        <?php } while ($row_RecourteaC = $RecourteaC->fetch()); ?>
+                                    </table>
+                                <?php } // Show if recordset not empty 
+                                ?>
                             </form>
                             <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
                                 <tr>
@@ -250,9 +275,11 @@ require_once('display_page.php');
                                         <!-------顯示頁選擇與分頁設定結束---------->
                                     </td>
                                     <td width="110" align="right" class="page_display">
-                                        <?php if ($totalRows_RecourteaC > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_RecourteaC+1)); ?>
-                                        <?php } // Show if recordset not empty ?>
+                                        <?php if ($totalRows_RecourteaC > 0) { // Show if recordset not empty 
+                                        ?> 頁數:
+                                            <?php echo (($pageNum + 1) . "/" . ($totalPages_RecourteaC + 1)); ?>
+                                        <?php } // Show if recordset not empty 
+                                        ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
                                         <?php echo $totalRows_RecourteaC ?> </td>
@@ -267,6 +294,7 @@ require_once('display_page.php');
         </tr>
     </table>
 </body>
+
 </html>
 
 <script type="text/javascript">

@@ -24,7 +24,7 @@
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td colspan="5" align="left" class="table_data">&nbsp;&nbsp;<a href="../index" target="_blank">觀看首頁</a></td>
+            <td colspan="5" align="left" class="table_data">&nbsp;&nbsp;<a href="../index.php" target="_blank">觀看首頁</a></td>
           </tr>
         </table>
       </td>

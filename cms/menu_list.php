@@ -9,21 +9,21 @@ $maxRows_Recmenu = 50;
 $pageNum = 0;
 if (isset($_GET['pageNum'])) {
     $pageNum = $_GET['pageNum'];
-}else{
+} else {
     $_GET['pageNum'] = 0;
 }
 $startRow_Recmenu = $pageNum * $maxRows_Recmenu;
 
-$query_RecmenuC = "SELECT * FROM class_set WHERE c_parent = 'menuC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
-$RecmenuC = $conn->query($query_RecmenuC);
-$row_RecmenuC = $RecmenuC->fetch();
-$totalRowsC = $RecmenuC->rowCount();
+$query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level=1 AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
+$RecstoreC = $conn->query($query_RecstoreC);
+$row_RecstoreC = $RecstoreC->fetch();
+$totalRowsC = $RecstoreC->rowCount();
 
 $G_selected1 = '';
 if (isset($_GET['selected1'])) {
-    $_SESSION['selected_menuC'] = $G_selected1 = $_GET['selected1'];
+    $_SESSION['selected_storeC'] = $G_selected1 = $_GET['selected1'];
 } else {
-    $G_selected1 = $_SESSION['selected_menuC'] = $row_RecmenuC['c_id'];
+    $G_selected1 = $_SESSION['selected_storeC'] = $row_RecstoreC['c_id'];
 }
 
 $query_Recmenu = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 =class_set.c_id WHERE d_class1 = 'menu' AND d_class2='" . $G_selected1 . "' ORDER BY d_sort ASC, d_date DESC";
@@ -50,8 +50,10 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     $params = explode("&", $_SERVER['QUERY_STRING']);
     $newParams = array();
     foreach ($params as $param) {
-        if (stristr($param, "pageNum") == false &&
-            stristr($param, "totalRows") == false) {
+        if (
+            stristr($param, "pageNum") == false &&
+            stristr($param, "totalRows") == false
+        ) {
             array_push($newParams, $param);
         }
     }
@@ -100,13 +102,14 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
     $sort_num = 1;
 
     $query_Recmenu = "SELECT data_set.*, class_set.c_title as c_title FROM data_set LEFT JOIN class_set ON data_set.d_class2 =class_set.c_id WHERE d_class1 = 'menu' AND d_class2='" . $G_selected1 . "' ORDER BY d_sort ASC, d_date DESC";
-    $_SESSION['selected_menuC'] = $G_selected1;
+    $_SESSION['selected_storeC'] = $G_selected1;
 
     $Recmenu = $conn->query($query_Recmenu);
     $row_Recmenu = $Recmenu->fetch();
 
     do {
-        if ($row_Recmenu['d_sort'] == 0) {} else if ($row_Recmenu['d_id'] == $_GET['now_d_id']) {
+        if ($row_Recmenu['d_sort'] == 0) {
+        } else if ($row_Recmenu['d_id'] == $_GET['now_d_id']) {
             //echo 'sort_num(now_d_id) = '.$sort_num."<br/>";
 
         } else if ($sort_num == $_GET['change_num']) {
@@ -160,6 +163,7 @@ require_once 'display_page.php';
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php require_once('cmsTitle.php'); ?></title>
@@ -167,15 +171,16 @@ require_once 'display_page.php';
     <link rel="stylesheet" href="jquery/chosen_v1.8.5/chosen.css">
 
     <style>
-        .chosen-container{
+        .chosen-container {
             position: relative;
             top: -3px;
         }
     </style>
 
     <?php require_once('script.php'); ?>
-    <?php require_once('head.php');?>
+    <?php require_once('head.php'); ?>
 </head>
+
 <body>
     <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -190,22 +195,27 @@ require_once 'display_page.php';
                                 <tr>
                                     <td width="150" class="list_title">列表</td>
                                     <td width="874"><span class="table_data">分類：
-                                        <select name="select1" id="select1" class="chosen-select">
-                                            <?php do {?>
-                                                <option value="<?php echo $row_RecmenuC['c_id']?>"<?php if (!(strcmp($row_RecmenuC['c_id'], $G_selected1))) {echo "selected=\"selected\"";} ?>><?php echo $row_RecmenuC['c_title']?><?php //echo $row_RecmenuC['c_id']?></option>
+                                            <select name="select1" id="select1" class="chosen-select">
+                                                <?php do { ?>
+                                                    <option value="<?php echo $row_RecstoreC['c_id'] ?>" <?php if (!(strcmp($row_RecstoreC['c_id'], $G_selected1))) {
+                                                                                                            echo "selected=\"selected\"";
+                                                                                                        } ?>><?php echo $row_RecstoreC['c_title'] ?><?php //echo $row_RecstoreC['c_id']
+                                                                                                                                                                                                                                            ?></option>
                                                 <?php
-                                            } while ($row_RecmenuC = $RecmenuC->fetch());
-                                            $rows = $RecmenuC->rowCount();
-                                            if($rows > 0) {
-                                                $RecmenuC->execute();
-                                            }
-                                            ?>
-                                        </select>
+                                                } while ($row_RecstoreC = $RecstoreC->fetch());
+                                                $rows = $RecstoreC->rowCount();
+                                                if ($rows > 0) {
+                                                    $RecstoreC->execute();
+                                                }
+                                                ?>
+                                            </select>
                                         </span><span class="no_data">
-                                        <?php if ($totalRows == 0) { // Show if recordset empty ?>
-                                        <strong>此分類沒有資料</strong>
-                                        <?php } // Show if recordset empty ?>
-                                    </span></td>
+                                            <?php if ($totalRows == 0) { // Show if recordset empty 
+                                            ?>
+                                                <strong>此分類沒有資料</strong>
+                                            <?php } // Show if recordset empty 
+                                            ?>
+                                        </span></td>
                                 </tr>
                             </table>
                             <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
@@ -216,9 +226,11 @@ require_once 'display_page.php';
                                         <!-------顯示頁選擇與分頁設定結束---------->
                                     </td>
                                     <td width="110" align="right" class="page_display">
-                                        <?php if ($totalRows > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_Recmenu+1)); ?>
-                                        <?php } // Show if recordset not empty ?>
+                                        <?php if ($totalRows > 0) { // Show if recordset not empty 
+                                        ?> 頁數:
+                                            <?php echo (($pageNum + 1) . "/" . ($totalPages_Recmenu + 1)); ?>
+                                        <?php } // Show if recordset not empty 
+                                        ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
                                         <?php echo $totalRows ?> </td>
@@ -231,72 +243,88 @@ require_once 'display_page.php';
                                 </tr>
                             </table>
                             <form action="menu_process.php" method="post" name="form1" id="form1">
-                                <?php if ($totalRows > 0) { // Show if recordset not empty ?>
-                                <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
-                                    <tr>
-                                        <td width="142" align="center" class="table_title">日期</td>
-                                        <td width="74" align="center" class="table_title">排序</td>
-                                        <td width="470" align="center" class="table_title">標題</td>
-                                        <td width="60" align="center" class="table_title">在網頁顯示</td>
-                                        <td width="30" align="center" class="table_title">編輯</td>
-                                        <td width="30" align="center" class="table_title">刪除</td>
-                                    </tr>
-                                    <?php
-                                    $i=0;
-                                    do {
-                                        $i++;
-                                        $colname_RecImage = "-1";
-                                        if (isset($row_Recmenu['d_id'])) {
-                                          $colname_RecImage = $row_Recmenu['d_id'];
-                                        }
-                                        $query_RecImage = "SELECT * FROM file_set  WHERE file_type='menuCover' AND file_d_id = ".$row_Recmenu['d_id'];
-                                        $RecImage = $conn->query($query_RecImage);
-                                        $row_RecImage = $RecImage->fetch();
-                                        $totalRows_RecImage = $RecImage->rowCount();
-                                    ?>
-                                    <tr <?php if ($i%2==0): ?>bgcolor='#E4E4E4'<?php endif ?>>
-                                        <td align="center" class="table_data">
-                                            <?php
-                                            if(1){
-                                                echo '<a href="menu_edit.php?d_id='.$row_Recmenu['d_id'].'">'.$row_Recmenu['d_date'].'</a>';
-                                            }else{
-                                                echo $row_Recmenu['d_date'];
+                                <?php if ($totalRows > 0) { // Show if recordset not empty 
+                                ?>
+                                    <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
+                                        <tr>
+                                            <td width="142" align="center" class="table_title">日期</td>
+                                            <td width="74" align="center" class="table_title">排序</td>
+                                            <td width="470" align="center" class="table_title">標題</td>
+                                            <td width="50" align="center" class="table_title">中文網頁顯示狀態</td>
+                                            <td width="50" align="center" class="table_title">英文網頁顯示狀態</td>
+                                            <td width="30" align="center" class="table_title">編輯</td>
+                                            <td width="30" align="center" class="table_title">刪除</td>
+                                        </tr>
+                                        <?php
+                                        $i = 0;
+                                        do {
+                                            $i++;
+                                            $colname_RecImage = "-1";
+                                            if (isset($row_Recmenu['d_id'])) {
+                                                $colname_RecImage = $row_Recmenu['d_id'];
                                             }
-                                            ?>
-                                        </td>
-                                        <td align="center" class="table_data">
-                                            <select name="d_sort" id="d_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows; ?>','<?php echo $row_Recmenu['d_id']; ?>',this.options[this.selectedIndex].value,<?= $G_selected1 ?>)">
-                                                <option value="0" <?php if (!(strcmp(0, $row_Recmenu[ 'd_sort']))) {echo "selected";} ?>>至頂</option>
-                                                <?php
-                                                for($j=1;$j<=($totalRows);$j++) {
-                                                    echo "<option value=\"".$j."\" ";
-                                                    if (!(strcmp($j, $row_Recmenu['d_sort']))) {echo "selected=\"selected\"";}
-                                                    echo ">".$j."</option>";
-                                                }
-                                                ?>
-                                            </select>
-                                            <?php $_SESSION['totalRows']=$totalRows; ?>
-                                        </td>
-                                        <td align="center" class="table_data">
-                                            <a href="menu_edit.php?d_id=<?php echo $row_Recmenu['d_id']; ?>">
-                                                <?php echo $row_Recmenu['d_title']; ?>
-                                            </a>
-                                        </td>
-                                        <td align="center" class="table_data">
-                                            <?php  //list使用
-                                            if($row_Recmenu['d_active']) {
-                                                echo "<a href='".$row_Recmenu['d_active']."' rel='".$row_Recmenu['d_id']."' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
-                                            } else {
-                                                echo "<a href='".$row_Recmenu['d_active']."' rel='".$row_Recmenu['d_id']."' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
-                                            }
-                                            ?>
-                                        </td>
-                                        <td align="center" class="table_data"><a href="menu_edit.php?d_id=<?php echo $row_Recmenu['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
-                                        <td align="center" class="table_data"><a href="menu_del.php?d_id=<?php echo $row_Recmenu['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
-                                    </tr>
-                                    <?php } while ($row_Recmenu = $Recmenu->fetch()); ?>
-                                </table>
-                                <?php } // Show if recordset not empty ?>
+                                            $query_RecImage = "SELECT * FROM file_set  WHERE file_type='storeCover' AND file_d_id = " . $row_Recmenu['d_id'];
+                                            $RecImage = $conn->query($query_RecImage);
+                                            $row_RecImage = $RecImage->fetch();
+                                            $totalRows_RecImage = $RecImage->rowCount();
+                                        ?>
+                                            <tr <?php if ($i % 2 == 0) : ?>bgcolor='#E4E4E4' <?php endif ?>>
+                                                <td align="center" class="table_data">
+                                                    <?php
+                                                    if (1) {
+                                                        echo '<a href="menu_edit.php?d_id=' . $row_Recmenu['d_id'] . '">' . $row_Recmenu['d_date'] . '</a>';
+                                                    } else {
+                                                        echo $row_Recmenu['d_date'];
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <select name="d_sort" id="d_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows; ?>','<?php echo $row_Recmenu['d_id']; ?>',this.options[this.selectedIndex].value,<?= $G_selected1 ?>)">
+                                                        <option value="0" <?php if (!(strcmp(0, $row_Recmenu['d_sort']))) {
+                                                                                echo "selected";
+                                                                            } ?>>至頂</option>
+                                                        <?php
+                                                        for ($j = 1; $j <= ($totalRows); $j++) {
+                                                            echo "<option value=\"" . $j . "\" ";
+                                                            if (!(strcmp($j, $row_Recmenu['d_sort']))) {
+                                                                echo "selected=\"selected\"";
+                                                            }
+                                                            echo ">" . $j . "</option>";
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                    <?php $_SESSION['totalRows'] = $totalRows; ?>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <a href="menu_edit.php?d_id=<?php echo $row_Recmenu['d_id']; ?>">
+                                                        <?php echo $row_Recmenu['d_title']; ?>
+                                                    </a>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <?php  //list使用
+                                                    if ($row_Recmenu['d_active']) {
+                                                        echo "<a href='" . $row_Recmenu['d_active'] . "' rel='" . $row_Recmenu['d_id'] . "' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    } else {
+                                                        echo "<a href='" . $row_Recmenu['d_active'] . "' rel='" . $row_Recmenu['d_id'] . "' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <?php  //list使用
+                                                    if ($row_Recmenu['d_active_en']) {
+                                                        echo "<a href='" . $row_Recmenu['d_active_en'] . "' rel='" . $row_Recmenu['d_id'] . "' class='activeEn'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    } else {
+                                                        echo "<a href='" . $row_Recmenu['d_active_en'] . "' rel='" . $row_Recmenu['d_id'] . "' class='activeEn'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td align="center" class="table_data"><a href="menu_edit.php?d_id=<?php echo $row_Recmenu['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
+                                                <td align="center" class="table_data"><a href="menu_del.php?d_id=<?php echo $row_Recmenu['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
+                                            </tr>
+                                        <?php } while ($row_Recmenu = $Recmenu->fetch()); ?>
+                                    </table>
+                                <?php } // Show if recordset not empty 
+                                ?>
                             </form>
                             <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
                                 <tr>
@@ -306,9 +334,11 @@ require_once 'display_page.php';
                                         <!-------顯示頁選擇與分頁設定結束---------->
                                     </td>
                                     <td width="110" align="right" class="page_display">
-                                        <?php if ($totalRows > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages_Recmenu+1)); ?>
-                                        <?php } // Show if recordset not empty ?>
+                                        <?php if ($totalRows > 0) { // Show if recordset not empty 
+                                        ?> 頁數:
+                                            <?php echo (($pageNum + 1) . "/" . ($totalPages_Recmenu + 1)); ?>
+                                        <?php } // Show if recordset not empty 
+                                        ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
                                         <?php echo $totalRows ?> </td>
@@ -323,6 +353,7 @@ require_once 'display_page.php';
         </tr>
     </table>
 </body>
+
 </html>
 
 <script src="jquery/chosen_v1.8.5/chosen.jquery.js"></script>
@@ -335,13 +366,13 @@ require_once 'display_page.php';
         width: "auto"
     });
 
-	function changeSort(pageNum, totalRows, now_d_id, change_num, selected1) {
-	    window.location.href = "menu_list.php?selected1=" + selected1 + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num + "&pageNum=" + pageNum + "&totalRows=" + totalRows;
-	}
+    function changeSort(pageNum, totalRows, now_d_id, change_num, selected1) {
+        window.location.href = "menu_list.php?selected1=" + selected1 + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num + "&pageNum=" + pageNum + "&totalRows=" + totalRows;
+    }
 
-	$(document).ready(function() {
-		$('#select1').change(function() {
-			window.location.href = "menu_list.php?changeSort=1&selected1="+$(this).val();
-		});
-	});
+    $(document).ready(function() {
+        $('#select1').change(function() {
+            window.location.href = "menu_list.php?changeSort=1&selected1=" + $(this).val();
+        });
+    });
 </script>

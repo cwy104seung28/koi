@@ -24,15 +24,15 @@ $RecImage->execute();
 $row_RecImage = $RecImage->fetch();
 $totalRows_RecImage = $RecImage->rowCount();
 
-$query_RecmenuC = "SELECT * FROM class_set WHERE c_parent = 'menuC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
-$RecmenuC = $conn->prepare($query_RecmenuC);
-$RecmenuC->execute();
-$row_RecmenuC = $RecmenuC->fetch();
-$totalRows_RecmenuC = $RecmenuC->rowCount();
+$query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level=1 AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
+$RecstoreC = $conn->prepare($query_RecstoreC);
+$RecstoreC->execute();
+$row_RecstoreC = $RecstoreC->fetch();
+$totalRows_RecstoreC = $RecstoreC->rowCount();
 
 $G_selected1 = '';
-if (isset($_SESSION['selected_menuC'])) {
-    $G_selected1 = $_SESSION['selected_menuC'] = $row_Recmenu['d_class2'];
+if (isset($_SESSION['selected_storeC'])) {
+    $G_selected1 = $_SESSION['selected_storeC'] = $row_Recmenu['d_class2'];
 }
 
 $menu_is = "menu";
@@ -79,13 +79,13 @@ $menu_is = "menu";
                                                     <td class="table_data">
                                                         <?php
                                                         do {
-                                                            if (!(strcmp($row_RecmenuC['c_id'], $row_Recmenu['d_class2']))) {
-                                                            echo $row_RecmenuC['c_title'];
+                                                            if (!(strcmp($row_RecstoreC['c_id'], $row_Recmenu['d_class2']))) {
+                                                            echo $row_RecstoreC['c_title'];
                                                             }
-                                                        } while ($row_RecmenuC = $RecmenuC->fetch());
-                                                        $rows = $RecmenuC->rowCount();
+                                                        } while ($row_RecstoreC = $RecstoreC->fetch());
+                                                        $rows = $RecstoreC->rowCount();
                                                         if($rows > 0) {
-                                                        $RecmenuC->execute();
+                                                        $RecstoreC->execute();
                                                         }
                                                         ?>
                                                     </td>

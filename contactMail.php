@@ -30,7 +30,55 @@ if (isset($_SESSION['checkPost']) && $_SESSION['checkPost'] == 0 && $_SERVER['RE
         $m_ask
     ]);
 
-    unset($_SESSION['checkPost']);
+    require_once('PHPMailer/PHPMailerAutoload.php');
+    include 'smtpsetting.php';
+    /////////////////////////////////////////////////////////////////
+
+    $phpmailer->SingleTo = true; //will send mail to each email address individually
+
+    $phpmailer->SetFrom('c3207054@gmail.com', 'KOI');
+    $phpmailer->AddReplyTo('c3207054@gmail.com', 'KOI'); //回覆至
+
+    $phpmailer->AddAddress('c3207054@gmail.com', 'KOI');
+    $phpmailer->AddAddress($m_email, 'KOI');
+    $phpmailer->AddBCC('c3207054@gmail.com', 'KOI');
+
+    $phpmailer->Subject = "KOI聯絡我們-".$m_name;
+
+
+    $mailContent = "<div style='max-width: 500px; letter-spacing: 1px;'>"
+
+        . "【聯絡我們表單】<br><br>"
+
+        . "==================================================<br><br>"
+
+        . "姓名： $m_name <br><br>"
+        . "地区： $m_area <br><br>"
+        . "联络电话： $m_phone <br><br>"
+        . "电子信箱： $m_email <br><br>"
+        . "询问类别： $m_ask <br><br>"
+        . "==================================================<br><br>"
+
+        . "<br><br>"
+
+        . "<div style='color: red;'>此為系統發信，請勿直接回覆。</div>"
+
+        . "</div>";
+
+
+    $phpmailer->Body = $mailContent;
+    $phpmailer->IsHTML(true);
+
+    // if (!$phpmailer->Send()) {
+    //     echo "<div class='err'>傳送時失敗，請稍後再試，或連絡客服！</div>";
+    //     echo $phpmailer->ErrorInfo;
+    // } else {
+    //     echo "您已預約成功！謝謝。";
+    //     echo $phpmailer->ErrorInfo;
+    // }
+
+    $_SESSION['checkPost'] = 0;
+    $_SESSION['checkPost_finish'] = 0;
 } else {
     unset($_SESSION['checkPost']);
     header("Location: ./");

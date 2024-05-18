@@ -97,6 +97,21 @@ $ifFile = 0;
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
+                                                <!-- 中文網頁 -->
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                       
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" bgcolor="#e5ecf6"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        中文網頁
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
                                                 <tr>
                                                     <td width="200"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
@@ -167,6 +182,91 @@ $ifFile = 0;
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
+                                                <!-- 英文網頁 -->
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                       
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" bgcolor="#e5ecf6"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        英文網頁
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        美加区基本薪资(USD)
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data9" id="d_data9" value="<?php echo $row_Recrecruit['d_data9']; ?>" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data10" id="d_data10" value="<?php echo $row_Recrecruit['d_data10']; ?>" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data11" id="d_data11" value="<?php echo $row_Recrecruit['d_data11']; ?>" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data12" id="d_data12" value="<?php echo $row_Recrecruit['d_data12']; ?>" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        亚太区基本薪资(USD)
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data13" id="d_data13" value="<?php echo $row_Recrecruit['d_data13']; ?>" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data14" id="d_data14" value="<?php echo $row_Recrecruit['d_data13']; ?>" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data15" id="d_data15" value="<?php echo $row_Recrecruit['d_data15']; ?>" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data16" id="d_data16" value="<?php echo $row_Recrecruit['d_data16']; ?>" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">日期</td>
                                                     <td width="532">
@@ -188,245 +288,6 @@ $ifFile = 0;
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
-                                                <?php if ($totalRows_RecCover > 0) { // Show if recordset not empty 
-                                                ?>
-                                                    <!-- <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前封面圖片</td>
-                                                    <td>
-                                                        <?php do { ?>
-                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                            <tr>
-                                                                <td width="100" rowspan="2" align="center"><a href="../<?php echo $row_RecCover['file_link1']; ?>" class="fancyboxImg" rel="group" title="<?php echo $row_RecCover['file_title']; ?>"><img src="../<?php echo $row_RecCover['file_link2']; ?>" alt="" class="image_frame"/></a></td>
-                                                                <td align="left" class="table_data">&nbsp;圖片說明：
-                                                                    <?php echo $row_RecCover['file_title']; ?>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" class="table_data">&nbsp;</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center"><a href="image_edit.php?file_id=<?php echo $row_RecCover['file_id'] . '&type=recruitCover'; ?>" class="fancyboxEdit" title="修改圖片"><img src="image/media_edit.gif" width="16" height="16" title="修改圖片"/></a><a href="image_del.php?file_id=<?php echo $row_RecCover['file_id'] . '&type=recruitCover'; ?>" class="fancyboxEdit" title="刪除圖片"><img src="image/media_delete.gif" width="16" height="16" title="刪除圖片"/></a></td>
-                                                            </tr>
-                                                        </table>
-                                                        <?php } while ($row_RecCover = $RecCover->fetch()); ?>
-                                                    </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*
-                                                            <?php echo $imagesSize['recruitCover']['note']; ?>
-                                                        </p>
-                                                    </td>
-                                                </tr> -->
-                                                <?php } // Show if recordset not empty 
-                                                ?>
-                                                <?php if ($totalRows_RecCover == 0) { // Show if recordset not empty 
-                                                ?>
-                                                    <!-- <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>上傳封面圖片</p>
-                                                    </td>
-                                                    <td>
-                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable">
-                                                            <tr>
-                                                                <td> <span class="table_data">選擇圖片：</span>
-                                                                    <input name="imageCover[]" type="file" class="table_data" id="imageCover1" />
-                                                                    <br>
-                                                                    <span class="table_data">圖片說明：</span>
-                                                                    <input name="image_titleCover[]" type="text" class="table_data" id="image_titleCover1"> </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*
-                                                            <?php echo $imagesSize['recruitCover']['note']; ?>
-                                                        </p>
-                                                    </td>
-                                                </tr> -->
-                                                <?php } // Show if recordset not empty 
-                                                ?>
-                                                <?php if ($totalRows_RecImage > 0) { // Show if recordset not empty 
-                                                ?>
-                                                    <tr id="imageEdit">
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前圖片</td>
-                                                        <td id="draggable">
-                                                            <?php do { ?>
-                                                                <table width="30%" style="display:inline-table; padding:0 12px 12px 0;" border="0" cellspacing="0" cellpadding="0" data-id="<?= $row_RecImage['file_id'] ?>">
-                                                                    <tr>
-                                                                        <td width="100" rowspan="2" align="center"><a href="../<?php echo $row_RecImage['file_link1']; ?>" class="fancyboxImg" rel="group" title="<?php echo $row_RecImage['file_title']; ?>"><img src="../<?php echo $row_RecImage['file_link2']; ?>" alt="" class="image_frame" /></a></td>
-                                                                        <td align="left" class="table_data">&nbsp;圖片說明：
-                                                                            <?php echo $row_RecImage['file_title']; ?>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td align="left" class="table_data">&nbsp;</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td align="center"><a href="image_edit.php?file_id=<?php echo $row_RecImage['file_id']; ?>" class="fancyboxEdit" title="修改圖片"><img src="image/media_edit.gif" width="16" height="16" title="修改圖片" /></a><a href="image_del.php?file_id=<?php echo $row_RecImage['file_id']; ?>" class="fancyboxEdit" title="刪除圖片"><img src="image/media_delete.gif" width="16" height="16" title="刪除圖片" /></a></td>
-                                                                    </tr>
-                                                                </table>
-                                                            <?php } while ($row_RecImage = $RecImage->fetch()); ?>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p class="red_letter">* 若要排序照片，請直接施拉即可。</p>
-                                                        </td>
-                                                    </tr>
-                                                <?php } // Show if recordset not empty 
-                                                ?>
-                                                <?php if (0) { // Show if recordset not empty 
-                                                ?>
-                                                    <!-- ========================== 單張單張傳 =========================== -->
-                                                    <!-- <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>上傳圖片</p>
-                                                    </td>
-                                                    <td>
-                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable">
-                                                            <tr>
-                                                                <td> <span class="table_data">選擇圖片：</span>
-                                                                    <input name="image[]" type="file" class="table_data" id="image1" />
-                                                                    <br>
-                                                                    <span class="table_data">圖片說明：</span>
-                                                                    <input name="image_title[]" type="text" class="table_data" id="image_title1"> </td>
-                                                            </tr>
-                                                        </table>
-                                                        <table width="100%" border="0" cellspacing="5" cellpadding="2">
-                                                            <tr>
-                                                                <td height="28">
-                                                                    <table border="0" cellspacing="2" cellpadding="2">
-                                                                        <tr>
-                                                                            <td><a href="javascript:addField()"><img src="image/add.png" width="16" height="16" border="0"></a></td>
-                                                                            <td><a href="javascript:addField()" class="table_data">新增圖片</a></td>
-                                                                            <td class="red_letter">&nbsp;</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*
-                                                            <?php echo $imagesSize[$_SESSION['nowMenu']]['note']; ?>
-                                                        </p>
-                                                    </td>
-                                                </tr> -->
-                                                    <!-- ========================== 可多張上傳 =========================== -->
-                                                    <tr>
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p>上傳圖片</p>
-                                                        </td>
-                                                        <td>
-                                                            <table width="100%" border="0" cellspacing="5" cellpadding="2" id="addF">
-                                                                <tr>
-                                                                    <td height="28">
-                                                                        <table border="0" cellspacing="2" cellpadding="2">
-                                                                            <tr>
-                                                                                <td><a href="dropzoneImg.php?d_id=<?= $row_Recrecruit['d_id'] ?>" class="fancyboxUpload" title="上傳圖片"><img src="image/add.png" width="16" height="16" border="0"></a></td>
-                                                                                <td><a href="dropzoneImg.php?d_id=<?= $row_Recrecruit['d_id'] ?>" class="fancyboxUpload table_data">上傳圖片</a></td>
-                                                                                <td class="note_letter">&nbsp;</td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p class="red_letter">*
-                                                                <?php echo $imagesSize[$_SESSION['nowMenu']]['note']; ?>
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                <?php } // Show if recordset not empty 
-                                                ?>
-                                                <?php if ($ifFile) { ?>
-                                                    <?php if ($totalRows_RecFile > 0) { // Show if recordset not empty 
-                                                    ?>
-                                                        <tr>
-                                                            <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前檔案</td>
-                                                            <td>
-                                                                <table border="0" cellspacing="0" cellpadding="0">
-                                                                    <tr>
-                                                                        <td>
-                                                                            <table>
-                                                                                <tr>
-                                                                                    <?php
-                                                                                    $RecFile_endRow = 0;
-                                                                                    $RecFile_columns = 1;
-                                                                                    $RecFile_hloopRow1 = 0;
-                                                                                    do {
-                                                                                        if ($RecFile_endRow == 0  && $RecFile_hloopRow1++ != 0) echo "<tr>";
-                                                                                    ?>
-                                                                                        <td>
-                                                                                            <table width="320" border="1" cellpadding="0" cellspacing="0" bordercolor="#666666" class="table_frame_style">
-                                                                                                <tr>
-                                                                                                    <td align="left" class="table_no_border"><span class="table_data">&nbsp;檔案名稱: <a href="../<?php echo $row_RecFile['file_link1']; ?>" title='<?php echo $row_RecFile['file_title']; ?>' target="_blank"><?php echo $row_RecFile['file_name']; ?></a></span></td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td align="left" class="table_no_border"><span class="table_data">&nbsp;檔案</span><span class="table_data">說明:</span><span class="table_data"><?php echo $row_RecFile['file_title']; ?></span></td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td align="left" class="table_no_border"><a href="file_edit.php?file_id=<?php echo $row_RecFile['file_id']; ?>" class="fancyboxEdit" title='修改檔案'><img src="image/media_edit.gif" width="16" height="16" title="修改檔案" /></a><a href="file_del.php?file_id=<?php echo $row_RecFile['file_id']; ?>" class="fancyboxEdit" title='刪除檔案'><img src="image/media_delete.gif" width="16" height="16" title="刪除檔案" /></a></td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                        <?php $RecFile_endRow++;
-                                                                                        if ($RecFile_endRow >= $RecFile_columns) {
-                                                                                        ?>
-                                                                                </tr>
-                                                                        <?php
-                                                                                            $RecFile_endRow = 0;
-                                                                                        }
-                                                                                    } while ($row_RecFile = $RecFile->fetch());
-
-                                                                                    if ($RecFile_endRow != 0) {
-                                                                                        while ($RecFile_endRow < $RecFile_columns) {
-                                                                                            echo ("<td>&nbsp;</td>");
-                                                                                            $RecFile_endRow++;
-                                                                                        }
-                                                                                        echo ("</tr>");
-                                                                                    }
-                                                                        ?>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                            <td bgcolor="#e5ecf6" class="table_col_title">
-                                                                <p>&nbsp;</p>
-                                                            </td>
-                                                        </tr>
-                                                    <?php } // Show if recordset not empty 
-                                                    ?>
-                                                    <tr>
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p>上傳檔案</p>
-                                                        </td>
-                                                        <td>
-                                                            <table border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable2">
-                                                                <tr>
-                                                                    <td><span class="table_data">選擇檔案：</span>
-                                                                        <input name="upfile[]" type="file" class="table_data" id="upfile1" />
-                                                                        <br />
-                                                                        <span class="table_data">檔案說明：</span>
-                                                                        <input name="upfile_title[]" type="text" class="table_data" id="upfile_title1" />
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            <table border="0" cellspacing="5" cellpadding="2">
-                                                                <tr>
-                                                                    <td>
-                                                                        <table border="0" cellspacing="2" cellpadding="2">
-                                                                            <tr>
-                                                                                <td><a href="javascript:addField2()"><img src="image/add.png" width="16" height="16" border="0" /></a></td>
-                                                                                <td><a href="javascript:addField2()" class="table_data">新增檔案</a></td>
-                                                                                <td class="red_letter">&nbsp;</td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title"><span class="red_letter">*上傳之檔案請勿超過2M。</span></td>
-                                                    </tr>
-                                                <?php } ?>
                                             </table>
                                         </td>
                                     </tr>
@@ -599,7 +460,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
-    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_data1=:d_data1, d_data2=:d_data2, d_data3=:d_data3, d_data4=:d_data4, d_data5=:d_data5, d_data6=:d_data6, d_data7=:d_data7, d_data8=:d_data8, d_date=:d_date, d_active=:d_active WHERE d_id=:d_id";
+    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_data1=:d_data1, d_data2=:d_data2, d_data3=:d_data3, d_data4=:d_data4, d_data5=:d_data5, d_data6=:d_data6, d_data7=:d_data7, d_data8=:d_data8, d_data9=:d_data9, d_data10=:d_data10, d_data11=:d_data11, d_data12=:d_data12, d_data13=:d_data13, d_data14=:d_data14, d_data15=:d_data15, d_data16=:d_data16, d_date=:d_date, d_active=:d_active WHERE d_id=:d_id";
 
     $stat = $conn->prepare($updateSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -613,6 +474,14 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     $stat->bindParam(':d_data6', $_POST['d_data6'], PDO::PARAM_STR);
     $stat->bindParam(':d_data7', $_POST['d_data7'], PDO::PARAM_STR);
     $stat->bindParam(':d_data8', $_POST['d_data8'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data9', $_POST['d_data9'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data10', $_POST['d_data10'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data11', $_POST['d_data11'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data12', $_POST['d_data12'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data13', $_POST['d_data13'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data14', $_POST['d_data14'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data15', $_POST['d_data15'], PDO::PARAM_STR);
+    $stat->bindParam(':d_data16', $_POST['d_data16'], PDO::PARAM_STR);
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
     $stat->bindParam(':d_id', $_POST['d_id'], PDO::PARAM_INT);

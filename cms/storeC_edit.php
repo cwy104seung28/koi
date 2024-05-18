@@ -3,6 +3,9 @@
 <?php require_once('file_process.php'); ?>
 <?php require_once('imagesSize.php'); ?>
 <?php
+// ini_set('display_errors', '1');
+// error_reporting(E_ALL);
+
 if (!1) {
     header("Location: storeC_list.php");
 }
@@ -33,12 +36,14 @@ $_SESSION['nowMenu'] = $menu_is;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php require_once('cmsTitle.php'); ?></title>
     <?php require_once('script.php'); ?>
-    <?php require_once('head.php');?>
+    <?php require_once('head.php'); ?>
 </head>
+
 <body>
     <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -72,7 +77,7 @@ $_SESSION['nowMenu'] = $menu_is;
                                                                 <td>
                                                                     <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                                             <td width="516">
                                                                                 <input name="c_title" type="text" class="table_data" id="c_title" value="<?php echo $row_RecstoreC['c_title']; ?>" size="50" />
                                                                                 <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecstoreC['c_id']; ?>" />
@@ -86,60 +91,103 @@ $_SESSION['nowMenu'] = $menu_is;
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
-                                                                        <!-- <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">TYPE</td>
+                                                                        <tr>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">要寄送的email(聯絡我們)</td>
                                                                             <td width="516">
                                                                                 <input name="c_data1" type="text" class="table_data" id="c_data1" value="<?php echo $row_RecstoreC['c_data1']; ?>" size="50" />
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                                        </tr> -->
-                                                                        <!-- <tr>
-                                                                            <td align="center" bgcolor="#e5ecf6" class="table_col_title">內容</td>
-                                                                            <td><textarea name="c_content" cols="60" rows="8" class="table_data" id="c_content"><?php echo $row_RecstoreC['c_content']; ?></textarea></td>
-                                                                            <td bgcolor="#e5ecf6" class="table_col_title"><p class="red_letter">*小斷行請按Shift+Enter。<br />
-                                                                            輸入區域的右下角可以調整輸入空間的大小。</p></td>
-                                                                        </tr> -->
+                                                                        </tr>
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">狀態</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">臉書連結</td>
+                                                                            <td width="532">
+                                                                                <input name="c_data2" type="text" class="table_data" id="c_data2" value="<?php echo $row_RecstoreC['c_data2']; ?>" size="50">
+                                                                            </td>
+                                                                            <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">IG連結</td>
+                                                                            <td width="532">
+                                                                                <input name="c_data3" type="text" class="table_data" id="c_data3" value="<?php echo $row_RecstoreC['c_data3']; ?>" size="50">
+                                                                            </td>
+                                                                            <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">自訂連結標題</td>
+                                                                            <td width="532">
+                                                                                <input name="c_data4" type="text" class="table_data" id="c_data4" value="<?php echo $row_RecstoreC['c_data4']; ?>" size="50">
+                                                                            </td>
+                                                                            <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">自訂連結</td>
+                                                                            <td width="532">
+                                                                                <input name="c_data5" type="text" class="table_data" id="c_data5" value="<?php echo $row_RecstoreC['c_data5']; ?>" size="50">
+                                                                            </td>
+                                                                            <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active" class="table_data" id="c_active">
-                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecstoreC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
-                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecstoreC[ 'c_active']))) {echo "selected";} ?>>公佈</option>
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecstoreC['c_active']))) {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>不公佈</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecstoreC['c_active']))) {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>公佈</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
-                                                                        <?php if ($totalRows_RecCover > 0) { // Show if recordset not empty ?>
                                                                         <tr>
-                                                                            <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前圖片<a name="imageEdit" id="imageEdit"></a></td>
-                                                                            <td>
-                                                                                <?php do { ?>
-                                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                    <tr>
-                                                                                        <td width="100" rowspan="2" align="center"><a href="../<?php echo $row_RecCover['file_link1'].'?'.(mt_rand(1,100000)/100000); ?>" class="fancyboxImg" rel="group" title="<?php echo $row_RecCover['file_title']; ?>"><img src="../<?php echo $row_RecCover['file_link2'].'?'.(mt_rand(1,100000)/100000); ?>" alt="" class="image_frame"/></a></td>
-                                                                                        <td align="left" class="table_data">&nbsp;圖片說明：
-                                                                                            <?php echo $row_RecCover['file_title']; ?>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td align="left" class="table_data">&nbsp;</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td align="center"><a href="image_edit.php?file_id=<?php echo $row_RecCover['file_id'].'&type=storeCatCover'; ?>" class="fancyboxEdit" title="修改圖片"><img src="image/media_edit.gif" width="16" height="16" title="修改圖片"/></a><a href="image_del.php?file_id=<?php echo $row_RecCover['file_id'].'&type=storeCatCover'; ?>" class="fancyboxEdit" title="刪除圖片"><img src="image/media_delete.gif" width="16" height="16" title="刪除圖片"/></a></td>
-                                                                                        <td align="center">&nbsp;</td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                                <?php } while ($row_RecCover = $RecCover->fetch()); ?>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示狀態</td>
+                                                                            <td width="516">
+                                                                                <select name="c_active_en" class="table_data" id="c_active_en">
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecstoreC['c_active_en']))) {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>不公佈</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecstoreC['c_active_en']))) {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>公佈</option>
+                                                                                </select>
                                                                             </td>
-                                                                            <td bgcolor="#e5ecf6" class="table_col_title">
-                                                                                <p class="red_letter">*
-                                                                                    <?php echo $imagesSize['storeCatCover']['note'];?>
-                                                                                </p>
-                                                                            </td>
+                                                                            <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
-                                                                        <?php } // Show if recordset not empty ?>
-                                                                        <?php if ($totalRows_RecCover == 0) { // Show if recordset not empty ?>
-                                                                        <!-- <tr>
+                                                                        <?php if ($totalRows_RecCover > 0) { // Show if recordset not empty 
+                                                                        ?>
+                                                                            <!-- <tr>
+                                                                                <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前圖片<a name="imageEdit" id="imageEdit"></a></td>
+                                                                                <td>
+                                                                                    <?php do { ?>
+                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                                            <tr>
+                                                                                                <td width="100" rowspan="2" align="center"><a href="../<?php echo $row_RecCover['file_link1'] . '?' . (mt_rand(1, 100000) / 100000); ?>" class="fancyboxImg" rel="group" title="<?php echo $row_RecCover['file_title']; ?>"><img src="../<?php echo $row_RecCover['file_link2'] . '?' . (mt_rand(1, 100000) / 100000); ?>" alt="" class="image_frame" /></a></td>
+                                                                                                <td align="left" class="table_data">&nbsp;圖片說明：
+                                                                                                    <?php echo $row_RecCover['file_title']; ?>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td align="left" class="table_data">&nbsp;</td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td align="center"><a href="image_edit.php?file_id=<?php echo $row_RecCover['file_id'] . '&type=storeCatCover'; ?>" class="fancyboxEdit" title="修改圖片"><img src="image/media_edit.gif" width="16" height="16" title="修改圖片" /></a><a href="image_del.php?file_id=<?php echo $row_RecCover['file_id'] . '&type=storeCatCover'; ?>" class="fancyboxEdit" title="刪除圖片"><img src="image/media_delete.gif" width="16" height="16" title="刪除圖片" /></a></td>
+                                                                                                <td align="center">&nbsp;</td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    <?php } while ($row_RecCover = $RecCover->fetch()); ?>
+                                                                                </td>
+                                                                                <td bgcolor="#e5ecf6" class="table_col_title">
+                                                                                    <p class="red_letter">*
+                                                                                        <?php echo $imagesSize['storeCatCover']['note']; ?>
+                                                                                    </p>
+                                                                                </td>
+                                                                            </tr> -->
+                                                                        <?php } // Show if recordset not empty 
+                                                                        ?>
+                                                                        <?php if ($totalRows_RecCover == 0) { // Show if recordset not empty 
+                                                                        ?>
+                                                                            <!-- <tr>
                                                                             <td align="center" bgcolor="#e5ecf6" class="table_col_title">
                                                                                 <p>上傳圖片</p>
                                                                             </td>
@@ -156,11 +204,12 @@ $_SESSION['nowMenu'] = $menu_is;
                                                                             </td>
                                                                             <td bgcolor="#e5ecf6" class="table_col_title">
                                                                                 <p class="red_letter">*
-                                                                                    <?php echo $imagesSize['storeCatCover']['note'];?>
+                                                                                    <?php echo $imagesSize['storeCatCover']['note']; ?>
                                                                                 </p>
                                                                             </td>
                                                                         </tr> -->
-                                                                        <?php } // Show if recordset not empty ?>
+                                                                        <?php } // Show if recordset not empty 
+                                                                        ?>
                                                                     </table>
                                                                 </td>
                                                             </tr>
@@ -194,6 +243,7 @@ $_SESSION['nowMenu'] = $menu_is;
         </tr>
     </table>
 </body>
+
 </html>
 <script type="text/javascript" src="jquery/fancyapps-fancyBox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 <script type="text/javascript" src="jquery/fancyapps-fancyBox/source/jquery.fancybox.pack.js"></script>
@@ -228,22 +278,27 @@ $_SESSION['nowMenu'] = $menu_is;
         }
     });
     <?php
-        if( isset($_SESSION["change_image"]) && ($_SESSION["change_image"]==1) ) {
-            $_SESSION["change_image"]=0;
-            echo "window.location.reload();";
-        }
+    if (isset($_SESSION["change_image"]) && ($_SESSION["change_image"] == 1)) {
+        $_SESSION["change_image"] = 0;
+        echo "window.location.reload();";
+    }
     ?>
 </script>
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
-    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_slug=:c_slug, c_class=:c_class, c_link=:c_link, c_active=:c_active WHERE c_id=:c_id";
+    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_data1=:c_data1, c_data2=:c_data2, c_data3=:c_data3, c_data4=:c_data4, c_data5=:c_data5, c_class=:c_class, c_link=:c_link, c_active=:c_active, c_active_en=:c_active_en WHERE c_id=:c_id";
     $sth = $conn->prepare($updateSQL);
     $sth->bindParam(':c_title', $_POST['c_title'], PDO::PARAM_STR);
     $sth->bindParam(':c_title_en', $_POST['c_title_en'], PDO::PARAM_STR);
-    $sth->bindParam(':c_slug', generate_slug($_POST['c_title']), PDO::PARAM_STR);
+    $sth->bindParam(':c_data1', $_POST['c_data1'], PDO::PARAM_STR);
+    $sth->bindParam(':c_data2', $_POST['c_data2'], PDO::PARAM_STR);
+    $sth->bindParam(':c_data3', $_POST['c_data3'], PDO::PARAM_STR);
+    $sth->bindParam(':c_data4', $_POST['c_data4'], PDO::PARAM_STR);
+    $sth->bindParam(':c_data5', $_POST['c_data5'], PDO::PARAM_STR);
     $sth->bindParam(':c_class', $_POST['c_class'], PDO::PARAM_STR);
     $sth->bindParam(':c_link', $_POST['c_link'], PDO::PARAM_STR);
     $sth->bindParam(':c_active', $_POST['c_active'], PDO::PARAM_INT);
+    $sth->bindParam(':c_active_en', $_POST['c_active_en'], PDO::PARAM_INT);
     $sth->bindParam(':c_id', $_POST['c_id'], PDO::PARAM_INT);
     $sth->execute();
     // Cover

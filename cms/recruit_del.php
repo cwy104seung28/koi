@@ -74,7 +74,7 @@ $menu_is = "recruit";
                                         <td>
                                             <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">年份</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
                                                     <td width="532" class="table_data">
                                                         <?php echo $row_Recrecruit['d_title']; ?>
                                                         <input name="d_id" type="hidden" id="d_id" value="<?php echo $row_Recrecruit['d_id']; ?>" />

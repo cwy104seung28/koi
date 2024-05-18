@@ -176,7 +176,8 @@ require_once ('display_page.php');
                                             <td width="100" align="center" class="table_title">排序</td>
                                             <td align="center" class="table_title">名稱</td>
                                             <!-- <td width="140" align="center" class="table_title">圖片</td> -->
-                                            <td width="40" align="center" class="table_title">狀態</td>
+                                            <td width="50" align="center" class="table_title">中文網頁顯示狀態</td>
+                                            <td width="50" align="center" class="table_title">英文網頁顯示狀態</td>
                                             <td width="40" align="center" class="table_title">編輯</td>
                                             <td width="40" align="center" class="table_title">刪除</td>
                                         </tr>
@@ -230,6 +231,15 @@ require_once ('display_page.php');
                                                                 echo "<a href='" . $row_RecstoreC['c_active'] . "' rel='" . $row_RecstoreC['c_id'] . "' class='activeChC'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
                                                             } else {
                                                                 echo "<a href='" . $row_RecstoreC['c_active'] . "' rel='" . $row_RecstoreC['c_id'] . "' class='activeChC'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                            }
+                                                            ?>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <?php  //list使用
+                                                            if ($row_RecstoreC['c_active_en']) {
+                                                                echo "<a href='" . $row_RecstoreC['c_active_en'] . "' rel='" . $row_RecstoreC['c_id'] . "' class='activeChC'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                                            } else {
+                                                                echo "<a href='" . $row_RecstoreC['c_active_en'] . "' rel='" . $row_RecstoreC['c_id'] . "' class='activeChC'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
                                                             }
                                                             ?>
                                                 </td>

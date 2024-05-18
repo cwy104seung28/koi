@@ -182,22 +182,27 @@
         </div>
         <div class="about-event flex-container">
             <ul class="pic-area">
-                <li><img src="./images/a-event-pic-1.png" alt=""></li>
-                <li><img src="./images/a-event-pic-2.png" alt=""></li>
-                <li><img src="./images/a-event-pic-3.png" alt=""></li>
-                <li><img src="./images/a-event-pic-4.png" alt=""></li>
-                <li><img src="./images/a-event-pic-1.png" alt=""></li>
-                <li><img src="./images/a-event-pic-2.png" alt=""></li>
-                <li><img src="./images/a-event-pic-3.png" alt=""></li>
-                <li><img src="./images/a-event-pic-4.png" alt=""></li>
-                <li><img src="./images/a-event-pic-1.png" alt=""></li>
-                <li><img src="./images/a-event-pic-2.png" alt=""></li>
-                <li><img src="./images/a-event-pic-3.png" alt=""></li>
-                <li><img src="./images/a-event-pic-4.png" alt=""></li>
-                <li><img src="./images/a-event-pic-1.png" alt=""></li>
-                <li><img src="./images/a-event-pic-2.png" alt=""></li>
-                <li><img src="./images/a-event-pic-3.png" alt=""></li>
-                <li><img src="./images/a-event-pic-4.png" alt=""></li>
+                <li><img src="./images/a-event-1.jpg" alt=""></li>
+                <li><img src="./images/a-event-2.jpg" alt=""></li>
+                <li><img src="./images/a-event-3.jpg" alt=""></li>
+                <li><img src="./images/a-event-4.jpg" alt=""></li>
+                <li><img src="./images/a-event-5.jpg" alt=""></li>
+                <li><img src="./images/a-event-6.jpg" alt=""></li>
+                <li><img src="./images/a-event-7.jpg" alt=""></li>
+                <li><img src="./images/a-event-1.jpg" alt=""></li>
+                <li><img src="./images/a-event-2.jpg" alt=""></li>
+                <li><img src="./images/a-event-3.jpg" alt=""></li>
+                <li><img src="./images/a-event-4.jpg" alt=""></li>
+                <li><img src="./images/a-event-5.jpg" alt=""></li>
+                <li><img src="./images/a-event-6.jpg" alt=""></li>
+                <li><img src="./images/a-event-7.jpg" alt=""></li>
+                <li><img src="./images/a-event-1.jpg" alt=""></li>
+                <li><img src="./images/a-event-2.jpg" alt=""></li>
+                <li><img src="./images/a-event-3.jpg" alt=""></li>
+                <li><img src="./images/a-event-4.jpg" alt=""></li>
+                <li><img src="./images/a-event-5.jpg" alt=""></li>
+                <li><img src="./images/a-event-6.jpg" alt=""></li>
+                <li><img src="./images/a-event-7.jpg" alt=""></li>
             </ul>
 
 
@@ -225,26 +230,53 @@
                     </li>
                 </ul> -->
                 <ul class="number">
-                    <li>2018</li>
-                    <li>2023</li>
-                    <li>2020</li>
+                    <li>2006</li>
+                    <li>2007</li>
+                    <li>2015</li>
+                    <li>2019</li>
                     <li>2021</li>
+                    <li>2023</li>
+                    <li>2023</li>
                 </ul>
                 <ul class="ch">
-                    <li>KOI Thé 台中七期市政旗鉴店 开幕</li>
-                    <li>KOI Thé 上海首家手作店 開幕</li>
-                    <li>KOI Thé 台中七期市政旗鉴店 开幕</li>
-                    <li>KOI Thé 台中七期市政旗鉴店 开幕</li>
+                    <li>由咖啡”豆”為靈感，開啟了一連串KOI的奇幻之旅</li>
+                    <li>新加坡大巴窯門市開幕，成功帶起了東南亞的KOI旋風</li>
+                    <li>為體現茶飲專業與品牌理念，KOI Café 正式更名為KOI Thé</li>
+                    <li>以FIFTYLAN品牌進軍北美洲，紐約門市開幕</li>
+                    <li>進軍西亞，杜拜門市開幕</li>
+                    <li>進軍西亞，杜拜門市開幕</li>
+                    <li>商標注入新活力，以符合KOI追求專業與不斷創新的精神</li>
                 </ul>
                 <ul class="en">
-                    <li>Taichung 7th City Hall KOI Thé Grand Opening Of The Flagship Store</li>
-                    <li>Grand Opening of KOI Thé DIY Store in Shanghai</li>
-                    <li>Taichung 7th City Hall KOI Thé Grand Opening Of The Flagship Store</li>
-                    <li>Taichung 7th City Hall KOI Thé Grand Opening Of The Flagship Store</li>
+                    <li>A coffee bean sparked a series of magical journeys for KOI.</li>
+                    <li>The grand opening of Toa Payoh flagship store in Singapore has successfully ignited the KOI craze across Southeast Asia.</li>
+                    <li>To reflect the professionalism of tea beverages and the brand philosophy, KOI Café has officially been renamed KOI Thé.</li>
+                    <li>Launching into North America under the FIFTYLAN brand, with the grand opening of the New York store.</li>
+                    <li>Venturing into West Asia, the Dubai store grand opening.</li>
+                    <li>Venturing into West Asia, the Dubai store grand opening.</li>
+                    <li>A new Beat of vibrancy!</li>
                 </ul>
                 <div class="arrow-area flex-container align-middle align-right">
-                    <div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>
-                    <div class="next"><img src="./images/a-event-next.svg" alt=""></div>
+                    <div class="prev">
+                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                            <g id="_計" data-name="設計">
+                                <g>
+                                    <line class="cls-2" x1="34.68" y1="15.09" x2="3.61" y2="15.09" />
+                                    <path class="cls-1" d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07-.45,.7-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="next">
+                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                            <g id="_計" data-name="設計">
+                                <g>
+                                    <line class="cls-2" y1="15.09" x2="31.07" y2="15.09" />
+                                    <path class="cls-1" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -494,7 +526,7 @@
         paused: true,
     });
     $tl.to(".text-area", {
-        duration: 1.25,
+        duration: 1.75,
         scale: 1,
         // opacity: 1,
         ease: Power4.easeOut,
@@ -799,38 +831,48 @@
         $('.about-event .pic-area li').removeClass('is-show');
         // $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
         console.log(index);
-        if (index == 11) {
+        if (index == 13) {
             // $('.about-event .pic-area li:nth-child(1)').addClass('is-show')
             $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
-            $('.about-event .pic-area li:nth-child(13)').css('z-index', '4')
-            $('.about-event .pic-area li:nth-child(14)').css('z-index', '3')
-            $('.about-event .pic-area li:nth-child(15)').css('z-index', '2')
-            $('.about-event .pic-area li:nth-child(16)').css('z-index', '1')
+            $('.about-event .pic-area li:nth-child(14)').css('z-index', '7')
+            $('.about-event .pic-area li:nth-child(15)').css('z-index', '6')
+            $('.about-event .pic-area li:nth-child(16)').css('z-index', '5')
+            $('.about-event .pic-area li:nth-child(17)').css('z-index', '4')
+            $('.about-event .pic-area li:nth-child(18)').css('z-index', '3')
+            $('.about-event .pic-area li:nth-child(19)').css('z-index', '2')
+            $('.about-event .pic-area li:nth-child(20)').css('z-index', '1')
+
             // for (var $num = 13; $num <= 16; $num++) {
             //     $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${22 - $num}`);
             // }
-        } else if (index == 13) {
+        } else if (index == 15) {
             $('.about-event .pic-area li:nth-child(1)').addClass('is-show')
             $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show')
-            $('.about-event .pic-area li:nth-child(1)').css('z-index', '4')
-            $('.about-event .pic-area li:nth-child(2)').css('z-index', '3')
-            $('.about-event .pic-area li:nth-child(3)').css('z-index', '2')
-            $('.about-event .pic-area li:nth-child(4)').css('z-index', '1')
-            for (var $num = 13; $num <= 16; $num++) {
+            $('.about-event .pic-area li:nth-child(1)').css('z-index', '7')
+            $('.about-event .pic-area li:nth-child(2)').css('z-index', '6')
+            $('.about-event .pic-area li:nth-child(3)').css('z-index', '5')
+            $('.about-event .pic-area li:nth-child(4)').css('z-index', '4')
+            $('.about-event .pic-area li:nth-child(5)').css('z-index', '3')
+            $('.about-event .pic-area li:nth-child(6)').css('z-index', '2')
+            $('.about-event .pic-area li:nth-child(7)').css('z-index', '1')
+            for (var $num = 15; $num <= 21; $num++) {
                 $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${22 - $num}`);
             }
-        } else if (index == 14) {
+        } else if (index == 19) {
             $('.about-event .pic-area li:nth-child(1)').addClass('is-show').next().addClass('is-show')
             $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show')
 
-        } else if (index == 15) {
+        } else if (index == 20) {
             $('.about-event .pic-area li:nth-child(1)').addClass('is-show').next().addClass('is-show').next().addClass('is-show')
             $('.about-event .pic-area li.is-selected').addClass('is-show')
-            $('.about-event .pic-area li:nth-child(16)').css('z-index', '6');
-            $('.about-event .pic-area li:nth-child(1)').css('z-index', '4')
-            $('.about-event .pic-area li:nth-child(2)').css('z-index', '3')
-            $('.about-event .pic-area li:nth-child(3)').css('z-index', '2')
-            $('.about-event .pic-area li:nth-child(4)').css('z-index', '1')
+            $('.about-event .pic-area li:nth-child(21)').css('z-index', '8');
+            $('.about-event .pic-area li:nth-child(1)').css('z-index', '7')
+            $('.about-event .pic-area li:nth-child(2)').css('z-index', '6')
+            $('.about-event .pic-area li:nth-child(3)').css('z-index', '5')
+            $('.about-event .pic-area li:nth-child(4)').css('z-index', '4')
+            $('.about-event .pic-area li:nth-child(5)').css('z-index', '3')
+            $('.about-event .pic-area li:nth-child(6)').css('z-index', '2')
+            $('.about-event .pic-area li:nth-child(7)').css('z-index', '1')
         } else if (index == 0) {
             $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
             // $('.about-event .pic-area li:nth-child(5)').css('z-index', '4')
@@ -841,8 +883,8 @@
             // $('.about-event .pic-area li:nth-child(2)').css('z-index', '15')
             // $('.about-event .pic-area li:nth-child(3)').css('z-index', '14')
             // $('.about-event .pic-area li:nth-child(4)').css('z-index', '13')
-            for (var $num = 1; $num <= 16; $num++) {
-                $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${17 - $num}`);
+            for (var $num = 1; $num <= 21; $num++) {
+                $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${22 - $num}`);
             }
             // for (var $num = 4; $num < 16; $num++){
             //     $(`.about-event .pic-area li:nth-child(${$num})`).css('z-index', `${16 - $num}`);

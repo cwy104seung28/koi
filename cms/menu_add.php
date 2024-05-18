@@ -14,14 +14,14 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 $G_selected1 = '';
-if (isset($_SESSION['selected_menuC'])) {
-    $G_selected1 = $_SESSION['selected_menuC'];
+if (isset($_SESSION['selected_storeC'])) {
+    $G_selected1 = $_SESSION['selected_storeC'];
 }
 
-$query_RecmenuC = "SELECT * FROM class_set WHERE c_parent = 'menuC' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
-$RecmenuC = $conn->query($query_RecmenuC);
-$row_RecmenuC = $RecmenuC->fetch();
-$totalRows_RecmenuC = $RecmenuC->rowCount();
+$query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_level=1 AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
+$RecstoreC = $conn->query($query_RecstoreC);
+$row_RecstoreC = $RecstoreC->fetch();
+$totalRows_RecstoreC = $RecstoreC->rowCount();
 
 $query_RecmenuY = "SELECT * FROM class_set WHERE c_parent = 'menuY' AND c_active='1' ORDER BY c_sort ASC, c_id DESC";
 $RecmenuY = $conn->query($query_RecmenuY);
@@ -90,16 +90,16 @@ $ifFile = 1;
                                                     <td width="532">
                                                         <select name="d_class2" id="d_class2" class="chosen-select">
                                                             <?php do { ?>
-                                                                <option value="<?php echo $row_RecmenuC['c_id'] ?>" <?php if (!(strcmp($row_RecmenuC['c_id'], $G_selected1))) {
+                                                                <option value="<?php echo $row_RecstoreC['c_id'] ?>" <?php if (!(strcmp($row_RecstoreC['c_id'], $G_selected1))) {
                                                                                                                         echo "selected";
                                                                                                                     } ?>>
-                                                                    <?php echo $row_RecmenuC['c_title'] ?>
+                                                                    <?php echo $row_RecstoreC['c_title'] ?>
                                                                 </option>
                                                             <?php
-                                                            } while ($row_RecmenuC = $RecmenuC->fetch());
-                                                            $rows = $RecmenuC->rowCount();
+                                                            } while ($row_RecstoreC = $RecstoreC->fetch());
+                                                            $rows = $RecstoreC->rowCount();
                                                             if ($rows > 0) {
-                                                                $RecmenuC->execute();
+                                                                $RecstoreC->execute();
                                                             }
                                                             ?>
                                                         </select>
@@ -150,7 +150,7 @@ $ifFile = 1;
                                                                     </td>
                                                                 </tr>
                                                             </table>
-                                                            <table width="100%" border="0" cellspacing="5" cellpadding="2">
+                                                            <!-- <table width="100%" border="0" cellspacing="5" cellpadding="2">
                                                                 <tr>
                                                                     <td>
                                                                         <table border="0" cellspacing="2" cellpadding="2">
@@ -162,7 +162,7 @@ $ifFile = 1;
                                                                         </table>
                                                                     </td>
                                                                 </tr>
-                                                            </table>
+                                                            </table> -->
                                                         </td>
                                                         <td bgcolor="#e5ecf6" class="table_col_title">
                                                             <p><span class="red_letter">*上傳之檔案請勿超過2M。</span></p>
@@ -305,7 +305,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     // }
 
     // Cover
-    // $image_result = image_process($conn, $_FILES['imageCover'], $_REQUEST['imageCover_title'], $menu_is, "add", $imagesSize['menuCover']['IW'], $imagesSize['menuCover']['IH']);
+    // $image_result = image_process($conn, $_FILES['imageCover'], $_REQUEST['imageCover_title'], $menu_is, "add", $imagesSize['storeCover']['IW'], $imagesSize['storeCover']['IH']);
 
     // for ($j = 1; $j < count($image_result); $j++) {
     //     $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_link2, file_link3, file_type, file_d_id, file_title, file_show_type) VALUES (:file_name, :file_link1, :file_link2, :file_link3, :file_type, :file_d_id, :file_title, :file_show_type)";
@@ -315,7 +315,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     //     $stat->bindParam(':file_link1', $image_result[$j][1], PDO::PARAM_STR);
     //     $stat->bindParam(':file_link2', $image_result[$j][2], PDO::PARAM_STR);
     //     $stat->bindParam(':file_link3', $image_result[$j][3], PDO::PARAM_STR);
-    //     $stat->bindParam(':file_type', $type = 'menuCover', PDO::PARAM_STR);
+    //     $stat->bindParam(':file_type', $type = 'storeCover', PDO::PARAM_STR);
     //     $stat->bindParam(':file_d_id', $new_data_num, PDO::PARAM_INT);
     //     $stat->bindParam(':file_title', $image_result[$j][4], PDO::PARAM_STR);
     //     $stat->bindParam(':file_show_type', $image_result[$j][5], PDO::PARAM_INT);
@@ -344,7 +344,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     }
     //----------插入檔案資料到資料庫end----------
 
-    $_SESSION['original_selected'] = $_SESSION['selected_menuC'];
+    $_SESSION['original_selected'] = $_SESSION['selected_storeC'];
     $insertGoTo = "menu_list.php?selected1=" . $_POST['d_class2'] . "&pageNum=0&totalRows=" . ($_SESSION['totalRows'] + 1) . "&changeSort=1&now_d_id=" . $new_data_num . "&change_num=1";
 
     if (isset($_SERVER['QUERY_STRING'])) {

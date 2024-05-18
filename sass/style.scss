@@ -255,7 +255,27 @@ nav {
     height: 100vh;
     // background-color: #f4ddbe;
     z-index: 2;
-    &.not-show{
+    &::before {
+        position: absolute;
+        content: "";
+        right: 0;
+        top: 0;
+        width: 7px;
+        height: 100%;
+        background-color: #fff;
+        z-index: 1;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        z-index: 1;
+    }
+    &.not-show {
         display: none;
     }
     .logo {
@@ -266,21 +286,17 @@ nav {
         // position: absolute;
         // left: 0;
         // top: 0;
-        &::after{
-            position: absolute;
-            content: '';
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #fff;
-        }
+
         // &.not-show{
         //     display: none;
         // }
     }
 }
-
+.indexWrap-outter {
+    &.is-not-show {
+        display: none;
+    }
+}
 .index-top-banner {
     position: relative;
     z-index: 2;
@@ -390,30 +406,30 @@ nav {
             &:nth-child(1),
             &:nth-child(8),
             &:nth-child(15) {
-                animation: marquee-left 18s 11s linear infinite;
+                animation: marquee-left 18s 7s linear infinite;
             }
             &:nth-child(2),
             &:nth-child(4),
             &:nth-child(9) {
-                animation: marquee-left 19s 11s linear infinite;
+                animation: marquee-left 19s 7s linear infinite;
             }
             &:nth-child(3),
             &:nth-child(7),
             &:nth-child(16) {
-                animation: marquee-left 20s 11s linear infinite;
+                animation: marquee-left 20s 7s linear infinite;
             }
             &:nth-child(5),
             &:nth-child(10),
             &:nth-child(12) {
-                animation: marquee-left 24.5s 11s linear infinite;
+                animation: marquee-left 24.5s 7s linear infinite;
             }
             &:nth-child(6),
             &:nth-child(11),
             &:nth-child(13) {
-                animation: marquee-left 22.5s 11s linear infinite;
+                animation: marquee-left 22.5s 7s linear infinite;
             }
             &:nth-child(14) {
-                animation: marquee-left 21.5s 11s linear infinite;
+                animation: marquee-left 21.5s 7s linear infinite;
             }
             &:last-child {
                 margin-bottom: 0;
@@ -635,9 +651,8 @@ nav {
     z-index: 3;
     background-color: #f9efe1;
     padding-bottom: 250px;
-    .drink-inner{
-
-        height: 2000px;
+    .drink-inner {
+        height: 2500px;
     }
     .drink-animation {
         position: relative;
@@ -950,6 +965,11 @@ nav {
                 width: 420px;
                 height: 260px;
                 margin-right: 95px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
             .article-area {
                 position: relative;
@@ -965,9 +985,10 @@ nav {
                     font-family: $ch-family;
                     font-size: 18px;
                     letter-spacing: 2px;
-                    line-height: 1.4;
+                    line-height: 1.7;
                     font-weight: 600;
                     margin-bottom: 45px;
+                    max-width: 600px;
                 }
             }
         }
@@ -1085,7 +1106,7 @@ nav {
             }
         }
         .number-area {
-            height: 2000px;
+            height: 4500px;
             position: relative;
             z-index: 3;
             background-color: #fff;
@@ -1475,6 +1496,7 @@ nav {
                     filter: grayscale(1);
                     transform: rotate(-35deg);
                     opacity: 0;
+                    border-radius: 50%;
                 }
                 &:first-child {
                     transform: translate3d(0, 0, 0);
@@ -1605,8 +1627,29 @@ nav {
         }
         .arrow-area {
             max-width: 480px;
+            .cls-1 {
+                fill: #fff;
+                transition: 0.3s all;
+            }
+
+            .cls-2 {
+                fill: none;
+                stroke: #fff;
+                stroke-miterlimit: 10;
+                stroke-width: 3px;
+                transition: 0.3s all;
+            }
             div {
                 cursor: pointer;
+                &:hover {
+                    .cls-1 {
+                        fill: #EA5504;
+                    }
+        
+                    .cls-2 {
+                        stroke: #EA5504;
+                    }
+                }
             }
             .prev {
                 margin-right: 75px;
@@ -2869,7 +2912,14 @@ nav {
 .newsDetailWrap {
     padding: 235px 90px 100px;
     .banner-area {
+        width: 1724px;
+        // height: 970px;
         margin-bottom: 108px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .head-area {
             position: relative;
             margin-bottom: 165px;
@@ -2896,12 +2946,13 @@ nav {
         }
         .title {
             position: relative;
-            left: 39%;
+            left: 27%;
             font-family: $ch-family;
             font-size: 48px;
             letter-spacing: 2px;
             line-height: 1.4;
             font-weight: 600;
+            max-width: 1000px;
         }
     }
     .detailWrap {
@@ -3188,6 +3239,7 @@ nav {
         }
         .title {
             margin-right: 20px;
+            max-width: 380px;
             .ch {
                 font-family: $ch-family;
                 font-size: 22px;
@@ -3400,6 +3452,10 @@ nav {
                 flex-direction: column;
                 max-height: 778px;
                 flex-wrap: wrap;
+                pointer-events: none;
+                &.slick-current {
+                    pointer-events: all;
+                }
                 li {
                     width: fit-content;
                     min-height: 107px;
@@ -3550,6 +3606,11 @@ nav {
                     &.is-show {
                         opacity: 1;
                     }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
         }
@@ -3656,6 +3717,38 @@ nav {
             }
         }
     }
+    .store-socialList{
+        li{
+            margin-right: 11px;
+            &:last-child{
+                margin-right: 0;
+            }
+            .d {
+                fill: #9e9e9f;
+                transition: 0.3s all;
+            }
+            &:hover{
+                .d {
+                    fill: #EA5406;
+                }
+            }
+            &.custom{
+                height: 36px;
+                color: #f4ddbe;
+                font-family: $en-family;
+                font-size: 14px;
+                letter-spacing: 1px;
+                font-weight: 500;
+                border-radius: 8px;
+                padding: 9px 7px;
+                background-color: #9e9e9f;
+                transition: 0.3s all;
+                &:hover{
+                    background-color: #EA5406;
+                }
+            }
+        }
+    }
     .storeList {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -3674,6 +3767,9 @@ nav {
         }
         .deco {
             margin-bottom: 20px;
+        }
+        .head{
+            margin-bottom: 30px;
         }
         .title {
             font-size: 26px;
@@ -3754,10 +3850,16 @@ nav {
             }
         }
         .pic {
-            mask: url("../images/s-mask.svg") no-repeat;
+            // mask: url("../images/s-mask.svg") no-repeat;
+            width: 135px;
+            aspect-ratio: 1/1;
             cursor: pointer;
             img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
                 transition: 0.5s all;
+                border-radius: 50%;
             }
             &:hover {
                 img {
@@ -3786,8 +3888,11 @@ nav {
             flex-direction: column;
             .pic {
                 text-align: center;
-                mask: url("../images/s-fancy-mask.svg") no-repeat;
+                // mask: url("../images/s-fancy-mask.svg") no-repeat;
                 margin-bottom: 45px;
+                img {
+                    border-radius: 50%;
+                }
             }
             .back {
                 cursor: pointer;

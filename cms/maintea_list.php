@@ -32,8 +32,10 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     $params = explode("&", $_SERVER['QUERY_STRING']);
     $newParams = array();
     foreach ($params as $param) {
-        if (stristr($param, "pageNum") == false &&
-            stristr($param, "totalRows") == false) {
+        if (
+            stristr($param, "pageNum") == false &&
+            stristr($param, "totalRows") == false
+        ) {
             array_push($newParams, $param);
         }
     }
@@ -86,7 +88,8 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
     $row_Recmaintea = $Recmaintea->fetch();
 
     do {
-        if ($row_Recmaintea['d_sort'] == 0) {} else if ($row_Recmaintea['d_id'] == $_GET['now_d_id']) {
+        if ($row_Recmaintea['d_sort'] == 0) {
+        } else if ($row_Recmaintea['d_id'] == $_GET['now_d_id']) {
             // echo '<pre>'; print_r($sort_num); echo '</pre>';
 
         } else if ($sort_num == $_GET['change_num']) {
@@ -135,13 +138,15 @@ require_once('display_page.php');
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php require_once('cmsTitle.php'); ?></title>
 
     <?php require_once('script.php'); ?>
-    <?php require_once('head.php');?>
+    <?php require_once('head.php'); ?>
 </head>
+
 <body>
     <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -156,10 +161,12 @@ require_once('display_page.php');
                                 <tr>
                                     <td width="30%" class="list_title">列表</td>
                                     <td><span class="no_data">
-                                    <?php if ($totalRows == 0) { // Show if recordset empty ?>
-                                    <strong>抱歉!找不到任何資料~</strong>
-                                    <?php } // Show if recordset empty ?>
-                                    </span></td>
+                                            <?php if ($totalRows == 0) { // Show if recordset empty 
+                                            ?>
+                                                <strong>抱歉!找不到任何資料~</strong>
+                                            <?php } // Show if recordset empty 
+                                            ?>
+                                        </span></td>
                                 </tr>
                             </table>
                             <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
@@ -168,13 +175,15 @@ require_once('display_page.php');
                                         <!-------顯示頁選擇與分頁設定開始---------->
                                         <?php displayPages($pageNum, $queryString, $totalPages, $totalRows, $currentPage); ?>
                                         <!-------顯示頁選擇與分頁設定結束---------->
-                                        <td width="110" align="right" class="page_display">
-                                            <?php if ($totalRows > 0) { // Show if recordset not empty ?> 頁數:
-                                            <?php echo (($pageNum+1)."/".($totalPages+1)); ?>
-                                            <?php } // Show if recordset not empty ?>
-                                        </td>
-                                        <td width="151" align="right" class="page_display">所有資料數: <?php echo $totalRows ?> </td>
-                                        <td width="24" align="right">&nbsp;</td>
+                                    <td width="110" align="right" class="page_display">
+                                        <?php if ($totalRows > 0) { // Show if recordset not empty 
+                                        ?> 頁數:
+                                            <?php echo (($pageNum + 1) . "/" . ($totalPages + 1)); ?>
+                                        <?php } // Show if recordset not empty 
+                                        ?>
+                                    </td>
+                                    <td width="151" align="right" class="page_display">所有資料數: <?php echo $totalRows ?> </td>
+                                    <td width="24" align="right">&nbsp;</td>
                                 </tr>
                             </table>
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -183,89 +192,107 @@ require_once('display_page.php');
                                 </tr>
                             </table>
                             <form action="maintea_process.php" method="post" name="form1" id="form1">
-                                <?php if ($totalRows > 0) { // Show if recordset not empty ?>
-                                <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
-                                    <tr>
-                                        <td width="150" align="center" class="table_title">日期</td>
-                                        <td width="60" align="center" class="table_title">排序</td>
-                                        <td align="center" class="table_title">飲料名稱</td>
-                                        <td width="90" align="center" class="table_title">圖片</td>
-                                        <td width="40" align="center" class="table_title">狀態</td>
-                                        <td width="40" align="center" class="table_title">編輯</td>
-                                        <td width="40" align="center" class="table_title">刪除</td>
-                                    </tr>
-                                    <?php
-                                    $i=0;
-                                    do {
-                                        $i++;
-                                        $colname_RecImage = "-1";
-                                        if (isset($row_Recmaintea['d_id'])) {
-                                          $colname_RecImage = $row_Recmaintea['d_id'];
-                                        }
-                                        $query_RecImage = "SELECT * FROM file_set WHERE file_type='mainteaCover' AND file_d_id = :file_d_id";
-                                        $RecImage = $conn->prepare($query_RecImage);
-                                        $RecImage->bindParam(':file_d_id', $colname_RecImage, PDO::PARAM_STR);
-                                        $RecImage->execute();
-                                        $row_RecImage = $RecImage->fetch();
-                                        $totalRows_RecImage = $RecImage->rowCount();
-                                    ?>
-                                    <tr <?php if ($i%2==0): ?>bgcolor='#E4E4E4'<?php endif ?>>
-                                        <td align="center" class="table_data">
-                                            <a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
-                                                <?php echo $row_Recmaintea['d_date']; ?>
-                                            </a>
-                                        </td>
-                                        <td align="center" class="table_data">
-                                            <select name="d_sort" id="d_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows; ?>','<?php echo $row_Recmaintea['d_id']; ?>',this.options[this.selectedIndex].value)">
-                                                <option value="0" <?php if (!(strcmp(0, $row_Recmaintea[ 'd_sort']))) {echo "selected"; } ?>>至頂</option>
-                                                <?php
-                                                for($j=1;$j<=($totalRows);$j++) {
-                                                    echo "<option value=\"".$j."\" ";
-                                                    if (!(strcmp($j, $row_Recmaintea['d_sort']))) {echo "selected=\"selected\"";}
-                                                    echo ">".$j."</option>";
-                                                }
-                                                $_SESSION['totalRows']=$totalRows;
-                                                ?>
-                                            </select>
-                                        </td>
-                                        <td align="center" class="table_data">
-                                            <a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
-                                                <?php echo $row_Recmaintea['d_title']; ?>
-                                            </a>
-                                        </td>
-                                        <td align="center" class="table_data"><a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
-                                            <?php if ($totalRows_RecImage==0): ?>
-                                                <img src="image/default_image_s.jpg">
-                                            <?php else: ?>
-                                                <img src="../<?= $row_RecImage['file_link2'] ?>">
-                                            <?php endif ?>
-                                        </a></td>
-                                        <td align="center" class="table_data">
-                                            <?php  //list使用
-                                            if($row_Recmaintea['d_active']) {
-                                                echo "<a href='".$row_Recmaintea['d_active']."' rel='".$row_Recmaintea['d_id']."' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
-                                            } else {
-                                                echo "<a href='".$row_Recmaintea['d_active']."' rel='".$row_Recmaintea['d_id']."' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                <?php if ($totalRows > 0) { // Show if recordset not empty 
+                                ?>
+                                    <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
+                                        <tr>
+                                            <td width="150" align="center" class="table_title">日期</td>
+                                            <td width="60" align="center" class="table_title">排序</td>
+                                            <td width="550" align="center" class="table_title">飲料名稱</td>
+                                            <td width="90" align="center" class="table_title">圖片</td>
+                                            <td width="50" align="center" class="table_title">中文網頁顯示狀態</td>
+                                            <td width="50" align="center" class="table_title">英文網頁顯示狀態</td>
+                                            <td width="40" align="center" class="table_title">編輯</td>
+                                            <td width="40" align="center" class="table_title">刪除</td>
+                                        </tr>
+                                        <?php
+                                        $i = 0;
+                                        do {
+                                            $i++;
+                                            $colname_RecImage = "-1";
+                                            if (isset($row_Recmaintea['d_id'])) {
+                                                $colname_RecImage = $row_Recmaintea['d_id'];
                                             }
-                                            ?>
-                                        </td>
-                                        <td align="center" class="table_data"><a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
-                                        <td align="center" class="table_data"><a href="maintea_del.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
-                                    </tr>
-                                    <?php } while ($row_Recmaintea = $Recmaintea->fetch()); ?>
-                                </table>
-                                <?php } // Show if recordset not empty ?>
+                                            $query_RecImage = "SELECT * FROM file_set WHERE file_type='mainteaCover' AND file_d_id = :file_d_id";
+                                            $RecImage = $conn->prepare($query_RecImage);
+                                            $RecImage->bindParam(':file_d_id', $colname_RecImage, PDO::PARAM_STR);
+                                            $RecImage->execute();
+                                            $row_RecImage = $RecImage->fetch();
+                                            $totalRows_RecImage = $RecImage->rowCount();
+                                        ?>
+                                            <tr <?php if ($i % 2 == 0) : ?>bgcolor='#E4E4E4' <?php endif ?>>
+                                                <td align="center" class="table_data">
+                                                    <a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
+                                                        <?php echo $row_Recmaintea['d_date']; ?>
+                                                    </a>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <select name="d_sort" id="d_sort" onchange="changeSort('<?php echo $pageNum; ?>','<?php echo $totalRows; ?>','<?php echo $row_Recmaintea['d_id']; ?>',this.options[this.selectedIndex].value)">
+                                                        <option value="0" <?php if (!(strcmp(0, $row_Recmaintea['d_sort']))) {
+                                                                                echo "selected";
+                                                                            } ?>>至頂</option>
+                                                        <?php
+                                                        for ($j = 1; $j <= ($totalRows); $j++) {
+                                                            echo "<option value=\"" . $j . "\" ";
+                                                            if (!(strcmp($j, $row_Recmaintea['d_sort']))) {
+                                                                echo "selected=\"selected\"";
+                                                            }
+                                                            echo ">" . $j . "</option>";
+                                                        }
+                                                        $_SESSION['totalRows'] = $totalRows;
+                                                        ?>
+                                                    </select>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
+                                                        <?php echo $row_Recmaintea['d_title']; ?>
+                                                    </a>
+                                                </td>
+                                                <td align="center" class="table_data"><a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>">
+                                                        <?php if ($totalRows_RecImage == 0) : ?>
+                                                            <img src="image/default_image_s.jpg">
+                                                        <?php else : ?>
+                                                            <img src="../<?= $row_RecImage['file_link2'] ?>">
+                                                        <?php endif ?>
+                                                    </a></td>
+                                                <td align="center" class="table_data">
+                                                    <?php  //list使用
+                                                    if ($row_Recmaintea['d_active']) {
+                                                        echo "<a href='" . $row_Recmaintea['d_active'] . "' rel='" . $row_Recmaintea['d_id'] . "' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    } else {
+                                                        echo "<a href='" . $row_Recmaintea['d_active'] . "' rel='" . $row_Recmaintea['d_id'] . "' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td align="center" class="table_data">
+                                                    <?php  //list使用
+                                                    if ($row_Recmaintea['d_active_en']) {
+                                                        echo "<a href='" . $row_Recmaintea['d_active_en'] . "' rel='" . $row_Recmaintea['d_id'] . "' class='activeEn'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    } else {
+                                                        echo "<a href='" . $row_Recmaintea['d_active_en'] . "' rel='" . $row_Recmaintea['d_id'] . "' class='activeEn'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td align="center" class="table_data"><a href="maintea_edit.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
+                                                <td align="center" class="table_data"><a href="maintea_del.php?d_id=<?php echo $row_Recmaintea['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
+                                            </tr>
+                                        <?php } while ($row_Recmaintea = $Recmaintea->fetch()); ?>
+                                    </table>
+                                <?php } // Show if recordset not empty 
+                                ?>
                             </form>
                             <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
                                 <tr>
                                     <td width="739" align="right" class="page_display">
-                                    <!-------顯示頁選擇與分頁設定開始---------->
-                                    <?php displayPages($pageNum, $queryString, $totalPages, $totalRows, $currentPage); ?>
-                                    <!-------顯示頁選擇與分頁設定結束---------->
+                                        <!-------顯示頁選擇與分頁設定開始---------->
+                                        <?php displayPages($pageNum, $queryString, $totalPages, $totalRows, $currentPage); ?>
+                                        <!-------顯示頁選擇與分頁設定結束---------->
                                     <td width="110" align="right" class="page_display">
-                                        <?php if ($totalRows > 0) { // Show if recordset not empty ?> 頁數:
-                                        <?php echo (($pageNum+1)."/".($totalPages+1)); ?>
-                                        <?php } // Show if recordset not empty ?>
+                                        <?php if ($totalRows > 0) { // Show if recordset not empty 
+                                        ?> 頁數:
+                                            <?php echo (($pageNum + 1) . "/" . ($totalPages + 1)); ?>
+                                        <?php } // Show if recordset not empty 
+                                        ?>
                                     </td>
                                     <td width="151" align="right" class="page_display">所有資料數:
                                         <?php echo $totalRows ?> </td>
@@ -279,6 +306,7 @@ require_once('display_page.php');
         </tr>
     </table>
 </body>
+
 </html>
 
 <script type="text/javascript">

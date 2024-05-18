@@ -65,6 +65,13 @@ $ifFile = 0;
                                                 <tr>
                                                     <td width="200"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        中文網頁
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
                                                         美加区基本薪资(USD)
                                                     </td>
                                                     <td width="250">&nbsp;</td>
@@ -129,6 +136,161 @@ $ifFile = 0;
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多国域管理</td>
                                                     <td width="532">
                                                         <input name="d_data8" id="d_data8" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        英文網頁
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        美加区基本薪资(USD)
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data9" id="d_data9" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data10" id="d_data10" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data11" id="d_data11" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data12" id="d_data12" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        亚太区基本薪资(USD)
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data13" id="d_data13" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data14" id="d_data14" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data15" id="d_data15" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data16" id="d_data16" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <!-- 英文網頁 -->
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        英文網頁
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        美加区基本薪资(USD)
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data9" id="d_data9" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data10" id="d_data10" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data11" id="d_data11" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data12" id="d_data12" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200"></td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
+                                                        亚太区基本薪资(USD)
+                                                    </td>
+                                                    <td width="250">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data13" id="d_data13" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多店管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data14" id="d_data14" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data15" id="d_data15" class="table_data" value="" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">多国域管理</td>
+                                                    <td width="532">
+                                                        <input name="d_data16" id="d_data16" class="table_data" value="" size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>

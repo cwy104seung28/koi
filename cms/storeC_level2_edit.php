@@ -98,7 +98,7 @@ $menu_is = "store";
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">狀態</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active" class="table_data" id="c_active">
                                                                                     <option value="0" <?php if (!(strcmp(0, $row_RecstoreC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
@@ -152,7 +152,7 @@ $menu_is = "store";
 </script>
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
-    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_slug=:c_slug, c_class=:c_class, c_link=:c_link, c_active=:c_active WHERE c_id=:c_id";
+    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_slug=:c_slug, c_class=:c_class, c_link=:c_link, c_active=:c_active, c_active_en=:c_active_en WHERE c_id=:c_id";
     $sth = $conn->prepare($updateSQL);
     $sth->bindParam(':c_title', $_POST['c_title'], PDO::PARAM_STR);
     $sth->bindParam(':c_title_en', $_POST['c_title_en'], PDO::PARAM_STR);
@@ -160,6 +160,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     $sth->bindParam(':c_class', $_POST['c_class'], PDO::PARAM_STR);
     $sth->bindParam(':c_link', $_POST['c_link'], PDO::PARAM_STR);
     $sth->bindParam(':c_active', $_POST['c_active'], PDO::PARAM_INT);
+    $sth->bindParam(':c_active_en', $_POST['c_active_en'], PDO::PARAM_INT);
     $sth->bindParam(':c_id', $_POST['c_id'], PDO::PARAM_INT);
     $sth->execute();
     $updateGoTo = "storeC_level2_list.php?selected1=" . $_POST['c_link'] . "&change_num=1&now_c_id=" . $_POST['c_id'] . "&totalRows_RecstoreC=" . $_SESSION['totalRows'] . "&pageNum=" . $_SESSION["ToPage"];

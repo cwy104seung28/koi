@@ -84,11 +84,21 @@ $menu_is = "news";
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr> -->
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">狀態</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active" class="table_data" id="c_active">
                                                                                     <option value="0" <?php if (!(strcmp(0, $row_RecnewsC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
                                                                                     <option value="1" <?php if (!(strcmp(1, $row_RecnewsC[ 'c_active']))) {echo "selected";} ?>>公佈</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示狀態</td>
+                                                                            <td width="516">
+                                                                                <select name="c_active_en" class="table_data" id="c_active_en">
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecnewsC[ 'c_active_en']))) {echo "selected";} ?>>不公佈</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecnewsC[ 'c_active_en']))) {echo "selected";} ?>>公佈</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
@@ -131,7 +141,7 @@ $menu_is = "news";
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
-    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_slug=:c_slug, c_class=:c_class, c_link=:c_link, c_active=:c_active WHERE c_id=:c_id";
+    $updateSQL = "UPDATE class_set SET c_title=:c_title, c_title_en=:c_title_en, c_slug=:c_slug, c_class=:c_class, c_link=:c_link, c_active=:c_active, c_active_en=:c_active_en WHERE c_id=:c_id";
 
     $sth = $conn->prepare($updateSQL);
     $sth->bindParam(':c_title', $_POST['c_title'], PDO::PARAM_STR);
@@ -141,6 +151,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     // $sth->bindParam(':c_content', $_POST['c_content'], PDO::PARAM_STR);
     $sth->bindParam(':c_link', $_POST['c_link'], PDO::PARAM_STR);
     $sth->bindParam(':c_active', $_POST['c_active'], PDO::PARAM_INT);
+    $sth->bindParam(':c_active_en', $_POST['c_active_en'], PDO::PARAM_INT);
     $sth->bindParam(':c_id', $_POST['c_id'], PDO::PARAM_INT);
     $sth->execute();
 

@@ -95,11 +95,11 @@ $menu_is = "store";
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6"
-                                                        class="table_col_title">狀態</td>
+                                                        class="table_col_title">在中文網頁顯示狀態</td>
                                                     <td width="532">
                                                         <select name="c_active" class="table_data" id="c_active">
-                                                            <option value="1">公佈</option>
-                                                            <option value="0">不公佈</option>
+                                                            <option value="1">顯示</option>
+                                                                <option value="0">不顯示</option>
                                                         </select>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>

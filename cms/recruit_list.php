@@ -188,9 +188,9 @@ require_once('display_page.php');
                                     <tr>
                                         <td width="150" align="center" class="table_title">日期</td>
                                         <td width="60" align="center" class="table_title">排序</td>
-                                        <td align="center" class="table_title">年份</td>
+                                        <td align="center" class="table_title">標題</td>
                                         <!-- <td width="90" align="center" class="table_title">圖片</td> -->
-                                        <td width="40" align="center" class="table_title">狀態</td>
+                                        <!-- <td width="65" align="center" class="table_title">中/英文網頁顯示狀態</td> -->
                                         <td width="40" align="center" class="table_title">編輯</td>
                                         <td width="40" align="center" class="table_title">刪除</td>
                                     </tr>
@@ -240,7 +240,7 @@ require_once('display_page.php');
                                                 <img src="../<?= $row_RecImage['file_link2'] ?>">
                                             <?php endif ?>
                                         </a></td> -->
-                                        <td align="center" class="table_data">
+                                        <!-- <td align="center" class="table_data">
                                             <?php  //list使用
                                             if($row_Recrecruit['d_active']) {
                                                 echo "<a href='".$row_Recrecruit['d_active']."' rel='".$row_Recrecruit['d_id']."' class='activeCh'><img src=\"image/accept.png\" width=\"16\" height=\"16\"  ></a>";
@@ -248,7 +248,7 @@ require_once('display_page.php');
                                                 echo "<a href='".$row_Recrecruit['d_active']."' rel='".$row_Recrecruit['d_id']."' class='activeCh'><img src=\"image/delete.png\" width=\"16\" height=\"16\"  ></a>";
                                             }
                                             ?>
-                                        </td>
+                                        </td> -->
                                         <td align="center" class="table_data"><a href="recruit_edit.php?d_id=<?php echo $row_Recrecruit['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
                                         <td align="center" class="table_data"><a href="recruit_del.php?d_id=<?php echo $row_Recrecruit['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
                                     </tr>

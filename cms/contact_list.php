@@ -9,39 +9,85 @@ $maxRows_Reccontact = 20;
 $pageNum = 0;
 if (isset($_GET['pageNum'])) {
   $pageNum = $_GET['pageNum'];
+} else {
+  $_GET['pageNum'] = 0;
 }
 $startRow_Reccontact = $pageNum * $maxRows_Reccontact;
 
-$query_Reccontact = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' ORDER BY d_date DESC";
+//依照國家做篩選
+$query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_active='1' AND c_level=1 ORDER BY c_sort ASC, c_id DESC";
+$RecstoreC = $conn->query($query_RecstoreC);
+$row_RecstoreC = $RecstoreC->fetch();
+$totalRowsC = $RecstoreC->rowCount();
+
+$G_selected1 = '';
+if (isset($_GET['selected1'])) {
+  $_SESSION['selected_storeC'] = $G_selected1 = $_GET['selected1'];
+} else {
+  $G_selected1 = $_SESSION['selected_storeC'] = $row_RecstoreC['c_title'];
+}
+
+$query_Reccontact = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' AND d_data1='" . $G_selected1 . "'  ORDER BY d_date DESC";
 $query_limit_Reccontact = sprintf("%s LIMIT %d, %d", $query_Reccontact, $startRow_Reccontact, $maxRows_Reccontact);
 $Reccontact = $conn->query($query_limit_Reccontact);
 $row_Reccontact = $Reccontact->fetch();
 
-if (isset($_GET['totalRows'])) {
-  $totalRows = $_GET['totalRows'];
-} else {
-  $all_Reccontact = $conn->query($query_Reccontact);
-  $totalRows = $all_Reccontact->rowCount();
+$S_original_selected = '';
+if (isset($_SESSION['original_selected'])) {
+    $S_original_selected = $_SESSION['original_selected'];
 }
-$totalPages = ceil($totalRows / $maxRows_Reccontact) - 1;
-$_SESSION['totalRows'] = $totalRows;
-$TotalPage = $totalPages;
+$all_Reccontact = $conn->query($query_Reccontact);
+$totalRows = $all_Reccontact->rowCount();
 
-$queryString = "";
+$all_Reccontact = $conn->query($query_Reccontact);
+$totalRows = $all_Reccontact->rowCount();
+$totalPages_Reccontact = ceil($totalRows / $maxRows_Reccontact) - 1;
+$TotalPage = $totalPages_Reccontact;
+
+$queryString_Reccontact = "";
 if (!empty($_SERVER['QUERY_STRING'])) {
-  $params = explode("&", $_SERVER['QUERY_STRING']);
-  $newParams = array();
-  foreach ($params as $param) {
-    if (stristr($param, "pageNum") == false &&
-      stristr($param, "totalRows") == false) {
-      array_push($newParams, $param);
-  }
+    $params = explode("&", $_SERVER['QUERY_STRING']);
+    $newParams = array();
+    foreach ($params as $param) {
+        if (stristr($param, "pageNum") == false &&
+            stristr($param, "totalRows") == false) {
+            array_push($newParams, $param);
+        }
+    }
+    if (count($newParams) != 0) {
+        $queryString_Reccontact = "&" . htmlentities(implode("&", $newParams));
+    }
 }
-if (count($newParams) != 0) {
-  $queryString = "&" . htmlentities(implode("&", $newParams));
-}
-}
-$queryString = sprintf("&totalRows=%d%s", $totalRows, $queryString);
+$queryString_Reccontact = sprintf("&totalRows=%d%s", $totalRows, $queryString_Reccontact);
+
+// if (isset($_GET['totalRows'])) {
+//   $totalRows = $_GET['totalRows'];
+// } else {
+//   $all_Reccontact = $conn->query($query_Reccontact);
+//   $totalRows = $all_Reccontact->rowCount();
+// }
+// echo $totalRows;
+// $totalPages = ceil($totalRows / $maxRows_Reccontact) - 1;
+// $_SESSION['totalRows'] = $totalRows;
+// $TotalPage = $totalPages;
+
+// $queryString = "";
+// if (!empty($_SERVER['QUERY_STRING'])) {
+//   $params = explode("&", $_SERVER['QUERY_STRING']);
+//   $newParams = array();
+//   foreach ($params as $param) {
+//     if (
+//       stristr($param, "pageNum") == false &&
+//       stristr($param, "totalRows") == false
+//     ) {
+//       array_push($newParams, $param);
+//     }
+//   }
+//   if (count($newParams) != 0) {
+//     $queryString = "&" . htmlentities(implode("&", $newParams));
+//   }
+// }
+// $queryString = sprintf("&totalRows=%d%s", $totalRows, $queryString);
 
 // ====================================================================
 
@@ -81,16 +127,19 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
   $sort_num = 1;
 
-  $query_Reccontact = "SELECT * FROM data_set WHERE d_class1 = 'contact' ORDER BY d_date DESC";
+  $query_Reccontact = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' AND d_data1='" . $G_selected1 . "'  ORDER BY d_date DESC";
+  
+  $_SESSION['selected_storeC'] = $G_selected1;
   $Reccontact = $conn->query($query_Reccontact);
   $row_Reccontact = $Reccontact->fetch();
 
   do {
-    if ($row_Reccontact['d_sort'] == 0) {} else if ($row_Reccontact['d_id'] == $_GET['now_d_id']) {
-            // echo '<pre>'; print_r($sort_num); echo '</pre>';
+    if ($row_Reccontact['d_sort'] == 0) {
+    } else if ($row_Reccontact['d_id'] == $_GET['now_d_id']) {
+      // echo '<pre>'; print_r($sort_num); echo '</pre>';
 
     } else if ($sort_num == $_GET['change_num']) {
-            // echo '<pre>'; print_r($sort_num); echo '</pre>';
+      // echo '<pre>'; print_r($sort_num); echo '</pre>';
       $sort_num++;
 
       $updateSQL = "UPDATE data_set SET d_sort=:d_sort WHERE d_id=:d_id";
@@ -109,7 +158,7 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
       $stat->bindParam(':d_id', $row_Reccontact['d_id'], PDO::PARAM_INT);
       $stat->execute();
 
-            // echo '<pre>'; print_r($sort_num); echo '</pre>';
+      // echo '<pre>'; print_r($sort_num); echo '</pre>';
 
       $sort_num++;
     }
@@ -123,9 +172,9 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
   $stat->execute();
 
   if ($G_changeSort == 1) {
-    header("Location:contact_list.php?pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows']);
+    header("Location:contact_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum'] . "&totalRows=" . $_GET['totalRows']);
   } else if ($G_delchangeSort == 1) {
-    header("Location:contact_list.php?pageNum=" . $_GET['pageNum']);
+    header("Location:contact_list.php?selected1=" . $G_selected1 . "&pageNum=" . $_GET['pageNum']);
   }
 }
 
@@ -135,13 +184,22 @@ require_once('display_page.php');
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title><?php require_once('cmsTitle.php'); ?></title>
+  <link rel="stylesheet" href="jquery/chosen_v1.8.5/chosen.css">
 
+  <style>
+    .chosen-container {
+      position: relative;
+      top: -3px;
+    }
+  </style>
   <?php require_once('script.php'); ?>
-  <?php require_once('head.php');?>
+  <?php require_once('head.php'); ?>
 </head>
+
 <body>
   <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
@@ -154,12 +212,36 @@ require_once('display_page.php');
               <!-- InstanceBeginEditable name="編輯區域" -->
               <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td width="30%" class="list_title">聯絡我們列表</td>
+                  <td width="200" class="list_title">聯絡我們列表</td>
+                  <td width="874"><span class="table_data">分類：
+                      <select name="select1" id="select1" class="chosen-select">
+                        <?php do { ?>
+                          <option value="<?php echo $row_RecstoreC['c_title'] ?>" <?php if (!(strcmp($row_RecstoreC['c_title'], $G_selected1))) {
+                                                                                  echo "selected=\"selected\"";
+                                                                                } ?>><?php echo $row_RecstoreC['c_title'] ?><?php //echo $row_RecstoreC['c_id']
+                                                                                                                            ?></option>
+                        <?php
+                        } while ($row_RecstoreC = $RecstoreC->fetch());
+                        $rows = $RecstoreC->rowCount();
+                        if ($rows > 0) {
+                          $RecstoreC->execute();
+                        }
+                        ?>
+                      </select>
+                    </span><span class="no_data">
+                      <?php if ($totalRows == 0) { // Show if recordset empty 
+                      ?>
+                        <strong>此分類沒有資料</strong>
+                      <?php } // Show if recordset empty 
+                      ?>
+                    </span></td>
                   <td><span class="no_data">
-                    <?php if ($totalRows == 0) { // Show if recordset empty ?>
-                      <strong>抱歉!找不到任何資料~</strong>
-                    <?php } // Show if recordset empty ?>
-                  </span></td>
+                      <?php if ($totalRows == 0) { // Show if recordset empty 
+                      ?>
+                        <strong>抱歉!找不到任何資料~</strong>
+                      <?php } // Show if recordset empty 
+                      ?>
+                    </span></td>
                 </tr>
               </table>
               <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
@@ -168,10 +250,12 @@ require_once('display_page.php');
                     <!-------顯示頁選擇與分頁設定開始---------->
                     <?php displayPages($pageNum, $queryString, $totalPages, $totalRows, $currentPage); ?>
                     <!-------顯示頁選擇與分頁設定結束---------->
-                    <td width="110" align="right" class="page_display">
-                      <?php if ($totalRows > 0) { // Show if recordset not empty ?> 頁數:
-                      <?php echo (($pageNum+1)."/".($totalPages+1)); ?>
-                    <?php } // Show if recordset not empty ?>
+                  <td width="110" align="right" class="page_display">
+                    <?php if ($totalRows > 0) { // Show if recordset not empty 
+                    ?> 頁數:
+                      <?php echo (($pageNum + 1) . "/" . ($totalPages + 1)); ?>
+                    <?php } // Show if recordset not empty 
+                    ?>
                   </td>
                   <td width="151" align="right" class="page_display">所有資料數: <?php echo $totalRows ?> </td>
                   <td width="24" align="right">&nbsp;</td>
@@ -183,7 +267,8 @@ require_once('display_page.php');
                 </tr>
               </table>
               <form action="contact_process.php" method="post" name="form1" id="form1">
-                <?php if ($totalRows > 0) { // Show if recordset not empty ?>
+                <?php if ($totalRows > 0) { // Show if recordset not empty 
+                ?>
                   <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
                     <tr>
                       <td width="150" align="center" class="table_title">日期</td>
@@ -193,7 +278,7 @@ require_once('display_page.php');
                       <td width="40" align="center" class="table_title">刪除</td>
                     </tr>
                     <?php
-                    $i=0;
+                    $i = 0;
                     do {
                       $i++;
                       $colname_RecImage = "-1";
@@ -206,8 +291,8 @@ require_once('display_page.php');
                       $RecImage->execute();
                       $row_RecImage = $RecImage->fetch();
                       $totalRows_RecImage = $RecImage->rowCount();
-                      ?>
-                      <tr <?php if ($i%2==0): ?>bgcolor='#E4E4E4'<?php endif ?>>
+                    ?>
+                      <tr <?php if ($i % 2 == 0) : ?>bgcolor='#E4E4E4' <?php endif ?>>
                         <td align="center" class="table_data">
                           <a href="contact_edit.php?d_id=<?php echo $row_Reccontact['d_id']; ?>">
                             <?php echo $row_Reccontact['d_date']; ?>
@@ -228,7 +313,8 @@ require_once('display_page.php');
                       </tr>
                     <?php } while ($row_Reccontact = $Reccontact->fetch()); ?>
                   </table>
-                <?php } // Show if recordset not empty ?>
+                <?php } // Show if recordset not empty 
+                ?>
               </form>
               <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" class="list_title_table">
                 <tr>
@@ -236,10 +322,12 @@ require_once('display_page.php');
                     <!-------顯示頁選擇與分頁設定開始---------->
                     <?php displayPages($pageNum, $queryString, $totalPages, $totalRows, $currentPage); ?>
                     <!-------顯示頁選擇與分頁設定結束---------->
-                    <td width="110" align="right" class="page_display">
-                      <?php if ($totalRows > 0) { // Show if recordset not empty ?> 頁數:
-                      <?php echo (($pageNum+1)."/".($totalPages+1)); ?>
-                    <?php } // Show if recordset not empty ?>
+                  <td width="110" align="right" class="page_display">
+                    <?php if ($totalRows > 0) { // Show if recordset not empty 
+                    ?> 頁數:
+                      <?php echo (($pageNum + 1) . "/" . ($totalPages + 1)); ?>
+                    <?php } // Show if recordset not empty 
+                    ?>
                   </td>
                   <td width="151" align="right" class="page_display">所有資料數: <?php echo $totalRows ?> </td>
                   <td width="24" align="right">&nbsp;</td>
@@ -252,11 +340,24 @@ require_once('display_page.php');
     </tr>
   </table>
 </body>
+
 </html>
 
+<script src="jquery/chosen_v1.8.5/chosen.jquery.js"></script>
 <script type="text/javascript">
+  $(".chosen-select").chosen({
+    disable_search_threshold: 6,
+    no_results_text: "找不到資料。 目前輸入的是:",
+    placeholder_text_single: "尚未新增分類",
+    width: "auto"
+  });
+
   function changeSort(pageNum, totalRows, now_d_id, change_num) { //v1.0
-    //alert(pageNum+"+"+totalPages);
-    window.location.href = "contact_list.php?pageNum=" + pageNum + "&totalRows=" + totalRows + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num;
+    window.location.href = "contact_list.php?selected1="+ selected1 + "&pageNum="+ pageNum + "&totalRows=" + totalRows + "&changeSort=1" + "&now_d_id=" + now_d_id + "&change_num=" + change_num;
   }
+  $(document).ready(function() {
+    $('#select1').change(function() {
+      window.location.href = "contact_list.php?changeSort=1&selected1=" + $(this).val();
+    });
+  });
 </script>

@@ -127,7 +127,7 @@ $ifFile = 0;
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6"
-                                                        class="table_col_title">標題</td>
+                                                        class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data"
                                                             id="d_title"
