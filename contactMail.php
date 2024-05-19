@@ -1,4 +1,3 @@
-
 <?php
 require_once 'Connections/connect2data.php';
 
@@ -30,10 +29,10 @@ if (isset($_SESSION['checkPost']) && $_SESSION['checkPost'] == 0 && $_SERVER['RE
         $m_ask
     ]);
 
-    require_once('PHPMailer/PHPMailerAutoload.php');
+    require_once ('PHPMailer/PHPMailerAutoload.php');
     include 'smtpsetting.php';
     /////////////////////////////////////////////////////////////////
-
+    $insertStoreC = $DB->row("SELECT class_set WHERE c_title LIKE '%" . $m_area . "%' AND c_level = 1");
     $phpmailer->SingleTo = true; //will send mail to each email address individually
 
     $phpmailer->SetFrom('c3207054@gmail.com', 'KOI');
@@ -41,9 +40,10 @@ if (isset($_SESSION['checkPost']) && $_SESSION['checkPost'] == 0 && $_SERVER['RE
 
     $phpmailer->AddAddress('c3207054@gmail.com', 'KOI');
     $phpmailer->AddAddress($m_email, 'KOI');
+    $phpmailer->AddAddress($insertStoreC['c_data1'], 'KOI');
     $phpmailer->AddBCC('c3207054@gmail.com', 'KOI');
 
-    $phpmailer->Subject = "KOI聯絡我們-".$m_name;
+    $phpmailer->Subject = "KOI聯絡我們-" . $m_name;
 
 
     $mailContent = "<div style='max-width: 500px; letter-spacing: 1px;'>"
