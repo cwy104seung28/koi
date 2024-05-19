@@ -40,7 +40,7 @@ if (isset($_SESSION['checkPost']) && $_SESSION['checkPost'] == 0 && $_SERVER['RE
 
     $phpmailer->AddAddress('c3207054@gmail.com', 'KOI');
     $phpmailer->AddAddress($m_email, 'KOI');
-    $phpmailer->AddAddress($insertStoreC['c_data1'], 'KOI');
+    $phpmailer->AddAddress($insertStoreC['c_data1'], 'KOI'); //確認一下是不是data1
     $phpmailer->AddBCC('c3207054@gmail.com', 'KOI');
 
     $phpmailer->Subject = "KOI聯絡我們-" . $m_name;
