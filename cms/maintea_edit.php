@@ -102,7 +102,7 @@ $ifFile = 0;
                                             <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6"
-                                                        class="table_col_title">標題</td>
+                                                        class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_id" type="hidden" id="d_id"
                                                             value="<?php echo $row_Recmaintea['d_id']; ?>" />

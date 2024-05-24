@@ -139,9 +139,16 @@ $ifFile = 0;
                                                     <td bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data" id="d_title" size="60" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td width="532">
+                                                        <input name="d_title_en" type="text" class="table_data" id="d_title_en" size="60" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
@@ -398,9 +405,10 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $class1 = 'store';
-    $insertSQL = "INSERT INTO data_set (d_title, d_class1, d_class2, d_class3, d_class4, d_data1, d_data2, d_data3, d_data4, d_data5, d_date, d_active, d_active_en) VALUES (:d_title, :d_class1, :d_class2, :d_class3, :d_class4, :d_data1, :d_data2, :d_data3, :d_data4, :d_data5, :d_date, :d_active, :d_active_en)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_class1, d_class2, d_class3, d_class4, d_data1, d_data2, d_data3, d_data4, d_data5, d_date, d_active, d_active_en) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_class3, :d_class4, :d_data1, :d_data2, :d_data3, :d_data4, :d_data5, :d_date, :d_active, :d_active_en)";
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
+    $stat->bindParam(':d_title_en', $_POST['d_title_en'], PDO::PARAM_STR);
     $stat->bindParam(':d_class1', $class1, PDO::PARAM_STR);
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_class3', $_POST['d_class3'], PDO::PARAM_STR);

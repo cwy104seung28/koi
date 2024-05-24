@@ -1,4 +1,4 @@
-<?php require_once('./Connections/connect2data.php'); 
+<?php require_once('./Connections/connect2data.php');
 require_once 'Connections/connect2data.php';
 require_once 'paginator.class.php';
 
@@ -24,16 +24,20 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
         <div class="recruit-top">
             <div class="head-area">
                 <div class="head-1">
-                    <div class="en top">We Want</div>
+                    <div class="en top show-for-large">We Want</div>
+                    <div class="en top hide-for-large">We</div>
+                </div>
+                <div class="head-1-2 hide-for-large">
+                    <div class="en">Want</div>
                 </div>
                 <div class="head-2">
                     <div class="en bottom">
-                        <div class="note">RECRUIT</div>
+                        <div class="note show-for-large">RECRUIT</div>
                         YOU!
                     </div>
                 </div>
-
-                <div class="bear"><img src="./images/recruit-bear.svg"></div>
+                <div class="note hide-for-large">RECRUIT</div>
+                <div class="bear show-for-large"><img src="./images/recruit-bear.svg"></div>
             </div>
             <div class="recruitList">
                 <div class="title">
@@ -41,34 +45,34 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                 </div>
                 <div class="article-area">
                     <div class="top flex-container">
-                        <div>营运管理类型</div>
+                        <div>营运<br class="hide-for-large">管理类型</div>
                         <div>职称</div>
-                        <div>美加区基本薪资(USD)</div>
-                        <div>亚太区基本薪资(USD)</div>
+                        <div>美加区<br class="hide-for-large">基本薪资(USD)</div>
+                        <div>亚太区<br class="hide-for-large">基本薪资(USD)</div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">单店管理</div>
                         <div>店经理</div>
-                        <div><?= $work['d_data1'];?></div>
-                        <div><?= $work['d_data5'];?></div>
+                        <div><?= $work['d_data1']; ?></div>
+                        <div><?= $work['d_data5']; ?></div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">多店管理</div>
                         <div>区域经理</div>
-                        <div><?= $work['d_data2'];?></div>
-                        <div><?= $work['d_data6'];?></div>
+                        <div><?= $work['d_data2']; ?></div>
+                        <div><?= $work['d_data6']; ?></div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">单国域管理</div>
                         <div>营运经理</div>
-                        <div><?= $work['d_data3'];?></div>
-                        <div><?= $work['d_data7'];?></div>
+                        <div><?= $work['d_data3']; ?></div>
+                        <div><?= $work['d_data7']; ?></div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">多国域管理</div>
                         <div>营运总监/营运长</div>
-                        <div><?= $work['d_data4'];?></div>
-                        <div><?= $work['d_data8'];?></div>
+                        <div><?= $work['d_data4']; ?></div>
+                        <div><?= $work['d_data8']; ?></div>
                     </div>
                 </div>
                 <div class="note">
@@ -197,24 +201,56 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
 </html>
 
 <script>
-    let $tl_title = gsap.timeline({
-            paused: true,
-        })
-        .to(".recruit-top .head-area .en.top", {
-            duration: 1,
-            y: 0,
-            rotation: 0,
-            ease: Power2.easeOut,
-        }).to(".recruit-top .head-area .en.bottom", {
-            duration: 1,
-            y: 0,
-            rotation: 0,
-            ease: Power2.easeOut,
-        }, '<0.25')
+    if (window.device == 'desktop') {
+        let $tl_title = gsap.timeline({
+                paused: true,
+            })
+            .to(".recruit-top .head-area .en.top", {
+                duration: 1,
+                y: 0,
+                rotation: 0,
+                ease: Power2.easeOut,
+            }).to(".recruit-top .head-area .en.bottom", {
+                duration: 1,
+                y: 0,
+                rotation: 0,
+                ease: Power2.easeOut,
+            }, '<0.25')
 
-    gsap.delayedCall(1, function() {
-        $tl_title.play();
-    });
+        gsap.delayedCall(1, function() {
+            $tl_title.play();
+        });
+    } else {
+        let $tl_title_mobile = gsap.timeline({
+                paused: true,
+            })
+            .to(".recruit-top .head-1 .en", {
+                duration: 1,
+                y: 0,
+                rotation: 0,
+                ease: Power2.easeOut,
+            })
+            .to(".recruit-top .head-1-2 .en", {
+                duration: 1,
+                y: 0,
+                rotation: 0,
+                ease: Power2.easeOut,
+            }, '<0.25')
+            .to(".recruit-top .head-2 .en", {
+                duration: 1,
+                y: 0,
+                rotation: 0,
+                ease: Power2.easeOut,
+            }, '<0.25')
+
+
+        gsap.delayedCall(1, function() {
+            $tl_title_mobile.play();
+        });
+    }
+
+
+
 
 
     let $tl_apply = gsap.timeline({
@@ -313,7 +349,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
         trigger: ".menu-link",
         endTrigger: ".recruitWrap",
         start: "top 78.5%",
-         end: "100% 100%",
+        end: "100% 100%",
         scrub: 1,
         pin: true,
         // markers: true,

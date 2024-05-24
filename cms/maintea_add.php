@@ -55,7 +55,7 @@ $ifFile = 0;
                                         <td>
                                             <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_class1" type="hidden" id="d_class1" value="<?php echo $menu_is; ?>" />
                                                         <input name="d_title" type="text" class="table_data" id="d_title" value="" size="80">

@@ -152,7 +152,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     }
     //----------插入圖片資料到資料庫end----------
 
-    if ($_REQUEST['type'] == 'ourteaIconCover') {
+    if ($_REQUEST['type'] == 'ourteaIconCover' || $_REQUEST['type'] == 'ourteaIndexCover') {
         $updateGoTo = $_SESSION['nowPage'] . "?c_id=" . $_POST['file_c_id'] . "#imageEdit";
     } else {
         $updateGoTo = $_SESSION['nowPage'] . "?d_id=" . $_POST['file_d_id'] . "#imageEdit";
@@ -217,7 +217,7 @@ $totalRows_RecImage = $RecImage->rowCount();
                             <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title"><span class="table_data">圖片說明</span></td>
                             <td width="532"><input name="file_title" type="text" class="table_data" id="file_title" value="<?php echo $row_RecImage['file_title']; ?>" size="50">
                                 <input name="file_id" type="hidden" id="file_id" value="<?php echo $row_RecImage['file_id']; ?>" />
-                                <?php if ($type == 'ourteaIconCover') : ?>
+                                <?php if ($type == 'ourteaIconCover'|| $_REQUEST['type'] == 'ourteaIndexCover') : ?>
                                     <input name="file_c_id" type="hidden" id="file_c_id" value="<?php echo $row_RecImage['file_c_id']; ?>" />
                                 <?php else : ?>
                                     <input name="file_d_id" type="hidden" id="file_d_id" value="<?php echo $row_RecImage['file_d_id']; ?>" />

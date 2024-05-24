@@ -164,7 +164,7 @@ $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1
                     </ul>
                     </ul>
                 </div>
-                <div class="storeCat-inner">
+                <!-- <div class="storeCat-inner">
                     <div class="store">(Brand)</div>
                     <ul class="storeCatList">
                         <li class="<?php if ($ryder_cat_brand == 0) : ?>current<?php endif ?>">
@@ -226,7 +226,64 @@ $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1
                             </li>
                         <?php endif ?>
                     </ul>
+                </div> -->
+                <div class="storeCat-inner">
+                    <div class="store">(Brand)</div>
+                    <ul class="storeCatList">
+                        <li class="<?php if ($ryder_cat_brand == 0) : ?>current<?php endif ?>">
+                            <a href="./store.php?c=<?= $ryder_cat ?>&s=<?= $ryder_cat_sub ?>" class="flex-container align-middle">
+                                <div class="dot"></div>
+                                <div class="title">
+                                    All
+                                </div>
+                            </a>
+                        </li>
+                        <!-- <?php
+                                $store_brand_item = $DB->query("SELECT * FROM data_set WHERE d_class1='store' AND d_class3=? AND d_class2=? AND d_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub]);
+                                ?>
+                        <?php foreach ($store_brand_item as $brand) : ?>
+
+                        <?php endforeach ?> -->
+                        <!-- <?php $work_brand = $DB->query("SELECT * FROM data_set WHERE d_class1='storeBrand' AND d_active=1") ?>
+                        <?php foreach ($work_brand as $brand) : ?>
+                            <li class="<?php if ($ryder_cat_brand == $brand['d_id']) : ?>current<?php endif ?>">
+                                <a href="./store.php?c=<?= $ryder_cat ?>&s=<?= $brand['d_id'] ?>" class="flex-container align-middle">
+                                    <div class="dot"></div>
+                                    <div class="title">
+                                        <?= $brand['d_title']; ?>
+                                    </div>
+                                </a>
+                            </li>
+                        <?php endforeach ?> -->
+                        <?php $work_brand = $DB->query("SELECT * FROM data_set WHERE d_class1='storeBrand' AND d_active=1") ?>
+                        <?php foreach ($work_brand as $row_brand) : ?>
+                            <!-- <?php $work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND d_class4=? AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub, $row_brand['d_id']]); ?>
+                            <?php foreach ($work as $row) : ?>
+                            <?php endforeach ?> -->
+                            <li class="<?php if ($ryder_cat_brand == $row_brand['d_id']) : ?>current<?php endif ?>">
+                                <a href="./store.php?c=<?= $ryder_cat ?>&s=<?= $row_brand['d_id'] ?>" class="flex-container align-middle">
+                                    <div class="dot"></div>
+                                    <div class="title">
+                                        <?= $row_brand['d_title']; ?>
+                                    </div>
+                                </a>
+                            </li>
+                        <?php endforeach ?>
+                    </ul>
                 </div>
+                <!-- <?php $work_test = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND (d_class4=? || $ryder_cat_brand = 0) AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub, $ryder_cat_brand]); ?>
+                <?php foreach ($work_test as $row) : ?>
+                    <?php if ($row['d_class4'] == $row_brand['d_id']) : ?>
+                        <li class="<?php if ($ryder_cat_brand == $row_brand['d_id']) : ?>current<?php endif ?>">
+                            <a href="./store.php?c=<?= $ryder_cat ?>&s=<?= $ryder_cat_sub ?>&b=<?= $row_brand['d_id'] ?>" class="flex-container align-middle">
+                                <div class="dot"></div>
+                                <div class="title">
+                                    <?= $row_brand['d_title']; ?>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endif ?>
+                <?php endforeach ?> -->
             </div>
             <div class="storeList-area">
                 <ul class="storeList">

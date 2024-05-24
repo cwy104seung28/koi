@@ -94,8 +94,8 @@ $ifFile = 1;
                                                         <select name="d_class2" id="d_class2" class="chosen-select">
                                                             <?php do { ?>
                                                                 <option value="<?php echo $row_RecstoreC['c_id'] ?>" <?php if (!(strcmp($row_RecstoreC['c_id'], $row_Recmenu['d_class2']))) {
-                                                                                                                        echo "selected";
-                                                                                                                    } ?>>
+                                                                                                                            echo "selected";
+                                                                                                                        } ?>>
                                                                     <?php echo $row_RecstoreC['c_title'] ?>
                                                                 </option>
                                                             <?php
@@ -110,9 +110,16 @@ $ifFile = 1;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data" id="d_title" value="<?php echo $row_Recmenu['d_title']; ?>" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6"> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td width="532">
+                                                        <input name="d_title_en" type="text" class="table_data" id="d_title_en" value="<?php echo $row_Recmenu['d_title_en']; ?>" size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6"> </td>
                                                 </tr>
@@ -124,7 +131,7 @@ $ifFile = 1;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在網頁顯示</td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示</td>
                                                     <td>
                                                         <select name="d_active" class="table_data" id="d_active">
                                                             <option value="0" <?php if (!(strcmp(0, $row_Recmenu['d_active']))) {
@@ -137,71 +144,20 @@ $ifFile = 1;
                                                     </td>
                                                     <td bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
-                                                <?php if (1) { // Show if recordset not empty 
-                                                ?>
-                                                    <!-- ========================== 單張單張傳 =========================== -->
-                                                    <!-- <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>上傳圖片</p>
-                                                    </td>
+                                                <tr>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示</td>
                                                     <td>
-                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable">
-                                                            <tr>
-                                                                <td> <span class="table_data">選擇圖片：</span>
-                                                                    <input name="image[]" type="file" class="table_data" id="image1" />
-                                                                    <br>
-                                                                    <span class="table_data">圖片說明：</span>
-                                                                    <input name="image_title[]" type="text" class="table_data" id="image_title1"> </td>
-                                                            </tr>
-                                                        </table>
-                                                        <table width="100%" border="0" cellspacing="5" cellpadding="2">
-                                                            <tr>
-                                                                <td height="28">
-                                                                    <table border="0" cellspacing="2" cellpadding="2">
-                                                                        <tr>
-                                                                            <td><a href="javascript:addField()"><img src="image/add.png" width="16" height="16" border="0"></a></td>
-                                                                            <td><a href="javascript:addField()" class="table_data">新增圖片</a></td>
-                                                                            <td class="red_letter">&nbsp;</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
+                                                        <select name="d_active_en" class="table_data" id="d_active_en">
+                                                            <option value="0" <?php if (!(strcmp(0, $row_Recmenu['d_active_en']))) {
+                                                                                    echo "selected";
+                                                                                } ?>>不顯示</option>
+                                                            <option value="1" <?php if (!(strcmp(1, $row_Recmenu['d_active_en']))) {
+                                                                                    echo "selected";
+                                                                                } ?>>顯示</option>
+                                                        </select>
                                                     </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*
-                                                            <?php echo $imagesSize[$_SESSION['nowMenu']]['note']; ?>
-                                                        </p>
-                                                    </td>
-                                                </tr> -->
-                                                    <!-- ========================== 可多張上傳 =========================== -->
-                                                    <!-- <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>上傳圖片</p>
-                                                    </td>
-                                                    <td>
-                                                        <table width="100%" border="0" cellspacing="5" cellpadding="2" id="addF">
-                                                            <tr>
-                                                                <td height="28">
-                                                                    <table border="0" cellspacing="2" cellpadding="2">
-                                                                        <tr>
-                                                                            <td><a href="dropzoneImg.php?d_id=<?= $row_Recmenu['d_id'] ?>" class="fancyboxUpload" title="上傳圖片"><img src="image/add.png" width="16" height="16" border="0"></a></td>
-                                                                            <td><a href="dropzoneImg.php?d_id=<?= $row_Recmenu['d_id'] ?>" class="fancyboxUpload table_data">上傳圖片</a></td>
-                                                                            <td class="note_letter">&nbsp;</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*
-                                                            <?php echo $imagesSize[$_SESSION['nowMenu']]['note']; ?>
-                                                        </p>
-                                                    </td>
-                                                </tr> -->
-                                                <?php } // Show if recordset not empty 
-                                                ?>
+                                                    <td bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
                                                 <?php if ($ifFile) { ?>
                                                     <?php if ($totalRows_RecFile > 0) { // Show if recordset not empty 
                                                     ?>
@@ -261,37 +217,41 @@ $ifFile = 1;
                                                         </tr>
                                                     <?php } // Show if recordset not empty 
                                                     ?>
-                                                    <!-- <tr>
-                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                            <p>上傳檔案</p>
-                                                        </td>
-                                                        <td>
-                                                            <table border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable2">
-                                                                <tr>
-                                                                    <td><span class="table_data">選擇檔案：</span>
-                                                                        <input name="upfile[]" type="file" class="table_data" id="upfile1" />
-                                                                        <br />
-                                                                        <span class="table_data">檔案說明：</span>
-                                                                        <input name="upfile_title[]" type="text" class="table_data" id="upfile_title1" />
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            <table border="0" cellspacing="5" cellpadding="2">
-                                                                <tr>
-                                                                    <td>
-                                                                        <table border="0" cellspacing="2" cellpadding="2">
-                                                                            <tr>
-                                                                                <td><a href="javascript:addField2()"><img src="image/add.png" width="16" height="16" border="0" /></a></td>
-                                                                                <td><a href="javascript:addField2()" class="table_data">新增檔案</a></td>
-                                                                                <td class="red_letter">&nbsp;</td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                        <td bgcolor="#e5ecf6" class="table_col_title"><span class="red_letter">*上傳之檔案請勿超過2M。</span></td>
-                                                    </tr> -->
+
+                                                    <?php if ($totalRows_RecFile == 0) { ?>
+                                                        <tr>
+                                                            <td align="center" bgcolor="#e5ecf6" class="table_col_title">
+                                                                <p>上傳檔案</p>
+                                                            </td>
+                                                            <td>
+                                                                <table border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable2">
+                                                                    <tr>
+                                                                        <td><span class="table_data">選擇檔案：</span>
+                                                                            <input name="upfile[]" type="file" class="table_data" id="upfile1" />
+                                                                            <br />
+                                                                            <span class="table_data">檔案說明：</span>
+                                                                            <input name="upfile_title[]" type="text" class="table_data" id="upfile_title1" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                <table border="0" cellspacing="5" cellpadding="2">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <table border="0" cellspacing="2" cellpadding="2">
+                                                                                <tr>
+                                                                                    <td><a href="javascript:addField2()"><img src="image/add.png" width="16" height="16" border="0" /></a></td>
+                                                                                    <td><a href="javascript:addField2()" class="table_data">新增檔案</a></td>
+                                                                                    <td class="red_letter">&nbsp;</td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td bgcolor="#e5ecf6" class="table_col_title"><span class="red_letter">*上傳之檔案請勿超過2M。</span></td>
+                                                        </tr>
+                                                    <?php } // Show if recordset not empty 
+                                                    ?>
                                                 <?php } ?>
                                             </table>
                                         </td>
@@ -481,7 +441,7 @@ $ifFile = 1;
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
-    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_class2=:d_class2, d_date=:d_date, d_active=:d_active WHERE d_id=:d_id";
+    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_class2=:d_class2, d_date=:d_date, d_active=:d_active, d_active_en=:d_active_en WHERE d_id=:d_id";
 
     $stat = $conn->prepare($updateSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -489,6 +449,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
+    $stat->bindParam(':d_active_en', $_POST['d_active_en'], PDO::PARAM_INT);
     $stat->bindParam(':d_id', $_POST['d_id'], PDO::PARAM_INT);
     $stat->execute();
     //----------插入圖片資料到資料庫begin(須放入插入主資料後)----------

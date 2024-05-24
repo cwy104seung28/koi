@@ -192,7 +192,7 @@ require_once('display_page.php');
                                         <!-- <td width="90" align="center" class="table_title">圖片</td> -->
                                         <!-- <td width="65" align="center" class="table_title">中/英文網頁顯示狀態</td> -->
                                         <td width="40" align="center" class="table_title">編輯</td>
-                                        <td width="40" align="center" class="table_title">刪除</td>
+                                        <!-- <td width="40" align="center" class="table_title">刪除</td> -->
                                     </tr>
                                     <?php
                                     $i=0;
@@ -250,7 +250,7 @@ require_once('display_page.php');
                                             ?>
                                         </td> -->
                                         <td align="center" class="table_data"><a href="recruit_edit.php?d_id=<?php echo $row_Recrecruit['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
-                                        <td align="center" class="table_data"><a href="recruit_del.php?d_id=<?php echo $row_Recrecruit['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
+                                        <!-- <td align="center" class="table_data"><a href="recruit_del.php?d_id=<?php echo $row_Recrecruit['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td> -->
                                     </tr>
                                     <?php } while ($row_Recrecruit = $Recrecruit->fetch()); ?>
                                 </table>

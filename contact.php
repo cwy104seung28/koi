@@ -5,6 +5,8 @@ $_SESSION['checkPost'] = 0;
 
 $storeCat = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_level=1 AND c_active=1 ORDER BY c_sort ASC");
 
+$m_area = '泰國';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

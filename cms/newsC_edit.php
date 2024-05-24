@@ -87,8 +87,8 @@ $menu_is = "news";
                                                                             <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active" class="table_data" id="c_active">
-                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecnewsC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
-                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecnewsC[ 'c_active']))) {echo "selected";} ?>>公佈</option>
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecnewsC[ 'c_active']))) {echo "selected";} ?>>不顯示</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecnewsC[ 'c_active']))) {echo "selected";} ?>>顯示</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
@@ -97,8 +97,8 @@ $menu_is = "news";
                                                                             <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active_en" class="table_data" id="c_active_en">
-                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecnewsC[ 'c_active_en']))) {echo "selected";} ?>>不公佈</option>
-                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecnewsC[ 'c_active_en']))) {echo "selected";} ?>>公佈</option>
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecnewsC[ 'c_active_en']))) {echo "selected";} ?>>不顯示</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecnewsC[ 'c_active_en']))) {echo "selected";} ?>>顯示</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>

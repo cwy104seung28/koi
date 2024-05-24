@@ -89,7 +89,7 @@ $menu_is = "store";
                                                                             <td bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                                             <td width="516">
                                                                                 <input name="c_title" type="text" class="table_data" id="c_title" value="<?php echo $row_RecstoreC['c_title']; ?>" size="50" />
                                                                                 <input name="c_id" type="hidden" id="c_id" value="<?php echo $row_RecstoreC['c_id']; ?>" />
@@ -97,12 +97,30 @@ $menu_is = "store";
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                                         </tr>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                                            <td width="516">
+                                                                                <input name="c_title_en" type="text" class="table_data" id="c_title_en" value="<?php echo $row_RecstoreC['c_title_en']; ?>" size="50" />
+                                                                            </td>
+                                                                            <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                                        </tr>
                                                                         <tr>
                                                                             <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示狀態</td>
                                                                             <td width="516">
                                                                                 <select name="c_active" class="table_data" id="c_active">
-                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecstoreC[ 'c_active']))) {echo "selected";} ?>>不公佈</option>
-                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecstoreC[ 'c_active']))) {echo "selected";} ?>>公佈</option>
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecstoreC[ 'c_active']))) {echo "selected";} ?>>不顯示</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecstoreC[ 'c_active']))) {echo "selected";} ?>>顯示</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示狀態</td>
+                                                                            <td width="516">
+                                                                                <select name="c_active_en" class="table_data" id="c_active_en">
+                                                                                    <option value="0" <?php if (!(strcmp(0, $row_RecstoreC[ 'c_active_en']))) {echo "selected";} ?>>不顯示</option>
+                                                                                    <option value="1" <?php if (!(strcmp(1, $row_RecstoreC[ 'c_active_en']))) {echo "selected";} ?>>顯示</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;</td>

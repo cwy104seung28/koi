@@ -182,7 +182,7 @@ if ((isset($_POST['file_id'])) && ($_POST['file_id'] != "") && (isset($_POST['de
     $sth->bindParam(':file_id', $_POST['file_id'], PDO::PARAM_INT);
     $sth->execute();
 
-    if ($_REQUEST['type'] == "ourteaIconCover") {
+    if ($_REQUEST['type'] == "ourteaIconCover" || $_REQUEST['type'] == 'ourteaIndexCover') {
         $deleteGoTo = $_SESSION['nowPage'] . "?c_id=" . $row_RecImage['file_c_id'] . "#imageEdit";
     } else {
         $deleteGoTo = $_SESSION['nowPage'] . "?d_id=" . $row_RecImage['file_d_id'] . "#imageEdit";

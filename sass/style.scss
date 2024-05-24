@@ -65,7 +65,16 @@ nav {
     &.not-clip {
         clip-path: path("M0 0h5000v170H0Z");
     }
+    .bg {
+        position: absolute;
+        z-index: 0;
+        left: -1px;
+        right: -1px;
+        top: 0;
+    }
     .now-page {
+        position: relative;
+        z-index: 1;
         padding-top: 20px;
         padding-left: 20px;
         height: fit-content;
@@ -80,18 +89,33 @@ nav {
             font-size: 15px;
             font-weight: 500;
             margin-right: 5px;
+            @include breakpoint(medium down) {
+                font-size: 12px;
+                color: #fff;
+            }
         }
         .page {
             font-family: $en-family;
             font-style: italic;
+            @include breakpoint(medium down) {
+                font-size: 12px;
+                color: #fff;
+            }
         }
     }
     .logo {
+        position: relative;
+        z-index: 1;
         padding-top: 20px;
     }
     .menuWrap {
+        position: relative;
+        z-index: 2;
         padding-left: 120px;
         padding-bottom: 113px;
+        &.is-not-hover{
+            pointer-events: none;
+        }
         .menu {
             cursor: pointer;
         }
@@ -235,7 +259,7 @@ nav {
     }
     .bg-hover {
         position: fixed;
-        z-index: 5;
+        z-index: 1;
         width: 100%;
         height: 100vh;
         background-color: $black;
@@ -773,6 +797,7 @@ nav {
                 transform-origin: left top;
             }
         }
+
         .strawberry-1 {
             left: 245px !important;
             top: -200px !important;
@@ -852,6 +877,91 @@ nav {
                 transform-origin: left;
             }
         }
+
+        // main3
+
+        .milk-1 {
+            left: -350px !important;
+            top: -243px !important;
+            z-index: 1;
+
+            .inner {
+                transform: scale(0.15) translate(900px, 1200px);
+                transform-origin: right bottom;
+            }
+        }
+        .milk-2 {
+            left: -293px !important;
+            top: 19px !important;
+            z-index: 5;
+
+            .inner {
+                transform: scale(0.15) translate(900px, 1200px);
+                transform-origin: right bottom;
+            }
+        }
+        .peach-1 {
+            left: -34px !important;
+            top: -29px !important;
+            z-index: 5;
+            .inner {
+                transition-delay: 0.05s;
+                transform: scale(0.15) translate(-500px, 50px);
+                transform-origin: left;
+            }
+        }
+        .peach-2 {
+            left: 26px !important;
+            top: -84px !important;
+            z-index: 1;
+            .inner {
+                transition-delay: 0.15s;
+                transform: scale(0.15) translate(250px, -80px);
+                transform-origin: left top;
+            }
+        }
+
+        .grass-1 {
+            left: -350px !important;
+            top: 1px !important;
+            z-index: 5;
+            transform-origin: left bottom;
+            .inner {
+                z-index: 1;
+                transform: scale(0.15) translate(-1000px, 500px);
+            }
+        }
+        .grass-2 {
+            left: -168px !important;
+            top: -101px !important;
+            z-index: 5;
+            transform-origin: right bottom;
+            .inner {
+                transition-delay: 0.05s;
+                transform: scale(0.15) translate(750px, 100px);
+            }
+        }
+
+        .tea-1 {
+            left: -541px !important;
+            top: -357px !important;
+            z-index: 2;
+            .inner {
+                transition-delay: 0.05s;
+                transform: scale(0.15) translate(150px, 58px);
+                transform-origin: right;
+            }
+        }
+        .tea-2 {
+            left: -300px !important;
+            top: -300px !important;
+            z-index: 4;
+            .inner {
+                transition-delay: 0.05s;
+                transform: scale(0.15) translate(-100px, 38px);
+                transform-origin: left;
+            }
+        }
     }
     .head-area {
         // display: flex;
@@ -905,6 +1015,9 @@ nav {
                     padding: 11px;
                     transition: 0.2s linear;
                     pointer-events: none;
+                    img {
+                        border-radius: 50%;
+                    }
                 }
             }
             .article-area {
@@ -1643,11 +1756,11 @@ nav {
                 cursor: pointer;
                 &:hover {
                     .cls-1 {
-                        fill: #EA5504;
+                        fill: #ea5504;
                     }
-        
+
                     .cls-2 {
-                        stroke: #EA5504;
+                        stroke: #ea5504;
                     }
                 }
             }
@@ -1849,18 +1962,34 @@ nav {
 .languageWrap {
     height: 100vh;
     flex-direction: column;
+    @include breakpoint(medium down) {
+        padding-top: 30vh;
+        height: 70vh;
+        justify-content: flex-start !important;
+    }
     .language-logo {
         margin-bottom: 80px;
+        @include breakpoint(medium down) {
+            margin-bottom: 44px;
+        }
     }
     .ch {
         font-family: $ch-family;
         font-size: 16px;
         letter-spacing: 1px;
+        font-weight: 500;
+        @include breakpoint(medium down) {
+            font-size: 14px;
+        }
     }
     .en {
         font-family: $en-family;
         font-size: 16px;
         letter-spacing: 1px;
+        font-weight: 500;
+        @include breakpoint(medium down) {
+            font-size: 14px;
+        }
     }
     .languageList {
         > li {
@@ -1871,6 +2000,11 @@ nav {
             // opacity: 0.5;
             transition: 0.5s all;
             margin-right: 55px;
+            @include breakpoint(medium down) {
+                width: 123px;
+                height: 123px;
+                margin-right: 28px;
+            }
             cursor: pointer;
             &:last-child {
                 margin-right: 0;
@@ -2368,9 +2502,20 @@ nav {
 .recruitWrap {
     .head-area {
         position: relative;
+        @include breakpoint(medium down) {
+            margin-bottom: 35px;
+        }
         .head-1,
+        .head-1-2,
         .head-2 {
             overflow: hidden;
+        }
+        .head-1 {
+            .en {
+                @include breakpoint(medium down) {
+                    margin: 0 auto;
+                }
+            }
         }
         .en {
             width: fit-content;
@@ -2386,27 +2531,35 @@ nav {
             &.bottom {
                 margin-left: auto;
             }
-            .note {
-                // position: absolute;
-                // right: 10px;
-                // top: -10px;
-                font-size: 15px;
-                font-weight: 400;
-                color: #ea5406;
-                letter-spacing: 0.5px;
-                font-style: italic;
-                text-align: right;
-                margin-right: 10px;
+        }
+        .note {
+            font-family: $en-family;
+            font-size: 15px;
+            font-weight: 400;
+            color: #ea5406;
+            letter-spacing: 0.5px;
+            font-style: italic;
+            text-align: right;
+            margin-right: 10px;
+            @include breakpoint(medium down) {
+                margin-right: 0;
+                text-align: left;
             }
         }
     }
     .recruit-top {
         position: relative;
         padding: 200px 90px 240px;
+        @include breakpoint(medium down) {
+            padding: 97px 8px 85px;
+        }
         .head-area {
             .en {
                 font-size: 335px;
                 line-height: 0.8;
+                @include breakpoint(medium down) {
+                    font-size: 115px;
+                }
             }
         }
         .bear {
@@ -2418,6 +2571,10 @@ nav {
             position: absolute;
             top: 525px;
             left: 100px;
+            @include breakpoint(medium down) {
+                position: static;
+                margin: 0 20px;
+            }
             .title {
                 font-family: $ch-family;
                 font-size: 45px;
@@ -2425,10 +2582,18 @@ nav {
                 letter-spacing: 4px;
                 color: $black;
                 margin-bottom: 30px;
+                @include breakpoint(medium down) {
+                    font-size: 22px;
+                    letter-spacing: 2px;
+                    margin-bottom: 17px;
+                }
             }
             .article-area {
                 width: 815px;
                 margin-bottom: 30px;
+                @include breakpoint(medium down) {
+                    width: 100%;
+                }
             }
             .top {
                 font-family: $ch-family;
@@ -2438,6 +2603,10 @@ nav {
                 color: #727171;
                 padding: 10px 0;
                 border-bottom: 1px solid rgba(35, 24, 21, 0.274);
+                @include breakpoint(medium down) {
+                    font-size: 9px;
+                    line-height: 1.2;
+                }
             }
             .content {
                 font-family: $ch-family;
@@ -2447,6 +2616,10 @@ nav {
                 color: $black;
                 padding: 10px 0;
                 border-bottom: 1px solid rgba(35, 24, 21, 0.274);
+                @include breakpoint(medium down) {
+                    font-size: 9px;
+                    // line-height: 1.2;
+                }
                 .name {
                     font-weight: 500;
                 }
@@ -2464,11 +2637,20 @@ nav {
                 letter-spacing: 0.5px;
                 color: #727171;
                 line-height: 1.4;
+                @include breakpoint(medium down) {
+                    font-size: 12px;
+                    // line-height: 1.2;
+                }
             }
         }
         .recruit-otherList {
             width: 1075px;
             margin: 400px 0 0 auto;
+            @include breakpoint(medium down) {
+                width: 100%;
+                margin: 160px 0 0;
+                padding: 0 20px;
+            }
             .title {
                 font-family: $ch-family;
                 font-size: 45px;
@@ -2906,6 +3088,11 @@ nav {
                 border-radius: 50%;
             }
         }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 
@@ -3263,6 +3450,12 @@ nav {
             animation: circle-rotate 60s infinite linear;
             li {
                 animation: circle-rotate 60s infinite linear;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
             }
         }
         .new-drink {
@@ -3717,22 +3910,22 @@ nav {
             }
         }
     }
-    .store-socialList{
-        li{
+    .store-socialList {
+        li {
             margin-right: 11px;
-            &:last-child{
+            &:last-child {
                 margin-right: 0;
             }
             .d {
                 fill: #9e9e9f;
                 transition: 0.3s all;
             }
-            &:hover{
+            &:hover {
                 .d {
-                    fill: #EA5406;
+                    fill: #ea5406;
                 }
             }
-            &.custom{
+            &.custom {
                 height: 36px;
                 color: #f4ddbe;
                 font-family: $en-family;
@@ -3743,8 +3936,8 @@ nav {
                 padding: 9px 7px;
                 background-color: #9e9e9f;
                 transition: 0.3s all;
-                &:hover{
-                    background-color: #EA5406;
+                &:hover {
+                    background-color: #ea5406;
                 }
             }
         }
@@ -3768,9 +3961,13 @@ nav {
         .deco {
             margin-bottom: 20px;
         }
-        .head{
+        .head {
             margin-bottom: 30px;
+            .brand {
+                margin-right: 26px;
+            }
         }
+
         .title {
             font-size: 26px;
             font-weight: 900;
@@ -3918,6 +4115,37 @@ nav {
                         transform: translateX(-10px);
                     }
                 }
+            }
+        }
+    }
+    .store-page {
+        li {
+            position: relative;
+            width: 14px;
+            height: 14px;
+            background-color: #0b0b0b;
+            border-radius: 50%;
+            margin-right: 24px;
+            &:last-child {
+                margin-right: 0;
+            }
+            &.current {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 6px;
+                    height: 6px;
+                    background-color: #f9eddd;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 50%;
+                }
+            }
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
             }
         }
     }

@@ -71,7 +71,7 @@ function creatTablBottom()
 		<?php } ?> -->
 		<?php if ($row_RecLevelAuthority['a_5'] == '1' || $row_RecLevelAuthority['a_6'] == '1') { ?>
 			<li id="main_menu_6" class="main_menu <?php if ($menu_is == 'store' || $menu_is == "storeNum" || $menu_is == 'menu') : ?>main_menu_now<?php endif ?>">
-				<a href="store_list.php">
+				<a href="<?php if ($row_RecLevelAuthority['a_5'] == '1') : ?>store_list.php<?php elseif ($row_RecLevelAuthority['a_6'] == '1') : ?>menu_list.php<?php endif ?>">
 					<div>全球據點</div>
 				</a>
 			</li>

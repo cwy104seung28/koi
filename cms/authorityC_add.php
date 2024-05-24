@@ -84,7 +84,7 @@ $menu_is = "authority";
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">菜單下載</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">全球據點</td>
                                                     <td width="532">
                                                         <select name="a_5" class="table_data" id="a_5">
                                                             <option value="1">允許</option>
@@ -94,7 +94,7 @@ $menu_is = "authority";
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">全球據點</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">菜單下載</td>
                                                     <td width="532">
                                                         <select name="a_6" class="table_data" id="a_6">
                                                             <option value="1">允許</option>

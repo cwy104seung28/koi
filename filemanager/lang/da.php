@@ -12,7 +12,7 @@ return array(
     'Files' => 'Filer',
     'Images' => 'Billeder',
     'Archives' => 'Mapper',
-    'Error_Upload' => 'Den uploadede fil er større end tilladt (100MB).',
+    'Error_Upload' => 'Den uploadede fil er større end tilladt (2MB).',
     'Error_extension' => 'Fil typen er ikke tilladt.',
     'Upload_file' => 'Upload',
     'Filters' => 'Filter',

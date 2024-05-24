@@ -3,7 +3,9 @@ require_once 'Connections/connect2data.php';
 
 // $catAll = $DB->query("SELECT * FROM class_set WHERE c_parent='newsC' AND c_active=1 ORDER BY c_sort ASC");
 
-$work = $DB->row("SELECT * FROM class_set, data_set, file_set WHERE d_class1='news' AND d_id=? AND d_id=file_d_id AND file_type='newsInnerCover' AND c_id=d_class2 AND d_active=1", [$_GET['id']]);
+$work = $DB->row("SELECT * FROM class_set, data_set WHERE d_class1='news' AND d_id=? AND c_id=d_class2 AND d_active=1", [$_GET['id']]);
+
+$work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='newsInnerCover'", [$_GET['id']]);
 
 // $cat = $DB->row("SELECT * FROM class_set WHERE c_parent='newsC' AND c_id=? AND c_active=1 ORDER BY c_sort ASC", [$work['d_class2']]);
 // $allwork = $DB->query("SELECT d_id FROM data_set, file_set, class_set WHERE d_class1='news' AND d_class2=c_id AND d_id=file_d_id AND file_type='newsCover' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, c_sort ASC");
@@ -43,10 +45,14 @@ $work = $DB->row("SELECT * FROM class_set, data_set, file_set WHERE d_class1='ne
                 </div>
             </div>
             <div class="banner">
-                <?php if ($work['d_data3'] == 'yes') : ?>
+                <?php if ($work['d_data4']) : ?>
                     <iframe width="560" height="315" src="<?= $work['d_data4'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <?php else : ?>
-                    <img src="<?= $work['file_link1'] ?>" alt="">
+                    <?php if ($work_pic['file_link1']) : ?>
+                        <img src="<?= $work_pic['file_link1'] ?>">
+                    <?php else : ?>
+                        <img src="./images/news-inner-init.jpg">
+                    <?php endif ?>
                 <?php endif ?>
             </div>
         </div>
@@ -160,15 +166,15 @@ $work = $DB->row("SELECT * FROM class_set, data_set, file_set WHERE d_class1='ne
         // markers: true,
     });
 
-    
-	$('iframe').css('width', '100%')
 
-	$(window).on("resize", function() {
-		$("iframe").each(function(i, el) {
-			var _ratio = $(el).attr('height') / $(el).attr('width')
-			$(el).css({
-				height: $(el).width() * _ratio
-			})
-		})
-	}).trigger("resize")
+    $('iframe').css('width', '100%')
+
+    $(window).on("resize", function() {
+        $("iframe").each(function(i, el) {
+            var _ratio = $(el).attr('height') / $(el).attr('width')
+            $(el).css({
+                height: $(el).width() * _ratio
+            })
+        })
+    }).trigger("resize")
 </script>

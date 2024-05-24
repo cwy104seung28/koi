@@ -1,4 +1,4 @@
-<?php require_once '../Connections/connect2data.php';?>
+<?php require_once '../Connections/connect2data.php'; ?>
 
 <?php
 $colname_Recmaintea = "-1";
@@ -40,13 +40,15 @@ $menu_is = "maintea";
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php require_once('cmsTitle.php'); ?></title>
 
     <?php require_once('script.php'); ?>
-    <?php require_once('head.php');?>
+    <?php require_once('head.php'); ?>
 </head>
+
 <body>
     <table width="1280" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -74,11 +76,18 @@ $menu_is = "maintea";
                                         <td>
                                             <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">名稱</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td width="532" class="table_data">
                                                         <?php echo $row_Recmaintea['d_title']; ?>
                                                         <input name="d_id" type="hidden" id="d_id" value="<?php echo $row_Recmaintea['d_id']; ?>" />
                                                         <input name="delsure" type="hidden" id="delsure" value="1" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td width="532" class="table_data">
+                                                        <?php echo $row_Recmaintea['d_title_en']; ?>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
@@ -89,64 +98,68 @@ $menu_is = "maintea";
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
-                                                <?php if ($totalRows_RecCover > 0) { // Show if recordset not empty ?>
-                                                <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前飲料圖片</td>
-                                                    <td>
-                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                            <tr>
-                                                                <td>
-                                                                    <?php do { ?>
-                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                        <tr>
-                                                                            <td width="100" rowspan="2" align="center"><img src="../<?php echo $row_RecCover['file_link2']; ?>" alt="" class="image_frame" /></td>
-                                                                            <td align="left" class="table_data">&nbsp;圖片說明：
-                                                                                <?php echo $row_RecCover['file_title']; ?>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td align="left" class="table_data">&nbsp;</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                    <?php } while ($row_RecCover = $RecCover->fetch()); ?>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>&nbsp;</p>
-                                                    </td>
-                                                </tr>
-                                                <?php } // Show if recordset not empty ?>
-                                                <?php if ($totalRows_RecImage > 0) { // Show if recordset not empty ?>
-                                                <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前圖片</td>
-                                                    <td>
-                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                            <tr>
-                                                                <td>
-                                                                    <?php do { ?>
-                                                                    <table width="30%" style="display:inline-table; padding:0 12px 0 0;" border="0" cellspacing="0" cellpadding="0">
-                                                                        <tr>
-                                                                            <td width="100" rowspan="2" align="center"><img src="../<?php echo $row_RecImage['file_link2']; ?>" alt="" class="image_frame" /></td>
-                                                                            <td align="left" class="table_data">&nbsp;圖片說明：
-                                                                                <?php echo $row_RecImage['file_title']; ?>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td align="left" class="table_data">&nbsp;</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                    <?php } while ($row_RecImage = $RecImage->fetch()); ?>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>&nbsp;</p>
-                                                    </td>
-                                                </tr>
-                                                <?php } // Show if recordset not empty ?>
+                                                <?php if ($totalRows_RecCover > 0) { // Show if recordset not empty 
+                                                ?>
+                                                    <tr>
+                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前飲料圖片</td>
+                                                        <td>
+                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        <?php do { ?>
+                                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tr>
+                                                                                    <td width="100" rowspan="2" align="center"><img src="../<?php echo $row_RecCover['file_link2']; ?>" alt="" class="image_frame" /></td>
+                                                                                    <td align="left" class="table_data">&nbsp;圖片說明：
+                                                                                        <?php echo $row_RecCover['file_title']; ?>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td align="left" class="table_data">&nbsp;</td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        <?php } while ($row_RecCover = $RecCover->fetch()); ?>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td bgcolor="#e5ecf6" class="table_col_title">
+                                                            <p>&nbsp;</p>
+                                                        </td>
+                                                    </tr>
+                                                <?php } // Show if recordset not empty 
+                                                ?>
+                                                <?php if ($totalRows_RecImage > 0) { // Show if recordset not empty 
+                                                ?>
+                                                    <tr>
+                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前圖片</td>
+                                                        <td>
+                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        <?php do { ?>
+                                                                            <table width="30%" style="display:inline-table; padding:0 12px 0 0;" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tr>
+                                                                                    <td width="100" rowspan="2" align="center"><img src="../<?php echo $row_RecImage['file_link2']; ?>" alt="" class="image_frame" /></td>
+                                                                                    <td align="left" class="table_data">&nbsp;圖片說明：
+                                                                                        <?php echo $row_RecImage['file_title']; ?>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td align="left" class="table_data">&nbsp;</td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        <?php } while ($row_RecImage = $RecImage->fetch()); ?>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td bgcolor="#e5ecf6" class="table_col_title">
+                                                            <p>&nbsp;</p>
+                                                        </td>
+                                                    </tr>
+                                                <?php } // Show if recordset not empty 
+                                                ?>
                                             </table>
                                         </td>
                                     </tr>
@@ -173,6 +186,7 @@ $menu_is = "maintea";
         </tr>
     </table>
 </body>
+
 </html>
 
 <?php

@@ -2,9 +2,13 @@
 require_once 'Connections/connect2data.php';
 require_once 'paginator.class.php';
 
+ini_set('display_errors', '1');
+error_reporting(E_ALL);
+
 $ryder_cat = (isset($_GET['c'])) ? $_GET['c'] : 0;
 $ryder_cat_sub = (isset($_GET['s'])) ? $_GET['s'] : 0;
 $ryder_cat_brand = (isset($_GET['b'])) ? $_GET['b'] : 0;
+// echo $ryder_cat . '&' . $ryder_cat_sub . '&' . $ryder_cat_brand;
 
 
 $cat = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_level=1 AND c_active=1 ORDER BY c_sort ASC");
@@ -18,16 +22,17 @@ $limit = ($page - 1) * $maxItem;
 // 拿來計算全部有幾則
 
 // $cat_one = $DB->row("SELECT * FROM class_set WHERE c_parent='storeC' AND c_active=1 AND c_id=?", [$ryder_cat]);
-$cat_now = $ryder_cat;
 
 $sub_one = $DB->row("SELECT * FROM class_set WHERE c_parent='storeC' AND c_active=1 AND c_id=? AND c_link=?", [$ryder_cat_sub, $ryder_cat]);
-$sub_now = $sub_one['c_id'];
+// $sub_now = $sub_one['c_id'];
 
-$workTotal = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class2 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND (d_data5=? || $ryder_cat_brand = 0) AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub, $ryder_cat_brand]);
+$work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND (d_class4=? || $ryder_cat_brand = 0) AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY c_sort ASC ,d_sort ASC, d_date DESC LIMIT ?, ?", [$ryder_cat, $ryder_cat_sub, $ryder_cat_brand, $limit, $maxItem]);
+
+$workTotal = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND (d_class4=? || $ryder_cat_brand = 0) AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub, $ryder_cat_brand]);
+
 $pageTotalCount = count($workTotal);
 $totalpage = ceil($pageTotalCount / $maxItem);
 
-$work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class2 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND (d_data5=? || $ryder_cat_brand = 0) AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT ?, ?", [$ryder_cat, $ryder_cat_sub, $ryder_cat_brand, $limit, $maxItem]);
 
 $pages = new Paginator;
 $pages->items_total = $pageTotalCount;
@@ -37,7 +42,7 @@ $pages->paginate();
 // echo '<br>';
 // echo $ryder_cat_brand;
 // foreach ($work as $row) {
-//     echo $row['d_data5'] . ',';
+//     echo $row['d_class4'] . ',';
 // }
 
 //koi的判斷
@@ -51,6 +56,14 @@ $check = 0;
 
 
 $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1 AND d_sort=1");
+
+//搜尋當前brand
+$brand_total = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub]);
+$brand_array = array();
+foreach ($brand_total as $total) {
+    array_push($brand_array, $total['d_class4']);
+}
+// print_r($brand_array);
 
 ?>
 <!DOCTYPE html>
@@ -88,7 +101,7 @@ $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1
                             </a>
                         </li>
                         <?php foreach ($cat as $storeC) : ?>
-                            <li class="<?php if (isset($cat_now) && $cat_now == $storeC['c_id']) : ?>current<?php endif ?>">
+                            <li class="<?php if (isset($ryder_cat) && $ryder_cat == $storeC['c_id']) : ?>current<?php endif ?>">
                                 <a href="./store.php?c=<?= $storeC['c_id'] ?>" class="flex-container align-middle">
                                     <div class="dot"></div>
                                     <div class="title"> <?= $storeC['c_title'] ?></div>
@@ -101,7 +114,7 @@ $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1
                     <div class="store">(Location)</div>
                     <ul class="storeCatList">
                         <li class="<?php if ($ryder_cat_sub == 0) : ?>current<?php endif ?>">
-                            <a href="./store.php?c=<?= $cat_now ?>" class="flex-container align-middle">
+                            <a href="./store.php?c=<?= $ryder_cat ?>" class="flex-container align-middle">
                                 <div class="dot"></div>
                                 <div class="title">
                                     All
@@ -109,11 +122,11 @@ $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1
                             </a>
                         </li>
                         <?php
-                        $store_level2_item = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_link=? AND c_level=2 AND c_active=1 ORDER BY c_sort ASC", [$cat_now]);
+                        $store_level2_item = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_link=? AND c_level=2 AND c_active=1 ORDER BY c_sort ASC", [$ryder_cat]);
                         ?>
                         <?php foreach ($store_level2_item as $level2) : ?>
                             <li class="<?php if ($ryder_cat_sub == $level2['c_id']) : ?>current<?php endif ?>">
-                                <a href="./store.php?c=<?= $cat_now ?>&s=<?= $level2['c_id'] ?>" class="flex-container align-middle">
+                                <a href="./store.php?c=<?= $ryder_cat ?>&s=<?= $level2['c_id'] ?>" class="flex-container align-middle">
                                     <div class="dot"></div>
                                     <div class="title">
                                         <?= $level2['c_title']; ?>
@@ -128,35 +141,25 @@ $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1
                     <div class="store">(Brand)</div>
                     <ul class="storeCatList">
                         <li class="<?php if ($ryder_cat_brand == 0) : ?>current<?php endif ?>">
-                            <a href="./store.php?c=<?= $cat_now ?>&s=<?= $ryder_cat_sub ?>" class="flex-container align-middle">
+                            <a href="./store.php?c=<?= $ryder_cat ?>&b=<?= $ryder_cat_sub ?>" class="flex-container align-middle">
                                 <div class="dot"></div>
                                 <div class="title">
                                     All
                                 </div>
                             </a>
                         </li>
-                        <!-- <?php
-                                $store_brand_item = $DB->query("SELECT * FROM data_set WHERE d_class1='store' AND d_class3=? AND d_class2=? AND d_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub]);
-                                ?>
-                        <?php foreach ($store_brand_item as $brand) : ?>
-
-                        <?php endforeach ?> -->
-                        <!-- <?php $work_brand = $DB->query("SELECT * FROM data_set WHERE d_class1='storeBrand' AND d_active=1") ?>
-                        <?php foreach ($work_brand as $brand) : ?>
-                            <li class="<?php if ($ryder_cat_brand == $brand['d_id']) : ?>current<?php endif ?>">
-                                <a href="./store.php?c=<?= $cat_now ?>&s=<?= $brand['d_id'] ?>" class="flex-container align-middle">
-                                    <div class="dot"></div>
-                                    <div class="title">
-                                        <?= $brand['d_title']; ?>
-                                    </div>
-                                </a>
-                            </li>
-                        <?php endforeach ?> -->
                         <?php $work_brand = $DB->query("SELECT * FROM data_set WHERE d_class1='storeBrand' AND d_active=1") ?>
                         <?php foreach ($work_brand as $row_brand) : ?>
-                            <?php $work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class2 AND d_class3=? AND (d_class2=? || $ryder_cat_sub = 0) AND d_class4=? AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub, $row_brand['d_id']]); ?>
-                            <?php foreach ($work as $row) : ?>
-                            <?php endforeach ?>
+                            <?php if ((in_array($row_brand['d_id'], $brand_array)) != NULL) : ?>
+                                <li class="<?php if ($ryder_cat_brand == $row_brand['d_id']) : ?>current<?php endif ?>">
+                                    <a href="./store.php?c=<?= $ryder_cat ?>&s=<?= $ryder_cat_sub ?>&b=<?= $row_brand['d_id'] ?>" class="flex-container align-middle">
+                                        <div class="dot"></div>
+                                        <div class="title">
+                                            <?= $row_brand['d_title']; ?>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php endif ?>
                         <?php endforeach ?>
                     </ul>
                 </div>
@@ -189,7 +192,7 @@ $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1
                         <?php if ($social['c_data4'] != '' && $social['c_data5'] != '') : ?>
                             <li class="custom">
                                 <a href="<?= $social['c_data5'] ?>">
-                                <?= $social['c_data4'] ?>
+                                    <?= $social['c_data4'] ?>
                                 </a>
                             </li>
                         <?php endif; ?>
@@ -197,33 +200,35 @@ $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1
                 </ul>
                 <ul class="storeList">
                     <?php foreach ($work as $row) : ?>
-                        <?php $work_brand = $DB->row("SELECT * FROM data_set, file_set WHERE d_id=? AND d_class1='storeBrand' AND file_type='storeBrandCover' AND file_d_id=d_id AND d_active=1", [$row['d_class4']]) ?>
+                        <?php $brand = $DB->row("SELECT * FROM data_set, file_set WHERE d_id=? AND d_class1='storeBrand' AND file_type='storeBrandCover' AND file_d_id=d_id AND d_active=1", [$row['d_class4']]) ?>
                         <li>
                             <div class="deco"><img src="./images/s-deco-top.svg"></div>
                             <div class="head flex-container align-justify">
                                 <div class="title"><?= $row['d_title']; ?></div>
-                                <div class="brand"><img src="<?= $work_brand['file_link1']; ?>" alt=""></div>
+                                <div class="brand"><img src="<?= $brand['file_link1']; ?>" alt=""></div>
                             </div>
                             <div class="phone"><?= $row['d_data1']; ?></div>
                             <div class="time"><?= $row['d_data2']; ?></div>
                             <div class="address"><?= $row['d_data3']; ?></div>
                             <div class="other-area flex-container align-middle align-justify">
                                 <div class="pic" data-store="<?= $row['d_id']; ?>"><img src="<?= $row['file_link1']; ?>" alt=""></div>
-                                <a href="<?= $row['d_data4']; ?>" target="_blank">
-                                    <div class="inner flex-container align-center-middle">
-                                        <div class="arrow">
-                                            <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
-                                                <g id="c" data-name="layout">
-                                                    <g>
-                                                        <line class="d" y1="15.09" x2="29.24" y2="15.09" />
-                                                        <path class="e" d="M8.73,29.49c-.45-.7-.24-1.63,.46-2.07L28.55,15.09,9.19,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L10.81,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                <?php if ($row['d_data4']) : ?>
+                                    <a href="<?= $row['d_data4']; ?>" target="_blank">
+                                        <div class="inner flex-container align-center-middle">
+                                            <div class="arrow">
+                                                <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
+                                                    <g id="c" data-name="layout">
+                                                        <g>
+                                                            <line class="d" y1="15.09" x2="29.24" y2="15.09" />
+                                                            <path class="e" d="M8.73,29.49c-.45-.7-.24-1.63,.46-2.07L28.55,15.09,9.19,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L10.81,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                                        </g>
                                                     </g>
-                                                </g>
-                                            </svg>
+                                                </svg>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="googlemap">( Google Map )</div>
-                                </a>
+                                        <div class="googlemap">( Google Map )</div>
+                                    </a>
+                                <?php endif ?>
                             </div>
                         </li>
                     <?php endforeach ?>

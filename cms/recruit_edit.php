@@ -98,13 +98,13 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <!-- 中文網頁 -->
-                                                <tr>
+                                                <!-- <tr>
                                                     <td width="200"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
                                                        
                                                     </td>
                                                     <td width="250">&nbsp;</td>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <td width="200" bgcolor="#e5ecf6"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
@@ -113,11 +113,11 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200"></td>
+                                                    <td width="200" bgcolor="#e5ecf6"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
                                                         美加区基本薪资(USD)
                                                     </td>
-                                                    <td width="250">&nbsp;</td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单店管理</td>
@@ -183,13 +183,13 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <!-- 英文網頁 -->
-                                                <tr>
+                                                <!-- <tr>
                                                     <td width="200"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
                                                        
                                                     </td>
                                                     <td width="250">&nbsp;</td>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <td width="200" bgcolor="#e5ecf6"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
@@ -198,11 +198,11 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200"></td>
+                                                    <td width="200" bgcolor="#e5ecf6"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
                                                         美加区基本薪资(USD)
                                                     </td>
-                                                    <td width="250">&nbsp;</td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">单店管理</td>

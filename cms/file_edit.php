@@ -3,46 +3,57 @@
 <?php require_once('imagesSize.php'); ?>
 
 <?php
+
+if ($_SERVER['HTTP_X_REQUESTED_WITH'] != 'XMLHttpRequest') {
+    header("Location: error.php");
+}
+
+
+
+
+
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
     $updateSQL = "UPDATE file_set SET file_title=:file_title WHERE file_id=:file_id";
 
     $sth = $conn->prepare($updateSQL);
     $sth->bindParam(':file_title', $_POST['file_title'], PDO::PARAM_STR);
-    $sth->bindParam(':file_id', $_POST['file_id'], PDO::PARAM_STR);
+    $sth->bindParam(':file_id', $_POST['file_id'], PDO::PARAM_INT);
     $sth->execute();
 
     //----------插入檔案資料到資料庫begin(須放入插入主資料後)----------
 
     $file_result = file_process($conn, $_SESSION['nowMenu'], "edit");
 
-    //刪除真實檔案begin----
-    if (count($file_result) == 1) {
-
+    // 表示有傳圖
+    if ( count($file_result) > 0 ) {
+        //刪除真實檔案begin----
         $sql = "SELECT file_link1 FROM file_set WHERE file_id=:file_id";
         $sth = $conn->prepare($sql);
         $sth->bindParam(':file_id', $_POST['file_id'], PDO::PARAM_INT);
         $sth->execute();
 
         while ($row = $sth->fetch()) {
-            if ($file_result[0][1] == $row[0]) {} else {
-                if (file_exists("../" . $row[0])) {
-                    unlink("../" . $row[0]); //刪除檔案
-                }
+            if (file_exists("../" . $row[0])) {
+                unlink("../" . $row[0]); //刪除檔案
             }
         }
-    }
-    //刪除真實檔案end----
+        //刪除真實檔案end----
 
-    for ($j = 0; $j < count($file_result); $j++) {
-        $insertSQL = "UPDATE file_set SET file_name=:file_name, file_link1=:file_link1 WHERE file_id=:file_id";
-        $sth = $conn->prepare($insertSQL);
-        $sth->bindParam(':file_name', $file_result[$j][0], PDO::PARAM_INT);
-        $sth->bindParam(':file_link1', $file_result[$j][1], PDO::PARAM_INT);
-        $sth->bindParam(':file_id', $_POST['file_id'], PDO::PARAM_INT);
-        $sth->execute();
+
+
+        for ($j = 0; $j < count($file_result); $j++) {
+            $insertSQL = "UPDATE file_set SET file_name=:file_name, file_link1=:file_link1 WHERE file_id=:file_id";
+            $sth2 = $conn->prepare($insertSQL);
+            $sth2->bindParam(':file_name', $file_result[$j][0], PDO::PARAM_STR);
+            $sth2->bindParam(':file_link1', $file_result[$j][1], PDO::PARAM_STR);
+            $sth2->bindParam(':file_id', $_POST['file_id'], PDO::PARAM_INT);
+            $sth2->execute();
+        }
     }
     //----------插入檔案資料到資料庫end----------
+
+
 
     $updateGoTo = $_SESSION['nowPage'] . "?d_id=" . $_POST['file_d_id'] . "";
 
@@ -120,7 +131,7 @@ $totalRows_RecFile = $RecFile->rowCount();
                                 <input name="upfile[]" type="file" class="table_data" id="upfile[]" size="50">
                             </td>
                             <td bgcolor="#e5ecf6" class="table_col_title">
-                                <p class="red_letter">*每次上傳之檔案大小總計請勿超過 <?php echo ini_get("upload_max_filesize"); ?>。</p>
+                                <p class="red_letter">*<?= $uploadFileSize ?></p>
                             </td>
                         </tr>
                     </table>

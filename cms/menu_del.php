@@ -92,9 +92,16 @@ $menu_is = "menu";
                                                     <td bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td class="table_data">
                                                         <?php echo $row_Recmenu['d_title']; ?>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td class="table_data">
+                                                        <?php echo $row_Recmenu['d_title_en']; ?>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>

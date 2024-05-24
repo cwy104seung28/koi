@@ -3,7 +3,7 @@
         <!-- <div class="logo"><img src="./images/index-preload-logo.svg" alt=""></div> -->
         <video src="https://player.vimeo.com/progressive_redirect/playback/940757470/rendition/1080p/file.mp4?loc=external&log_user=0&signature=8363d25095ebe3d9e11cee2fd5bafacb67f7fde712eea951eb59d425a2b6bd1f" autoplay muted playsinline></video>
     </div>
-    
+
 <?php else : ?>
     <div id="preload" style="z-index: 100; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #fff;"></div>
 <?php endif ?>
@@ -12,14 +12,23 @@
     <?php else : ?>
         <nav class="flex-container align-justify">
         <?php endif ?>
+        <div class="bg hide-for-large">
+            <img src="./images/topmenu-bg-mobile.svg">
+        </div>
         <div class="now-page flex-container align-middle">
-            <div class="icon"><img src="./images/top-now.svg"></div>
-            <div class="arrow"><img src="./images/now-arrow.svg"></div>
+            <div class="icon show-for-large"><img src="./images/top-now.svg"></div>
+            <div class="arrow show-for-large"><img src="./images/now-arrow.svg"></div>
+            <div class="arrow hide-for-large"><img src="./images/now-arrow-mobile.svg"></div>
             <div class="name"><?php echo $menu; ?></div>
             <div class="page">(<span class="now"><?php echo $number; ?></span>/<span class="total">07</span>)</div>
         </div>
-        <div class="logo"><a href="./main.php"><img src="./images/logo.svg"></a></div>
-        <div class="menuWrap" id="mouseTarget">
+        <div class="logo">
+            <a href="./main.php">
+                <img src="./images/logo.svg" class="show-for-large">
+                <img src="./images/logo-mobile.svg" class="hide-for-large">
+            </a>
+        </div>
+        <div class="menuWrap show-for-large" id="mouseTarget">
             <div class="menu">
                 <div class="circle"><img src="./images/menu.svg"></div>
                 <ul class="menuList">
@@ -75,6 +84,9 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="hamburger hide-for-large">
+            <img src="./images/hamburger.svg">
         </div>
         <div class="bg-hover"></div>
         </nav>

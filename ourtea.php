@@ -184,7 +184,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
             <ul class="drinkWrapList">
                 <?php $i = 0; ?>
                 <?php foreach ($ourtea as $row) : ?>
-                    <li data-where="<?= $i; ?>">
+                    <li id="<?= $row['c_id'] ?>" data-where="<?= $i; ?>">
                         <div class="title">
                             <div class="ch"><?= $row['c_title'] ?></div>
                             <div class="en"><?= $row['c_title_en'] ?></div>
@@ -266,7 +266,11 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                     <ul class="area-<?= $y; ?>">
                         <li class="is-show"><img src="<?= $workTop['file_link1']; ?>"></li>
                         <?php foreach ($work as $row2) : ?>
-                            <li><img src="<?= $row2['file_link1']; ?>"></li>
+                            <?php if ($row2['file_link1'] == '') : ?>
+                                <li><img src="<?= $workTop['file_link1']; ?>"></li>
+                            <?php else : ?>
+                                <li><img src="<?= $row2['file_link1']; ?>"></li>
+                            <?php endif ?>
                         <?php endforeach ?>
                     </ul>
                     <?php $y++; ?>

@@ -8,7 +8,9 @@ date_default_timezone_set('Asia/Taipei');
 if ($ryder_cat == 0) {
     $sort = 'd_date DESC';
     $cat = $DB->query("SELECT * FROM class_set WHERE c_parent='newsC' AND c_active=1 ORDER BY c_sort ASC");
-    $work_top = $DB->row("SELECT * FROM class_set, data_set, file_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND d_id=file_d_id AND file_type='newsTopCover' AND d_data5='yes' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT 1");
+    $work_top = $DB->row("SELECT * FROM class_set, data_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND d_data5='yes' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT 1");
+    $work_top_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='newsTopCover' LIMIT 1", [$work_top['d_id']]);
+
     // $cat_top = $DB->row("SELECT * FROM class_set, data_set, file_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND d_id=file_d_id AND file_type='newsCover' AND d_class2=? AND d_sort=0 AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT 1", [$ryder_cat]);
 
     //page start
@@ -17,12 +19,12 @@ if ($ryder_cat == 0) {
     $limit = ($page - 1) * $maxItem;
 
     // 拿來計算全部有幾則
-    $workTotal = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND (d_class2=? || $ryder_cat=0) AND d_data5='no' AND d_id=file_d_id AND file_type='newsCover' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat]);
+    $workTotal = $DB->query("SELECT * FROM class_set, data_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND (d_class2=? || $ryder_cat=0) AND d_data5='no' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat]);
     $pageTotalCount = count($workTotal);
     $totalpage = ceil($pageTotalCount / $maxItem);
 
     //使用
-    $work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND (d_class2=? || $ryder_cat=0) AND d_data5='no' AND d_id=file_d_id AND file_type='newsCover' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT ?, ?", [$ryder_cat, $limit, $maxItem]);
+    $work = $DB->query("SELECT * FROM class_set, data_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND (d_class2=? || $ryder_cat=0) AND d_data5='no' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT ?, ?", [$ryder_cat, $limit, $maxItem]);
 
     $pages = new Paginator;
     $pages->items_total = $pageTotalCount;
@@ -34,20 +36,21 @@ if ($ryder_cat == 0) {
 
     $cat = $DB->query("SELECT * FROM class_set WHERE c_parent='newsC' AND c_active=1 ORDER BY c_sort ASC");
     // $work_top = $DB->row("SELECT * FROM class_set, data_set, file_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND d_id=file_d_id AND file_type='newsCover' AND d_class6='yes' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT 1");
-    $cat_top = $DB->row("SELECT * FROM class_set, data_set, file_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND d_id=file_d_id AND file_type='newsTopCover' AND d_class2=? AND d_sort=0 AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT 1", [$ryder_cat]);
+    $cat_top = $DB->row("SELECT * FROM class_set, data_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND d_class2=? AND d_sort=0 AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT 1", [$ryder_cat]);
+    $cat_top_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='newsTopCover' LIMIT 1", [$cat_top['d_id']]);
 
     //page start
     $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
-    $maxItem = 8;
+    $maxItem = 10;
     $limit = ($page - 1) * $maxItem;
 
     // 拿來計算全部有幾則
-    $workTotal = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND (d_class2=? || $ryder_cat=0) AND d_sort!=0 AND d_id=file_d_id AND file_type='newsCover' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat]);
+    $workTotal = $DB->query("SELECT * FROM class_set, data_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND (d_class2=? || $ryder_cat=0) AND d_sort!=0 AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat]);
     $pageTotalCount = count($workTotal);
     $totalpage = ceil($pageTotalCount / $maxItem);
 
     //使用
-    $work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND (d_class2=? || $ryder_cat=0) AND d_sort!=0 AND d_date <= NOW() AND d_id=file_d_id AND file_type='newsCover' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT ?, ?", [$ryder_cat, $limit, $maxItem]);
+    $work = $DB->query("SELECT * FROM class_set, data_set WHERE d_class1='news' AND c_parent='newsC' AND c_id=d_class2 AND (d_class2=? || $ryder_cat=0) AND d_sort!=0 AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC LIMIT ?, ?", [$ryder_cat, $limit, $maxItem]);
 
     $pages = new Paginator;
     $pages->items_total = $pageTotalCount;
@@ -105,7 +108,14 @@ if ($ryder_cat == 0) {
                     <div class="pic-area">
                         <div class="cat"><?= $work_top['c_title'] ?></div>
                         <div class="date">(<?= date("F d, Y", strtotime($work_top['d_date'])) ?>)</div>
-                        <div class="pic"><img src="<?= $work_top['file_link1'] ?>"></div>
+                        <div class="pic">
+                            <?php if ($work_top_pic['file_link1']) : ?>
+                                <img src="<?= $work_top_pic['file_link1'] ?>">
+                            <?php else : ?>
+                                <img src="./images/news-top-init.jpg">
+                            <?php endif ?>
+                        </div>
+
                     </div>
                 </a>
             </div>
@@ -138,7 +148,13 @@ if ($ryder_cat == 0) {
                     <div class="pic-area">
                         <div class="cat"><?= $cat_top['c_title'] ?></div>
                         <div class="date">(<?= date("F d, Y", strtotime($cat_top['d_date'])) ?>)</div>
-                        <div class="pic"><img src="<?= $cat_top['file_link1'] ?>"></div>
+                        <div class="pic">
+                            <?php if ($cat_top_pic['file_link1']) : ?>
+                                <img src="<?= $cat_top_pic['file_link1'] ?>">
+                            <?php else : ?>
+                                <img src="./images/news-top-init.jpg">
+                            <?php endif ?>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -166,6 +182,7 @@ if ($ryder_cat == 0) {
                 <ul class="newsList">
                     <?php foreach ($work as $row) : ?>
                         <?php if (strtotime($row['d_date']) <= time()) : ?>
+                            <?php $pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=?", [$row['d_id']]); ?>
                             <li class="flex-container align-middle">
                                 <a href="./news_detail.php?id=<?= $row['d_id'] ?>" class="flex-container align-middle">
                                     <div class="top-area">
@@ -176,8 +193,8 @@ if ($ryder_cat == 0) {
                                         <?= $row['d_title'] ?>
                                     </div>
                                     <div class="pic">
-                                        <?php if ($row['file_link1'] != '') : ?>
-                                            <img src="<?= $row['file_link1'] ?>" alt="">
+                                        <?php if ($pic['file_link1']) : ?>
+                                            <img src="<?= $pic['file_link1'] ?>" alt="">
                                         <?php else : ?>
                                             <img src="./images/news-init.jpg">
                                         <?php endif ?>

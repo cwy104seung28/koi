@@ -107,10 +107,17 @@ $ifFile = 1;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">店家名稱</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data" id="d_title" size="80" />
                                                         <input name="d_class1" type="hidden" id="d_class1" value="<?php echo $menu_is; ?>" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td width="532">
+                                                        <input name="d_title_en" type="text" class="table_data" id="d_title_en" size="80" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
@@ -123,10 +130,22 @@ $ifFile = 1;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在網頁顯示</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示</td>
                                                     <td width="532">
                                                         <label>
                                                             <select name="d_active" class="table_data" id="d_active">
+                                                                <option value="1">顯示</option>
+                                                                <option value="0">不顯示</option>
+                                                            </select>
+                                                        </label>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示</td>
+                                                    <td width="532">
+                                                        <label>
+                                                            <select name="d_active_en" class="table_data" id="d_active_en">
                                                                 <option value="1">顯示</option>
                                                                 <option value="0">不顯示</option>
                                                             </select>
@@ -267,7 +286,7 @@ $ifFile = 1;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_class1, d_class2, d_date, d_active) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_date, :d_active)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_class1, d_class2, d_date, d_active, d_active_en) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_date, :d_active, :d_active_en)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -276,6 +295,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
+    $stat->bindParam(':d_active_en', $_POST['d_active_en'], PDO::PARAM_INT);
     $stat->execute();
 
 

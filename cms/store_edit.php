@@ -159,9 +159,16 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">標題</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="d_title" type="text" class="table_data" id="d_title" value="<?php echo $row_Recstore['d_title']; ?>" size="60" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6"> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td width="532">
+                                                        <input name="d_title_en" type="text" class="table_data" id="d_title_en" value="<?php echo $row_Recstore['d_title_en']; ?>" size="60" />
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6"> </td>
                                                 </tr>
@@ -739,9 +746,10 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     $class1 = 'store';
-    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_class2=:d_class2, d_class3=:d_class3, d_class4=:d_class4, d_data1=:d_data1, d_data2=:d_data2, d_data3=:d_data3, d_data4=:d_data4, d_data5=:d_data5, d_date=:d_date, d_active=:d_active, d_active_en=:d_active_en WHERE d_id=:d_id";
+    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_class2=:d_class2, d_class3=:d_class3, d_class4=:d_class4, d_data1=:d_data1, d_data2=:d_data2, d_data3=:d_data3, d_data4=:d_data4, d_data5=:d_data5, d_date=:d_date, d_active=:d_active, d_active_en=:d_active_en WHERE d_id=:d_id";
     $stat = $conn->prepare($updateSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
+    $stat->bindParam(':d_title_en', $_POST['d_title_en'], PDO::PARAM_STR);
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_class3', $_POST['d_class3'], PDO::PARAM_STR);
     $stat->bindParam(':d_class4', $_POST['d_class4'], PDO::PARAM_STR);

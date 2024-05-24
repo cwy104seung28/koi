@@ -143,10 +143,10 @@ $_SESSION['nowPage'] = $selfPage;
                                                                                 <select name="c_active" class="table_data" id="c_active">
                                                                                     <option value="0" <?php if (!(strcmp(0, $row_RecourteaC['c_active']))) {
                                                                                                             echo "selected";
-                                                                                                        } ?>>不公佈</option>
+                                                                                                        } ?>>不顯示</option>
                                                                                     <option value="1" <?php if (!(strcmp(1, $row_RecourteaC['c_active']))) {
                                                                                                             echo "selected";
-                                                                                                        } ?>>公佈</option>
+                                                                                                        } ?>>顯示</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;
@@ -158,10 +158,10 @@ $_SESSION['nowPage'] = $selfPage;
                                                                                 <select name="c_active_en" class="table_data" id="c_active_en">
                                                                                     <option value="0" <?php if (!(strcmp(0, $row_RecourteaC['c_active_en']))) {
                                                                                                             echo "selected";
-                                                                                                        } ?>>不公佈</option>
+                                                                                                        } ?>>不顯示</option>
                                                                                     <option value="1" <?php if (!(strcmp(1, $row_RecourteaC['c_active_en']))) {
                                                                                                             echo "selected";
-                                                                                                        } ?>>公佈</option>
+                                                                                                        } ?>>顯示</option>
                                                                                 </select>
                                                                             </td>
                                                                             <td width="250" bgcolor="#e5ecf6">&nbsp;

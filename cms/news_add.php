@@ -143,7 +143,7 @@ $ifFile = 0;
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
-                                                <tr>
+                                                <!-- <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">內頁第一屏是否為影片</td>
                                                     <td width="532">
                                                         <select name="d_data3" id="d_data3" class="chosen-select">
@@ -153,7 +153,7 @@ $ifFile = 0;
 
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">影片連結</td>
                                                     <td width="532">
@@ -161,7 +161,7 @@ $ifFile = 0;
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                                         <p class="red_letter">
-                                                            *若無影片則無需填寫
+                                                            *若無影片則無需填寫，內頁上方會顯示「內頁封面圖片」
                                                         </p>
                                                     </td>
                                                 </tr>

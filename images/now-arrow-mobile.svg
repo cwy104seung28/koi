@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="8.54" height="8.54" viewBox="0 0 8.54 8.54">
+  <defs>
+    <style>
+      .d {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="c" data-name="menu">
+    <g>
+      <rect class="d" x="0" y="0" width="8.54" height="8.54" rx="3.8" ry="3.8"/>
+      <polygon points="6.87 4.27 2.61 1.81 2.61 6.73 6.87 4.27"/>
+    </g>
+  </g>
+</svg>

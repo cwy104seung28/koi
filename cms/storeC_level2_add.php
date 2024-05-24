@@ -83,7 +83,7 @@ $menu_is = "store";
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6"
-                                                        class="table_col_title">標題</td>
+                                                        class="table_col_title">中文標題</td>
                                                     <td width="532">
                                                         <input name="c_title" type="text" class="table_data"
                                                             id="c_title" size="50">
@@ -95,9 +95,29 @@ $menu_is = "store";
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6"
+                                                        class="table_col_title">英文標題</td>
+                                                    <td width="532">
+                                                        <input name="c_title_en" type="text" class="table_data"
+                                                            id="c_title_en" size="50">
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6"
                                                         class="table_col_title">在中文網頁顯示狀態</td>
                                                     <td width="532">
                                                         <select name="c_active" class="table_data" id="c_active">
+                                                            <option value="1">顯示</option>
+                                                                <option value="0">不顯示</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6"
+                                                        class="table_col_title">在英文網頁顯示狀態</td>
+                                                    <td width="532">
+                                                        <select name="c_active_en" class="table_data" id="c_active_en">
                                                             <option value="1">顯示</option>
                                                                 <option value="0">不顯示</option>
                                                         </select>
@@ -146,7 +166,7 @@ $menu_is = "store";
 </script>
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-    $insertSQL = "INSERT INTO class_set (c_title, c_title_en, c_slug, c_class, c_level, c_parent, c_link, c_active) VALUES (:c_title, :c_title_en, :c_slug, :c_class, :c_level, :c_parent, :c_link, :c_active)";
+    $insertSQL = "INSERT INTO class_set (c_title, c_title_en, c_slug, c_class, c_level, c_parent, c_link, c_active, c_active_en) VALUES (:c_title, :c_title_en, :c_slug, :c_class, :c_level, :c_parent, :c_link, :c_active, :c_active_en)";
     $sth = $conn->prepare($insertSQL);
     $sth->bindParam(':c_title', $_POST['c_title'], PDO::PARAM_STR);
     $sth->bindParam(':c_title_en', $_POST['c_title_en'], PDO::PARAM_STR);
@@ -156,6 +176,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $sth->bindParam(':c_parent', $_POST['c_parent'], PDO::PARAM_STR);
     $sth->bindParam(':c_link', $_POST['c_link'], PDO::PARAM_STR);
     $sth->bindParam(':c_active', $_POST['c_active'], PDO::PARAM_INT);
+    $sth->bindParam(':c_active_en', $_POST['c_active_en'], PDO::PARAM_INT);
     $sth->execute();
     //找到insert ID
     $new_data_num = $conn->lastInsertId();
