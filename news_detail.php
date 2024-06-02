@@ -50,8 +50,6 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
                 <?php else : ?>
                     <?php if ($work_pic['file_link1']) : ?>
                         <img src="<?= $work_pic['file_link1'] ?>">
-                    <?php else : ?>
-                        <img src="./images/news-inner-init.jpg">
                     <?php endif ?>
                 <?php endif ?>
             </div>
@@ -70,7 +68,7 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
             <div class="other-area flex-container align-justify">
                 <a href="./news.php">
                     <div class="back">
-                        <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="90" height="74.44" viewBox="0 0 90 74.44">
+                        <svg class="show-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="90" height="74.44" viewBox="0 0 90 74.44">
                             <g id="c" data-name="layout">
                                 <g>
                                     <g>
@@ -88,9 +86,10 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
                                 </g>
                             </g>
                         </svg>
+                        <img class="hide-for-large" src="./images/news-back-mobile.svg" alt="">
                     </div>
                 </a>
-                <div class="share-area">
+                <div class="share-area show-for-large">
                     <div class="title">(Share)</div>
                     <ul class="shareList flex-container align-middle">
                         <li>

@@ -655,7 +655,7 @@ $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' 
                             <?php $drinkIcon = $DB->row("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_id=? AND c_id=file_c_id AND file_type='ourteaIconCover' AND c_data1='yes' AND c_active=1 ORDER BY c_sort ASC", [$drink_row['c_id']]); ?>
                             <li>
                                 <a href="./ourtea.php#<?= $drink_row['c_id'] ?>">
-                                    <div class="pic-area" style="background-image: url('<?= $drink_row['file_link1'] ?>')">
+                                    <div class="pic-area" style="background: url('<?= $drink_row['file_link1'] ?>') center/cover no-repeat;">
                                         <div class="circle">
                                             <img src="<?= $drink_row['file_link1'] ?>" alt="">
                                         </div>

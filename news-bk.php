@@ -18,13 +18,17 @@
         </div>
         <div class="top-news">
             <a href="./news_detail.php" class="flex-container align-middle align-justify">
+                <div class="pic-area hide-for-large">
+                    <div class="cat">MEDIA</div>
+                    <div class="date">(July 1 , 2023)</div>
+                </div>
                 <div class="article-area">
                     <div class="title">
                         春节营业时间公告<br>
                         即将迎来新年<br>
                         谢谢大家对我们的支持与陪伴
                     </div>
-                    <div class="more">
+                    <div class="more show-for-large">
                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="54" height="53.02" viewBox="0 0 54 53.02">
                             <g id="c" data-name="layout">
                                 <g>
@@ -44,8 +48,8 @@
                     </div>
                 </div>
                 <div class="pic-area">
-                    <div class="cat">MEDIA</div>
-                    <div class="date">(July 1 , 2023)</div>
+                    <div class="cat show-for-large">MEDIA</div>
+                    <div class="date show-for-large">(July 1 , 2023)</div>
                     <div class="pic"><img src="./images/news-top-pic-1.jpg"></div>
                 </div>
             </a>
@@ -81,34 +85,24 @@
                 <ul class="newsList">
                     <li class="flex-container align-middle">
                         <a href="./news_detail.php" class="flex-container align-middle">
-                            <div class="top-area">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
                                 <div class="cat">NEWS</div>
                                 <div class="date">(May 1 , 2023)</div>
                             </div>
                             <div class="title">
-                                KOI登打士店重装开业，得闲黎饮茶呀！<br>
-                                地址：九龙旺角登打士街43H号登打士广场地下6号
-                            </div>
-                            <div class="pic">
-                                <img src="./images/n-pic-1.jpg" alt="">
-                                <!-- <div class="pic-hover">
-                                    <img src="./images/n-pic-1.jpg" alt="">
-                                </div> -->
-                            </div>
-                        </a>
-                    </li>
-                    <li class="flex-container align-middle">
-                        <a href="./news_detail.php" class="flex-container align-middle">
-                            <div class="top-area">
-                                <div class="cat">NEWS</div>
-                                <div class="date">(May 1 , 2023)</div>
-                            </div>
-                            <div class="title">
-                                一起喝草莓，快乐“莓”烦恼<br>
-                                酸甜丰富口感，抚慰内心小烦躁!<br>
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
                                 草莓珍珠奶绿/草莓玛奇朵/草莓果绿
                             </div>
-                            <div class="pic">
+                            <div class="pic show-for-large">
                                 <img src="./images/n-pic-2.jpg" alt="">
                                 <!-- <div class="pic-hover">
                                     <img src="./images/n-pic-2.jpg"" alt="">
@@ -116,158 +110,248 @@
                             </div>
                         </a>
                     </li>
-                    <li class=" flex-container align-middle">
-                                    <a href="./news_detail.php" class="flex-container align-middle">
-                                        <div class="top-area">
-                                            <div class="cat">NEWS</div>
-                                            <div class="date">(May 1 , 2023)</div>
-                                        </div>
-                                        <div class="title">
-                                            KOI新茶拿铁——口味上新，口感升级<br>
-                                            真茶真奶茶拿铁，新品更浓郁<br>
-                                            甄选好茶与丝滑牛乳1:1交织<br>
-                                            全程冷链，新鲜直达
-                                        </div>
-                                        <div class="pic">
-                                            <img src="./images/n-pic-3.jpg" alt="">
-                                            <!-- <div class="pic-hover">
-                                                <img src="./images/n-pic-3.jpg"" alt="">
+                    <li class="flex-container align-middle">
+                        <a href="./news_detail.php" class="flex-container align-middle">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
+                                <div class="cat">NEWS</div>
+                                <div class="date">(May 1 , 2023)</div>
+                            </div>
+                            <div class="title">
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
+                                草莓珍珠奶绿/草莓玛奇朵/草莓果绿
+                            </div>
+                            <div class="pic show-for-large">
+                                <img src="./images/n-pic-2.jpg" alt="">
+                                <!-- <div class="pic-hover">
+                                    <img src="./images/n-pic-2.jpg"" alt="">
                                 </div> -->
                             </div>
                         </a>
                     </li>
-                    <li class=" flex-container align-middle">
-                                                <a href="./news_detail.php" class="flex-container align-middle">
-                                                    <div class="top-area">
-                                                        <div class="cat">NEWS</div>
-                                                        <div class="date">(May 1 , 2023)</div>
-                                                    </div>
-                                                    <div class="title">
-                                                        #果奶系列 今日上线[举手]<br>
-                                                        【芒果奶绿】芒香、奶香、茉莉香层层交叠，谁不迷“芒”！<br>
-                                                        【水蜜桃奶绿】颗颗桃子果肉落入茉莉绿茶汤底，超满足！<br>
-                                                        【葡萄奶绿】丝滑奶茶与酸甜葡萄绝配！
-                                                    </div>
-                                                    <div class="pic">
-                                                        <img src="./images/n-pic-4.jpg" alt="">
-                                                        <!-- <div class="pic-hover">
-                                                            <img src="./images/n-pic-4.jpg"" alt="">
+                    <li class="flex-container align-middle">
+                        <a href="./news_detail.php" class="flex-container align-middle">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
+                                <div class="cat">NEWS</div>
+                                <div class="date">(May 1 , 2023)</div>
+                            </div>
+                            <div class="title">
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
+                                草莓珍珠奶绿/草莓玛奇朵/草莓果绿
+                            </div>
+                            <div class="pic show-for-large">
+                                <img src="./images/n-pic-2.jpg" alt="">
+                                <!-- <div class="pic-hover">
+                                    <img src="./images/n-pic-2.jpg"" alt="">
                                 </div> -->
                             </div>
                         </a>
                     </li>
-                    <li class=" flex-container align-middle">
-                                                            <a href="./news_detail.php" class="flex-container align-middle">
-                                                                <div class="top-area">
-                                                                    <div class="cat">NEWS</div>
-                                                                    <div class="date">(May 1 , 2023)</div>
-                                                                </div>
-                                                                <div class="title">
-                                                                    各位开拓者们久等了！<br>
-                                                                    香港澳门KOI宇宙补给站活动相关周边已重新补货至6间合作门店<br>
-                                                                    8/7（一）开店后开始正常发放，赠品数量有限送完即止。
-                                                                </div>
-                                                                <div class="pic">
-                                                                    <img src="./images/n-pic-5.jpg" alt="">
-                                                                    <!-- <div class="pic-hover">
-                                                                        <img src="./images/n-pic-5.jpg"" alt="">
+                    <li class="flex-container align-middle">
+                        <a href="./news_detail.php" class="flex-container align-middle">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
+                                <div class="cat">NEWS</div>
+                                <div class="date">(May 1 , 2023)</div>
+                            </div>
+                            <div class="title">
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
+                                草莓珍珠奶绿/草莓玛奇朵/草莓果绿
+                            </div>
+                            <div class="pic show-for-large">
+                                <img src="./images/n-pic-2.jpg" alt="">
+                                <!-- <div class="pic-hover">
+                                    <img src="./images/n-pic-2.jpg"" alt="">
                                 </div> -->
                             </div>
                         </a>
                     </li>
-                    <li class=" flex-container align-middle">
-                                                                        <a href="./news_detail.php" class="flex-container align-middle">
-                                                                            <div class="top-area">
-                                                                                <div class="cat">NEWS</div>
-                                                                                <div class="date">(May 1 , 2023)</div>
-                                                                            </div>
-                                                                            <div class="title">
-                                                                                《KOI Thé》×《崩坏：星穹铁道》<br>
-                                                                                联名饮品活动
-                                                                            </div>
-                                                                            <div class="pic">
-                                                                                <img src="./images/n-pic-6.jpg" alt="">
-                                                                                <!-- <div class="pic-hover">
-                                                                                    <img src="./images/n-pic-6.jpg"" alt="">
+                    <li class="flex-container align-middle">
+                        <a href="./news_detail.php" class="flex-container align-middle">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
+                                <div class="cat">NEWS</div>
+                                <div class="date">(May 1 , 2023)</div>
+                            </div>
+                            <div class="title">
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
+                                草莓珍珠奶绿/草莓玛奇朵/草莓果绿
+                            </div>
+                            <div class="pic show-for-large">
+                                <img src="./images/n-pic-2.jpg" alt="">
+                                <!-- <div class="pic-hover">
+                                    <img src="./images/n-pic-2.jpg"" alt="">
                                 </div> -->
                             </div>
                         </a>
                     </li>
-                    <li class=" flex-container align-middle">
-                                                                                    <a href="./news_detail.php" class="flex-container align-middle">
-                                                                                        <div class="top-area">
-                                                                                            <div class="cat">NEWS</div>
-                                                                                            <div class="date">(May 1 , 2023)</div>
-                                                                                        </div>
-                                                                                        <div class="title">
-                                                                                            夏天最消暑的水果系列又来啦!!!<br>
-                                                                                            7月22日起，港澳门市新品葡萄系列开卖啰!!!<br>
-                                                                                            新鲜葡萄果汁丰盈的葡萄果肉，鲜爽可口，Vitamin C满满期待您来尝鲜
-                                                                                        </div>
-                                                                                        <div class="pic">
-                                                                                            <img src="./images/n-pic-7.jpg" alt="">
-                                                                                            <!-- <div class="pic-hover">
-                                                                                                <img src="./images/n-pic-7.jpg"" alt="">
+                    <li class="flex-container align-middle">
+                        <a href="./news_detail.php" class="flex-container align-middle">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
+                                <div class="cat">NEWS</div>
+                                <div class="date">(May 1 , 2023)</div>
+                            </div>
+                            <div class="title">
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
+                                草莓珍珠奶绿/草莓玛奇朵/草莓果绿
+                            </div>
+                            <div class="pic show-for-large">
+                                <img src="./images/n-pic-2.jpg" alt="">
+                                <!-- <div class="pic-hover">
+                                    <img src="./images/n-pic-2.jpg"" alt="">
                                 </div> -->
                             </div>
                         </a>
                     </li>
-                    <li class=" flex-container align-middle">
-                                                                                                <a href="./news_detail.php" class="flex-container align-middle">
-                                                                                                    <div class="top-area">
-                                                                                                        <div class="cat">NEWS</div>
-                                                                                                        <div class="date">(May 1 , 2023)</div>
-                                                                                                    </div>
-                                                                                                    <div class="title">
-                                                                                                        柠檬系列上市啦
-                                                                                                        鲜榨柠檬汁与新鲜柠檬片调制而成，<br>
-                                                                                                        清新香气与茶香结合，酸甜清爽
-                                                                                                    </div>
-                                                                                                    <div class="pic">
-                                                                                                        <img src="./images/n-pic-8.jpg" alt="">
-                                                                                                        <!-- <div class="pic-hover">
-                                                                                                            <img src="./images/n-pic-8.jpg"" alt="">
+                    <li class="flex-container align-middle">
+                        <a href="./news_detail.php" class="flex-container align-middle">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
+                                <div class="cat">NEWS</div>
+                                <div class="date">(May 1 , 2023)</div>
+                            </div>
+                            <div class="title">
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
+                                草莓珍珠奶绿/草莓玛奇朵/草莓果绿
+                            </div>
+                            <div class="pic show-for-large">
+                                <img src="./images/n-pic-2.jpg" alt="">
+                                <!-- <div class="pic-hover">
+                                    <img src="./images/n-pic-2.jpg"" alt="">
                                 </div> -->
                             </div>
                         </a>
                     </li>
-                    <li class=" flex-container align-middle">
-                                                                                                            <a href="./news_detail.php" class="flex-container align-middle">
-                                                                                                                <div class="top-area">
-                                                                                                                    <div class="cat">NEWS</div>
-                                                                                                                    <div class="date">(May 1 , 2023)</div>
-                                                                                                                </div>
-                                                                                                                <div class="title">
-                                                                                                                    众所期待的水蜜桃系列回来啦！<br>
-                                                                                                                    清爽的水蜜桃口感搭配上Q弹冻，<br>
-                                                                                                                    全新口感，5月15日全新上市
-                                                                                                                </div>
-                                                                                                                <div class="pic">
-                                                                                                                    <img src="./images/n-pic-9.jpg" alt="">
-                                                                                                                    <!-- <div class="pic-hover">
-                                                                                                                        <img src="./images/n-pic-9.jpg"" alt="">
+                    <li class="flex-container align-middle">
+                        <a href="./news_detail.php" class="flex-container align-middle">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
+                                <div class="cat">NEWS</div>
+                                <div class="date">(May 1 , 2023)</div>
+                            </div>
+                            <div class="title">
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
+                                草莓珍珠奶绿/草莓玛奇朵/草莓果绿
+                            </div>
+                            <div class="pic show-for-large">
+                                <img src="./images/n-pic-2.jpg" alt="">
+                                <!-- <div class="pic-hover">
+                                    <img src="./images/n-pic-2.jpg"" alt="">
                                 </div> -->
                             </div>
                         </a>
                     </li>
-                    <li class=" flex-container align-middle">
-                                                                                                                        <a href="./news_detail.php" class="flex-container align-middle">
-                                                                                                                            <div class="top-area">
-                                                                                                                                <div class="cat">NEWS</div>
-                                                                                                                                <div class="date">(May 1 , 2023)</div>
-                                                                                                                            </div>
-                                                                                                                            <div class="title">
-                                                                                                                                期待已久的饼干奶茶来啰!!!<br>
-                                                                                                                                03月22日起港澳门市新上市「原创饼干奶茶」<br>
-                                                                                                                                Louts比利时焦糖饼干搭配奶茶与香浓奶盖，给您全新的饮品享受
-                                                                                                                            </div>
-                                                                                                                            <div class="pic">
-                                                                                                                                <img src="./images/n-pic-10.jpg" alt="">
-                                                                                                                                <!-- <div class="pic-hover">
-                                                                                                                                    <img src="./images/n-pic-10.jpg" alt="">
-                                                                                                                                </div> -->
-                                                                                                                            </div>
-                                                                                                                        </a>
+                    <li class="flex-container align-middle">
+                        <a href="./news_detail.php" class="flex-container align-middle">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
+                                <div class="cat">NEWS</div>
+                                <div class="date">(May 1 , 2023)</div>
+                            </div>
+                            <div class="title">
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
+                                草莓珍珠奶绿/草莓玛奇朵/草莓果绿
+                            </div>
+                            <div class="pic show-for-large">
+                                <img src="./images/n-pic-2.jpg" alt="">
+                                <!-- <div class="pic-hover">
+                                    <img src="./images/n-pic-2.jpg"" alt="">
+                                </div> -->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="flex-container align-middle">
+                        <a href="./news_detail.php" class="flex-container align-middle">
+                            <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                <div class="top-area">
+                                    <div class="cat">NEWS</div>
+                                    <div class="date">(May 1 , 2023)</div>
+                                </div>
+                                <div class="pic">
+                                    <img src="./images/n-pic-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="top-area show-for-large">
+                                <div class="cat">NEWS</div>
+                                <div class="date">(May 1 , 2023)</div>
+                            </div>
+                            <div class="title">
+                                一起喝草莓，快乐“莓”烦恼，酸甜丰富口感，抚慰内心小烦躁!<br>
+                                草莓珍珠奶绿/草莓玛奇朵/草莓果绿
+                            </div>
+                            <div class="pic show-for-large">
+                                <img src="./images/n-pic-2.jpg" alt="">
+                                <!-- <div class="pic-hover">
+                                    <img src="./images/n-pic-2.jpg"" alt="">
+                                </div> -->
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -318,7 +402,7 @@
         trigger: ".menu-link",
         endTrigger: ".newsWrap",
         start: "top 78.5%",
-         end: "100% 100%",
+        end: "100% 100%",
         scrub: 1,
         pin: true,
         // markers: true,

@@ -63,7 +63,77 @@
                 </ul>
             </div>
         </div>
-        <ul class="about-infoWrap outter" id="horizontalWrap">
+        <ul class="about-infoWrap outter show-for-large" id="horizontalWrap">
+            <li class="flex-container align-middle green">
+                <div class="article-area">
+                    <div class="title flex-container align-middle">
+                        <div class="deco top"><img src="./images/a-h-deco-top.svg" alt=""></div>
+                        <div class="en">
+                            SELECTION OF<br>
+                            FINE INGREDIENTS
+                        </div>
+                        <div class="ch">严选原物料</div>
+                        <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
+                    </div>
+                    <div class="content">
+                        鲜采茶叶，唯有高质量茶叶所泡出的浓郁茶香，才能战胜所有挑剔的味蕾。黄金珍珠，天然原料制成，使用不同水温交替烹煮，以确保每颗珍珠的透明饱满和Q弹美味。
+                    </div>
+                </div>
+                <div class="pic-area"><img src="./images/a-info-pic-1.png" alt=""></div>
+            </li>
+            <li class="flex-container align-center-middle blue">
+                <div class="article-area">
+                    <div class="title flex-container align-middle">
+                        <div class="deco top"><img src="./images/a-h-deco-top.svg" alt=""></div>
+                        <div class="en">
+                            TEA BREWING<br>
+                            MASTERS
+                        </div>
+                        <div class="ch">职人制茶</div>
+                        <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
+                    </div>
+                    <div class="content">
+                        坚持使用传统茶壶煮茶，自制专属器皿，水量、茶叶及温度的完美比例控制，使调茶师能精准掌握每一口茶汤的绝佳口感。即使身处世界各地，也能随时喝到令人回味无穷的好茶。
+                    </div>
+                </div>
+                <div class="pic-area"><img src="./images/a-info-pic-2.png" alt=""></div>
+            </li>
+            <li class="flex-container align-center-middle yellow">
+                <div class="article-area">
+                    <div class="title flex-container align-middle">
+                        <div class="deco top"><img src="./images/a-h-deco-top.svg" alt=""></div>
+                        <div class="en">
+                            PRECISION AND<br>
+                            CONSISTENCY
+                        </div>
+                        <div class="ch">精准口感</div>
+                        <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
+                    </div>
+                    <div class="content">
+                        为了确保每一口茶都带来令人愉悦的精致口感，在训练调茶师的过程中，从冰块与茶量的取用，到固定的摇茶手势，每一个细节都须反复练习保持一致。唯有这样的坚持，才能体现好茶在口中的往返留香。
+                    </div>
+                </div>
+                <div class="pic-area"><img src="./images/a-info-pic-3.png" alt=""></div>
+            </li>
+            <li class="flex-container align-center-middle orange">
+                <div class="article-area">
+                    <div class="title flex-container align-middle">
+                        <div class="deco top"><img src="./images/a-h-deco-top.svg" alt=""></div>
+                        <div class="en">
+                            HEART-WARMING<br>
+                            SERVICE
+                        </div>
+                        <div class="ch">热情服务</div>
+                        <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
+                    </div>
+                    <div class="content">
+                        我们将每位客人视为家人般真诚对待，在友善及热情的门市里，请尽情品味为您量身打造的饮品，享受被茶香簇拥的幸福，同时感受到我们真挚的温暖。
+                    </div>
+                </div>
+                <div class="pic-area"><img src="./images/a-info-pic-4.png" alt=""></div>
+            </li>
+        </ul>
+        <ul class="about-infoWrap outter hide-for-large">
             <li class="flex-container align-middle green">
                 <div class="article-area">
                     <div class="title flex-container align-middle">
@@ -759,6 +829,7 @@
         }
     }
     horizonHandler('.about-infoWrap#horizontalWrap');
+    
     $('.slick-article').slick({
         dots: true,
         speed: 1000,

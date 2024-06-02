@@ -82,11 +82,15 @@ if ($ryder_cat == 0) {
         <?php if ($ryder_cat == 0) : ?>
             <div class="top-news">
                 <a href="./news_detail.php?id=<?= $work_top['d_id'] ?>" class="flex-container align-middle align-justify">
+                    <div class="pic-area hide-for-large">
+                        <div class="cat"><?= $work_top['c_title'] ?></div>
+                        <div class="date">(<?= date("F d, Y", strtotime($work_top['d_date'])) ?>)</div>
+                    </div>
                     <div class="article-area">
                         <div class="title">
                             <?= $work_top['d_title'] ?>
                         </div>
-                        <div class="more">
+                        <div class="more hide-for-large">
                             <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="54" height="53.02" viewBox="0 0 54 53.02">
                                 <g id="c" data-name="layout">
                                     <g>
@@ -106,8 +110,8 @@ if ($ryder_cat == 0) {
                         </div>
                     </div>
                     <div class="pic-area">
-                        <div class="cat"><?= $work_top['c_title'] ?></div>
-                        <div class="date">(<?= date("F d, Y", strtotime($work_top['d_date'])) ?>)</div>
+                        <div class="cat show-for-large"><?= $work_top['c_title'] ?></div>
+                        <div class="date show-for-large">(<?= date("F d, Y", strtotime($work_top['d_date'])) ?>)</div>
                         <div class="pic">
                             <?php if ($work_top_pic['file_link1']) : ?>
                                 <img src="<?= $work_top_pic['file_link1'] ?>">
@@ -122,11 +126,15 @@ if ($ryder_cat == 0) {
         <?php else : ?>
             <div class="top-news">
                 <a href="./news_detail.php?id=<?= $cat_top['d_id'] ?>" class="flex-container align-middle align-justify">
+                    <div class="pic-area hide-for-large">
+                        <div class="cat"><?= $work_top['c_title'] ?></div>
+                        <div class="date">(<?= date("F d, Y", strtotime($work_top['d_date'])) ?>)</div>
+                    </div>
                     <div class="article-area">
                         <div class="title">
                             <?= $cat_top['d_title'] ?>
                         </div>
-                        <div class="more">
+                        <div class="more hide-for-large">
                             <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="54" height="53.02" viewBox="0 0 54 53.02">
                                 <g id="c" data-name="layout">
                                     <g>
@@ -146,8 +154,8 @@ if ($ryder_cat == 0) {
                         </div>
                     </div>
                     <div class="pic-area">
-                        <div class="cat"><?= $cat_top['c_title'] ?></div>
-                        <div class="date">(<?= date("F d, Y", strtotime($cat_top['d_date'])) ?>)</div>
+                        <div class="cat show-for-large"><?= $cat_top['c_title'] ?></div>
+                        <div class="date show-for-large">(<?= date("F d, Y", strtotime($cat_top['d_date'])) ?>)</div>
                         <div class="pic">
                             <?php if ($cat_top_pic['file_link1']) : ?>
                                 <img src="<?= $cat_top_pic['file_link1'] ?>">
@@ -185,14 +193,27 @@ if ($ryder_cat == 0) {
                             <?php $pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=?", [$row['d_id']]); ?>
                             <li class="flex-container align-middle">
                                 <a href="./news_detail.php?id=<?= $row['d_id'] ?>" class="flex-container align-middle">
-                                    <div class="top-area">
+                                    <div class="flex-container align-justify align-middle hide-for-large" style="width: 100%; margin-bottom: 14px;">
+                                        <div class="top-area">
+                                            <div class="cat"><?= $row['c_title'] ?></div>
+                                            <div class="date">(<?= date("F d, Y", strtotime($row['d_date'])) ?>)</div>
+                                        </div>
+                                        <div class="pic">
+                                            <?php if ($pic['file_link1']) : ?>
+                                                <img src="<?= $pic['file_link1'] ?>" alt="">
+                                            <?php else : ?>
+                                                <img src="./images/news-init.jpg">
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                    <div class="top-area show-for-large">
                                         <div class="cat"><?= $row['c_title'] ?></div>
                                         <div class="date">(<?= date("F d, Y", strtotime($row['d_date'])) ?>)</div>
                                     </div>
                                     <div class="title">
                                         <?= $row['d_title'] ?>
                                     </div>
-                                    <div class="pic">
+                                    <div class="pic show-for-large">
                                         <?php if ($pic['file_link1']) : ?>
                                             <img src="<?= $pic['file_link1'] ?>" alt="">
                                         <?php else : ?>

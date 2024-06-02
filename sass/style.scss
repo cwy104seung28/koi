@@ -78,11 +78,21 @@ nav {
         padding-top: 20px;
         padding-left: 20px;
         height: fit-content;
+        @include breakpoint(medium down) {
+            padding-top: 10px;
+            padding-left: 15px;
+            flex: 5.5 1 0;
+        }
         .icon {
             margin-right: 5px;
         }
         .arrow {
             margin-right: 5px;
+            img {
+                @include breakpoint(medium down) {
+                    vertical-align: baseline;
+                }
+            }
         }
         .name {
             font-family: $normal-family;
@@ -90,7 +100,7 @@ nav {
             font-weight: 500;
             margin-right: 5px;
             @include breakpoint(medium down) {
-                font-size: 12px;
+                font-size: 10px;
                 color: #fff;
             }
         }
@@ -107,13 +117,17 @@ nav {
         position: relative;
         z-index: 1;
         padding-top: 20px;
+        @include breakpoint(medium down) {
+            padding-top: 10px;
+            flex: 8 1 0;
+        }
     }
     .menuWrap {
         position: relative;
         z-index: 2;
         padding-left: 120px;
         padding-bottom: 113px;
-        &.is-not-hover{
+        &.is-not-hover {
             pointer-events: none;
         }
         .menu {
@@ -256,6 +270,13 @@ nav {
                 }
             }
         }
+    }
+    .hamburger {
+        position: relative;
+        z-index: 1;
+        padding-top: 10px;
+        padding-right: 15px;
+        flex: 1 1 0;
     }
     .bg-hover {
         position: fixed;
@@ -1012,10 +1033,15 @@ nav {
                 background-size: cover;
                 margin-bottom: 10px;
                 .circle {
+                    width: 466px;
+                    height: 466px;
                     padding: 11px;
                     transition: 0.2s linear;
                     pointer-events: none;
                     img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                         border-radius: 50%;
                     }
                 }
@@ -1189,9 +1215,20 @@ nav {
             width: 100%;
             height: 100vh;
             transform: scale(10);
+            @include breakpoint(medium down) {
+                padding: 0 83px;
+            }
             div {
                 // transform: scale(5);
                 margin: 0 12px;
+                @include breakpoint(medium down) {
+                    margin: 0 3px;
+                }
+                &.letter-k{
+                    @include breakpoint(medium down) {
+                        margin: 0 1px;
+                    }
+                }
                 // img {
                 //     opacity: 0;
                 // }
@@ -1224,6 +1261,9 @@ nav {
             z-index: 3;
             background-color: #fff;
             // padding: 200px 0 500px;
+            @include breakpoint(medium down) {
+                padding: 0px 20px;
+            }
             .inner-sticky {
                 position: sticky;
                 top: 0;
@@ -1232,6 +1272,9 @@ nav {
             }
             div {
                 margin: 30px 0;
+                @include breakpoint(medium down) {
+                    margin: 13px 0;
+                }
             }
         }
         .drink-area {
@@ -2026,9 +2069,15 @@ nav {
 
 .contactWrap {
     padding: 150px 95px 100px;
+    @include breakpoint(medium down) {
+        padding: 90px 20px 65px;
+    }
     .head-area {
         margin-bottom: 250px;
         overflow: hidden;
+        @include breakpoint(medium down) {
+            margin-bottom: 65px;
+        }
         .en {
             font-family: $en-family;
             font-size: 335px;
@@ -2036,6 +2085,10 @@ nav {
             letter-spacing: 3px;
             transform-origin: left;
             transform: translateY(100%) rotate(10deg);
+            @include breakpoint(medium down) {
+                font-size: 66px;
+                letter-spacing: 1px;
+            }
         }
     }
     .overseas {
@@ -2049,6 +2102,11 @@ nav {
     .contact-area {
         max-width: 1340px;
         margin: 0 auto;
+        @include breakpoint(medium down) {
+            flex-direction: column;
+            // height: 3000px;
+            justify-content: flex-start;
+        }
     }
     .article-area {
         max-width: 456px;
@@ -2058,12 +2116,21 @@ nav {
         font-weight: 900;
         letter-spacing: 1px;
         margin-right: 235px;
+        @include breakpoint(medium down) {
+            font-size: 33px;
+            margin-right: 0;
+            flex: initial;
+            margin-bottom: 52px;
+        }
         .change {
             .inner {
                 position: relative;
                 width: fit-content;
                 height: fit-content;
                 background-color: #fff;
+                @include breakpoint(medium down) {
+                    line-height: 1.2;
+                }
                 // &::before {
                 //     position: absolute;
                 //     content: "";
@@ -2089,6 +2156,9 @@ nav {
         }
         .orange {
             color: #ff4d00;
+            @include breakpoint(medium down) {
+                color: #000;
+            }
         }
         .note {
             font-family: $ch-family;
@@ -2097,6 +2167,13 @@ nav {
             letter-spacing: 2px;
             margin-top: 65px;
             line-height: 1.5;
+            @include breakpoint(medium down) {
+                margin-top: 12px;
+                color: #606060;
+                letter-spacing: 0px;
+                font-size: 15px;
+                font-weight: 500;
+            }
         }
         .other {
             font-family: $ch-family;
@@ -2106,6 +2183,11 @@ nav {
             margin-top: 50px;
             color: #ff4d00;
             line-height: 1.5;
+            @include breakpoint(medium down) {
+                font-size: 13px;
+                letter-spacing: 0px;
+                margin-top: 12px;
+            }
         }
     }
     .form-area {
@@ -2113,69 +2195,9 @@ nav {
         width: 100%;
         flex: 1 1 0;
         height: 1470px;
-        .formList {
-            margin-bottom: 95px;
-            li {
-                .title {
-                    position: relative;
-                    font-size: 26px;
-                    font-weight: 1000;
-                    letter-spacing: 1px;
-                    color: $black;
-                    &::after {
-                        position: absolute;
-                        content: "";
-                        width: 0%;
-                        height: 5px;
-                        bottom: -7px;
-                        left: 0;
-                        background-color: #ff4d00;
-                        transition: 0.5s all;
-                    }
-                }
-                .radio {
-                    width: 36px;
-                    height: 36px;
-                    border-radius: 50%;
-                    border: 1px solid #231815;
-                    margin-right: 20px;
-                    position: relative;
-                    &::before {
-                        position: absolute;
-                        content: "";
-                        width: 11px;
-                        height: 11px;
-                        border-radius: 50%;
-                        background-color: #231815;
-                        left: 50%;
-                        top: 50%;
-                        transform: translate(-50%, -50%);
-                        opacity: 0;
-                        transition: 0.5s all;
-                    }
-                }
-                label {
-                    cursor: pointer;
-                    opacity: 0.35;
-                    transition: 0.5s all;
-                }
-            }
-            input[type="radio"] {
-                display: none;
-            }
-            input[type="radio"]:checked + label {
-                opacity: 1;
-                .radio {
-                    &::before {
-                        opacity: 1;
-                    }
-                }
-                .title {
-                    &::after {
-                        width: 100%;
-                    }
-                }
-            }
+        @include breakpoint(medium down) {
+            flex: initial;
+            height: 800px;
         }
         form {
             width: 100%;
@@ -2185,12 +2207,18 @@ nav {
             transition: 0.5s all;
             opacity: 0;
             pointer-events: none;
+            @include breakpoint(medium down) {
+                top: 0;
+            }
             &.is-show {
                 opacity: 1;
                 pointer-events: all;
             }
             .title-area {
                 margin-bottom: 60px;
+                @include breakpoint(medium down) {
+                    margin-bottom: 40px;
+                }
                 .line {
                     width: 6px;
                     background-color: #f7e0c0;
@@ -2204,6 +2232,9 @@ nav {
                     color: #0c131b;
                     font-weight: 900;
                     margin-bottom: 7px;
+                    @include breakpoint(medium down) {
+                        font-size: 16px;
+                    }
                 }
                 .ch {
                     font-family: $ch-family;
@@ -2211,16 +2242,27 @@ nav {
                     letter-spacing: 10px;
                     color: $black;
                     font-weight: 800;
+                    @include breakpoint(medium down) {
+                        font-size: 16px;
+                        letter-spacing: 5px;
+                    }
                 }
             }
             .item {
                 margin-bottom: 58px;
+                @include breakpoint(medium down) {
+                    margin-bottom: 30px;
+                }
             }
             .title {
                 font-size: 18px;
                 letter-spacing: 5px;
                 font-weight: 700;
                 margin-bottom: 30px;
+                @include breakpoint(medium down) {
+                    font-size: 15px;
+                    margin-bottom: 12px;
+                }
             }
             input[type="text"] {
                 // font-family: $Montserrat;
@@ -2236,6 +2278,11 @@ nav {
                 font-size: 16px;
                 letter-spacing: 5px;
                 font-weight: 500;
+                @include breakpoint(medium down) {
+                    height: 40px;
+                    font-size: 13px;
+                    letter-spacing: 3px;
+                }
                 &::placeholder {
                     color: #606060;
                     opacity: 1;
@@ -2252,11 +2299,17 @@ nav {
                 line-height: 1;
                 color: #231815;
                 font-size: 16px;
-                letter-spacing: 1px;
+
                 font-weight: 500;
                 font-family: $normal-family;
                 letter-spacing: 2px;
                 float: inherit;
+                @include breakpoint(medium down) {
+                    height: 40px;
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                    padding: 14px 15px;
+                }
                 &::after {
                     right: 30px;
                     margin-top: -8px;
@@ -2264,6 +2317,12 @@ nav {
                     height: 11px;
                     border-bottom: 2px solid $black;
                     border-right: 2px solid $black;
+                    @include breakpoint(medium down) {
+                        width: 8px;
+                        height: 8px;
+                        right: 15px;
+                        margin-top: -6px;
+                    }
                 }
                 .list {
                     width: calc(100% + 4px);
@@ -2285,6 +2344,10 @@ nav {
                         // &:first-child {
                         //     display: none;
                         // }
+                        @include breakpoint(medium down) {
+                            font-size: 13px;
+                            padding: 10px 15px;
+                        }
                         &::after {
                             position: absolute;
                             content: "";
@@ -2324,10 +2387,18 @@ nav {
                 color: #ff4d00;
                 font-weight: 600;
                 margin-top: 20px;
+                @include breakpoint(medium down) {
+                    font-size: 12px;
+                    letter-spacing: 0px;
+                    margin-top: 12px;
+                }
             }
             .submit {
                 margin-top: 145px;
                 cursor: pointer;
+                @include breakpoint(medium down) {
+                    margin-top: 25px;
+                }
                 .arrow {
                     transition: 0.5s all;
                 }
@@ -2358,14 +2429,145 @@ nav {
             }
         }
     }
+    .formList {
+        margin-bottom: 95px;
+        @include breakpoint(medium down) {
+            margin-bottom: 55px;
+        }
+        li {
+            .title {
+                position: relative;
+                font-size: 26px;
+                font-weight: 1000;
+                letter-spacing: 1px;
+                color: $black;
+                @include breakpoint(medium down) {
+                    font-size: 16px;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 0%;
+                    height: 5px;
+                    bottom: -7px;
+                    left: 0;
+                    background-color: #ff4d00;
+                    transition: 0.5s all;
+                }
+            }
+            .radio {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                border: 1px solid #231815;
+                margin-right: 20px;
+                position: relative;
+                @include breakpoint(medium down) {
+                    width: 21px;
+                    height: 21px;
+                }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 11px;
+                    height: 11px;
+                    border-radius: 50%;
+                    background-color: #231815;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    transition: 0.5s all;
+                    @include breakpoint(medium down) {
+                        width: 6px;
+                        height: 6px;
+                    }
+                }
+            }
+            label {
+                cursor: pointer;
+                opacity: 0.35;
+                transition: 0.5s all;
+            }
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"]:checked + label {
+            opacity: 1;
+            .radio {
+                &::before {
+                    opacity: 1;
+                }
+            }
+            .title {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .contact-finish {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #000000a6;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.5s all;
+
+        &.is-finish {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .inner {
+            position: relative;
+            width: 400px;
+            height: 212px;
+            background-color: #fff;
+            flex-direction: column;
+        }
+        .ch {
+            font-family: $ch-family;
+            font-size: 22px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .en {
+            font-family: $en-family;
+            font-size: 16px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            right: 18px;
+            top: 15px;
+            cursor: pointer;
+        }
+    }
 }
 
 .menuListWrap {
     padding: 200px 105px 250px;
+
+    @include breakpoint(medium down) {
+        padding: 90px 20px 30px;
+    }
     .head-area {
         position: relative;
         margin-bottom: 85px;
         overflow: hidden;
+        @include breakpoint(medium down) {
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
         &::after {
             position: absolute;
             content: "";
@@ -2374,8 +2576,9 @@ nav {
             background-color: $black;
             left: 0px;
             bottom: 0;
-            // transform-origin: left;
-            // transform: scaleX(0);
+            // @include breakpoint(medium down) {
+            //     bottom: -40px;
+            // }
         }
         .en {
             font-family: $en-family;
@@ -2387,6 +2590,11 @@ nav {
             line-height: 0.72;
             transform-origin: left;
             transform: translateY(100%) rotate(10deg);
+            @include breakpoint(medium down) {
+                font-size: 110px;
+                margin-left: 0;
+                transform: translateY(120%) rotate(10deg);
+            }
         }
     }
     .menuList {
@@ -2398,7 +2606,10 @@ nav {
             margin-bottom: 80px;
             // border-bottom: 1px solid $black;
             padding-bottom: 100px;
-            // overflow: hidden;
+            @include breakpoint(medium down) {
+                padding-bottom: 27px;
+                margin-bottom: 40px;
+            }
             &::after {
                 position: absolute;
                 content: "";
@@ -2408,23 +2619,32 @@ nav {
                 left: 0px;
                 bottom: 0;
             }
-            // .inner {
-            //     transform-origin: left;
-            //     transform: translateY(235%) rotate(10deg);
-            // }
+            .inner {
+                @include breakpoint(medium down) {
+                    flex-direction: column;
+                }
+            }
             .en {
                 font-size: 30px;
                 font-weight: 900;
                 font-family: $en-family;
                 margin-bottom: 25px;
                 letter-spacing: 1px;
+                @include breakpoint(medium down) {
+                    font-size: 24px;
+                    margin-bottom: 8px;
+                }
             }
             .ch {
                 font-size: 16px;
                 font-weight: 500;
                 font-family: $ch-family;
                 letter-spacing: 5px;
-                // margin-bottom: 25px;
+                @include breakpoint(medium down) {
+                    font-size: 13px;
+                    letter-spacing: 3px;
+                    margin-bottom: 44px;
+                }
             }
         }
     }
@@ -2432,8 +2652,15 @@ nav {
         margin-top: 10px;
         > li {
             margin-bottom: 70px;
+            @include breakpoint(medium down) {
+                margin-bottom: 25px;
+            }
             a {
                 justify-content: right;
+                @include breakpoint(medium down) {
+                    justify-content: space-between;
+                    align-items: normal !important;
+                }
             }
             &:last-child {
                 margin-bottom: 0;
@@ -2469,6 +2696,9 @@ nav {
                 stroke-width: 3px;
                 transition: 0.3s all;
             }
+            .f {
+                fill: #585757;
+            }
         }
     }
     .back {
@@ -2487,6 +2717,10 @@ nav {
             font-weight: 700;
             font-family: $en-family;
             margin-top: 15px;
+            @include breakpoint(medium down) {
+                font-size: 20px;
+                margin-top: 10px;
+            }
         }
         &:hover {
             #b {
@@ -2544,6 +2778,7 @@ nav {
             @include breakpoint(medium down) {
                 margin-right: 0;
                 text-align: left;
+                padding-left: 20px;
             }
         }
     }
@@ -2583,8 +2818,8 @@ nav {
                 color: $black;
                 margin-bottom: 30px;
                 @include breakpoint(medium down) {
-                    font-size: 22px;
-                    letter-spacing: 2px;
+                    font-size: 24px;
+                    letter-spacing: 1px;
                     margin-bottom: 17px;
                 }
             }
@@ -2618,6 +2853,7 @@ nav {
                 border-bottom: 1px solid rgba(35, 24, 21, 0.274);
                 @include breakpoint(medium down) {
                     font-size: 9px;
+                    font-weight: 500;
                     // line-height: 1.2;
                 }
                 .name {
@@ -2658,6 +2894,11 @@ nav {
                 letter-spacing: 4px;
                 color: $black;
                 margin-bottom: 30px;
+                @include breakpoint(medium down) {
+                    font-size: 24px;
+                    letter-spacing: 1px;
+                    margin-bottom: 17px;
+                }
             }
             .articleList {
                 li {
@@ -2668,6 +2909,10 @@ nav {
                     letter-spacing: 1px;
                     color: $black;
                     border-bottom: 1px solid rgba(35, 24, 21, 0.274);
+                    @include breakpoint(medium down) {
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                    }
                 }
             }
             .note {
@@ -2679,6 +2924,10 @@ nav {
                 line-height: 1.4;
                 margin-left: 27px;
                 margin-top: 10px;
+                @include breakpoint(medium down) {
+                    font-size: 12px;
+                    letter-spacing: 0px;
+                }
             }
         }
     }
@@ -2714,6 +2963,10 @@ nav {
     .apply-area {
         padding: 175px 90px 180px;
         height: 5000px;
+        @include breakpoint(medium down) {
+            height: 250vh;
+            padding: 100px 0px 50px;
+        }
         .apply-fancy {
             pointer-events: none;
             position: sticky;
@@ -2721,8 +2974,14 @@ nav {
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+            z-index: 1;
+            @include breakpoint(medium down) {
+                width: 100%;
+                left: 0;
+                transform: translate(0%, -50%);
+                padding: 0 20px;
+            }
 
-            z-index: 10;
             &.is-show {
                 pointer-events: all;
             }
@@ -2747,6 +3006,11 @@ nav {
                     font-weight: 800;
                     letter-spacing: 4px;
                     margin-bottom: 15px;
+                    @include breakpoint(medium down) {
+                        font-size: 18px;
+                        letter-spacing: 2px;
+                        // margin-bottom: 0;
+                    }
                 }
                 .content {
                     font-family: $ch-family;
@@ -2754,6 +3018,10 @@ nav {
                     font-size: 14px;
                     letter-spacing: 2px;
                     line-height: 1.4;
+                    @include breakpoint(medium down) {
+                        font-size: 12px;
+                        letter-spacing: 0.5px;
+                    }
                 }
             }
             .applyList {
@@ -2763,6 +3031,9 @@ nav {
                     padding: 30px 7px 10px;
                     border-bottom: 1px solid $black;
                     transition: 0.5s all;
+                    @include breakpoint(medium down) {
+                        padding: 20px 7px 5px;
+                    }
                     .title {
                         font-size: 30px;
                         color: $black;
@@ -2771,6 +3042,12 @@ nav {
                         letter-spacing: 3px;
                         margin-bottom: 15px;
                         transition: 0.5s all;
+                        @include breakpoint(medium down) {
+                            font-size: 24px;
+                            letter-spacing: 2px;
+                            margin-bottom: 10px;
+                            line-height: 1.4;
+                        }
                     }
                     .note {
                         font-family: $ch-family;
@@ -2779,6 +3056,10 @@ nav {
                         color: $black;
                         margin-bottom: 10px;
                         transition: 0.5s all;
+                        @include breakpoint(medium down) {
+                            font-size: 12px;
+                            margin-bottom: 6px;
+                        }
                     }
                     .arrow {
                         transition: 0.5s all;
@@ -2820,15 +3101,56 @@ nav {
         .head-area {
             position: sticky;
             top: 130px;
+            @include breakpoint(medium down) {
+                top: 100px;
+            }
             .head-1,
             .head-2 {
+                position: relative;
                 overflow: hidden;
+            }
+            .quote {
+                font-family: $en-family;
+                // position: absolute;
+                font-size: 120px;
+                text-align: center;
+                font-weight: 700;
+                // line-height: 0.7;
+            }
+            .head-1 {
+                .quote {
+                    margin-bottom: -80px;
+                    // top: -40px;
+                    // left: 50%;
+                    // transform: translateX(-50%);
+                }
+            }
+            .head-2 {
+                .quote {
+                    margin-bottom: -50px;
+                    // bottom: -40px;
+                    // left: 50%;
+                    // transform: translateX(-50%);
+                }
             }
             .en {
                 font-size: 300px;
                 line-height: 0.95;
                 transform-origin: left;
                 transform: translateY(100%) rotate(10deg);
+                @include breakpoint(medium down) {
+                    width: auto;
+                    font-size: 120px;
+                    text-align: center;
+                }
+                // &.top {
+                //     margin-bottom: 10px;
+                // }
+                &.bottom {
+                    @include breakpoint(medium down) {
+                        margin-left: 0;
+                    }
+                }
             }
             .ch {
                 font-family: $ch-family;
@@ -2837,6 +3159,12 @@ nav {
                 font-weight: 900;
                 line-height: 1.4;
                 text-align: left;
+                @include breakpoint(medium down) {
+                    font-size: 22px;
+                    letter-spacing: 1px;
+                    text-align: center;
+                    line-height: 1.8;
+                }
             }
         }
     }
@@ -2844,10 +3172,16 @@ nav {
 
 .newsWrap {
     padding: 190px 90px 200px 110px;
+    @include breakpoint(medium down) {
+        padding: 90px 20px 65px;
+    }
     .head-area {
         position: relative;
         margin-bottom: -90px;
         overflow: hidden;
+        @include breakpoint(medium down) {
+            margin-bottom: 90px;
+        }
         .en {
             width: fit-content;
             position: relative;
@@ -2857,13 +3191,23 @@ nav {
             font-size: 335px;
             transform-origin: left;
             transform: translateY(100%) rotate(10deg);
+            @include breakpoint(medium down) {
+                font-size: 108px;
+            }
         }
     }
     .top-news {
         position: relative;
         max-width: 1570px;
         margin-bottom: 210px;
+        @include breakpoint(medium down) {
+            margin-bottom: 115px;
+        }
         a {
+            @include breakpoint(medium down) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
             &:hover {
                 .arrow {
                     transform: translateX(18px);
@@ -2879,12 +3223,18 @@ nav {
         }
         .article-area {
             position: relative;
+            @include breakpoint(medium down) {
+                margin-bottom: 26px;
+            }
             .title {
                 font-family: $ch-family;
                 font-size: 32px;
                 letter-spacing: 2px;
                 line-height: 1.4;
                 font-weight: 600;
+                @include breakpoint(medium down) {
+                    font-size: 23px;
+                }
             }
             .more {
                 position: absolute;
@@ -2926,6 +3276,11 @@ nav {
             .pic {
                 width: 716px;
                 height: 402px;
+                @include breakpoint(medium down) {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 3.5/2;
+                }
                 img {
                     width: 100%;
                     height: 100%;
@@ -2938,6 +3293,9 @@ nav {
         width: 100%;
         .newsCatList {
             margin-right: 140px;
+            @include breakpoint(medium down) {
+                display: flex;
+            }
             li {
                 margin-bottom: 20px;
                 .dot {
@@ -2948,6 +3306,9 @@ nav {
                     margin-right: 15px;
                     opacity: 0;
                     transition: 0.5s all;
+                    @include breakpoint(medium down) {
+                        background-color: #ea5504;
+                    }
                 }
                 .title {
                     position: relative;
@@ -2958,6 +3319,7 @@ nav {
                     color: #0b1118;
                     letter-spacing: 1px;
                     padding-bottom: 1px;
+
                     &::after {
                         position: absolute;
                         content: "";
@@ -2967,6 +3329,9 @@ nav {
                         height: 5px;
                         background-color: #0b0b0b;
                         transition: 0.5s all;
+                        @include breakpoint(medium down) {
+                            display: none;
+                        }
                     }
                 }
                 &.current {
@@ -2996,6 +3361,9 @@ nav {
             border-top: 3px solid #0b0b0b;
             .top-area {
                 flex: 1 1 0;
+                @include breakpoint(medium down) {
+                    flex: initial;
+                }
                 .cat {
                     font-family: $en-family;
                     font-size: 16px;
@@ -3020,6 +3388,12 @@ nav {
                 line-height: 1.9;
                 font-weight: 600;
                 transition: 0.5s all;
+                @include breakpoint(medium down) {
+                    flex: initial;
+                    text-align: justify;
+                    line-height: 1.7;
+                    letter-spacing: 1px;
+                }
             }
             .pic {
                 position: relative;
@@ -3028,6 +3402,10 @@ nav {
                 width: 100%;
                 transition: 0.5s ease-in;
                 margin-right: 200px;
+                @include breakpoint(medium down) {
+                    flex: initial;
+                    margin-right: 0;
+                }
                 .pic-hover {
                     position: absolute;
                     left: -50px;
@@ -3043,8 +3421,14 @@ nav {
                 width: 100%;
                 min-height: 250px;
                 border-bottom: 1px solid #0b0b0b;
+                @include breakpoint(medium down) {
+                    padding: 28px 0;
+                }
                 a {
                     width: 100%;
+                    @include breakpoint(medium down) {
+                        display: block;
+                    }
                 }
                 &:hover {
                     // .pic {
@@ -3060,6 +3444,9 @@ nav {
         }
         .news-inner {
             margin-bottom: 60px;
+            @include breakpoint(medium down) {
+                flex-direction: column;
+            }
         }
     }
 }
@@ -3098,10 +3485,17 @@ nav {
 
 .newsDetailWrap {
     padding: 235px 90px 100px;
+    @include breakpoint(medium down) {
+        padding: 105px 0px 50px;
+    }
     .banner-area {
         width: 1724px;
         // height: 970px;
         margin-bottom: 108px;
+        @include breakpoint(medium down) {
+            width: 100%;
+            margin-bottom: 26px;
+        }
         img {
             width: 100%;
             height: 100%;
@@ -3110,11 +3504,19 @@ nav {
         .head-area {
             position: relative;
             margin-bottom: 165px;
+            @include breakpoint(medium down) {
+                margin-bottom: 27px;
+                padding: 0 20px;
+            }
         }
         .info-area {
             position: absolute;
             left: 0px;
             top: 0px;
+            @include breakpoint(medium down) {
+                position: static;
+                margin-bottom: 22px;
+            }
             .cat {
                 font-family: $en-family;
                 font-size: 16px;
@@ -3140,17 +3542,32 @@ nav {
             line-height: 1.4;
             font-weight: 600;
             max-width: 1000px;
+            @include breakpoint(medium down) {
+                position: static;
+                font-size: 22px;
+                letter-spacing: 1px;
+            }
         }
     }
     .detailWrap {
         max-width: 1070px;
         margin-left: auto;
+        @include breakpoint(medium down) {
+            margin: 0;
+            padding: 0 20px;
+        }
         .detail-area {
             font-family: $ch-family;
             font-size: 18px;
             letter-spacing: 2px;
             line-height: 2;
             margin-bottom: 40px;
+            @include breakpoint(medium down) {
+                font-size: 13px;
+                letter-spacing: 1px;
+                line-height: 1.8;
+                text-align: justify;
+            }
         }
         .pic {
             margin-top: 35px;
@@ -3158,6 +3575,10 @@ nav {
     }
     .other-area {
         align-items: end;
+        @include breakpoint(medium down) {
+            display: block;
+            text-align: center;
+        }
         .back {
             #c {
                 > g {
@@ -3212,11 +3633,17 @@ nav {
 
 .our-teaWrap {
     padding: 85px 0 170px;
+    @include breakpoint(medium down) {
+        padding: 85px 0 0px;
+    }
     .head-area {
         .inner {
             overflow: hidden;
             position: relative;
             z-index: 2;
+            @include breakpoint(medium down) {
+                margin-bottom: -11px;
+            }
             .en {
                 width: fit-content;
                 position: relative;
@@ -3228,6 +3655,15 @@ nav {
                 transform-origin: left;
                 transform: translateY(100%) rotate(10deg);
                 z-index: 1;
+                @include breakpoint(medium down) {
+                    font-size: 162px;
+                    line-height: 0.85;
+                }
+                span {
+                    @include breakpoint(medium down) {
+                        padding: 0 17px;
+                    }
+                }
             }
         }
 
@@ -3374,6 +3810,9 @@ nav {
                     img {
                         // min-width: fit-content;
                         min-height: max-content;
+                        @include breakpoint(medium down) {
+                            max-width: 180px;
+                        }
                     }
                 }
             }
@@ -3416,6 +3855,9 @@ nav {
     .new-drinkWrap {
         height: 100vh;
         padding: 95px 150px 67px;
+        @include breakpoint(medium down) {
+            padding: 30px 20px 25px;
+        }
         .vegas-content-scrollable {
             overflow: hidden;
         }
@@ -3423,10 +3865,17 @@ nav {
             width: 100%;
             display: flex;
             justify-content: center;
+            @include breakpoint(medium down) {
+                display: block;
+            }
         }
         .title {
             margin-right: 20px;
             max-width: 380px;
+            @include breakpoint(medium down) {
+                margin-right: 0px;
+                margin-bottom: 20px;
+            }
             .ch {
                 font-family: $ch-family;
                 font-size: 22px;
@@ -3434,6 +3883,11 @@ nav {
                 color: #fff;
                 font-weight: 600;
                 margin-bottom: 18px;
+                @include breakpoint(medium down) {
+                    font-size: 18px;
+                    letter-spacing: 5px;
+                    margin-bottom: 11px;
+                }
             }
             .en {
                 font-family: $en-family;
@@ -3441,6 +3895,10 @@ nav {
                 font-weight: 900;
                 letter-spacing: 10px;
                 color: #fff;
+                @include breakpoint(medium down) {
+                    font-size: 50px;
+                    letter-spacing: 2px;
+                }
             }
         }
         .pic {
@@ -3448,9 +3906,20 @@ nav {
             height: 725px;
             margin-right: 180px;
             animation: circle-rotate 60s infinite linear;
+            @include breakpoint(medium down) {
+                width: 320px;
+                height: 320px;
+                margin: 0 auto;
+            }
             li {
+                width: 725px;
+                height: 725px;
                 animation: circle-rotate 60s infinite linear;
-                img{
+                @include breakpoint(medium down) {
+                    width: 320px;
+                    height: 320px;
+                }
+                img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -3469,6 +3938,17 @@ nav {
                 position: relative;
                 transition: 0.5s all;
                 opacity: 0.5;
+                @include breakpoint(medium down) {
+                    // width: fit-content !important;
+                    margin: 0 auto;
+                }
+                .inner {
+                    width: fit-content;
+                    
+                    @include breakpoint(medium down) {
+                        margin: 0 auto;
+                    }
+                }
                 &:hover {
                     opacity: 1;
                     &:after {
@@ -3499,6 +3979,10 @@ nav {
                     color: #fff;
                     font-weight: 600;
                     margin-bottom: 5px;
+                    @include breakpoint(medium down) {
+                        font-size: 13px;
+                        margin-bottom: 4px;
+                    }
                 }
                 .en {
                     font-family: $en-family;
@@ -3506,6 +3990,10 @@ nav {
                     font-weight: 900;
                     letter-spacing: 1px;
                     color: #fff;
+                    @include breakpoint(medium down) {
+                        font-size: 11px;
+                        margin-bottom: 0px;
+                    }
                 }
                 .region {
                     font-family: $en-family;
@@ -3514,6 +4002,56 @@ nav {
                     font-weight: 500;
                     color: #fff;
                     margin-bottom: 18px;
+                    @include breakpoint(medium down) {
+                        font-size: 10px;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .slick-dots {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                @include breakpoint(medium down) {
+                    width: 100%;
+                   justify-content: center;
+                   bottom: -94px;
+                }
+                li {
+                    position: relative;
+                    height: auto;
+                    border-bottom: none;
+                    padding: 0;
+                    font-size: 0;
+                    width: 12px;
+                    height: 12px;
+                    background-color: #000;
+                    border-radius: 50%;
+                    margin-left: 0;
+                    margin-right: 18px;
+                    opacity: 1;
+                    cursor: pointer;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    &::after {
+                        content: "";
+                        border-radius: 50%;
+                        position: absolute;
+                        width: 5px;
+                        height: 5px;
+                        background-color: #faeede;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        opacity: 0;
+                        transition: 0.5s all;
+                    }
+                    &.slick-active {
+                        &::after {
+                            opacity: 1;
+                        }
+                    }
                 }
             }
         }
@@ -3521,6 +4059,9 @@ nav {
     .drinkWrap {
         position: relative;
         padding: 168px 0 173px 147px;
+        @include breakpoint(medium down) {
+            padding: 40px 20px 20px;
+        }
         .drink-changeList {
             position: relative;
         }
@@ -3567,6 +4108,9 @@ nav {
             max-width: 1150px;
             > li {
                 margin-bottom: 200px;
+                @include breakpoint(medium down) {
+                    margin-bottom: 90px;
+                }
                 &:nth-child(odd) {
                     .slick-dots {
                         left: 0;
@@ -3583,6 +4127,9 @@ nav {
                         > li {
                             &:nth-child(5) {
                                 margin-top: 130px;
+                                @include breakpoint(medium down) {
+                                    margin-top: 0;
+                                }
                             }
                         }
                     }
@@ -3593,6 +4140,9 @@ nav {
                         > li {
                             &:nth-child(5) {
                                 margin-top: 160px;
+                                @include breakpoint(medium down) {
+                                    margin-top: 0;
+                                }
                             }
                         }
                     }
@@ -3601,6 +4151,10 @@ nav {
                     .slick-dots {
                         right: 100px;
                         bottom: 0;
+                        @include breakpoint(medium down) {
+                            right: auto;
+                            left: 0;
+                        }
                     }
                     .title {
                         .icon {
@@ -3611,6 +4165,9 @@ nav {
                         > li {
                             &:nth-child(1) {
                                 margin-top: 130px;
+                                @include breakpoint(medium down) {
+                                    margin-top: 0;
+                                }
                             }
                         }
                     }
@@ -3620,6 +4177,9 @@ nav {
                 width: fit-content;
                 position: relative;
                 margin-bottom: 55px;
+                @include breakpoint(medium down) {
+                    margin-bottom: 35px;
+                }
                 .ch {
                     font-family: $ch-family;
                     font-size: 22px;
@@ -3627,6 +4187,11 @@ nav {
                     color: #000;
                     font-weight: 800;
                     margin-bottom: 18px;
+                    @include breakpoint(medium down) {
+                        font-size: 18px;
+                        letter-spacing: 5px;
+                        margin-bottom: 11px;
+                    }
                 }
                 .en {
                     font-family: $en-family;
@@ -3635,9 +4200,18 @@ nav {
                     letter-spacing: 5px;
                     color: #000;
                     max-width: 500px;
+                    @include breakpoint(medium down) {
+                        font-size: 50px;
+                        letter-spacing: 0.5px;
+                        margin-bottom: 10px;
+                    }
                 }
                 .icon {
                     position: absolute;
+                    @include breakpoint(medium down) {
+                        position: static;
+                        width: 27px;
+                    }
                 }
             }
             .drinkList {
@@ -3646,6 +4220,10 @@ nav {
                 max-height: 778px;
                 flex-wrap: wrap;
                 pointer-events: none;
+                @include breakpoint(medium down) {
+                    flex-wrap: nowrap;
+                    max-height: 100%;
+                }
                 &.slick-current {
                     pointer-events: all;
                 }
@@ -3654,6 +4232,10 @@ nav {
                     min-height: 107px;
                     cursor: pointer;
                     margin-bottom: 50px;
+                    @include breakpoint(medium down) {
+                        min-height: auto;
+                        margin-bottom: 30px;
+                    }
                     .region {
                         font-family: $en-family;
                         font-size: 12px;
@@ -3661,6 +4243,10 @@ nav {
                         font-weight: 500;
                         color: #ea5406;
                         margin-bottom: 15px;
+                        @include breakpoint(medium down) {
+                            font-size: 10px;
+                            margin-bottom: 5px;
+                        }
                     }
                     .ch {
                         font-family: $ch-family;
@@ -3669,6 +4255,10 @@ nav {
                         color: #000;
                         font-weight: 600;
                         margin-bottom: 8px;
+                        @include breakpoint(medium down) {
+                            font-size: 13px;
+                            margin-bottom: 4px;
+                        }
                     }
                     .en {
                         font-family: $en-family;
@@ -3677,6 +4267,10 @@ nav {
                         letter-spacing: 1px;
                         color: #000;
                         margin-bottom: 18px;
+                        @include breakpoint(medium down) {
+                            font-size: 11px;
+                            margin-bottom: 0px;
+                        }
                     }
 
                     .content {
@@ -3779,6 +4373,10 @@ nav {
             right: 0;
             width: 400px;
             height: 650px;
+            @include breakpoint(medium down) {
+                width: 150px;
+                height: 213px;
+            }
             ul {
                 position: absolute;
                 left: 0;
@@ -3814,11 +4412,16 @@ nav {
     padding: 200px 95px 310px 85px;
     position: relative;
     margin-bottom: -90px;
+    @include breakpoint(medium down) {
+        padding: 115px 20px 85px;
+    }
     .head-area {
         position: relative;
-
         margin-bottom: 220px;
         overflow: hidden;
+        @include breakpoint(medium down) {
+            margin-bottom: 57px;
+        }
         .en {
             width: fit-content;
             font-family: $en-family;
@@ -3827,6 +4430,10 @@ nav {
             font-size: 335px;
             transform-origin: left;
             transform: translateY(100%) rotate(10deg);
+            @include breakpoint(medium down) {
+                font-size: 99px;
+                letter-spacing: 0px;
+            }
         }
         .note {
             position: absolute;
@@ -3838,10 +4445,19 @@ nav {
             font-weight: 500;
             color: #ea5504;
             letter-spacing: 3px;
+            @include breakpoint(medium down) {
+                font-size: 13px;
+                right: 5px;
+                top: -1px;
+                letter-spacing: 1px;
+            }
         }
     }
     .storeCat-inner {
         margin-bottom: 50px;
+        @include breakpoint(medium down) {
+            margin-bottom: 40px;
+        }
         .store {
             font-family: $en-family;
             font-size: 12px;
@@ -3850,9 +4466,16 @@ nav {
             color: #ea5504;
             margin-bottom: 15px;
             margin-left: 22px;
+            @include breakpoint(medium down) {
+                margin-bottom: 11px;
+                margin-left: 0px;
+            }
         }
         .storeCatList {
             margin-right: 140px;
+            @include breakpoint(medium down) {
+                margin-right: 35px;
+            }
             li {
                 margin-bottom: 10px;
                 &:last-child {
@@ -3866,6 +4489,11 @@ nav {
                     margin-right: 15px;
                     opacity: 0;
                     transition: 0.5s all;
+                    @include breakpoint(medium down) {
+                        width: 8px;
+                        height: 8px;
+                        margin-right: 7px;
+                    }
                 }
                 .title {
                     position: relative;
@@ -3876,6 +4504,9 @@ nav {
                     color: #0b1118;
                     letter-spacing: 1px;
                     padding-bottom: 1px;
+                    @include breakpoint(medium down) {
+                        font-size: 13px;
+                    }
                     &::after {
                         position: absolute;
                         content: "";
@@ -3885,6 +4516,10 @@ nav {
                         height: 5px;
                         background-color: #0b0b0b;
                         transition: 0.5s all;
+                        @include breakpoint(medium down) {
+                            bottom: -3px;
+                            height: 3px;
+                        }
                     }
                 }
                 &.current {
@@ -3916,6 +4551,12 @@ nav {
             &:last-child {
                 margin-right: 0;
             }
+            svg {
+                @include breakpoint(medium down) {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
             .d {
                 fill: #9e9e9f;
                 transition: 0.3s all;
@@ -3936,6 +4577,11 @@ nav {
                 padding: 9px 7px;
                 background-color: #9e9e9f;
                 transition: 0.3s all;
+                @include breakpoint(medium down) {
+                    height: 25px;
+                    border-radius: 4px;
+                    padding: 5px 7px;
+                }
                 &:hover {
                     background-color: #ea5406;
                 }
@@ -3947,9 +4593,15 @@ nav {
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 35px 9px;
         margin-bottom: 150px;
+        @include breakpoint(medium down) {
+            grid-template-columns: repeat(1, 1fr);
+        }
         li {
             position: relative;
             padding-top: 25px;
+            @include breakpoint(medium down) {
+                padding-top: 0px;
+            }
             @for $i from 1 through 13 {
                 @if ($i%3==2) {
                     &:nth-child(#{$i}) {
@@ -3960,11 +4612,20 @@ nav {
         }
         .deco {
             margin-bottom: 20px;
+            @include breakpoint(medium down) {
+                margin-bottom: 11px;
+            }
         }
         .head {
             margin-bottom: 30px;
+            @include breakpoint(medium down) {
+                margin-bottom: 16px;
+            }
             .brand {
                 margin-right: 26px;
+                @include breakpoint(medium down) {
+                    margin-right: 5px;
+                }
             }
         }
 
@@ -3974,7 +4635,10 @@ nav {
             font-family: $en-family;
             color: #0b1118;
             letter-spacing: 1px;
-            margin-bottom: 35px;
+            margin-bottom: 0px;
+            @include breakpoint(medium down) {
+                font-size: 20px;
+            }
         }
         .phone {
             font-size: 13px;
@@ -3982,14 +4646,21 @@ nav {
             color: #0b1118;
             letter-spacing: 1px;
             margin-bottom: 15px;
+            @include breakpoint(medium down) {
+                font-size: 12px;
+                margin-bottom: 1px;
+            }
         }
         .time {
             font-size: 13px;
             font-family: $en-family;
             color: #0b1118;
             letter-spacing: 1px;
-            margin-bottom: 15px;
             margin-bottom: 20px;
+            @include breakpoint(medium down) {
+                font-size: 12px;
+                margin-bottom: 11px;
+            }
         }
         .address {
             font-size: 13px;
@@ -4000,6 +4671,10 @@ nav {
             max-width: 360px;
             margin-bottom: 35px;
             line-height: 1.4;
+            @include breakpoint(medium down) {
+                font-size: 12px;
+                margin-bottom: 11px;
+            }
         }
         .other-area {
             padding-right: 10px;
@@ -4015,6 +4690,10 @@ nav {
                 max-width: 360px;
                 margin-bottom: 20px;
                 line-height: 1.4;
+                @include breakpoint(medium down) {
+                    font-size: 10px;
+                    letter-spacing: 0px;
+                }
             }
             a {
                 .arrow {
@@ -4031,7 +4710,26 @@ nav {
                         fill: #0b1118;
                         transition: 0.5s all;
                     }
+                    @include breakpoint(medium down) {
+                        .d {
+                            stroke-width: 0.75px;
+                            fill: #0c131b;
+                        }
+
+                        .e {
+                            // fill: #0b1118;
+                            opacity: 0.3;
+                        }
+
+                        .f {
+                            fill: none;
+                            stroke: #0c131b;
+                            stroke-miterlimit: 10;
+                            stroke-width: 1.85px;
+                        }
+                    }
                 }
+
                 &:hover {
                     .arrow {
                         .d {
@@ -4050,6 +4748,9 @@ nav {
             // mask: url("../images/s-mask.svg") no-repeat;
             width: 135px;
             aspect-ratio: 1/1;
+            @include breakpoint(medium down) {
+                width: 83px;
+            }
             cursor: pointer;
             img {
                 width: 100%;
@@ -4076,6 +4777,9 @@ nav {
         opacity: 0;
         pointer-events: none;
         transition: 0.5s all;
+        @include breakpoint(medium down) {
+            padding: 0 40px;
+        }
         &.is-show {
             opacity: 1;
             pointer-events: all;
@@ -4084,10 +4788,15 @@ nav {
             height: 100%;
             flex-direction: column;
             .pic {
+                width: 466px;
+                height: 466px;
                 text-align: center;
                 // mask: url("../images/s-fancy-mask.svg") no-repeat;
                 margin-bottom: 45px;
                 img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                     border-radius: 50%;
                 }
             }
@@ -4168,6 +4877,9 @@ nav {
     clip-path: path(
         "M140.18,62.16c-.06-.3-.11-.6-.11-.6-.19-1-.5-2.46-1.35-6.36-4.8-21.9-9.32-40.05-12.95-53.81-28.91-3.24-52.19-.22-67.71,3.03C33.44,9.59,13.92,13.68,4.76,30.19c-8.38,15.1-3.68,32.64-1.01,40.42,17.12,9.29,24.47,19.77,27.91,28.19,2.13,5.2,8.99,27.51,14.31,30.53,3.34,1.9,5.98,2.61,5.98,2.61,.84,.23,3.44,.87,3.44,.87h0c.5,.91,1.13,1.97,1.9,3.1,.41,.61,1.04,1.49,1.85,2.51,.41,.52,1.57,1.94,3.29,3.63,2.61,2.57,5.04,4.3,6.3,5.15,2.4,1.62,4.7,2.83,6.77,3.75,4.33,1.61,11.08,3.55,19.5,3.62,2.49,.02,6.19,.04,10.92-.99,2.29-.5,12.64-2.93,21.17-11.17,2.61-2.52,4.34-4.91,4.88-5.66,1.03-1.45,2.92-4.31,4.5-8.25,1.89-4.69,2.43-8.61,2.7-10.7,4.21-32.11,1.45-53.16,.99-55.65Z"
     );
+    // @include breakpoint(medium down) {
+    //    zoom: 0.7;
+    // }
     .circle {
         position: absolute;
         width: 89px;
@@ -4269,6 +4981,9 @@ footer {
     position: relative;
     z-index: 3;
     overflow: hidden;
+    @include breakpoint(medium down) {
+        padding: 100px 20px 0px;
+    }
     &.is-orange {
         background-color: #f4ddbe;
     }
@@ -4279,9 +4994,48 @@ footer {
         background-color: #f9efe1;
     }
     .top {
+        margin-bottom: 55px;
+        text-align: right;
+        cursor: pointer;
+        #footer {
+            transform: translateY(20px);
+        }
+        .arrow {
+            transition: 0.5s all;
+        }
+        .cls-1 {
+            fill: none;
+            stroke: #0d131a;
+            stroke-miterlimit: 10;
+            stroke-width: 3px;
+            transition: 0.5s all;
+        }
+
+        .cls-2 {
+            fill: #0d131a;
+            transition: 0.5s all;
+        }
+
+        &:hover {
+            .arrow {
+                transform: translateY(-20px);
+            }
+            .cls-1 {
+                stroke: #ea5406;
+            }
+
+            .cls-2 {
+                fill: #ea5406;
+            }
+        }
+    }
+    .top-text {
         .marquee {
             display: inline-flex;
             animation: footer 20s infinite linear;
+            @include breakpoint(medium down) {
+                animation: footer 10s infinite linear;
+            }
         }
         .text {
             display: inline-flex;
@@ -4294,6 +5048,9 @@ footer {
                 //         animation-delay: 0.075s * $i;
                 //     }
                 // }
+                @include breakpoint(medium down) {
+                    zoom: 0.55;
+                }
                 &:nth-child(1) {
                     margin-right: -30px;
                 }
@@ -4337,11 +5094,21 @@ footer {
         }
     }
     .bottom {
+        @include breakpoint(medium down) {
+            flex-direction: column;
+        }
         .bear {
             position: relative;
             flex: 1.75 1 0;
             margin-top: 15px;
             bottom: -130px;
+            @include breakpoint(medium down) {
+                width: 175px;
+                flex: initial;
+                margin-top: 0;
+                bottom: 0px;
+                zoom: 0.75;
+            }
             &:hover {
                 .head {
                     transform: rotate(20deg);
@@ -4371,14 +5138,28 @@ footer {
         .list {
             flex: 5 1 0;
             margin-top: 95px;
+            @include breakpoint(medium down) {
+                flex: auto;
+                flex-direction: column;
+                margin-top: 35px;
+            }
             .logo {
                 margin-right: 130px;
+                @include breakpoint(medium down) {
+                    margin-right: 0;
+                    margin-bottom: 22px;
+                }
             }
             .note {
                 margin-right: 35px;
                 font-family: $normal-family;
                 color: #868686;
                 font-style: italic;
+                @include breakpoint(medium down) {
+                    margin-right: 0px;
+                    font-size: 12px;
+                    margin-bottom: 5px;
+                }
             }
             .footerList {
                 font-family: $ch-family;
@@ -4389,6 +5170,11 @@ footer {
                 font-weight: 500;
                 letter-spacing: 1px;
                 height: fit-content;
+                @include breakpoint(medium down) {
+                    font-size: 13px;
+                    letter-spacing: 3px;
+                    grid-gap: 10px 40px;
+                }
                 li {
                     color: #0b0b0b;
                     transition: 0.3s all;
@@ -4405,6 +5191,9 @@ footer {
             font-family: $en-family;
             font-size: 12px;
             letter-spacing: 1px;
+            @include breakpoint(medium down) {
+                margin: 96px 0 25px;
+            }
             .top {
                 margin-bottom: 55px;
                 cursor: pointer;
@@ -4440,11 +5229,22 @@ footer {
                     }
                 }
             }
+            .outter {
+                @include breakpoint(medium down) {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
             .other {
                 font-family: $en-family;
                 font-size: 12px;
                 letter-spacing: 0.5px;
                 font-weight: 600;
+                @include breakpoint(medium down) {
+                    font-size: 9px;
+                    letter-spacing: 0;
+                }
             }
             .copyright {
                 margin-bottom: 6px;
@@ -4452,6 +5252,9 @@ footer {
             }
             .siteby {
                 color: #83817e;
+                // @include breakpoint(medium down) {
+                //     zoom: 0.7;
+                //  }
             }
             .ch {
                 font-family: $ch-family;

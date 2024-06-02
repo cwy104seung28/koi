@@ -179,7 +179,7 @@ $ifFile = 0;
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在網頁顯示
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在中文網頁顯示
                                                     </td>
                                                     <td>
                                                         <select name="d_active" class="table_data" id="d_active">
@@ -187,6 +187,21 @@ $ifFile = 0;
                                                                 echo "selected";
                                                             } ?>>不顯示</option>
                                                             <option value="1" <?php if (!(strcmp(1, $row_Recourtea['d_active']))) {
+                                                                echo "selected";
+                                                            } ?>>顯示</option>
+                                                        </select>
+                                                    </td>
+                                                    <td bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">在英文網頁顯示
+                                                    </td>
+                                                    <td>
+                                                        <select name="d_active_en" class="table_data" id="d_active_en">
+                                                            <option value="0" <?php if (!(strcmp(0, $row_Recourtea['d_active_en']))) {
+                                                                echo "selected";
+                                                            } ?>>不顯示</option>
+                                                            <option value="1" <?php if (!(strcmp(1, $row_Recourtea['d_active_en']))) {
                                                                 echo "selected";
                                                             } ?>>顯示</option>
                                                         </select>
@@ -658,7 +673,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
-    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_class2=:d_class2, d_data1=:d_data1, d_data2=:d_data2, d_date=:d_date, d_active=:d_active WHERE d_id=:d_id";
+    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_class2=:d_class2, d_data1=:d_data1, d_data2=:d_data2, d_date=:d_date, d_active=:d_active, d_active_en=:d_active_en WHERE d_id=:d_id";
 
     $stat = $conn->prepare($updateSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -669,6 +684,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
+    $stat->bindParam(':d_active_en', $_POST['d_active_en'], PDO::PARAM_INT);
     $stat->bindParam(':d_id', $_POST['d_id'], PDO::PARAM_INT);
     $stat->execute();
     //----------插入圖片資料到資料庫begin(須放入插入主資料後)----------

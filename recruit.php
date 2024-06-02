@@ -106,14 +106,14 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
         </div>
         <div class="recruit-middleList">
             <section data-where="0">
-                <figure class="sec-bg show-for-large" style="background-image: url(./images/recruit-bg-1.jpg)">
+                <figure class="sec-bg" style="background-image: url(./images/recruit-bg-1.jpg)">
                 </figure>
                 <div class="item-area">
 
                 </div>
             </section>
             <section data-where="1">
-                <figure class="sec-bg show-for-large" style="background-image: url(./images/recruit-bg-2.jpg)">
+                <figure class="sec-bg" style="background-image: url(./images/recruit-bg-2.jpg)">
                 </figure>
                 <div class="item-area">
 
@@ -121,12 +121,27 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
             </section>
         </div>
         <div class="apply-area">
+            <div class="head-area hide-for-large">
+                <div class="head-1">
+                    <div class="en top"><div class="quote">“</div>Apply</div>
+                </div>
+                <div class="head-2">
+                    <div class="en bottom">
+                        NOW!<div class="quote">”</div>
+                        <div class="ch">
+                            我们来自不同地方<br>
+                            我们激荡不同文化<br>
+                            茶饮是我们凝聚在此的共同语言
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="apply-fancy">
                 <div class="fancy-inner">
                     <div class="top-area">
                         <div class="title">履历投递 </div>
                         <div class="content">
-                            为确保履历投递成功，下列应征管道请择一投递履历，<br>
+                            为确保履历投递成功，<br class="hide-for-large">下列应征管道请择一投递履历，<br>
                             切勿重复投递履历，谢谢。
                         </div>
                     </div>
@@ -149,7 +164,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                         <li>
                             <a href="javascript:;">
                                 <div class="note">Email直接投递履历连结</div>
-                                <div class="title">globalcareers@koicafe.com </div>
+                                <div class="title">globalcareers<br class="hide-for-large">@koicafe.com </div>
                                 <div class="arrow">
                                     <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="29.31" height="25.51" viewBox="0 0 29.31 25.51">
                                         <g id="c" data-name="圖層 4">
@@ -165,7 +180,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                     </ul>
                 </div>
             </div>
-            <div class="head-area">
+            <div class="head-area show-for-large">
                 <div class="head-1">
                     <div class="en top">“Apply</div>
                 </div>
@@ -178,6 +193,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="menu-link">
             <div class="circle">
@@ -217,6 +233,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                 ease: Power2.easeOut,
             }, '<0.25')
 
+
         gsap.delayedCall(1, function() {
             $tl_title.play();
         });
@@ -242,11 +259,11 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                 rotation: 0,
                 ease: Power2.easeOut,
             }, '<0.25')
-
-
         gsap.delayedCall(1, function() {
             $tl_title_mobile.play();
         });
+
+
     }
 
 
@@ -269,8 +286,6 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
         }, '<0.25')
 
 
-
-
     ScrollTrigger.create({
         trigger: '.apply-area',
         // toggleActions: "play none none none",
@@ -280,6 +295,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
         onEnter: () => {
             $('.apply-fancy').addClass('is-show');
             $tl_apply.play();
+
         },
         onLeave: () => {
             $('.apply-fancy').removeClass('is-show');

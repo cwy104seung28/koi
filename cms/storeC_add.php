@@ -71,17 +71,18 @@ $menu_is = "store";
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">臉書連結</td>
-                                                    <td width="532">
-                                                        <input name="c_data2" type="text" class="table_data" id="c_data2" size="50">
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
-                                                </tr>
+                                                
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">IG連結</td>
                                                     <td width="532">
                                                         <input name="c_data3" type="text" class="table_data" id="c_data3" size="50">
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">臉書連結</td>
+                                                    <td width="532">
+                                                        <input name="c_data2" type="text" class="table_data" id="c_data2" size="50">
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>

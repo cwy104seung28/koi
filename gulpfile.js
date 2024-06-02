@@ -14,33 +14,17 @@ var webpack = require('webpack-stream');
 var nodemon = require('gulp-nodemon');
 var named = require('vinyl-named');
 var plumber = require('gulp-plumber');
-
 gulp.task('browser-sync', function() {
     browserSync.init({
+        // reloadDelay: 500,
         proxy: "localhost/koi",
         port: 5000,
     });
-
     gulp.watch('sass/*.scss', ['sass']);
     gulp.watch('src/**', ['js-rebuild']);
-
-    browserSync.watch(['*.html', '*.php', 'language/*.php']).on('change', browserSync.reload);
+    browserSync.watch(['*.html', '*.php']).on('change', browserSync.reload);
+    // browserSync.watch('views/**').on('change', browserSync.reload);
 });
-// gulp.task('browser-sync', function() {
-//     browserSync.init({
-//         // reloadDelay: 500,
-//         proxy: "localhost:3000/bcforged",
-//         // port: 5000,
-//     });
-
-//     gulp.watch('sass/*.scss', ['sass']);
-//     gulp.watch('src/**', ['js-rebuild']);
-
-//     browserSync.watch(['*.html', '*.php']).on('change', browserSync.reload);
-//     // browserSync.watch('views/**').on('change', browserSync.reload);
-
-// });
-
 gulp.task('babel', function() {
     gulp.src('src/*.js')
         .pipe(plumber())
@@ -48,9 +32,7 @@ gulp.task('babel', function() {
         .pipe(webpack(require('./webpack.config.js')))
         .pipe(gulp.dest('dist'));
 });
-
 gulp.task('js-rebuild', ['babel'], browserSync.reload);
-
 gulp.task('server', function() {
     gulp.src('server.js')
         .pipe(babel({
@@ -61,13 +43,11 @@ gulp.task('server', function() {
         }))
         .pipe(gulp.dest('dist'));
 });
-
 gulp.task('nodemon', function() {
     nodemon({
         script: 'dist/server.js',
     }).on('restart', browserSync.reload)
 });
-
 gulp.task('pug', function buildHTML() {
     gulp.src('pug/!(_)*.pug')
         .pipe(plumber())
@@ -76,9 +56,7 @@ gulp.task('pug', function buildHTML() {
         }))
         .pipe(gulp.dest('./'))
 });
-
 gulp.task('pug-rebuild', ['pug'], browserSync.reload);
-
 // gulp.task('sass', function() {
 //     gulp.src('sass/*.scss')
 //         .pipe(plumber())
@@ -96,7 +74,6 @@ gulp.task('pug-rebuild', ['pug'], browserSync.reload);
 //         .pipe(gulp.dest('stylesheets'))
 //         .pipe(browserSync.stream());
 // });
-
 gulp.task('sass', function() {
     gulp.src('sass/*.scss')
         .pipe(plumber())
@@ -115,7 +92,6 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('stylesheets'))
         .pipe(browserSync.stream());
 });
-
 // FIXME: 待修改pug react vue等等
 // gulp.task('copy', function() {
 //     gulp.src([
@@ -132,7 +108,6 @@ gulp.task('sass', function() {
 //     .pipe(changed('public'))
 //     .pipe(gulp.dest('public'));
 // });
-
 gulp.task('svg', function() {
     gulp.src('svg/*.svg')
         .pipe(svgSprite({
@@ -152,15 +127,11 @@ gulp.task('svg', function() {
         }))
         .pipe(gulp.dest("./"));
 });
-
 gulp.task('svg-rebuild', ['svg'], browserSync.reload);
-
 gulp.task('uglify', function() {
     gulp.src('dist/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('dist'));
 });
-
 gulp.task('publish', ['uglify']);
-
 gulp.task('default', ['sass', 'babel', 'browser-sync']);

@@ -243,21 +243,31 @@
                 <ul class="storeList">
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">IMM</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6974-0095</div>
                         <div class="time">11:00-21:00</div>
                         <div class="address">2 Jurong East Street 21 #01-58, IMM Building, Singapore 609601</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-1.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
-                                        <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
+                                        <svg class="show-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
                                                 <g>
                                                     <line class="d" y1="15.09" x2="29.24" y2="15.09" />
                                                     <path class="e" d="M8.73,29.49c-.45-.7-.24-1.63,.46-2.07L28.55,15.09,9.19,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L10.81,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <svg class="hide-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="21.4" height="18.63" viewBox="0 0 21.4 18.63">
+                                            <g id="c" data-name="layout">
+                                                <g class="e">
+                                                    <line class="f" y1="9.31" x2="19.18" y2="9.31" />
+                                                    <path class="d" d="M6.52,18.2c-.27-.43-.15-1,.29-1.28l11.95-7.61L6.81,1.71c-.43-.27-.56-.85-.29-1.28C6.8,0,7.37-.13,7.8,.14l13.17,8.39c.27,.17,.43,.46,.43,.78s-.16,.61-.43,.78L7.8,18.49c-.16,.1-.33,.14-.5,.14-.31,0-.61-.15-.78-.43Z" />
                                                 </g>
                                             </g>
                                         </svg>
@@ -269,15 +279,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Redhill</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-express.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6513-7628</div>
                         <div class="time">11:00-22:00</div>
                         <div class="address">920 Tiong Bahru Rd, Redhill MRT #01-08, Singapore 158792</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-2.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-express.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
@@ -295,15 +307,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Funan</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6974-7520</div>
                         <div class="time">11:00-22:00</div>
                         <div class="address">107 North Bridge Rd, Funan #B2-K17, Singapore 179105</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-3.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
@@ -321,15 +335,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Wisma Atria</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-express.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6974-7170</div>
                         <div class="time">11:00-22:00</div>
                         <div class="address">435 Orchard Road #B1-03, Wisma Atria, Singapore 238877</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-4.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-express.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
@@ -347,15 +363,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Bendemeer<br>Shopping Mall</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6816-0984</div>
                         <div class="time">11:00-21:00</div>
                         <div class="address">25 Bendemeer Rd #01-583, Bendemeer Shopping Mall, Singapore 330025</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-5.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
@@ -373,15 +391,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Admiralty Place</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-express.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6974-7405</div>
                         <div class="time">10:30-22:00</div>
                         <div class="address">Blk 678A Woodlands Avenue 6, Admiralty Place #01-07A, Singapore 731678</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-6.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-express.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
@@ -399,15 +419,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">One Raffles Place</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6931-9203</div>
                         <div class="time">11:00-22:00</div>
                         <div class="address">Shopping Podium at Tower 1 #B1-09, One Raffles Place, Singapore 048616</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-7.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
@@ -425,15 +447,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Paragon</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6920-7214</div>
                         <div class="time">10:00-21:30</div>
                         <div class="address">290 Orchard Road #B1-33, Paragon, Singapore 238859</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-8.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
@@ -451,7 +475,10 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Khatib</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="pic"><img src="./images/store-pic-9.png" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6025-5797</div>
                         <div class="time">
                             11:00-22:00 (MON-THU)<br>
@@ -459,9 +486,8 @@
                         </div>
                         <div class="address">Blk 846 Yishun Ring Road #01-3649, Singapore 760846</div>
                         <div class="other-area flex-container align-middle align-justify">
-                            <div class="pic"><img src="./images/store-pic-9.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
@@ -480,15 +506,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Braddell</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6974-6916</div>
                         <div class="time">11:00-21:00</div>
                         <div class="address">109 Lorong 1 Toa Payoh #01-302, Singapore 310109</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-10.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
@@ -506,15 +534,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Parkway Parade</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6025-3753</div>
                         <div class="time">12:00-21:00</div>
                         <div class="address">80 Marine Parade Road #01-K32, Parkway Parade, Singapore 449269</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-11.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">
@@ -532,15 +562,17 @@
                     </li>
                     <li>
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
-                        <div class="title">Rivervale Mall</div>
+                        <div class="head flex-container align-justify">
+                            <div class="title">IMM</div>
+                            <div class="brand"><img src="./images/koi-express.svg" alt=""></div>
+                        </div>
                         <div class="phone">(+65) 6025-4214</div>
                         <div class="time">12:00-21:00</div>
                         <div class="address">11 Rivervale Crescent #01-04A, Rivervale Mall, Singapore 545082</div>
                         <div class="other-area flex-container align-middle align-justify">
                             <div class="pic"><img src="./images/store-pic-12.png" alt=""></div>
                             <a href="javascript:;">
-                                <div class="inner flex-container align-middle align-justify">
-                                    <div class="brand"><img src="./images/koi-express.svg" alt=""></div>
+                                <div class="inner flex-container align-middle align-center">
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">

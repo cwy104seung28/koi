@@ -145,13 +145,28 @@ $ifFile = 0;
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6"
-                                                        class="table_col_title">在網頁顯示</td>
+                                                        class="table_col_title">在中文網頁顯示</td>
                                                     <td width="532">
                                                         <select name="d_active" class="table_data" id="d_active">
                                                             <option value="1" <?php if (!(strcmp(1, $row_Recmaintea['d_active']))) {
                                                                 echo "selected";
                                                             } ?>>顯示</option>
                                                             <option value="0" <?php if (!(strcmp(0, $row_Recmaintea['d_active']))) {
+                                                                echo "selected";
+                                                            } ?>>不顯示</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6"
+                                                        class="table_col_title">在英文網頁顯示</td>
+                                                    <td width="532">
+                                                        <select name="d_active_en" class="table_data" id="d_active_en">
+                                                            <option value="1" <?php if (!(strcmp(1, $row_Recmaintea['d_active_en']))) {
+                                                                echo "selected";
+                                                            } ?>>顯示</option>
+                                                            <option value="0" <?php if (!(strcmp(0, $row_Recmaintea['d_active_en']))) {
                                                                 echo "selected";
                                                             } ?>>不顯示</option>
                                                         </select>
@@ -480,7 +495,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
-    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_class2=:d_class2, d_date=:d_date, d_active=:d_active WHERE d_id=:d_id";
+    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_class2=:d_class2, d_date=:d_date, d_active=:d_active, d_active_en=:d_active_en WHERE d_id=:d_id";
 
     $stat = $conn->prepare($updateSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -488,6 +503,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
+    $stat->bindParam(':d_active_en', $_POST['d_active_en'], PDO::PARAM_INT);
     $stat->bindParam(':d_id', $_POST['d_id'], PDO::PARAM_INT);
     $stat->execute();
 
