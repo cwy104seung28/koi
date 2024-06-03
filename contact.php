@@ -346,16 +346,29 @@ $m_area = '泰國';
         mounted() {
             $('.ask-select').niceSelect();
 
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse", //重覆觸發
-                trigger: ".menu-link",
-                endTrigger: ".contactWrap",
-                start: "top 78.5%",
-                end: "100% 100%",
-                scrub: 1,
-                pin: true,
-                // markers: true,
-            });
+            // if (window.device == 'desktop') {
+            //     ScrollTrigger.create({
+            //         toggleActions: "play pause resume reverse", //重覆觸發
+            //         trigger: ".menu-link",
+            //         endTrigger: ".aboutWrap",
+            //         start: "top 78.5%",
+            //         end: "100% 100%",
+            //         scrub: 1,
+            //         pin: true,
+            //         // markers: true,
+            //     });
+            // } else {
+            //     ScrollTrigger.create({
+            //         toggleActions: "play pause resume reverse", //重覆觸發
+            //         trigger: ".menu-link",
+            //         endTrigger: ".aboutWrap",
+            //         start: "top 73%",
+            //         end: "100% 100%",
+            //         scrub: 1,
+            //         pin: true,
+            //         // markers: true,
+            //     });
+            // }
             gsap.registerPlugin(ScrollTrigger);
             let $tl_title = gsap.timeline({
                     paused: true,

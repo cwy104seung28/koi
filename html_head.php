@@ -6,7 +6,7 @@
 <link rel="apple-touch-icon" sizes="76x76" href="images/fav.png">
 <link rel="apple-touch-icon" sizes="120x120" href="images/fav.png">
 <link rel="apple-touch-icon" sizes="152x152" href="images/fav.png">
-<link rel="stylesheet" href="./stylesheets/style.css?t=12312">
+<link rel="stylesheet" href="./stylesheets/style.css?t=<?php echo rand(1, 1000); ?>">
 
 <meta property="og:title" content="KOI" />
 
@@ -19,6 +19,6 @@ A celebration, a date or just a relaxing break in the day, there is always a rea
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php if (isset($now) && $now == 'INDEX') { ?>
     <title>KOI</title>
-<?php } else if (isset($now)){ ?>
+<?php } else if (isset($now)) { ?>
     <title><?php echo $now; ?> | KOI</title>
 <?php }; ?>

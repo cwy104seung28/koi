@@ -22,13 +22,28 @@
                 <div class="letter-h"><img src="./images/h.svg"></div>
                 <div class="letter-e"><img src="./images/e.svg"></div>
             </div>
-            <div class="number-area">
+            <div class="number-area show-for-large">
                 <div class="inner-sticky flex-container align-center-middle">
                     <div class="hollow-1"><img src="./images/a-text-hollow.svg" alt=""></div>
                     <div class="hollow-2"><img src="./images/a-text-hollow.svg" alt=""></div>
                     <div class="solid"><img src="./images/a-text-solid.svg" alt=""></div>
                     <div class="hollow-3"><img src="./images/a-text-hollow.svg" alt=""></div>
                     <div class="hollow-4"><img src="./images/a-text-hollow.svg" alt=""></div>
+                </div>
+            </div>
+            <div class="number-area hide-for-large">
+                <div class="inner-sticky flex-container align-center-middle">
+                    <div class="hollow-1"><img src="./images/a-text-hollow.svg" alt=""></div>
+                    <div class="hollow-2"><img src="./images/a-text-hollow.svg" alt=""></div>
+                    <div class="hollow-3"><img src="./images/a-text-hollow.svg" alt=""></div>
+                    <div class="hollow-4"><img src="./images/a-text-hollow.svg" alt=""></div>
+                    <div class="hollow-5"><img src="./images/a-text-hollow.svg" alt=""></div>
+                    <div class="solid"><img src="./images/a-text-solid.svg" alt=""></div>
+                    <div class="hollow-6"><img src="./images/a-text-hollow.svg" alt=""></div>
+                    <div class="hollow-7"><img src="./images/a-text-hollow.svg" alt=""></div>
+                    <div class="hollow-8"><img src="./images/a-text-hollow.svg" alt=""></div>
+                    <div class="hollow-9"><img src="./images/a-text-hollow.svg" alt=""></div>
+                    <div class="hollow-10"><img src="./images/a-text-hollow.svg" alt=""></div>
                 </div>
             </div>
             <div class="drink-area">
@@ -41,7 +56,7 @@
                 </ul>
                 <div class="bg-change"></div>
             </div>
-            <div class="about-info-preview">
+            <div class="about-info-preview show-for-large">
                 <ul class="about-infoWrap">
                     <li class="flex-container align-middle green">
                         <div class="article-area">
@@ -135,72 +150,36 @@
         </ul>
         <ul class="about-infoWrap outter hide-for-large">
             <li class="flex-container align-middle green">
+                <div class="pic-area"><img src="./images/a-info-pic-1-mobile.png"></div>
                 <div class="article-area">
-                    <div class="title flex-container align-middle">
-                        <div class="deco top"><img src="./images/a-h-deco-top.svg" alt=""></div>
-                        <div class="en">
-                            SELECTION OF<br>
-                            FINE INGREDIENTS
-                        </div>
-                        <div class="ch">严选原物料</div>
-                        <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
-                    </div>
                     <div class="content">
                         鲜采茶叶，唯有高质量茶叶所泡出的浓郁茶香，才能战胜所有挑剔的味蕾。黄金珍珠，天然原料制成，使用不同水温交替烹煮，以确保每颗珍珠的透明饱满和Q弹美味。
                     </div>
                 </div>
-                <div class="pic-area"><img src="./images/a-info-pic-1.png" alt=""></div>
             </li>
             <li class="flex-container align-center-middle blue">
+                <div class="pic-area"><img src="./images/a-info-pic-2-mobile.png"></div>
                 <div class="article-area">
-                    <div class="title flex-container align-middle">
-                        <div class="deco top"><img src="./images/a-h-deco-top.svg" alt=""></div>
-                        <div class="en">
-                            TEA BREWING<br>
-                            MASTERS
-                        </div>
-                        <div class="ch">职人制茶</div>
-                        <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
-                    </div>
                     <div class="content">
                         坚持使用传统茶壶煮茶，自制专属器皿，水量、茶叶及温度的完美比例控制，使调茶师能精准掌握每一口茶汤的绝佳口感。即使身处世界各地，也能随时喝到令人回味无穷的好茶。
                     </div>
                 </div>
-                <div class="pic-area"><img src="./images/a-info-pic-2.png" alt=""></div>
             </li>
             <li class="flex-container align-center-middle yellow">
+                <div class="pic-area"><img src="./images/a-info-pic-3-mobile.png"></div>
                 <div class="article-area">
-                    <div class="title flex-container align-middle">
-                        <div class="deco top"><img src="./images/a-h-deco-top.svg" alt=""></div>
-                        <div class="en">
-                            PRECISION AND<br>
-                            CONSISTENCY
-                        </div>
-                        <div class="ch">精准口感</div>
-                        <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
-                    </div>
                     <div class="content">
                         为了确保每一口茶都带来令人愉悦的精致口感，在训练调茶师的过程中，从冰块与茶量的取用，到固定的摇茶手势，每一个细节都须反复练习保持一致。唯有这样的坚持，才能体现好茶在口中的往返留香。
                     </div>
                 </div>
-                <div class="pic-area"><img src="./images/a-info-pic-3.png" alt=""></div>
             </li>
             <li class="flex-container align-center-middle orange">
+                <div class="pic-area"><img src="./images/a-info-pic-4-mobile.png"></div>
                 <div class="article-area">
-                    <div class="title flex-container align-middle">
-                        <div class="deco top"><img src="./images/a-h-deco-top.svg" alt=""></div>
-                        <div class="en">
-                            HEART-WARMING<br>
-                            SERVICE
-                        </div>
-                        <div class="ch">热情服务</div>
-                        <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
-                    </div>
                     <div class="content">
                         我们将每位客人视为家人般真诚对待，在友善及热情的门市里，请尽情品味为您量身打造的饮品，享受被茶香簇拥的幸福，同时感受到我们真挚的温暖。
                     </div>
                 </div>
-                <div class="pic-area"><img src="./images/a-info-pic-4.png" alt=""></div>
             </li>
         </ul>
         <div class="about-ingredient flex-container">
@@ -229,20 +208,26 @@
                 </div>
                 <ul class="slick-article">
                     <li>
-                        <div class="en">Tea</div>
-                        <div class="ch">茶汤</div>
+                        <div class="title-area">
+                            <div class="en">Tea</div>
+                            <div class="ch">茶汤</div>
+                        </div>
                         <div class="content">
                             定期水质检测把关，严格控管每一桶茶汤温度，确保每一杯茶饮都能体现精选茶叶的极致风味。
                         </div>
                     </li>
                     <li>
-                        <div class="en">Sweetness</div>
-                        <div class="ch">甜度</div>
+                        <div class="title-area">
+                            <div class="en">Sweetness</div>
+                            <div class="ch">甜度</div>
+                        </div>
                         <div class="content">经团队反复测试的完美比例，将茶饮的美味提升到另一层次，每一口都散发恰到好处的甜香。</div>
                     </li>
                     <li>
-                        <div class="en">Ice</div>
-                        <div class="ch">冰块</div>
+                        <div class="title-area">
+                            <div class="en">Ice</div>
+                            <div class="ch">冰块</div>
+                        </div>
                         <div class="content">
                             采用硬度较高的冰块，精准地控制用量，不仅保留茶汤的原始风味，还能带来清新宜人的口感体验
                         </div>
@@ -371,7 +356,17 @@
                 </div>
             </div>
             <div class="brandmapWrap flex-container align-middle align-justify">
-                <div class="prev" @click="mapPrev()">
+                <div class="prev show-for-large" @click="mapPrev()">
+                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                        <g id="d" data-name="設計">
+                            <g>
+                                <line class="c" x1="34.68" y1="15.09" x2="3.61" y2="15.09" />
+                                <path class="b" d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07s-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="prev hide-for-large">
                     <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
                         <g id="d" data-name="設計">
                             <g>
@@ -388,7 +383,17 @@
                     <li @click="mapHandler(4)" :class="[{'current': map == 4 }]"><img src="./images/a-koi-cafe.svg" alt=""></li>
                     <li @click="mapHandler(5)" :class="[{'current': map == 5 }]"><img src="./images/a-koi-plus.svg" alt=""></li>
                 </ul>
-                <div class="next" @click="mapNext()">
+                <div class="next show-for-large" @click="mapNext()">
+                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                        <g id="d" data-name="設計">
+                            <g>
+                                <line class="c" y1="15.09" x2="31.07" y2="15.09" />
+                                <path class="b" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="next hide-for-large">
                     <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
                         <g id="d" data-name="設計">
                             <g>
@@ -671,6 +676,8 @@
     //         y: 0,
     //         ease: Power1.easeIn,
     //     }, '<0')
+    $('html').addClass('is-lock')
+    $('body').addClass('is-lock')
 
     gsap.delayedCall(0.5, function() {
         $tl.play();
@@ -678,80 +685,174 @@
     gsap.delayedCall(1.5, function() {
         $('nav').removeClass('is-move')
     });
-    let $tl_number = gsap.timeline({
-            paused: false,
-        })
-        .add('number')
-        .to(".number-area .hollow-1", {
-            y: 324,
-        }, 'number')
-        .to(".number-area .hollow-2", {
-            y: 162,
-        }, 'number')
-        .to(".number-area .hollow-3", {
-            y: -162,
-        }, 'number')
-        .to(".number-area .hollow-4", {
-            y: -324,
-        }, 'number')
-    ScrollTrigger.create({
-        trigger: '.number-area',
-        // toggleActions: "play reverse play reverse", //重覆觸發
-        start: "20% center",
-        end: "25% center",
-        // markers: true,
-        animation: $tl_number,
-        scrub: 1,
+    gsap.delayedCall(2, function() {
+        $('html').removeClass('is-lock')
+        $('body').removeClass('is-lock')
     });
-    let $tl_drink = gsap.timeline({
-            paused: false,
-        })
-        .add('drink')
-        .to(".drink-area li:nth-child(odd)", {
-            y: '-100%',
-        }, 'drink')
-        .to(".drink-area li:nth-child(even)", {
-            y: '100%',
-        }, 'drink')
-    let $tl_drink_bg = gsap.timeline({
-            paused: false,
-        })
-        .to(".drink-area .bg-change", {
-            opacity: 1,
-        }, '<0')
-    ScrollTrigger.create({
-        trigger: '.drink-area',
-        // toggleActions: "play reverse play reverse", //重覆觸發
-        start: "10% 30%",
-        end: "bottom 30%",
-        // markers: true,
-        animation: $tl_drink,
-        scrub: 1,
-    });
-    ScrollTrigger.create({
-        trigger: '.drink-area',
-        // toggleActions: "play reverse play reverse", //重覆觸發
-        start: "10% 70%",
-        end: "bottom 70%",
-        // markers: true,
-        animation: $tl_drink_bg,
-        scrub: 1,
-    });
-    let $tl_info = gsap.timeline({
-            paused: false,
-        })
-        .to(".about-info-preview .about-infoWrap", {
-            opacity: 1,
-        })
-    ScrollTrigger.create({
-        trigger: '.about-info-preview',
-        // toggleActions: "play reverse play reverse", //重覆觸發
-        start: "10% top",
-        end: "50% top",
-        // markers: true,
-        animation: $tl_info,
-        scrub: 1,
-    });
+
+
+    // let $tl_number_mobile = gsap.timeline({
+    //         paused: false,
+    //     })
+    //     .add('number')
+    //     .to(".number-area .hollow-1", {
+    //         y: 0,
+    //     }, 'number')
+    //     .to(".number-area .hollow-2", {
+    //         y: 162,
+    //     }, 'number')
+    //     .to(".number-area .hollow-3", {
+    //         y: -162,
+    //     }, 'number')
+    //     .to(".number-area .hollow-ˋ", {
+    //         y: -324,
+    //     }, 'number')
+
+    if (window.device == 'desktop') {
+        let $tl_number = gsap.timeline({
+                paused: false,
+            })
+            .add('number')
+            .to(".number-area .hollow-1", {
+                y: 324,
+            }, 'number')
+            .to(".number-area .hollow-2", {
+                y: 162,
+            }, 'number')
+            .to(".number-area .hollow-3", {
+                y: -162,
+            }, 'number')
+            .to(".number-area .hollow-4", {
+                y: -324,
+            }, 'number')
+        ScrollTrigger.create({
+            trigger: '.number-area.show-for-large',
+            // toggleActions: "play reverse play reverse", //重覆觸發
+            start: "20% center",
+            end: "25% center",
+            // markers: true,
+            animation: $tl_number,
+            scrub: 1,
+        });
+    } else {
+        let $tl_number_mobile = gsap.timeline({
+                paused: false,
+            })
+            .add('number')
+            .to(".number-area .hollow-1", {
+                y: 297,
+            }, 'number')
+            .to(".number-area .hollow-2", {
+                y: 237,
+            }, 'number')
+            .to(".number-area .hollow-3", {
+                y: 178,
+            }, 'number')
+            .to(".number-area .hollow-4", {
+                y: 119,
+            }, 'number')
+            .to(".number-area .hollow-5", {
+                y: 59,
+            }, 'number')
+            .to(".number-area .hollow-6", {
+                y: -59,
+            }, 'number')
+            .to(".number-area .hollow-7", {
+                y: -119,
+            }, 'number')
+            .to(".number-area .hollow-8", {
+                y: -178,
+            }, 'number')
+            .to(".number-area .hollow-9", {
+                y: -237,
+            }, 'number')
+            .to(".number-area .hollow-10", {
+                y: -297,
+            }, 'number')
+        ScrollTrigger.create({
+            trigger: '.number-area.hide-for-large',
+            // toggleActions: "play reverse play reverse", //重覆觸發
+            start: "20% center",
+            end: "25% center",
+            // markers: true,
+            animation: $tl_number_mobile,
+            scrub: 1,
+        });
+    }
+
+    if (window.device == 'desktop') {
+        let $tl_drink = gsap.timeline({
+                paused: false,
+            })
+            .add('drink')
+            .to(".drink-area li:nth-child(odd)", {
+                y: '-100%',
+            }, 'drink')
+            .to(".drink-area li:nth-child(even)", {
+                y: '100%',
+            }, 'drink')
+        let $tl_drink_bg = gsap.timeline({
+                paused: false,
+            })
+            .to(".drink-area .bg-change", {
+                opacity: 1,
+            }, '<0')
+        ScrollTrigger.create({
+            trigger: '.drink-area',
+            // toggleActions: "play reverse play reverse", //重覆觸發
+            start: "10% 30%",
+            end: "bottom 30%",
+            // markers: true,
+            animation: $tl_drink,
+            scrub: 1,
+        });
+        ScrollTrigger.create({
+            trigger: '.drink-area',
+            // toggleActions: "play reverse play reverse", //重覆觸發
+            start: "10% 70%",
+            end: "bottom 70%",
+            // markers: true,
+            animation: $tl_drink_bg,
+            scrub: 1,
+        });
+    } else {
+        let $tl_drink_mobile = gsap.timeline({
+                paused: false,
+            })
+            .add('drink')
+            .to(".drink-area li:nth-child(odd)", {
+                y: '-100vh',
+            }, 'drink')
+            .to(".drink-area li:nth-child(even)", {
+                y: '100vh',
+            }, 'drink')
+        ScrollTrigger.create({
+            trigger: '.drink-area',
+            // toggleActions: "play reverse play reverse", //重覆觸發
+            start: "top top",
+            end: "60% top",
+            // markers: true,
+            animation: $tl_drink_mobile,
+            scrub: 1,
+        });
+    }
+    if (window.device == 'desktop') {
+        let $tl_info = gsap.timeline({
+                paused: false,
+            })
+            .to(".about-info-preview .about-infoWrap", {
+                opacity: 1,
+            })
+        ScrollTrigger.create({
+            trigger: '.about-info-preview',
+            // toggleActions: "play reverse play reverse", //重覆觸發
+            start: "10% top",
+            end: "50% top",
+            // markers: true,
+            animation: $tl_info,
+            scrub: 1,
+        });
+    }
     // let $tl_info_no = gsap.timeline({
     //         paused: false,
     //     })
@@ -828,8 +929,23 @@
             });
         }
     }
-    horizonHandler('.about-infoWrap#horizontalWrap');
-    
+
+    if (window.device == 'desktop') {
+        horizonHandler('.about-infoWrap#horizontalWrap');
+    } else {
+        $('.about-infoWrap').slick({
+            dots: true,
+            speed: 1000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            fade: true,
+            arrows: false,
+        });
+    }
+
+
     $('.slick-article').slick({
         dots: true,
         speed: 1000,
@@ -858,7 +974,7 @@
         $('.slick-article').slick('slickGoTo', slideTri - 1);
     });
     $('.about-ingredient .bg').slick({
-        dots: true,
+        dots: false,
         speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -885,18 +1001,32 @@
     //     // nextArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`,
     //     // prevArrow: `<div class="prev"><img src="./images/a-event-prev.svg" alt=""></div>`
     // });
+    if (window.device == 'desktop') {
+        var $carousel = $('.about-event .pic-area').flickity({
+            // options
+            cellAlign: 'center',
+            // contain: true,
+            wrapAround: true,
+            prevNextButtons: false,
+            pageDots: false,
+            rightToLeft: true,
+            draggable: false,
+            // asNavFor: '.about-event .number, .about-event .ch, .about-event .en'
+        });
+    } else {
+        var $carousel = $('.about-event .pic-area').flickity({
+            // options
+            cellAlign: 'center',
+            // contain: true,
+            wrapAround: true,
+            prevNextButtons: false,
+            pageDots: false,
+            // rightToLeft: true,
+            draggable: false,
+            // asNavFor: '.about-event .number, .about-event .ch, .about-event .en'
+        });
+    }
 
-    var $carousel = $('.about-event .pic-area').flickity({
-        // options
-        cellAlign: 'center',
-        // contain: true,
-        wrapAround: true,
-        prevNextButtons: false,
-        pageDots: false,
-        rightToLeft: true,
-        draggable: false,
-        // asNavFor: '.about-event .number, .about-event .ch, .about-event .en'
-    });
     $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
     $carousel.on('change.flickity', function(event, index) {
         $('.about-event .pic-area li').removeClass('is-show');
@@ -1030,16 +1160,29 @@
         // verticalScrolling: true,
         // draggable: false,
     });
-    ScrollTrigger.create({
-        toggleActions: "play pause resume reverse", //重覆觸發
-        trigger: ".menu-link",
-        endTrigger: ".aboutWrap",
-        start: "top 78.5%",
-        end: "100% 100%",
-        scrub: 1,
-        pin: true,
-        // markers: true,
-    });
+    // if (window.device == 'desktop') {
+    //     ScrollTrigger.create({
+    //         toggleActions: "play pause resume reverse", //重覆觸發
+    //         trigger: ".menu-link",
+    //         endTrigger: ".aboutWrap",
+    //         start: "top 78.5%",
+    //         end: "100% 100%",
+    //         scrub: 1,
+    //         pin: true,
+    //         // markers: true,
+    //     });
+    // } else {
+    //     ScrollTrigger.create({
+    //         toggleActions: "play pause resume reverse", //重覆觸發
+    //         trigger: ".menu-link",
+    //         endTrigger: ".aboutWrap",
+    //         start: "top 73%",
+    //         end: "100% 100%",
+    //         scrub: 1,
+    //         pin: true,
+    //         // markers: true,
+    //     });
+    // }
 
     let $tl_brand = gsap.timeline({
             paused: true,
@@ -1059,4 +1202,16 @@
         animation: $tl_brand,
         // markers: true,
     });
+
+    if (window.device == 'mobile') {
+        $('.brandmap').slick({
+            dots: false,
+            speed: 1000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: false,
+            arrows: false,
+            centerMode: true,
+        });
+    }
 </script>

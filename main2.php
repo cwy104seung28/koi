@@ -832,12 +832,13 @@ $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' 
         })
     gsap.delayedCall(3, function() {
         $(".indexWrap-outter").removeClass("is-not-show")
-       
+
     })
     gsap.delayedCall(10, function() {
         $("html").removeClass("is-lock")
         $('nav').removeClass('not-clip')
         $("nav .menuWrap").removeClass("is-not-hover")
+
         function horizonHandler(el) {
             let _x = $(el).outerWidth(true) - $(window).width()
             console.log(_x);
@@ -1307,16 +1308,29 @@ $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' 
         })
 
 
-        ScrollTrigger.create({
-            toggleActions: "play resume resume resume", //重覆觸發
-            trigger: ".menu-link",
-            endTrigger: ".indexWrap",
-            start: "top 78.5%",
-            end: "100% 100%",
-            scrub: true,
-            pin: true,
-            // markers: true,
-        });
+        // if (window.device == 'desktop') {
+        //     ScrollTrigger.create({
+        //         toggleActions: "play pause resume reverse", //重覆觸發
+        //         trigger: ".menu-link",
+        //         endTrigger: ".aboutWrap",
+        //         start: "top 78.5%",
+        //         end: "100% 100%",
+        //         scrub: 1,
+        //         pin: true,
+        //         // markers: true,
+        //     });
+        // } else {
+        //     ScrollTrigger.create({
+        //         toggleActions: "play pause resume reverse", //重覆觸發
+        //         trigger: ".menu-link",
+        //         endTrigger: ".aboutWrap",
+        //         start: "top 73%",
+        //         end: "100% 100%",
+        //         scrub: 1,
+        //         pin: true,
+        //         // markers: true,
+        //     });
+        // }
         let $tl_drink = gsap.timeline({
                 paused: true,
             })

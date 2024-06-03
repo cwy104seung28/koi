@@ -11,52 +11,46 @@ sans-serif;
 
 $black:#0c131b;
 
-html,
-body {
-    -webkit-text-size-adjust: 100%; // for mobile fontsize
+html,body{
+	-webkit-text-size-adjust: 100%;   // for mobile fontsize
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-
-    img {
-        border: 0;
-    }
+a{
+	text-decoration: none;
+	color: inherit;
+	img{border: 0;}
 }
 
-:focus {
-    outline: 0;
+:focus{
+	outline: 0;
 }
 
-strong,
-b {
-    font-weight: bold;
+strong, b{
+	font-weight: bold;
 }
 
-button {
-    background-color: transparent;
-    border: 0;
+button{
+	background-color: transparent;
+	border: 0;
 }
 
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-img {
-    vertical-align: middle; //remove bottom space
-    max-width: 100%;
-    // max-height: 100%;
+img{
+	vertical-align: middle; //remove bottom space
+	max-width: 100%;
+	// max-height: 100%;
 }
 
 /* override the default IOS styles */
-input,
-textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+input, textarea{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 
