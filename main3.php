@@ -1415,12 +1415,12 @@ $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' 
                 paused: false,
             })
                 .fromTo('.index-feature .up', {
-                    y: '-50%'
+                    y: '-200vh'
                 }, {
-                    y: '-75%'
+                    y: '-300vh'
                 })
                 .fromTo('.index-feature .down', {
-                    y: '-25%'
+                    y: '-100vh'
                 }, {
                     y: '0%'
                 }, "<0")
@@ -1429,14 +1429,14 @@ $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' 
                 paused: false,
             })
                 .fromTo('.index-feature .up', {
-                    y: '-25%'
+                    y: '-100vh'
                 }, {
-                    y: '-50%'
+                    y: '-200vh'
                 })
                 .fromTo('.index-feature .down', {
-                    y: '-50%'
+                    y: '-200vh'
                 }, {
-                    y: '-25%'
+                    y: '-100vh'
                 }, "<0")
 
 
@@ -1445,15 +1445,16 @@ $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' 
                 paused: false,
             })
                 .fromTo('.index-feature .up', {
-                    y: '0%'
+                    y: '0'
                 }, {
-                    y: '-25%'
+                    y: '-100vh'
                 })
                 .fromTo('.index-feature .down', {
-                    y: '-74.5%'
+                    y: '-300vh'
                 }, {
-                    y: '-50%'
+                    y: '-200vh'
                 }, "<0")
+
 
 
             const $tl_drink4 = gsap.timeline({
@@ -1592,44 +1593,44 @@ $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' 
                 paused: false,
             })
                 .fromTo('.index-feature .up', {
-                    y: '-35.55%'
+                    y: '-200vh'
                 }, {
-                    y: '-53.8%'
+                    y: '-300vh'
                 })
                 .fromTo('.index-feature .down', {
-                    y: '-17.55%'
+                    y: '-100vh'
                 }, {
                     y: '0%'
                 }, "<0")
-
 
             const $tl_drink2 = gsap.timeline({
                 paused: false,
             })
                 .fromTo('.index-feature .up', {
-                    y: '-17.55%'
+                    y: '-100vh'
                 }, {
-                    y: '-35.55%'
+                    y: '-200vh'
                 })
                 .fromTo('.index-feature .down', {
-                    y: '-35.55%'
+                    y: '-200vh'
                 }, {
-                    y: '-17.55%'
+                    y: '-100vh'
                 }, "<0")
+
 
 
             const $tl_drink1 = gsap.timeline({
                 paused: false,
             })
                 .fromTo('.index-feature .up', {
-                    y: '0%'
+                    y: '0'
                 }, {
-                    y: '-17.55%'
+                    y: '-100vh'
                 })
                 .fromTo('.index-feature .down', {
-                    y: '-53.8%'
+                    y: '-300vh'
                 }, {
-                    y: '-35.55%'
+                    y: '-200vh'
                 }, "<0")
 
 
