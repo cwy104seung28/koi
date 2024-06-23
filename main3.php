@@ -1662,7 +1662,7 @@ $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' 
                     scrollTrigger: {
                         toggleActions: "play pause resume reverse",
                         trigger: "#drinkHorizontal",
-                        start: "top 35%",
+                        start: "top 30%",
                         end: `+=${_x}`,
                         pin: ".drink-outter",
                         pinSpace: false,

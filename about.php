@@ -1112,7 +1112,7 @@
             trigger: '.number-area.show-for-large',
             // toggleActions: "play reverse play reverse", //重覆觸發
             start: "20% center",
-            end: "25% center",
+            end: "35% center",
             // markers: true,
             animation: $tl_number,
             scrub: 1,
@@ -1172,14 +1172,14 @@
             })
             .add('drink')
             .to(".drink-area li:nth-child(odd)", {
-                y: '-100%',
+                y: '-150vh',
             }, 'drink')
             .to(".drink-area li:nth-child(even)", {
-                y: '100%',
+                y: '150vh',
             }, 'drink')
-            .to(".drink-area li", {
-                opacity: 0,
-            })
+            // .to(".drink-area li", {
+            //     opacity: 0,
+            // })
         let $tl_drink_bg = gsap.timeline({
                 paused: false,
             })
@@ -1190,7 +1190,7 @@
             trigger: '.drink-area',
             // toggleActions: "play reverse play reverse", //重覆觸發
             start: "10% 30%",
-            end: "bottom 30%",
+            end: "70% 30%",
             // markers: true,
             animation: $tl_drink,
             scrub: 1,
@@ -1199,7 +1199,7 @@
             trigger: '.drink-area',
             // toggleActions: "play reverse play reverse", //重覆觸發
             start: "10% 70%",
-            end: "bottom 70%",
+            end: "80% 70%",
             // markers: true,
             animation: $tl_drink_bg,
             scrub: 1,
