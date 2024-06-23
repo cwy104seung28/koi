@@ -247,7 +247,9 @@
                             <div class="title">IMM</div>
                             <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
                         </div>
-                        <div class="phone">(+65) 6974-0095</div>
+                        <div class="phone">
+                            <a href="javascript:;">(+65) 6974-0095</a>
+                        </div>
                         <div class="time">11:00-21:00</div>
                         <div class="address">2 Jurong East Street 21 #01-58, IMM Building, Singapore 609601</div>
                         <div class="other-area flex-container align-middle align-justify">
@@ -477,18 +479,15 @@
                         <div class="deco"><img src="./images/s-deco-top.svg"></div>
                         <div class="head flex-container align-justify">
                             <div class="title">IMM</div>
-                            <div class="pic"><img src="./images/store-pic-9.png" alt=""></div>
+                            <div class="brand"><img src="./images/koi-express.svg" alt=""></div>
                         </div>
-                        <div class="phone">(+65) 6025-5797</div>
-                        <div class="time">
-                            11:00-22:00 (MON-THU)<br>
-                            10:00-22:00 (FRI-SUN&PH)
-                        </div>
-                        <div class="address">Blk 846 Yishun Ring Road #01-3649, Singapore 760846</div>
+                        <div class="phone">(+65) 6974-7170</div>
+                        <div class="time">11:00-22:00</div>
+                        <div class="address">435 Orchard Road #B1-03, Wisma Atria, Singapore 238877</div>
                         <div class="other-area flex-container align-middle align-justify">
+                            <div class="pic"><img src="./images/store-pic-4.png" alt=""></div>
                             <a href="javascript:;">
                                 <div class="inner flex-container align-middle align-center">
-                                    <div class="brand"><img src="./images/koi-the.svg" alt=""></div>
                                     <div class="arrow">
                                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                             <g id="c" data-name="layout">

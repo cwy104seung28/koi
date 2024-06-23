@@ -20,7 +20,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
 
 <body class="is-orange">
     <?php include 'topmenu.php'; ?>
-    <div class="recruitWrap">
+    <div class="recruitWrap menu-pin">
         <div class="recruit-top">
             <div class="head-area">
                 <div class="head-1">
@@ -123,7 +123,9 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
         <div class="apply-area">
             <div class="head-area hide-for-large">
                 <div class="head-1">
-                    <div class="en top"><div class="quote">“</div>Apply</div>
+                    <div class="en top">
+                        <div class="quote">“</div>Apply
+                    </div>
                 </div>
                 <div class="head-2">
                     <div class="en bottom">
@@ -195,20 +197,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
             </div>
 
         </div>
-        <div class="menu-link">
-            <div class="circle">
-                <div class="menu"><img src="./images/m-menu.svg" alt=""></div>
-                <div class="store"><img src="./images/m-store.svg" alt=""></div>
-            </div>
-            <div class="hover-link">
-                <div class="menu"><a href="./menu.php"><img src="./images/m-hover-menu.svg" alt=""></a></div>
-                <div class="store"><a href="./store.php"><img src="./images/m-hover-store.svg" alt=""></a></div>
-            </div>
-            <div class="bear">
-                <div class="drink"><img src="./images/b-drink-menu.svg" alt=""></div>
-                <div class="big-body"><img src="./images/b-big-body.svg" alt=""></div>
-            </div>
-        </div>
+       <?php include 'menu-link.php'; ?>
     </div>
     <?php include 'footer.php'; ?>
 </body>
@@ -359,15 +348,29 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
             y: 0,
             opacity: 1,
         })
+    // if (window.device == 'desktop') {
+    //     ScrollTrigger.create({
+    //         toggleActions: "play pause resume reverse", //重覆觸發
+    //         trigger: ".menu-link",
+    //         endTrigger: ".recruitWrap",
+    //         start: "top 78.5%",
+    //         end: "100% 100%",
+    //         scrub: 1,
+    //         pin: true,
+    //         // markers: true,
+    //     });
+    // } else {
+    //     ScrollTrigger.create({
+    //         toggleActions: "play pause resume reverse", //重覆觸發
+    //         trigger: ".menu-link",
+    //         endTrigger: ".recruitWrap",
+    //         start: "top 73%",
+    //         end: "100% 100%",
+    //         scrub: 1,
+    //         pin: true,
+    //         // markers: true,
+    //     });
+    // }
 
-    ScrollTrigger.create({
-        toggleActions: "play pause resume reverse", //重覆觸發
-        trigger: ".menu-link",
-        endTrigger: ".recruitWrap",
-        start: "top 78.5%",
-        end: "100% 100%",
-        scrub: 1,
-        pin: true,
-        // markers: true,
-    });
+    $('.menu-mobileWrap .recruit').addClass('current');
 </script>

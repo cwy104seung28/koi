@@ -33,7 +33,7 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
 
 <body class="is-orange">
     <?php include 'topmenu.php'; ?>
-    <div class="newsDetailWrap">
+    <div class="newsDetailWrap menu-pin">
         <div class="banner-area">
             <div class="head-area">
                 <div class="info-area">
@@ -132,20 +132,7 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
                 </div>
             </div>
         </div>
-        <div class="menu-link">
-            <div class="circle">
-                <div class="menu"><img src="./images/m-menu.svg" alt=""></div>
-                <div class="store"><img src="./images/m-store.svg" alt=""></div>
-            </div>
-            <div class="hover-link">
-                <div class="menu"><a href="./menu.php"><img src="./images/m-hover-menu.svg" alt=""></a></div>
-                <div class="store"><a href="./store.php"><img src="./images/m-hover-store.svg" alt=""></a></div>
-            </div>
-            <div class="bear">
-                <div class="drink"><img src="./images/b-drink-menu.svg" alt=""></div>
-                <div class="big-body"><img src="./images/b-big-body.svg" alt=""></div>
-            </div>
-        </div>
+       <?php include 'menu-link.php'; ?>
     </div>
     <?php include 'footer.php'; ?>
 </body>
@@ -154,16 +141,16 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
 </html>
 
 <script>
-    ScrollTrigger.create({
-        toggleActions: "play pause resume reverse", //重覆觸發
-        trigger: ".menu-link",
-        endTrigger: ".newsDetailWrap",
-        start: "top 78.5%",
-        end: "100% 100%",
-        scrub: 1,
-        pin: true,
-        // markers: true,
-    });
+    // ScrollTrigger.create({
+    //     toggleActions: "play pause resume reverse", //重覆觸發
+    //     trigger: ".menu-link",
+    //     endTrigger: ".newsDetailWrap",
+    //     start: "top 78.5%",
+    //     end: "100% 100%",
+    //     scrub: 1,
+    //     pin: true,
+    //     // markers: true,
+    // });
 
 
     $('iframe').css('width', '100%')
@@ -176,4 +163,6 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
             })
         })
     }).trigger("resize")
+
+    $('.menu-mobileWrap .news').addClass('current');
 </script>

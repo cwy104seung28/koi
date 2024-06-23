@@ -2,8 +2,31 @@
 require_once 'Connections/connect2data.php';
 require_once 'paginator.class.php';
 
-ini_set('display_errors', '1');
-error_reporting(E_ALL);
+function isMobileCheck()
+{
+    //Detect special conditions devices
+    $iPod = stripos($_SERVER['HTTP_USER_AGENT'], "iPod");
+    $iPhone = stripos($_SERVER['HTTP_USER_AGENT'], "iPhone");
+    $iPad = stripos($_SERVER['HTTP_USER_AGENT'], "iPad");
+    if (stripos($_SERVER['HTTP_USER_AGENT'], "Android") && stripos($_SERVER['HTTP_USER_AGENT'], "mobile")) {
+        $Android = true;
+    } else if (stripos($_SERVER['HTTP_USER_AGENT'], "Android")) {
+        $Android = false;
+        $AndroidTablet = true;
+    } else {
+        $Android = false;
+        $AndroidTablet = false;
+    }
+    $webOS = stripos($_SERVER['HTTP_USER_AGENT'], "webOS");
+    $BlackBerry = stripos($_SERVER['HTTP_USER_AGENT'], "BlackBerry");
+    $RimTablet = stripos($_SERVER['HTTP_USER_AGENT'], "RIM Tablet");
+    //do something with this information
+    if ($iPod || $iPhone || $iPad || $Android || $AndroidTablet || $webOS || $BlackBerry || $RimTablet) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 $ryder_cat = (isset($_GET['c'])) ? $_GET['c'] : 0;
 $ryder_cat_sub = (isset($_GET['s'])) ? $_GET['s'] : 0;
@@ -16,7 +39,13 @@ $cat_social = $DB->query("SELECT * FROM class_set WHERE c_id=? AND c_parent='sto
 
 //page start
 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
-$maxItem = 9;
+
+if(isMobileCheck()){
+    $maxItem = 6;
+}else{
+    $maxItem = 9;
+}
+
 $limit = ($page - 1) * $maxItem;
 
 // 拿來計算全部有幾則
@@ -80,7 +109,7 @@ foreach ($brand_total as $total) {
 
 <body class="is-orange">
     <?php include 'topmenu.php'; ?>
-    <div class="storeWrap">
+    <div class="storeWrap menu-pin">
         <div class="head-area">
             <div class="en">
                 STORE
@@ -207,7 +236,7 @@ foreach ($brand_total as $total) {
                                 <div class="title"><?= $row['d_title']; ?></div>
                                 <div class="brand"><img src="<?= $brand['file_link1']; ?>" alt=""></div>
                             </div>
-                            <div class="phone"><?= $row['d_data1']; ?></div>
+                            <div class="phone"><a href="javascript:;"><?= $row['d_data1']; ?></a></div>
                             <div class="time"><?= $row['d_data2']; ?></div>
                             <div class="address"><?= $row['d_data3']; ?></div>
                             <div class="other-area flex-container align-middle align-justify">
@@ -216,11 +245,19 @@ foreach ($brand_total as $total) {
                                     <a href="<?= $row['d_data4']; ?>" target="_blank">
                                         <div class="inner flex-container align-center-middle">
                                             <div class="arrow">
-                                                <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
+                                                <svg class="show-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="32.84" height="30.19" viewBox="0 0 32.84 30.19">
                                                     <g id="c" data-name="layout">
                                                         <g>
                                                             <line class="d" y1="15.09" x2="29.24" y2="15.09" />
                                                             <path class="e" d="M8.73,29.49c-.45-.7-.24-1.63,.46-2.07L28.55,15.09,9.19,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L10.81,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                                <svg class="hide-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="21.4" height="18.63" viewBox="0 0 21.4 18.63">
+                                                    <g id="c" data-name="layout">
+                                                        <g style="opacity: .3;">
+                                                            <line y1="9.31" x2="19.18" y2="9.31" style="fill: none; stroke: #0c131b; stroke-miterlimit: 10; stroke-width: 1.85px;" />
+                                                            <path d="M6.52,18.2c-.27-.43-.15-1,.29-1.28l11.95-7.61L6.81,1.71c-.43-.27-.56-.85-.29-1.28C6.8,0,7.37-.13,7.8,.14l13.17,8.39c.27,.17,.43,.46,.43,.78s-.16,.61-.43,.78L7.8,18.49c-.16,.1-.33,.14-.5,.14-.31,0-.61-.15-.78-.43Z" style="fill: #0c131b;" />
                                                         </g>
                                                     </g>
                                                 </svg>
@@ -243,7 +280,7 @@ foreach ($brand_total as $total) {
                 <div class="inner-fancy flex-container align-center-middle">
                     <div class="pic"><img src="<?= $row['file_link1']; ?>" alt=""></div>
                     <div class="back">
-                        <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="70" height="54.92" viewBox="0 0 70 54.92">
+                        <svg class="show-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="70" height="54.92" viewBox="0 0 70 54.92">
                             <g id="c" data-name="lightbox">
                                 <g class="e">
                                     <path class="d" d="M3.55,54.92c-1.15-.67-2.03-1.56-2.64-2.67s-.92-2.38-.92-3.81,.3-2.7,.92-3.82,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27,1.25,1.73,2.21,2.3l-.76,.91Z" />
@@ -256,6 +293,20 @@ foreach ($brand_total as $total) {
                                 <g class="arrow">
                                     <rect class="d" x="7.17" y="15.61" width="35.69" height="3.45" />
                                     <path class="d" d="M30.73,.8c.51,.8,.27,1.87-.53,2.38L7.96,17.34l22.23,14.16c.8,.51,1.04,1.58,.53,2.38s-1.58,1.03-2.38,.53L3.83,18.79c-.49-.32-.8-.86-.8-1.45s.3-1.14,.8-1.45L28.34,.27c.29-.18,.61-.27,.93-.27,.57,0,1.13,.28,1.46,.8Z" />
+                                </g>
+                            </g>
+                        </svg>
+                        <svg class="hide-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="43.17" height="42.67" viewBox="0 0 43.17 42.67">
+                            <g id="c" data-name="lightbox">
+                                <g>
+                                    <line x1="35.19" y1="11.84" x2="10.81" y2="11.84" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: 2.35px;" />
+                                    <path d="M26.9,.54c.35,.55,.19,1.28-.36,1.63L11.35,11.84l15.19,9.67c.55,.35,.71,1.08,.36,1.63-.35,.55-1.08,.71-1.63,.36L8.52,12.84c-.34-.22-.54-.59-.54-.99s.21-.78,.54-.99L25.27,.18C25.47,.06,25.69,0,25.91,0c.39,0,.77,.19,1,.54Z" style="fill: #fff;" />
+                                </g>
+                                <g style="opacity: .6;">
+                                    <path d="M3.3,42.67c-1.07-.62-1.88-1.45-2.45-2.48-.57-1.03-.85-2.21-.85-3.54s.28-2.51,.85-3.54c.57-1.04,1.38-1.86,2.45-2.48l.7,.83c-.89,.54-1.58,1.25-2.05,2.15s-.71,1.91-.71,3.04,.24,2.14,.71,3.04,1.16,1.61,2.05,2.14l-.7,.84Z" style="fill: #fff;" />
+                                    <path d="M12.53,35.06c-.3,1.22-.74,2.5-1.26,3.48,.21,.13,.44,.31,.78,.52,.88,.55,2.08,.62,3.59,.62,1.59,0,3.76-.12,5.2-.3-.14,.34-.35,.92-.36,1.25-1,.07-3.35,.14-4.89,.14-1.69,0-2.8-.14-3.74-.69-.52-.3-.99-.75-1.26-.75s-.74,.84-1.08,1.64l-.82-1.13c.53-.7,1.08-1.26,1.55-1.47,.35-.68,.69-1.57,.91-2.44h-1.77c.32-.75,.71-1.79,1.05-2.78h-1.55v-1.09h3.03c-.3,.9-.69,1.94-1.03,2.82h.92l.18-.05,.55,.23Zm-2.16-3.48c-.16-.56-.48-1.44-.69-2.12l1.1-.3c.23,.66,.55,1.5,.71,2.04l-1.13,.38Zm4.04,1.73c-.05,1.79-.29,4.07-1.14,5.69-.23-.2-.75-.48-1.05-.6,.95-1.77,1.04-4.24,1.04-5.93v-2.85h6.57v1.09h-5.4v1.51h4.5l.22-.04,.75,.26c-.33,1.46-.9,2.69-1.64,3.69,.82,.73,1.56,1.44,2.04,2.01l-.9,.83c-.44-.55-1.12-1.25-1.88-1.98-.84,.87-1.83,1.53-2.91,1.99-.14-.31-.46-.78-.69-1.03,1-.36,1.94-.96,2.73-1.77-.66-.58-1.34-1.16-1.95-1.65l.79-.7c.58,.46,1.22,.97,1.86,1.51,.46-.61,.81-1.3,1.09-2.05h-4.03Z" style="fill: #fff;" />
+                                    <path d="M33.81,29.47v11.44h-1.3v-.7h-8.31v.7h-1.25v-11.44h10.86Zm-1.3,9.61v-8.37h-8.31v8.37h8.31Zm-1.61-6.59v4.77h-5.12v-4.77h5.12Zm-1.21,1.07h-2.77v2.65h2.77v-2.65Z" style="fill: #fff;" />
+                                    <path d="M39.87,30.58c1.07,.62,1.88,1.45,2.45,2.48,.57,1.03,.85,2.21,.85,3.54s-.28,2.51-.85,3.54-1.38,1.86-2.45,2.48l-.7-.83c.89-.54,1.58-1.25,2.05-2.15s.71-1.91,.71-3.04-.24-2.14-.71-3.04-1.16-1.61-2.05-2.14l.7-.84Z" style="fill: #fff;" />
                                 </g>
                             </g>
                         </svg>
@@ -293,4 +344,5 @@ foreach ($brand_total as $total) {
     gsap.delayedCall(1, function() {
         $tl_title.play();
     });
+    $('.menu-mobileWrap .store').addClass('current');
 </script>

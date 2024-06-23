@@ -74,11 +74,18 @@ $menu_is = "mainteaTitle";
                                         <td>
                                             <table width="100%" border="0" cellspacing="3" cellpadding="5">
                                                 <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">名稱</td>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">中文標題</td>
                                                     <td width="532" class="table_data">
                                                         <?php echo $row_RecmainteaTitle['d_title']; ?>
                                                         <input name="d_id" type="hidden" id="d_id" value="<?php echo $row_RecmainteaTitle['d_id']; ?>" />
                                                         <input name="delsure" type="hidden" id="delsure" value="1" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文標題</td>
+                                                    <td width="532" class="table_data">
+                                                        <?php echo $row_RecmainteaTitle['d_title_en']; ?>
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>

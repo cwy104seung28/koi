@@ -15,14 +15,18 @@
         <div class="indexWrap">
             <div class="index-top-banner">
                 <div class="top-text" id="horizontalWrap">
-                    <img src="./images/index-koi-the.svg" alt="">
-                    <div class="text-o-outter">
+                    <img class="show-for-large" src="./images/index-koi-the.svg" alt="">
+                    <div class="text-o-outter show-for-large">
                         <div class="text-o">
                             <div class="pic"><img src="./images/index-circle-o.png" alt=""></div>
                         </div>
                     </div>
+                    <img class="hide-for-large" src="./images/index-koi-the-mobile.png">
                 </div>
-                <div class="scroll">
+                <!-- <div class="top-text hide-for-large">
+                    <img src="./images/index-koi-the-mobile.png">
+                </div> -->
+                <div class="scroll show-for-large">
                     <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="170.03" height="53.02" viewBox="0 0 170.03 53.02">
                         <g id="c" data-name="layout">
                             <g class="arrow">
@@ -55,12 +59,19 @@
                         </g>
                     </svg>
                 </div>
-                <div class="note">
+                <div class="scroll hide-for-large">
+                    <img src="./images/index-scroll-mobile.svg" alt="">
+                </div>
+                <div class="note show-for-large">
                     Happiness is to share special moments with friends.
                     A celebration, a date or just a relaxing break in the day, there is always a reason to get together
                     around a
                     cup of KOI tea. KOI brings joy to the world. Freshly brewed tea and flavorful ingredients, prepared with
                     passion are the key to KOI’s authentic taste and the reason why people come back again and again.
+                </div>
+                <div class="note hide-for-large">
+                    Happiness is to share special moments with friends.
+                    A celebration, a date or just a relaxing break in the day, there is always a reason to get together around a cup of KOI tea. KOI brings joy to the world. Freshly brewed tea and flavorful ingredients, prepared with passion are the key to KOI’s authentic taste and the reason why people come back again and again.
                 </div>
             </div>
             <div class="index-text-area">
@@ -227,18 +238,27 @@
                             <div><img src="./images/index-bg-text-8.svg" alt=""></div>
                         </li>
                     </ul>
-                    <ul class="bottom-text">
+                    <ul class="bottom-text show-for-large">
                         <li><img src="./images/index-text-marquee.svg" alt=""></li>
                         <li><img src="./images/index-text-marquee.svg" alt=""></li>
                     </ul>
-                    <div class="center-pic"><img src="./images/index-center-pic.png" alt=""></div>
-                    <div class="center-circle"></div>
+                    <div class="bottom-textWrap hide-for-large">
+                        <ul class="bottom-text">
+                            <li><img src="./images/index-text-marquee.svg" alt=""></li>
+                            <li><img src="./images/index-text-marquee.svg" alt=""></li>
+                        </ul>
+                    </div>
+                    <div class="center-pic" data-move='{"item": 20, "sec": 1}'></div>
+                    <div class="center-circle show-for-large"></div>
+                    <div class="center-circleWrap hide-for-large">
+                        <div class="center-circle"></div>
+                    </div>
                 </div>
             </div>
             <div class="index-feature-box">
                 <div class="index-feature-inner flex-container align-justify">
                     <ul class="feature-bgList flex-container align-justify left">
-                        <li class="up">
+                        <li class="up show-for-large">
                             <ul class="dot">
                                 <li>
                                     <div><img src="./images/index-feature-pic-1-1.png"></div>
@@ -261,8 +281,9 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="featureList up">
+                    <ul class="featureList up show-for-medium">
                         <li class="green">
+                           
                             <div class="dot">
                                 <img src="./images/index-feature-pic-1-1.png">
                             </div>
@@ -287,6 +308,40 @@
                             </div>
                         </li>
                     </ul>
+                    <ul class="featureList up hide-for-medium">
+                        <li class="green">
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-1-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-1-1.png">
+                            </div>
+                            <div class="inner">
+                                <div class="deco top">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                    </svg>
+                                </div>
+                                <div class="en">
+                                    FRAGRANCE<br>
+                                    OF TEA LAVES</div>
+                                <div class="ch">
+                                    浓郁茶香
+                                </div>
+                                <div class="deco bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-1-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-1-1.png">
+                            </div>
+                        </li>
+                    </ul>
                     <ul class="feature-bgList flex-container align-justify right">
                         <li class="down">
                             <ul class="dot">
@@ -299,7 +354,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="up">
+                        <li class="up show-for-large">
                             <ul class="dot">
                                 <li>
                                     <div><img src="./images/index-feature-pic-1-1.png"></div>
@@ -316,7 +371,7 @@
             <div class="index-feature">
                 <div class="index-feature-inner flex-container align-justify">
                     <ul class="feature-bgList flex-container align-justify left">
-                        <li class="up">
+                        <li class="up show-for-large">
                             <ul class="dot">
                                 <li>
                                     <div><img src="./images/index-feature-pic-1-1.png"></div>
@@ -383,7 +438,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="featureList up">
+                    <ul class="featureList up show-for-medium">
                         <li class="green">
                             <div class="dot">
                                 <img src="./images/index-feature-pic-1-1.png">
@@ -482,6 +537,137 @@
                             </div>
                         </li>
                     </ul>
+                    <ul class="featureList up hide-for-medium">
+                        <li class="green">
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-1-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-1-1.png">
+                            </div>
+                            <div class="inner">
+                                <div class="deco top">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                    </svg>
+                                </div>
+                                <div class="en">
+                                    FRAGRANCE<br>
+                                    OF TEA LAVES</div>
+                                <div class="ch">
+                                    浓郁茶香
+                                </div>
+                                <div class="deco bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-1-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-1-1.png">
+                            </div>
+                        </li>
+                        <li class="orange">
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-2-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-2-1.png">
+                            </div>
+                            <div class="inner">
+                                <div class="deco top">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                    </svg>
+                                </div>
+                                <div class="en">
+                                    HEART-WARMING<br>
+                                    SERVICE
+                                </div>
+                                <div class="ch">
+                                    热情服务
+                                </div>
+                                <div class="deco bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-2-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-2-1.png">
+                            </div>
+                        </li>
+                        <li class="blue">
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-3-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-3-1.png">
+                            </div>
+                            <div class="inner">
+                                <div class="deco top">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                    </svg>
+                                </div>
+                                <div class="en">
+                                    THE SOUND<br>
+                                    OF SHAKING
+                                </div>
+                                <div class="ch">跳动冰块</div>
+                                <div class="deco bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-3-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-3-1.png">
+                            </div>
+                        </li>
+                        <li class="yellow is-sticky">
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-4-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-4-1.png">
+                            </div>
+                            <div class="inner">
+                                <div class="deco top">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="en">
+                                        DELICIOUS<br>
+                                        GOLDEN BUBBLE
+                                    </span>
+                                    <span class="ch">美味珍珠</span>
+                                </div>
+                                <div class="deco bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-4-1.png">
+                            </div>
+                            <div class="dot">
+                                <img src="./images/index-feature-pic-4-1.png">
+                            </div>
+                        </li>
+                    </ul>
                     <ul class="feature-bgList flex-container align-justify right">
                         <li class="down">
                             <ul class="dot">
@@ -516,7 +702,7 @@
 
                             </ul>
                         </li>
-                        <li class="up">
+                        <li class="up show-for-large">
                             <ul class="dot">
                                 <li>
                                     <div><img src="./images/index-feature-pic-1-1.png"></div>
@@ -555,70 +741,73 @@
             <div class="index-drink">
                 <div class="drink-inner">
                     <div class="drink-animation">
-                        <div class="bg">
-                            <div class="note">
-                                OUR<br>
-                                RECOMMAND
+                        <div class="innerWrap">
+                            <div class="bg">
+                                <div class="note">
+                                    OUR<br>
+                                    RECOMMAND
+                                </div>
+                                <div class="en">
+                                    PEACH GREEN TEA<br>
+                                    BLACK TEA MACCHIATO
+                                </div>
+                                <div class="ch-flex flex-container align-center-middle">
+                                    <div class="ch left">水蜜桃绿茶</div>
+                                    <div class="ch right">红茶玛奇朵</div>
+                                </div>
                             </div>
-                            <div class="en">
-                                PEACH GREEN TEA<br>
-                                BLACK TEA MACCHIATO
-                            </div>
-                            <div class="ch-flex flex-container align-center-middle">
-                                <div class="ch left">水蜜桃绿茶</div>
-                                <div class="ch">红茶玛奇朵</div>
+                            <div class="items-area" id="scene">
+                                <div class="orange-1" data-depth="-4">
+                                    <div class="inner"><img src="./images/index-orange-1.png">
+                                    </div>
+                                </div>
+                                <div class="orange-2" data-depth="-2">
+                                    <div class="inner"><img src="./images/index-orange-2.png">
+                                    </div>
+                                </div>
+                                <div class="orange-3" data-depth="-1.8">
+                                    <div class="inner"><img src="./images/index-orange-3.png">
+                                    </div>
+                                </div>
+                                <div class="orange-4" data-depth="-2.5">
+                                    <div class="inner"><img src="./images/index-orange-4.png">
+                                    </div>
+                                </div>
+                                <div class="strawberry-1" data-depth="-4.8">
+                                    <div class="inner"><img src="./images/index-strawberry-1.png">
+                                    </div>
+                                </div>
+                                <div class="strawberry-2" data-depth="-6">
+                                    <div class="inner"><img src="./images/index-strawberry-2.png">
+                                    </div>
+                                </div>
+                                <div class="strawberry-3" data-depth="-5">
+                                    <div class="inner"><img src="./images/index-strawberry-3.png">
+                                    </div>
+                                </div>
+                                <div class="strawberry-4" data-depth="-6.5">
+                                    <div class="inner"><img src="./images/index-strawberry-4.png">
+                                    </div>
+                                </div>
+                                <div class="water-1" data-depth="-4.4">
+                                    <div class="inner"><img src="./images/index-water-1.png">
+                                    </div>
+                                </div>
+                                <div class="water-2" data-depth="-4.5">
+                                    <div class="inner"><img src="./images/index-water-2.png">
+                                    </div>
+                                </div>
+                                <div class="drink-1" data-depth="-5">
+                                    <div class="inner"><img src="./images/index-drink-1.png">
+                                    </div>
+                                </div>
+                                <div class="drink-2" data-depth="-6.2">
+                                    <div class="inner"><img src="./images/index-drink-2.png">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="items-area" id="scene">
-                            <div class="orange-1" data-depth="-4">
-                                <div class="inner"><img src="./images/index-orange-1.png">
-                                </div>
-                            </div>
-                            <div class="orange-2" data-depth="-2">
-                                <div class="inner"><img src="./images/index-orange-2.png">
-                                </div>
-                            </div>
-                            <div class="orange-3" data-depth="-1.8">
-                                <div class="inner"><img src="./images/index-orange-3.png">
-                                </div>
-                            </div>
-                            <div class="orange-4" data-depth="-2.5">
-                                <div class="inner"><img src="./images/index-orange-4.png">
-                                </div>
-                            </div>
-                            <div class="strawberry-1" data-depth="-4.8">
-                                <div class="inner"><img src="./images/index-strawberry-1.png">
-                                </div>
-                            </div>
-                            <div class="strawberry-2" data-depth="-6">
-                                <div class="inner"><img src="./images/index-strawberry-2.png">
-                                </div>
-                            </div>
-                            <div class="strawberry-3" data-depth="-5">
-                                <div class="inner"><img src="./images/index-strawberry-3.png">
-                                </div>
-                            </div>
-                            <div class="strawberry-4" data-depth="-6.5">
-                                <div class="inner"><img src="./images/index-strawberry-4.png">
-                                </div>
-                            </div>
-                            <div class="water-1" data-depth="-4.4">
-                                <div class="inner"><img src="./images/index-water-1.png">
-                                </div>
-                            </div>
-                            <div class="water-2" data-depth="-4.5">
-                                <div class="inner"><img src="./images/index-water-2.png">
-                                </div>
-                            </div>
-                            <div class="drink-1" data-depth="-5">
-                                <div class="inner"><img src="./images/index-drink-1.png">
-                                </div>
-                            </div>
-                            <div class="drink-2" data-depth="-6.2">
-                                <div class="inner"><img src="./images/index-drink-2.png">
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="drink-outter" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
@@ -645,6 +834,9 @@
                         <li>
                             <div class="pic-area" style="background-image: url('./images/index-drink-pic-1.jpg')">
                                 <div class="circle">
+                                    <div class="view-more hide-for-large">
+                                        <img src="./images/view-more.svg">
+                                    </div>
                                     <img src="./images/index-drink-circle-1.png" alt="">
                                 </div>
                             </div>
@@ -657,6 +849,9 @@
                         <li>
                             <div class="pic-area" style="background-image: url('./images/index-drink-pic-2.jpg')">
                                 <div class="circle">
+                                    <div class="view-more hide-for-large">
+                                        <img src="./images/view-more.svg">
+                                    </div>
                                     <img src="./images/index-drink-circle-2.png" alt="">
                                 </div>
                             </div>
@@ -669,6 +864,9 @@
                         <li>
                             <div class="pic-area" style="background-image: url('./images/index-drink-pic-3.jpg')">
                                 <div class="circle">
+                                    <div class="view-more hide-for-large">
+                                        <img src="./images/view-more.svg">
+                                    </div>
                                     <img src="./images/index-drink-circle-3.png" alt="">
                                 </div>
                             </div>
@@ -681,6 +879,9 @@
                         <li>
                             <div class="pic-area" style="background-image: url('./images/index-drink-pic-4.jpg')">
                                 <div class="circle">
+                                    <div class="view-more hide-for-large">
+                                        <img src="./images/view-more.svg">
+                                    </div>
                                     <img src="./images/index-drink-circle-4.png" alt="">
                                 </div>
                             </div>
@@ -693,6 +894,9 @@
                         <li>
                             <div class="pic-area" style="background-image: url('./images/index-drink-pic-5.jpg')">
                                 <div class="circle">
+                                    <div class="view-more hide-for-large">
+                                        <img src="./images/view-more.svg">
+                                    </div>
                                     <img src="./images/index-drink-circle-5.png" alt="">
                                 </div>
                             </div>
@@ -732,6 +936,7 @@
                         <a href="./news_detail.php" class="flex-container">
                             <div class="pic"><img src="./images/index-news-pic.jpg" alt=""></div>
                             <div class="article-area">
+                                <div class="cat hide-for-large">MEDIA</div>
                                 <div class="date">(July 1 , 2023)</div>
                                 <div class="title">
                                     #果奶系列 今日上线[举手]<br>
@@ -741,13 +946,8 @@
                                 </div>
                                 <div class="more">
                                     <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="53.45" height="53.02" viewBox="0 0 53.45 53.02">
-                                        <defs>
-                                            <style>
-
-                                            </style>
-                                        </defs>
                                         <g id="c" data-name="layout">
-                                            <g>
+                                            <g class="show-for-large">
                                                 <path class="e" d="M3.56,53.02c-1.15-.67-2.03-1.56-2.64-2.67-.61-1.11-.92-2.38-.92-3.81s.31-2.7,.92-3.82c.61-1.12,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27c.51,.97,1.25,1.73,2.21,2.3l-.76,.91Z" />
                                                 <path class="e" d="M10.29,39.7h1.86l1.89,5.21c.24,.69,.45,1.39,.69,2.09h.07c.24-.7,.43-1.4,.67-2.09l1.86-5.21h1.88v10.31h-1.51v-5.1c0-.92,.13-2.25,.21-3.19h-.06l-.83,2.38-1.79,4.92h-1.01l-1.81-4.92-.81-2.38h-.06c.07,.94,.2,2.27,.2,3.19v5.1h-1.46v-10.31Z" />
                                                 <path class="e" d="M21.85,46.18c0-2.58,1.72-4.06,3.63-4.06s3.63,1.49,3.63,4.06-1.72,4.02-3.63,4.02-3.63-1.47-3.63-4.02Zm5.6,0c0-1.64-.76-2.73-1.98-2.73s-1.96,1.09-1.96,2.73,.76,2.7,1.96,2.7,1.98-1.08,1.98-2.7Z" />
@@ -769,6 +969,7 @@
                         <a href="./news_detail.php" class="flex-container">
                             <div class="pic"><img src="./images/index-news-pic.jpg" alt=""></div>
                             <div class="article-area">
+                                <div class="cat hide-for-large">MEDIA</div>
                                 <div class="date">(July 1 , 2023)</div>
                                 <div class="title">
                                     #果奶系列 今日上线[举手]<br>
@@ -779,7 +980,7 @@
                                 <div class="more">
                                     <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="53.45" height="53.02" viewBox="0 0 53.45 53.02">
                                         <g id="c" data-name="layout">
-                                            <g>
+                                            <g class="show-for-large">
                                                 <path class="e" d="M3.56,53.02c-1.15-.67-2.03-1.56-2.64-2.67-.61-1.11-.92-2.38-.92-3.81s.31-2.7,.92-3.82c.61-1.12,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27c.51,.97,1.25,1.73,2.21,2.3l-.76,.91Z" />
                                                 <path class="e" d="M10.29,39.7h1.86l1.89,5.21c.24,.69,.45,1.39,.69,2.09h.07c.24-.7,.43-1.4,.67-2.09l1.86-5.21h1.88v10.31h-1.51v-5.1c0-.92,.13-2.25,.21-3.19h-.06l-.83,2.38-1.79,4.92h-1.01l-1.81-4.92-.81-2.38h-.06c.07,.94,.2,2.27,.2,3.19v5.1h-1.46v-10.31Z" />
                                                 <path class="e" d="M21.85,46.18c0-2.58,1.72-4.06,3.63-4.06s3.63,1.49,3.63,4.06-1.72,4.02-3.63,4.02-3.63-1.47-3.63-4.02Zm5.6,0c0-1.64-.76-2.73-1.98-2.73s-1.96,1.09-1.96,2.73,.76,2.7,1.96,2.7,1.98-1.08,1.98-2.7Z" />
@@ -801,6 +1002,7 @@
                         <a href="./news_detail.php" class="flex-container">
                             <div class="pic"><img src="./images/index-news-pic.jpg" alt=""></div>
                             <div class="article-area">
+                                <div class="cat hide-for-large">MEDIA</div>
                                 <div class="date">(July 1 , 2023)</div>
                                 <div class="title">
                                     #果奶系列 今日上线[举手]<br>
@@ -810,13 +1012,8 @@
                                 </div>
                                 <div class="more">
                                     <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="53.45" height="53.02" viewBox="0 0 53.45 53.02">
-                                        <defs>
-                                            <style>
-
-                                            </style>
-                                        </defs>
                                         <g id="c" data-name="layout">
-                                            <g>
+                                            <g class="show-for-large">
                                                 <path class="e" d="M3.56,53.02c-1.15-.67-2.03-1.56-2.64-2.67-.61-1.11-.92-2.38-.92-3.81s.31-2.7,.92-3.82c.61-1.12,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27c.51,.97,1.25,1.73,2.21,2.3l-.76,.91Z" />
                                                 <path class="e" d="M10.29,39.7h1.86l1.89,5.21c.24,.69,.45,1.39,.69,2.09h.07c.24-.7,.43-1.4,.67-2.09l1.86-5.21h1.88v10.31h-1.51v-5.1c0-.92,.13-2.25,.21-3.19h-.06l-.83,2.38-1.79,4.92h-1.01l-1.81-4.92-.81-2.38h-.06c.07,.94,.2,2.27,.2,3.19v5.1h-1.46v-10.31Z" />
                                                 <path class="e" d="M21.85,46.18c0-2.58,1.72-4.06,3.63-4.06s3.63,1.49,3.63,4.06-1.72,4.02-3.63,4.02-3.63-1.47-3.63-4.02Zm5.6,0c0-1.64-.76-2.73-1.98-2.73s-1.96,1.09-1.96,2.73,.76,2.7,1.96,2.7,1.98-1.08,1.98-2.7Z" />
@@ -836,22 +1033,8 @@
                     </li>
                 </ul>
             </div>
-
         </div>
-        <div class="menu-link">
-            <div class="circle">
-                <div class="menu"><img src="./images/m-menu.svg" alt=""></div>
-                <div class="store"><img src="./images/m-store.svg" alt=""></div>
-            </div>
-            <div class="hover-link">
-                <div class="menu"><a href="./menu.php"><img src="./images/m-hover-menu.svg" alt=""></a></div>
-                <div class="store"><a href="./store.php"><img src="./images/m-hover-store.svg" alt=""></a></div>
-            </div>
-            <div class="bear">
-                <div class="drink"><img src="./images/b-drink-menu.svg" alt=""></div>
-                <div class="big-body"><img src="./images/b-big-body.svg" alt=""></div>
-            </div>
-        </div>
+        <?php include 'menu-link.php'; ?>
         <?php include 'footer.php'; ?>
     </div>
 
@@ -942,10 +1125,23 @@
         })
     gsap.delayedCall(3, function() {
         $(".indexWrap-outter").removeClass("is-not-show")
+        // if (window.device == 'mobile') {
+        //     $('nav .bg').removeClass('is-move')
+        // }
+    })
+
+    gsap.delayedCall(9, function() {
+        // $(".indexWrap-outter").removeClass("is-not-show")
+        if (window.device == 'mobile') {
+            $('nav .bg').removeClass('is-move')
+            $('nav').removeClass('not-clip')
+        }
     })
     gsap.delayedCall(10, function() {
         $("html").removeClass("is-lock")
-        $('nav').removeClass('not-clip')
+        if (window.device == 'desktop') {
+            $('nav').removeClass('not-clip')
+        }
 
         function horizonHandler(el) {
             let _x = $(el).outerWidth(true) - $(window).width()
@@ -994,337 +1190,360 @@
                 })
             }
         }
+
         horizonHandler('.index-top-banner .top-text');
-        // $('.text-o-outter').css('animation', 'circle-rotate 15s linear infinite');
-        // $('.index-top-banner .scroll').click(function() {
-        //     // $('.index-top-banner .top-text').css('transform','translateX(20px)');
-        //     // $('.index-top-banner .text-o-outter').css('transform','translateX(20px)');
-        //     gsap.timeline().add('scroll')
-        //     .to('.index-top-banner .top-text', {
-        //         x: -200,
-        //         ease: 'none'
-        //     }, 'scroll').to('.index-top-banner .text-o-outter', {
-        //         x: -200,
-        //         ease: 'none'
-        //     }, 'scroll')
-        // })
 
-        gsap.timeline().to('.center-pic', {
-            scrollTrigger: {
+       
+
+        if (window.device == 'desktop') {
+        var _p = $('.center-pic').data("move")
+        _p.repeatDelay = (_p.repeatDelay != undefined) ? _p.repeatDelay : 0
+            gsap.timeline({
+                scrollTrigger: {
+                    toggleActions: "play pause resume reverse",
+                    trigger: ".index-text-area",
+                    start: "top 0%",
+                    end: "70% 0%",
+                    scrub: 1,
+                    markers: true,
+                },
+               
+            }).to('.center-pic', {
+                // duration: _p.sec,
+                backgroundPosition: "0 100%",
+                ease: SteppedEase.config(_p.item),
+                repeat: 0,
+                // y: 100, 
+                rotation: 120,
+            }).to(".center-circle", {
+                scrollTrigger: {
+                    toggleActions: "play pause resume reverse",
+                    trigger: ".index-text-area",
+                    start: "30% top",
+                    end: "bottom top",
+                    scrub: 1,
+                    // markers: true,
+                },
+                scale: 6.5,
+            })
+            const $tl_drink_box = gsap.timeline({
+                    paused: false,
+                }).to('.index-feature-box .up div', {
+                    scale: 1,
+                })
+                .to('.index-feature-box .down div', {
+                    scale: 1,
+                }, '<0')
+            ScrollTrigger.create({
                 toggleActions: "play pause resume reverse",
-                trigger: ".index-text-area",
-                start: "top 0%",
-                end: "bottom 0%",
+                trigger: ".index-feature-box",
+                start: "5% 0%",
+                end: "50% 0%",
                 scrub: 1,
                 // markers: true,
-            },
-            rotation: 120,
-        }).to(".center-circle", {
-            scrollTrigger: {
+                animation: $tl_drink_box,
+            })
+
+
+            ScrollTrigger.create({
                 toggleActions: "play pause resume reverse",
-                trigger: ".index-text-area",
-                start: "30% top",
-                end: "bottom top",
+                trigger: ".index-feature",
+                start: "5% 0%",
+                end: "90% 0%",
+                // markers: true,
+                onEnter() {
+                    $('.index-feature-box').addClass('is-not-show');
+                    $('.index-feature').addClass('is-show');
+                },
+                // onLeave() {
+                //     $('.index-feature-box').removeClass('is-not-show');
+                // },
+                onEnterBack() {
+                    $('.index-feature-box').addClass('is-not-show');
+                    $('.index-feature').addClass('is-show');
+                },
+                onLeaveBack() {
+                    $('.index-feature-box').removeClass('is-not-show');
+                    $('.index-feature').removeClass('is-show');
+                }
+            });
+
+            const $tl_drink3 = gsap.timeline({
+                    paused: false,
+                })
+                .fromTo('.index-feature .up', {
+                    y: '-50%'
+                }, {
+                    y: '-75%'
+                })
+                .fromTo('.index-feature .down', {
+                    y: '-25%'
+                }, {
+                    y: '0%'
+                }, "<0")
+
+            const $tl_drink2 = gsap.timeline({
+                    paused: false,
+                })
+                .fromTo('.index-feature .up', {
+                    y: '-25%'
+                }, {
+                    y: '-50%'
+                })
+                .fromTo('.index-feature .down', {
+                    y: '-50%'
+                }, {
+                    y: '-25%'
+                }, "<0")
+
+
+
+            const $tl_drink1 = gsap.timeline({
+                    paused: false,
+                })
+                .fromTo('.index-feature .up', {
+                    y: '0%'
+                }, {
+                    y: '-25%'
+                })
+                .fromTo('.index-feature .down', {
+                    y: '-74.5%'
+                }, {
+                    y: '-50%'
+                }, "<0")
+
+
+            const $tl_drink4 = gsap.timeline({
+                    paused: false,
+                }).to('.index-feature .up div', {
+                    scale: 0,
+                })
+                .to('.index-feature .down div', {
+                    scale: 0,
+                }, '<0')
+
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "5% 0%",
+                end: "20% 0%",
+                scrub: true,
+                // markers: true,
+                animation: $tl_drink1,
+            })
+
+
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "25% 0%",
+                end: "45% 0%",
+                scrub: true,
+                // markers: true,
+                animation: $tl_drink2,
+            })
+
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "50% 0%",
+                end: "74% 0%",
+                scrub: true,
+                // markers: true,
+                animation: $tl_drink3,
+            })
+
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "75% 0%",
+                end: "90% 0%",
                 scrub: 1,
                 // markers: true,
-            },
-            scale: 6.5,
-        })
-
-        // gsap.timeline()
-        //     .fromTo('.index-feature .up', {
-        //         y: '0%'
-        //     }, {
-        //         scrollTrigger: {
-        //             toggleActions: "play pause resume reverse",
-        //             trigger: ".index-feature",
-        //             start: "5% 0%",
-        //             end: "20% 0%",
-        //             scrub: 1,
-        //             markers: true,
-        //         },
-        //         y: '-25%'
-        //     })
-        //     .fromTo('.index-feature .down', {
-        //         y: '-74.5%'
-        //     }, {
-        //         scrollTrigger: {
-        //             toggleActions: "play pause resume reverse",
-        //             trigger: ".index-feature",
-        //             start: "5% 0%",
-        //             end: "20% 0%",
-        //             scrub: 1,
-        //             // markers: true,
-        //         },
-        //         y: '-50%'
-        //     }).fromTo('.index-feature .up', {
-        //         y: '-25%'
-        //     }, {
-        //         scrollTrigger: {
-        //             toggleActions: "play pause resume reverse",
-        //             trigger: ".index-feature",
-        //             start: "25% 0%",
-        //             end: "45% 0%",
-        //             scrub: 1,
-        //             markers: true,
-        //         },
-        //         y: '-50%'
-        //     })
-        //     .fromTo('.index-feature .down', {
-        //         y: '-50%'
-        //     }, {
-        //         scrollTrigger: {
-        //             toggleActions: "play pause resume reverse",
-        //             trigger: ".index-feature",
-        //             start: "25% 0%",
-        //             end: "45% 0%",
-        //             scrub: 1,
-        //             // markers: true,
-        //         },
-        //         y: '-25%'
-        //     }).fromTo('.index-feature .up', {
-        //         y: '-50%'
-        //     }, {
-        //         scrollTrigger: {
-        //             toggleActions: "play pause resume reverse",
-        //             trigger: ".index-feature",
-        //             start: "50% 0%",
-        //             end: "74% 0%",
-        //             scrub: 1,
-        //             markers: true,
-        //         },
-        //         y: '-75%'
-        //     })
-        //     .fromTo('.index-feature .down', {
-        //         y: '-25%'
-        //     }, {
-        //         scrollTrigger: {
-        //             toggleActions: "play pause resume reverse",
-        //             trigger: ".index-feature",
-        //             start: "50% 0%",
-        //             end: "74% 0%",
-        //             scrub: 1,
-        //             // markers: true,
-        //         },
-        //         y: '0%'
-        //     })
-        //     .fromTo('.index-feature .up', {
-        //         scale: 1,
-        //     }, {
-        //         scrollTrigger: {
-        //             toggleActions: "play pause resume reverse",
-        //             trigger: ".index-feature",
-        //             start: "75% 0%",
-        //             end: "90% 0%",
-        //             scrub: 1,
-        //             // markers: true,
-        //         },
-        //         scale: 0,
-        //     })
-        //     .fromTo('.index-feature .down', {
-        //         scale: 1,
-        //     }, {
-        //         scrollTrigger: {
-        //             toggleActions: "play pause resume reverse",
-        //             trigger: ".index-feature",
-        //             start: "75% 0%",
-        //             end: "90% 0%",
-        //             scrub: 1,
-        //             // markers: true,
-        //         },
-        //         scale: 0,
-        //     })
-        const $tl_drink_box = gsap.timeline({
-                paused: false,
-            }).to('.index-feature-box .up div', {
-                scale: 1,
+                animation: $tl_drink4,
             })
-            .to('.index-feature-box .down div', {
-                scale: 1,
-            }, '<0')
-        ScrollTrigger.create({
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-feature-box",
-            start: "5% 0%",
-            end: "50% 0%",
-            scrub: 1,
-            // markers: true,
-            animation: $tl_drink_box,
-        })
 
-
-        ScrollTrigger.create({
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-feature",
-            start: "5% 0%",
-            end: "90% 0%",
-            // markers: true,
-            onEnter() {
-                $('.index-feature-box').addClass('is-not-show');
-                $('.index-feature').addClass('is-show');
-            },
-            // onLeave() {
-            //     $('.index-feature-box').removeClass('is-not-show');
-            // },
-            onEnterBack() {
-                $('.index-feature-box').addClass('is-not-show');
-                $('.index-feature').addClass('is-show');
-            },
-            onLeaveBack() {
-                $('.index-feature-box').removeClass('is-not-show');
-                $('.index-feature').removeClass('is-show');
-            }
-        });
-
-        // gsap.timeline()
-        //     .from('.index-feature .index-feature-inner', {
-        //         opacity: 0,
-        //         duration: 0,
-        //         ease: 'none'
-        //     }).to('.index-feature .index-feature-inner', {
-        //         scrollTrigger: {
-        //             toggleActions: "play pause resume reverse",
-        //             trigger: ".index-feature",
-        //             start: "5% 0%",
-        //             end: "90% 0%",
-        //             // scrub: 1,
-        //             // markers: true,
-        //         },
-        //         opacity: 1,
-        //         // duration: 0,
-        //         // ease: 'none'
-        //     })
-
-        // const $tl_drink_start1 = gsap.timeline({
-        //     paused: true,
-        // })
-        // .to('.index-feature .index-feature-inner', {
-        //     opacity: 1,
-        //     duration: 0,
-        // })
-
-
-        // const $tl_drink_start2 = gsap.timeline({
-        //     paused: true,
-        // }).to('.index-feature-box',{
-        //     opacity: 0,
-        //     duration: 0,
-        // })
-
-        // ScrollTrigger.create({
-        //     toggleActions: "play pause resume reverse",
-        //     trigger: ".index-feature",
-        //     start: "5% 0%",
-        //     end: "90% 0%",
-        //     // scrub: 1,
-        //     // markers: true,
-        //     animation: $tl_drink_start1,
-        // })
-        // ScrollTrigger.create({
-        //     toggleActions: "play pause resume reverse",
-        //     trigger: ".index-feature",
-        //     start: "5% 0%",
-        //     end: "90% 0%",
-        //     // scrub: 1,
-        //     // markers: true,
-        //     animation: $tl_drink_start2,
-        // })
-
-
-        const $tl_drink3 = gsap.timeline({
-                paused: false,
+        } else {
+            gsap.timeline().to('.center-pic', {
+                scrollTrigger: {
+                    toggleActions: "play pause resume reverse",
+                    trigger: ".index-text-area",
+                    start: "top 0%",
+                    end: "bottom 0%",
+                    scrub: 1,
+                    // markers: true,
+                },
+                rotation: 120,
+            }).to(".center-circle", {
+                scrollTrigger: {
+                    toggleActions: "play pause resume reverse",
+                    trigger: ".index-text-area",
+                    start: "30% top",
+                    end: "bottom top",
+                    scrub: 1,
+                    // markers: true,
+                },
+                scale: 4.5,
             })
-            .fromTo('.index-feature .up', {
-                y: '-50%'
-            }, {
-                y: '-75%'
+            // const $tl_drink0 = gsap.timeline({
+            //     paused: false,
+            // }).add('big').to('.index-feature .up div', {
+            //     scale: 1,
+            // }, 'big').to('.index-feature .down div', {
+            //     scale: 1,
+            // }, 'big')
+
+            const $tl_drink_box = gsap.timeline({
+                    paused: false,
+                }).to('.index-feature-box .up div', {
+                    scale: 1,
+                })
+                .to('.index-feature-box .down div', {
+                    scale: 1,
+                }, '<0')
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature-box",
+                start: "5% 0%",
+                end: "50% 0%",
+                scrub: 1,
+                // markers: true,
+                animation: $tl_drink_box,
             })
-            .fromTo('.index-feature .down', {
-                y: '-25%'
-            }, {
-                y: '0%'
-            }, "<0")
-
-        const $tl_drink2 = gsap.timeline({
-                paused: false,
-            })
-            .fromTo('.index-feature .up', {
-                y: '-25%'
-            }, {
-                y: '-50%'
-            })
-            .fromTo('.index-feature .down', {
-                y: '-50%'
-            }, {
-                y: '-25%'
-            }, "<0")
 
 
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "0% 0%",
+                end: "90% 0%",
+                // markers: true,
+                onEnter() {
+                    $('.index-feature-box').addClass('is-not-show');
+                    $('.index-feature').addClass('is-show');
+                },
+                // onLeave() {
+                //     $('.index-feature-box').removeClass('is-not-show');
+                // },
+                onEnterBack() {
+                    $('.index-feature-box').addClass('is-not-show');
+                    $('.index-feature').addClass('is-show');
+                },
+                onLeaveBack() {
+                    $('.index-feature-box').removeClass('is-not-show');
+                    $('.index-feature').removeClass('is-show');
+                }
+            });
 
-        const $tl_drink1 = gsap.timeline({
-                paused: false,
-            })
-            .fromTo('.index-feature .up', {
-                y: '0%'
-            }, {
-                y: '-25%'
-            })
-            .fromTo('.index-feature .down', {
-                y: '-74.5%'
-            }, {
-                y: '-50%'
-            }, "<0")
+            //順序要倒過來不然有北七BUG
 
-
-        const $tl_drink4 = gsap.timeline({
-                paused: false,
-            }).to('.index-feature .up div', {
+            const $tl_drink4 = gsap.timeline({
+                paused: true,
+            }).add('small').to('.index-feature .up div', {
                 scale: 0,
-            })
-            .to('.index-feature .down div', {
+            }, 'small').to('.index-feature .down div', {
                 scale: 0,
-            }, '<0')
+            }, 'small')
 
-        ScrollTrigger.create({
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-feature",
-            start: "5% 0%",
-            end: "20% 0%",
-            scrub: true,
-            // markers: true,
-            animation: $tl_drink1,
-        })
+            const $tl_drink3 = gsap.timeline({
+                    paused: false,
+                })
+                .fromTo('.index-feature .up', {
+                    y: '-35.55%'
+                }, {
+                    y: '-53.8%'
+                })
+                .fromTo('.index-feature .down', {
+                    y: '-17.55%'
+                }, {
+                    y: '0%'
+                }, "<0")
 
 
-        ScrollTrigger.create({
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-feature",
-            start: "25% 0%",
-            end: "45% 0%",
-            scrub: true,
-            // markers: true,
-            animation: $tl_drink2,
-        })
+            const $tl_drink2 = gsap.timeline({
+                    paused: false,
+                })
+                .fromTo('.index-feature .up', {
+                    y: '-17.55%'
+                }, {
+                    y: '-35.55%'
+                })
+                .fromTo('.index-feature .down', {
+                    y: '-35.55%'
+                }, {
+                    y: '-17.55%'
+                }, "<0")
 
-        ScrollTrigger.create({
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-feature",
-            start: "50% 0%",
-            end: "74% 0%",
-            scrub: true,
-            // markers: true,
-            animation: $tl_drink3,
-        })
 
-        ScrollTrigger.create({
-            toggleActions: "play pause resume reverse",
-            trigger: ".index-feature",
-            start: "75% 0%",
-            end: "90% 0%",
-            scrub: 1,
-            // markers: true,
-            animation: $tl_drink4,
-        })
+            const $tl_drink1 = gsap.timeline({
+                    paused: false,
+                })
+                .fromTo('.index-feature .up', {
+                    y: '0%'
+                }, {
+                    y: '-17.55%'
+                })
+                .fromTo('.index-feature .down', {
+                    y: '-53.8%'
+                }, {
+                    y: '-35.55%'
+                }, "<0")
+
+
+
+
+            // ScrollTrigger.create({
+            //     toggleActions: "play pause resume reverse",
+            //     trigger: ".index-feature",
+            //     start: "5% 0%",
+            //     end: "15% 0%",
+            //     scrub: true,
+            //     // markers: true,
+            //     animation: $tl_drink0,
+            // })
+
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "0% 0%",
+                end: "20% 0%",
+                scrub: true,
+                // markers: true,
+                animation: $tl_drink1,
+            })
+
+
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "25% 0%",
+                end: "45% 0%",
+                scrub: true,
+                // markers: true,
+                animation: $tl_drink2,
+            })
+
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "50% 0%",
+                end: "74% 0%",
+                scrub: true,
+                // markers: true,
+                animation: $tl_drink3,
+            })
+
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse",
+                trigger: ".index-feature",
+                start: "75% 0%",
+                end: "95% 0%",
+                scrub: 1,
+                // markers: true,
+                animation: $tl_drink4,
+            })
+
+        }
 
 
 
@@ -1342,8 +1561,8 @@
                 $('.index-drink .bg .ch').addClass('is-show');
                 $('.index-drink .items-area div').addClass('is-show');
 
-                var scene = document.getElementById('scene');
-                var parallaxInstance = new Parallax(scene);
+                // var scene = document.getElementById('scene');
+                // var parallaxInstance = new Parallax(scene);
                 // var mouseX, mouseY;
                 // $(document).mousemove(function(e) {
                 //     mouseX = e.pageX;
@@ -1382,7 +1601,7 @@
                 paused: false,
             })
             if (_x > 0) {
-                gsap.timeline().to(el, {
+                gsap.to(el, {
                     scrollTrigger: {
                         toggleActions: "play pause resume reverse",
                         trigger: "#drinkHorizontal",
@@ -1392,6 +1611,22 @@
                         pinSpace: false,
                         scrub: true,
                         // markers: true,
+                        onUpdate: (self) => {
+                            if (window.device == 'mobile') {
+                                let $drink = $("#drinkHorizontal")
+                                let m = $(window).width() / 2
+                                $drink.children().each(function(i, el) {
+                                    let x = $(el).offset().left
+                                    // if (x - m <= 0) {
+                                    //     $(el).addClass("current").siblings().removeClass("current")
+                                    // }
+                                    console.log(x);
+                                    if (x < 0) {
+                                        $(el).children('.pic-area').children('.circle').css('transform', `rotate(${x/10}deg)`)
+                                    }
+                                })
+                            }
+                        }
                     },
                     x: -_x,
                     ease: 'none'
@@ -1419,16 +1654,16 @@
         })
 
 
-        ScrollTrigger.create({
-            toggleActions: "play resume resume resume", //重覆觸發
-            trigger: ".menu-link",
-            endTrigger: ".indexWrap",
-            start: "top 78.5%",
-            end: "100% 100%",
-            scrub: true,
-            pin: true,
-            // markers: true,
-        });
+        // ScrollTrigger.create({
+        //     toggleActions: "play resume resume resume", //重覆觸發
+        //     trigger: ".menu-link",
+        //     endTrigger: ".indexWrap",
+        //     start: "top 78.5%",
+        //     end: "100% 100%",
+        //     scrub: true,
+        //     pin: true,
+        //     // markers: true,
+        // });
         let $tl_drink = gsap.timeline({
                 paused: true,
             })
@@ -1465,6 +1700,29 @@
             // markers: true,
         });
 
+        $('.top-newsList').slick({
+            dots: true,
+            prevArrow: false,
+            nextArrow: false,
+            speed: 1000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // autoplay: true,
+            // autoplaySpeed: 5000,
+            // vertical: true,
+            // verticalSwiping: true,
+            // arrows: false,
+        });
+        // $('.top-newsList').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        //     console.log(nextSlide);
+        //     $(`.triangle .triangle-${nextSlide + 1}`).addClass('is-show').siblings().removeClass('is-show');
+        // });
+        var dotNums = document.querySelectorAll(".slick-dots button");
+
+        function removeText(item) {
+            item.innerHTML = ""; // or put the text you need inside quotes
+        }
+        dotNums.forEach(removeText);
     });
     // var swiper = new Swiper(".mySwiper", {
     //     slidesPerView: 3,
@@ -1472,32 +1730,4 @@
     //     centeredSlides: true,
     //     // loop: true,
     // });
-
-
-
-
-
-    $('.top-newsList').slick({
-        dots: true,
-        prevArrow: false,
-        nextArrow: false,
-        speed: 1000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 5000,
-        // vertical: true,
-        // verticalSwiping: true,
-        // arrows: false,
-    });
-    // $('.top-newsList').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-    //     console.log(nextSlide);
-    //     $(`.triangle .triangle-${nextSlide + 1}`).addClass('is-show').siblings().removeClass('is-show');
-    // });
-    var dotNums = document.querySelectorAll(".slick-dots button");
-
-    function removeText(item) {
-        item.innerHTML = ""; // or put the text you need inside quotes
-    }
-    dotNums.forEach(removeText);
 </script>

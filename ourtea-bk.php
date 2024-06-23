@@ -18,7 +18,7 @@
                 <div class="en">OUR <span>TEA</span></div>
             </div>
             <div class="drinkListWrap">
-                <ul class="drink">
+                <ul class="drink show-for-large">
                     <li>
                         <div class="name">
                             <div class="en">BUBBLE GREEN TEA</div>
@@ -104,8 +104,120 @@
                         <img src="./images/drink-6.png" alt="">
                     </li>
                 </ul>
+                <div class="drink-mobile swiper mySwiper hide-for-large">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-1.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-2.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-3.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-4.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-5.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-6.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-1.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-2.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-3.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-4.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-5.png">
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="inner-drink">
+                                <div class="name">
+                                    <div class="en">BUBBLE GREEN TEA</div>
+                                    <div class="ch">珍珠绿茶</div>
+                                </div>
+                                <img src="./images/drink-6.png">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 <div class="scroll-down">
-                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="170.03" height="55.27" viewBox="0 0 170.03 55.27">
+                    <svg class="show-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="170.03" height="55.27" viewBox="0 0 170.03 55.27">
                         <g id="c" data-name="設計">
                             <g>
                                 <g>
@@ -134,6 +246,39 @@
                                 <g class="arrow">
                                     <line class="e" x1="85.33" x2="85.33" y2="31.07" />
                                     <path class="d" d="M70.93,10.57c.7-.45,1.63-.24,2.07,.46l12.33,19.36,12.33-19.36c.45-.7,1.37-.91,2.07-.46,.7,.45,.9,1.38,.46,2.07l-13.59,21.34c-.28,.43-.75,.69-1.27,.69s-.99-.26-1.27-.69l-13.59-21.34c-.16-.25-.23-.53-.23-.81,0-.5,.25-.98,.69-1.27Z" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <svg class="hide-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="145.74" height="30" viewBox="0 0 145.74 30">
+                        <g id="c" data-name="設計">
+                            <g>
+                                <g>
+                                    <path d="M3.05,30c-.98-.58-1.74-1.34-2.26-2.29-.52-.95-.79-2.04-.79-3.26s.26-2.31,.79-3.27c.52-.96,1.28-1.72,2.26-2.29l.65,.77c-.82,.5-1.46,1.16-1.9,1.98-.44,.82-.66,1.76-.66,2.81s.22,1.97,.66,2.8,1.07,1.49,1.9,1.97l-.65,.78Z" style="fill: #0c131b;" />
+                                    <path d="M11.35,27.54c-.67,0-1.32-.13-1.94-.4-.62-.26-1.18-.64-1.66-1.12l.77-.89c.46,.45,.92,.78,1.4,1,.48,.22,.97,.32,1.49,.32,.41,0,.77-.06,1.07-.17,.31-.12,.55-.28,.71-.5s.25-.46,.25-.73c0-.38-.13-.66-.4-.86-.26-.2-.7-.35-1.31-.46l-1.4-.23c-.77-.14-1.34-.38-1.72-.74-.38-.36-.57-.84-.57-1.44,0-.48,.13-.9,.38-1.27,.26-.36,.62-.65,1.09-.85,.47-.2,1.01-.3,1.63-.3s1.21,.1,1.79,.29,1.12,.48,1.59,.85l-.7,.96c-.9-.69-1.82-1.03-2.75-1.03-.37,0-.69,.05-.96,.16-.27,.1-.48,.25-.64,.44-.15,.19-.23,.41-.23,.65,0,.34,.12,.61,.35,.79,.23,.18,.62,.31,1.15,.39l1.36,.23c.89,.14,1.54,.4,1.96,.78s.62,.89,.62,1.55c0,.51-.14,.96-.42,1.35-.28,.39-.67,.69-1.18,.91-.5,.22-1.09,.32-1.75,.32Z" style="fill: #0c131b;" />
+                                    <path d="M19.25,27.53c-.58,0-1.12-.14-1.6-.42-.48-.28-.86-.66-1.13-1.14-.28-.48-.41-1.02-.41-1.61s.14-1.13,.42-1.6c.28-.48,.66-.86,1.13-1.14s1.01-.43,1.59-.43c.46,0,.91,.09,1.34,.26,.43,.18,.8,.42,1.11,.74l-.74,.83c-.23-.26-.49-.45-.78-.58s-.59-.19-.9-.19c-.37,0-.7,.09-1,.28-.3,.18-.54,.44-.71,.76-.18,.32-.26,.68-.26,1.07s.09,.75,.26,1.07c.18,.32,.42,.57,.72,.76,.3,.19,.64,.28,1.02,.28,.31,0,.6-.06,.88-.19s.53-.31,.77-.55l.73,.77c-.32,.33-.69,.58-1.11,.76s-.86,.26-1.31,.26Z" style="fill: #0c131b;" />
+                                    <path d="M23.17,27.42v-6.11h1.2v.78c.19-.29,.43-.51,.71-.68,.28-.16,.61-.25,.97-.25,.25,0,.45,.04,.61,.11v1.08c-.11-.05-.23-.08-.35-.1-.12-.02-.24-.03-.36-.03-.35,0-.66,.09-.94,.28-.27,.19-.49,.46-.65,.82v4.09h-1.2Z" style="fill: #0c131b;" />
+                                    <path d="M30.72,27.54c-.59,0-1.13-.14-1.61-.42-.48-.28-.87-.66-1.15-1.14-.28-.48-.42-1.02-.42-1.61s.14-1.13,.42-1.61c.28-.48,.66-.86,1.15-1.15,.48-.28,1.02-.43,1.61-.43s1.14,.14,1.62,.43,.86,.67,1.14,1.15c.28,.48,.42,1.02,.42,1.61s-.14,1.13-.42,1.61c-.28,.48-.66,.86-1.14,1.14s-1.02,.42-1.62,.42Zm0-1.06c.38,0,.72-.09,1.02-.28,.3-.19,.54-.44,.72-.76,.18-.32,.26-.68,.26-1.08s-.09-.75-.27-1.06c-.18-.32-.42-.57-.72-.76-.3-.19-.64-.29-1.01-.29s-.71,.1-1.01,.29c-.3,.19-.54,.45-.72,.76-.18,.32-.27,.67-.27,1.06s.09,.76,.26,1.08c.18,.32,.42,.57,.72,.76,.3,.19,.64,.28,1.02,.28Z" style="fill: #0c131b;" />
+                                    <path d="M35.58,27.42v-8.4l1.2-.23v8.63h-1.2Z" style="fill: #0c131b;" />
+                                    <path d="M38.73,27.42v-8.4l1.2-.23v8.63h-1.2Z" style="fill: #0c131b;" />
+                                    <path d="M47.55,27.53c-.59,0-1.04-.14-1.36-.41-.31-.28-.47-.68-.47-1.21v-3.59h-1.3v-1.01h1.3v-1.56l1.19-.29v1.85h1.8v1.01h-1.8v3.31c0,.31,.07,.53,.21,.67s.37,.2,.69,.2c.17,0,.32-.01,.45-.04,.13-.02,.27-.06,.43-.11v1.01c-.16,.06-.35,.1-.56,.13-.21,.03-.41,.04-.58,.04Z" style="fill: #0c131b;" />
+                                    <path d="M52.94,27.54c-.59,0-1.13-.14-1.61-.42-.48-.28-.87-.66-1.15-1.14-.28-.48-.42-1.02-.42-1.61s.14-1.13,.42-1.61c.28-.48,.66-.86,1.15-1.15,.48-.28,1.02-.43,1.61-.43s1.14,.14,1.62,.43,.86,.67,1.14,1.15c.28,.48,.42,1.02,.42,1.61s-.14,1.13-.42,1.61c-.28,.48-.66,.86-1.14,1.14s-1.02,.42-1.62,.42Zm0-1.06c.38,0,.72-.09,1.02-.28,.3-.19,.54-.44,.72-.76,.18-.32,.26-.68,.26-1.08s-.09-.75-.27-1.06c-.18-.32-.42-.57-.72-.76-.3-.19-.64-.29-1.01-.29s-.71,.1-1.01,.29c-.3,.19-.54,.45-.72,.76-.18,.32-.27,.67-.27,1.06s.09,.76,.26,1.08c.18,.32,.42,.57,.72,.76,.3,.19,.64,.28,1.02,.28Z" style="fill: #0c131b;" />
+                                    <path d="M63.78,27.53c-.6,0-1.14-.14-1.63-.42-.48-.28-.87-.66-1.15-1.14-.28-.48-.43-1.02-.43-1.61s.14-1.11,.41-1.59c.27-.48,.64-.86,1.1-1.14s.98-.43,1.55-.43,1.07,.14,1.51,.43,.79,.67,1.05,1.15c.26,.48,.39,1.03,.39,1.64v.34h-4.81c.06,.34,.19,.64,.38,.9,.19,.26,.43,.47,.72,.62,.29,.15,.61,.23,.95,.23,.3,0,.58-.05,.86-.14s.51-.23,.69-.4l.77,.76c-.36,.27-.73,.47-1.11,.61-.38,.13-.8,.2-1.25,.2Zm-1.99-3.67h3.61c-.05-.32-.16-.6-.33-.85-.17-.24-.38-.44-.64-.58-.25-.14-.53-.21-.82-.21s-.58,.07-.84,.2c-.26,.14-.47,.33-.64,.57s-.29,.53-.34,.86Z" style="fill: #0c131b;" />
+                                    <path d="M67.15,27.42l2.38-3.13-2.28-2.98h1.4l1.57,2.09,1.57-2.09h1.36l-2.26,2.96,2.4,3.14h-1.4l-1.69-2.26-1.69,2.26h-1.36Z" style="fill: #0c131b;" />
+                                    <path d="M74.58,29.87v-8.56h1.19v.59c.51-.46,1.14-.68,1.87-.68,.58,0,1.1,.14,1.57,.42,.47,.28,.84,.66,1.11,1.13,.27,.47,.41,1,.41,1.6s-.14,1.13-.41,1.6-.65,.85-1.12,1.13c-.47,.28-.99,.42-1.58,.42-.34,0-.66-.05-.97-.16-.31-.11-.6-.26-.86-.46v2.98h-1.2Zm2.9-3.4c.39,0,.74-.09,1.05-.28,.31-.18,.55-.43,.74-.75,.18-.32,.28-.67,.28-1.07s-.09-.76-.28-1.08-.43-.57-.74-.76c-.31-.18-.66-.28-1.05-.28-.34,0-.66,.06-.96,.19s-.54,.31-.74,.54v2.76c.2,.22,.45,.4,.75,.53,.3,.13,.62,.19,.95,.19Z" style="fill: #0c131b;" />
+                                    <path d="M82.4,27.42v-8.4l1.2-.23v8.63h-1.2Z" style="fill: #0c131b;" />
+                                    <path d="M88.46,27.54c-.59,0-1.13-.14-1.61-.42s-.87-.66-1.15-1.14c-.28-.48-.42-1.02-.42-1.61s.14-1.13,.42-1.61c.28-.48,.66-.86,1.15-1.15s1.02-.43,1.61-.43,1.14,.14,1.62,.43c.48,.28,.86,.67,1.14,1.15,.28,.48,.42,1.02,.42,1.61s-.14,1.13-.42,1.61c-.28,.48-.66,.86-1.14,1.14-.48,.28-1.02,.42-1.62,.42Zm0-1.06c.38,0,.72-.09,1.02-.28,.3-.19,.54-.44,.72-.76,.18-.32,.26-.68,.26-1.08s-.09-.75-.27-1.06c-.18-.32-.42-.57-.72-.76-.3-.19-.64-.29-1.01-.29s-.71,.1-1.01,.29c-.3,.19-.54,.45-.72,.76-.18,.32-.27,.67-.27,1.06s.09,.76,.26,1.08c.18,.32,.42,.57,.72,.76,.3,.19,.64,.28,1.02,.28Z" style="fill: #0c131b;" />
+                                    <path d="M93.32,27.42v-6.11h1.2v.78c.19-.29,.43-.51,.71-.68s.61-.25,.97-.25c.25,0,.45,.04,.61,.11v1.08c-.11-.05-.23-.08-.35-.1-.12-.02-.24-.03-.36-.03-.35,0-.66,.09-.94,.28-.27,.19-.49,.46-.65,.82v4.09h-1.2Z" style="fill: #0c131b;" />
+                                    <path d="M100.89,27.53c-.6,0-1.14-.14-1.63-.42-.48-.28-.87-.66-1.15-1.14-.28-.48-.43-1.02-.43-1.61s.14-1.11,.41-1.59c.27-.48,.64-.86,1.1-1.14,.46-.28,.98-.43,1.55-.43s1.07,.14,1.51,.43,.79,.67,1.05,1.15c.26,.48,.39,1.03,.39,1.64v.34h-4.81c.06,.34,.19,.64,.38,.9,.19,.26,.43,.47,.72,.62,.29,.15,.61,.23,.95,.23,.3,0,.58-.05,.86-.14s.51-.23,.69-.4l.77,.76c-.36,.27-.73,.47-1.11,.61s-.8,.2-1.25,.2Zm-1.99-3.67h3.61c-.05-.32-.16-.6-.33-.85s-.38-.44-.64-.58c-.25-.14-.53-.21-.82-.21s-.58,.07-.84,.2c-.26,.14-.47,.33-.64,.57-.17,.24-.29,.53-.34,.86Z" style="fill: #0c131b;" />
+                                    <path d="M108.43,27.42v-6.11h1.2v.59c.46-.47,1.03-.71,1.72-.71,.42,0,.79,.09,1.11,.28,.32,.18,.58,.43,.77,.74,.26-.34,.56-.59,.9-.76,.34-.17,.73-.26,1.16-.26,.46,0,.85,.1,1.19,.3s.61,.48,.8,.84c.2,.36,.29,.78,.29,1.25v3.84h-1.2v-3.64c0-.48-.13-.86-.38-1.13-.25-.28-.59-.41-1.03-.41-.3,0-.56,.07-.8,.2-.24,.14-.45,.34-.62,.62,.02,.08,.03,.16,.04,.25,0,.09,.01,.18,.01,.26v3.84h-1.19v-3.64c0-.48-.13-.86-.38-1.13-.25-.28-.59-.41-1.03-.41-.29,0-.55,.06-.78,.19s-.43,.31-.6,.56v4.44h-1.2Z" style="fill: #0c131b;" />
+                                    <path d="M122.41,27.54c-.59,0-1.13-.14-1.61-.42s-.87-.66-1.15-1.14c-.28-.48-.42-1.02-.42-1.61s.14-1.13,.42-1.61c.28-.48,.66-.86,1.15-1.15s1.02-.43,1.61-.43,1.14,.14,1.62,.43c.48,.28,.86,.67,1.14,1.15,.28,.48,.42,1.02,.42,1.61s-.14,1.13-.42,1.61c-.28,.48-.66,.86-1.14,1.14-.48,.28-1.02,.42-1.62,.42Zm0-1.06c.38,0,.72-.09,1.02-.28,.3-.19,.54-.44,.72-.76,.18-.32,.26-.68,.26-1.08s-.09-.75-.27-1.06c-.18-.32-.42-.57-.72-.76-.3-.19-.64-.29-1.01-.29s-.71,.1-1.01,.29c-.3,.19-.54,.45-.72,.76-.18,.32-.27,.67-.27,1.06s.09,.76,.26,1.08c.18,.32,.42,.57,.72,.76,.3,.19,.64,.28,1.02,.28Z" style="fill: #0c131b;" />
+                                    <path d="M127.27,27.42v-6.11h1.2v.78c.19-.29,.43-.51,.71-.68s.61-.25,.97-.25c.25,0,.45,.04,.61,.11v1.08c-.11-.05-.23-.08-.35-.1-.12-.02-.24-.03-.36-.03-.35,0-.66,.09-.94,.28-.27,.19-.49,.46-.65,.82v4.09h-1.2Z" style="fill: #0c131b;" />
+                                    <path d="M134.84,27.53c-.6,0-1.14-.14-1.63-.42-.48-.28-.87-.66-1.15-1.14-.28-.48-.43-1.02-.43-1.61s.14-1.11,.41-1.59c.27-.48,.64-.86,1.1-1.14,.46-.28,.98-.43,1.55-.43s1.07,.14,1.51,.43,.79,.67,1.05,1.15c.26,.48,.39,1.03,.39,1.64v.34h-4.81c.06,.34,.19,.64,.38,.9,.19,.26,.43,.47,.72,.62,.29,.15,.61,.23,.95,.23,.3,0,.58-.05,.86-.14s.51-.23,.69-.4l.77,.76c-.36,.27-.73,.47-1.11,.61s-.8,.2-1.25,.2Zm-1.99-3.67h3.61c-.05-.32-.16-.6-.33-.85s-.38-.44-.64-.58c-.25-.14-.53-.21-.82-.21s-.58,.07-.84,.2c-.26,.14-.47,.33-.64,.57-.17,.24-.29,.53-.34,.86Z" style="fill: #0c131b;" />
+                                    <path d="M142.69,18.84c.98,.58,1.74,1.34,2.26,2.29,.52,.95,.79,2.04,.79,3.26s-.26,2.31-.79,3.27c-.52,.96-1.28,1.72-2.26,2.29l-.65-.77c.82-.5,1.46-1.16,1.9-1.98,.44-.82,.66-1.76,.66-2.81s-.22-1.97-.66-2.8c-.44-.83-1.07-1.49-1.9-1.97l.65-.78Z" style="fill: #0c131b;" />
+                                </g>
+                                <g>
+                                    <line x1="73.14" x2="73.14" y2="14.4" style="fill: none; stroke: #0c131b; stroke-miterlimit: 10; stroke-width: 1.5px;" />
+                                    <path d="M65.94,4.14c.35-.22,.81-.12,1.04,.23l6.16,9.68,6.16-9.68c.22-.35,.69-.45,1.04-.23s.45,.69,.23,1.04l-6.8,10.67c-.14,.22-.38,.35-.63,.35s-.5-.13-.63-.35l-6.8-10.67c-.08-.13-.12-.27-.12-.4,0-.25,.12-.49,.35-.63Z" style="fill: #0c131b;" />
                                 </g>
                             </g>
                         </g>
@@ -179,13 +324,37 @@
             </ul>
         </div>
         <div class="drinkWrap">
-            <div class="menu-mobileListWrap">
+            <div class="menu-mobileListWrap hide-for-large">
                 <div class="menu">
-                    <a href="./menu.php"></a>
+                    <a href="./menu.php"><img src="./images/menu-link-mobile.svg" alt=""></a>
+                </div>
+                <div class="menu-select">
+                    <span class="current">
+                        Drink Classification
+                        飲品分類
+                    </span>
+                    <ul class="list">
+                        <li class="option selected">
+                            Drink Classification
+                            飲品分類
+                        </li>
+                        <li class="option" data-menu="0">
+                            地区限定
+                        </li>
+                        <li class="option" data-menu="1">
+                            原茶系列
+                        </li>
+                        <li class="option" data-menu="2">
+                            奶茶系列
+                        </li>
+                        <li class="option" data-menu="3">
+                            果汁系列
+                        </li>
+                    </ul>
                 </div>
             </div>
             <ul class="drinkWrapList">
-                <li data-where="0">
+                <li data-where="0" class="drink-mobile-1">
                     <div class="title">
                         <div class="ch">地区限定</div>
                         <div class="en">
@@ -396,7 +565,7 @@
                         </ul>
                     </div>
                 </li>
-                <li data-where="1">
+                <li data-where="1" class="drink-mobile-2">
                     <div class="title">
                         <div class="ch">原茶系列</div>
                         <div class="en">
@@ -576,7 +745,7 @@
                         </ul>
                     </div>
                 </li>
-                <li data-where="2">
+                <li data-where="2" class="drink-mobile-3">
                     <div class="title">
                         <div class="ch">奶茶系列</div>
                         <div class="en">
@@ -757,7 +926,7 @@
                         </ul>
                     </div>
                 </li>
-                <li data-where="3">
+                <li data-where="3" class="drink-mobile-4">
                     <div class="title">
                         <div class="ch">果汁系列</div>
                         <div class="en">
@@ -767,7 +936,7 @@
                     </div>
                     <div class="drink-changeList">
                         <ul class="drinkList">
-                            <li data-drink="1">
+                            <li data-drink="4">
                                 <div class="ch">葡萄柚汁</div>
                                 <div class="en">Grapefruit Juice</div>
                                 <div class="content show-for-large">茉莉绿茶的浓郁茶叶香气与草莓的颗粒感受酸甜口感，喝一口心旷神怡!</div>
@@ -828,6 +997,7 @@
                     </div>
                 </li>
             </ul>
+
             <div class="menu-drinkList show-for-large">
                 <div class="menu">
                     <a href="./menu.php">
@@ -984,10 +1154,12 @@
     });
 
     $('.new-drinkWrap .pic').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-        console.log(nextSlide);
+        // console.log(nextSlide);
         $(".new-drinkWrap").vegas('jump', nextSlide);
         if (window.device == 'desktop') {
             $(`.new-drink li:nth-child(${nextSlide + 1})`).addClass('current').siblings().removeClass('current');
+        } else {
+            $('.new-drink').slick('slickGoTo', nextSlide);
         }
     });
     if (window.device == 'desktop') {
@@ -1009,7 +1181,70 @@
                 clickLock = false;
             });
         });
+
+        $('.drinkList li').hover(function() {
+            var drink = $(this).data('drink');
+            $(`.drinkList-pic ul.is-show li:nth-child(${drink})`).addClass('is-show').siblings().removeClass('is-show')
+        });
+
+        $(".menu-drinkList li").on("click", function() {
+            gsap.to(window, {
+                duration: 1.2,
+                scrollTo: {
+                    y: $("[data-where=" + $(this).index() + "]"),
+                    offsetY: 10,
+                },
+                ease: Power2.easeInOut
+            });
+        });
+
+
+        $('.drinkWrapList>li').each(function(i, el) {
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse", //重覆觸發
+                trigger: el,
+                start: "top 30%",
+                end: "bottom 30%",
+                scrub: 1,
+                // markers: true,
+                onEnter() {
+                    $(`.drinkList-pic .area-${i+1}`).addClass('is-show').siblings().removeClass('is-show')
+                    $(`.menu-drinkList li:nth-child(${i+1})`).addClass('current').siblings().removeClass('current')
+                    $('.drink-fixedList li.current').next().css('opacity', '0.4').next().css('opacity', '0.2').next().css('opacity', '0.1');
+                    $('.drink-fixedList li.current').prev().css('opacity', '0.4').prev().css('opacity', '0.2').prev().css('opacity', '0.1');
+
+                },
+                // onLeave() {
+                //     $('.about-info-preview').removeClass('is-not-show');
+                // },
+                onEnterBack() {
+                    $(`.drinkList-pic .area-${i+1}`).addClass('is-show').siblings().removeClass('is-show')
+                    $(`.menu-drinkList li:nth-child(${i+1})`).addClass('current').siblings().removeClass('current')
+                    $('.drink-fixedList li.current').next().css('opacity', '0.4').next().css('opacity', '0.2').next().css('opacity', '0.1');
+                    $('.drink-fixedList li.current').prev().css('opacity', '0.4').prev().css('opacity', '0.2').prev().css('opacity', '0.1');
+                },
+                onLeaveBack() {
+                    $(`.drinkList-pic .area-${i+1}`).addClass('is-show').siblings().removeClass('is-show')
+                    $(`.menu-drinkList li:nth-child(${i+1})`).addClass('current').siblings().removeClass('current')
+                    $('.drink-fixedList li.current').next().css('opacity', '0.4').next().css('opacity', '0.2').next().css('opacity', '0.1');
+                    $('.drink-fixedList li.current').prev().css('opacity', '0.4').prev().css('opacity', '0.2').prev().css('opacity', '0.1');
+                },
+            });
+        })
+        ScrollTrigger.create({
+            toggleActions: "play pause resume reverse", //重覆觸發
+            trigger: ".drinkList-pic",
+            endTrigger: ".drinkWrap",
+            start: "top 40%",
+            end: "bottom 90%",
+            scrub: 1,
+            pin: true,
+            // markers: true,
+        });
+
     } else {
+        $('html').css('overflow-x', 'initial');
+
         $('.new-drink').slick({
             dots: true,
             speed: 1500,
@@ -1019,10 +1254,103 @@
             autoplay: true,
             prevArrow: false,
             nextArrow: false,
+            draggable:true,
             asNavFor: '.new-drinkWrap .pic'
         });
+        $('.new-drinkWrap .new-drink').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            // console.log(nextSlide);
+            $(".new-drinkWrap").vegas('jump', nextSlide);
+        });
+
+        $('.menu-select').on("click", function() {
+            $('.menu-select').toggleClass('open');
+        });
+        $('.menu-select .list li').each(function(i, el) {
+            $(el).on("click", function() {
+                $('.menu-select span').text($(el).text());
+                _m = $(el).data('menu');
+                gsap.to(window, {
+                    duration: 1.2,
+                    scrollTo: {
+                        y: $("[data-where=" + _m + "]"),
+                        offsetY: 100,
+                    },
+                    ease: Power2.easeInOut
+                });
+            });
+        })
+
+        const swiper = new Swiper(".drink-mobile", {
+            slidesPerView: "auto", //一個view的投影片數量，預設為1。如果沒寫這個，若投影片文字過長就會換行
+            allowTouchMove: false, //不讓使用者觸碰移動slide
+
+            autoplay: {
+                delay: 0, //自動播放不延遲
+                disableOnInteraction: false //不因使用者觸碰而停止自動播放
+            },
+            loop: true, //反覆循環
+            speed: 5000 //投影片之間的過渡持續時間（以毫秒為單位），數字愈大跑愈慢
+        });
+
+        function drinkMobileChange(i, s) {
+            gsap.delayedCall(s, function() {
+                $('.drinkWrapList .slick-current.drinkList>li').each(function(j, del) {
+                    ScrollTrigger.create({
+                        toggleActions: "play pause resume reverse", //重覆觸發
+                        trigger: del,
+                        start: "top 80%",
+                        end: "bottom 80%",
+                        scrub: 1,
+                        // markers: true,
+                        onEnter() {
+                            var _d = $(del).data('drink');
+                            $(`.drinkList-pic .area-${i+1}>li:nth-child(${_d})`).addClass('is-show').siblings().removeClass('is-show')
+                        },
+                        onLeave() {},
+                        onEnterBack() {
+                            var _d = $(del).data('drink');
+                            $(`.drinkList-pic .area-${i+1}>li:nth-child(${_d})`).addClass('is-show').siblings().removeClass('is-show')
+                        },
+                        onLeaveBack() {},
+                    });
+                })
+            });
+        }
+
+        $('.drinkWrapList>li').each(function(i, el) {
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse", //重覆觸發
+                trigger: el,
+                start: "20% 80%",
+                end: "bottom 80%",
+                scrub: 1,
+                // markers: true,
+                onEnter() {
+                    $(`.drinkList-pic .area-${i+1} `).addClass('is-show').siblings().removeClass('is-show')
+                    drinkMobileChange(i, 0.1);
+                },
+                onLeave() {
+                    $(`.drinkList-pic .area-${i+1}`).removeClass('is-show')
+                    drinkMobileChange(i, 0.1);
+                },
+                onEnterBack() {
+                    $(`.drinkList-pic .area-${i+1}`).addClass('is-show').siblings().removeClass('is-show')
+                    drinkMobileChange(i, 0.1);
+                },
+                onLeaveBack() {
+                    $(`.drinkList-pic .area-${i+1}`).removeClass('is-show')
+                    drinkMobileChange(i, 0.1);
+                },
+            });
+            $('.drinkWrapList .drink-changeList .slick-dots>li').click(function() {
+                drinkMobileChange(i, 1);
+            })
+        })
+
+
 
     }
+
     $('.drink-changeList').each(function(i, el) {
         $(el).slick({
             dots: true,
@@ -1034,6 +1362,9 @@
             prevArrow: false,
             nextArrow: false,
         });
+        // $(el).on('afterChange', function(event, slick, currentSlide, nextSlide) {
+        //     drinkMobileChange();
+        // });
     })
     var dotNums = document.querySelectorAll(".slick-dots button");
 
@@ -1053,66 +1384,17 @@
         pin: true,
         // markers: true,
     });
-    ScrollTrigger.create({
-        toggleActions: "play pause resume reverse", //重覆觸發
-        trigger: ".drinkList-pic",
-        endTrigger: ".drinkWrap",
-        start: "top 40%",
-        end: "bottom 90%",
-        scrub: 1,
-        pin: true,
-        // markers: true,
-    });
 
-    $('.drinkWrapList>li').each(function(i, el) {
-        ScrollTrigger.create({
-            toggleActions: "play pause resume reverse", //重覆觸發
-            trigger: el,
-            start: "top 30%",
-            end: "bottom 30%",
-            scrub: 1,
-            // markers: true,
-            onEnter() {
-                $(`.drinkList-pic .area-${i+1}`).addClass('is-show').siblings().removeClass('is-show')
-                $(`.menu-drinkList li:nth-child(${i+1})`).addClass('current').siblings().removeClass('current')
-                $('.drink-fixedList li.current').next().css('opacity', '0.4').next().css('opacity', '0.2').next().css('opacity', '0.1');
-                $('.drink-fixedList li.current').prev().css('opacity', '0.4').prev().css('opacity', '0.2').prev().css('opacity', '0.1');
 
-            },
-            // onLeave() {
-            //     $('.about-info-preview').removeClass('is-not-show');
-            // },
-            onEnterBack() {
-                $(`.drinkList-pic .area-${i+1}`).addClass('is-show').siblings().removeClass('is-show')
-                $(`.menu-drinkList li:nth-child(${i+1})`).addClass('current').siblings().removeClass('current')
-                $('.drink-fixedList li.current').next().css('opacity', '0.4').next().css('opacity', '0.2').next().css('opacity', '0.1');
-                $('.drink-fixedList li.current').prev().css('opacity', '0.4').prev().css('opacity', '0.2').prev().css('opacity', '0.1');
-            },
-            onLeaveBack() {
-                $(`.drinkList-pic .area-${i+1}`).addClass('is-show').siblings().removeClass('is-show')
-                $(`.menu-drinkList li:nth-child(${i+1})`).addClass('current').siblings().removeClass('current')
-                $('.drink-fixedList li.current').next().css('opacity', '0.4').next().css('opacity', '0.2').next().css('opacity', '0.1');
-                $('.drink-fixedList li.current').prev().css('opacity', '0.4').prev().css('opacity', '0.2').prev().css('opacity', '0.1');
-            },
-        });
-    })
-    $(".menu-drinkList li").on("click", function() {
-        // var _offset = $(window).height();
+    // drinkMobileChange();
 
-        gsap.to(window, {
-            duration: 1.2,
-            scrollTo: {
-                y: $("[data-where=" + $(this).index() + "]"),
-                offsetY: 10,
-            },
-            ease: Power2.easeInOut
-        });
-    });
+    // $('.drinkWrapList.hide-for-large .drink-changeList .slick-dots>li').click(function() {
+    //     gsap.delayedCall(1, function() {
+    //         drinkMobileChange();
+    //     });
 
-    $('.drinkList li').hover(function() {
-        var drink = $(this).data('drink');
-        $(`.drinkList-pic ul.is-show li:nth-child(${drink})`).addClass('is-show').siblings().removeClass('is-show')
-    });
+    // })
+
     $('.drink-fixedList li.current').next().css('opacity', '0.4').next().css('opacity', '0.2').next().css('opacity', '0.1');
     $('.drink-fixedList li.current').prev().css('opacity', '0.4').prev().css('opacity', '0.2').prev().css('opacity', '0.1');
 

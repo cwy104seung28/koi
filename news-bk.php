@@ -21,6 +21,16 @@
                 <div class="pic-area hide-for-large">
                     <div class="cat">MEDIA</div>
                     <div class="date">(July 1 , 2023)</div>
+                    <div class="more hide-for-large">
+                        <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.67" height="30.18" viewBox="0 0 34.67 30.18">
+                            <g id="c" data-name="layout">
+                                <g class='arrow'>
+                                    <line class="d" y1="15.09" x2="31.07" y2="15.09" />
+                                    <path class="e" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.38,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07C11.01,0,11.95-.21,12.64,.23l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
                 <div class="article-area">
                     <div class="title">
@@ -31,7 +41,7 @@
                     <div class="more show-for-large">
                         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="54" height="53.02" viewBox="0 0 54 53.02">
                             <g id="c" data-name="layout">
-                                <g>
+                                <g class="">
                                     <path class="e" d="M3.56,53.02c-1.15-.67-2.03-1.56-2.64-2.67C.31,49.24,0,47.97,0,46.54s.31-2.7,.92-3.82c.61-1.12,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27,1.25,1.73,2.21,2.3l-.76,.91Z" />
                                     <path class="e" d="M10.29,39.7h1.86l1.89,5.21c.24,.69,.45,1.39,.69,2.09h.07c.24-.7,.43-1.4,.67-2.09l1.86-5.21h1.88v10.31h-1.51v-5.1c0-.92,.13-2.25,.21-3.19h-.06l-.83,2.38-1.79,4.92h-1.01l-1.81-4.92-.81-2.38h-.06c.07,.94,.2,2.27,.2,3.19v5.1h-1.46v-10.31Z" />
                                     <path class="e" d="M21.85,46.18c0-2.58,1.72-4.06,3.63-4.06s3.63,1.49,3.63,4.06-1.72,4.02-3.63,4.02-3.63-1.47-3.63-4.02Zm5.6,0c0-1.64-.76-2.73-1.98-2.73s-1.96,1.09-1.96,2.73,.76,2.7,1.96,2.7,1.98-1.08,1.98-2.7Z" />
@@ -46,6 +56,7 @@
                             </g>
                         </svg>
                     </div>
+
                 </div>
                 <div class="pic-area">
                     <div class="cat show-for-large">MEDIA</div>
@@ -363,8 +374,9 @@
         </div>
         <div class="menu-link">
             <div class="circle">
-                <div class="menu"><img src="./images/m-menu.svg" alt=""></div>
-                <div class="store"><img src="./images/m-store.svg" alt=""></div>
+                <div class="menu show-for-large"><img src="./images/m-menu.svg" alt=""></div>
+                <div class="store show-for-large"><img src="./images/m-store.svg" alt=""></div>
+                <div class="text hide-for-large"><img src="./images/m-text-mobile.svg" alt=""></div>
             </div>
             <div class="hover-link">
                 <div class="menu"><a href="./menu.php"><img src="./images/m-hover-menu.svg" alt=""></a></div>
@@ -397,14 +409,14 @@
     gsap.delayedCall(1, function() {
         $tl_title.play();
     });
-    ScrollTrigger.create({
-        toggleActions: "play pause resume reverse", //重覆觸發
-        trigger: ".menu-link",
-        endTrigger: ".newsWrap",
-        start: "top 78.5%",
-        end: "100% 100%",
-        scrub: 1,
-        pin: true,
-        // markers: true,
-    });
+    // ScrollTrigger.create({
+    //     toggleActions: "play pause resume reverse", //重覆觸發
+    //     trigger: ".menu-link",
+    //     endTrigger: ".newsWrap",
+    //     start: "top 78.5%",
+    //     end: "100% 100%",
+    //     scrub: 1,
+    //     pin: true,
+    //     // markers: true,
+    // });
 </script>

@@ -1,12 +1,11 @@
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
 <link rel="shortcut icon" href="images/fav.png" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/fav.png">
 <link rel="apple-touch-icon" sizes="76x76" href="images/fav.png">
 <link rel="apple-touch-icon" sizes="120x120" href="images/fav.png">
 <link rel="apple-touch-icon" sizes="152x152" href="images/fav.png">
-<link rel="stylesheet" href="./stylesheets/style.css?t=<?php echo rand(1, 1000); ?>">
 
 <meta property="og:title" content="KOI" />
 
@@ -16,7 +15,12 @@ A celebration, a date or just a relaxing break in the day, there is always a rea
 <meta property="og:image" content="images/html_share.jpg">
 </meta>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="./stylesheets/style.css?t=11">
+
 <?php if (isset($now) && $now == 'INDEX') { ?>
     <title>KOI</title>
 <?php } else if (isset($now)) { ?>

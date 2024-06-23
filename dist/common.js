@@ -74,6 +74,53 @@ module.exports = __webpack_require__(1);
 /* 1 */
 /***/ (function(module, exports) {
 
+class RyderMarqueetoLeft {
+  constructor(el, direct) {
+    this.hero = $(el).parent().get(0);
+    this.wrapper = el;
+    this.delta = 0;
+    this.transform = 0;
+    this.step = 2;
+    this.direct = direct % 1;
+    if (this.direct == 1) {
+      this.wrapper.style.transform = `translate3d(-${this.wrapper.getBoundingClientRect().width / 2}px, 0, 0)`;
+      this.transform = -this.wrapper.getBoundingClientRect().width / 2;
+    }
+  }
+  animate() {
+    this.transform += this.step;
+    if (this.direct == 1) {
+      if (this.transform > 0) {
+        this.transform = -this.wrapper.getBoundingClientRect().width / 2;
+      }
+      this.wrapper.style.transform = `translate3d(-${this.transform}px, 0, 0)`;
+    } else {
+      if (this.transform > this.wrapper.getBoundingClientRect().width / 2) {
+        this.transform = 0;
+      }
+      this.wrapper.style.transform = `translate3d(-${this.transform}px, 0, 0)`;
+    }
+  }
+  render() {
+    this.scrollY = $(window).scrollTop();
+    const bounding = this.hero.getBoundingClientRect();
+    const distance = window.innerHeight + this.scrollY - (bounding.top + this.scrollY);
+    const percentage = distance / ((window.innerHeight + bounding.height) / 100);
+    if (percentage > 0 && percentage < 100) {
+      this.animate();
+    }
+  }
+  create() {
+    gsap.ticker.add(this.render.bind(this));
+  }
+}
+
+$(".marquee-left").each(function (i, el) {
+  var $copy = $(el).contents().clone();
+  $(el).append($copy);
+  var ryderMarquee = new RyderMarqueetoLeft(el, i).create();
+});
+
 $(window).on("resize", function () {
   if ($(this).width() > 1025) {
     if (window.device == "mobile") {
@@ -164,17 +211,17 @@ $("[data-share]").each((i, el) => {
     }
   });
 });
-$("[data-move]").each(function (i, el) {
-  var _p = $(el).data("move");
-  _p.repeatDelay = _p.repeatDelay != undefined ? _p.repeatDelay : 0;
-  gsap.to(el, {
-    duration: _p.sec,
-    backgroundPosition: "0 100%",
-    ease: SteppedEase.config(_p.item),
-    repeat: -1,
-    repeatDelay: _p.repeatDelay
-  });
-});
+// $("[data-move]").each(function(i, el) {
+//   var _p = $(el).data("move");
+//   _p.repeatDelay = _p.repeatDelay != undefined ? _p.repeatDelay : 0;
+//   gsap.to(el, {
+//     duration: _p.sec,
+//     backgroundPosition: "0 100%",
+//     ease: SteppedEase.config(_p.item),
+//     repeat: -1,
+//     repeatDelay: _p.repeatDelay,
+//   });
+// });
 
 $("[data-hover]").each(function (i, el) {
   var _h = $(el).data("hover");
@@ -276,29 +323,57 @@ $("footer .top").on("click", function () {
 // 	});
 // });
 
-if (window.device == "desktop") {
-  ScrollTrigger.create({
-    toggleActions: "play pause resume reverse", //重覆觸發
-    trigger: ".menu-link",
-    endTrigger: ".aboutWrap",
-    start: "top 78.5%",
-    end: "100% 100%",
-    scrub: 1,
-    pin: true
-    // markers: true,
-  });
-} else {
-  ScrollTrigger.create({
-    toggleActions: "play pause resume reverse", //重覆觸發
-    trigger: ".menu-link",
-    endTrigger: ".aboutWrap",
-    start: "top 73%",
-    end: "100% 100%",
-    scrub: 1,
-    pin: true
-    // markers: true,
-  });
-}
+// if (window.device == "desktop") {
+//   ScrollTrigger.create({
+//     toggleActions: "play pause resume reverse", //重覆觸發
+//     trigger: ".menu-link",
+//     endTrigger: ".aboutWrap",
+//     start: "top 78.5%",
+//     end: "100% 100%",
+//     scrub: 1,
+//     pin: true,
+//     // markers: true,
+//   });
+// } else {
+//   ScrollTrigger.create({
+//     toggleActions: "play pause resume reverse", //重覆觸發
+//     trigger: ".menu-link",
+//     endTrigger: ".aboutWrap",
+//     start: "top 73%",
+//     end: "100% 100%",
+//     scrub: 1,
+//     pin: true,
+//     // markers: true,
+//   });
+// }
+$(".hamburger").click(function (e) {
+  $(".bg-hover").addClass("is-show");
+  $(".menu-mobileWrap .menu").addClass("is-show");
+});
+$(".menu-mobileWrap .close").click(function (e) {
+  $(".bg-hover").removeClass("is-show");
+  $(".menu-mobileWrap .menu").removeClass("is-show");
+});
+
+ScrollTrigger.create({
+  trigger: ".menu-pin",
+  toggleActions: "play pause resume reverse", //重覆觸發
+  start: "top 80%",
+  end: "bottom 80%",
+  // markers: true,
+  onEnter() {
+    $(".menu-link").addClass("is-show");
+  },
+  onLeave() {
+    $('.menu-link').removeClass('is-show');
+  },
+  onEnterBack() {
+    $(".menu-link").addClass("is-show");
+  },
+  onLeaveBack() {
+    $(".menu-link").removeClass("is-show");
+  }
+});
 
 /***/ })
 /******/ ]);

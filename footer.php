@@ -19,7 +19,7 @@
         </svg>
     </div>
     <div class="top-text">
-        <div class="marquee">
+        <div class="marquee marquee-left">
             <ul class="text">
                 <li>
                     <img src="./images/footer-1.svg">
