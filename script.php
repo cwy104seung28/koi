@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <link rel="stylesheet" href="./css/slick.css">
 <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
@@ -55,4 +56,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
-<script src="dist/common.js?t=0731"></script>
+<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+
+<script src="dist/common.js?t=<?php echo rand(1000, 9999) ?>"></script>

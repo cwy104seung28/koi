@@ -15,7 +15,7 @@ if ($ryder_cat == 0) {
 
     //page start
     $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
-    $maxItem = 10;
+    $maxItem = 5;
     $limit = ($page - 1) * $maxItem;
 
     // 拿來計算全部有幾則
@@ -41,7 +41,7 @@ if ($ryder_cat == 0) {
 
     //page start
     $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
-    $maxItem = 10;
+    $maxItem = 5;
     $limit = ($page - 1) * $maxItem;
 
     // 拿來計算全部有幾則
@@ -217,6 +217,9 @@ if ($ryder_cat == 0) {
                                         <div class="top-area">
                                             <div class="cat"><?= $row['c_title'] ?></div>
                                             <div class="date">(<?= date("F d, Y", strtotime($row['d_date'])) ?>)</div>
+                                            <div class="title hide-for-large show-for-medium">
+                                                <?= $row['d_title'] ?>
+                                            </div>
                                         </div>
                                         <div class="pic">
                                             <?php if ($pic['file_link1']) : ?>
@@ -230,9 +233,13 @@ if ($ryder_cat == 0) {
                                         <div class="cat"><?= $row['c_title'] ?></div>
                                         <div class="date">(<?= date("F d, Y", strtotime($row['d_date'])) ?>)</div>
                                     </div>
-                                    <div class="title">
+                                    <div class="title show-for-large">
                                         <?= $row['d_title'] ?>
                                     </div>
+                                    <div class="title hide-for-medium">
+                                        <?= $row['d_title'] ?>
+                                    </div>
+
                                     <div class="pic show-for-large">
                                         <?php if ($pic['file_link1']) : ?>
                                             <img src="<?= $pic['file_link1'] ?>" alt="">
@@ -273,29 +280,25 @@ if ($ryder_cat == 0) {
     gsap.delayedCall(1, function() {
         $tl_title.play();
     });
+    ScrollTrigger.create({
+        trigger: ".menu-pin",
+        toggleActions: "play pause resume reverse", //重覆觸發
+        start: "top 80%",
+        end: "bottom 80%",
+        // markers: true,
+        onEnter() {
+            $(".menu-link").addClass("is-show");
+        },
+        onLeave() {
+            $('.menu-link').removeClass('is-show');
+        },
+        onEnterBack() {
+            $(".menu-link").addClass("is-show");
+        },
+        onLeaveBack() {
+            $(".menu-link").removeClass("is-show");
+        },
+    });
 
-    // if (window.device == 'desktop') {
-    //     ScrollTrigger.create({
-    //         toggleActions: "play pause resume reverse", //重覆觸發
-    //         trigger: ".menu-link",
-    //         endTrigger: ".newsWrap",
-    //         start: "top 78.5%",
-    //         end: "100% 100%",
-    //         scrub: 1,
-    //         pin: true,
-    //         // markers: true,
-    //     });
-    // } else {
-    //     ScrollTrigger.create({
-    //         toggleActions: "play pause resume reverse", //重覆觸發
-    //         trigger: ".menu-link",
-    //         endTrigger: ".newsWrap",
-    //         start: "top 73%",
-    //         end: "100% 100%",
-    //         scrub: 1,
-    //         pin: true,
-    //         // markers: true,
-    //     });
-    // }
     $('.menu-mobileWrap .news').addClass('current');
 </script>

@@ -86,6 +86,10 @@ $menu_is = "contact";
                         <td class="table_data"><?php echo (isset($row_RecData['d_data4'])) ? $row_RecData['d_data4'] : '無'; ?></td>
                       </tr>
                       <tr>
+                        <td align="center" class="table_title">意见内容</td>
+                        <td class="table_data"><?php echo (isset($row_RecData['d_data5'])) ? $row_RecData['d_data5'] : '無'; ?></td>
+                      </tr>
+                      <tr>
                         <td align="center" class="table_title">時間</td>
                         <td class="table_data"><?php echo $row_RecData['d_date']; ?></td>
                       </tr>

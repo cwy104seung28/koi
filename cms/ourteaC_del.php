@@ -18,7 +18,7 @@ $row_RecourteaC = $RecourteaC->fetch();
 $totalRows_RecourteaC = $RecourteaC->rowCount();
 
 $menu_is = "ourtea";
-
+$ifFile = 1;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -95,6 +95,40 @@ $menu_is = "ourtea";
 
 <?php
 if ((isset($_REQUEST['c_id'])) && ($_REQUEST['c_id'] != "") && (isset($_REQUEST['delsure']))) {
+
+        //----------刪除圖片資料到資料庫begin(在主資料前)-----
+
+        $sql = "SELECT * FROM file_set WHERE file_c_id=:file_c_id";
+
+        $stat = $conn->prepare($sql);
+        $stat->bindParam(':file_c_id', $_POST['c_id'], PDO::PARAM_INT);
+        $stat->execute();
+    
+        while ($row = $stat->fetch()) {
+            if ((isset($row['file_link1'])) && file_exists("../" . $row['file_link1'])) {
+                unlink("../" . $row['file_link1']); //刪除檔案
+            }
+            if ((isset($row['file_link2'])) && file_exists("../" . $row['file_link2'])) {
+                unlink("../" . $row['file_link2']); //刪除檔案
+            }
+            if ((isset($row['file_link3'])) && file_exists("../" . $row['file_link3'])) {
+                unlink("../" . $row['file_link3']); //刪除檔案
+            }
+            if ((isset($row['file_link4'])) && file_exists("../" . $row['file_link4'])) {
+                unlink("../" . $row['file_link4']); //刪除檔案
+            }
+            if ((isset($row['file_link5'])) && file_exists("../" . $row['file_link5'])) {
+                unlink("../" . $row['file_link5']); //刪除檔案
+            }
+        }
+    
+        $deleteSQL = "DELETE FROM file_set WHERE file_c_id=:file_c_id";
+    
+        $sth = $conn->prepare($deleteSQL);
+        $sth->bindParam(':file_c_id', $_POST['c_id'], PDO::PARAM_INT);
+        $sth->execute();
+    
+        //----------刪除圖片資料到資料庫end(在主資料前)-----
 
     $deleteSQL = "DELETE FROM class_set WHERE c_id=:c_id";
 

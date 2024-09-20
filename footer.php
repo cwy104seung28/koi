@@ -114,7 +114,7 @@
             <div class="logo"><a href="./main.php"><img src="./images/footer-logo.svg"></a></div>
             <div class="note">(NAVIGATION)</div>
             <ul class="footerList">
-                <li><a href="./index.php">首页</a></li>
+                <li><a href="./home.php">首页</a></li>
                 <li><a href="./news.php">最新消息</a></li>
                 <li><a href="./contact.php">联络我们</a></li>
                 <li><a href="./about.php">关于KOI</a></li>

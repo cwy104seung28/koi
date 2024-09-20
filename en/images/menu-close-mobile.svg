@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="23.58" height="16.74" viewBox="0 0 23.58 16.74">
+  <defs>
+    <style>
+      .d {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="c" data-name="menu">
+    <g>
+      <line class="d" x1="23.16" y1=".62" x2=".42" y2="16.12"/>
+      <line class="d" x1="23.16" y1="16.12" x2=".42" y2=".62"/>
+    </g>
+  </g>
+</svg>

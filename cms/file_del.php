@@ -3,12 +3,12 @@
 <?php
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
-  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+    $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
 $colname_RecFile = "-1";
 if (isset($_GET['file_id'])) {
-  $colname_RecFile = $_GET['file_id'];
+    $colname_RecFile = $_GET['file_id'];
 }
 
 $query_RecFile = "SELECT * FROM file_set WHERE file_id = :file_id";
@@ -22,10 +22,12 @@ $totalRows_RecFile = $RecFile->rowCount();
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>刪除圖片</title>
 </head>
+
 <body>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -80,15 +82,16 @@ $totalRows_RecFile = $RecFile->rowCount();
         </tr>
     </table>
 </body>
+
 </html>
 
 <script type="text/javascript" src="jquery/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $(".btnType").hover(function(){
+        $(".btnType").hover(function() {
             $(this).addClass('btnTypeClass');
             $(this).css('cursor', 'pointer');
-        }, function(){
+        }, function() {
             $(this).removeClass('btnTypeClass');
         });
     });
@@ -116,8 +119,12 @@ if ((isset($_POST['file_id'])) && ($_POST['file_id'] != "") && (isset($_POST['de
     $sth = $conn->prepare($deleteSQL);
     $sth->bindParam(':file_id', $_POST['file_id'], PDO::PARAM_INT);
     $sth->execute();
-
-    $deleteGoTo = $_SESSION['nowPage'] . "?d_id=" . $row_RecFile['file_d_id'] . "";
+    if ($_SESSION['nowPage'] == 'ourteaC_edit.php') {
+        $deleteGoTo = $_SESSION['nowPage'] . "?c_id=" . $row_RecFile['file_c_id'] . "";
+    } else {
+        $deleteGoTo = $_SESSION['nowPage'] . "?d_id=" . $row_RecFile['file_d_id'] . "";
+    }
+    // $deleteGoTo = $_SESSION['nowPage'] . "?d_id=" . $row_RecFile['file_d_id'] . "";
 
     header(sprintf("Location: %s", $deleteGoTo));
 }

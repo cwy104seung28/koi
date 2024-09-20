@@ -132,7 +132,7 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
                 </div>
             </div>
         </div>
-       <?php include 'menu-link.php'; ?>
+        <?php include 'menu-link.php'; ?>
     </div>
     <?php include 'footer.php'; ?>
 </body>
@@ -141,16 +141,26 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
 </html>
 
 <script>
-    // ScrollTrigger.create({
-    //     toggleActions: "play pause resume reverse", //重覆觸發
-    //     trigger: ".menu-link",
-    //     endTrigger: ".newsDetailWrap",
-    //     start: "top 78.5%",
-    //     end: "100% 100%",
-    //     scrub: 1,
-    //     pin: true,
-    //     // markers: true,
-    // });
+    ScrollTrigger.create({
+        trigger: ".menu-pin",
+        toggleActions: "play pause resume reverse", //重覆觸發
+        start: "top 80%",
+        end: "bottom 80%",
+        // markers: true,
+        onEnter() {
+            $(".menu-link").addClass("is-show");
+        },
+        onLeave() {
+            $('.menu-link').removeClass('is-show');
+        },
+        onEnterBack() {
+            $(".menu-link").addClass("is-show");
+        },
+        onLeaveBack() {
+            $(".menu-link").removeClass("is-show");
+        },
+    });
+
 
 
     $('iframe').css('width', '100%')

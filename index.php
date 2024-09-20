@@ -15,7 +15,7 @@
                 <a href="./main.php" class="ch">中文</a>
             </li>
             <li class="flex-container align-center-middle">
-                <a href="javascript:;" class="en">ENGLISH</a>
+                <a href="./en/main.php" class="en">ENGLISH</a>
             </li>
         </ul>
     </div>

@@ -43,8 +43,18 @@ $RecIconCover->execute();
 $row_RecIconCover = $RecIconCover->fetch();
 $totalRows_RecIconCover = $RecIconCover->rowCount();
 
+$query_RecFile = "SELECT * FROM file_set WHERE file_c_id = :file_c_id AND file_type = 'file'";
+$RecFile = $conn->prepare($query_RecFile);
+$RecFile->bindParam(':file_c_id', $colname_RecourteaC, PDO::PARAM_INT);
+$RecFile->execute();
+$row_RecFile = $RecFile->fetch();
+$totalRows_RecFile = $RecFile->rowCount();
+
 $menu_is = "ourtea";
 $_SESSION['nowPage'] = $selfPage;
+$_SESSION['nowMenu'] = $menu_is;
+$ifFile = 1;
+
 
 ?>
 
@@ -229,68 +239,88 @@ $_SESSION['nowPage'] = $selfPage;
                                                                             </tr>
                                                                         <?php } // Show if recordset not empty 
                                                                         ?>
-                                                                        <?php if ($totalRows_RecIconCover > 0) { // Show if recordset not empty 
-                                                                        ?>
-                                                                            <tr>
-                                                                                <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                                                    目前icon圖片<a name="imageEdit" id="imageEdit"></a></td>
-                                                                                <td>
-                                                                                    <?php do { ?>
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                        <?php if ($ifFile) { ?>
+                                                                            <?php if ($totalRows_RecFile > 0) { // Show if recordset not empty 
+                                                                            ?>
+                                                                                <tr>
+                                                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">目前icon的SVG檔</td>
+                                                                                    <td>
+                                                                                        <table border="0" cellspacing="0" cellpadding="0">
                                                                                             <tr>
-                                                                                                <td width="100" rowspan="2" align="center"><a href="../<?php echo $row_RecIconCover['file_link1'] . '?' . (mt_rand(1, 100000) / 100000); ?>" class="fancyboxImg" rel="group" title="<?php echo $row_RecIconCover['file_title']; ?>"><img src="../<?php echo $row_RecIconCover['file_link2'] . '?' . (mt_rand(1, 100000) / 100000); ?>" alt="" class="image_frame" /></a>
+                                                                                                <td>
+                                                                                                    <table>
+                                                                                                        <tr>
+                                                                                                            <?php
+                                                                                                            $RecFile_endRow = 0;
+                                                                                                            $RecFile_icons = 1;
+                                                                                                            $RecFile_hloopRow1 = 0;
+                                                                                                            do {
+                                                                                                                if ($RecFile_endRow == 0  && $RecFile_hloopRow1++ != 0) echo "<tr>";
+                                                                                                            ?>
+                                                                                                                <td>
+                                                                                                                    <table width="320" border="1" cellpadding="0" cellspacing="0" bordercolor="#666666" class="table_frame_style">
+                                                                                                                        <tr>
+                                                                                                                            <td align="left" class="table_no_border"><span class="table_data">&nbsp;檔案名稱: <a href="../<?php echo $row_RecFile['file_link1']; ?>" title='<?php echo $row_RecFile['file_title']; ?>' target="_blank"><?php echo $row_RecFile['file_name']; ?></a></span></td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                            <td align="left" class="table_no_border"><span class="table_data">&nbsp;檔案</span><span class="table_data">說明:</span><span class="table_data"><?php echo $row_RecFile['file_title']; ?></span></td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                            <td align="left" class="table_no_border"><a href="file_edit.php?file_id=<?php echo $row_RecFile['file_id']; ?>" class="fancyboxEdit" title='修改檔案'><img src="image/media_edit.gif" width="16" height="16" title="修改檔案" /></a><a href="file_del.php?file_id=<?php echo $row_RecFile['file_id']; ?>" class="fancyboxEdit" title='刪除檔案'><img src="image/media_delete.gif" width="16" height="16" title="刪除檔案" /></a></td>
+                                                                                                                        </tr>
+                                                                                                                    </table>
+                                                                                                                </td>
+                                                                                                                <?php $RecFile_endRow++;
+                                                                                                                if ($RecFile_endRow >= $RecFile_icons) {
+                                                                                                                ?>
+                                                                                                        </tr>
+                                                                                                <?php
+                                                                                                                    $RecFile_endRow = 0;
+                                                                                                                }
+                                                                                                            } while ($row_RecFile = $RecFile->fetch());
+
+                                                                                                            if ($RecFile_endRow != 0) {
+                                                                                                                while ($RecFile_endRow < $RecFile_icons) {
+                                                                                                                    echo ("<td>&nbsp;</td>");
+                                                                                                                    $RecFile_endRow++;
+                                                                                                                }
+                                                                                                                echo ("</tr>");
+                                                                                                            }
+                                                                                                ?>
+                                                                                                    </table>
                                                                                                 </td>
-                                                                                                <td align="left" class="table_data">
-                                                                                                    &nbsp;圖片說明：
-                                                                                                    <?php echo $row_RecIconCover['file_title']; ?>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td align="left" class="table_data">&nbsp;
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td align="center"><a href="image_edit.php?file_id=<?php echo $row_RecIconCover['file_id'] . '&type=ourteaIconCover'; ?>" class="fancyboxEdit" title="修改圖片"><img src="image/media_edit.gif" width="16" height="16" title="修改圖片" /></a><a href="image_del.php?file_id=<?php echo $row_RecIconCover['file_id'] . '&type=ourteaIconCover'; ?>" class="fancyboxEdit" title="刪除圖片"><img src="image/media_delete.gif" width="16" height="16" title="刪除圖片" /></a>
-                                                                                                </td>
-                                                                                                <td align="center">&nbsp;</td>
                                                                                             </tr>
                                                                                         </table>
-                                                                                    <?php } while ($row_RecIconCover = $RecIconCover->fetch()); ?>
-                                                                                </td>
-                                                                                <td bgcolor="#e5ecf6" class="table_col_title">
-                                                                                    <p class="red_letter">*
-                                                                                        <?php echo $imagesSize['ourteaIconCover']['note']; ?>
-                                                                                    </p>
-                                                                                </td>
-                                                                            </tr>
-                                                                        <?php } // Show if recordset not empty 
-                                                                        ?>
-                                                                        <?php if ($totalRows_RecIconCover == 0) { // Show if recordset not empty 
-                                                                        ?>
-                                                                            <tr>
-                                                                                <td align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                                                    <p>上傳icon圖片</p>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
-                                                                                        <tr>
-                                                                                            <td> <span class="table_data">選擇圖片：</span>
-                                                                                                <input name="imageIconCover[]" type="file" class="table_data" id="imageIconCover1" />
-                                                                                                <br>
-                                                                                                <span class="table_data">圖片說明：</span>
-                                                                                                <input name="imageIconCover_title[]" type="text" class="table_data" id="imageIconCover_title1">
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </td>
-                                                                                <td bgcolor="#e5ecf6" class="table_col_title">
-                                                                                    <p class="red_letter">*
-                                                                                        <?php echo $imagesSize['ourteaIconCover']['note']; ?>
-                                                                                    </p>
-                                                                                </td>
-                                                                            </tr>
-                                                                        <?php } // Show if recordset not empty 
-                                                                        ?>
+                                                                                    </td>
+                                                                                    <td bgcolor="#e5ecf6" class="table_col_title">
+                                                                                        <p>&nbsp;</p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            <?php } // Show if recordset not empty 
+                                                                            ?>
+
+                                                                            <?php if ($totalRows_RecFile == 0) { ?>
+                                                                                <tr>
+                                                                                    <td align="center" bgcolor="#e5ecf6" class="table_col_title">
+                                                                                        <p>上傳icon的SVG檔</p>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <table border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable2">
+                                                                                            <tr>
+                                                                                                <td><span class="table_data">選擇檔案：</span>
+                                                                                                    <input name="upfile[]" type="file" class="table_data" id="upfile1" />
+                                                                                                    <br />
+                                                                                                    <span class="table_data">檔案說明：</span>
+                                                                                                    <input name="upfile_title[]" type="text" class="table_data" id="upfile_title1" />
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td bgcolor="#e5ecf6" class="table_col_title"><span class="red_letter">*上傳之檔案請勿超過2M。icon的大小請上傳50px*50px以內</span></td>
+                                                                                </tr>
+                                                                            <?php } // Show if recordset not empty 
+                                                                            ?>
+                                                                        <?php } ?>
                                                                     </table>
                                                                 </td>
                                                             </tr>
@@ -533,6 +563,22 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
         $stat->execute();
 
         $_SESSION["change_image"] = 1;
+    }
+
+    if ($ifFile) {
+        $file_result = file_process($conn, "ourtea", "add");
+
+        for ($j = 0; $j < count($file_result); $j++) {
+            $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_type, file_c_id, file_title) VALUES (:file_name, :file_link1, :file_type, :file_c_id, :file_title)";
+
+            $stat = $conn->prepare($insertSQL);
+            $stat->bindParam(':file_name', $file_result[$j][0], PDO::PARAM_STR);
+            $stat->bindParam(':file_link1', $file_result[$j][1], PDO::PARAM_STR);
+            $stat->bindParam(':file_type', $type = 'file', PDO::PARAM_STR);
+            $stat->bindParam(':file_c_id', $_POST['c_id'], PDO::PARAM_STR);
+            $stat->bindParam(':file_title', $file_result[$j][2], PDO::PARAM_STR);
+            $stat->execute();
+        }
     }
 
     $updateGoTo = "ourteaC_list.php";

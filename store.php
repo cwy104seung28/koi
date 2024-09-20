@@ -40,9 +40,9 @@ $cat_social = $DB->query("SELECT * FROM class_set WHERE c_id=? AND c_parent='sto
 //page start
 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-if(isMobileCheck()){
+if (isMobileCheck()) {
     $maxItem = 6;
-}else{
+} else {
     $maxItem = 9;
 }
 
@@ -314,7 +314,7 @@ foreach ($brand_total as $total) {
                 </div>
             </div>
         <?php endforeach ?>
-
+        <?php include 'menu-link.php'; ?>
     </div>
     <?php include 'footer.php'; ?>
 </body>
@@ -345,4 +345,23 @@ foreach ($brand_total as $total) {
         $tl_title.play();
     });
     $('.menu-mobileWrap .store').addClass('current');
+    ScrollTrigger.create({
+        trigger: ".menu-pin",
+        toggleActions: "play pause resume reverse", //重覆觸發
+        start: "top 80%",
+        end: "bottom 80%",
+        // markers: true,
+        onEnter() {
+            $(".menu-link").addClass("is-show");
+        },
+        onLeave() {
+            $('.menu-link').removeClass('is-show');
+        },
+        onEnterBack() {
+            $(".menu-link").addClass("is-show");
+        },
+        onLeaveBack() {
+            $(".menu-link").removeClass("is-show");
+        },
+    });
 </script>

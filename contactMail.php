@@ -28,14 +28,16 @@ if (isset($_SESSION['checkPost']) && $_SESSION['checkPost'] == 0 && $_SERVER['RE
     $m_phone = $_POST['phone'];
     $m_email = $_POST['email'];
     $m_ask = $_POST['ask'];
+    $m_content = $_POST['content'];
 
 
-    $insertSQl = $DB->query("INSERT INTO data_set (d_title, d_data1, d_data2, d_data3, d_data4, d_class1, d_date) VALUES (?, ?, ?, ?, ?, 'contact', NOW())", [
+    $insertSQl = $DB->query("INSERT INTO data_set (d_title, d_data1, d_data2, d_data3, d_data4, d_data5, d_class1, d_date) VALUES (?, ?, ?, ?, ?, 'contact', NOW())", [
         $m_name,
         $m_area,
         $m_phone,
         $m_email,
-        $m_ask
+        $m_ask,
+        $m_content
     ]);
 
     require_once('PHPMailer/PHPMailerAutoload.php');

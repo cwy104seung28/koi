@@ -12,39 +12,33 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
     <style>
-        .list {
-            list-style: none;
-        }
-
-        li {
-            width: 25%;
-            height: 200px;
-            transition: 1s all;
+        .fisheye-img {
+            width: 300px;
+            height: 300px;
+            filter: url(#fisheye);
+            /* 應用SVG濾鏡 */
         }
     </style>
 </head>
 
 <body>
-    <ul class="list">
-        <li style="background-color:blueviolet;"></li>
-        <li style="background-color:antiquewhite;"></li>
-        <li style="background-color:cadetblue;"></li>
-        <li style="background-color:thistle;"></li>
-    </ul>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="fisheye">
+                <!-- 減少 baseFrequency 並調整 scale 來減輕扭曲 -->
+                <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="1" result="turbulence" />
+                <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" /> <!-- 將 scale 減少到 10 或更低 -->
+            </filter>
+        </defs>
+    </svg>
+    <img src="./images/a-event-6.jpg" class="fisheye-img">
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://unpkg.com/flickity-sync@2.0.0/flickity-sync.js"></script>
 <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
 <script>
-    var $carousel = $('.list').flickity({
-        // options
-        cellAlign: 'left',
-        // contain: true,
-        wrapAround: true,
-        prevNextButtons: false,
-        pageDots: false
-    });
+
 </script>
 
 </html>

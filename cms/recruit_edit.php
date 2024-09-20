@@ -115,7 +115,7 @@ $ifFile = 0;
                                                 <tr>
                                                     <td width="200" bgcolor="#e5ecf6"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
-                                                        美加区基本薪资(USD)
+                                                        英美歐区基本薪资(USD)
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>
@@ -200,7 +200,7 @@ $ifFile = 0;
                                                 <tr>
                                                     <td width="200" bgcolor="#e5ecf6"></td>
                                                     <td align="center" bgcolor="#e5ecf6" class="table_col_title" width="532">
-                                                        美加区基本薪资(USD)
+                                                        英美歐区基本薪资(USD)
                                                     </td>
                                                     <td width="250" bgcolor="#e5ecf6">&nbsp;</td>
                                                 </tr>

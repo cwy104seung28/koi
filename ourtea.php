@@ -33,204 +33,92 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                 <div class="en">OUR <span>TEA</span></div>
             </div>
             <div class="drinkListWrap">
-                <ul class="drink show-for-large">
+                <ul class="drink">
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Black Tea <br class="hide-for-large">Latte</div>
+                            <div class="ch">红茶拿铁</div>
                         </div>
                         <img src="./images/drink-1.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">No.8 Juice</div>
+                            <div class="ch">8冰茶</div>
                         </div>
                         <img src="./images/drink-2.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Golden Bubble <br class="hide-for-large">Milk Tea</div>
+                            <div class="ch">黄金珍奶</div>
                         </div>
                         <img src="./images/drink-3.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Black Tea <br class="hide-for-large">Macchiato</div>
+                            <div class="ch">红茶玛奇朵</div>
                         </div>
                         <img src="./images/drink-4.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Taro Purple Paste <br class="hide-for-large">Milk Tea</div>
+                            <div class="ch">镶芋奶茶</div>
                         </div>
                         <img src="./images/drink-5.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Brown Sugar <br class="hide-for-large">Fresh Milk</div>
+                            <div class="ch">厚黑糖鲜奶</div>
                         </div>
                         <img src="./images/drink-6.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Black Tea <br class="hide-for-large">Latte</div>
+                            <div class="ch">红茶拿铁</div>
                         </div>
                         <img src="./images/drink-1.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">No.8 Juice</div>
+                            <div class="ch">8冰茶</div>
                         </div>
                         <img src="./images/drink-2.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Golden Bubble <br class="hide-for-large">Milk Tea</div>
+                            <div class="ch">黄金珍奶</div>
                         </div>
                         <img src="./images/drink-3.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Black Tea <br class="hide-for-large">Macchiato</div>
+                            <div class="ch">红茶玛奇朵</div>
                         </div>
                         <img src="./images/drink-4.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Taro Purple Paste <br class="hide-for-large">Milk Tea</div>
+                            <div class="ch">镶芋奶茶</div>
                         </div>
                         <img src="./images/drink-5.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">BUBBLE GREEN TEA</div>
-                            <div class="ch">珍珠绿茶</div>
+                            <div class="en">Brown Sugar <br class="hide-for-large">Fresh Milk</div>
+                            <div class="ch">厚黑糖鲜奶</div>
                         </div>
                         <img src="./images/drink-6.png" alt="">
                     </li>
                 </ul>
-                <div class="drink-mobile swiper mySwiper hide-for-large">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-1.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-2.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-3.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-4.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-5.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-6.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-1.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-2.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-3.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-4.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-5.png">
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="inner-drink">
-                                <div class="name">
-                                    <div class="en">BUBBLE GREEN TEA</div>
-                                    <div class="ch">珍珠绿茶</div>
-                                </div>
-                                <img src="./images/drink-6.png">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
                 <div class="scroll-down">
                     <svg class="show-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="170.03" height="55.27" viewBox="0 0 170.03 55.27">
                         <g id="c" data-name="設計">
@@ -355,12 +243,12 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
             <ul class="drinkWrapList">
                 <?php $i = 0; ?>
                 <?php foreach ($ourtea as $row) : ?>
+                    <?php $ourteaIcon  = $DB->row("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_id=? AND c_id=file_c_id AND file_type='file' AND c_active=1", [$row['c_id']]); ?>
                     <li id="<?= $row['c_id'] ?>" data-where="<?= $i; ?>">
                         <div class="title">
                             <div class="ch"><?= $row['c_title'] ?></div>
                             <div class="en"><?= $row['c_title_en'] ?></div>
-                            <?php if ($row['c_data1'] == 'yes') : ?>
-                                <?php $ourteaIcon  = $DB->row("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_data1='yes' AND c_id=? AND c_id=file_c_id AND file_type='ourteaIconCover' AND c_active=1", [$row['c_id']]); ?>
+                            <?php if ($ourteaIcon != NULL) : ?>
                                 <div class="icon"><img src="<?= $ourteaIcon['file_link1'] ?>" alt=""></div>
                             <?php endif ?>
                         </div>
@@ -402,17 +290,26 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
             <div class="menu-drinkList show-for-large">
                 <div class="menu">
                     <a href="./menu.php">
-                        <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="103.84" height="36" viewBox="0 0 103.84 36">
+                        <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="91.72" height="91.72" viewBox="0 0 91.72 91.72">
                             <g id="c" data-name="設計">
+                                <circle cx="45.86" cy="45.86" r="45.86" />
                                 <g class="arrow">
-                                    <rect class="d" x="10.06" width="2.22" height="22.99" />
-                                    <path class="d" d="M.51,7.82c.52-.33,1.2-.18,1.53,.34l9.12,14.32,9.12-14.32c.33-.52,1.02-.67,1.53-.34s.67,1.02,.34,1.53l-10.06,15.79c-.2,.32-.56,.51-.94,.51s-.73-.2-.94-.51L.17,9.35c-.12-.19-.17-.39-.17-.6,0-.37,.18-.73,.51-.94Z" />
+                                    <rect class="d" x="45.06" y="59.71" width="1.62" height="16.83" />
+                                    <path class="d" d="M38.07,65.43c.38-.24,.88-.13,1.12,.25l6.68,10.48,6.68-10.48c.24-.38,.74-.49,1.12-.25s.49,.75,.25,1.12l-7.36,11.56c-.15,.23-.41,.38-.69,.38s-.54-.14-.69-.38l-7.36-11.56c-.09-.14-.13-.29-.13-.44,0-.27,.13-.53,.38-.69Z" />
                                 </g>
                                 <g>
-                                    <path d="M31.61,24.26V5.36h5.86l4.67,8.91,4.67-8.91h5.86V24.26h-4.37V11.38l-6.21,11.53-6.21-11.58v12.93h-4.27Z" />
-                                    <path d="M63.39,24.53c-1.46,0-2.78-.33-3.96-.99-1.18-.66-2.11-1.54-2.79-2.66-.68-1.12-1.03-2.37-1.03-3.75s.33-2.64,.99-3.75,1.55-2,2.69-2.66,2.39-.99,3.78-.99,2.65,.34,3.73,1.01,1.93,1.6,2.55,2.77,.93,2.51,.93,4.02v1.08h-10.18c.2,.45,.46,.85,.8,1.19s.73,.61,1.2,.8c.47,.19,.97,.28,1.51,.28,.59,0,1.13-.09,1.62-.28,.49-.19,.9-.46,1.24-.8l2.89,2.57c-.9,.76-1.82,1.3-2.77,1.65-.95,.34-2.01,.51-3.2,.51Zm-3.38-8.96h5.97c-.14-.47-.37-.87-.66-1.2s-.64-.59-1.04-.78c-.4-.19-.83-.28-1.3-.28s-.93,.09-1.32,.27c-.4,.18-.73,.44-1.01,.77-.28,.33-.49,.74-.63,1.23Z" />
-                                    <path d="M73,24.26V9.98h4.37v.97c1.08-.83,2.36-1.24,3.83-1.24,1.12,0,2.1,.24,2.96,.73,.85,.49,1.53,1.16,2.01,2.03,.49,.86,.73,1.86,.73,3v8.8h-4.37v-8.21c0-.79-.23-1.42-.7-1.89s-1.1-.7-1.89-.7c-.56,0-1.05,.1-1.47,.3s-.79,.48-1.09,.84v9.67h-4.37Z" />
-                                    <path d="M95.63,24.53c-1.12,0-2.1-.24-2.96-.73-.86-.49-1.53-1.17-2.01-2.04-.49-.87-.73-1.87-.73-2.98V9.98h4.37v8.21c0,.77,.24,1.4,.71,1.88,.48,.48,1.1,.71,1.88,.71,.56,0,1.05-.1,1.49-.3,.43-.2,.79-.48,1.08-.84V9.98h4.37v14.28h-4.37v-.97c-1.08,.83-2.36,1.24-3.83,1.24Z" />
+                                    <path class="d" d="M25.68,34.96v-10.5h3.25l2.59,4.95,2.6-4.95h3.25v10.5h-2.43v-7.16l-3.45,6.41-3.45-6.43v7.18h-2.37Z" />
+                                    <path class="d" d="M43.33,35.12c-.81,0-1.54-.18-2.2-.55-.66-.37-1.17-.86-1.55-1.48s-.57-1.31-.57-2.08,.18-1.46,.55-2.08,.86-1.11,1.49-1.48,1.33-.55,2.1-.55,1.47,.19,2.07,.56c.6,.38,1.07,.89,1.42,1.54,.34,.65,.52,1.39,.52,2.23v.6h-5.66c.11,.25,.26,.47,.44,.66,.19,.19,.41,.34,.67,.44,.26,.1,.54,.16,.84,.16,.33,0,.63-.05,.9-.16,.27-.11,.5-.25,.69-.44l1.61,1.42c-.5,.42-1.01,.72-1.54,.92-.52,.19-1.12,.29-1.78,.29Zm-1.88-4.98h3.32c-.08-.26-.2-.48-.37-.67-.17-.19-.36-.33-.58-.44-.22-.1-.46-.16-.72-.16s-.52,.05-.74,.15c-.22,.1-.41,.24-.56,.43-.16,.19-.27,.41-.35,.68Z" />
+                                    <path class="d" d="M48.67,34.96v-7.93h2.43v.54c.6-.46,1.31-.69,2.13-.69,.62,0,1.17,.13,1.64,.41,.48,.27,.85,.64,1.12,1.12,.27,.48,.4,1.04,.4,1.67v4.89h-2.43v-4.56c0-.44-.13-.79-.39-1.05-.26-.26-.61-.39-1.05-.39-.31,0-.58,.05-.82,.17-.23,.11-.44,.26-.61,.46v5.37h-2.43Z" />
+                                    <path class="d" d="M61.24,35.12c-.62,0-1.17-.14-1.64-.41-.48-.27-.85-.65-1.12-1.13-.27-.48-.4-1.04-.4-1.66v-4.89h2.43v4.56c0,.43,.13,.78,.4,1.04s.61,.4,1.04,.4c.31,0,.58-.06,.83-.17,.24-.11,.44-.27,.6-.47v-5.37h2.43v7.93h-2.43v-.54c-.6,.46-1.31,.69-2.13,.69Z" />
+                                    <path class="d" d="M8.62,51.96v-10.5h4.26c.78,0,1.5,.13,2.17,.41,.67,.27,1.26,.64,1.76,1.12,.5,.48,.9,1.04,1.19,1.68,.28,.64,.43,1.33,.43,2.07s-.14,1.41-.43,2.04c-.29,.63-.68,1.18-1.19,1.66s-1.09,.85-1.76,1.12c-.67,.27-1.39,.41-2.17,.41h-4.26Zm2.58-2.28h1.62c.41,0,.79-.08,1.15-.22,.35-.15,.67-.36,.94-.63,.27-.27,.48-.58,.63-.94,.15-.36,.22-.74,.22-1.15s-.08-.81-.22-1.18c-.15-.37-.36-.68-.63-.95s-.58-.48-.94-.64c-.36-.16-.74-.23-1.15-.23h-1.62v5.94Z" />
+                                    <path class="d" d="M23.99,52.12c-.81,0-1.54-.18-2.19-.55s-1.17-.86-1.54-1.48-.57-1.31-.57-2.08,.19-1.47,.57-2.09,.89-1.12,1.54-1.48,1.38-.55,2.19-.55,1.54,.18,2.19,.55,1.17,.86,1.54,1.48,.57,1.32,.57,2.09-.19,1.46-.57,2.08-.89,1.11-1.54,1.48-1.38,.55-2.19,.55Zm0-2.1c.37,0,.7-.09,.99-.27,.29-.18,.52-.42,.69-.73s.25-.64,.25-1.01-.08-.72-.25-1.03-.4-.55-.7-.73-.62-.27-.98-.27-.69,.09-.98,.27c-.3,.18-.53,.42-.7,.73s-.25,.65-.25,1.03,.08,.71,.25,1.01,.4,.55,.7,.73c.29,.18,.62,.27,.98,.27Z" />
+                                    <path class="d" d="M31.19,51.96l-2.16-7.93h2.29l1.17,4.67,1.42-4.67h2.01l1.43,4.68,1.15-4.68h2.27l-2.17,7.93h-2.33l-1.38-4.59-1.37,4.59h-2.34Z" />
+                                    <path class="d" d="M42.02,51.96v-7.93h2.43v.54c.6-.46,1.31-.69,2.13-.69,.62,0,1.17,.13,1.64,.41,.48,.27,.85,.64,1.12,1.12,.27,.48,.4,1.04,.4,1.67v4.89h-2.43v-4.56c0-.44-.13-.79-.39-1.05-.26-.26-.61-.39-1.05-.39-.31,0-.58,.05-.82,.17-.23,.11-.44,.26-.61,.46v5.37h-2.43Z" />
+                                    <path class="d" d="M51.56,51.96v-10.5l2.43-.38v10.88h-2.43Z" />
+                                    <path class="d" d="M59.81,52.12c-.81,0-1.54-.18-2.19-.55s-1.17-.86-1.54-1.48-.57-1.31-.57-2.08,.19-1.47,.57-2.09,.89-1.12,1.54-1.48,1.38-.55,2.19-.55,1.54,.18,2.19,.55,1.17,.86,1.54,1.48,.57,1.32,.57,2.09-.19,1.46-.57,2.08-.89,1.11-1.54,1.48-1.38,.55-2.19,.55Zm0-2.1c.37,0,.7-.09,.99-.27,.29-.18,.52-.42,.69-.73s.25-.64,.25-1.01-.08-.72-.25-1.03-.4-.55-.7-.73-.62-.27-.98-.27-.69,.09-.98,.27c-.3,.18-.53,.42-.7,.73s-.25,.65-.25,1.03,.08,.71,.25,1.01,.4,.55,.7,.73c.29,.18,.62,.27,.98,.27Z" />
+                                    <path class="d" d="M68.24,52.1c-.56,0-1.06-.1-1.49-.31-.44-.21-.78-.5-1.02-.87s-.37-.79-.37-1.28c0-.76,.29-1.35,.86-1.76,.58-.41,1.38-.62,2.41-.62,.62,0,1.22,.08,1.8,.22v-.39c0-.4-.13-.7-.38-.89s-.63-.29-1.13-.29c-.31,0-.66,.05-1.04,.15-.39,.1-.84,.26-1.36,.48l-.87-1.79c.65-.29,1.28-.51,1.88-.65,.61-.15,1.21-.22,1.82-.22,1.1,0,1.96,.26,2.57,.79,.61,.53,.92,1.26,.92,2.21v5.08h-2.4v-.48c-.32,.22-.66,.38-1.01,.47-.36,.1-.75,.14-1.18,.14Zm-.57-2.5c0,.25,.11,.45,.33,.58,.22,.14,.53,.21,.92,.21,.29,0,.56-.03,.82-.09s.49-.16,.7-.29v-1.02c-.23-.06-.46-.11-.71-.14-.24-.03-.48-.04-.73-.04-.42,0-.75,.07-.98,.2-.23,.13-.34,.33-.34,.58Z" />
+                                    <path class="d" d="M78.34,52.07c-.75,0-1.43-.18-2.05-.55s-1.1-.86-1.46-1.47c-.36-.62-.54-1.3-.54-2.06s.18-1.45,.55-2.06c.37-.62,.86-1.1,1.49-1.46,.62-.36,1.32-.54,2.09-.54,.37,0,.73,.04,1.07,.13s.66,.22,.96,.39v-2.99l2.43-.38v10.88h-2.4v-.58c-.63,.46-1.34,.69-2.13,.69Zm.42-2.07c.34,0,.65-.05,.93-.16,.28-.11,.53-.26,.75-.47v-2.78c-.21-.2-.46-.35-.75-.46-.29-.11-.6-.16-.93-.16-.39,0-.74,.09-1.06,.26-.32,.17-.57,.42-.75,.72-.19,.31-.28,.65-.28,1.03s.09,.72,.28,1.03c.18,.3,.43,.54,.75,.72,.31,.17,.67,.26,1.06,.26Z" />
                                 </g>
                             </g>
                         </svg>
@@ -574,8 +471,8 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
             ScrollTrigger.create({
                 toggleActions: "play pause resume reverse", //重覆觸發
                 trigger: el,
-                start: "top 30%",
-                end: "bottom 30%",
+                start: "top 70%",
+                end: "bottom 70%",
                 scrub: 1,
                 // markers: true,
                 onEnter() {
@@ -606,11 +503,14 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
             toggleActions: "play pause resume reverse", //重覆觸發
             trigger: ".drinkList-pic",
             endTrigger: ".drinkWrap",
-            start: "top 40%",
-            end: "bottom 90%",
+            start: "top 39%",
+            end: "bottom 100%",
             scrub: 1,
             pin: true,
-            // markers: true,
+        });
+
+        $('.drinkWrapList>li>.title').hover(function() {
+            $('.drinkList-pic ul.is-show li:nth-child(1)').addClass('is-show').siblings().removeClass('is-show')
         });
 
     } else {
@@ -660,7 +560,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                 disableOnInteraction: false //不因使用者觸碰而停止自動播放
             },
             loop: true, //反覆循環
-            speed: 5100 //投影片之間的過渡持續時間（以毫秒為單位），數字愈大跑愈慢
+            speed: 5000 //投影片之間的過渡持續時間（以毫秒為單位），數字愈大跑愈慢
         });
 
         function drinkMobileChange(i, s) {
@@ -669,8 +569,8 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                     ScrollTrigger.create({
                         toggleActions: "play pause resume reverse", //重覆觸發
                         trigger: del,
-                        start: "top 80%",
-                        end: "bottom 80%",
+                        start: "top 70%",
+                        end: "bottom 70%",
                         scrub: 1,
                         // markers: true,
                         onEnter() {
@@ -692,8 +592,8 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
             ScrollTrigger.create({
                 toggleActions: "play pause resume reverse", //重覆觸發
                 trigger: el,
-                start: "20% 80%",
-                end: "bottom 80%",
+                start: "5% 67.5%",
+                end: "bottom 67.5%",
                 scrub: 1,
                 // markers: true,
                 onEnter() {
@@ -716,9 +616,52 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
             $('.drinkWrapList .drink-changeList .slick-dots>li').click(function() {
                 drinkMobileChange(i, 1);
             })
+            $('.drinkWrapList .drinkList>li').click(function() {
+                $(this).addClass('current').siblings().removeClass('current')
+                var _d = $(this).data('drink');
+                $(`.drinkList-pic .area-${i+1}>li:nth-child(${_d+1})`).addClass('is-show').siblings().removeClass('is-show')
+            })
         })
-
-
+        $('.drinkWrapList>li>.title').each(function(t, tel) {
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse", //重覆觸發
+                trigger: tel,
+                start: "top 70%",
+                end: "bottom 70%",
+                scrub: 1,
+                // markers: true,
+                onEnter() {
+                    $('.drinkList-pic ul.is-show li:nth-child(1)').addClass('is-show').siblings().removeClass('is-show')
+                },
+                onLeave() {},
+                onEnterBack() {
+                    $('.drinkList-pic ul.is-show li:nth-child(1)').addClass('is-show').siblings().removeClass('is-show')
+                },
+                onLeaveBack() {},
+            });
+        })
+        $('.drinkList>li').each(function(i, el) {
+            ScrollTrigger.create({
+                toggleActions: "play pause resume reverse", //重覆觸發
+                trigger: el,
+                start: "20% 70%",
+                end: "bottom 70%",
+                scrub: 1,
+                // markers: true,
+                onEnter() {
+                    $(el).addClass('current').siblings().removeClass('current')
+                },
+                onLeave() {
+                    $(el).addClass('current').siblings().removeClass('current')
+                },
+                onEnterBack() {
+                    $(el).addClass('current').siblings().removeClass('current')
+                },
+                onLeaveBack() {
+                    $(el).addClass('current').siblings().removeClass('current')
+                },
+            });
+        })
 
     }
 
@@ -749,7 +692,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
         toggleActions: "play pause resume reverse", //重覆觸發
         trigger: ".menu-drinkList",
         endTrigger: ".drinkWrap",
-        start: "top 18%",
+        start: "top 10%",
         end: "bottom 90%",
         scrub: 1,
         pin: true,
@@ -777,4 +720,23 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
     })
 
     $('.menu-mobileWrap .ourtea').addClass('current');
+    ScrollTrigger.create({
+        trigger: ".menu-pin",
+        toggleActions: "play pause resume reverse", //重覆觸發
+        start: "top 80%",
+        end: "bottom 80%",
+        // markers: true,
+        onEnter() {
+            $(".menu-link").addClass("is-show");
+        },
+        onLeave() {
+            $('.menu-link').removeClass('is-show');
+        },
+        onEnterBack() {
+            $(".menu-link").addClass("is-show");
+        },
+        onLeaveBack() {
+            $(".menu-link").removeClass("is-show");
+        },
+    });
 </script>

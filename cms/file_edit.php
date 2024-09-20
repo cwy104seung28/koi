@@ -10,8 +10,6 @@ if ($_SERVER['HTTP_X_REQUESTED_WITH'] != 'XMLHttpRequest') {
 
 
 
-
-
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
     $updateSQL = "UPDATE file_set SET file_title=:file_title WHERE file_id=:file_id";
@@ -26,7 +24,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     $file_result = file_process($conn, $_SESSION['nowMenu'], "edit");
 
     // 表示有傳圖
-    if ( count($file_result) > 0 ) {
+    if (count($file_result) > 0) {
         //刪除真實檔案begin----
         $sql = "SELECT file_link1 FROM file_set WHERE file_id=:file_id";
         $sth = $conn->prepare($sql);
@@ -55,7 +53,12 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
 
 
-    $updateGoTo = $_SESSION['nowPage'] . "?d_id=" . $_POST['file_d_id'] . "";
+    // $updateGoTo = $_SESSION['nowPage'] . "?d_id=" . $_POST['file_d_id'] . "";
+    if ($_SESSION['nowPage'] == 'ourteaC_edit.php') {
+        $updateGoTo = $_SESSION['nowPage'] . "?c_id=" . $_POST['file_c_id'] . "";
+    } else {
+        $updateGoTo = $_SESSION['nowPage'] . "?d_id=" . $_POST['file_d_id'] . "";
+    }
 
     header(sprintf("Location: %s", $updateGoTo));
 }
@@ -82,10 +85,12 @@ $totalRows_RecFile = $RecFile->rowCount();
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>修改圖片</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>修改圖片</title>
 </head>
+
 <body>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -108,7 +113,11 @@ $totalRows_RecFile = $RecFile->rowCount();
                             <td width="532">
                                 <input name="file_title" type="text" class="table_data" id="file_title" value="<?php echo $row_RecFile['file_title']; ?>" size="50">
                                 <input name="file_id" type="hidden" id="file_id" value="<?php echo $row_RecFile['file_id']; ?>" />
-                                <input name="file_d_id" type="hidden" id="file_d_id" value="<?php echo $row_RecFile['file_d_id']; ?>" />
+                                <?php if ($_SESSION['nowPage'] == 'ourteaC_edit.php') : ?>
+                                    <input name="file_c_id" type="hidden" id="file_c_id" value="<?php echo $row_RecFile['file_c_id']; ?>" />
+                                <?php else: ?>
+                                    <input name="file_d_id" type="hidden" id="file_d_id" value="<?php echo $row_RecFile['file_d_id']; ?>" />
+                                <?php endif ?>
                             </td>
                             <td width="250" bgcolor="#e5ecf6" class="table_col_title">
                                 <p class="red_letter"></p>
@@ -154,15 +163,16 @@ $totalRows_RecFile = $RecFile->rowCount();
         </tr>
     </table>
 </body>
+
 </html>
 
 <script type="text/javascript" src="jquery/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $(".btnType").hover(function(){
+        $(".btnType").hover(function() {
             $(this).addClass('btnTypeClass');
             $(this).css('cursor', 'pointer');
-        }, function(){
+        }, function() {
             $(this).removeClass('btnTypeClass');
         });
     });

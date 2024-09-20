@@ -13,6 +13,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 $menu_is = "ourtea";
+$ifFile = 1;
 
 ?>
 
@@ -131,28 +132,28 @@ $menu_is = "ourtea";
                                                         </p>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p>上傳icon圖片</p>
-                                                    </td>
-                                                    <td width="532">
-                                                        <table width="100%" border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data">
-                                                            <tr>
-                                                                <td> <span class="table_data">選擇圖片：</span>
-                                                                    <input name="imageIconCover[]" type="file" class="table_data" id="imageIconCover1" />
-                                                                    <br>
-                                                                    <span class="table_data">圖片說明：</span>
-                                                                    <input name="imageIconCover_title[]" type="text" class="table_data" id="imageIconCover_title1">
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
-                                                        <p class="red_letter">*
-                                                            <?php echo $imagesSize['ourteaIconCover']['note']; ?>
-                                                        </p>
-                                                    </td>
-                                                </tr>
+                                                <?php if ($ifFile) { ?>
+                                                    <tr>
+                                                        <td align="center" bgcolor="#e5ecf6" class="table_col_title">
+                                                            <p>上傳icon的SVG檔</p>
+                                                        </td>
+                                                        <td>
+                                                            <table border="0" cellpadding="2" cellspacing="2" bordercolor="#CCCCCC" class="data" id="pTable2">
+                                                                <tr>
+                                                                    <td> <span class="table_data">選擇檔案：</span>
+                                                                        <input name="upfile[]" type="file" class="table_data" id="upfile1" />
+                                                                        <br>
+                                                                        <span class="table_data">檔案說明：</span>
+                                                                        <input name="upfile_title[]" type="text" class="table_data" id="upfile_title1">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td bgcolor="#e5ecf6" class="table_col_title">
+                                                            <p><span class="red_letter">*上傳之檔案請勿超過2M。icon的大小請上傳50px*50px以內</span></p>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
                                             </table>
                                         </td>
                                     </tr>
@@ -242,6 +243,23 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
         $_SESSION["change_image"] = 1;
     }
 
+    //----------插入檔案資料到資料庫begin(須放入插入主資料後)----------
+    if ($ifFile) {
+        $file_result = file_process($conn, "ourtea", "add");
+
+        for ($j = 0; $j < count($file_result); $j++) {
+            $insertSQL = "INSERT INTO file_set (file_name, file_link1, file_type, file_c_id, file_title) VALUES (:file_name, :file_link1, :file_type, :file_c_id, :file_title)";
+
+            $stat = $conn->prepare($insertSQL);
+            $stat->bindParam(':file_name', $file_result[$j][0], PDO::PARAM_STR);
+            $stat->bindParam(':file_link1', $file_result[$j][1], PDO::PARAM_STR);
+            $stat->bindParam(':file_type', $type = 'file', PDO::PARAM_STR);
+            $stat->bindParam(':file_c_id', $new_data_num, PDO::PARAM_STR);
+            $stat->bindParam(':file_title', $file_result[$j][2], PDO::PARAM_STR);
+            $stat->execute();
+        }
+    }
+    //----------插入檔案資料到資料庫end----------
     $insertGoTo = "ourteaC_list.php?pageNum=0&totalRows_RecourteaC=" . ($_SESSION['totalRows'] + 1) . "&changeSort=1&now_c_id=" . $new_data_num . "&change_num=1";
     if (isset($_SERVER['QUERY_STRING'])) {
         $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
