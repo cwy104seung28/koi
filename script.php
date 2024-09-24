@@ -58,4 +58,7 @@
 
 <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+
 <script src="dist/common.js?t=<?php echo rand(1000, 9999) ?>"></script>

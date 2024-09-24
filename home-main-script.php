@@ -1,34 +1,33 @@
 <script>
-    $('.menu-mobileWrap .index').addClass('current');
-    $('.menu-link').removeClass('is-show');
+    $('.indexWrap-outter').removeClass('is-not-show');
     // $(document).ready(function() {
     //     window.onbeforeunload = function() {
     //         //刷新后页面自动回到顶部
     //         document.documentElement.scrollTop = 0; //ie下
     //         document.body.scrollTop = 0; //非ie
     //     }
-    //     $("html").addClass("is-lock")
     // })
-    $('.menuWrap').addClass("is-not-hover")
-    $('.menu-mobileWrap').addClass("is-not-hover")
+    $('.menu-mobileWrap .index').addClass('current');
+    // $('.menuWrap').addClass("is-not-hover")
+    // $('.menu-mobileWrap').addClass("is-not-hover")
     $('footer').addClass('is-light-orange')
 
     let $tl_preload = gsap.timeline({
-            paused: true,
+            paused: false,
         })
         .to(".index-top-banner", {
-            duration: 1.5,
+            duration: 0,
             y: 0,
             ease: Power2.easeOut,
         }, 'logo')
         .to("nav", {
-            className: "+=not-clip flex-container align-justify"
-        }, '<0.65')
+            className: "+=flex-container align-justify"
+        }, '<0')
         .to(".index-top-banner .top-text", {
-            duration: 1.5,
+            duration: 0,
             x: 0,
             ease: Power3.easeOut,
-        }, '<0.5')
+        }, '<0')
         .from(".menu-link", {
             duration: 0.5,
             opacity: 0,
@@ -49,6 +48,9 @@
         $("html").removeClass("is-lock")
         $('nav').removeClass('not-clip')
         $('.hamburger').addClass('is-click')
+        gsap.delayedCall(1, function() {
+            $("nav").removeClass("is-not-show")
+        })
         if (window.device == 'desktop') {
             $('.menuWrap').removeClass("is-not-hover")
         } else {
@@ -341,9 +343,6 @@
             })
             // ================四大理念手機版==================
             //順序要倒過來不然有北七BUG
-            // if ($(this).width() > 640) {
-
-            // }
             const $tl_drink_box = gsap.timeline({
                     paused: false,
                 }).to('.index-feature-box .up div', {
@@ -686,66 +685,13 @@
         });
     }
 
-    var skip = document.getElementById('skip');
-    let isClicked = false;
 
-    gsap.delayedCall(1, function() {
-        $("nav").removeClass("is-not-show")
-    })
-
-    gsap.delayedCall(2, function() {
-        $(".skip").addClass("is-show")
-    })
-    gsap.delayedCall(3, function() {
-        $(".indexWrap-outter").removeClass("is-not-show")
-    })
-    skip.addEventListener('click', () => {
-        isClicked = true;
-        $('.index-preload').addClass('is-not-show')
-        $(".indexWrap-outter").removeClass("is-not-show")
-        gsap.delayedCall(0.75, function() {
-            $tl_preload.play();
-        })
-        gsap.delayedCall(1, function() {
-            $('.index-preload').addClass('not-show')
-            if (window.device == 'mobile') {
-                $('nav .bg').removeClass('is-move')
-                $('nav').removeClass('not-clip')
-            }
-        })
-        gsap.delayedCall(4, function() {
-            indexAnimation();
-        })
-        gsap.delayedCall(3, function() {
-            $('body').addClass('is-light-orange')
-            $('.index-preload').addClass('down')
-        })
-
-    });
-
-    gsap.delayedCall(3, function() {
-        if (isClicked == false) {
-            $('.index-preload').addClass('down')
-        }
-    })
-
-    gsap.delayedCall(5.5, function() {
-        if (isClicked == false) {
-            $tl_preload.play();
-            gsap.delayedCall(2.5, function() {
-                $('body').addClass('is-light-orange')
-                $('.index-preload').addClass('not-show')
-
-                if (window.device == 'mobile') {
-                    $('nav .bg').removeClass('is-move')
-                    $('nav').removeClass('not-clip')
-                }
-            })
-            gsap.delayedCall(3.5, function() {
-                indexAnimation()
-            });
-        }
-
-    })
+    $('body').addClass('is-light-orange')
+    $('.index-preload').addClass('not-show')
+    if (window.device == 'mobile') {
+        $('nav .bg').removeClass('is-move')
+        $('nav').removeClass('not-clip')
+    }
+    indexAnimation();
     // if (document.getElementById('skip').clicked == true) {
 </script>

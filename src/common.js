@@ -322,8 +322,8 @@ $("[data-r]").each(function(i, el) {
 });
 
 $("#preload")
-  .delay(1000)
-  .fadeOut(1000);
+  .delay(500)
+  .fadeOut(500);
 
 $("[data-share]").each((i, el) => {
   var type = el.dataset.share;

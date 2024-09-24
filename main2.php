@@ -921,4 +921,11 @@ $ran = rand(1, 3);
 <?php include 'script.php'; ?>
 
 </html>
-<?php include 'main-script.php'; ?>
+<script>
+    if (Cookies.get('load') == undefined) {
+        Cookies.set('load', '1')
+        <?php include 'main-script.php'; ?>
+    }else{
+        <?php include 'home-main-script.php'; ?>
+    }
+</script>

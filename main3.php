@@ -1,15 +1,12 @@
 <?php
 require_once 'Connections/connect2data.php';
 require_once 'paginator.class.php';
-
 $work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE c_parent='newsC' AND c_id=d_class2 AND d_class1='news' AND d_data1='yes' AND d_id=file_d_id AND file_type='newsTopCover' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC");
-
 $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_id=file_c_id AND file_type='ourteaIndexCover' AND c_data1='yes' AND c_active=1 ORDER BY c_sort ASC");
 $ran = rand(1, 3);
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
-
 <head>
     <?php $now = 'INDEX';
     $menu = 'INDEX';
@@ -17,7 +14,6 @@ $ran = rand(1, 3);
     ?>
     <?php include 'html_head.php'; ?>
 </head>
-
 <body>
     <?php include 'topmenu.php'; ?>
     <div id="index-preload" style="z-index: 101;" class="index-preload flex-container align-center-middle">
@@ -385,7 +381,6 @@ $ran = rand(1, 3);
                                         <div><img src="./video/3-2.gif"></div>
                                         <div><img src="./video/3-2.gif"></div>
                                         <div><img src="./video/3-2.gif"></div>
-
                                     </li>
                                     <li class="is-sticky">
                                         <div><img src="./video/4.gif"></div>
@@ -426,7 +421,6 @@ $ran = rand(1, 3);
                                         <div><img src="./images/index-feature-pic-1-2.png"></div>
                                         <div><img src="./images/index-feature-pic-1-2.png"></div>
                                     </li>
-
                                 </ul>
                             </li>
                         </ul>
@@ -699,7 +693,6 @@ $ran = rand(1, 3);
                                         <div><img src="./images/index-feature-pic-1-2.png"></div>
                                         <div><img src="./images/index-feature-pic-1-2.png"></div>
                                     </li>
-
                                 </ul>
                             </li>
                             <li class="up show-for-large">
@@ -724,7 +717,6 @@ $ran = rand(1, 3);
                                         <div><img src="./video/3-2.gif"></div>
                                         <div><img src="./video/3-2.gif"></div>
                                         <div><img src="./video/3-2.gif"></div>
-
                                     </li>
                                     <li class="is-sticky">
                                         <div><img src="./video/4.gif"></div>
@@ -761,7 +753,6 @@ $ran = rand(1, 3);
                                 <div class="milk-1" data-depth="-5">
                                     <div class="inner"><img src="./images/index-milk-1.png">
                                     </div>
-
                                 </div>
                                 <div class="milk-2" data-depth="-2">
                                     <div class="inner"><img src="./images/index-milk-2.png">
@@ -825,7 +816,6 @@ $ran = rand(1, 3);
                         <ul class="drinksList" id="drinkHorizontal">
                             <?php foreach ($drink as $drink_row) : ?>
                                 <?php $drinkIcon = $DB->row("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_id=? AND c_id=file_c_id AND file_type='file' AND c_data1='yes' AND c_active=1 ORDER BY c_sort ASC", [$drink_row['c_id']]); ?>
-
                                 <li>
                                     <a href="./ourtea.php#<?= $drink_row['c_id'] ?>">
                                         <div class="pic-area" style="background: url('<?= $drink_row['file_link1'] ?>') center/cover no-repeat;">
@@ -911,6 +901,12 @@ $ran = rand(1, 3);
     </div>
 </body>
 <?php include 'script.php'; ?>
-
 </html>
-<?php include 'main-script.php'; ?>
+<script>
+    if (Cookies.get('load') == undefined) {
+        Cookies.set('load', '1')
+        <?php include 'main-script.php'; ?>
+    }else{
+        <?php include 'home-main-script.php'; ?>
+    }
+</script>
