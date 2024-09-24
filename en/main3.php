@@ -831,7 +831,7 @@ $ran = rand(1, 3);
                                         </div>
                                         <div class="article-area flex-container">
                                             <?php if ($drinkIcon['file_link1'] != '') : ?>
-                                                <div class="icon"><img src="<?= $drinkIcon['file_link1'] ?>" alt=""></div>
+                                                <div class="icon"><img src="../<?= $drinkIcon['file_link1'] ?>" alt=""></div>
                                             <?php endif ?>
                                             <div class="ch"><?= $drink_row['c_title_en'] ?></div>
                                             <!-- <div class="en">(<?= $drink_row['c_title_en'] ?>)</div> -->

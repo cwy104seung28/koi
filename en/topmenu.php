@@ -33,13 +33,6 @@
 
     <div class="<?php if ($now == 'INDEX') : ?>is-move <?php endif ?>bg hide-for-large">
         <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="1024" height="167.48" viewBox="0 0 1024 167.48">
-            <defs>
-                <style>
-                    .d {
-                        fill: #ea5504;
-                    }
-                </style>
-            </defs>
             <g id="c" data-name="menu">
                 <path class="d" d="M1024,0V84.39c-122.99,50.82-306.44,83.09-511.34,83.09S122.99,134.99,0,83.84V0H1024Z" />
             </g>
@@ -139,6 +132,9 @@
                     <a href="./contact.php">CONTACT</a>
                 </li>
             </ul>
+            <div class="language flex-container">
+                <a class="ch" href="../main.php">中</a><span class="unit">/ </span><a class="en" href="javascript:;">EN</a>
+            </div>
         </div>
     </div>
     <div class="hamburger hide-for-large <?php if ($now != 'INDEX') : ?>is-click <?php endif ?>">
@@ -175,6 +171,9 @@
                     <a href="./contact.php">CONTACT</a>
                 </li>
             </ul>
+            <div class="language flex-container">
+                <a class="ch" href="../main.php">中</a><span class="unit">/ </span><a class="en" href="javascript:;">EN</a>
+            </div>
         </div>
     </div>
     <div class="bg-hover"></div>

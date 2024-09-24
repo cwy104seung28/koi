@@ -124,7 +124,11 @@
                 <li><a href="./recruit.php">RECRUIT</a></li>
             </ul>
         </div>
+
         <div class="info flex-container">
+            <div class="language flex-container">
+                <a class="ch" href="../main.php">中</a><span class="unit">/ </span><a class="en current" href="javascript:;">EN</a>
+            </div>
             <div class="top show-for-large">
                 <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="43.99" height="75" viewBox="0 0 43.99 75">
                     <g id="footer">
@@ -144,6 +148,7 @@
                     </g>
                 </svg>
             </div>
+
             <div class="outter">
                 <div class="other">
                     <div class="copyright">© 2024 KOI Thé ALL RIGHTS RESERVED.</div>
@@ -157,7 +162,6 @@
                     <div class="drink"><img src="./images/b-drink.svg" alt=""></div>
                 </div>
             </div>
-
         </div>
     </div>
 </footer>

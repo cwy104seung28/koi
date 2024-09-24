@@ -488,64 +488,58 @@
                     </span>
                     <ul class="list">
                         <li class="option flex-container align-justify">
-                            <!-- <div class="ch">中 国</div> -->
+                            <div class="ch">CHINA</div>
                             <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                         </li>
                         <li class="option flex-container align-justify">
-                            <!-- <div class="ch">日 本</div> -->
+                            <div class="ch">JAPAN</div>
                             <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                         </li>
                         <li class="option flex-container align-justify">
-                            <!-- <div class="ch">孟加拉</div> -->
+                            <div class="ch">BANGLADESH</div>
                             <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                         </li>
                         <li class="option flex-container align-justify">
-                            <!-- <div class="ch">泰 国</div> -->
+                            <div class="ch">THAILAND</div>
                             <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                         </li>
                         <li class="option flex-container align-justify">
-                            <!-- <div class="ch">菲律賓</div> -->
+                            <div class="ch">PHILIPPINES</div>
                             <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                         </li>
                         <li class="option">
                             <a href="./store.php" class="flex-container align-justify">
-                                <!-- <div class="ch">柬埔寨</div> -->
+                                <div class="ch">CAMBODIA</div>
                                 <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                             </a>
                         </li>
                         <!-- <li class="option">
                             <a href="./store.php" class="flex-container align-justify">
-                                <!-- <div class="ch">缅 甸</div> -->
-                        <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
-                        </a>
+                                <div class="ch">泰 国</div>
+                                <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
+                            </a>
                         </li> -->
                         <li class="option">
                             <a href="./store.php" class="flex-container align-justify">
-                                <!-- <div class="ch">泰 国</div> -->
+                                <div class="ch">MALAYSIA</div>
                                 <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                             </a>
                         </li>
                         <li class="option">
                             <a href="./store.php" class="flex-container align-justify">
-                                <!-- <div class="ch">马来西亚</div> -->
+                                <div class="ch">SINGAPORE</div>
                                 <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                             </a>
                         </li>
                         <li class="option">
                             <a href="./store.php" class="flex-container align-justify">
-                                <!-- <div class="ch">新加坡</div> -->
+                                <div class="ch">INDONESIA</div>
                                 <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                             </a>
                         </li>
                         <li class="option">
                             <a href="./store.php" class="flex-container align-justify">
-                                <!-- <div class="ch">印度尼西亚</div> -->
-                                <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
-                            </a>
-                        </li>
-                        <li class="option">
-                            <a href="./store.php" class="flex-container align-justify">
-                                <!-- <div class="ch">美 国</div> -->
+                                <div class="ch">USA</div>
                                 <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                             </a>
                         </li>

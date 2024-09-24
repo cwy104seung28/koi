@@ -304,10 +304,6 @@ nav {
                     }
                 }
             }
-
-            .language{
-                
-            }
         }
 
         .menuList {
@@ -611,7 +607,31 @@ nav {
             }
         }
     }
-
+    .language {
+        position: absolute;
+        font-family: $ch-family;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        right: 88px;
+        bottom: 34px;
+        transform: rotate(13deg);
+        @include breakpoint(medium down) {
+            font-size: 15px;
+            right: 29px;
+            bottom: 24px;
+            transform: rotate(9deg);
+        }
+        a {
+            display: block;
+        }
+        .ch {
+            transform: rotate(2deg);
+        }
+        .en {
+            transform: rotate(-2deg);
+        }
+    }
     .bg-hover {
         position: fixed;
         z-index: 1;
@@ -9827,6 +9847,7 @@ footer {
         }
 
         .info {
+            position: relative;
             flex: 2 1 0;
             flex-direction: column;
             align-items: end;
@@ -9837,7 +9858,33 @@ footer {
             @include breakpoint(medium down) {
                 margin: 96px 0 25px;
             }
+            .language {
+                position: absolute;
+                bottom: 3px;
+                left: 75px;
+                font-size: 18px;
+                letter-spacing: 1px;
+                font-family: $ch-family;
+                @include breakpoint(medium down) {
+                    width: 100%;
+                    position: static;
+                    font-size: 15px;
+                    justify-content: left;
+                    margin-bottom: 10px;
+                }
+                a {
+                    display: block;
+                    position: relative;
+                    padding-bottom: 3px;
 
+                    &.current {
+                        border-bottom: 5px solid #ff4d00;
+                        @include breakpoint(medium down) {
+                            border-bottom: 3px solid #ff4d00;
+                        }
+                    }
+                }
+            }
             .top {
                 margin-bottom: 55px;
                 cursor: pointer;

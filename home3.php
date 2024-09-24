@@ -20,6 +20,7 @@ $ran = rand(1, 3);
 
 <body>
     <?php include 'topmenu.php'; ?>
+  
     <div class="indexWrap-outter">
         <div class="indexWrap index-menu-pin">
             <div class="index-top-banner">

@@ -265,7 +265,7 @@ $storeCat = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_le
                     </div>
                     <div class="item">
                         <div class="title">
-                            您代表的公司名称
+                            Your Company Name
                         </div>
                         <div>
                             <input type="text" name="o-company" id="o-company">

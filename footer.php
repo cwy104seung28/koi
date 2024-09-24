@@ -125,6 +125,9 @@
             </ul>
         </div>
         <div class="info flex-container">
+            <div class="language flex-container">
+                <a class="ch current" href="javascript:;">中</a><span class="unit">/ </span><a class="en" href="./en/main.php">EN</a>
+            </div>
             <div class="top show-for-large">
                 <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="43.99" height="75" viewBox="0 0 43.99 75">
                     <g id="footer">
