@@ -642,7 +642,7 @@
                             <div class="pin indonesia">
                                 <a href="./store.php">
                                     <div class="dot"></div>
-                                    <div class="name">( 印尼 )</div>
+                                    <div class="name">( 印度尼西亞 )</div>
                                 </a>
                             </div>
                             <div class="pin dubai">

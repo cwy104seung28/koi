@@ -730,7 +730,7 @@ $ran = rand(1, 3);
                                     </div>
                                     <div class="ch-flex flex-container align-center-middle">
                                         <div class="ch left">红茶玛奇朵</div>
-                                        <div class="ch">水蜜桃绿茶</div>
+                                        <div class="ch right">水蜜桃绿茶</div>
                                     </div>
                                 </div>
                             </div>

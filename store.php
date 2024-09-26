@@ -55,11 +55,12 @@ $limit = ($page - 1) * $maxItem;
 $sub_one = $DB->row("SELECT * FROM class_set WHERE c_parent='storeC' AND c_active=1 AND c_id=? AND c_link=?", [$ryder_cat_sub, $ryder_cat]);
 // $sub_now = $sub_one['c_id'];
 
-$work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND (d_class4=? || $ryder_cat_brand = 0) AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY c_sort ASC ,d_sort ASC, d_date DESC LIMIT ?, ?", [$ryder_cat, $ryder_cat_sub, $ryder_cat_brand, $limit, $maxItem]);
+$work = $DB->query("SELECT * FROM class_set, data_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND (d_class4=? || $ryder_cat_brand = 0) AND d_active=1 AND c_active=1 ORDER BY c_sort ASC ,d_sort ASC, d_date DESC LIMIT ?, ?", [$ryder_cat, $ryder_cat_sub, $ryder_cat_brand, $limit, $maxItem]);
 
-$workTotal = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND (d_class4=? || $ryder_cat_brand = 0) AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub, $ryder_cat_brand]);
+$workTotal = $DB->query("SELECT * FROM class_set, data_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND (d_class4=? || $ryder_cat_brand = 0) AND d_active=1 AND c_active=1 ORDER BY c_sort ASC ,d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub, $ryder_cat_brand]);
 
 $pageTotalCount = count($workTotal);
+
 $totalpage = ceil($pageTotalCount / $maxItem);
 
 
@@ -230,6 +231,7 @@ foreach ($brand_total as $total) {
                 <ul class="storeList">
                     <?php foreach ($work as $row) : ?>
                         <?php $brand = $DB->row("SELECT * FROM data_set, file_set WHERE d_id=? AND d_class1='storeBrand' AND file_type='storeBrandCover' AND file_d_id=d_id AND d_active=1", [$row['d_class4']]) ?>
+                        <?php $pic = $DB->row("SELECT * FROM file_set WHERE file_type='storeCover' AND file_d_id=?", [$row['d_id']]); ?>
                         <li>
                             <div class="deco"><img src="./images/s-deco-top.svg"></div>
                             <div class="head flex-container align-justify">
@@ -240,7 +242,11 @@ foreach ($brand_total as $total) {
                             <div class="time"><?= $row['d_data2']; ?></div>
                             <div class="address"><?= $row['d_data3']; ?></div>
                             <div class="other-area flex-container align-middle align-justify">
-                                <div class="pic" data-store="<?= $row['d_id']; ?>"><img src="<?= $row['file_link1']; ?>" alt=""></div>
+                                <?php if ($pic['file_link1']) : ?>
+                                    <div class="pic" data-store="<?= $row['d_id']; ?>"><img src="<?= $pic['file_link1']; ?>" alt=""></div>
+                                <?php else : ?>
+                                    <div class="pic no-hover"><img src="./images/store-default.jpg"></div>
+                                <?php endif ?>
                                 <?php if ($row['d_data4']) : ?>
                                     <a href="<?= $row['d_data4']; ?>" target="_blank">
                                         <div class="inner flex-container align-center-middle">
@@ -276,43 +282,46 @@ foreach ($brand_total as $total) {
             </div>
         </div>
         <?php foreach ($work as $row) : ?>
-            <div class="store-fancy fancy-<?= $row['d_id']; ?>">
-                <div class="inner-fancy flex-container align-center-middle">
-                    <div class="pic"><img src="<?= $row['file_link1']; ?>" alt=""></div>
-                    <div class="back">
-                        <svg class="show-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="70" height="54.92" viewBox="0 0 70 54.92">
-                            <g id="c" data-name="lightbox">
-                                <g class="e">
-                                    <path class="d" d="M3.55,54.92c-1.15-.67-2.03-1.56-2.64-2.67s-.92-2.38-.92-3.81,.3-2.7,.92-3.82,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27,1.25,1.73,2.21,2.3l-.76,.91Z" />
-                                    <path class="d" d="M10.29,41.6h3.2c2.12,0,3.64,.67,3.64,2.54,0,.98-.54,1.92-1.47,2.23v.07c1.18,.25,2.03,1.05,2.03,2.45,0,2.04-1.67,3.03-3.95,3.03h-3.45v-10.31Zm3.01,4.3c1.57,0,2.23-.59,2.23-1.56,0-1.08-.73-1.48-2.19-1.48h-1.43v3.04h1.39Zm.25,4.73c1.61,0,2.54-.57,2.54-1.83,0-1.16-.9-1.67-2.54-1.67h-1.64v3.5h1.64Z" />
-                                    <path class="d" d="M19.67,49.86c0-1.65,1.4-2.51,4.61-2.86-.01-.9-.34-1.68-1.47-1.68-.81,0-1.57,.36-2.23,.79l-.6-1.09c.8-.5,1.88-1.01,3.11-1.01,1.92,0,2.8,1.22,2.8,3.26v4.64h-1.32l-.14-.88h-.04c-.7,.6-1.53,1.06-2.45,1.06-1.33,0-2.27-.87-2.27-2.23Zm4.61,.06v-1.89c-2.28,.28-3.05,.85-3.05,1.72,0,.76,.52,1.06,1.21,1.06s1.22-.32,1.85-.9Z" />
-                                    <path class="d" d="M28.25,48.07c0-2.58,1.78-4.06,3.81-4.06,.98,0,1.7,.39,2.26,.88l-.8,1.05c-.42-.38-.85-.6-1.39-.6-1.29,0-2.21,1.09-2.21,2.73s.88,2.7,2.17,2.7c.64,0,1.22-.31,1.68-.7l.66,1.06c-.7,.63-1.61,.95-2.49,.95-2.09,0-3.68-1.47-3.68-4.02Z" />
-                                    <path class="d" d="M36.67,40.74h1.57v7.2h.04l3.03-3.74h1.78l-2.62,3.12,2.91,4.58h-1.75l-2.09-3.49-1.3,1.5v1.99h-1.57v-11.16Z" />
-                                    <path class="d" d="M48.87,41.9c1.15,.67,2.03,1.56,2.64,2.67s.92,2.38,.92,3.81-.3,2.7-.92,3.82-1.49,2-2.64,2.67l-.76-.9c.96-.58,1.7-1.35,2.21-2.31s.77-2.05,.77-3.28-.26-2.3-.77-3.27-1.25-1.73-2.21-2.3l.76-.91Z" />
+            <?php $pic = $DB->row("SELECT * FROM file_set WHERE file_type='storeCover' AND file_d_id=?", [$row['d_id']]); ?>
+            <?php if ($pic['file_link1']) : ?>
+                <div class="store-fancy fancy-<?= $row['d_id']; ?>">
+                    <div class="inner-fancy flex-container align-center-middle">
+                        <div class="pic"><img src="<?= $pic['file_link1']; ?>" alt=""></div>
+                        <div class="back">
+                            <svg class="show-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="70" height="54.92" viewBox="0 0 70 54.92">
+                                <g id="c" data-name="lightbox">
+                                    <g class="e">
+                                        <path class="d" d="M3.55,54.92c-1.15-.67-2.03-1.56-2.64-2.67s-.92-2.38-.92-3.81,.3-2.7,.92-3.82,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27,1.25,1.73,2.21,2.3l-.76,.91Z" />
+                                        <path class="d" d="M10.29,41.6h3.2c2.12,0,3.64,.67,3.64,2.54,0,.98-.54,1.92-1.47,2.23v.07c1.18,.25,2.03,1.05,2.03,2.45,0,2.04-1.67,3.03-3.95,3.03h-3.45v-10.31Zm3.01,4.3c1.57,0,2.23-.59,2.23-1.56,0-1.08-.73-1.48-2.19-1.48h-1.43v3.04h1.39Zm.25,4.73c1.61,0,2.54-.57,2.54-1.83,0-1.16-.9-1.67-2.54-1.67h-1.64v3.5h1.64Z" />
+                                        <path class="d" d="M19.67,49.86c0-1.65,1.4-2.51,4.61-2.86-.01-.9-.34-1.68-1.47-1.68-.81,0-1.57,.36-2.23,.79l-.6-1.09c.8-.5,1.88-1.01,3.11-1.01,1.92,0,2.8,1.22,2.8,3.26v4.64h-1.32l-.14-.88h-.04c-.7,.6-1.53,1.06-2.45,1.06-1.33,0-2.27-.87-2.27-2.23Zm4.61,.06v-1.89c-2.28,.28-3.05,.85-3.05,1.72,0,.76,.52,1.06,1.21,1.06s1.22-.32,1.85-.9Z" />
+                                        <path class="d" d="M28.25,48.07c0-2.58,1.78-4.06,3.81-4.06,.98,0,1.7,.39,2.26,.88l-.8,1.05c-.42-.38-.85-.6-1.39-.6-1.29,0-2.21,1.09-2.21,2.73s.88,2.7,2.17,2.7c.64,0,1.22-.31,1.68-.7l.66,1.06c-.7,.63-1.61,.95-2.49,.95-2.09,0-3.68-1.47-3.68-4.02Z" />
+                                        <path class="d" d="M36.67,40.74h1.57v7.2h.04l3.03-3.74h1.78l-2.62,3.12,2.91,4.58h-1.75l-2.09-3.49-1.3,1.5v1.99h-1.57v-11.16Z" />
+                                        <path class="d" d="M48.87,41.9c1.15,.67,2.03,1.56,2.64,2.67s.92,2.38,.92,3.81-.3,2.7-.92,3.82-1.49,2-2.64,2.67l-.76-.9c.96-.58,1.7-1.35,2.21-2.31s.77-2.05,.77-3.28-.26-2.3-.77-3.27-1.25-1.73-2.21-2.3l.76-.91Z" />
+                                    </g>
+                                    <g class="arrow">
+                                        <rect class="d" x="7.17" y="15.61" width="35.69" height="3.45" />
+                                        <path class="d" d="M30.73,.8c.51,.8,.27,1.87-.53,2.38L7.96,17.34l22.23,14.16c.8,.51,1.04,1.58,.53,2.38s-1.58,1.03-2.38,.53L3.83,18.79c-.49-.32-.8-.86-.8-1.45s.3-1.14,.8-1.45L28.34,.27c.29-.18,.61-.27,.93-.27,.57,0,1.13,.28,1.46,.8Z" />
+                                    </g>
                                 </g>
-                                <g class="arrow">
-                                    <rect class="d" x="7.17" y="15.61" width="35.69" height="3.45" />
-                                    <path class="d" d="M30.73,.8c.51,.8,.27,1.87-.53,2.38L7.96,17.34l22.23,14.16c.8,.51,1.04,1.58,.53,2.38s-1.58,1.03-2.38,.53L3.83,18.79c-.49-.32-.8-.86-.8-1.45s.3-1.14,.8-1.45L28.34,.27c.29-.18,.61-.27,.93-.27,.57,0,1.13,.28,1.46,.8Z" />
+                            </svg>
+                            <svg class="hide-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="43.17" height="42.67" viewBox="0 0 43.17 42.67">
+                                <g id="c" data-name="lightbox">
+                                    <g>
+                                        <line x1="35.19" y1="11.84" x2="10.81" y2="11.84" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: 2.35px;" />
+                                        <path d="M26.9,.54c.35,.55,.19,1.28-.36,1.63L11.35,11.84l15.19,9.67c.55,.35,.71,1.08,.36,1.63-.35,.55-1.08,.71-1.63,.36L8.52,12.84c-.34-.22-.54-.59-.54-.99s.21-.78,.54-.99L25.27,.18C25.47,.06,25.69,0,25.91,0c.39,0,.77,.19,1,.54Z" style="fill: #fff;" />
+                                    </g>
+                                    <g style="opacity: .6;">
+                                        <path d="M3.3,42.67c-1.07-.62-1.88-1.45-2.45-2.48-.57-1.03-.85-2.21-.85-3.54s.28-2.51,.85-3.54c.57-1.04,1.38-1.86,2.45-2.48l.7,.83c-.89,.54-1.58,1.25-2.05,2.15s-.71,1.91-.71,3.04,.24,2.14,.71,3.04,1.16,1.61,2.05,2.14l-.7,.84Z" style="fill: #fff;" />
+                                        <path d="M12.53,35.06c-.3,1.22-.74,2.5-1.26,3.48,.21,.13,.44,.31,.78,.52,.88,.55,2.08,.62,3.59,.62,1.59,0,3.76-.12,5.2-.3-.14,.34-.35,.92-.36,1.25-1,.07-3.35,.14-4.89,.14-1.69,0-2.8-.14-3.74-.69-.52-.3-.99-.75-1.26-.75s-.74,.84-1.08,1.64l-.82-1.13c.53-.7,1.08-1.26,1.55-1.47,.35-.68,.69-1.57,.91-2.44h-1.77c.32-.75,.71-1.79,1.05-2.78h-1.55v-1.09h3.03c-.3,.9-.69,1.94-1.03,2.82h.92l.18-.05,.55,.23Zm-2.16-3.48c-.16-.56-.48-1.44-.69-2.12l1.1-.3c.23,.66,.55,1.5,.71,2.04l-1.13,.38Zm4.04,1.73c-.05,1.79-.29,4.07-1.14,5.69-.23-.2-.75-.48-1.05-.6,.95-1.77,1.04-4.24,1.04-5.93v-2.85h6.57v1.09h-5.4v1.51h4.5l.22-.04,.75,.26c-.33,1.46-.9,2.69-1.64,3.69,.82,.73,1.56,1.44,2.04,2.01l-.9,.83c-.44-.55-1.12-1.25-1.88-1.98-.84,.87-1.83,1.53-2.91,1.99-.14-.31-.46-.78-.69-1.03,1-.36,1.94-.96,2.73-1.77-.66-.58-1.34-1.16-1.95-1.65l.79-.7c.58,.46,1.22,.97,1.86,1.51,.46-.61,.81-1.3,1.09-2.05h-4.03Z" style="fill: #fff;" />
+                                        <path d="M33.81,29.47v11.44h-1.3v-.7h-8.31v.7h-1.25v-11.44h10.86Zm-1.3,9.61v-8.37h-8.31v8.37h8.31Zm-1.61-6.59v4.77h-5.12v-4.77h5.12Zm-1.21,1.07h-2.77v2.65h2.77v-2.65Z" style="fill: #fff;" />
+                                        <path d="M39.87,30.58c1.07,.62,1.88,1.45,2.45,2.48,.57,1.03,.85,2.21,.85,3.54s-.28,2.51-.85,3.54-1.38,1.86-2.45,2.48l-.7-.83c.89-.54,1.58-1.25,2.05-2.15s.71-1.91,.71-3.04-.24-2.14-.71-3.04-1.16-1.61-2.05-2.14l.7-.84Z" style="fill: #fff;" />
+                                    </g>
                                 </g>
-                            </g>
-                        </svg>
-                        <svg class="hide-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="43.17" height="42.67" viewBox="0 0 43.17 42.67">
-                            <g id="c" data-name="lightbox">
-                                <g>
-                                    <line x1="35.19" y1="11.84" x2="10.81" y2="11.84" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: 2.35px;" />
-                                    <path d="M26.9,.54c.35,.55,.19,1.28-.36,1.63L11.35,11.84l15.19,9.67c.55,.35,.71,1.08,.36,1.63-.35,.55-1.08,.71-1.63,.36L8.52,12.84c-.34-.22-.54-.59-.54-.99s.21-.78,.54-.99L25.27,.18C25.47,.06,25.69,0,25.91,0c.39,0,.77,.19,1,.54Z" style="fill: #fff;" />
-                                </g>
-                                <g style="opacity: .6;">
-                                    <path d="M3.3,42.67c-1.07-.62-1.88-1.45-2.45-2.48-.57-1.03-.85-2.21-.85-3.54s.28-2.51,.85-3.54c.57-1.04,1.38-1.86,2.45-2.48l.7,.83c-.89,.54-1.58,1.25-2.05,2.15s-.71,1.91-.71,3.04,.24,2.14,.71,3.04,1.16,1.61,2.05,2.14l-.7,.84Z" style="fill: #fff;" />
-                                    <path d="M12.53,35.06c-.3,1.22-.74,2.5-1.26,3.48,.21,.13,.44,.31,.78,.52,.88,.55,2.08,.62,3.59,.62,1.59,0,3.76-.12,5.2-.3-.14,.34-.35,.92-.36,1.25-1,.07-3.35,.14-4.89,.14-1.69,0-2.8-.14-3.74-.69-.52-.3-.99-.75-1.26-.75s-.74,.84-1.08,1.64l-.82-1.13c.53-.7,1.08-1.26,1.55-1.47,.35-.68,.69-1.57,.91-2.44h-1.77c.32-.75,.71-1.79,1.05-2.78h-1.55v-1.09h3.03c-.3,.9-.69,1.94-1.03,2.82h.92l.18-.05,.55,.23Zm-2.16-3.48c-.16-.56-.48-1.44-.69-2.12l1.1-.3c.23,.66,.55,1.5,.71,2.04l-1.13,.38Zm4.04,1.73c-.05,1.79-.29,4.07-1.14,5.69-.23-.2-.75-.48-1.05-.6,.95-1.77,1.04-4.24,1.04-5.93v-2.85h6.57v1.09h-5.4v1.51h4.5l.22-.04,.75,.26c-.33,1.46-.9,2.69-1.64,3.69,.82,.73,1.56,1.44,2.04,2.01l-.9,.83c-.44-.55-1.12-1.25-1.88-1.98-.84,.87-1.83,1.53-2.91,1.99-.14-.31-.46-.78-.69-1.03,1-.36,1.94-.96,2.73-1.77-.66-.58-1.34-1.16-1.95-1.65l.79-.7c.58,.46,1.22,.97,1.86,1.51,.46-.61,.81-1.3,1.09-2.05h-4.03Z" style="fill: #fff;" />
-                                    <path d="M33.81,29.47v11.44h-1.3v-.7h-8.31v.7h-1.25v-11.44h10.86Zm-1.3,9.61v-8.37h-8.31v8.37h8.31Zm-1.61-6.59v4.77h-5.12v-4.77h5.12Zm-1.21,1.07h-2.77v2.65h2.77v-2.65Z" style="fill: #fff;" />
-                                    <path d="M39.87,30.58c1.07,.62,1.88,1.45,2.45,2.48,.57,1.03,.85,2.21,.85,3.54s-.28,2.51-.85,3.54-1.38,1.86-2.45,2.48l-.7-.83c.89-.54,1.58-1.25,2.05-2.15s.71-1.91,.71-3.04-.24-2.14-.71-3.04-1.16-1.61-2.05-2.14l.7-.84Z" style="fill: #fff;" />
-                                </g>
-                            </g>
-                        </svg>
+                            </svg>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php endif ?>
         <?php endforeach ?>
         <?php include 'menu-link.php'; ?>
     </div>

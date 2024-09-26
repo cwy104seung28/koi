@@ -1,3 +1,14 @@
+<?php
+require_once 'Connections/connect2data.php';
+require_once 'paginator.class.php';
+
+$work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE c_parent='newsC' AND c_id=d_class2 AND d_class1='news' AND d_data1='yes' AND d_id=file_d_id AND file_type='newsTopCover' AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC");
+
+$drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_id=file_c_id AND file_type='ourteaIndexCover' AND c_data1='yes' AND c_active=1 ORDER BY c_sort ASC");
+
+
+$ran = rand(1, 3);
+?>
 <!DOCTYPE html>
 <html lang="zh-tw">
 
@@ -10,20 +21,60 @@
 </head>
 
 <body>
-    <?php include 'topmenu.php'; ?>
+    <?php include 'topmenu-test.php'; ?>
+    <div id="index-preload" style="z-index: 2;" class="index-preload flex-container align-center-middle">
+        <!-- <div class="logo"><img src="./images/index-preload-logo.svg" alt=""></div> -->
+        <!-- <video src="https://player.vimeo.com/progressive_redirect/playback/991515014/rendition/1080p/file.mp4?loc=external&log_user=0&signature=f9060f8dabe3c6d8e5675bbc22b946d7c80e8612893fa39a4487e13ca4275155" autoplay muted playsinline></video> -->
+        <video data-dashjs-player="" src="https://customer-2m570twtvas9nf5x.cloudflarestream.com/0934b4f6eab03ebf46984761fabc6a1a/manifest/video.mpd" autoplay muted playsinline></video>
+        <div class="skip" id="skip">
+            <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="47.22" height="36.96" viewBox="0 0 47.22 36.96">
+                <g id="c" data-name="圖層 1">
+                    <g class="arrow">
+                        <line class="e" x1="21.22" y1="6.98" x2="35.59" y2="6.98" />
+                        <path class="d" d="M26.11,13.64c-.21-.32-.11-.75,.21-.96l8.95-5.7L26.32,1.28c-.32-.21-.42-.64-.21-.96,.21-.32,.64-.42,.96-.21l9.87,6.29c.2,.13,.32,.35,.32,.59s-.12,.46-.32,.59l-9.87,6.29c-.12,.07-.25,.11-.37,.11-.23,0-.45-.11-.59-.32Z" />
+                    </g>
+                    <g>
+                        <path class="d" d="M3.56,36.96c-1.15-.67-2.03-1.56-2.64-2.67s-.92-2.38-.92-3.81,.31-2.7,.92-3.82,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27,1.25,1.73,2.21,2.3l-.76,.91Z" />
+                        <path class="d" d="M13.24,34.09c-.78,0-1.54-.15-2.27-.46-.73-.31-1.37-.74-1.93-1.3l.9-1.04c.53,.52,1.08,.91,1.63,1.16,.56,.25,1.14,.38,1.74,.38,.48,0,.89-.07,1.25-.2,.36-.13,.64-.33,.83-.58,.2-.25,.29-.54,.29-.85,0-.44-.15-.77-.46-1.01-.31-.23-.82-.41-1.53-.53l-1.64-.27c-.9-.16-1.57-.45-2.01-.87s-.67-.98-.67-1.68c0-.56,.15-1.05,.45-1.48s.72-.75,1.27-.99,1.18-.35,1.9-.35,1.41,.11,2.09,.34,1.3,.56,1.86,.99l-.81,1.12c-1.05-.8-2.12-1.2-3.21-1.2-.43,0-.8,.06-1.12,.18s-.56,.29-.74,.51c-.18,.22-.27,.47-.27,.76,0,.4,.13,.71,.41,.92,.27,.21,.72,.36,1.34,.46l1.58,.27c1.04,.17,1.8,.47,2.28,.91s.73,1.04,.73,1.81c0,.6-.16,1.12-.49,1.58-.33,.45-.78,.8-1.37,1.06-.59,.25-1.27,.38-2.04,.38Z" />
+                        <path class="d" d="M18.97,33.95v-9.8l1.4-.27v6.06l3.46-3.12h1.64l-3.68,3.33,3.88,3.79h-1.85l-3.44-3.35v3.35h-1.4Z" />
+                        <path class="d" d="M27.64,25.68c-.23,0-.43-.09-.6-.26s-.25-.38-.25-.61,.08-.45,.25-.61,.37-.25,.6-.25,.45,.08,.62,.25,.25,.37,.25,.61-.08,.44-.25,.61-.37,.26-.62,.26Zm-.7,8.27v-7.13h1.4v7.13h-1.4Z" />
+                        <path class="d" d="M30.62,36.81v-9.98h1.39v.69c.6-.53,1.33-.8,2.18-.8,.67,0,1.28,.16,1.83,.49,.55,.33,.98,.77,1.29,1.32s.48,1.17,.48,1.86-.16,1.31-.48,1.87c-.32,.56-.76,1-1.3,1.32s-1.16,.49-1.84,.49c-.39,0-.77-.06-1.13-.19-.36-.13-.7-.31-1.01-.54v3.47h-1.4Zm3.39-3.96c.46,0,.87-.11,1.23-.32,.36-.21,.65-.51,.86-.88,.21-.37,.32-.79,.32-1.25s-.11-.89-.32-1.26c-.21-.37-.5-.67-.86-.88-.36-.21-.77-.32-1.23-.32-.4,0-.77,.07-1.12,.22-.34,.15-.63,.36-.87,.63v3.22c.23,.26,.53,.47,.88,.62,.35,.15,.72,.22,1.11,.22Z" />
+                        <path class="d" d="M43.67,23.94c1.15,.67,2.03,1.56,2.64,2.67s.92,2.38,.92,3.81-.31,2.7-.92,3.82-1.49,2-2.64,2.67l-.76-.9c.96-.58,1.7-1.35,2.21-2.31,.51-.96,.77-2.05,.77-3.28s-.26-2.3-.77-3.27c-.51-.97-1.25-1.73-2.21-2.3l.76-.91Z" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
     <div class="indexWrap-outter is-not-show">
-        <div class="indexWrap">
+        <div class="indexWrap index-menu-pin">
             <div class="index-top-banner">
-                <video class="bg-video show-for-large" src="https://player.vimeo.com/progressive_redirect/playback/982937842/rendition/1080p/file.mp4?loc=external&log_user=0&signature=cfa931ae90c2c72d68859d49f6243680243c337d3d5906b5dae9eb520ef2d4e2" loop autoplay muted playsinline></video>
-                <video class="bg-video hide-for-large" src="https://player.vimeo.com/progressive_redirect/playback/982937861/rendition/360p/file.mp4?loc=external&log_user=0&signature=4491c8ccf10f51dd1c5352a743edb004daa8ffaa41a9605634587f1c2c4963bc" loop autoplay muted playsinline></video>
+                <?php include 'random-video.php'; ?>
                 <div class="top-text" id="horizontalWrap">
                     <img class="show-for-large" src="./images/index-koi-the.svg" alt="">
                     <div class="text-o-outter show-for-large">
                         <div class="text-o">
-                            <div class="pic"><img src="./images/index-circle-o.png" alt=""></div>
+                            <?php if ($ran == 1) : ?>
+                                <!-- 拿杯子 -->
+                                <div class="pic"><img src="./images/index-circle-o-1.png"></div>
+                            <?php elseif ($ran == 2) : ?>
+                                <!-- 拿袋子 -->
+                                <div class="pic"><img src="./images/index-circle-o-2.png"></div>
+                            <?php else : ?>
+                                <!-- 樹影 -->
+                                <div class="pic"><img src="./images/index-circle-o-3.png"></div>
+                            <?php endif ?>
                         </div>
                     </div>
-                    <img class="hide-for-large" src="./images/index-koi-the-mobile.png">
+                    <?php if ($ran == 1) : ?>
+                        <!-- 拿杯子 -->
+                        <img class="hide-for-large" src="./images/index-koi-the-mobile-1.png">
+                    <?php elseif ($ran == 2) : ?>
+                        <!-- 拿袋子 -->
+                        <img class="hide-for-large" src="./images/index-koi-the-mobile-2.png">
+                    <?php else : ?>
+                        <!-- 樹影 -->
+                        <img class="hide-for-large" src="./images/index-koi-the-mobile-3.png">
+                    <?php endif ?>
                 </div>
                 <!-- <div class="top-text hide-for-large">
                     <img src="./images/index-koi-the-mobile.png">
@@ -65,697 +116,748 @@
                     and again.
                 </div>
             </div>
-            <div class="index-text-area">
-                <div class="inner-text">
-                    <ul class="bg-text-area">
-                        <li class="marquee-1">
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-2">
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-3">
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-1">
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-4">
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-2">
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-3">
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-1">
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-3">
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-1.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-2">
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-2.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-1">
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-3.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-4">
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-4.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-2">
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-5.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-2">
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-6.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-1">
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-7.svg" alt=""></div>
-                        </li>
-                        <li class="marquee-3">
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                            <div><img src="./images/index-bg-text-8.svg" alt=""></div>
-                        </li>
-                    </ul>
-                    <ul class="bottom-text show-for-large marquee-2">
-                        <li><img src="./images/index-text-marquee.svg" alt=""></li>
-                        <li><img src="./images/index-text-marquee.svg" alt=""></li>
-                    </ul>
-                    <div class="bottom-textWrap hide-for-large">
-                        <ul class="bottom-text marquee-2">
+            <div class="no-light">
+                <div class="index-text-area">
+                    <div class="inner-text">
+                        <ul class="bg-text-area">
+                            <li class="marquee-1">
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-2">
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-3">
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-1">
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-4">
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-2">
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-3">
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-1">
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-3">
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-1.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-2">
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-2.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-1">
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-3.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-4">
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-4.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-2">
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-5.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-2">
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-6.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-1">
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-7.svg" alt=""></div>
+                            </li>
+                            <li class="marquee-3">
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                                <div><img src="./images/index-bg-text-8.svg" alt=""></div>
+                            </li>
+                        </ul>
+                        <ul class="bottom-text show-for-large marquee-2">
                             <li><img src="./images/index-text-marquee.svg" alt=""></li>
                             <li><img src="./images/index-text-marquee.svg" alt=""></li>
                         </ul>
+                        <div class="bottom-textWrap hide-for-large">
+                            <ul class="bottom-text marquee-2">
+                                <li><img src="./images/index-text-marquee.svg" alt=""></li>
+                                <li><img src="./images/index-text-marquee.svg" alt=""></li>
+                            </ul>
+                        </div>
+                        <div class="center-pic" data-move='{"item": 22, "sec": 1}'></div>
+                        <div class="center-circle show-for-large"></div>
+                        <div class="center-circleWrap hide-for-large">
+                            <div class="center-circle"></div>
+                        </div>
                     </div>
-                    <div class="center-pic" data-move='{"item": 22, "sec": 1}'></div>
-                    <div class="center-circle show-for-large"></div>
-                    <div class="center-circleWrap hide-for-large">
-                        <div class="center-circle"></div>
+                </div>
+                <div class="index-feature-box hide-for-large">
+                    <div class="index-feature-inner flex-container align-justify">
+                        <ul class="feature-bgList flex-container align-justify left">
+                            <li class="down">
+                                <ul class="dot">
+                                    <li class="is-sticky">
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="featureList up">
+                            <li class="green">
+                                <div class="dot">
+                                    <img src="./video/tea-video.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/tea-video.gif">
+                                </div>
+                                <div class="inner flex-container align-middle">
+                                    <div class="deco top">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                            <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="en">
+                                        FRAGRANCE<br>
+                                        OF TEA LEAVES</div>
+                                    <div class="ch">
+                                        浓郁茶香
+                                    </div>
+                                    <div class="deco bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                            <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/tea-video.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/tea-video.gif">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="feature-bgList flex-container align-justify right">
+                            <li class="down">
+                                <ul class="dot">
+                                    <li class="is-sticky">
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="index-feature-box hide-for-large">
-                <div class="index-feature-inner flex-container align-justify">
-                    <ul class="feature-bgList flex-container align-justify left">
-                        <li class="down">
-                            <ul class="dot">
-                                <li class="is-sticky">
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="featureList up">
-                        <li class="green">
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                            <div class="inner flex-container align-middle">
-                                <div class="deco top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
-                                    </svg>
+                <div class="index-feature">
+                    <div class="index-feature-inner flex-container align-justify">
+                        <ul class="feature-bgList flex-container align-justify left">
+                            <li class="up show-for-large">
+                                <ul class="dot">
+                                    <li>
+                                        <div><img src="./video/1.gif"></div>
+                                        <div><img src="./video/1.gif"></div>
+                                        <div><img src="./video/1.gif"></div>
+                                        <div><img src="./video/1.gif"></div>
+                                        <div><img src="./video/1.gif"></div>
+                                    </li>
+                                    <li>
+                                        <div><img src="./video/2.gif"></div>
+                                        <div><img src="./video/2.gif"></div>
+                                        <div><img src="./video/2.gif"></div>
+                                        <div><img src="./video/2.gif"></div>
+                                        <div><img src="./video/2.gif"></div>
+                                    </li>
+                                    <li>
+                                        <div><img src="./video/3-2.gif"></div>
+                                        <div><img src="./video/3-2.gif"></div>
+                                        <div><img src="./video/3-2.gif"></div>
+                                        <div><img src="./video/3-2.gif"></div>
+                                        <div><img src="./video/3-2.gif"></div>
+
+                                    </li>
+                                    <li class="is-sticky">
+                                        <div><img src="./video/4.gif"></div>
+                                        <div><img src="./video/4.gif"></div>
+                                        <div><img src="./video/4.gif"></div>
+                                        <div><img src="./video/4.gif"></div>
+                                        <div><img src="./video/4.gif"></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="down">
+                                <ul class="dot">
+                                    <li class="is-top">
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                    </li>
+                                    <li>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                    </li>
+                                    <li>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                    </li>
+                                    <li class="is-sticky">
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="featureList up show-for-large">
+                            <li class="green">
+                                <div class="dot">
+                                    <img src="./video/1.gif">
                                 </div>
-                                <div class="en">
-                                    FRAGRANCE<br>
-                                    OF TEA LEAVES</div>
-                                <div class="ch">
-                                    浓郁茶香
+                                <div class="inner">
+                                    <div class="deco top">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                            <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="en">
+                                        FRAGRANCE<br>
+                                        OF TEA LEAVES</div>
+                                    <div class="ch">
+                                        浓郁茶香
+                                    </div>
+                                    <div class="deco bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                            <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="deco bottom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
-                                    </svg>
+                                <div class="dot">
+                                    <img src="./video/1.gif">
                                 </div>
-                            </div>
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="feature-bgList flex-container align-justify right">
-                        <li class="down">
-                            <ul class="dot">
-                                <li class="is-sticky">
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                            </li>
+                            <li class="orange">
+                                <div class="dot">
+                                    <img src="./video/2.gif">
+                                </div>
+                                <div class="inner">
+                                    <div class="deco top">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                            <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="en">
+                                        HEART-WARMING<br>
+                                        SERVICE
+                                    </div>
+                                    <div class="ch">
+                                        热情服务
+                                    </div>
+                                    <div class="deco bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                            <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/2.gif">
+                                </div>
+                            </li>
+                            <li class="blue">
+                                <div class="dot">
+                                    <img src="./video/3-2.gif">
+                                </div>
+                                <div class="inner">
+                                    <div class="deco top">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                            <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="en">
+                                        THE SOUND<br>
+                                        OF SHAKING
+                                    </div>
+                                    <div class="ch">跳动冰块</div>
+                                    <div class="deco bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                            <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/3-2.gif">
+                                </div>
+                            </li>
+                            <li class="yellow is-sticky">
+                                <div class="dot">
+                                    <img src="./video/4.gif">
+                                </div>
+                                <div class="inner">
+                                    <div class="deco top">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                            <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="en">
+                                            DELICIOUS<br>
+                                            GOLDEN BUBBLE
+                                        </span>
+                                        <span class="ch">美味珍珠</span>
+                                    </div>
+                                    <div class="deco bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                            <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/4.gif">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="featureList up hide-for-large">
+                            <li class="green">
+                                <div class="dot">
+                                    <img src="./video/1.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/1.gif">
+                                </div>
+                                <div class="inner">
+                                    <div class="deco top">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                            <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="en">
+                                        FRAGRANCE<br>
+                                        OF TEA LEAVES</div>
+                                    <div class="ch">
+                                        浓郁茶香
+                                    </div>
+                                    <div class="deco bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                            <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/1.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/1.gif">
+                                </div>
+                            </li>
+                            <li class="orange">
+                                <div class="dot">
+                                    <img src="./video/2.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/2.gif">
+                                </div>
+                                <div class="inner">
+                                    <div class="deco top">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                            <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="en">
+                                        HEART-WARMING<br>
+                                        SERVICE
+                                    </div>
+                                    <div class="ch">
+                                        热情服务
+                                    </div>
+                                    <div class="deco bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                            <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/2.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/2.gif">
+                                </div>
+                            </li>
+                            <li class="blue">
+                                <div class="dot">
+                                    <img src="./video/3-2.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/3-2.gif">
+                                </div>
+                                <div class="inner">
+                                    <div class="deco top">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                            <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="en">
+                                        THE SOUND<br>
+                                        OF SHAKING
+                                    </div>
+                                    <div class="ch">跳动冰块</div>
+                                    <div class="deco bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                            <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/3-2.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/3-2.gif">
+                                </div>
+                            </li>
+                            <li class="yellow is-sticky">
+                                <div class="dot">
+                                    <img src="./video/4.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/4.gif">
+                                </div>
+                                <div class="inner">
+                                    <div class="deco top">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
+                                            <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="en">
+                                            DELICIOUS<br>
+                                            GOLDEN BUBBLE
+                                        </span>
+                                        <span class="ch">美味珍珠</span>
+                                    </div>
+                                    <div class="deco bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
+                                            <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/4.gif">
+                                </div>
+                                <div class="dot">
+                                    <img src="./video/4.gif">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="feature-bgList flex-container align-justify right">
+                            <li class="down">
+                                <ul class="dot">
+                                    <li class="is-top">
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                        <div><img src="./images/index-feature-pic-4-1.png"></div>
+                                    </li>
+                                    <li>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-3-2.png"></div>
+                                    </li>
+                                    <li>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-2-2.png"></div>
+                                    </li>
+                                    <li class="is-sticky">
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                        <div><img src="./images/index-feature-pic-1-2.png"></div>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="up show-for-large">
+                                <ul class="dot">
+                                    <li>
+                                        <div><img src="./video/1.gif"></div>
+                                        <div><img src="./video/1.gif"></div>
+                                        <div><img src="./video/1.gif"></div>
+                                        <div><img src="./video/1.gif"></div>
+                                        <div><img src="./video/1.gif"></div>
+                                    </li>
+                                    <li>
+                                        <div><img src="./video/2.gif"></div>
+                                        <div><img src="./video/2.gif"></div>
+                                        <div><img src="./video/2.gif"></div>
+                                        <div><img src="./video/2.gif"></div>
+                                        <div><img src="./video/2.gif"></div>
+                                    </li>
+                                    <li>
+                                        <div><img src="./video/3-2.gif"></div>
+                                        <div><img src="./video/3-2.gif"></div>
+                                        <div><img src="./video/3-2.gif"></div>
+                                        <div><img src="./video/3-2.gif"></div>
+                                        <div><img src="./video/3-2.gif"></div>
+
+                                    </li>
+                                    <li class="is-sticky">
+                                        <div><img src="./video/4.gif"></div>
+                                        <div><img src="./video/4.gif"></div>
+                                        <div><img src="./video/4.gif"></div>
+                                        <div><img src="./video/4.gif"></div>
+                                        <div><img src="./video/4.gif"></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="index-feature">
-                <div class="index-feature-inner flex-container align-justify">
-                    <ul class="feature-bgList flex-container align-justify left">
-                        <li class="up show-for-large">
-                            <ul class="dot">
-                                <li>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                </li>
-                                <li>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                </li>
-                                <li>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                </li>
-                                <li class="is-sticky">
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="down">
-                            <ul class="dot">
-                                <li class="is-top">
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                </li>
-                                <li>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                </li>
-                                <li>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                </li>
-                                <li class="is-sticky">
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="featureList up show-for-large">
-                        <li class="green">
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                            <div class="inner flex-container align-middle">
-                                <div class="deco top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
-                                    </svg>
+                <div class="index-drink">
+                    <div class="drink-inner">
+                        <div class="drink-animation">
+                            <div class="innerWrap">
+                                <div class="bg">
+                                    <div class="note">
+                                        OUR<br>
+                                        RECOMMAND
+                                    </div>
+                                    <div class="en">
+                                        GOLDEN BUBBLE MILK TEA<br>
+                                        HOENY GREEN TEA
+                                    </div>
+                                    <div class="ch-flex flex-container align-center-middle">
+                                        <div class="ch left">黃金珍奶</div>
+                                        <div class="ch right">蜂蜜綠茶</div>
+                                    </div>
                                 </div>
-                                <div class="en">
-                                    FRAGRANCE<br>
-                                    OF TEA LEAVES</div>
-                                <div class="ch">
-                                    浓郁茶香
-                                </div>
-                                <div class="deco bottom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                        </li>
-                        <li class="orange">
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-2-1.png">
-                            </div>
-                            <div class="inner flex-container align-middle">
-                                <div class="deco top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
-                                    </svg>
-                                </div>
-                                <div class="en">
-                                    HEART-WARMING<br>
-                                    SERVICE
-                                </div>
-                                <div class="ch">
-                                    热情服务
-                                </div>
-                                <div class="deco bottom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-2-1.png">
-                            </div>
-                        </li>
-                        <li class="blue">
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-3-1.png">
-                            </div>
-                            <div class="inner flex-container align-middle">
-                                <div class="deco top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
-                                    </svg>
-                                </div>
-                                <div class="en">
-                                    THE SOUND<br>
-                                    OF SHAKING
-                                </div>
-                                <div class="ch">跳动冰块</div>
-                                <div class="deco bottom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-3-1.png">
-                            </div>
-                        </li>
-                        <li class="yellow is-sticky">
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-4-1.png">
-                            </div>
-                            <div class="inner flex-container align-middle">
-                                <div class="deco top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="en">
-                                        DELICIOUS<br>
-                                        GOLDEN BUBBLE
-                                    </span>
-                                    <span class="ch">美味珍珠</span>
-                                </div>
-                                <div class="deco bottom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-4-1.png">
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="featureList up hide-for-large">
-                        <li class="green">
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                            <div class="inner">
-                                <div class="deco top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
-                                    </svg>
-                                </div>
-                                <div class="en">
-                                    FRAGRANCE<br>
-                                    OF TEA LEAVES</div>
-                                <div class="ch">
-                                    浓郁茶香
-                                </div>
-                                <div class="deco bottom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                            <div class="dot">
-                                <img src="./video/tea-video.gif">
-                            </div>
-                        </li>
-                        <li class="orange">
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-2-1.png">
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-2-1.png">
-                            </div>
-                            <div class="inner">
-                                <div class="deco top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
-                                    </svg>
-                                </div>
-                                <div class="en">
-                                    HEART-WARMING<br>
-                                    SERVICE
-                                </div>
-                                <div class="ch">
-                                    热情服务
-                                </div>
-                                <div class="deco bottom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-2-1.png">
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-2-1.png">
-                            </div>
-                        </li>
-                        <li class="blue">
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-3-1.png">
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-3-1.png">
-                            </div>
-                            <div class="inner">
-                                <div class="deco top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
-                                    </svg>
-                                </div>
-                                <div class="en">
-                                    THE SOUND<br>
-                                    OF SHAKING
-                                </div>
-                                <div class="ch">跳动冰块</div>
-                                <div class="deco bottom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-3-1.png">
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-3-1.png">
-                            </div>
-                        </li>
-                        <li class="yellow is-sticky">
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-4-1.png">
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-4-1.png">
-                            </div>
-                            <div class="inner">
-                                <div class="deco top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="248.6" height="28.06" viewBox="0 0 248.6 28.06">
-                                        <path class="a" d="M2.61,17.6a2.43,2.43,0,0,0,2,2c30.77,5.2,73.47,8.42,120.67,8.42C171.83,28.06,213.4,25,244,20a2.44,2.44,0,0,0,2-2l2.59-15.87a1.47,1.47,0,0,0-1.7-1.7C216.05,5.66,173,9,125.28,9,76.58,9,32.68,5.52,1.73,0A1.47,1.47,0,0,0,0,1.71Z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="en">
-                                        DELICIOUS<br>
-                                        GOLDEN BUBBLE
-                                    </span>
-                                    <span class="ch">美味珍珠</span>
-                                </div>
-                                <div class="deco bottom">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="162.7" height="31.07" viewBox="0 0 162.7 31.07">
-                                        <path class="a" d="M0,1.72,2.79,18.54a2.45,2.45,0,0,0,1.7,2c22.4,6.87,49.18,10.56,76.82,10.56s54.45-3.72,76.85-10.6a2.46,2.46,0,0,0,1.7-2l2.82-16.79a1.47,1.47,0,0,0-1.9-1.65c-23,7.42-50.59,11.45-79.47,11.45S24.91,7.61,1.93.08A1.47,1.47,0,0,0,0,1.72Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-4-1.png">
-                            </div>
-                            <div class="dot">
-                                <img src="./images/index-feature-pic-4-1.png">
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="feature-bgList flex-container align-justify right">
-                        <li class="down">
-                            <ul class="dot">
-                                <li class="is-top">
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-2.png"></div>
-                                </li>
-                                <li>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-2.png"></div>
-                                </li>
-                                <li>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-2.png"></div>
-                                </li>
-                                <li class="is-sticky">
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                    <div><img src="./images/index-feature-pic-1-2.png"></div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="up show-for-large">
-                            <ul class="dot">
-                                <li>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                    <div> <img src="./video/tea-video.gif"></div>
-                                </li>
-                                <li>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-2-1.png"></div>
-                                </li>
-                                <li>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-3-1.png"></div>
-                                </li>
-                                <li class="is-sticky">
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                    <div><img src="./images/index-feature-pic-4-1.png"></div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="index-drink">
-                <div class="drink-inner">
-                    <div class="drink-animation">
-                        <div class="innerWrap">
-                            <div class="bg">
-                                <div class="note">
-                                    OUR<br>
-                                    RECOMMAND
-                                </div>
-                                <div class="en">
-                                    PEACH GREEN TEA<br>
-                                    BLACK TEA MACCHIATO
-                                </div>
-                                <div class="ch-flex flex-container align-center-middle">
-                                    <div class="ch left">水蜜桃绿茶</div>
-                                    <div class="ch right">红茶玛奇朵</div>
-                                </div>
-                            </div>
-                            <div class="items-area" id="scene">
-                                <div class="orange-1" data-depth="-5">
+                                <div class="items-area" id="scene">
+                                    <!-- <div class="orange-1" data-depth="-5">
                                     <div class="inner"><img src="./images/index-orange-1.png">
                                     </div>
-                                </div>
-                                <div class="orange-2" data-depth="-3">
-                                    <div class="inner"><img src="./images/index-orange-2.png">
+                                </div> -->
+                                    <div class="orange-2" data-depth="-2">
+                                        <div class="inner"><img src="./images/index-orange-2.png">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="orange-3" data-depth="-2.8">
-                                    <div class="inner"><img src="./images/index-orange-3.png">
+                                    <div class="orange-3" data-depth="-1.8">
+                                        <div class="inner"><img src="./images/index-orange-3.png">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="orange-4" data-depth="-3.5">
-                                    <div class="inner"><img src="./images/index-orange-4.png">
+                                    <div class="orange-4" data-depth="-2.5">
+                                        <div class="inner"><img src="./images/index-orange-4.png">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="strawberry-1" data-depth="-5.8">
-                                    <div class="inner"><img src="./images/index-strawberry-1.png">
+                                    <div class="strawberry-1" data-depth="-4.8">
+                                        <div class="inner"><img src="./images/index-strawberry-1.png">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="strawberry-2" data-depth="-7">
+                                    <!-- <div class="strawberry-2" data-depth="-7">
                                     <div class="inner"><img src="./images/index-strawberry-2.png">
                                     </div>
-                                </div>
-                                <div class="strawberry-3" data-depth="-6">
-                                    <div class="inner"><img src="./images/index-strawberry-3.png">
+                                </div> -->
+                                    <div class="strawberry-3" data-depth="-5">
+                                        <div class="inner"><img src="./images/index-strawberry-3.png">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="strawberry-4" data-depth="-7.5">
-                                    <div class="inner"><img src="./images/index-strawberry-4.png">
+                                    <div class="strawberry-4" data-depth="-6.5">
+                                        <div class="inner"><img src="./images/index-strawberry-4.png">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="water-1" data-depth="-5.4">
-                                    <div class="inner"><img src="./images/index-water-1.png">
+                                    <div class="water-1" data-depth="-4.4">
+                                        <div class="inner"><img src="./images/index-water-1.png">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="water-2" data-depth="-5.5">
-                                    <div class="inner"><img src="./images/index-water-2.png">
+                                    <div class="water-2" data-depth="-4.5">
+                                        <div class="inner"><img src="./images/index-water-2.png">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="drink-1" data-depth="-6">
-                                    <div class="inner"><img src="./images/index-drink-1.png">
+                                    <div class="drink-1" data-depth="-5">
+                                        <div class="inner"><img src="./images/index-drink-1.png">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="drink-2" data-depth="-7.2">
-                                    <div class="inner"><img src="./images/index-drink-2.png">
+                                    <div class="drink-2" data-depth="-6.2">
+                                        <div class="inner"><img src="./images/index-drink-2.png">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="drink-outter" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
+                        <div class="head-area">
+                            <div class="deco top">
+                                <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="114.89" height="12.97" viewBox="0 0 114.89 12.97">
+                                    <g id="_計" data-name="設計">
+                                        <path class="cls-1" d="M1.21,8.14c.08,.48,.45,.86,.93,.94,14.22,2.4,33.95,3.89,55.76,3.89,21.51,0,40.73-1.43,54.85-3.74,.48-.08,.86-.46,.93-.94l1.19-7.34c.08-.46-.32-.86-.78-.78-14.25,2.45-34.16,3.97-56.2,3.97S15.1,2.55,.8,.01C.33-.07-.07,.33,0,.79l1.2,7.34Z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="overflow">
+                                <div class="en">DRINK</div>
+                            </div>
+                            <div class="deco bottom">
+                                <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="75.19" height="14.36" viewBox="0 0 75.19 14.36">
+                                    <g id="_計" data-name="設計">
+                                        <path class="cls-1" d="M0,.8l1.28,7.78c.07,.43,.37,.78,.79,.91,10.35,3.17,22.73,4.88,35.5,4.88s25.16-1.72,35.51-4.9c.41-.13,.72-.48,.79-.91l1.3-7.76c.08-.51-.39-.92-.88-.76-10.62,3.43-23.38,5.29-36.72,5.29S11.51,3.51,.89,.04C.4-.12-.07,.29,0,.8Z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <ul class="drinksList" id="drinkHorizontal">
+                            <?php foreach ($drink as $drink_row) : ?>
+                                <?php $drinkIcon = $DB->row("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_id=? AND c_id=file_c_id AND file_type='file' AND c_data1='yes' AND c_active=1 ORDER BY c_sort ASC", [$drink_row['c_id']]); ?>
+                                <li>
+                                    <a href="./ourtea.php#<?= $drink_row['c_id'] ?>">
+                                        <div class="pic-area" style="background: url('<?= $drink_row['file_link1'] ?>') center/cover no-repeat;">
+                                            <div class="circle">
+                                                <div class="view-more hide-for-xlarge">
+                                                    <img src="./images/view-more.svg">
+                                                </div>
+                                                <img src="<?= $drink_row['file_link1'] ?>" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="article-area flex-container">
+                                            <?php if ($drinkIcon['file_link1'] != '') : ?>
+                                                <div class="icon"><img src="<?= $drinkIcon['file_link1'] ?>" alt=""></div>
+                                            <?php endif ?>
+                                            <div class="ch"><?= $drink_row['c_title'] ?></div>
+                                            <div class="en">(<?= $drink_row['c_title_en'] ?>)</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
                 </div>
-                <div class="drink-outter" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
+                <div class="index-news" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
                     <div class="head-area">
                         <div class="deco top">
                             <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="114.89" height="12.97" viewBox="0 0 114.89 12.97">
@@ -765,7 +867,7 @@
                             </svg>
                         </div>
                         <div class="overflow">
-                            <div class="en">DRINK</div>
+                            <div class="en">NEWS</div>
                         </div>
                         <div class="deco bottom">
                             <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="75.19" height="14.36" viewBox="0 0 75.19 14.36">
@@ -775,206 +877,41 @@
                             </svg>
                         </div>
                     </div>
-                    <ul class="drinksList" id="drinkHorizontal">
-                        <li>
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-1.jpg')">
-                                <div class="circle">
-                                    <div class="view-more hide-for-xlarge">
-                                        <img src="./images/view-more.svg">
+                    <ul class="top-newsList">
+                        <?php foreach ($work as $row) : ?>
+                            <li>
+                                <a href="./news_detail.php?id=<?= $row['d_id'] ?>" class="flex-container">
+                                    <div class="pic"><img src="<?= $row['file_link1'] ?>" alt=""></div>
+                                    <div class="article-area">
+                                        <div class="cat hide-for-large"><?= $row['c_title'] ?></div>
+                                        <div class="date">(<?= date("F d, Y", strtotime($row['d_date'])) ?>)</div>
+                                        <div class="title">
+                                            <?= $row['d_title'] ?>
+                                        </div>
+                                        <div class="more">
+                                            <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="53.45" height="53.02" viewBox="0 0 53.45 53.02">
+                                                <g id="c" data-name="layout">
+                                                    <g>
+                                                        <path class="e" d="M3.56,53.02c-1.15-.67-2.03-1.56-2.64-2.67-.61-1.11-.92-2.38-.92-3.81s.31-2.7,.92-3.82c.61-1.12,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27c.51,.97,1.25,1.73,2.21,2.3l-.76,.91Z" />
+                                                        <path class="e" d="M10.29,39.7h1.86l1.89,5.21c.24,.69,.45,1.39,.69,2.09h.07c.24-.7,.43-1.4,.67-2.09l1.86-5.21h1.88v10.31h-1.51v-5.1c0-.92,.13-2.25,.21-3.19h-.06l-.83,2.38-1.79,4.92h-1.01l-1.81-4.92-.81-2.38h-.06c.07,.94,.2,2.27,.2,3.19v5.1h-1.46v-10.31Z" />
+                                                        <path class="e" d="M21.85,46.18c0-2.58,1.72-4.06,3.63-4.06s3.63,1.49,3.63,4.06-1.72,4.02-3.63,4.02-3.63-1.47-3.63-4.02Zm5.6,0c0-1.64-.76-2.73-1.98-2.73s-1.96,1.09-1.96,2.73,.76,2.7,1.96,2.7,1.98-1.08,1.98-2.7Z" />
+                                                        <path class="e" d="M31.63,42.31h1.32l.13,1.39h.04c.55-.99,1.36-1.58,2.18-1.58,.38,0,.63,.06,.87,.17l-.29,1.4c-.27-.08-.46-.13-.77-.13-.63,0-1.39,.43-1.88,1.65v4.8h-1.6v-7.7Z" />
+                                                        <path class="e" d="M37.28,46.18c0-2.51,1.71-4.06,3.52-4.06,2.04,0,3.14,1.47,3.14,3.66,0,.31-.03,.63-.07,.81h-5c.13,1.47,1.05,2.35,2.38,2.35,.69,0,1.28-.21,1.84-.58l.56,1.02c-.71,.48-1.6,.81-2.61,.81-2.09,0-3.75-1.48-3.75-4.02Zm5.27-.7c0-1.33-.6-2.1-1.72-2.1-.97,0-1.82,.74-1.97,2.1h3.7Z" />
+                                                        <path class="e" d="M49.89,40c1.15,.67,2.03,1.56,2.64,2.67s.92,2.38,.92,3.81-.31,2.7-.92,3.82-1.49,2-2.64,2.67l-.76-.9c.96-.58,1.7-1.35,2.21-2.31,.51-.96,.77-2.05,.77-3.28s-.26-2.3-.77-3.27c-.51-.97-1.25-1.73-2.21-2.3l.76-.91Z" />
+                                                    </g>
+                                                    <g class="arrow">
+                                                        <line class="d" y1="15.09" x2="31.07" y2="15.09" />
+                                                        <path class="e" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07C11.01,0,11.95-.21,12.64,.23l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
                                     </div>
-                                    <img src="./images/index-drink-circle-1.png" alt="">
-                                </div>
-                            </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-1.svg" alt=""></div>
-                                <div class="ch">茶</div>
-                                <div class="en">(Flavored Tea)</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-2.jpg')">
-                                <div class="circle">
-                                    <div class="view-more hide-for-xlarge">
-                                        <img src="./images/view-more.svg">
-                                    </div>
-                                    <img src="./images/index-drink-circle-2.png" alt="">
-                                </div>
-                            </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-2.svg" alt=""></div>
-                                <div class="ch">奶茶</div>
-                                <div class="en">(Milk Tea)</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-3.jpg')">
-                                <div class="circle">
-                                    <div class="view-more hide-for-xlarge">
-                                        <img src="./images/view-more.svg">
-                                    </div>
-                                    <img src="./images/index-drink-circle-3.png" alt="">
-                                </div>
-                            </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-3.svg" alt=""></div>
-                                <div class="ch">茶拿鐵</div>
-                                <div class="en">(Tea Latte)</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-4.jpg')">
-                                <div class="circle">
-                                    <div class="view-more hide-for-xlarge">
-                                        <img src="./images/view-more.svg">
-                                    </div>
-                                    <img src="./images/index-drink-circle-4.png" alt="">
-                                </div>
-                            </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-4.svg" alt=""></div>
-                                <div class="ch">瑪奇朵</div>
-                                <div class="en">(Signature Macchiato)</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="pic-area" style="background-image: url('./images/index-drink-pic-5.jpg')">
-                                <div class="circle">
-                                    <div class="view-more hide-for-xlarge">
-                                        <img src="./images/view-more.svg">
-                                    </div>
-                                    <img src="./images/index-drink-circle-5.png" alt="">
-                                </div>
-                            </div>
-                            <div class="article-area flex-container">
-                                <div class="icon"><img src="./images/index-drink-cat-5.svg" alt=""></div>
-                                <div class="ch">果汁</div>
-                                <div class="en">(Juice)</div>
-                            </div>
-                        </li>
+                                </a>
+                            </li>
+                        <?php endforeach ?>
                     </ul>
                 </div>
-            </div>
-            <div class="index-news" data-r='{"opacity": 0, "y": 50, "stagger": 0.1}'>
-                <div class="head-area">
-                    <div class="deco top">
-                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="114.89" height="12.97" viewBox="0 0 114.89 12.97">
-                            <g id="_計" data-name="設計">
-                                <path class="cls-1" d="M1.21,8.14c.08,.48,.45,.86,.93,.94,14.22,2.4,33.95,3.89,55.76,3.89,21.51,0,40.73-1.43,54.85-3.74,.48-.08,.86-.46,.93-.94l1.19-7.34c.08-.46-.32-.86-.78-.78-14.25,2.45-34.16,3.97-56.2,3.97S15.1,2.55,.8,.01C.33-.07-.07,.33,0,.79l1.2,7.34Z" />
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="overflow">
-                        <div class="en">NEWS</div>
-                    </div>
-                    <div class="deco bottom">
-                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="75.19" height="14.36" viewBox="0 0 75.19 14.36">
-                            <g id="_計" data-name="設計">
-                                <path class="cls-1" d="M0,.8l1.28,7.78c.07,.43,.37,.78,.79,.91,10.35,3.17,22.73,4.88,35.5,4.88s25.16-1.72,35.51-4.9c.41-.13,.72-.48,.79-.91l1.3-7.76c.08-.51-.39-.92-.88-.76-10.62,3.43-23.38,5.29-36.72,5.29S11.51,3.51,.89,.04C.4-.12-.07,.29,0,.8Z" />
-                            </g>
-                        </svg>
-                    </div>
-                </div>
-                <ul class="top-newsList">
-                    <li>
-                        <a href="./news_detail.php" class="flex-container">
-                            <div class="pic"><img src="./images/index-news-pic.jpg" alt=""></div>
-                            <div class="article-area">
-                                <div class="cat hide-for-large">MEDIA</div>
-                                <div class="date">(July 1 , 2023)</div>
-                                <div class="title">
-                                    #果奶系列 今日上线[举手]<br>
-                                    【芒果奶绿】芒香、奶香、茉莉香层层交叠，谁不迷“芒”！<br>
-                                    【水蜜桃奶绿】颗颗桃子果肉落入茉莉绿茶汤底，超满足！<br>
-                                    【葡萄奶绿】丝滑奶茶与酸甜葡萄绝配！
-                                </div>
-                                <div class="more">
-                                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="53.45" height="53.02" viewBox="0 0 53.45 53.02">
-                                        <g id="c" data-name="layout">
-                                            <g class="show-for-large">
-                                                <path class="e" d="M3.56,53.02c-1.15-.67-2.03-1.56-2.64-2.67-.61-1.11-.92-2.38-.92-3.81s.31-2.7,.92-3.82c.61-1.12,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27c.51,.97,1.25,1.73,2.21,2.3l-.76,.91Z" />
-                                                <path class="e" d="M10.29,39.7h1.86l1.89,5.21c.24,.69,.45,1.39,.69,2.09h.07c.24-.7,.43-1.4,.67-2.09l1.86-5.21h1.88v10.31h-1.51v-5.1c0-.92,.13-2.25,.21-3.19h-.06l-.83,2.38-1.79,4.92h-1.01l-1.81-4.92-.81-2.38h-.06c.07,.94,.2,2.27,.2,3.19v5.1h-1.46v-10.31Z" />
-                                                <path class="e" d="M21.85,46.18c0-2.58,1.72-4.06,3.63-4.06s3.63,1.49,3.63,4.06-1.72,4.02-3.63,4.02-3.63-1.47-3.63-4.02Zm5.6,0c0-1.64-.76-2.73-1.98-2.73s-1.96,1.09-1.96,2.73,.76,2.7,1.96,2.7,1.98-1.08,1.98-2.7Z" />
-                                                <path class="e" d="M31.63,42.31h1.32l.13,1.39h.04c.55-.99,1.36-1.58,2.18-1.58,.38,0,.63,.06,.87,.17l-.29,1.4c-.27-.08-.46-.13-.77-.13-.63,0-1.39,.43-1.88,1.65v4.8h-1.6v-7.7Z" />
-                                                <path class="e" d="M37.28,46.18c0-2.51,1.71-4.06,3.52-4.06,2.04,0,3.14,1.47,3.14,3.66,0,.31-.03,.63-.07,.81h-5c.13,1.47,1.05,2.35,2.38,2.35,.69,0,1.28-.21,1.84-.58l.56,1.02c-.71,.48-1.6,.81-2.61,.81-2.09,0-3.75-1.48-3.75-4.02Zm5.27-.7c0-1.33-.6-2.1-1.72-2.1-.97,0-1.82,.74-1.97,2.1h3.7Z" />
-                                                <path class="e" d="M49.89,40c1.15,.67,2.03,1.56,2.64,2.67s.92,2.38,.92,3.81-.31,2.7-.92,3.82-1.49,2-2.64,2.67l-.76-.9c.96-.58,1.7-1.35,2.21-2.31,.51-.96,.77-2.05,.77-3.28s-.26-2.3-.77-3.27c-.51-.97-1.25-1.73-2.21-2.3l.76-.91Z" />
-                                            </g>
-                                            <g class="arrow">
-                                                <line class="d" y1="15.09" x2="31.07" y2="15.09" />
-                                                <path class="e" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07C11.01,0,11.95-.21,12.64,.23l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
-                                            </g>
-                                        </g>
-                                    </svg>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./news_detail.php" class="flex-container">
-                            <div class="pic"><img src="./images/index-news-pic.jpg" alt=""></div>
-                            <div class="article-area">
-                                <div class="cat hide-for-large">MEDIA</div>
-                                <div class="date">(July 1 , 2023)</div>
-                                <div class="title">
-                                    #果奶系列 今日上线[举手]<br>
-                                    【芒果奶绿】芒香、奶香、茉莉香层层交叠，谁不迷“芒”！<br>
-                                    【水蜜桃奶绿】颗颗桃子果肉落入茉莉绿茶汤底，超满足！<br>
-                                    【葡萄奶绿】丝滑奶茶与酸甜葡萄绝配！
-                                </div>
-                                <div class="more">
-                                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="53.45" height="53.02" viewBox="0 0 53.45 53.02">
-                                        <g id="c" data-name="layout">
-                                            <g class="show-for-large">
-                                                <path class="e" d="M3.56,53.02c-1.15-.67-2.03-1.56-2.64-2.67-.61-1.11-.92-2.38-.92-3.81s.31-2.7,.92-3.82c.61-1.12,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27c.51,.97,1.25,1.73,2.21,2.3l-.76,.91Z" />
-                                                <path class="e" d="M10.29,39.7h1.86l1.89,5.21c.24,.69,.45,1.39,.69,2.09h.07c.24-.7,.43-1.4,.67-2.09l1.86-5.21h1.88v10.31h-1.51v-5.1c0-.92,.13-2.25,.21-3.19h-.06l-.83,2.38-1.79,4.92h-1.01l-1.81-4.92-.81-2.38h-.06c.07,.94,.2,2.27,.2,3.19v5.1h-1.46v-10.31Z" />
-                                                <path class="e" d="M21.85,46.18c0-2.58,1.72-4.06,3.63-4.06s3.63,1.49,3.63,4.06-1.72,4.02-3.63,4.02-3.63-1.47-3.63-4.02Zm5.6,0c0-1.64-.76-2.73-1.98-2.73s-1.96,1.09-1.96,2.73,.76,2.7,1.96,2.7,1.98-1.08,1.98-2.7Z" />
-                                                <path class="e" d="M31.63,42.31h1.32l.13,1.39h.04c.55-.99,1.36-1.58,2.18-1.58,.38,0,.63,.06,.87,.17l-.29,1.4c-.27-.08-.46-.13-.77-.13-.63,0-1.39,.43-1.88,1.65v4.8h-1.6v-7.7Z" />
-                                                <path class="e" d="M37.28,46.18c0-2.51,1.71-4.06,3.52-4.06,2.04,0,3.14,1.47,3.14,3.66,0,.31-.03,.63-.07,.81h-5c.13,1.47,1.05,2.35,2.38,2.35,.69,0,1.28-.21,1.84-.58l.56,1.02c-.71,.48-1.6,.81-2.61,.81-2.09,0-3.75-1.48-3.75-4.02Zm5.27-.7c0-1.33-.6-2.1-1.72-2.1-.97,0-1.82,.74-1.97,2.1h3.7Z" />
-                                                <path class="e" d="M49.89,40c1.15,.67,2.03,1.56,2.64,2.67s.92,2.38,.92,3.81-.31,2.7-.92,3.82-1.49,2-2.64,2.67l-.76-.9c.96-.58,1.7-1.35,2.21-2.31,.51-.96,.77-2.05,.77-3.28s-.26-2.3-.77-3.27c-.51-.97-1.25-1.73-2.21-2.3l.76-.91Z" />
-                                            </g>
-                                            <g class="arrow">
-                                                <line class="d" y1="15.09" x2="31.07" y2="15.09" />
-                                                <path class="e" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07C11.01,0,11.95-.21,12.64,.23l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
-                                            </g>
-                                        </g>
-                                    </svg>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./news_detail.php" class="flex-container">
-                            <div class="pic"><img src="./images/index-news-pic.jpg" alt=""></div>
-                            <div class="article-area">
-                                <div class="cat hide-for-large">MEDIA</div>
-                                <div class="date">(July 1 , 2023)</div>
-                                <div class="title">
-                                    #果奶系列 今日上线[举手]<br>
-                                    【芒果奶绿】芒香、奶香、茉莉香层层交叠，谁不迷“芒”！<br>
-                                    【水蜜桃奶绿】颗颗桃子果肉落入茉莉绿茶汤底，超满足！<br>
-                                    【葡萄奶绿】丝滑奶茶与酸甜葡萄绝配！
-                                </div>
-                                <div class="more">
-                                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="53.45" height="53.02" viewBox="0 0 53.45 53.02">
-                                        <g id="c" data-name="layout">
-                                            <g class="show-for-large">
-                                                <path class="e" d="M3.56,53.02c-1.15-.67-2.03-1.56-2.64-2.67-.61-1.11-.92-2.38-.92-3.81s.31-2.7,.92-3.82c.61-1.12,1.49-2,2.64-2.67l.76,.9c-.96,.58-1.7,1.35-2.21,2.31-.51,.96-.77,2.05-.77,3.28s.26,2.3,.77,3.27c.51,.97,1.25,1.73,2.21,2.3l-.76,.91Z" />
-                                                <path class="e" d="M10.29,39.7h1.86l1.89,5.21c.24,.69,.45,1.39,.69,2.09h.07c.24-.7,.43-1.4,.67-2.09l1.86-5.21h1.88v10.31h-1.51v-5.1c0-.92,.13-2.25,.21-3.19h-.06l-.83,2.38-1.79,4.92h-1.01l-1.81-4.92-.81-2.38h-.06c.07,.94,.2,2.27,.2,3.19v5.1h-1.46v-10.31Z" />
-                                                <path class="e" d="M21.85,46.18c0-2.58,1.72-4.06,3.63-4.06s3.63,1.49,3.63,4.06-1.72,4.02-3.63,4.02-3.63-1.47-3.63-4.02Zm5.6,0c0-1.64-.76-2.73-1.98-2.73s-1.96,1.09-1.96,2.73,.76,2.7,1.96,2.7,1.98-1.08,1.98-2.7Z" />
-                                                <path class="e" d="M31.63,42.31h1.32l.13,1.39h.04c.55-.99,1.36-1.58,2.18-1.58,.38,0,.63,.06,.87,.17l-.29,1.4c-.27-.08-.46-.13-.77-.13-.63,0-1.39,.43-1.88,1.65v4.8h-1.6v-7.7Z" />
-                                                <path class="e" d="M37.28,46.18c0-2.51,1.71-4.06,3.52-4.06,2.04,0,3.14,1.47,3.14,3.66,0,.31-.03,.63-.07,.81h-5c.13,1.47,1.05,2.35,2.38,2.35,.69,0,1.28-.21,1.84-.58l.56,1.02c-.71,.48-1.6,.81-2.61,.81-2.09,0-3.75-1.48-3.75-4.02Zm5.27-.7c0-1.33-.6-2.1-1.72-2.1-.97,0-1.82,.74-1.97,2.1h3.7Z" />
-                                                <path class="e" d="M49.89,40c1.15,.67,2.03,1.56,2.64,2.67s.92,2.38,.92,3.81-.31,2.7-.92,3.82-1.49,2-2.64,2.67l-.76-.9c.96-.58,1.7-1.35,2.21-2.31,.51-.96,.77-2.05,.77-3.28s-.26-2.3-.77-3.27c-.51-.97-1.25-1.73-2.21-2.3l.76-.91Z" />
-                                            </g>
-                                            <g class="arrow">
-                                                <line class="d" y1="15.09" x2="31.07" y2="15.09" />
-                                                <path class="e" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07C11.01,0,11.95-.21,12.64,.23l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
-                                            </g>
-                                        </g>
-                                    </svg>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
         <?php include 'menu-link.php'; ?>
@@ -984,678 +921,4 @@
 <?php include 'script.php'; ?>
 
 </html>
-<script>
-    // $('nav').addClass('is-move')
-    $(document).ready(function() {
-        window.onbeforeunload = function() {
-            //刷新后页面自动回到顶部
-            document.documentElement.scrollTop = 0; //ie下
-            document.body.scrollTop = 0; //非ie
-        }
-        $("html").addClass("is-lock")
-    })
-    $('.menuWrap').addClass("is-not-hover")
-    $('.menu-mobileWrap').addClass("is-not-hover")
-    $('footer').addClass('is-light-orange')
-    // 舊的
-    // let $tl_preload = gsap.timeline({
-    //         paused: false,
-    //     })
-    //     .to(".index-preload .logo", {
-    //         duration: 0.75,
-    //         opacity: 1,
-    //         ease: Power2.easeIn,
-    //     })
-    //     .add('logo')
-    //     .to(".index-preload .logo", {
-    //         delay: 2,
-    //         duration: 2,
-    //         y: '-400',
-    //         scale: 1.5,
-    //         ease: Power2.easeOut,
-    //     }, 'logo')
-    //     .to(".index-top-banner", {
-    //         delay: 2,
-    //         duration: 1.5,
-    //         y: 0,
-    //         ease: Power2.easeOut,
-    //     }, 'logo')
-    //     .to("nav", {
-    //         className: "+=not-clip flex-container align-justify"
-    //     }, '<0.65')
-    //     .to(".index-top-banner .top-text", {
-    //         duration: 1.5,
-    //         x: 0,
-    //         ease: Power3.easeOut,
-    //     }, '<0.5')
-    //     .from(".menu-link", {
-    //         duration: 0.5,
-    //         opacity: 0,
-    //         ease: Power2.easeOut,
-    //     })
-    //     .to(".menu-link", {
-    //         opacity: 1,
-    //     })
-    // gsap.delayedCall(6, function() {
-    //     $('.index-preload video').addClass('not-show');
-    // })
-    let $tl_preload = gsap.timeline({
-            paused: false,
-        })
-        .to(".index-top-banner", {
-            delay: 6.5,
-            duration: 1.5,
-            y: 0,
-            ease: Power2.easeOut,
-        }, 'logo')
-        .to("nav", {
-            className: "+=not-clip flex-container align-justify"
-        }, '<0.65')
-        .to(".index-top-banner .top-text", {
-            duration: 1.5,
-            x: 0,
-            ease: Power3.easeOut,
-        }, '<0.5')
-        .from(".menu-link", {
-            duration: 0.5,
-            opacity: 0,
-            ease: Power2.easeOut,
-        })
-        .to(".menu-link", {
-            opacity: 1,
-        })
-    gsap.delayedCall(3, function() {
-        $(".indexWrap-outter").removeClass("is-not-show")
-        // if (window.device == 'mobile') {
-        //     $('nav .bg').removeClass('is-move')
-        // }
-    })
-    gsap.delayedCall(9, function() {
-        // $(".indexWrap-outter").removeClass("is-not-show")
-        $('body').addClass('is-light-orange')
-        $('.index-preload').addClass('not-show')
-        if (window.device == 'mobile') {
-            $('nav .bg').removeClass('is-move')
-            $('nav').removeClass('not-clip')
-        }
-    })
-    gsap.delayedCall(10, function() {
-        $("html").removeClass("is-lock")
-        if (window.device == 'desktop') {
-            $('nav').removeClass('not-clip')
-            $('.menuWrap').removeClass("is-not-hover")
-        } else {
-            $('.menu-mobileWrap').removeClass("is-not-hover")
-        }
-
-        function horizonHandler(el) {
-            let _x = $(el).outerWidth(true) - $(window).width()
-            console.log(_x);
-            let storenum = {
-                n: 1
-            }
-            const $tl = gsap.timeline({
-                paused: false,
-            })
-            if (_x > 0) {
-                gsap.timeline().to(el, {
-                    scrollTrigger: {
-                        toggleActions: "play pause resume reverse",
-                        trigger: "#horizontalWrap",
-                        start: "top 0%",
-                        end: `+=${_x}`,
-                        pin: ".index-top-banner",
-                        pinSpace: false,
-                        scrub: true,
-                        // markers: true,
-                    },
-                    x: -_x,
-                    ease: 'none'
-                }).to(".text-o", {
-                    scrollTrigger: {
-                        toggleActions: "play pause resume reverse",
-                        trigger: "#horizontalWrap",
-                        start: "top 0%",
-                        end: `+=${_x}`,
-                        pin: ".index-top-banner",
-                        pinSpace: false,
-                        scrub: 1,
-                    },
-                    rotation: 100,
-                })
-                ScrollTrigger.create({
-                    toggleActions: "play pause resume reverse",
-                    trigger: "#horizontalWrap",
-                    start: "top 0%",
-                    end: `+=${_x}`,
-                    pinSpace: false,
-                    scrub: true,
-                    // markers: true,
-                    // animation: $tl,
-                })
-            }
-        }
-        horizonHandler('.index-top-banner .top-text');
-        if (window.device == 'desktop') {
-            var _p = $('.center-pic').data("move")
-            _p.repeatDelay = (_p.repeatDelay != undefined) ? _p.repeatDelay : 0
-            gsap.timeline({
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-text-area",
-                    start: "top 0%",
-                    end: "50% 0%",
-                    scrub: 1,
-                    // markers: true,
-                },
-            }).to('.center-pic', {
-                // duration: _p.sec,
-                backgroundPosition: "0 100%",
-                ease: SteppedEase.config(_p.item),
-                repeat: 0,
-                // y: 100, 
-                rotation: 120,
-            }).to(".center-circle", {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-text-area",
-                    start: "60% 80%",
-                    end: "80% 80%",
-                    scrub: 1,
-                    // markers: true,
-                },
-                scale: 6.5,
-            })
-            // const $tl_drink_box = gsap.timeline({
-            //         paused: false,
-            //     }).to('.index-feature-box .up div', {
-            //         scale: 1,
-            //     })
-            //     .to('.index-feature-box .down div', {
-            //         scale: 1,
-            //     }, '<0')
-            // ScrollTrigger.create({
-            //     toggleActions: "play pause resume reverse",
-            //     trigger: ".index-feature-box",
-            //     start: "5% 0%",
-            //     end: "50% 0%",
-            //     scrub: 1,
-            //     // markers: true,
-            //     animation: $tl_drink_box,
-            // })
-            // ScrollTrigger.create({
-            //     toggleActions: "play pause resume reverse",
-            //     trigger: ".index-feature",
-            //     start: "5% 0%",
-            //     end: "90% 0%",
-            //     // markers: true,
-            //     onEnter() {
-            //         $('.index-feature-box').addClass('is-not-show');
-            //         $('.index-feature').addClass('is-show');
-            //     },
-            //     // onLeave() {
-            //     //     $('.index-feature-box').removeClass('is-not-show');
-            //     // },
-            //     onEnterBack() {
-            //         $('.index-feature-box').addClass('is-not-show');
-            //         $('.index-feature').addClass('is-show');
-            //     },
-            //     onLeaveBack() {
-            //         $('.index-feature-box').removeClass('is-not-show');
-            //         $('.index-feature').removeClass('is-show');
-            //     }
-            // });
-            // ================四大理念電腦版===================
-            const $tl_drink4 = gsap.timeline({
-                    paused: false,
-                }).fromTo('.index-feature .up div', {
-                    scale: 1,
-                }, {
-                    scale: 0,
-                })
-                .fromTo('.index-feature .down div', {
-                    scale: 1,
-                }, {
-                    scale: 0,
-                }, '<0')
-            const $tl_drink3 = gsap.timeline({
-                    paused: false,
-                })
-                .fromTo('.index-feature .up', {
-                    y: '-200vh'
-                }, {
-                    y: '-300vh'
-                })
-                .fromTo('.index-feature .down', {
-                    y: '-100vh'
-                }, {
-                    y: '0%'
-                }, "<0")
-            const $tl_drink2 = gsap.timeline({
-                    paused: false,
-                })
-                .fromTo('.index-feature .up', {
-                    y: '-100vh'
-                }, {
-                    y: '-200vh'
-                })
-                .fromTo('.index-feature .down', {
-                    y: '-200vh'
-                }, {
-                    y: '-100vh'
-                }, "<0")
-            const $tl_drink1 = gsap.timeline({
-                    paused: false,
-                })
-                .fromTo('.index-feature .up', {
-                    y: '0'
-                }, {
-                    y: '-100vh'
-                })
-                .fromTo('.index-feature .down', {
-                    y: '-300vh'
-                }, {
-                    y: '-200vh'
-                }, "<0")
-            const $tl_drink0 = gsap.timeline({
-                    paused: false,
-                }).fromTo('.index-feature .up div', {
-                    scale: 0,
-                }, {
-                    scale: 1,
-                })
-                .fromTo('.index-feature .down div', {
-                    scale: 0,
-                }, {
-                    scale: 1,
-                }, '<0')
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "75% 0%",
-                end: "80% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink4,
-            })
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "59% 0%",
-                end: "60% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink3,
-            })
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "39% 0%",
-                end: "40% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink2,
-            })
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "19% 0%",
-                end: "20% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink1,
-            })
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "5% 0%",
-                end: "10% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink0,
-            })
-        } else {
-            gsap.timeline().to('.center-pic', {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-text-area",
-                    start: "top 0%",
-                    end: "bottom 0%",
-                    scrub: 1,
-                    // markers: true,
-                },
-                rotation: 120,
-            }).to(".center-circle", {
-                scrollTrigger: {
-                    toggleActions: "play pause resume reverse",
-                    trigger: ".index-text-area",
-                    start: "30% top",
-                    end: "bottom top",
-                    scrub: 1,
-                    // markers: true,
-                },
-                scale: 5,
-            })
-            // ================四大理念手機版==================
-            //順序要倒過來不然有北七BUG
-            const $tl_drink_box = gsap.timeline({
-                    paused: false,
-                }).to('.index-feature-box .up div', {
-                    scale: 1,
-                })
-                .to('.index-feature-box .down div', {
-                    scale: 1,
-                }, '<0')
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature-box",
-                start: "10% 0%",
-                end: "25% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink_box,
-            })
-
-
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "0% 0%",
-                end: "90% 0%",
-                // markers: true,
-                onEnter() {
-                    $('.index-feature-box').addClass('is-not-show');
-                    $('.index-feature').addClass('is-show');
-                },
-                // onLeave() {
-                //     $('.index-feature-box').removeClass('is-not-show');
-                // },
-                onEnterBack() {
-                    $('.index-feature-box').addClass('is-not-show');
-                    $('.index-feature').addClass('is-show');
-                },
-                onLeaveBack() {
-                    $('.index-feature-box').removeClass('is-not-show');
-                    $('.index-feature').removeClass('is-show');
-                }
-            });
-
-            //順序要倒過來不然有北七BUG
-
-            const $tl_drink4 = gsap.timeline({
-                paused: true,
-            }).add('small').to('.index-feature .up div', {
-                scale: 0,
-            }, 'small').to('.index-feature .down div', {
-                scale: 0,
-            }, 'small')
-
-            const $tl_drink3 = gsap.timeline({
-                    paused: false,
-                })
-                .fromTo('.index-feature .up', {
-                    y: '-200vh'
-                }, {
-                    y: '-300vh'
-                })
-                .fromTo('.index-feature .down', {
-                    y: '-100vh'
-                }, {
-                    y: '0%'
-                }, "<0")
-
-            const $tl_drink2 = gsap.timeline({
-                    paused: false,
-                })
-                .fromTo('.index-feature .up', {
-                    y: '-100vh'
-                }, {
-                    y: '-200vh'
-                })
-                .fromTo('.index-feature .down', {
-                    y: '-200vh'
-                }, {
-                    y: '-100vh'
-                }, "<0")
-
-
-
-            const $tl_drink1 = gsap.timeline({
-                    paused: false,
-                })
-                .fromTo('.index-feature .up', {
-                    y: '0'
-                }, {
-                    y: '-100vh'
-                })
-                .fromTo('.index-feature .down', {
-                    y: '-300vh'
-                }, {
-                    y: '-200vh'
-                }, "<0")
-
-
-
-
-            // ScrollTrigger.create({
-            //     toggleActions: "play pause resume reverse",
-            //     trigger: ".index-feature",
-            //     start: "5% 0%",
-            //     end: "15% 0%",
-            //     scrub: true,
-            //     // markers: true,
-            //     animation: $tl_drink0,
-            // })
-
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "0% 0%",
-                end: "10% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink1,
-            })
-
-
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "20% 0%",
-                end: "30% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink2,
-            })
-
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "40% 0%",
-                end: "50% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink3,
-            })
-
-            ScrollTrigger.create({
-                toggleActions: "play pause resume reverse",
-                trigger: ".index-feature",
-                start: "60% 0%",
-                end: "70% 0%",
-                scrub: 1,
-                // markers: true,
-                animation: $tl_drink4,
-            })
-        }
-        ScrollTrigger.create({
-            // toggleActions: "play resume resume resume",
-            trigger: ".index-drink",
-            start: "10% center",
-            end: "bottom center",
-            // markers: true,
-            // animation: $tl_drink,
-            // scrub: 1,
-            onEnter() {
-                $('.index-drink .bg .note').addClass('is-show');
-                $('.index-drink .bg .en').addClass('is-show');
-                $('.index-drink .bg .ch').addClass('is-show');
-                $('.index-drink .items-area div').addClass('is-show');
-            },
-            onLeave() {
-                $('.index-drink .bg .note').removeClass('is-show');
-                $('.index-drink .bg .en').removeClass('is-show');
-                $('.index-drink .bg .ch').removeClass('is-show');
-                $('.index-drink .items-area div').removeClass('is-show');
-            },
-            onEnterBack() {
-                $('.index-drink .bg .note').addClass('is-show');
-                $('.index-drink .bg .en').addClass('is-show');
-                $('.index-drink .bg .ch').addClass('is-show');
-                $('.index-drink .items-area div').addClass('is-show');
-            },
-            onLeaveBack() {
-                $('.index-drink .bg .note').removeClass('is-show');
-                $('.index-drink .bg .en').removeClass('is-show');
-                $('.index-drink .bg .ch').removeClass('is-show');
-                $('.index-drink .items-area div').removeClass('is-show');
-            }
-        })
-
-        function drinkHorizon(el) {
-            let _x = $(el).outerWidth(true) - $(window).width()
-            console.log(_x);
-            let storenum = {
-                n: 1
-            }
-            const $tl = gsap.timeline({
-                paused: false,
-            })
-            if (_x > 0) {
-                gsap.to(el, {
-                    scrollTrigger: {
-                        toggleActions: "play pause resume reverse",
-                        trigger: "#drinkHorizontal",
-                        start: "top 30%",
-                        end: `+=${_x}`,
-                        pin: ".drink-outter",
-                        pinSpace: false,
-                        scrub: true,
-                        // markers: true,
-                        onUpdate: (self) => {
-                            if (window.device == 'mobile') {
-                                let $drink = $("#drinkHorizontal")
-                                let m = $(window).width() / 2
-                                $drink.children().each(function(i, el) {
-                                    let x = $(el).offset().left
-                                    // if (x - m <= 0) {
-                                    //     $(el).addClass("current").siblings().removeClass("current")
-                                    // }
-                                    console.log(x);
-                                    if (x < 0) {
-                                        $(el).children('.pic-area').children('.circle').css('transform', `rotate(${x / 10}deg)`)
-                                    }
-                                })
-                            }
-                        }
-                    },
-                    x: -_x,
-                    ease: 'none'
-                })
-            }
-        }
-        drinkHorizon('.drinksList');
-        $('.drinksList li .pic-area').each(function(i, el) {
-            var $tl_circle = gsap.timeline({
-                    paused: true,
-                })
-                .to($(this).children('.circle'), {
-                    duration: 15,
-                    rotation: 360,
-                    ease: 'none',
-                    repeat: -1,
-                    repeatDelay: 0.05,
-                })
-            $(el).hover(function() {
-                $tl_circle.play();
-            }, function() {
-                $tl_circle.pause();
-            });
-        })
-        // ScrollTrigger.create({
-        //     toggleActions: "play resume resume resume", //重覆觸發
-        //     trigger: ".menu-link",
-        //     endTrigger: ".indexWrap",
-        //     start: "top 78.5%",
-        //     end: "100% 100%",
-        //     scrub: true,
-        //     pin: true,
-        //     // markers: true,
-        // });
-        let $tl_drink = gsap.timeline({
-                paused: true,
-            })
-            .to(".drink-outter .overflow .en", {
-                duration: 1,
-                y: 0,
-                rotation: 0,
-                ease: Power2.easeOut,
-            })
-        ScrollTrigger.create({
-            toggleActions: "play resume resume resume", //重覆觸發
-            trigger: ".drink-outter .head-area",
-            start: "top 80%",
-            end: "bottom 80%",
-            animation: $tl_drink,
-            // markers: true,
-        });
-        let $tl_news = gsap.timeline({
-                paused: true,
-            })
-            .to(".index-news .overflow .en", {
-                duration: 1,
-                y: 0,
-                rotation: 0,
-                ease: Power2.easeOut,
-            })
-        ScrollTrigger.create({
-            toggleActions: "play pause resume reverse", //重覆觸發
-            trigger: ".index-news",
-            start: "top 80%",
-            end: "bottom 80%",
-            animation: $tl_news,
-            // markers: true,
-        });
-        $('.top-newsList').slick({
-            dots: true,
-            prevArrow: false,
-            nextArrow: false,
-            speed: 1000,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            // autoplay: true,
-            // autoplaySpeed: 5000,
-            // vertical: true,
-            // verticalSwiping: true,
-            // arrows: false,
-        });
-        // $('.top-newsList').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-        //     console.log(nextSlide);
-        //     $(`.triangle .triangle-${nextSlide + 1}`).addClass('is-show').siblings().removeClass('is-show');
-        // });
-        var dotNums = document.querySelectorAll(".slick-dots button");
-
-        function removeText(item) {
-            item.innerHTML = ""; // or put the text you need inside quotes
-        }
-        dotNums.forEach(removeText);
-        var scene = document.getElementById('scene');
-        var parallaxInstance = new Parallax(scene);
-    });
-    // var swiper = new Swiper(".mySwiper", {
-    //     slidesPerView: 3,
-    //     spaceBetween: 155,
-    //     centeredSlides: true,
-    //     // loop: true,
-    // });
-</script>
+<?php include 'main-script-test.php'; ?>

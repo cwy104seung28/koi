@@ -22,7 +22,7 @@ $ran = rand(1, 3);
 
 <body>
     <?php include 'topmenu.php'; ?>
-    <div id="index-preload" style="z-index: 101;" class="index-preload flex-container align-center-middle">
+    <div id="index-preload" style="z-index: 2;" class="index-preload flex-container align-center-middle">
         <!-- <div class="logo"><img src="./images/index-preload-logo.svg" alt=""></div> -->
         <!-- <video src="https://player.vimeo.com/progressive_redirect/playback/991515014/rendition/1080p/file.mp4?loc=external&log_user=0&signature=f9060f8dabe3c6d8e5675bbc22b946d7c80e8612893fa39a4487e13ca4275155" autoplay muted playsinline></video> -->
         <video data-dashjs-player="" src="https://customer-2m570twtvas9nf5x.cloudflarestream.com/0934b4f6eab03ebf46984761fabc6a1a/manifest/video.mpd" autoplay muted playsinline></video>
@@ -919,13 +919,5 @@ $ran = rand(1, 3);
     </div>
 </body>
 <?php include 'script.php'; ?>
-
+<?php include 'main-script.php'; ?>
 </html>
-<script>
-    if (Cookies.get('load') == undefined) {
-        Cookies.set('load', '1')
-        <?php include 'main-script.php'; ?>
-    }else{
-        <?php include 'home-main-script.php'; ?>
-    }
-</script>

@@ -47,8 +47,8 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                     <div class="top flex-container">
                         <div>营运<br class="hide-for-large">管理类型</div>
                         <div>职称</div>
-                        <div>英美歐区<br class="hide-for-large">基本薪资<span class="little">(USD)</span></div>
-                        <div>亚太区<br class="hide-for-large">基本薪资<span class="little">(USD)</span></div>
+                        <div>英美歐区<br class="hide-for-xxlarge">基本薪资<span class="little">(USD)</span></div>
+                        <div>亚太区<br class="hide-for-xxlarge">基本薪资<span class="little">(USD)</span></div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">单店管理</div>

@@ -1,12 +1,12 @@
 <script>
     // $('.menu-link').removeClass('is-show');
-    $(document).ready(function() {
-        window.onbeforeunload = function() {
-            //刷新后页面自动回到顶部
-            document.documentElement.scrollTop = 0; //ie下
-            document.body.scrollTop = 0; //非ie
-        }
-    })
+    // $(document).ready(function() {
+    //     window.onbeforeunload = function() {
+    //         //刷新后页面自动回到顶部
+    //         document.documentElement.scrollTop = 0; //ie下
+    //         document.body.scrollTop = 0; //非ie
+    //     }
+    // })
     $('.menu-mobileWrap .index').addClass('current');
     // $('.menuWrap').addClass("is-not-hover")
     // $('.menu-mobileWrap').addClass("is-not-hover")

@@ -45,39 +45,42 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                 </div>
                 <div class="article-area">
                     <div class="top flex-container">
-                        <div>营运<br class="hide-for-large">管理类型</div>
-                        <div>职称</div>
-                        <div>英美歐区<br class="hide-for-large">基本薪资<span class="little">(USD)</span></div>
-                        <div>亚太区<br class="hide-for-large">基本薪资<span class="little">(USD)</span></div>
+                        <div>Operations<br>Management <br class="hide-for-large">Type</div>
+                        <div>Job Title</div>
+                        <div>英美歐区<br>基本薪资<span class="little">(USD)</span></div>
+                        <div>Asia-Pac<br>Base Salary<span class="little">(USD)</span></div>
                     </div>
                     <div class="content flex-container">
-                        <div class="name">单店管理</div>
-                        <div>店经理</div>
+                        <div class="name">Managing <br>Single Store</div>
+                        <div>Store Manager</div>
                         <div><?= $work['d_data1']; ?></div>
                         <div><?= $work['d_data5']; ?></div>
                     </div>
                     <div class="content flex-container">
-                        <div class="name">多店管理</div>
-                        <div>区域经理</div>
+                        <div class="name">Managing <br>Multiple Stores</div>
+                        <div>Area Manager</div>
                         <div><?= $work['d_data2']; ?></div>
                         <div><?= $work['d_data6']; ?></div>
                     </div>
                     <div class="content flex-container">
-                        <div class="name">单国域管理</div>
-                        <div>营运经理</div>
+                        <div class="name">Managing <br>Multiple Territories</div>
+                        <div>Operations Manager</div>
                         <div><?= $work['d_data3']; ?></div>
                         <div><?= $work['d_data7']; ?></div>
                     </div>
                     <div class="content flex-container">
-                        <div class="name">多国域管理</div>
-                        <div>营运总监/营运长</div>
+                        <div class="name">Managing <br>Multiple Territories</div>
+                        <div>Operations Director/COO</div>
                         <div><?= $work['d_data4']; ?></div>
                         <div><?= $work['d_data8']; ?></div>
                     </div>
                 </div>
                 <div class="note">
-                    表格薪资级距数额为基本月薪(美金呈现)，<br>
-                    额外提供营运奖金、住宿津贴、地区津贴、返乡津贴、税务补贴、健检补助、医疗保险、年节礼品…等。
+                    The following salary matrix represents each job position and its corresponding base salary in USD*. <br>
+                    Expats are entitled to additional operations bonuses, housing allowance, location allowance**, <br>
+                    home travel allowance, tax rebate, annual health check-up, medical insurance, KOI gifts, etc.<br>
+                    *Actual salary payout will be processed in local currency.<br>
+                    ** Monthly location allowance of +USD400 applicable to the following posting countries: HK/Macao, Japan, Singapore, UAE, Australia, Korea
                 </div>
             </div>
             <div class="recruit-otherList">
@@ -85,18 +88,18 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                     薪酬国际化 · 配套更完善
                 </div>
                 <ul class="articleList">
-                    <li>● 国际化薪资</li>
-                    <li>● 营运奖金</li>
-                    <li>● 医疗保险</li>
+                    <li>● Competitive salary in international job markets</li>
+                    <li>● Operations bonuses</li>
+                    <li>● Medical insurance</li>
                     <li>
-                        ● 各式津贴
-                        <div class="note">地区津贴 / 住宿津贴 / 返乡津贴 / 税务补贴 / 健检补助</div>
+                        ● Allowances
+                        <div class="note">Location allowance / housing allowance / Home travel allowance / Tax rebate / Annual health check-up</div>
                     </li>
                     <li>
-                        ● 假期福利
+                        ● Paid Leave
                         <div class="note">
-                            特休假10-30天<br>
-                            其他有薪假: 病假、婚假、产假、产检假、陪产假、丧假
+                            Annual leave: 10-30 days <br>
+                            Other paid leave: sick leave, marriage leave, maternity leave, pregnancy checkup leave, paternity leave, compassionate leave.
                         </div>
                     </li>
                 </ul>
@@ -153,16 +156,17 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
             <div class="apply-fancy">
                 <div class="fancy-inner">
                     <div class="top-area">
-                        <div class="title">履历投递 </div>
+                        <div class="title">Apply NOW！</div>
                         <div class="content">
-                            为确保履历投递成功，<br class="hide-for-large">下列应征管道请择一投递履历，<br>
-                            切勿重复投递履历，谢谢。
+                            To ensure successful submission of your resume, <br>
+                            please select only 1 application portal from below. <br>
+                            DO NOT send your resume to both portals. Thank you.
                         </div>
                     </div>
                     <ul class="applyList">
                         <li>
-                            <a href="javascript:;">
-                                <div class="title">104招募连结</div>
+                            <a href="https://www.104.com.tw/job/7tsra?jobsource=tab_job_to_cs">
+                                <div class="title">Job post on 104 portal</div>
                                 <div class="arrow">
                                     <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="29.31" height="25.51" viewBox="0 0 29.31 25.51">
                                         <g id="c" data-name="圖層 4">
@@ -177,7 +181,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                         </li>
                         <li>
                             <a href="javascript:;">
-                                <div class="note">Email直接投递履历连结</div>
+                                <div class="note">Please send your resume to Global Recruitment Team</div>
                                 <div class="title">globalcareers<br class="hide-for-large">@koicafe.com </div>
                                 <div class="arrow">
                                     <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="29.31" height="25.51" viewBox="0 0 29.31 25.51">

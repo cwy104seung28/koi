@@ -5949,19 +5949,20 @@ nav {
                 color: #727171;
                 padding: 10px 0;
                 border-bottom: 1px solid rgba(35, 24, 21, 0.274);
-
+                line-height: 1.2;
                 @include breakpoint(large down) {
                     font-size: 13px;
                 }
 
                 @include breakpoint(medium down) {
                     font-size: 15px;
-                    line-height: 1.2;
+                    letter-spacing: 0.5px;
+                    // line-height: 1.2;
                 }
 
                 @include breakpoint(small down) {
                     font-size: 9px;
-                    line-height: 1.2;
+                    // line-height: 1.2;
                 }
                 .little {
                     font-size: 12px;
@@ -5980,7 +5981,7 @@ nav {
                 color: $black;
                 padding: 10px 0;
                 border-bottom: 1px solid rgba(35, 24, 21, 0.274);
-
+                line-height: 1.2;
                 @include breakpoint(xlarge down) {
                     font-size: 14px;
                 }
@@ -5993,6 +5994,7 @@ nav {
                     font-size: 14px;
                     font-weight: 500;
                     // line-height: 1.2;
+                    letter-spacing: 0.5px;
                 }
 
                 @include breakpoint(small down) {
@@ -6024,7 +6026,7 @@ nav {
                 font-weight: 400;
                 letter-spacing: 0.5px;
                 color: #727171;
-                line-height: 1.4;
+                line-height: 1.6;
 
                 @include breakpoint(xlarge down) {
                     font-size: 13px;
@@ -6032,7 +6034,7 @@ nav {
 
                 @include breakpoint(medium down) {
                     font-size: 14px;
-                    line-height: 1.6;
+                    
                 }
 
                 @include breakpoint(small down) {
@@ -6100,8 +6102,13 @@ nav {
 
                     @include breakpoint(medium down) {
                         font-size: 16px;
-                        letter-spacing: 1px;
+                        letter-spacing: 0.5px;
                     }
+                    @include breakpoint(small down) {
+                        font-size: 12px;
+                    }
+                    
+                   
                 }
             }
 
@@ -6232,7 +6239,7 @@ nav {
 
                     @include breakpoint(medium down) {
                         // font-size: 18px;
-                        letter-spacing: 2px;
+                        letter-spacing: 1px;
                         // margin-bottom: 0;
                     }
 
@@ -6247,8 +6254,8 @@ nav {
                     font-family: $ch-family;
                     color: #898989;
                     font-size: 14px;
-                    letter-spacing: 2px;
-                    line-height: 1.4;
+                    letter-spacing: 1px;
+                    line-height: 1.6;
 
                     @include breakpoint(medium down) {
                         // font-size: 12px;
@@ -6279,13 +6286,13 @@ nav {
                         color: $black;
                         font-weight: 900;
                         font-family: $ch-family;
-                        letter-spacing: 3px;
+                        letter-spacing: 1px;
                         margin-bottom: 15px;
                         transition: 0.5s all;
 
                         @include breakpoint(medium down) {
-                            font-size: 24px;
-                            letter-spacing: 2px;
+                            font-size: 19px;
+                            letter-spacing: 1px;
                             margin-bottom: 10px;
                             line-height: 1.4;
                         }

@@ -904,6 +904,5 @@ $ran = rand(1, 3);
     </div>
 </body>
 <?php include 'script.php'; ?>
-
-</html>
 <?php include 'home-script.php'; ?>
+</html>

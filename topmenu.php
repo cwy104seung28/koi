@@ -2,14 +2,6 @@
 error_reporting(0);
 ini_set('display_errors', 0);
 ?>
-<!-- <?php if ($now == 'INDEX') : ?>
-    <?php
-            $ran = rand(1, 3);
-    ?>
-    <div id="preload" style="z-index: 100; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #fff;"></div>
-<?php else : ?>
-    <div id="preload" style="z-index: 100; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #fff;"></div>
-<?php endif ?> -->
 
 <div id="preload" style="z-index: 100; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #fff;"></div>
 
