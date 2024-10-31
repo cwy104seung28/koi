@@ -24,19 +24,27 @@
                     <div class="letter-e"><img src="./images/e.svg"></div>
                 </div>
                 <div class="scroll show-for-large">
-                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="79.71" height="68.42" viewBox="0 0 79.71 68.42">
+                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="79.71" height="68.42"
+                        viewBox="0 0 79.71 68.42">
                         <g id="c" data-name="b">
                             <g class="arrow">
                                 <rect class="d" x="38.52" width="2.67" height="27.63" />
-                                <path class="d" d="M27.05,9.4c.62-.4,1.45-.21,1.84,.41l10.96,17.21,10.97-17.21c.4-.62,1.22-.81,1.84-.41s.8,1.23,.41,1.84l-12.09,18.98c-.24,.38-.67,.62-1.13,.62s-.88-.23-1.13-.62L26.64,11.24c-.14-.22-.21-.47-.21-.72,0-.44,.22-.87,.62-1.13h0Z" />
+                                <path class="d"
+                                    d="M27.05,9.4c.62-.4,1.45-.21,1.84,.41l10.96,17.21,10.97-17.21c.4-.62,1.22-.81,1.84-.41s.8,1.23,.41,1.84l-12.09,18.98c-.24,.38-.67,.62-1.13,.62s-.88-.23-1.13-.62L26.64,11.24c-.14-.22-.21-.47-.21-.72,0-.44,.22-.87,.62-1.13h0Z" />
                             </g>
                             <g>
-                                <path class="d" d="M3.74,68.42c-1.21-.71-2.13-1.64-2.78-2.81-.64-1.17-.96-2.51-.96-4.01s.32-2.84,.96-4.01c.64-1.17,1.57-2.11,2.78-2.81l.8,.94c-1.01,.61-1.79,1.42-2.33,2.43s-.81,2.16-.81,3.45,.27,2.42,.81,3.44,1.32,1.82,2.33,2.42l-.8,.96Z" />
-                                <path class="d" d="M22.7,64.91c0,.72-.16,1.09-.68,1.27-.53,.18-1.43,.19-2.75,.19-.06-.31-.24-.83-.4-1.12,1.06,.04,2.08,.04,2.39,.03,.27-.02,.35-.09,.35-.37v-8.4H11.98v9.86h-1.08v-10.92h4.02c.37-.8,.75-1.81,.94-2.56l1.34,.24c-.32,.78-.71,1.62-1.08,2.33h6.57v9.46h.01Zm-7.79-1.62v1.05h-1v-5.89h5.72v4.85h-4.72Zm0-3.87v2.87h3.7v-2.87h-3.7Z" />
-                                <path class="d" d="M32.45,55.1v2.62l.19-.22c1.75,.84,4.07,2.17,5.23,3.05l-.77,.99c-1-.82-2.98-2.03-4.66-2.93v7.75h-1.16v-11.25h-5.63v-1.09h13.01v1.09h-6.21Z" />
-                                <path class="d" d="M43.35,59.52c-.56-.44-1.65-1.13-2.5-1.61l.63-.77c.82,.43,1.96,1.09,2.52,1.52l-.65,.85h0Zm-2.02,5.93c.66-1.09,1.58-2.98,2.27-4.6l.85,.65c-.6,1.5-1.43,3.29-2.14,4.61l-.99-.66h.01Zm2.9-9.71c-.56-.53-1.74-1.34-2.64-1.89l.68-.74c.88,.53,2.06,1.3,2.67,1.8l-.71,.82h0Zm9.91,1.7v2.48h-1.05v-1.59h-7.56v1.59h-1.02v-2.48h1.53v-3.96h6.54v3.96h1.56Zm-1.46,7.85c0,.54-.12,.8-.53,.96-.4,.16-1.06,.16-2.11,.16-.04-.26-.16-.63-.31-.9,.75,.03,1.44,.03,1.64,.03,.21-.01,.27-.07,.27-.25v-1.86c-1.53,.34-3.08,.71-4.3,.97l-.34-.88c1.19-.22,2.93-.57,4.64-.93v-2.37h-4.67v1.41c0,1.46-.21,3.48-1.3,4.88-.18-.19-.62-.52-.85-.62,1-1.27,1.12-2.99,1.12-4.26v-2.3h6.75v5.95h-.01Zm-5.63-7.84h1.72v-2.09h2.78v-.99h-4.51v3.08h0Zm.72,3.52c1.15,.12,2.62,.44,3.4,.78l-.34,.78c-.78-.34-2.24-.71-3.4-.85l.34-.71Zm3.79-4.88h-1.87v1.36h1.87v-1.36Z" />
-                                <path class="d" d="M62.15,64.26c-.07-.27-.16-.6-.27-.96-4.07,.9-4.6,1.06-4.94,1.27v-.06s0,.03,0,.04c-.04-.22-.22-.74-.34-1.02,.24-.06,.43-.46,.66-1,.21-.49,.82-2.21,1.19-3.92h-2.03v-1h6.44v1h-3.27c-.38,1.55-.93,3.17-1.5,4.49l3.49-.74c-.27-.75-.56-1.55-.85-2.24l.9-.25c.57,1.31,1.22,3.04,1.5,4.07l-.97,.31h0Zm.46-9.14h-5.66v-.99h5.66v.99Zm6.85,1.19s-.01,.4-.01,.55c-.19,6.03-.37,8.1-.87,8.75-.31,.38-.59,.5-1.06,.56-.46,.04-1.25,.03-2.03-.01-.03-.32-.15-.77-.34-1.08,.82,.07,1.59,.07,1.92,.07,.25,.01,.41-.03,.56-.22,.38-.43,.59-2.36,.75-7.57h-2.2c-.21,3.62-.82,6.95-2.98,9.02-.19-.27-.57-.63-.85-.8,1.99-1.83,2.58-4.88,2.75-8.22h-2.05v-1.05h2.09c.04-1.03,.04-2.09,.04-3.14h1.08c0,1.05-.01,2.11-.04,3.14h3.24Z" />
-                                <path class="d" d="M75.97,54.72c1.21,.71,2.13,1.64,2.78,2.81,.64,1.17,.96,2.5,.96,4.01s-.32,2.84-.96,4.01c-.64,1.17-1.57,2.11-2.78,2.81l-.8-.94c1.01-.61,1.79-1.42,2.33-2.43s.81-2.16,.81-3.45-.27-2.42-.81-3.44-1.32-1.82-2.33-2.42l.8-.96Z" />
+                                <path class="d"
+                                    d="M3.74,68.42c-1.21-.71-2.13-1.64-2.78-2.81-.64-1.17-.96-2.51-.96-4.01s.32-2.84,.96-4.01c.64-1.17,1.57-2.11,2.78-2.81l.8,.94c-1.01,.61-1.79,1.42-2.33,2.43s-.81,2.16-.81,3.45,.27,2.42,.81,3.44,1.32,1.82,2.33,2.42l-.8,.96Z" />
+                                <path class="d"
+                                    d="M22.7,64.91c0,.72-.16,1.09-.68,1.27-.53,.18-1.43,.19-2.75,.19-.06-.31-.24-.83-.4-1.12,1.06,.04,2.08,.04,2.39,.03,.27-.02,.35-.09,.35-.37v-8.4H11.98v9.86h-1.08v-10.92h4.02c.37-.8,.75-1.81,.94-2.56l1.34,.24c-.32,.78-.71,1.62-1.08,2.33h6.57v9.46h.01Zm-7.79-1.62v1.05h-1v-5.89h5.72v4.85h-4.72Zm0-3.87v2.87h3.7v-2.87h-3.7Z" />
+                                <path class="d"
+                                    d="M32.45,55.1v2.62l.19-.22c1.75,.84,4.07,2.17,5.23,3.05l-.77,.99c-1-.82-2.98-2.03-4.66-2.93v7.75h-1.16v-11.25h-5.63v-1.09h13.01v1.09h-6.21Z" />
+                                <path class="d"
+                                    d="M43.35,59.52c-.56-.44-1.65-1.13-2.5-1.61l.63-.77c.82,.43,1.96,1.09,2.52,1.52l-.65,.85h0Zm-2.02,5.93c.66-1.09,1.58-2.98,2.27-4.6l.85,.65c-.6,1.5-1.43,3.29-2.14,4.61l-.99-.66h.01Zm2.9-9.71c-.56-.53-1.74-1.34-2.64-1.89l.68-.74c.88,.53,2.06,1.3,2.67,1.8l-.71,.82h0Zm9.91,1.7v2.48h-1.05v-1.59h-7.56v1.59h-1.02v-2.48h1.53v-3.96h6.54v3.96h1.56Zm-1.46,7.85c0,.54-.12,.8-.53,.96-.4,.16-1.06,.16-2.11,.16-.04-.26-.16-.63-.31-.9,.75,.03,1.44,.03,1.64,.03,.21-.01,.27-.07,.27-.25v-1.86c-1.53,.34-3.08,.71-4.3,.97l-.34-.88c1.19-.22,2.93-.57,4.64-.93v-2.37h-4.67v1.41c0,1.46-.21,3.48-1.3,4.88-.18-.19-.62-.52-.85-.62,1-1.27,1.12-2.99,1.12-4.26v-2.3h6.75v5.95h-.01Zm-5.63-7.84h1.72v-2.09h2.78v-.99h-4.51v3.08h0Zm.72,3.52c1.15,.12,2.62,.44,3.4,.78l-.34,.78c-.78-.34-2.24-.71-3.4-.85l.34-.71Zm3.79-4.88h-1.87v1.36h1.87v-1.36Z" />
+                                <path class="d"
+                                    d="M62.15,64.26c-.07-.27-.16-.6-.27-.96-4.07,.9-4.6,1.06-4.94,1.27v-.06s0,.03,0,.04c-.04-.22-.22-.74-.34-1.02,.24-.06,.43-.46,.66-1,.21-.49,.82-2.21,1.19-3.92h-2.03v-1h6.44v1h-3.27c-.38,1.55-.93,3.17-1.5,4.49l3.49-.74c-.27-.75-.56-1.55-.85-2.24l.9-.25c.57,1.31,1.22,3.04,1.5,4.07l-.97,.31h0Zm.46-9.14h-5.66v-.99h5.66v.99Zm6.85,1.19s-.01,.4-.01,.55c-.19,6.03-.37,8.1-.87,8.75-.31,.38-.59,.5-1.06,.56-.46,.04-1.25,.03-2.03-.01-.03-.32-.15-.77-.34-1.08,.82,.07,1.59,.07,1.92,.07,.25,.01,.41-.03,.56-.22,.38-.43,.59-2.36,.75-7.57h-2.2c-.21,3.62-.82,6.95-2.98,9.02-.19-.27-.57-.63-.85-.8,1.99-1.83,2.58-4.88,2.75-8.22h-2.05v-1.05h2.09c.04-1.03,.04-2.09,.04-3.14h1.08c0,1.05-.01,2.11-.04,3.14h3.24Z" />
+                                <path class="d"
+                                    d="M75.97,54.72c1.21,.71,2.13,1.64,2.78,2.81,.64,1.17,.96,2.5,.96,4.01s-.32,2.84-.96,4.01c-.64,1.17-1.57,2.11-2.78,2.81l-.8-.94c1.01-.61,1.79-1.42,2.33-2.43s.81-2.16,.81-3.45-.27-2.42-.81-3.44-1.32-1.82-2.33-2.42l.8-.96Z" />
                             </g>
                         </g>
                     </svg>
@@ -268,11 +276,8 @@
             <div class="article-area">
                 <div class="title">
                     <div class="en">
-                        THE G<span class="orange">O</span>LDEN TRIANGLE<br>
-                        PRINCIPLES THAT<br>
-                        K<span class="orange">O</span>I G<span class="orange">O</span><span class="orange">O</span>D TEA
-                        IS CRAFTED
-                        <div class="ch"></div>
+                        THE "G<span class="orange">O</span>LDEN TRIANGLE RULE" <span class="orange">O</span>F K<span
+                            class="orange">O</span>I TEA
                     </div>
                     <div class="ch">KOI好茶的黄金三角法则</div>
                 </div>
@@ -389,30 +394,38 @@
                 </ul>
                 <ul class="en">
                     <li>A coffee bean sparked a series of magical journeys for KOI.</li>
-                    <li>The grand opening of Toa Payoh flagship store in Singapore has successfully ignited the KOI craze across Southeast Asia.</li>
-                    <li>To reflect the professionalism of tea beverages and the brand philosophy, KOI Café has officially been renamed KOI Thé.</li>
-                    <li>Launching into North America under the FIFTYLAN brand, with the grand opening of the New York store.</li>
-                    <li>Venturing into West Asia, the Dubai store grand opening.</li>
-                    <li>Venturing into South Asia, the grand opening of the Bangladesh store.</li>
-                    <li>A new Beat of vibrancy! Injected new vitality into our original hand-drawn logo, reflecting KOI's pursuit of professionalism and constant innovation.</li>
+                    <li>The grand opening of Toa Payoh flagship store in Singapore has successfully ignited the KOI
+                        craze across Southeast Asia.</li>
+                    <li>To reflect the professionalism of tea beverages and the brand philosophy, KOI Café has
+                        officially been renamed KOI Thé.</li>
+                    <li>Launching into North America under the FIFTYLAN brand, with the grand opening of the New York
+                        store.</li>
+                    <li>Venturing into West Asia, Grand Opening of the Dubai store.</li>
+                    <li>Venturing into South Asia, Grand Opening of the Bangladesh store.</li>
+                    <li>A new Beat of vibrancy! Injected new vitality into our original hand-drawn logo, reflecting
+                        KOI's pursuit of professionalism and constant innovation.</li>
                 </ul>
                 <div class="arrow-area flex-container align-middle align-right show-for-large">
                     <div class="prev">
-                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19"
+                            viewBox="0 0 34.68 30.19">
                             <g id="_計" data-name="設計">
                                 <g>
                                     <line class="cls-2" x1="34.68" y1="15.09" x2="3.61" y2="15.09" />
-                                    <path class="cls-1" d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07-.45,.7-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
+                                    <path class="cls-1"
+                                        d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07-.45,.7-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
                                 </g>
                             </g>
                         </svg>
                     </div>
                     <div class="next">
-                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19"
+                            viewBox="0 0 34.68 30.19">
                             <g id="_計" data-name="設計">
                                 <g>
                                     <line class="cls-2" y1="15.09" x2="31.07" y2="15.09" />
-                                    <path class="cls-1" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                    <path class="cls-1"
+                                        d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
                                 </g>
                             </g>
                         </svg>
@@ -431,9 +444,11 @@
         <div class="about-brandmap" id="brand">
             <div class="title">
                 <div class="deco top">
-                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="114.89" height="12.97" viewBox="0 0 114.89 12.97">
+                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="114.89" height="12.97"
+                        viewBox="0 0 114.89 12.97">
                         <g id="_計" data-name="設計">
-                            <path class="cls-1" d="M1.21,8.14c.08,.48,.45,.86,.93,.94,14.22,2.4,33.95,3.89,55.76,3.89,21.51,0,40.73-1.43,54.85-3.74,.48-.08,.86-.46,.93-.94l1.19-7.34c.08-.46-.32-.86-.78-.78-14.25,2.45-34.16,3.97-56.2,3.97S15.1,2.55,.8,.01C.33-.07-.07,.33,0,.79l1.2,7.34Z" />
+                            <path class="cls-1"
+                                d="M1.21,8.14c.08,.48,.45,.86,.93,.94,14.22,2.4,33.95,3.89,55.76,3.89,21.51,0,40.73-1.43,54.85-3.74,.48-.08,.86-.46,.93-.94l1.19-7.34c.08-.46-.32-.86-.78-.78-14.25,2.45-34.16,3.97-56.2,3.97S15.1,2.55,.8,.01C.33-.07-.07,.33,0,.79l1.2,7.34Z" />
                         </g>
                     </svg>
                 </div>
@@ -441,20 +456,24 @@
                     <div class="en">BRAND MAP</div>
                 </div>
                 <div class="deco bottom">
-                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="75.19" height="14.36" viewBox="0 0 75.19 14.36">
+                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="75.19" height="14.36"
+                        viewBox="0 0 75.19 14.36">
                         <g id="_計" data-name="設計">
-                            <path class="cls-1" d="M0,.8l1.28,7.78c.07,.43,.37,.78,.79,.91,10.35,3.17,22.73,4.88,35.5,4.88s25.16-1.72,35.51-4.9c.41-.13,.72-.48,.79-.91l1.3-7.76c.08-.51-.39-.92-.88-.76-10.62,3.43-23.38,5.29-36.72,5.29S11.51,3.51,.89,.04C.4-.12-.07,.29,0,.8Z" />
+                            <path class="cls-1"
+                                d="M0,.8l1.28,7.78c.07,.43,.37,.78,.79,.91,10.35,3.17,22.73,4.88,35.5,4.88s25.16-1.72,35.51-4.9c.41-.13,.72-.48,.79-.91l1.3-7.76c.08-.51-.39-.92-.88-.76-10.62,3.43-23.38,5.29-36.72,5.29S11.51,3.51,.89,.04C.4-.12-.07,.29,0,.8Z" />
                         </g>
                     </svg>
                 </div>
             </div>
             <div class="brandmapWrap flex-container align-middle align-justify">
                 <div class="prev" @click="mapPrev()">
-                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19"
+                        viewBox="0 0 34.68 30.19">
                         <g id="d" data-name="設計">
                             <g>
                                 <line class="c" x1="34.68" y1="15.09" x2="3.61" y2="15.09" />
-                                <path class="b" d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07s-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
+                                <path class="b"
+                                    d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07s-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
                             </g>
                         </g>
                     </svg>
@@ -470,19 +489,28 @@
                     </svg>
                 </div> -->
                 <ul class="brandmap flex-container align-center-middle">
-                    <li @click="mapHandler(1)" :class="[{'current': map == 1 }]"><img src="./images/a-koi-the.svg" alt=""></li>
-                    <li @click="mapHandler(2)" :class="[{'current': map == 2 }]"><img src="./images/a-koi-express.svg" alt=""></li>
-                    <li @click="mapHandler(3)" :class="[{'current': map == 3 }]"><img src="./images/a-fifty.svg" alt=""></li>
-                    <li @click="mapHandler(4)" :class="[{'current': map == 4 }]"><img src="./images/a-koi-cafe.svg" alt=""></li>
-                    <li @click="mapHandler(5)" :class="[{'current': map == 5 }]"><img src="./images/a-koi-plus.svg" alt=""></li>
-                    <li @click="mapHandler(6)" :class="[{'current': map == 6 }]"><img src="./images/a-koi-signature.svg" alt=""></li>
+                    <li @click="mapHandler(1)" :class="[{'current': map == 1 }]"><img src="./images/a-koi-the.svg"
+                            alt=""></li>
+                    <li @click="mapHandler(2)" :class="[{'current': map == 2 }]"><img src="./images/a-koi-express.svg"
+                            alt=""></li>
+                    <li @click="mapHandler(3)" :class="[{'current': map == 3 }]"><img src="./images/a-fifty.svg" alt="">
+                    </li>
+                    <li @click="mapHandler(4)" :class="[{'current': map == 4 }]"><img src="./images/a-koi-cafe.svg"
+                            alt=""></li>
+                    <li @click="mapHandler(6)" :class="[{'current': map == 6 }]"><img src="./images/a-koi-signature.svg"
+                            alt=""></li>
+                    <li @click="mapHandler(5)" :class="[{'current': map == 5 }]"><img src="./images/a-koi-plus.svg"
+                            alt=""></li>
+
                 </ul>
                 <div class="next" @click="mapNext()">
-                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19"
+                        viewBox="0 0 34.68 30.19">
                         <g id="d" data-name="設計">
                             <g>
                                 <line class="c" y1="15.09" x2="31.07" y2="15.09" />
-                                <path class="b" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                <path class="b"
+                                    d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
                             </g>
                         </g>
                     </svg>
@@ -760,7 +788,7 @@
         mounted() {
 
         },
-        updated() {},
+        updated() { },
     })
 
     $('footer').addClass('is-light-orange')
@@ -847,26 +875,26 @@
     //     }, '<0')
     // $('html').addClass('is-lock')
     // $('body').addClass('is-lock')
-    $(document).ready(function() {
-        window.onbeforeunload = function() {
+    $(document).ready(function () {
+        window.onbeforeunload = function () {
             //刷新后页面自动回到顶部
             document.documentElement.scrollTop = 0; //ie下
             document.body.scrollTop = 0; //非ie
         }
         $("html").addClass("is-lock")
     })
-    gsap.delayedCall(2, function() {
+    gsap.delayedCall(2, function () {
         $("html").removeClass("is-lock")
     })
 
-    gsap.delayedCall(0.5, function() {
+    gsap.delayedCall(0.5, function () {
         $tl.play();
     });
-    gsap.delayedCall(1.5, function() {
+    gsap.delayedCall(1.5, function () {
         $('nav').removeClass('is-move')
 
     });
-    gsap.delayedCall(2, function() {
+    gsap.delayedCall(2, function () {
         $('html').removeClass('is-lock')
         $('body').removeClass('is-lock')
         $('.about-animation .scroll').addClass('is-show')
@@ -911,8 +939,8 @@
 
     if (window.device == 'desktop') {
         let $tl_number = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .add('number')
             .to(".number-area .hollow-1", {
                 y: 324,
@@ -937,8 +965,8 @@
         });
     } else {
         let $tl_number_mobile = gsap.timeline({
-                paused: true,
-            })
+            paused: true,
+        })
             .add('number')
             .to(".number-area .hollow-1", {
                 y: '500%',
@@ -986,8 +1014,8 @@
 
     if ($(this).width() > 1025) {
         let $tl_drink = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .add('drink')
             .to(".drink-area li:nth-child(odd)", {
                 y: '-130vh',
@@ -999,8 +1027,8 @@
         //     opacity: 0,
         // })
         let $tl_drink_bg = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .to(".drink-area .bg-change", {
                 opacity: 1,
             }, '<0')
@@ -1024,8 +1052,8 @@
         });
     } else if ($(this).width() <= 1025 && $(this).width() > 640) {
         let $tl_drink_mobile = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .add('drink')
             .to(".drink-area li:nth-child(odd)", {
                 y: '-150vh',
@@ -1044,8 +1072,8 @@
         });
     } else {
         let $tl_drink_mobile = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .add('drink')
             .to(".drink-area li:nth-child(odd)", {
                 y: '-110vh',
@@ -1065,8 +1093,8 @@
     }
     if (window.device == 'desktop') {
         let $tl_info = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .to(".about-info-preview .about-infoWrap", {
                 opacity: 1,
             })
@@ -1129,14 +1157,14 @@
                     onUpdate: (self) => {
                         let $about = $(".about-infoWrap#horizontalWrap")
                         let m = $(window).width() / 2
-                        $about.children().each(function(i, el) {
+                        $about.children().each(function (i, el) {
                             let x = $(el).offset().left
                             // if (x - m <= 0) {
                             //     $(el).addClass("current").siblings().removeClass("current")
                             // }
                             console.log(x);
                             if (x < m) {
-                                $(el).children('.pic-area').css('transform', `rotate(${x/20}deg)`)
+                                $(el).children('.pic-area').css('transform', `rotate(${x / 20}deg)`)
                             }
                         })
                     }
@@ -1185,7 +1213,7 @@
         arrows: false,
         asNavFor: '.about-ingredient .bg',
     });
-    $('.slick-article').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    $('.slick-article').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         $(`.triangle .triangle-${nextSlide + 1}`).addClass('is-show').siblings().removeClass('is-show');
     });
     var dotNums = document.querySelectorAll(".slick-dots button");
@@ -1194,12 +1222,12 @@
         item.innerHTML = ""; // or put the text you need inside quotes
     }
     dotNums.forEach(removeText);
-    $('div[data-tri]').click(function(e) {
+    $('div[data-tri]').click(function (e) {
         e.preventDefault();
         var slideTri = $(this).data('tri');
         $('.slick-article').slick('slickGoTo', slideTri - 1);
     });
-    $('li[data-ing]').click(function(e) {
+    $('li[data-ing]').click(function (e) {
         e.preventDefault();
         var slideIng = $(this).data('ing');
         $('.slick-article').slick('slickGoTo', slideIng - 1);
@@ -1303,13 +1331,13 @@
             draggable: false,
         });
 
-        $('.arrow-area .prev').on('click', function() {
+        $('.arrow-area .prev').on('click', function () {
             $carousel.flickity('previous');
             $carousel_num.flickity('previous');
             $carousel_ch.flickity('previous');
             $carousel_en.flickity('previous');
         });
-        $('.arrow-area .next').on('click', function() {
+        $('.arrow-area .next').on('click', function () {
             $carousel.flickity('next');
             $carousel_num.flickity('next');
             $carousel_ch.flickity('next');
@@ -1365,21 +1393,21 @@
             autoPlay: 3000,
             // asNavFor: $carousel_ch
             on: {
-                change: function(index) {
+                change: function (index) {
                     $carousel_ch.flickity('selectCell', index);
                     $carousel_num.flickity('selectCell', index);
                     $carousel.flickity('selectCell', index);
                 }
             }
         });
-        $('.arrow-area .prev').on('click', function() {
+        $('.arrow-area .prev').on('click', function () {
             // $carousel.flickity('previous');
             // $carousel_num.flickity('previous');
             // $carousel_ch.flickity('previous');
             $carousel_en.flickity('previous');
             $carousel_en.flickity('pausePlayer');
         });
-        $('.arrow-area .next').on('click', function() {
+        $('.arrow-area .next').on('click', function () {
             // $carousel.flickity('next');
             // $carousel_num.flickity('next');
             // $carousel_ch.flickity('next');
@@ -1391,7 +1419,7 @@
 
     $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
     // $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
-    $carousel.on('change.flickity', function(event, index) {
+    $carousel.on('change.flickity', function (event, index) {
         $('.about-event .pic-area li').removeClass('is-show');
         // $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
         // console.log(index);
@@ -1518,8 +1546,8 @@
 
 
     let $tl_brand = gsap.timeline({
-            paused: true,
-        })
+        paused: true,
+    })
         .to(".about-brandmap .overflow .en", {
             duration: 1,
             y: 0,
@@ -1556,11 +1584,11 @@
         //     draggable: false,
         //     fade: true,
         // });
-        $('.brandmapWrap .next').on('click', function() {
+        $('.brandmapWrap .next').on('click', function () {
             $brand.flickity('next');
             // $brandmapList.flickity('next');
         });
-        $('.brandmapWrap .prev').on('click', function() {
+        $('.brandmapWrap .prev').on('click', function () {
             $brand.flickity('previous');
             // $brandmapList.flickity('previous');
         });
@@ -1568,10 +1596,10 @@
 
     $('.menu-mobileWrap .about').addClass('current');
 
-    $('.country-select').on("click", function() {
+    $('.country-select').on("click", function () {
         $('.country-select').toggleClass('open');
     });
-    $('.country-select .list li').each(function(i, el) {
+    $('.country-select .list li').each(function (i, el) {
         // $(el).on("click", function() {
         //     $('.country-select span').text($(el).text());
         //     _m = $(el).data('menu');

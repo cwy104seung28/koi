@@ -120,7 +120,7 @@
                 <li><a href="./about.php">ABOUT</a></li>
                 <li><a href="./store.php">STORE</a></li>
                 <li><a href="./menu.php">MENU</a></li>
-                <li><a href="./ourtea.php">OURTEA</a></li>
+                <li><a href="./ourtea.php">OUR TEA</a></li>
                 <li><a href="./recruit.php">RECRUIT</a></li>
             </ul>
         </div>

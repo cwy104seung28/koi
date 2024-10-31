@@ -3240,6 +3240,9 @@ nav {
                     }
                     @include breakpoint(small down) {
                         max-width: 100%;
+                        font-size: 12px;
+                        letter-spacing: 0.5px;
+                        line-height: 1.5;
                     }
                 }
             }
@@ -10262,6 +10265,10 @@ footer {
                 letter-spacing: 1px;
                 font-family: $ch-family;
                 color: #aaacaf;
+                @media (max-width:1800px) and (min-width:1600px) {
+                    left: 25px;
+                }
+
                 @include breakpoint(xlarge down) {
                     left: -25px;
                 }

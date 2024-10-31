@@ -24,26 +24,40 @@
                     <div class="letter-e"><img src="./images/e.svg"></div>
                 </div>
                 <div class="scroll show-for-large">
-                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="95.04" height="60.99" viewBox="0 0 95.04 60.99">
+                    <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="95.04" height="60.99"
+                        viewBox="0 0 95.04 60.99">
                         <g id="c" data-name="圖層 1">
                             <g>
                                 <g class="arrow">
                                     <line class="d" x1="47.52" x2="47.52" y2="24.38" />
-                                    <path d="M36.22,8.29c.55-.35,1.28-.19,1.63,.36l9.67,15.19,9.67-15.19c.35-.55,1.08-.71,1.63-.36s.71,1.08,.36,1.63l-10.67,16.75c-.22,.34-.59,.54-.99,.54s-.78-.21-.99-.54l-10.67-16.75c-.12-.2-.18-.42-.18-.63,0-.39,.19-.77,.54-1Z" />
+                                    <path
+                                        d="M36.22,8.29c.55-.35,1.28-.19,1.63,.36l9.67,15.19,9.67-15.19c.35-.55,1.08-.71,1.63-.36s.71,1.08,.36,1.63l-10.67,16.75c-.22,.34-.59,.54-.99,.54s-.78-.21-.99-.54l-10.67-16.75c-.12-.2-.18-.42-.18-.63,0-.39,.19-.77,.54-1Z" />
                                 </g>
                                 <g>
-                                    <path d="M3.3,60.99c-1.07-.62-1.88-1.45-2.45-2.48-.57-1.03-.85-2.21-.85-3.54s.28-2.51,.85-3.54c.57-1.04,1.38-1.86,2.45-2.48l.7,.83c-.89,.54-1.58,1.25-2.05,2.15s-.71,1.91-.71,3.04,.24,2.14,.71,3.04,1.16,1.61,2.05,2.14l-.7,.84Z" />
-                                    <path d="M8.9,56.95l.72-.82c.69,.72,1.65,1.18,2.64,1.18,1.25,0,2-.62,2-1.56s-.69-1.29-1.59-1.69l-1.38-.6c-.88-.38-1.94-1.05-1.94-2.44,0-1.47,1.27-2.54,3-2.54,1.13,0,2.13,.48,2.81,1.18l-.64,.77c-.58-.55-1.29-.9-2.17-.9-1.08,0-1.78,.55-1.78,1.4,0,.92,.83,1.27,1.57,1.59l1.36,.58c1.1,.48,1.96,1.13,1.96,2.55,0,1.51-1.25,2.7-3.24,2.7-1.35,0-2.51-.55-3.34-1.42Z" />
-                                    <path d="M17.3,54.68c0-2.35,1.6-3.72,3.41-3.72,.92,0,1.56,.39,2.07,.83l-.61,.79c-.42-.38-.85-.64-1.42-.64-1.27,0-2.21,1.1-2.21,2.73s.88,2.7,2.18,2.7c.65,0,1.22-.3,1.66-.7l.51,.79c-.62,.57-1.43,.9-2.28,.9-1.87,0-3.31-1.35-3.31-3.69Z" />
-                                    <path d="M25.04,51.14h.97l.1,1.29h.04c.49-.9,1.21-1.47,2-1.47,.31,0,.53,.04,.75,.16l-.22,1.04c-.23-.09-.4-.12-.69-.12-.58,0-1.31,.42-1.78,1.62v4.54h-1.18v-7.06Z" />
-                                    <path d="M29.99,54.68c0-2.35,1.55-3.72,3.28-3.72s3.28,1.37,3.28,3.72-1.55,3.69-3.28,3.69-3.28-1.35-3.28-3.69Zm5.33,0c0-1.62-.83-2.73-2.05-2.73s-2.04,1.1-2.04,2.73,.82,2.7,2.04,2.7,2.05-1.08,2.05-2.7Z" />
-                                    <path d="M38.99,56.8v-8.94h1.18v9.02c0,.36,.16,.51,.34,.51,.06,0,.12,0,.25-.03l.17,.91c-.17,.06-.38,.1-.69,.1-.88,0-1.25-.57-1.25-1.57Z" />
-                                    <path d="M43.28,56.8v-8.94h1.18v9.02c0,.36,.16,.51,.34,.51,.06,0,.12,0,.25-.03l.17,.91c-.17,.06-.38,.1-.69,.1-.88,0-1.25-.57-1.25-1.57Z" />
-                                    <path d="M51.17,48.67h2.39c2.93,0,4.5,1.7,4.5,4.73s-1.57,4.8-4.45,4.8h-2.44v-9.53Zm2.29,8.54c2.25,0,3.35-1.4,3.35-3.81s-1.1-3.76-3.35-3.76h-1.08v7.57h1.08Z" />
-                                    <path d="M60.05,54.68c0-2.35,1.55-3.72,3.28-3.72s3.28,1.37,3.28,3.72-1.55,3.69-3.28,3.69-3.28-1.35-3.28-3.69Zm5.33,0c0-1.62-.83-2.73-2.05-2.73s-2.04,1.1-2.04,2.73,.82,2.7,2.04,2.7,2.05-1.08,2.05-2.7Z" />
-                                    <path d="M68.15,51.14h1.21l1.05,4.08c.14,.68,.29,1.31,.42,1.98h.06c.16-.66,.3-1.31,.48-1.98l1.09-4.08h1.16l1.1,4.08c.17,.68,.33,1.31,.49,1.98h.05c.16-.66,.29-1.3,.44-1.98l1.04-4.08h1.12l-1.9,7.06h-1.43l-1.03-3.81c-.18-.66-.31-1.31-.48-2.03h-.06c-.16,.71-.3,1.38-.48,2.05l-.99,3.78h-1.39l-1.96-7.06Z" />
-                                    <path d="M80,51.14h.98l.1,1.01h.04c.68-.66,1.4-1.2,2.37-1.2,1.48,0,2.16,.96,2.16,2.77v4.47h-1.18v-4.32c0-1.33-.4-1.88-1.34-1.88-.73,0-1.22,.36-1.94,1.08v5.12h-1.18v-7.06Z" />
-                                    <path d="M91.74,48.9c1.07,.62,1.88,1.45,2.45,2.48,.57,1.03,.85,2.21,.85,3.54s-.28,2.51-.85,3.54c-.57,1.04-1.38,1.86-2.45,2.48l-.7-.83c.89-.54,1.58-1.25,2.05-2.15s.71-1.91,.71-3.04-.24-2.14-.71-3.04-1.16-1.61-2.05-2.14l.7-.84Z" />
+                                    <path
+                                        d="M3.3,60.99c-1.07-.62-1.88-1.45-2.45-2.48-.57-1.03-.85-2.21-.85-3.54s.28-2.51,.85-3.54c.57-1.04,1.38-1.86,2.45-2.48l.7,.83c-.89,.54-1.58,1.25-2.05,2.15s-.71,1.91-.71,3.04,.24,2.14,.71,3.04,1.16,1.61,2.05,2.14l-.7,.84Z" />
+                                    <path
+                                        d="M8.9,56.95l.72-.82c.69,.72,1.65,1.18,2.64,1.18,1.25,0,2-.62,2-1.56s-.69-1.29-1.59-1.69l-1.38-.6c-.88-.38-1.94-1.05-1.94-2.44,0-1.47,1.27-2.54,3-2.54,1.13,0,2.13,.48,2.81,1.18l-.64,.77c-.58-.55-1.29-.9-2.17-.9-1.08,0-1.78,.55-1.78,1.4,0,.92,.83,1.27,1.57,1.59l1.36,.58c1.1,.48,1.96,1.13,1.96,2.55,0,1.51-1.25,2.7-3.24,2.7-1.35,0-2.51-.55-3.34-1.42Z" />
+                                    <path
+                                        d="M17.3,54.68c0-2.35,1.6-3.72,3.41-3.72,.92,0,1.56,.39,2.07,.83l-.61,.79c-.42-.38-.85-.64-1.42-.64-1.27,0-2.21,1.1-2.21,2.73s.88,2.7,2.18,2.7c.65,0,1.22-.3,1.66-.7l.51,.79c-.62,.57-1.43,.9-2.28,.9-1.87,0-3.31-1.35-3.31-3.69Z" />
+                                    <path
+                                        d="M25.04,51.14h.97l.1,1.29h.04c.49-.9,1.21-1.47,2-1.47,.31,0,.53,.04,.75,.16l-.22,1.04c-.23-.09-.4-.12-.69-.12-.58,0-1.31,.42-1.78,1.62v4.54h-1.18v-7.06Z" />
+                                    <path
+                                        d="M29.99,54.68c0-2.35,1.55-3.72,3.28-3.72s3.28,1.37,3.28,3.72-1.55,3.69-3.28,3.69-3.28-1.35-3.28-3.69Zm5.33,0c0-1.62-.83-2.73-2.05-2.73s-2.04,1.1-2.04,2.73,.82,2.7,2.04,2.7,2.05-1.08,2.05-2.7Z" />
+                                    <path
+                                        d="M38.99,56.8v-8.94h1.18v9.02c0,.36,.16,.51,.34,.51,.06,0,.12,0,.25-.03l.17,.91c-.17,.06-.38,.1-.69,.1-.88,0-1.25-.57-1.25-1.57Z" />
+                                    <path
+                                        d="M43.28,56.8v-8.94h1.18v9.02c0,.36,.16,.51,.34,.51,.06,0,.12,0,.25-.03l.17,.91c-.17,.06-.38,.1-.69,.1-.88,0-1.25-.57-1.25-1.57Z" />
+                                    <path
+                                        d="M51.17,48.67h2.39c2.93,0,4.5,1.7,4.5,4.73s-1.57,4.8-4.45,4.8h-2.44v-9.53Zm2.29,8.54c2.25,0,3.35-1.4,3.35-3.81s-1.1-3.76-3.35-3.76h-1.08v7.57h1.08Z" />
+                                    <path
+                                        d="M60.05,54.68c0-2.35,1.55-3.72,3.28-3.72s3.28,1.37,3.28,3.72-1.55,3.69-3.28,3.69-3.28-1.35-3.28-3.69Zm5.33,0c0-1.62-.83-2.73-2.05-2.73s-2.04,1.1-2.04,2.73,.82,2.7,2.04,2.7,2.05-1.08,2.05-2.7Z" />
+                                    <path
+                                        d="M68.15,51.14h1.21l1.05,4.08c.14,.68,.29,1.31,.42,1.98h.06c.16-.66,.3-1.31,.48-1.98l1.09-4.08h1.16l1.1,4.08c.17,.68,.33,1.31,.49,1.98h.05c.16-.66,.29-1.3,.44-1.98l1.04-4.08h1.12l-1.9,7.06h-1.43l-1.03-3.81c-.18-.66-.31-1.31-.48-2.03h-.06c-.16,.71-.3,1.38-.48,2.05l-.99,3.78h-1.39l-1.96-7.06Z" />
+                                    <path
+                                        d="M80,51.14h.98l.1,1.01h.04c.68-.66,1.4-1.2,2.37-1.2,1.48,0,2.16,.96,2.16,2.77v4.47h-1.18v-4.32c0-1.33-.4-1.88-1.34-1.88-.73,0-1.22,.36-1.94,1.08v5.12h-1.18v-7.06Z" />
+                                    <path
+                                        d="M91.74,48.9c1.07,.62,1.88,1.45,2.45,2.48,.57,1.03,.85,2.21,.85,3.54s-.28,2.51-.85,3.54c-.57,1.04-1.38,1.86-2.45,2.48l-.7-.83c.89-.54,1.58-1.25,2.05-2.15s.71-1.91,.71-3.04-.24-2.14-.71-3.04-1.16-1.61-2.05-2.14l.7-.84Z" />
                                 </g>
                             </g>
                         </g>
@@ -145,7 +159,18 @@
                                 <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
                             </div>
                             <div class="content">
-                                Freshly-picked tea leaves are meticulously chosen to create a tea that satisfies even the most discerning palate. Golden Bubbles are crafted from natural ingredients and cooked at varying temperatures to ensure their distinctive golden sheen and delightful chewiness.
+                                Freshly-picked tea leaves are meticulously chosen to create a tea that satisfies even
+                                the
+                                most discerning palate. Golden Bubbles are made from natural ingredients and cooked at
+                                varying temperatures to ensure their distinctive golden sheen and delightful chewiness.
+                                Tea Brewing Masters
+                                The unspoiled flavors of tea can only be extracted by brewing tea leaves in traditional
+                                metal kettles. Utilizing self-made dedicated utensils and maintaining precise control
+                                over
+                                the ideal ratio of water, tea leaves, and temperature empowers the tea master to achieve
+                                the
+                                perfect flavor in every sip. Everyone can savor the endlessly memorable tea anytime, no
+                                matter where they are.
                             </div>
                         </div>
                         <div class="pic-area"><img src="./images/a-info-pic-1.png" alt=""></div>
@@ -167,7 +192,15 @@
                             <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
                         </div>
                         <div class="content">
-                            Freshly-picked tea leaves are meticulously chosen to create a tea that satisfies even the most discerning palate. Golden Bubbles are crafted from natural ingredients and cooked at varying temperatures to ensure their distinctive golden sheen and delightful chewiness.
+                            Freshly-picked tea leaves are meticulously chosen to create a tea that satisfies even the
+                            most discerning palate. Golden Bubbles are made from natural ingredients and cooked at
+                            varying temperatures to ensure their distinctive golden sheen and delightful chewiness.
+                            Tea Brewing Masters
+                            The unspoiled flavors of tea can only be extracted by brewing tea leaves in traditional
+                            metal kettles. Utilizing self-made dedicated utensils and maintaining precise control over
+                            the ideal ratio of water, tea leaves, and temperature empowers the tea master to achieve the
+                            perfect flavor in every sip. Everyone can savor the endlessly memorable tea anytime, no
+                            matter where they are.
                         </div>
                     </div>
                     <div class="pic-area"><img src="./images/a-info-pic-1.png" alt=""></div>
@@ -184,7 +217,11 @@
                             <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
                         </div>
                         <div class="content">
-                            The unspoiled flavors of tea can only be extracted by brewing tea leaves in traditional metal kettles. Utilizing self-made dedicated utensils and maintaining precise control over the ideal ratio of water, tea leaves, and temperature empowers the tea master to skillfully craft an exquisite taste with every sip. Everyone can savor the endlessly memorable tea anytime, no matter where they are.
+                            The unspoiled flavors of tea can only be extracted by brewing tea leaves in traditional
+                            metal kettles. Utilizing self-made dedicated utensils and maintaining precise control over
+                            the ideal ratio of water, tea leaves, and temperature empowers the tea master to skillfully
+                            craft an exquisite taste with every sip. Everyone can savor the endlessly memorable tea
+                            anytime, no matter where they are.
                         </div>
                     </div>
                     <div class="pic-area"><img src="./images/a-info-pic-2.png" alt=""></div>
@@ -201,7 +238,16 @@
                             <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
                         </div>
                         <div class="content">
-                            In order to ensure that every sip of tea delivers a delightful and refined taste experience, the training of our tea baristas involves meticulous practice in every detail, from the precise use of ice and tea quantity to the consistent shaking gestures. Only through such dedication can the intricate nuances of a good tea be consistently expressed, creating a lingering and memorable aftertaste with each sip.
+                            In order to ensure that every sip of tea delivers a delightful and refined taste experience,
+                            the training of our tea baristas involves meticulous practice in every detail, from the
+                            precise use of ice and tea quantity to the consistent shaking gestures. Only through such
+                            dedication can the intricate nuances of a good tea be consistently expressed, creating a
+                            lingering and memorable aftertaste with each sip.
+                            Heart-warming Service
+                            We strive to provide the most friendly services by treating you as part of our family. In
+                            our friendly and welcoming store, please savor the customized beverages designed just for
+                            you. Enjoy the happiness embraced by the aroma of tea and feel the sincere warmth we extend
+                            to you.
                         </div>
                     </div>
                     <div class="pic-area"><img src="./images/a-info-pic-3.png" alt=""></div>
@@ -218,7 +264,10 @@
                             <div class="deco bottom"><img src="./images/a-h-deco-bottom.svg" alt=""></div>
                         </div>
                         <div class="content">
-                            We strive to provide the most friendly services by treating you as part of our family. In our friendly and welcoming store, please savor the custom-crafted beverages designed just for you. Enjoy the happiness embraced by the aroma of tea and feel the sincere warmth we extend to you.
+                            We strive to provide the most friendly services by treating you as part of our family. In
+                            our friendly and welcoming store, please savor the custom-crafted beverages designed just
+                            for you. Enjoy the happiness embraced by the aroma of tea and feel the sincere warmth we
+                            extend to you.
                         </div>
                     </div>
                     <div class="pic-area"><img src="./images/a-info-pic-4.png" alt=""></div>
@@ -231,21 +280,42 @@
                 <div class="pic-area"><img src="./images/a-info-pic-1-mobile.png"></div>
                 <div class="article-area">
                     <div class="content">
-                        Freshly-picked tea leaves are meticulously chosen to create a tea that satisfies even the most discerning palate. Golden Bubbles are crafted from natural ingredients and cooked at varying temperatures to ensure their distinctive golden sheen and delightful chewiness. </div>
+                        Freshly-picked tea leaves are meticulously chosen to create a tea that satisfies even the
+                        most discerning palate. Golden Bubbles are made from natural ingredients and cooked at
+                        varying temperatures to ensure their distinctive golden sheen and delightful chewiness.
+                        Tea Brewing Masters
+                        The unspoiled flavors of tea can only be extracted by brewing tea leaves in traditional
+                        metal kettles. Utilizing self-made dedicated utensils and maintaining precise control over
+                        the ideal ratio of water, tea leaves, and temperature empowers the tea master to achieve the
+                        perfect flavor in every sip. Everyone can savor the endlessly memorable tea anytime, no
+                        matter where they are.
+                    </div>
                 </div>
             </li>
             <li class="flex-container align-center-middle blue">
                 <div class="pic-area"><img src="./images/a-info-pic-2-mobile.png"></div>
                 <div class="article-area">
                     <div class="content">
-                        The unspoiled flavors of tea can only be extracted by brewing tea leaves in traditional metal kettles. Utilizing self-made dedicated utensils and maintaining precise control over the ideal ratio of water, tea leaves, and temperature empowers the tea master to skillfully craft an exquisite taste with every sip. Everyone can savor the endlessly memorable tea anytime, no matter where they are. </div>
+                        The unspoiled flavors of tea can only be extracted by brewing tea leaves in traditional metal
+                        kettles. Utilizing self-made dedicated utensils and maintaining precise control over the ideal
+                        ratio of water, tea leaves, and temperature empowers the tea master to skillfully craft an
+                        exquisite taste with every sip. Everyone can savor the endlessly memorable tea anytime, no
+                        matter where they are. </div>
                 </div>
             </li>
             <li class="flex-container align-center-middle yellow">
                 <div class="pic-area"><img src="./images/a-info-pic-3-mobile.png"></div>
                 <div class="article-area">
                     <div class="content">
-                        In order to ensure that every sip of tea delivers a delightful and refined taste experience, the training of our tea baristas involves meticulous practice in every detail, from the precise use of ice and tea quantity to the consistent shaking gestures. Only through such dedication can the intricate nuances of a good tea be consistently expressed, creating a lingering and memorable aftertaste with each sip.
+                        In order to ensure that every sip of tea delivers a delightful and refined taste experience, the
+                        training of our tea baristas involves meticulous practice in every detail, from the precise use
+                        of ice and tea quantity to the consistent shaking gestures. Only through such dedication can the
+                        intricate nuances of a good tea be consistently expressed, creating a lingering and memorable
+                        aftertaste with each sip.
+                        Heart-warming Service
+                        We strive to provide the most friendly services by treating you as part of our family. In our
+                        friendly and welcoming store, please savor the customized beverages designed just for you. Enjoy
+                        the happiness embraced by the aroma of tea and feel the sincere warmth we extend to you.
                     </div>
                 </div>
             </li>
@@ -253,7 +323,10 @@
                 <div class="pic-area"><img src="./images/a-info-pic-4-mobile.png"></div>
                 <div class="article-area">
                     <div class="content">
-                        We strive to provide the most friendly services by treating you as part of our family. In our friendly and welcoming store, please savor the custom-crafted beverages designed just for you. Enjoy the happiness embraced by the aroma of tea and feel the sincere warmth we extend to you. </div>
+                        We strive to provide the most friendly services by treating you as part of our family. In our
+                        friendly and welcoming store, please savor the custom-crafted beverages designed just for you.
+                        Enjoy the happiness embraced by the aroma of tea and feel the sincere warmth we extend to you.
+                    </div>
                 </div>
             </li>
         </ul>
@@ -273,11 +346,8 @@
             <div class="article-area">
                 <div class="title">
                     <div class="en">
-                        THE G<span class="orange">O</span>LDEN TRIANGLE<br>
-                        PRINCIPLES THAT<br>
-                        K<span class="orange">O</span>I G<span class="orange">O</span><span class="orange">O</span>D TEA
-                        IS CRAFTED
-                        <!-- <div class="ch"></div> -->
+                        THE "G<span class="orange">O</span>LDEN TRIANGLE RULE" <span class="orange">O</span>F K<span
+                            class="orange">O</span>I TEA
                     </div>
                     <!-- <div class="ch">KOI好茶的黄金三角法则</div> -->
                 </div>
@@ -288,7 +358,9 @@
                             <!-- <div class="ch">茶汤</div> -->
                         </div>
                         <div class="content">
-                            We conduct regular water quality checks, strictly control the temperature of each batch of tea, ensuring that every cup reflects the exquisite flavors of carefully selected tea leaves.
+                            We conduct regular water quality checks, strictly control the temperature of each batch of
+                            tea, ensuring that every cup reflects the exquisite flavors of carefully selected tea
+                            leaves.
                         </div>
                     </li>
                     <li data-ing="2">
@@ -296,7 +368,10 @@
                             <div class="en">Sweetness</div>
                             <!-- <div class="ch">甜度</div> -->
                         </div>
-                        <div class="content">Perfected through repeated testing by our team, the ideal ratio elevates the deliciousness of our tea to another level, with each sip releasing just the right amount of sweet aroma.</div>
+                        <div class="content">
+                            Perfected through repeated testing by our team, the ideal ratio elevates the deliciousness
+                            of our tea to another level, with each sip releasing just the right amount of sweet aroma.
+                        </div>
                     </li>
                     <li data-ing="3">
                         <div class="title-area">
@@ -304,7 +379,9 @@
                             <!-- <div class="ch">冰块</div> -->
                         </div>
                         <div class="content">
-                            Utilizing high-hardness ice cubes with precise control over the quantity not only preserves the original flavor of the tea, but also provides a refreshing and pleasant texture, enhancing the overall taste experience.
+                            We use harder ice cubes with high density plus precise control over the quantity to preserve
+                            the original flavor of the tea as well as provide a refreshing and pleasant texture,
+                            enhancing the overall taste experience.
                         </div>
                     </li>
                 </ul>
@@ -372,30 +449,38 @@
                 </ul> -->
                 <ul class="en">
                     <li>A coffee bean sparked a series of magical journeys for KOI.</li>
-                    <li>The grand opening of Toa Payoh flagship store in Singapore has successfully ignited the KOI craze across Southeast Asia.</li>
-                    <li>To reflect the professionalism of tea beverages and the brand philosophy, KOI Café has officially been renamed KOI Thé.</li>
-                    <li>Launching into North America under the FIFTYLAN brand, with the grand opening of the New York store.</li>
-                    <li>Venturing into West Asia, the Dubai store grand opening.</li>
-                    <li>Venturing into South Asia, the grand opening of the Bangladesh store.</li>
-                    <li>A new Beat of vibrancy! Injected new vitality into our original hand-drawn logo, reflecting KOI's pursuit of professionalism and constant innovation.</li>
+                    <li>The grand opening of Toa Payoh flagship store in Singapore has successfully ignited the KOI
+                        craze across Southeast Asia.</li>
+                    <li>To reflect the professionalism of tea beverages and the brand philosophy, KOI Café has
+                        officially been renamed KOI Thé.</li>
+                    <li>Launching into North America under the FIFTYLAN brand, with the grand opening of the New York
+                        store.</li>
+                    <li>Venturing into West Asia, Grand Opening of the Dubai store.</li>
+                    <li>Venturing into South Asia, Grand Opening of the Bangladesh store.</li>
+                    <li>A new Beat of vibrancy! Injected new vitality into our original hand-drawn logo, reflecting
+                        KOI's pursuit of professionalism and constant innovation.</li>
                 </ul>
                 <div class="arrow-area flex-container align-middle align-right show-for-large">
                     <div class="prev">
-                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19"
+                            viewBox="0 0 34.68 30.19">
                             <g id="_計" data-name="設計">
                                 <g>
                                     <line class="cls-2" x1="34.68" y1="15.09" x2="3.61" y2="15.09" />
-                                    <path class="cls-1" d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07-.45,.7-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
+                                    <path class="cls-1"
+                                        d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07-.45,.7-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
                                 </g>
                             </g>
                         </svg>
                     </div>
                     <div class="next">
-                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                        <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19"
+                            viewBox="0 0 34.68 30.19">
                             <g id="_計" data-name="設計">
                                 <g>
                                     <line class="cls-2" y1="15.09" x2="31.07" y2="15.09" />
-                                    <path class="cls-1" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                    <path class="cls-1"
+                                        d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
                                 </g>
                             </g>
                         </svg>
@@ -414,9 +499,11 @@
         <div class="about-brandmap" id="brand">
             <div class="title">
                 <div class="deco top">
-                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="114.89" height="12.97" viewBox="0 0 114.89 12.97">
+                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="114.89" height="12.97"
+                        viewBox="0 0 114.89 12.97">
                         <g id="_計" data-name="設計">
-                            <path class="cls-1" d="M1.21,8.14c.08,.48,.45,.86,.93,.94,14.22,2.4,33.95,3.89,55.76,3.89,21.51,0,40.73-1.43,54.85-3.74,.48-.08,.86-.46,.93-.94l1.19-7.34c.08-.46-.32-.86-.78-.78-14.25,2.45-34.16,3.97-56.2,3.97S15.1,2.55,.8,.01C.33-.07-.07,.33,0,.79l1.2,7.34Z" />
+                            <path class="cls-1"
+                                d="M1.21,8.14c.08,.48,.45,.86,.93,.94,14.22,2.4,33.95,3.89,55.76,3.89,21.51,0,40.73-1.43,54.85-3.74,.48-.08,.86-.46,.93-.94l1.19-7.34c.08-.46-.32-.86-.78-.78-14.25,2.45-34.16,3.97-56.2,3.97S15.1,2.55,.8,.01C.33-.07-.07,.33,0,.79l1.2,7.34Z" />
                         </g>
                     </svg>
                 </div>
@@ -424,20 +511,24 @@
                     <div class="en">BRAND MAP</div>
                 </div>
                 <div class="deco bottom">
-                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="75.19" height="14.36" viewBox="0 0 75.19 14.36">
+                    <svg id="_層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="75.19" height="14.36"
+                        viewBox="0 0 75.19 14.36">
                         <g id="_計" data-name="設計">
-                            <path class="cls-1" d="M0,.8l1.28,7.78c.07,.43,.37,.78,.79,.91,10.35,3.17,22.73,4.88,35.5,4.88s25.16-1.72,35.51-4.9c.41-.13,.72-.48,.79-.91l1.3-7.76c.08-.51-.39-.92-.88-.76-10.62,3.43-23.38,5.29-36.72,5.29S11.51,3.51,.89,.04C.4-.12-.07,.29,0,.8Z" />
+                            <path class="cls-1"
+                                d="M0,.8l1.28,7.78c.07,.43,.37,.78,.79,.91,10.35,3.17,22.73,4.88,35.5,4.88s25.16-1.72,35.51-4.9c.41-.13,.72-.48,.79-.91l1.3-7.76c.08-.51-.39-.92-.88-.76-10.62,3.43-23.38,5.29-36.72,5.29S11.51,3.51,.89,.04C.4-.12-.07,.29,0,.8Z" />
                         </g>
                     </svg>
                 </div>
             </div>
             <div class="brandmapWrap flex-container align-middle align-justify">
                 <div class="prev" @click="mapPrev()">
-                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19"
+                        viewBox="0 0 34.68 30.19">
                         <g id="d" data-name="設計">
                             <g>
                                 <line class="c" x1="34.68" y1="15.09" x2="3.61" y2="15.09" />
-                                <path class="b" d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07s-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
+                                <path class="b"
+                                    d="M24.11,.69c.45,.7,.24,1.63-.46,2.07L4.29,15.09l19.36,12.33c.7,.45,.91,1.37,.46,2.07s-1.38,.9-2.07,.46L.69,16.36c-.43-.28-.69-.75-.69-1.27s.26-.99,.69-1.27L22.04,.23c.25-.16,.53-.23,.81-.23,.5,0,.98,.25,1.27,.69Z" />
                             </g>
                         </g>
                     </svg>
@@ -453,19 +544,28 @@
                     </svg>
                 </div> -->
                 <ul class="brandmap flex-container align-center-middle">
-                    <li @click="mapHandler(1)" :class="[{'current': map == 1 }]"><img src="./images/a-koi-the.svg" alt=""></li>
-                    <li @click="mapHandler(2)" :class="[{'current': map == 2 }]"><img src="./images/a-koi-express.svg" alt=""></li>
-                    <li @click="mapHandler(3)" :class="[{'current': map == 3 }]"><img src="./images/a-fifty.svg" alt=""></li>
-                    <li @click="mapHandler(4)" :class="[{'current': map == 4 }]"><img src="./images/a-koi-cafe.svg" alt=""></li>
-                    <li @click="mapHandler(5)" :class="[{'current': map == 5 }]"><img src="./images/a-koi-plus.svg" alt=""></li>
-                    <li @click="mapHandler(6)" :class="[{'current': map == 6 }]"><img src="./images/a-koi-signature.svg" alt=""></li>
+                    <li @click="mapHandler(1)" :class="[{'current': map == 1 }]"><img src="./images/a-koi-the.svg"
+                            alt=""></li>
+                    <li @click="mapHandler(2)" :class="[{'current': map == 2 }]"><img src="./images/a-koi-express.svg"
+                            alt=""></li>
+                    <li @click="mapHandler(3)" :class="[{'current': map == 3 }]"><img src="./images/a-fifty.svg" alt="">
+                    </li>
+                    <li @click="mapHandler(4)" :class="[{'current': map == 4 }]"><img src="./images/a-koi-cafe.svg"
+                            alt=""></li>
+                    <li @click="mapHandler(6)" :class="[{'current': map == 6 }]"><img src="./images/a-koi-signature.svg"
+                            alt=""></li>
+                    <li @click="mapHandler(5)" :class="[{'current': map == 5 }]"><img src="./images/a-koi-plus.svg"
+                            alt=""></li>
+
                 </ul>
                 <div class="next" @click="mapNext()">
-                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
+                    <svg id="a" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19"
+                        viewBox="0 0 34.68 30.19">
                         <g id="d" data-name="設計">
                             <g>
                                 <line class="c" y1="15.09" x2="31.07" y2="15.09" />
-                                <path class="b" d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
+                                <path class="b"
+                                    d="M10.57,29.49c-.45-.7-.24-1.63,.46-2.07L30.39,15.09,11.03,2.76c-.7-.45-.91-1.37-.46-2.07s1.38-.9,2.07-.46l21.34,13.59c.43,.28,.69,.75,.69,1.27s-.26,.99-.69,1.27L12.64,29.95c-.25,.16-.53,.23-.81,.23-.5,0-.98-.25-1.27-.69Z" />
                             </g>
                         </g>
                     </svg>
@@ -738,7 +838,7 @@
         mounted() {
 
         },
-        updated() {},
+        updated() { },
     })
 
     $('footer').addClass('is-light-orange')
@@ -825,26 +925,26 @@
     //     }, '<0')
     // $('html').addClass('is-lock')
     // $('body').addClass('is-lock')
-    $(document).ready(function() {
-        window.onbeforeunload = function() {
+    $(document).ready(function () {
+        window.onbeforeunload = function () {
             //刷新后页面自动回到顶部
             document.documentElement.scrollTop = 0; //ie下
             document.body.scrollTop = 0; //非ie
         }
         $("html").addClass("is-lock")
     })
-    gsap.delayedCall(2, function() {
+    gsap.delayedCall(2, function () {
         $("html").removeClass("is-lock")
     })
 
-    gsap.delayedCall(0.5, function() {
+    gsap.delayedCall(0.5, function () {
         $tl.play();
     });
-    gsap.delayedCall(1.5, function() {
+    gsap.delayedCall(1.5, function () {
         $('nav').removeClass('is-move')
 
     });
-    gsap.delayedCall(2, function() {
+    gsap.delayedCall(2, function () {
         $('html').removeClass('is-lock')
         $('body').removeClass('is-lock')
         $('.about-animation .scroll').addClass('is-show')
@@ -889,8 +989,8 @@
 
     if (window.device == 'desktop') {
         let $tl_number = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .add('number')
             .to(".number-area .hollow-1", {
                 y: 324,
@@ -915,8 +1015,8 @@
         });
     } else {
         let $tl_number_mobile = gsap.timeline({
-                paused: true,
-            })
+            paused: true,
+        })
             .add('number')
             .to(".number-area .hollow-1", {
                 y: '500%',
@@ -964,8 +1064,8 @@
 
     if ($(this).width() > 1025) {
         let $tl_drink = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .add('drink')
             .to(".drink-area li:nth-child(odd)", {
                 y: '-130vh',
@@ -977,8 +1077,8 @@
         //     opacity: 0,
         // })
         let $tl_drink_bg = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .to(".drink-area .bg-change", {
                 opacity: 1,
             }, '<0')
@@ -1002,8 +1102,8 @@
         });
     } else if ($(this).width() <= 1025 && $(this).width() > 640) {
         let $tl_drink_mobile = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .add('drink')
             .to(".drink-area li:nth-child(odd)", {
                 y: '-150vh',
@@ -1022,8 +1122,8 @@
         });
     } else {
         let $tl_drink_mobile = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .add('drink')
             .to(".drink-area li:nth-child(odd)", {
                 y: '-110vh',
@@ -1043,8 +1143,8 @@
     }
     if (window.device == 'desktop') {
         let $tl_info = gsap.timeline({
-                paused: false,
-            })
+            paused: false,
+        })
             .to(".about-info-preview .about-infoWrap", {
                 opacity: 1,
             })
@@ -1107,14 +1207,14 @@
                     onUpdate: (self) => {
                         let $about = $(".about-infoWrap#horizontalWrap")
                         let m = $(window).width() / 2
-                        $about.children().each(function(i, el) {
+                        $about.children().each(function (i, el) {
                             let x = $(el).offset().left
                             // if (x - m <= 0) {
                             //     $(el).addClass("current").siblings().removeClass("current")
                             // }
                             console.log(x);
                             if (x < m) {
-                                $(el).children('.pic-area').css('transform', `rotate(${x/20}deg)`)
+                                $(el).children('.pic-area').css('transform', `rotate(${x / 20}deg)`)
                             }
                         })
                     }
@@ -1152,39 +1252,39 @@
             asNavFor: '.about-ingredient .bg',
         });
     } else {
-        $(window).on("resize", function() {
-                if ($(this).width() > 640) {
-                    $('.slick-article').slick({
-                        dots: true,
-                        // centerMode: false,
-                        speed: 1000,
-                        slidesToShow: 2.5,
-                        slidesToScroll: 1,
-                        autoplay: true,
-                        autoplaySpeed: 5000,
-                        vertical: true,
-                        verticalSwiping: true,
-                        arrows: false,
-                        infinite: false,
-                        asNavFor: '.about-ingredient .bg',
-                    });
-                } else {
-                    $('.slick-article').slick({
-                        dots: true,
-                        // centerMode: false,
-                        speed: 1000,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        autoplay: true,
-                        autoplaySpeed: 5000,
-                        vertical: true,
-                        verticalSwiping: true,
-                        arrows: false,
-                        infinite: false,
-                        asNavFor: '.about-ingredient .bg',
-                    });
-                }
-            })
+        $(window).on("resize", function () {
+            if ($(this).width() > 640) {
+                $('.slick-article').slick({
+                    dots: true,
+                    // centerMode: false,
+                    speed: 1000,
+                    slidesToShow: 2.5,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    vertical: true,
+                    verticalSwiping: true,
+                    arrows: false,
+                    infinite: false,
+                    asNavFor: '.about-ingredient .bg',
+                });
+            } else {
+                $('.slick-article').slick({
+                    dots: true,
+                    // centerMode: false,
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    vertical: true,
+                    verticalSwiping: true,
+                    arrows: false,
+                    infinite: false,
+                    asNavFor: '.about-ingredient .bg',
+                });
+            }
+        })
             .trigger("resize");
 
     }
@@ -1217,7 +1317,7 @@
     //     loop: true,
     //     asNavFor: '.about-ingredient .bg',
     // });
-    $('.slick-article').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    $('.slick-article').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         $(`.triangle .triangle-${nextSlide + 1}`).addClass('is-show').siblings().removeClass('is-show');
     });
     var dotNums = document.querySelectorAll(".slick-dots button");
@@ -1226,12 +1326,12 @@
         item.innerHTML = ""; // or put the text you need inside quotes
     }
     dotNums.forEach(removeText);
-    $('div[data-tri]').click(function(e) {
+    $('div[data-tri]').click(function (e) {
         e.preventDefault();
         var slideTri = $(this).data('tri');
         $('.slick-article').slick('slickGoTo', slideTri - 1);
     });
-    $('li[data-ing]').click(function(e) {
+    $('li[data-ing]').click(function (e) {
         e.preventDefault();
         var slideIng = $(this).data('ing');
         $('.slick-article').slick('slickGoTo', slideIng - 1);
@@ -1335,13 +1435,13 @@
             draggable: false,
         });
 
-        $('.arrow-area .prev').on('click', function() {
+        $('.arrow-area .prev').on('click', function () {
             $carousel.flickity('previous');
             $carousel_num.flickity('previous');
             $carousel_ch.flickity('previous');
             $carousel_en.flickity('previous');
         });
-        $('.arrow-area .next').on('click', function() {
+        $('.arrow-area .next').on('click', function () {
             $carousel.flickity('next');
             $carousel_num.flickity('next');
             $carousel_ch.flickity('next');
@@ -1397,7 +1497,7 @@
             autoPlay: 3000,
             // asNavFor: $carousel_ch
             on: {
-                change: function(index) {
+                change: function (index) {
                     $carousel_ch.flickity('selectCell', index);
                     $carousel_num.flickity('selectCell', index);
                     $carousel.flickity('selectCell', index);
@@ -1409,7 +1509,7 @@
 
     $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
     // $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
-    $carousel.on('change.flickity', function(event, index) {
+    $carousel.on('change.flickity', function (event, index) {
         $('.about-event .pic-area li').removeClass('is-show');
         // $('.about-event .pic-area li.is-selected').addClass('is-show').next().addClass('is-show').next().addClass('is-show').next().addClass('is-show')
         // console.log(index);
@@ -1536,8 +1636,8 @@
 
 
     let $tl_brand = gsap.timeline({
-            paused: true,
-        })
+        paused: true,
+    })
         .to(".about-brandmap .overflow .en", {
             duration: 1,
             y: 0,
@@ -1574,11 +1674,11 @@
         //     draggable: false,
         //     fade: true,
         // });
-        $('.brandmapWrap .next').on('click', function() {
+        $('.brandmapWrap .next').on('click', function () {
             $brand.flickity('next');
             // $brandmapList.flickity('next');
         });
-        $('.brandmapWrap .prev').on('click', function() {
+        $('.brandmapWrap .prev').on('click', function () {
             $brand.flickity('previous');
             // $brandmapList.flickity('previous');
         });
@@ -1586,10 +1686,10 @@
 
     $('.menu-mobileWrap .about').addClass('current');
 
-    $('.country-select').on("click", function() {
+    $('.country-select').on("click", function () {
         $('.country-select').toggleClass('open');
     });
-    $('.country-select .list li').each(function(i, el) {
+    $('.country-select .list li').each(function (i, el) {
         // $(el).on("click", function() {
         //     $('.country-select span').text($(el).text());
         //     _m = $(el).data('menu');

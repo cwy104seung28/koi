@@ -119,7 +119,7 @@
                 <li><a href="./contact.php">联络我们</a></li>
                 <li><a href="./about.php">关于KOI</a></li>
                 <li><a href="./store.php">全球据点</a></li>
-                <li><a href="./menu.php">菜单下载</a></li>
+                <li><a href="./menu.php">菜单瀏覽</a></li>
                 <li><a href="./ourtea.php">饮品列表</a></li>
                 <li><a href="./recruit.php">伙伴招募</a></li>
             </ul>

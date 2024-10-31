@@ -87,7 +87,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
             </div>
             <div class="recruit-otherList">
                 <div class="title">
-                    Targeting Global Talents <br>Comprehensive Salary Benefits.
+                    Targeting Global Talents <br>Comprehensive Salary Benefits
                 </div>
                 <ul class="articleList">
                     <li>● Competitive salary in international job markets</li>
@@ -168,7 +168,7 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                     </div>
                     <ul class="applyList">
                         <li>
-                            <a href="https://www.104.com.tw/job/7tsra?jobsource=tab_job_to_cs">
+                            <a href="https://www.104.com.tw/company/1a2x6bmbm1">
                                 <div class="title">Job post on 104 portal</div>
                                 <div class="arrow">
                                     <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="29.31" height="25.51" viewBox="0 0 29.31 25.51">

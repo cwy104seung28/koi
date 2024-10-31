@@ -169,7 +169,7 @@ foreach ($brand_total as $total) {
                 </div>
                 <div class="storeCat-inner">
                     <div class="store">(Brand)</div>
-                    <ul class="storeCatList">
+                    <ul class="storeCatList brand">
                         <li class="<?php if ($ryder_cat_brand == 0) : ?>current<?php endif ?>">
                             <a href="./store.php?c=<?= $ryder_cat ?>&b=<?= $ryder_cat_sub ?>" class="flex-container align-middle">
                                 <div class="dot"></div>

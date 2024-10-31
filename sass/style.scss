@@ -8,13 +8,11 @@ $global-padding: 20px;
 $prototype-spacing-breakpoints: true;
 $prototype-spacers-count: 8;
 $breakpoint-classes: (small medium large xlarge xxlarge);
-$breakpoints: (
-    small: 0px,
+$breakpoints: (small: 0px,
     medium: 640px,
     large: 1025px,
     xlarge: 1200px,
-    xxlarge: 1600px
-);
+    xxlarge: 1600px);
 @include foundation-xy-grid-classes;
 @include foundation-prototype-spacing;
 @include foundation-flex-classes;
@@ -39,6 +37,7 @@ body {
         display: none;
         color: transparent;
     }
+
     &.is-lock {
         overflow: hidden;
     }
@@ -47,6 +46,7 @@ body {
         overflow-x: hidden;
     }
 }
+
 // body::-webkit-scrollbar {
 //     display: none;
 // }
@@ -96,9 +96,11 @@ nav {
             clip-path: path("M0 0h5000v170H0Z");
         }
     }
+
     &.not-not-clip {
         transition: 0s all;
         clip-path: path("M0 0h5000v170H0Z");
+
         @include breakpoint(medium down) {
             clip-path: path("M0 0h5000v170H0Z");
         }
@@ -122,6 +124,7 @@ nav {
             width: 100%;
             height: 100%;
             object-fit: cover;
+
             .d {
                 fill: #ea5504;
             }
@@ -139,17 +142,21 @@ nav {
         padding-left: 20px;
         height: fit-content;
         transition: 0.3s all;
+
         &.is-light {
             color: #faeede;
         }
+
         &.is-white {
             color: #ffffff;
         }
+
         @include breakpoint(medium down) {
             padding-top: 10px;
             padding-left: 15px;
             flex: 10 1 0;
         }
+
         @include breakpoint(small down) {
             flex: 5.5 1 0;
         }
@@ -212,15 +219,18 @@ nav {
             fill: #231814;
             transition: 0.3s all;
         }
+
         &.is-white {
             .f {
                 fill: #fff;
             }
         }
+
         @include breakpoint(medium down) {
             padding-top: 10px;
             flex: 11.5 1 0;
         }
+
         @include breakpoint(small down) {
             flex: 8 1 0;
         }
@@ -231,16 +241,19 @@ nav {
         z-index: 2;
         padding-left: 120px;
         padding-bottom: 113px;
+
         &.is-light {
             .menuList {
                 color: #faeede;
             }
         }
+
         &.is-white {
             .menuList {
                 color: #ffffff;
             }
         }
+
         &.is-not-hover {
             pointer-events: none;
         }
@@ -284,7 +297,7 @@ nav {
                 //     height: 100%;
                 //     min-height: max-content;
                 // }
-                > img {
+                >img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -312,6 +325,7 @@ nav {
                         // -ms-transform: rotate(0);
                         transform: rotate(10deg);
                     }
+
                     @include breakpoint(small down) {
                         bottom: 44px;
                         left: 266px;
@@ -326,6 +340,7 @@ nav {
             top: 0;
             right: 50px;
             transition: 0.3s all;
+
             li {
                 position: absolute;
                 font-family: $en-family;
@@ -334,6 +349,7 @@ nav {
                 transform-origin: right;
                 text-wrap: nowrap;
                 min-width: max-content;
+
                 &::before {
                     position: absolute;
                     content: "";
@@ -411,6 +427,7 @@ nav {
                 text-wrap: nowrap;
                 transition: 0.5s all;
                 min-width: max-content;
+
                 @include breakpoint(large down) {
                     font-size: 30px;
                 }
@@ -512,7 +529,7 @@ nav {
                 // min-height: max-content;
                 // top: 0;
                 // right: 0;
-                > img {
+                >img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -622,6 +639,7 @@ nav {
             }
         }
     }
+
     .language {
         position: absolute;
         font-family: $ch-family;
@@ -638,31 +656,37 @@ nav {
             bottom: 48px;
             transform: rotate(17deg);
         }
+
         @include breakpoint(medium down) {
             font-size: 15px;
             right: 35px;
             bottom: 22px;
             transform: rotate(9deg);
         }
+
         @include breakpoint(small down) {
             font-size: 15px;
             right: 43px;
             bottom: 29px;
             transform: rotate(9deg);
         }
+
         a {
             display: block;
             transition: 0.5s all;
+
             &:hover {
                 opacity: 0.6;
             }
         }
+
         .ch {
             transform: rotate(2deg);
             // @include breakpoint(medium down) {
             //     transform: rotate(3deg);
             // }
         }
+
         .en {
             transform: rotate(-2deg);
             // @include breakpoint(medium down) {
@@ -670,6 +694,7 @@ nav {
             // }
         }
     }
+
     .bg-hover {
         position: fixed;
         z-index: 1;
@@ -694,9 +719,11 @@ nav {
     // background-color: #f4ddbe;
     z-index: 3;
     transition: 0.5s all;
+
     &.down {
         z-index: 2;
     }
+
     @include breakpoint(medium down) {
         width: 100%;
         text-align: center;
@@ -732,9 +759,11 @@ nav {
             display: none;
         }
     }
+
     &.is-not-show {
         opacity: 0;
     }
+
     &.not-show {
         display: none;
     }
@@ -756,6 +785,7 @@ nav {
         // left: 0;
         // top: 0;
     }
+
     .skip {
         position: absolute;
         right: 50px;
@@ -764,13 +794,16 @@ nav {
         opacity: 0;
         pointer-events: none;
         transition: 0.3s all;
+
         @include breakpoint(large down) {
             bottom: 50px;
         }
+
         @include breakpoint(medium down) {
             right: 30px;
             bottom: 120px;
         }
+
         &.is-show {
             opacity: 1;
             pointer-events: all;
@@ -784,10 +817,12 @@ nav {
             .e {
                 stroke: #ea5406;
             }
+
             .arrow {
                 transform: translateX(10px);
             }
         }
+
         .d {
             fill: #0c131b;
             transition: 0.3s all;
@@ -799,10 +834,12 @@ nav {
             stroke-miterlimit: 10;
             stroke-width: 1.39px;
         }
+
         .arrow {
             transition: 0.3s all;
         }
     }
+
     &.not-show {
         display: none;
     }
@@ -828,6 +865,7 @@ nav {
     @include breakpoint(medium down) {
         overflow: hidden;
     }
+
     .bg-video {
         position: absolute;
         width: 100%;
@@ -854,7 +892,7 @@ nav {
         //     transform: translateX(100%);
         // }
 
-        > img {
+        >img {
             @include breakpoint(xlarge only) {
                 height: 480px;
             }
@@ -921,6 +959,7 @@ nav {
             fill: #0d131a;
             transition: 0.5s all;
         }
+
         // .e {
         //     fill: #0d131a;
         //     transition: 0.5s all;
@@ -973,6 +1012,7 @@ nav {
             // top: 50%;
             // transform: translateY(-50%);
         }
+
         @include breakpoint(small down) {
             max-width: 238px;
             font-size: 10px;
@@ -1217,11 +1257,13 @@ nav {
         margin-top: -150vh;
         opacity: 1;
     }
+
     @include breakpoint(small down) {
         // height: 100vh;
         margin-top: -180vh;
         opacity: 1;
     }
+
     &.is-not-show {
         opacity: 0;
     }
@@ -1326,7 +1368,7 @@ nav {
         height: 3600px;
 
         // 中間的圈圈
-        > li {
+        >li {
             // height: 803px;
             width: fit-content;
             margin: 0 auto;
@@ -1346,6 +1388,7 @@ nav {
             @include breakpoint(medium down) {
                 padding: 10vh 0 5vh;
             }
+
             // @include breakpoint(xlarge down) {
             //     height: calc(100vh - 40px);
             // }
@@ -1510,6 +1553,7 @@ nav {
                 width: 82px;
                 height: 82px;
                 border-radius: 50%;
+
                 @include breakpoint(xlarge down) {
                     width: 75px;
                     height: 75px;
@@ -1524,11 +1568,13 @@ nav {
                     width: 80px;
                     height: 80px;
                 }
+
                 @include breakpoint(small down) {
                     width: 51px;
                     height: 51px;
                 }
             }
+
             video {
                 width: 82px;
                 height: 82px;
@@ -1548,6 +1594,7 @@ nav {
                     width: 80px;
                     height: 80px;
                 }
+
                 @include breakpoint(small down) {
                     width: 51px;
                     height: 51px;
@@ -1604,6 +1651,7 @@ nav {
             width: 82px;
             height: 82px;
             border-radius: 50%;
+
             @include breakpoint(xlarge down) {
                 width: 75px;
                 height: 75px;
@@ -1624,6 +1672,7 @@ nav {
                 height: 51px;
             }
         }
+
         video {
             width: 82px;
             height: 82px;
@@ -1669,7 +1718,7 @@ nav {
             padding: 0;
         }
 
-        > li {
+        >li {
             // height: 803px;
             // margin-bottom: 97px;
             display: flex;
@@ -1685,6 +1734,7 @@ nav {
             @include breakpoint(medium down) {
                 padding: 10vh 0 5vh;
             }
+
             // @include breakpoint(xlarge down) {
             //     height: calc(100vh - 40px);
             // }
@@ -1782,6 +1832,7 @@ nav {
             zoom: 0.85;
             top: 17%;
         }
+
         @include breakpoint(large only) {
             zoom: 0.85;
         }
@@ -1824,9 +1875,11 @@ nav {
                 opacity: 0;
                 transform: scale(0);
                 transition: 0.5s all;
+
                 @include breakpoint(xlarge down) {
                     margin-bottom: 112px;
                 }
+
                 @include breakpoint(large down) {
                     margin-bottom: 60px;
                 }
@@ -1849,6 +1902,7 @@ nav {
                     opacity: 1;
                     transform: scale(1);
                 }
+
                 .bottom {
                     margin-left: 3px;
                 }
@@ -1869,6 +1923,7 @@ nav {
                 @include breakpoint(xlarge down) {
                     margin-bottom: 20px;
                 }
+
                 @include breakpoint(medium down) {
                     font-size: 95px;
                     text-wrap: nowrap;
@@ -1906,6 +1961,7 @@ nav {
                     font-size: 45px;
                     transition: 1s all;
                 }
+
                 @include breakpoint(small down) {
                     font-size: 32px;
                     // transition: 1s all;
@@ -1918,9 +1974,11 @@ nav {
 
                 &.left {
                     margin-right: 420px;
+
                     @include breakpoint(xlarge down) {
                         margin-right: 600px;
                     }
+
                     @include breakpoint(medium down) {
                         margin-right: 0;
                         margin-left: -100px;
@@ -1949,6 +2007,7 @@ nav {
         left: 50%;
         top: 68%;
         zoom: 1.2;
+
         @include breakpoint(medium down) {
             zoom: 0.55;
             top: 300px;
@@ -1980,9 +2039,11 @@ nav {
             left: -189px !important;
             top: -243px !important;
             z-index: 1;
+
             @include breakpoint(medium down) {
                 top: -220px !important;
             }
+
             .inner {
                 transform: scale(0.15) translate(900px, 1200px);
                 transform-origin: right bottom;
@@ -2030,6 +2091,7 @@ nav {
             top: -80px !important;
             transform-origin: left bottom;
             z-index: 3;
+
             .inner {
                 z-index: 1;
                 transform: scale(0.15) translate(-1000px, 500px);
@@ -2122,6 +2184,7 @@ nav {
                 transform-origin: left;
             }
         }
+
         .drink-3 {
             max-width: 287px;
             left: -217px !important;
@@ -2337,6 +2400,7 @@ nav {
                 min-width: 450px;
                 margin-right: 80px;
             }
+
             @include breakpoint(small down) {
                 min-width: 312px;
                 margin-right: 20px;
@@ -2358,6 +2422,7 @@ nav {
                 background-size: cover;
                 margin-bottom: 10px;
                 position: relative;
+
                 &::after {
                     position: absolute;
                     content: "";
@@ -2371,6 +2436,7 @@ nav {
                 @include breakpoint(xlarge down) {
                     width: 350px !important;
                 }
+
                 @include breakpoint(medium down) {
                     width: 450px !important;
                 }
@@ -2398,6 +2464,7 @@ nav {
                         height: 450px;
                         padding: 7px;
                     }
+
                     @include breakpoint(small down) {
                         // position: relative;
                         width: 312px;
@@ -2405,7 +2472,7 @@ nav {
                         // padding: 7px;
                     }
 
-                    > img {
+                    >img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
@@ -2435,9 +2502,11 @@ nav {
                     letter-spacing: 2px;
                     font-weight: 800;
                     color: #0b0b0b;
+
                     @include breakpoint(xlarge down) {
                         font-size: 24px;
                     }
+
                     @include breakpoint(small down) {
                         font-size: 20px;
                     }
@@ -2532,6 +2601,7 @@ nav {
         }
 
         li {
+
             // height: fit-content;
             .pic {
                 width: 420px;
@@ -2714,6 +2784,7 @@ nav {
         position: relative;
         z-index: 5;
         touch-action: pan-y;
+
         // background-color: #fff;
         @include breakpoint(medium down) {
             //    width: 100vw;
@@ -2735,12 +2806,15 @@ nav {
             height: 100vh;
             transform: scale(10);
             background-color: #fff;
+
             @include breakpoint(medium down) {
                 padding: 0 83px;
             }
+
             @include breakpoint(small down) {
                 padding: 0 50px;
             }
+
             div {
                 // transform: scale(5);
                 margin: 0 12px;
@@ -2759,9 +2833,11 @@ nav {
                     @include breakpoint(xlarge down) {
                         height: 140px;
                     }
+
                     @include breakpoint(medium down) {
                         height: 120px;
                     }
+
                     @include breakpoint(small down) {
                         height: 43px;
                     }
@@ -2792,11 +2868,13 @@ nav {
                 @include breakpoint(medium down) {
                     width: 40px;
                 }
+
                 @include breakpoint(small down) {
                     width: 30px;
                 }
             }
         }
+
         .scroll {
             position: absolute;
             left: 50%;
@@ -2807,10 +2885,12 @@ nav {
             opacity: 0;
             pointer-events: none;
             transition: 0.75s all;
+
             &.is-show {
                 opacity: 1;
                 pointer-events: all;
             }
+
             @include breakpoint(xlarge down) {
                 bottom: 20px;
             }
@@ -2826,6 +2906,7 @@ nav {
                 fill: #0d131a;
                 transition: 0.5s all;
             }
+
             // .e {
             //     fill: #0d131a;
             //     transition: 0.5s all;
@@ -2846,6 +2927,7 @@ nav {
                 }
             }
         }
+
         .number-area {
             height: 2000px;
             position: relative;
@@ -2895,12 +2977,14 @@ nav {
                     margin: 0 auto;
                     padding: 15px 0;
                 }
+
                 @include breakpoint(small down) {
                     width: initial;
                     padding: 13px 0;
                 }
 
                 img {
+
                     // @include breakpoint(xlarge down) {
                     //    height: 80px;
                     // }
@@ -2908,6 +2992,7 @@ nav {
                         width: 100%;
                     }
                 }
+
                 &.hollow {
                     @include breakpoint(medium only) {
                         width: calc(90vw - 5px);
@@ -2915,6 +3000,7 @@ nav {
                         // padding: 15px 0;
                     }
                 }
+
                 // svg {
                 //     @include breakpoint(medium only) {
                 //         width: 90vw;
@@ -2972,6 +3058,7 @@ nav {
                 @include breakpoint(large down) {
                     padding: 0px 40px;
                 }
+
                 @include breakpoint(medium down) {
                     padding: 0px 80px;
                 }
@@ -3002,6 +3089,7 @@ nav {
                         @include breakpoint(xlarge down) {
                             width: 150px;
                         }
+
                         @include breakpoint(large down) {
                             width: 140px;
                         }
@@ -3082,6 +3170,7 @@ nav {
             z-index: 2;
             // background-color: #fff;
         }
+
         // @include breakpoint(small down) {
         //     height: 667px;
         // }
@@ -3122,6 +3211,7 @@ nav {
             .pic-area {
                 width: 707px;
                 aspect-ratio: 1/1;
+
                 @include breakpoint(medium only) {
                     width: 550px;
                     // height: 550px;
@@ -3131,6 +3221,7 @@ nav {
                 @include breakpoint(medium down) {
                     margin-bottom: 150px;
                 }
+
                 @include breakpoint(small down) {
                     width: 300px;
                     margin-bottom: 27px;
@@ -3166,6 +3257,7 @@ nav {
                         letter-spacing: 20px;
                         color: #fff;
                         margin-right: -20px;
+
                         @include breakpoint(xlarge down) {
                             font-size: 16px;
                         }
@@ -3217,6 +3309,7 @@ nav {
                         letter-spacing: 0.5px;
                         line-height: 1.6;
                     }
+
                     @include breakpoint(small down) {
                         max-width: 100%;
                         font-size: 14px;
@@ -3256,6 +3349,7 @@ nav {
             bottom: 30px;
             justify-content: center;
             width: 100%;
+
             @include breakpoint(medium only) {
                 bottom: 60px;
             }
@@ -3420,6 +3514,7 @@ nav {
                         transition: 0.5s all;
                         opacity: 0;
                         pointer-events: none;
+
                         @include breakpoint(medium down) {
                             width: 250px;
                             height: 250px;
@@ -3442,6 +3537,7 @@ nav {
 
                     &:hover {
                         opacity: 1;
+
                         &:after {
                             opacity: 1;
                         }
@@ -3449,6 +3545,7 @@ nav {
 
                     &.is-show {
                         opacity: 1;
+
                         &:after {
                             opacity: 1;
                         }
@@ -3499,9 +3596,11 @@ nav {
             flex: 1 1 0;
             padding: 88px 75px 95px 85px;
             background-color: #fff;
+
             @include breakpoint(large down) {
                 padding: 80px 50px 85px;
             }
+
             @include breakpoint(medium down) {
                 padding: 60px 80px 30px;
                 flex: initial;
@@ -3579,6 +3678,7 @@ nav {
                 // height: 420px;
                 .slick-list {
                     max-width: 520px;
+
                     @include breakpoint(medium down) {
                         max-width: 100%;
                     }
@@ -3691,6 +3791,7 @@ nav {
             .slick-dots {
                 position: relative;
                 z-index: 6;
+
                 @include breakpoint(large down) {
                     margin-left: 25px;
                 }
@@ -3837,6 +3938,7 @@ nav {
                 // margin-left: 0;
                 transform: rotate(-15deg);
             }
+
             @include breakpoint(small down) {
                 width: 670px;
                 // margin-left: -200px;
@@ -3866,6 +3968,7 @@ nav {
                     filter: brightness(20%);
                     // border-radius: 50%;
                 }
+
                 @include breakpoint(small down) {
                     width: 248px;
                     height: 248px;
@@ -3988,10 +4091,12 @@ nav {
             flex: 1 1 0;
             margin-left: 100px;
             padding-top: 150px;
+
             @include breakpoint(large down) {
                 max-width: 400px;
                 padding-top: 200px;
             }
+
             @include breakpoint(medium down) {
                 max-width: 100%;
                 margin-left: 0;
@@ -4020,6 +4125,7 @@ nav {
                     // font-size: 60px;
                     margin-bottom: 20px;
                 }
+
                 @include breakpoint(small down) {
                     font-size: 60px;
                     // margin-bottom: 20px;
@@ -4063,14 +4169,17 @@ nav {
                     margin-bottom: 15px;
                     line-height: 1.6;
                 }
+
                 @include breakpoint(large down) {
                     line-height: 1.4;
                 }
+
                 @include breakpoint(medium down) {
                     // font-size: 17px;
                     margin-bottom: 12px;
                     line-height: 1.6;
                 }
+
                 @include breakpoint(small down) {
                     font-size: 17px;
                     // margin-bottom: 12px;
@@ -4117,6 +4226,7 @@ nav {
                     // font-size: 15px;
                     height: 50px;
                 }
+
                 @include breakpoint(small down) {
                     font-size: 15px;
                     // height: 50px;
@@ -4147,9 +4257,11 @@ nav {
                     display: flex;
                     margin-top: 80px;
                     justify-content: center;
+
                     @include breakpoint(small down) {
                         margin-top: 20px;
                     }
+
                     li {
                         position: relative;
                         width: 12px;
@@ -4157,12 +4269,15 @@ nav {
                         background-color: #fff;
                         margin-right: 20px;
                         opacity: 1;
+
                         @include breakpoint(small down) {
                             margin-right: 15px;
                         }
+
                         &:last-child {
                             margin-right: 0;
                         }
+
                         &::after {
                             position: absolute;
                             content: "";
@@ -4175,6 +4290,7 @@ nav {
                             transition: 0.3s all;
                             border-radius: 50%;
                         }
+
                         &.is-selected {
                             &::after {
                                 opacity: 1;
@@ -4187,6 +4303,7 @@ nav {
 
         .arrow-area {
             max-width: 480px;
+
             @include breakpoint(medium down) {
                 position: absolute;
                 max-width: 100%;
@@ -4196,10 +4313,12 @@ nav {
                 padding: 0 20vw;
                 // justify-content: space-between;
             }
+
             @include breakpoint(small down) {
                 bottom: 23px;
                 padding: 0 20px;
             }
+
             .cls-1 {
                 fill: #fff;
                 transition: 0.3s all;
@@ -4215,9 +4334,11 @@ nav {
 
             div {
                 cursor: pointer;
+
                 @include breakpoint(medium only) {
                     zoom: 1.5;
                 }
+
                 &:hover {
                     .cls-1 {
                         fill: #ea5504;
@@ -4231,6 +4352,7 @@ nav {
 
             .prev {
                 margin-right: 75px;
+
                 @include breakpoint(medium down) {
                     margin-right: 20px;
                 }
@@ -4545,6 +4667,7 @@ nav {
                         // border-bottom: 2px solid #fff;
                         background-color: #fff;
                         font-family: $ch-family;
+
                         // margin: 0 20px;
                         // &:first-child {
                         //     display: none;
@@ -4597,6 +4720,7 @@ nav {
                         transform: translateY(0);
                     }
                 }
+
                 .current {
                     font-family: $ch-family;
                 }
@@ -4624,6 +4748,7 @@ nav {
             aspect-ratio: 1902/700;
             // height: 700px;
             background: url("../images/a-map-bg.jpg") right bottom/cover no-repeat;
+
             // text-align: right;
             // @include breakpoint(large down) {
             //     aspect-ratio: 1902/750;
@@ -4717,6 +4842,7 @@ nav {
                 @include breakpoint(large only) {
                     right: 20px;
                 }
+
                 @include breakpoint(medium down) {
                     right: 88px;
                 }
@@ -4725,6 +4851,7 @@ nav {
             .china {
                 right: 261px;
                 top: 295px;
+
                 @include breakpoint(medium down) {
                     right: 329px;
                 }
@@ -4733,6 +4860,7 @@ nav {
             .bangladesh {
                 top: 370px;
                 right: 368px;
+
                 a {
                     @include breakpoint(medium down) {
                         flex-direction: row-reverse;
@@ -4752,12 +4880,15 @@ nav {
             .thailand {
                 right: 373px;
                 top: 416px;
+
                 a {
                     flex-direction: row-reverse;
+
                     @include breakpoint(medium down) {
                         flex-direction: row;
                     }
                 }
+
                 .name {
                     margin-left: 0px;
                     margin-right: 7px;
@@ -4767,27 +4898,34 @@ nav {
                     top: 430px;
                 }
             }
+
             .laos {
                 right: 293px;
                 top: 407px;
+
                 a {
                     @include breakpoint(medium down) {
                         flex-direction: row-reverse;
                     }
                 }
+
                 @include breakpoint(large only) {
                     top: 410px;
                 }
+
                 @include breakpoint(medium down) {
                     right: 260px;
                 }
             }
+
             .cambodia {
                 right: 282px;
                 top: 456px;
+
                 @include breakpoint(medium down) {
                     right: 260px;
                 }
+
                 a {
                     @include breakpoint(medium down) {
                         flex-direction: row-reverse;
@@ -4798,9 +4936,11 @@ nav {
             .vietnam {
                 right: 279px;
                 top: 480px;
+
                 @include breakpoint(medium down) {
                     right: 250px;
                 }
+
                 a {
                     @include breakpoint(medium down) {
                         flex-direction: row-reverse;
@@ -4811,9 +4951,11 @@ nav {
             .philippines {
                 right: 159px;
                 top: 457px;
+
                 @include breakpoint(medium down) {
                     right: 130px;
                 }
+
                 a {
                     @include breakpoint(medium down) {
                         flex-direction: row-reverse;
@@ -4824,9 +4966,11 @@ nav {
             .malaysia {
                 right: 284px;
                 top: 521px;
+
                 @include breakpoint(medium down) {
                     right: 253px;
                 }
+
                 a {
                     @include breakpoint(medium down) {
                         flex-direction: row-reverse;
@@ -4837,9 +4981,11 @@ nav {
             .singapore {
                 right: 274px;
                 top: 546px;
+
                 @include breakpoint(medium down) {
                     right: 250px;
                 }
+
                 a {
                     @include breakpoint(medium down) {
                         flex-direction: row-reverse;
@@ -4850,9 +4996,11 @@ nav {
             .indonesia {
                 right: 288px;
                 top: 594px;
+
                 @include breakpoint(medium down) {
                     right: 210px;
                 }
+
                 a {
                     @include breakpoint(medium down) {
                         flex-direction: row-reverse;
@@ -4863,9 +5011,11 @@ nav {
             .dubai {
                 right: 639px;
                 top: 373px;
+
                 @include breakpoint(medium down) {
                     right: 610px;
                 }
+
                 a {
                     @include breakpoint(medium down) {
                         flex-direction: row-reverse;
@@ -4876,13 +5026,16 @@ nav {
             .usa {
                 left: 141px;
                 top: 258px;
+
                 @include breakpoint(medium down) {
                     left: 120px;
                 }
             }
+
             .canada {
                 left: 82px;
                 top: 93px;
+
                 @include breakpoint(medium down) {
                     left: 70px;
                 }
@@ -4916,6 +5069,7 @@ nav {
                 font-family: $en-family;
                 font-size: 12px;
                 color: #ea5406;
+
                 @include breakpoint(medium down) {
                     font-size: 9px;
                 }
@@ -4983,7 +5137,7 @@ nav {
     }
 
     .languageList {
-        > li {
+        >li {
             width: 167px;
             height: 167px;
             border-radius: 50%;
@@ -5180,14 +5334,17 @@ nav {
             letter-spacing: 2px;
             margin-top: 65px;
             line-height: 1.5;
+
             @include breakpoint(xlarge only) {
                 max-width: 370px;
                 text-align: justify;
             }
+
             @include breakpoint(large only) {
                 max-width: 360px;
                 text-align: justify;
             }
+
             @include breakpoint(medium down) {
                 margin-top: 12px;
                 color: #606060;
@@ -5205,14 +5362,17 @@ nav {
             margin-top: 50px;
             color: #ff4d00;
             line-height: 1.5;
+
             @include breakpoint(xlarge only) {
                 max-width: 370px;
                 text-align: justify;
             }
+
             @include breakpoint(large only) {
                 max-width: 360px;
                 text-align: justify;
             }
+
             @include breakpoint(medium down) {
                 font-size: 13px;
                 letter-spacing: 0px;
@@ -5284,9 +5444,11 @@ nav {
                     color: #0c131b;
                     font-weight: 900;
                     margin-bottom: 7px;
+
                     @include breakpoint(xlarge down) {
                         font-size: 26px;
                     }
+
                     // @include breakpoint(xlarge only) {
                     //     // font-size: 24px;
                     //     font-weight: 800;
@@ -5302,9 +5464,11 @@ nav {
                     letter-spacing: 10px;
                     color: $black;
                     font-weight: 800;
+
                     @include breakpoint(xlarge down) {
                         font-size: 22px;
                     }
+
                     @include breakpoint(medium down) {
                         font-size: 16px;
                         letter-spacing: 5px;
@@ -5315,9 +5479,11 @@ nav {
             .item {
                 margin-bottom: 58px;
                 position: relative;
+
                 @include breakpoint(medium down) {
                     margin-bottom: 30px;
                 }
+
                 &.required {
                     &::before {
                         position: absolute;
@@ -5336,10 +5502,12 @@ nav {
                 font-weight: 700;
                 margin-bottom: 30px;
                 font-family: $ch-family;
+
                 @include breakpoint(xlarge only) {
                     // font-size: 24px;
                     font-weight: 600;
                 }
+
                 @include breakpoint(medium down) {
                     font-size: 15px;
                     margin-bottom: 12px;
@@ -5373,6 +5541,7 @@ nav {
                     /* Firefox */
                 }
             }
+
             input[type="date"] {
                 // font-family: $Montserrat;
                 width: 100%;
@@ -5400,18 +5569,22 @@ nav {
                     /* Firefox */
                 }
             }
+
             input[type="radio"] {
                 display: none;
             }
-            input[type="radio"] + label {
+
+            input[type="radio"]+label {
                 font-family: $ch-family;
                 font-size: 18px;
                 letter-spacing: 1px;
                 font-weight: 500px;
+
                 &.left {
                     margin-right: 10px;
                 }
             }
+
             .radio {
                 width: 14px;
                 height: 14px;
@@ -5433,9 +5606,11 @@ nav {
                     opacity: 0;
                 }
             }
-            input[type="radio"]:checked + label .radio::after {
+
+            input[type="radio"]:checked+label .radio::after {
                 opacity: 1;
             }
+
             .nice-select {
                 width: 100%;
                 height: 64px;
@@ -5537,9 +5712,11 @@ nav {
                     }
                 }
             }
-            .experience{
+
+            .experience {
                 margin-bottom: 20px;
             }
+
             textarea {
                 width: 100%;
                 height: 216px;
@@ -5553,10 +5730,12 @@ nav {
                 letter-spacing: 5px;
                 font-weight: 500;
                 resize: none;
+
                 @include breakpoint(medium down) {
                     height: 120px;
                 }
             }
+
             .note {
                 font-family: $ch-family;
                 font-size: 16px;
@@ -5600,6 +5779,7 @@ nav {
                     stroke-miterlimit: 10;
                     stroke-width: 3px;
                     transition: 0.5s all;
+
                     @include breakpoint(medium down) {
                         stroke-width: 1.85px;
                     }
@@ -5641,14 +5821,17 @@ nav {
                 letter-spacing: 1px;
                 color: $black;
                 font-family: $ch-family;
+
                 @include breakpoint(xlarge down) {
                     font-size: 24px;
                     // font-weight: 800;
                 }
+
                 @include breakpoint(xlarge only) {
                     // font-size: 24px;
                     font-weight: 800;
                 }
+
                 @include breakpoint(medium down) {
                     font-size: 20px;
                 }
@@ -5676,10 +5859,12 @@ nav {
                 border: 1px solid #231815;
                 margin-right: 20px;
                 position: relative;
+
                 @include breakpoint(xlarge down) {
                     width: 30px;
                     height: 30px;
                 }
+
                 @include breakpoint(medium down) {
                     width: 21px;
                     height: 21px;
@@ -5716,7 +5901,7 @@ nav {
             display: none;
         }
 
-        input[type="radio"]:checked + label {
+        input[type="radio"]:checked+label {
             opacity: 1;
 
             .radio {
@@ -5842,12 +6027,14 @@ nav {
                 margin-left: 0;
                 transform: translateY(120%) rotate(10deg);
             }
+
             @include breakpoint(medium down) {
                 font-size: 205px;
                 margin-left: -11px;
                 margin-bottom: -15px;
                 transform: translateY(120%) rotate(10deg);
             }
+
             @include breakpoint(small down) {
                 font-size: 110px;
                 margin-left: 0;
@@ -5920,7 +6107,7 @@ nav {
     .linkList {
         margin-top: 10px;
 
-        > li {
+        >li {
             margin-bottom: 70px;
 
             @include breakpoint(medium down) {
@@ -5979,6 +6166,7 @@ nav {
                 stroke-miterlimit: 10;
                 stroke-width: 3px;
                 transition: 0.3s all;
+
                 @include breakpoint(medium down) {
                     stroke-width: 2px;
                 }
@@ -5991,6 +6179,7 @@ nav {
     }
 
     .back {
+
         // @include breakpoint(medium down) {
         //    zoom: 0.8;
         // }
@@ -6211,6 +6400,7 @@ nav {
                     font-size: 9px;
                     // line-height: 1.2;
                 }
+
                 // div {
                 //     display: flex;
                 //     flex-direction: column;
@@ -6614,6 +6804,7 @@ nav {
             @include breakpoint(xlarge only) {
                 top: 80px;
             }
+
             @include breakpoint(large only) {
                 margin-top: -300px;
             }
@@ -7041,6 +7232,7 @@ nav {
                     margin-top: 10px;
                     max-width: 480px;
                 }
+
                 @include breakpoint(small down) {
                     max-width: 100%;
                 }
@@ -7097,6 +7289,7 @@ nav {
                 }
 
                 &:hover {
+
                     // .pic {
                     //     .pic-hover {
                     //         opacity: 1;
@@ -7326,7 +7519,7 @@ nav {
 
         .back {
             #c {
-                > g {
+                >g {
                     transform: translateX(20px);
                 }
             }
@@ -7466,6 +7659,7 @@ nav {
                 padding-bottom: 100px;
                 margin-top: -23px;
             }
+
             @include breakpoint(small down) {
                 padding-top: 40px;
                 padding-bottom: 80px;
@@ -7477,16 +7671,20 @@ nav {
                 align-items: end;
                 animation: marquee-left 15s infinite linear;
                 margin-bottom: -50px;
+
                 @include breakpoint(medium down) {
                     animation: marquee-left 30s infinite linear;
                 }
+
                 li {
                     width: max-content;
                     margin-right: 70px;
+
                     @include breakpoint(medium down) {
                         width: 180px;
                         height: 242px;
                     }
+
                     // animation: wave2 7.5s infinite linear;
                     // @for $i from 1 through 4 {
                     //     &:nth-child(#{$i}) {
@@ -7527,6 +7725,7 @@ nav {
                     &:nth-child(1),
                     &:nth-child(7) {
                         animation: drink-1 5s linear infinite;
+
                         @include breakpoint(medium down) {
                             animation: drink-1-mobile 3s linear infinite;
                         }
@@ -7535,6 +7734,7 @@ nav {
                     &:nth-child(2),
                     &:nth-child(8) {
                         animation: drink-2 5s linear infinite;
+
                         @include breakpoint(medium down) {
                             animation: drink-2-mobile 3s linear infinite;
                         }
@@ -7543,6 +7743,7 @@ nav {
                     &:nth-child(3),
                     &:nth-child(9) {
                         animation: drink-3 5s linear infinite;
+
                         @include breakpoint(medium down) {
                             animation: drink-3-mobile 3s linear infinite;
                         }
@@ -7551,6 +7752,7 @@ nav {
                     &:nth-child(4),
                     &:nth-child(10) {
                         animation: drink-4 5s linear infinite;
+
                         @include breakpoint(medium down) {
                             animation: drink-4-mobile 3s linear infinite;
                         }
@@ -7559,6 +7761,7 @@ nav {
                     &:nth-child(5),
                     &:nth-child(11) {
                         animation: drink-5 5s linear infinite;
+
                         @include breakpoint(medium down) {
                             animation: drink-5-mobile 3s linear infinite;
                         }
@@ -7567,6 +7770,7 @@ nav {
                     &:nth-child(6),
                     &:nth-child(12) {
                         animation: drink-6 5s linear infinite;
+
                         @include breakpoint(medium down) {
                             animation: drink-1-mobile 3s linear infinite;
                         }
@@ -7926,6 +8130,7 @@ nav {
             @include breakpoint(xlarge down) {
                 margin-right: 50px;
             }
+
             @include breakpoint(large down) {
                 margin-right: -75px;
             }
@@ -8021,10 +8226,12 @@ nav {
                     width: 500px;
                     height: 500px;
                 }
+
                 @include breakpoint(medium down) {
                     width: 550px;
                     height: 550px;
                 }
+
                 @include breakpoint(small down) {
                     width: 320px;
                     height: 320px;
@@ -8133,6 +8340,7 @@ nav {
                     @include breakpoint(xlarge down) {
                         font-size: 14px;
                     }
+
                     @include breakpoint(medium down) {
                         font-size: 16px;
                     }
@@ -8153,6 +8361,7 @@ nav {
                     @include breakpoint(xlarge down) {
                         font-size: 16px;
                     }
+
                     @include breakpoint(medium down) {
                         font-size: 18px;
                     }
@@ -8460,7 +8669,7 @@ nav {
                 max-width: 700px;
             }
 
-            > li {
+            >li {
                 margin-bottom: 200px;
 
                 @include breakpoint(xlarge down) {
@@ -8481,6 +8690,7 @@ nav {
                         .icon {
                             right: -128px;
                             bottom: -120px;
+
                             @include breakpoint(large down) {
                                 right: 50px;
                             }
@@ -8488,7 +8698,7 @@ nav {
                     }
 
                     .drinkList {
-                        > li {
+                        >li {
                             &:nth-child(5) {
                                 margin-top: 130px;
 
@@ -8504,7 +8714,7 @@ nav {
                     .drinkList {
                         max-height: 800px;
 
-                        > li {
+                        >li {
                             &:nth-child(5) {
                                 margin-top: 160px;
 
@@ -8538,7 +8748,7 @@ nav {
                     }
 
                     .drinkList {
-                        > li {
+                        >li {
                             &:nth-child(1) {
                                 margin-top: 130px;
 
@@ -8560,6 +8770,7 @@ nav {
                 @include breakpoint(large down) {
                     width: auto;
                 }
+
                 @include breakpoint(medium down) {
                     margin-bottom: 35px;
                 }
@@ -8641,22 +8852,27 @@ nav {
                     cursor: pointer;
                     margin-bottom: 50px;
                     transition: 0.3s all;
+
                     &.current {
                         .ch {
                             color: #9fa0a0;
                         }
+
                         .en {
                             color: #9fa0a0;
                         }
                     }
+
                     &:hover {
                         .ch {
                             color: #9fa0a0;
                         }
+
                         .en {
                             color: #9fa0a0;
                         }
                     }
+
                     @include breakpoint(medium down) {
                         max-width: 350px;
                         min-height: auto;
@@ -8696,6 +8912,7 @@ nav {
                         font-weight: 600;
                         margin-bottom: 8px;
                         transition: 0.3s all;
+
                         @include breakpoint(xlarge down) {
                             font-size: 14px;
                             margin-bottom: 6px;
@@ -8720,6 +8937,7 @@ nav {
                         color: #000;
                         margin-bottom: 18px;
                         transition: 0.5s all;
+
                         @include breakpoint(xlarge down) {
                             font-size: 20px;
                             margin-bottom: 10px;
@@ -8779,6 +8997,7 @@ nav {
                 @include breakpoint(large only) {
                     zoom: 0.8;
                 }
+
                 &:hover {
                     .arrow {
                         transform: translateY(5px);
@@ -8805,14 +9024,17 @@ nav {
                 flex-wrap: wrap;
                 width: 200px;
                 height: 155px;
+
                 li {
                     cursor: pointer;
                     margin-bottom: 20px;
                     opacity: 0.1;
                     transition: 0.5s all;
+
                     @include breakpoint(xlarge down) {
                         margin-bottom: 16px;
                     }
+
                     @include breakpoint(large down) {
                         margin-bottom: 12px;
                     }
@@ -8850,6 +9072,7 @@ nav {
                         @include breakpoint(xlarge down) {
                             font-size: 15px;
                         }
+
                         @include breakpoint(large down) {
                             font-size: 14px;
                         }
@@ -9088,6 +9311,12 @@ nav {
                 margin-right: 35px;
             }
 
+            &.brand {
+                .title {
+                    font-family: $en-family;
+                }
+            }
+
             li {
                 margin-bottom: 10px;
 
@@ -9119,7 +9348,7 @@ nav {
                     position: relative;
                     width: fit-content;
                     font-size: 18px;
-                    font-weight: 900;
+                    font-weight: 800;
                     font-family: $ch-family;
                     color: #0b1118;
                     letter-spacing: 1px;
@@ -9295,8 +9524,10 @@ nav {
                 @include breakpoint(medium down) {
                     margin-right: 5px;
                 }
+
                 img {
                     max-height: 24px;
+
                     @include breakpoint(medium down) {
                         max-height: 16px;
                     }
@@ -9464,14 +9695,17 @@ nav {
                 transition: 0.5s all;
                 border-radius: 50%;
             }
+
             &.no-hover {
                 cursor: initial;
+
                 &:hover {
                     img {
                         transform: scale(1);
                     }
                 }
             }
+
             &:hover {
                 img {
                     transform: scale(1.1);
@@ -9646,8 +9880,7 @@ nav {
         zoom: 0.8;
     }
 
-    clip-path: path(
-        "M140.18,62.16c-.06-.3-.11-.6-.11-.6-.19-1-.5-2.46-1.35-6.36-4.8-21.9-9.32-40.05-12.95-53.81-28.91-3.24-52.19-.22-67.71,3.03C33.44,9.59,13.92,13.68,4.76,30.19c-8.38,15.1-3.68,32.64-1.01,40.42,17.12,9.29,24.47,19.77,27.91,28.19,2.13,5.2,8.99,27.51,14.31,30.53,3.34,1.9,5.98,2.61,5.98,2.61,.84,.23,3.44,.87,3.44,.87h0c.5,.91,1.13,1.97,1.9,3.1,.41,.61,1.04,1.49,1.85,2.51,.41,.52,1.57,1.94,3.29,3.63,2.61,2.57,5.04,4.3,6.3,5.15,2.4,1.62,4.7,2.83,6.77,3.75,4.33,1.61,11.08,3.55,19.5,3.62,2.49,.02,6.19,.04,10.92-.99,2.29-.5,12.64-2.93,21.17-11.17,2.61-2.52,4.34-4.91,4.88-5.66,1.03-1.45,2.92-4.31,4.5-8.25,1.89-4.69,2.43-8.61,2.7-10.7,4.21-32.11,1.45-53.16,.99-55.65Z"
+    clip-path: path("M140.18,62.16c-.06-.3-.11-.6-.11-.6-.19-1-.5-2.46-1.35-6.36-4.8-21.9-9.32-40.05-12.95-53.81-28.91-3.24-52.19-.22-67.71,3.03C33.44,9.59,13.92,13.68,4.76,30.19c-8.38,15.1-3.68,32.64-1.01,40.42,17.12,9.29,24.47,19.77,27.91,28.19,2.13,5.2,8.99,27.51,14.31,30.53,3.34,1.9,5.98,2.61,5.98,2.61,.84,.23,3.44,.87,3.44,.87h0c.5,.91,1.13,1.97,1.9,3.1,.41,.61,1.04,1.49,1.85,2.51,.41,.52,1.57,1.94,3.29,3.63,2.61,2.57,5.04,4.3,6.3,5.15,2.4,1.62,4.7,2.83,6.77,3.75,4.33,1.61,11.08,3.55,19.5,3.62,2.49,.02,6.19,.04,10.92-.99,2.29-.5,12.64-2.93,21.17-11.17,2.61-2.52,4.34-4.91,4.88-5.66,1.03-1.45,2.92-4.31,4.5-8.25,1.89-4.69,2.43-8.61,2.7-10.7,4.21-32.11,1.45-53.16,.99-55.65Z"
     );
 
     // @include breakpoint(medium down) {
@@ -9700,11 +9933,11 @@ nav {
             position: absolute;
             width: max-content;
         }
+
         // 0910新增
         .menu {
-            clip-path: path(
-                "M113.45,8.44c3.01,5.52,1.38,14.08-3.14,17.54-5.53,4.22-11.58-2.02-29.81-3.03-2.99-.17-13.74-.59-26.53,3.03-8.47,2.4-13.64,5.39-14.8,6.07-3.08,1.81-8.16,4.8-12.99,10.35-5.26,6.04-5.37,9.55-10.07,11.55-.66,.28-5.32,2.19-9.63,.07C1.18,51.42-.59,44.21,.17,39.2c.99-6.5,6.49-10.77,15.15-16C31.97,13.13,40.69,7.85,56.75,4.25c6.63-1.49,48.48-10.87,56.7,4.19Z"
-            );
+            clip-path: path("M113.45,8.44c3.01,5.52,1.38,14.08-3.14,17.54-5.53,4.22-11.58-2.02-29.81-3.03-2.99-.17-13.74-.59-26.53,3.03-8.47,2.4-13.64,5.39-14.8,6.07-3.08,1.81-8.16,4.8-12.99,10.35-5.26,6.04-5.37,9.55-10.07,11.55-.66,.28-5.32,2.19-9.63,.07C1.18,51.42-.59,44.21,.17,39.2c.99-6.5,6.49-10.77,15.15-16C31.97,13.13,40.69,7.85,56.75,4.25c6.63-1.49,48.48-10.87,56.7,4.19Z"
+                );
 
             a {
                 display: block;
@@ -9715,10 +9948,12 @@ nav {
                 //     }
                 // }
                 transition: 0.5s all;
+
                 &:hover {
                     opacity: 0.6;
                 }
             }
+
             .cls-1 {
                 fill: #ea5504;
                 transition: 0.5s all;
@@ -9728,22 +9963,25 @@ nav {
         .store {
             left: 10px;
             top: 26px;
-            clip-path: path(
-                "M113.41,11.24c2.8,5.82,1.26,14.17-3.14,17.54-5.53,4.22-11.58-2.02-29.81-3.03-2.99-.17-13.74-.59-26.53,3.03-8.47,2.4-13.64,5.39-14.8,6.07-3.08,1.81-8.16,4.8-12.99,10.35-5.26,6.04-5.37,9.55-10.07,11.55-.66,.28-5.32,2.19-9.63,.07C1.23,54.25-.52,47.09,.13,42c.72-5.64,5.58-9.73,15.29-17.93,5.13-4.33,11.48-9.62,21.34-14.38,.24-.12,6.16-2.96,12.36-4.88C67.1-.79,105.85-4.47,113.41,11.24Z"
-            );
+            clip-path: path("M113.41,11.24c2.8,5.82,1.26,14.17-3.14,17.54-5.53,4.22-11.58-2.02-29.81-3.03-2.99-.17-13.74-.59-26.53,3.03-8.47,2.4-13.64,5.39-14.8,6.07-3.08,1.81-8.16,4.8-12.99,10.35-5.26,6.04-5.37,9.55-10.07,11.55-.66,.28-5.32,2.19-9.63,.07C1.23,54.25-.52,47.09,.13,42c.72-5.64,5.58-9.73,15.29-17.93,5.13-4.33,11.48-9.62,21.34-14.38,.24-.12,6.16-2.96,12.36-4.88C67.1-.79,105.85-4.47,113.41,11.24Z"
+                );
 
             a {
                 display: block;
                 margin-top: 5px;
                 transition: 0.5s all;
+
                 &:hover {
                     opacity: 0.6;
-                } // &:hover {
+                }
+
+                // &:hover {
                 //     .cls-1 {
                 //         fill: #999999;
                 //     }
                 // }
             }
+
             .cls-1 {
                 fill: #ea5504;
                 transition: 0.5s all;
@@ -10107,6 +10345,7 @@ footer {
             @include breakpoint(medium down) {
                 margin: 96px 0 25px;
             }
+
             .language {
                 position: absolute;
                 bottom: 9px;
@@ -10115,14 +10354,21 @@ footer {
                 letter-spacing: 1px;
                 font-family: $ch-family;
                 color: #aaacaf;
+
+                @media (max-width:1800px) and (min-width:1600px) {
+                    left: 25px;
+                }
+
                 @include breakpoint(xlarge down) {
                     left: -25px;
                 }
+
                 @include breakpoint(large down) {
                     bottom: 41px;
                     left: auto;
                     right: 0;
                 }
+
                 @include breakpoint(medium down) {
                     width: 100%;
                     position: static;
@@ -10130,14 +10376,17 @@ footer {
                     justify-content: left;
                     margin-bottom: 10px;
                 }
+
                 .unit {
                     margin: 0 5px;
                 }
+
                 a {
                     display: block;
                     position: relative;
                     padding-bottom: 3px;
                     transition: 0.5s all;
+
                     &::after {
                         position: absolute;
                         content: "";
@@ -10147,24 +10396,30 @@ footer {
                         height: 5px;
                         background-color: #ff4d00;
                         transition: 0.5s all;
+
                         @include breakpoint(medium down) {
                             height: 3px;
                         }
                     }
+
                     &.current {
                         color: #0c1219;
+
                         &::after {
                             width: 100%;
                         }
                     }
+
                     &:hover {
                         color: #0c1219;
+
                         &::after {
                             width: 100%;
                         }
                     }
                 }
             }
+
             .top {
                 margin-bottom: 55px;
                 cursor: pointer;
@@ -10219,6 +10474,7 @@ footer {
                 letter-spacing: 0.5px;
                 font-weight: 600;
                 margin-top: 3px;
+
                 @include breakpoint(medium down) {
                     font-size: 9px;
                     letter-spacing: 0;

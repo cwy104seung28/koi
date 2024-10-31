@@ -63,7 +63,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Taro Purple Paste <br class="hide-for-xxlarge">Milk Tea</div>
+                            <div class="en">Taro Purple <br class="hide-for-xxlarge">Milk Tea</div>
                             <!-- <div class="ch">鑲芋奶茶</div> -->
                         </div>
                         <img src="./images/drink-5.png" alt="">
@@ -105,7 +105,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Taro Purple Paste <br class="hide-for-xxlarge">Milk Tea</div>
+                            <div class="en">Taro Purple <br class="hide-for-xxlarge">Milk Tea</div>
                             <!-- <div class="ch">鑲芋奶茶</div> -->
                         </div>
                         <img src="./images/drink-5.png" alt="">
@@ -240,12 +240,12 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
             <ul class="drinkWrapList">
                 <?php $i = 0; ?>
                 <?php foreach ($ourtea as $row) : ?>
+                    <?php $ourteaIcon  = $DB->row("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_id=? AND c_id=file_c_id AND file_type='file' AND c_active=1", [$row['c_id']]); ?>
                     <li id="<?= $row['c_id'] ?>" data-where="<?= $i; ?>">
                         <div class="title">
                             <!-- <div class="ch"><?= $row['c_title'] ?></div> -->
                             <div class="en"><?= $row['c_title_en'] ?></div>
-                            <?php if ($row['c_data1'] == 'yes') : ?>
-                                <?php $ourteaIcon  = $DB->row("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_data1='yes' AND c_id=? AND c_id=file_c_id AND file_type='ourteaIconCover' AND c_active=1", [$row['c_id']]); ?>
+                            <?php if ($ourteaIcon != NULL) : ?>
                                 <div class="icon"><img src="../<?= $ourteaIcon['file_link1'] ?>" alt=""></div>
                             <?php endif ?>
                         </div>

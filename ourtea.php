@@ -64,7 +64,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Taro Purple Paste <br class="hide-for-large">Milk Tea</div>
+                            <div class="en">Taro Purple <br class="hide-for-large">Milk Tea</div>
                             <div class="ch">镶芋奶茶</div>
                         </div>
                         <img src="./images/drink-5.png" alt="">
@@ -106,7 +106,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Taro Purple Paste <br class="hide-for-large">Milk Tea</div>
+                            <div class="en">Taro Purple <br class="hide-for-large">Milk Tea</div>
                             <div class="ch">镶芋奶茶</div>
                         </div>
                         <img src="./images/drink-5.png" alt="">

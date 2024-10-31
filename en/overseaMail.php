@@ -16,7 +16,7 @@ if (isset($_SESSION['checkPost']) && $_SESSION['checkPost'] == 0 && $_SERVER['RE
     $_SESSION['checkPost'] = 1;
 
 
-    $m_family_name = $_POST['o_family_name'];
+    // $m_family_name = $_POST['o_family_name'];
     $m_first_name = $_POST['o_first_name'];
     $m_email = $_POST['o_email'];
     $m_country = $_POST['o_country'];
@@ -43,8 +43,8 @@ if (isset($_SESSION['checkPost']) && $_SESSION['checkPost'] == 0 && $_SERVER['RE
     $m_in_person = $_POST['o_in_person'];
     $m_content = $_POST['o_content'];
 
-    $insertSQl = $DB->query("INSERT INTO data_set (d_title, d_data1, d_data2, d_data3, d_data4, d_data5, d_data6, d_data7, d_data8, d_data9, d_data10, d_data11, d_data12, d_data13, d_data14, d_data15, d_data16, d_data17, d_data18, d_data19, d_data20, d_class1, d_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,'oversea', NOW())", [
-        $m_family_name,
+    $insertSQl = $DB->query("INSERT INTO data_set (d_data1, d_data2, d_data3, d_data4, d_data5, d_data6, d_data7, d_data8, d_data9, d_data10, d_data11, d_data12, d_data13, d_data14, d_data15, d_data16, d_data17, d_data18, d_data19, d_data20, d_class1, d_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,'oversea', NOW())", [
+        // $m_family_name,
         $m_first_name,
         $m_email,
         $m_country,
