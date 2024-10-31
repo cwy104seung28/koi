@@ -299,7 +299,7 @@
                             <div class="ch">冰块</div>
                         </div>
                         <div class="content">
-                            采用硬度较高的冰块，精准地控制用量，不仅保留茶汤的原始风味，还能带来清新宜人的口感体验
+                            采用硬度较高的冰块，精准地控制用量，不仅保留茶汤的原始风味，还能带来清新宜人的口感体验。
                         </div>
                     </li>
                 </ul>
@@ -379,7 +379,7 @@
                     <li>2023</li>
                 </ul>
                 <ul class="ch">
-                    <li>由咖啡”豆”為靈感，開啟了一連串KOI的奇幻之旅</li>
+                    <li>由咖啡❝豆❞為靈感，開啟了一連串KOI的奇幻之旅</li>
                     <li>新加坡大巴窯門市開幕，成功帶起了東南亞的KOI旋風</li>
                     <li>為體現茶飲專業與品牌理念，KOI Café 正式更名為KOI Thé</li>
                     <li>以FIFTYLAN品牌進軍北美洲，紐約門市開幕</li>
@@ -418,7 +418,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="arrow-area flex-container align-middle align-right hide-for-large">
+                <div class="arrow-area flex-container align-middle hide-for-large">
                     <div class="prev">
                         <img src="./images/about-prev.svg">
                     </div>
@@ -556,7 +556,7 @@
                         </li>
                         <li class="option">
                             <a href="./store.php" class="flex-container align-justify">
-                                <div class="ch">印度尼西亚</div>
+                                <div class="ch">印尼</div>
                                 <div class="arrow"><img src="./images/a-country-arrow.svg"></div>
                             </a>
                         </li>
@@ -642,7 +642,7 @@
                             <div class="pin indonesia">
                                 <a href="./store.php">
                                     <div class="dot"></div>
-                                    <div class="name">( 印度尼西亞 )</div>
+                                    <div class="name">( 印尼 )</div>
                                 </a>
                             </div>
                             <div class="pin dubai">
@@ -1237,8 +1237,8 @@
         ScrollTrigger.create({
             trigger: '.about-event',
             // toggleActions: "play reverse play reverse", //重覆觸發
-            start: "top top",
-            end: "bottom top",
+            start: "top 5%",
+            end: "bottom 5%",
             // markers: true,
             onEnter() {
                 $('.now-page').addClass("is-white")
@@ -1280,6 +1280,7 @@
             prevNextButtons: false,
             pageDots: false,
             fade: true,
+            draggable: false,
         });
         var $carousel_ch = $('.about-event .ch').flickity({
             // options
@@ -1289,6 +1290,7 @@
             prevNextButtons: false,
             pageDots: false,
             fade: true,
+            draggable: false,
         });
         var $carousel_en = $('.about-event .en').flickity({
             // options
@@ -1298,6 +1300,7 @@
             prevNextButtons: false,
             pageDots: false,
             fade: true,
+            draggable: false,
         });
 
         $('.arrow-area .prev').on('click', function() {
@@ -1356,7 +1359,7 @@
             // contain: true,
             wrapAround: true,
             prevNextButtons: false,
-            pageDots: true,
+            pageDots: false,
             fade: true,
             draggable: false,
             autoPlay: 3000,

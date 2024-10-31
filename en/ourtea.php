@@ -1,5 +1,5 @@
 <?php
-require_once 'Connections/connect2data.php';
+require_once '../Connections/connect2data.php';
 require_once 'paginator.class.php';
 
 $maintea = $DB->query("SELECT * FROM data_set WHERE d_class1='maintea' AND d_active=1 ORDER BY d_sort ASC, d_date DESC");
@@ -23,7 +23,6 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
     ?>
     <?php include 'html_head.php'; ?>
 </head>
-飲品
 
 <body>
     <?php include 'topmenu.php'; ?>
@@ -36,7 +35,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                 <ul class="drink">
                     <li>
                         <div class="name">
-                            <div class="en">Black Tea <br class="hide-for-large">Latte</div>
+                            <div class="en">Black Tea <br class="hide-for-xxlarge">Latte</div>
                             <!-- <div class="ch">紅茶拿鐵</div> -->
                         </div>
                         <img src="./images/drink-1.png" alt="">
@@ -50,35 +49,35 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Golden Bubble <br class="hide-for-large">Milk Tea</div>
+                            <div class="en">Golden Bubble <br class="hide-for-xxlarge">Milk Tea</div>
                             <!-- <div class="ch">黃金珍奶</div> -->
                         </div>
                         <img src="./images/drink-3.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Black Tea <br class="hide-for-large">Macchiato</div>
+                            <div class="en">Black Tea <br class="hide-for-xxlarge">Macchiato</div>
                             <!-- <div class="ch">紅茶瑪奇朵</div> -->
                         </div>
                         <img src="./images/drink-4.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Taro Purple Paste <br class="hide-for-large">Milk Tea</div>
+                            <div class="en">Taro Purple Paste <br class="hide-for-xxlarge">Milk Tea</div>
                             <!-- <div class="ch">鑲芋奶茶</div> -->
                         </div>
                         <img src="./images/drink-5.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Brown Sugar <br class="hide-for-large">Fresh Milk</div>
+                            <div class="en">Brown Sugar <br class="hide-for-xxlarge">Fresh Milk</div>
                             <!-- <div class="ch">厚黑糖鮮奶</div> -->
                         </div>
                         <img src="./images/drink-6.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Black Tea <br class="hide-for-large">Latte</div>
+                            <div class="en">Black Tea <br class="hide-for-xxlarge">Latte</div>
                             <!-- <div class="ch">紅茶拿鐵</div> -->
                         </div>
                         <img src="./images/drink-1.png" alt="">
@@ -92,28 +91,28 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Golden Bubble <br class="hide-for-large">Milk Tea</div>
+                            <div class="en">Golden Bubble <br class="hide-for-xxlarge">Milk Tea</div>
                             <!-- <div class="ch">黃金珍奶</div> -->
                         </div>
                         <img src="./images/drink-3.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Black Tea <br class="hide-for-large">Macchiato</div>
+                            <div class="en">Black Tea <br class="hide-for-xxlarge">Macchiato</div>
                             <!-- <div class="ch">紅茶瑪奇朵</div> -->
                         </div>
                         <img src="./images/drink-4.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Taro Purple Paste <br class="hide-for-large">Milk Tea</div>
+                            <div class="en">Taro Purple Paste <br class="hide-for-xxlarge">Milk Tea</div>
                             <!-- <div class="ch">鑲芋奶茶</div> -->
                         </div>
                         <img src="./images/drink-5.png" alt="">
                     </li>
                     <li>
                         <div class="name">
-                            <div class="en">Brown Sugar <br class="hide-for-large">Fresh Milk</div>
+                            <div class="en">Brown Sugar <br class="hide-for-xxlarge">Fresh Milk</div>
                             <!-- <div class="ch">厚黑糖鮮奶</div> -->
                         </div>
                         <img src="./images/drink-6.png" alt="">
@@ -222,11 +221,11 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                 </div>
                 <div class="menu-select">
                     <span class="current">
-                        Drink Classification
+                        DRINK CLASSIFICATION
                     </span>
                     <ul class="list">
                         <li class="option selected">
-                            Drink Classification
+                            DRINK CLASSIFICATION
                         </li>
                         <?php $m = 0; ?>
                         <?php foreach ($ourtea as $row) : ?>
@@ -247,7 +246,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                             <div class="en"><?= $row['c_title_en'] ?></div>
                             <?php if ($row['c_data1'] == 'yes') : ?>
                                 <?php $ourteaIcon  = $DB->row("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' AND c_data1='yes' AND c_id=? AND c_id=file_c_id AND file_type='ourteaIconCover' AND c_active=1", [$row['c_id']]); ?>
-                                <div class="icon"><img src="<?= $ourteaIcon['file_link1'] ?>" alt=""></div>
+                                <div class="icon"><img src="../<?= $ourteaIcon['file_link1'] ?>" alt=""></div>
                             <?php endif ?>
                         </div>
 
@@ -273,7 +272,7 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                                             <?php endif ?>
                                             <!-- <div class="ch"><?= $row2['d_title']; ?></div> -->
                                             <div class="en"><?= $row2['d_title_en']; ?></div>
-                                            <div class="content show-for-large"><?= $row2['d_data1']; ?></div>
+                                            <div class="content show-for-large"><?= $row2['d_data3']; ?></div>
                                         </li>
                                         <?php $pic++; ?>
                                     <?php endforeach ?>
@@ -330,12 +329,12 @@ $ourteaTitle = $DB->row("SELECT * FROM data_set WHERE d_class1='mainteaTitle' AN
                     <?php $workTop = $DB->row("SELECT * FROM data_set, file_set WHERE d_class1='ourtea' AND d_class2=? AND d_id=file_d_id AND file_type='ourteaCover' AND d_active=1 AND d_sort=0", [$row['c_id']]); ?>
                     <?php $work = $DB->query("SELECT * FROM data_set, file_set WHERE d_class1='ourtea' AND d_class2=? AND d_id=file_d_id AND file_type='ourteaCover' AND d_active=1 AND d_sort!=0 ORDER BY d_sort ASC, d_date DESC", [$row['c_id']]); ?>
                     <ul class="area-<?= $y; ?>">
-                        <li class="is-show"><img src="<?= $workTop['file_link1']; ?>"></li>
+                        <li class="is-show"><img src="../<?= $workTop['file_link1']; ?>"></li>
                         <?php foreach ($work as $row2) : ?>
                             <?php if ($row2['file_link1'] == '') : ?>
-                                <li><img src="<?= $workTop['file_link1']; ?>"></li>
+                                <li><img src="../<?= $workTop['file_link1']; ?>"></li>
                             <?php else : ?>
-                                <li><img src="<?= $row2['file_link1']; ?>"></li>
+                                <li><img src="../<?= $row2['file_link1']; ?>"></li>
                             <?php endif ?>
                         <?php endforeach ?>
                     </ul>

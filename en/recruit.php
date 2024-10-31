@@ -1,5 +1,4 @@
 <?php require_once('./Connections/connect2data.php');
-require_once 'Connections/connect2data.php';
 require_once 'paginator.class.php';
 
 $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 AND d_active=1 ORDER BY d_sort ASC, d_date DESC");
@@ -41,51 +40,54 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
             </div>
             <div class="recruitList">
                 <div class="title">
-                    升迁透明化 · 薪资再跳升
+                    Clear Promotion Pathway <br>Transparent Pay Progression
                 </div>
                 <div class="article-area">
                     <div class="top flex-container">
                         <div>Operations<br>Management <br class="hide-for-large">Type</div>
                         <div>Job Title</div>
-                        <div>英美歐区<br>基本薪资<span class="little">(USD)</span></div>
-                        <div>Asia-Pac<br>Base Salary<span class="little">(USD)</span></div>
+                        <div class="two medium-short uk mobile-little">USA/<br class="hide-for-large">Europe/UK<br>Base Salary<span class="little"> (USD)</span></div>
+                        <div class="two medium-short mobile-little">Asia-Pac<br>Base Salary<span class="little"> (USD)</span></div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">Managing <br>Single Store</div>
                         <div>Store Manager</div>
-                        <div><?= $work['d_data1']; ?></div>
-                        <div><?= $work['d_data5']; ?></div>
+                        <div class="medium-short"><?= $work['d_data1']; ?></div>
+                        <div class="medium-short"><?= $work['d_data5']; ?></div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">Managing <br>Multiple Stores</div>
                         <div>Area Manager</div>
-                        <div><?= $work['d_data2']; ?></div>
-                        <div><?= $work['d_data6']; ?></div>
+                        <div class="medium-short"><?= $work['d_data2']; ?></div>
+                        <div class="medium-short"><?= $work['d_data6']; ?></div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">Managing <br>Multiple Territories</div>
                         <div>Operations Manager</div>
-                        <div><?= $work['d_data3']; ?></div>
-                        <div><?= $work['d_data7']; ?></div>
+                        <div class="medium-short"><?= $work['d_data3']; ?></div>
+                        <div class="medium-short"><?= $work['d_data7']; ?></div>
                     </div>
                     <div class="content flex-container">
                         <div class="name">Managing <br>Multiple Territories</div>
                         <div>Operations Director/COO</div>
-                        <div><?= $work['d_data4']; ?></div>
-                        <div><?= $work['d_data8']; ?></div>
+                        <div class="medium-short"><?= $work['d_data4']; ?></div>
+                        <div class="medium-short"><?= $work['d_data8']; ?></div>
                     </div>
                 </div>
                 <div class="note">
-                    The following salary matrix represents each job position and its corresponding base salary in USD*. <br>
+                    <!-- The following salary matrix represents each job position and its corresponding base salary in USD*. <br>
                     Expats are entitled to additional operations bonuses, housing allowance, location allowance**, <br>
                     home travel allowance, tax rebate, annual health check-up, medical insurance, KOI gifts, etc.<br>
                     *Actual salary payout will be processed in local currency.<br>
-                    ** Monthly location allowance of +USD400 applicable to the following posting countries: HK/Macao, Japan, Singapore, UAE, Australia, Korea
+                    ** Monthly location allowance of +USD400 applicable to the following posting countries: HK/Macao, Japan, Singapore, UAE, Australia, Korea -->
+                    KOI Group reserves the right, at our sole discretion, to change, <br>modify or otherwise alter the salary scale and benefits package at any time.<br>
+                    The salary scale in the table represents the basic monthly salary (shown in USD).<br>
+                    Additional benefits include operations bonuses, housing allowances, regional allowances, home traveling allowances, tax subsidies, health checkup subsidies, medical insurance, annual gifts, and so on.
                 </div>
             </div>
             <div class="recruit-otherList">
                 <div class="title">
-                    薪酬国际化 · 配套更完善
+                    Targeting Global Talents <br>Comprehensive Salary Benefits.
                 </div>
                 <ul class="articleList">
                     <li>● Competitive salary in international job markets</li>
@@ -146,9 +148,9 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                     <div class="en bottom">
                         NOW!<div class="quote">”</div>
                         <div class="ch">
-                            我们来自不同地方<br>
-                            我们激荡不同文化<br>
-                            茶饮是我们凝聚在此的共同语言
+                            We come from different places, <br>
+                            and we bring together diverse cultures; <br>
+                            tea is the common language that unites us here.
                         </div>
                     </div>
                 </div>
@@ -160,7 +162,8 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                         <div class="content">
                             To ensure successful submission of your resume, <br>
                             please select only 1 application portal from below. <br>
-                            DO NOT send your resume to both portals. Thank you.
+                            DO NOT send your resume to both portals.<br>
+                            Thank you.
                         </div>
                     </div>
                     <ul class="applyList">
@@ -205,8 +208,8 @@ $work = $DB->row("SELECT * FROM data_set WHERE d_class1='recruit' AND d_sort!=0 
                 <div class="head-2">
                     <div class="en bottom">NOW!”
                         <div class="ch">
-                            我们来自不同地方，我们激荡不同文化；<br>
-                            茶饮是我们凝聚在此的共同语言
+                            We come from different places, and we bring together diverse cultures; <br>
+                            tea is the common language that unites us here.
                         </div>
                     </div>
                 </div>

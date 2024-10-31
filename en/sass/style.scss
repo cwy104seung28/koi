@@ -295,12 +295,15 @@ nav {
 
                 .copyright {
                     position: absolute;
-                    bottom: 50px;
-                    left: 328px;
+                    bottom: 99px;
+                    left: 240px;
+
+                    transform: rotate(9deg);
 
                     @include breakpoint(large down) {
-                        bottom: 44px;
-                        left: 266px;
+                        bottom: 83px;
+                        left: 180px;
+                        transform: rotate(8deg);
                     }
                 }
             }
@@ -611,19 +614,29 @@ nav {
         position: absolute;
         font-family: $ch-family;
         font-size: 18px;
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: 2px;
-        right: 88px;
-        bottom: 34px;
-        transform: rotate(13deg);
+        right: 154px;
+        bottom: 54px;
+        transform: rotate(16deg);
+        @include breakpoint(large down) {
+            right: 124px;
+            bottom: 49px;
+            transform: rotate(15deg);
+        }
+
         @include breakpoint(medium down) {
             font-size: 15px;
-            right: 29px;
-            bottom: 24px;
-            transform: rotate(9deg);
+            right: 49px;
+            bottom: 28px;
+            transform: rotate(10deg);
         }
         a {
             display: block;
+            transition: 0.5s all;
+            &:hover {
+                opacity: 0.6;
+            }
         }
         .ch {
             transform: rotate(2deg);
@@ -897,7 +910,7 @@ nav {
         // }
 
         .arrow {
-            transform: translateY(0px);
+            transform: translateY(15px) translateX(-10px);
             transition: 0.5s all;
         }
 
@@ -911,7 +924,7 @@ nav {
             // }
 
             .arrow {
-                transform: translateY(20px);
+                transform: translateY(30px) translateX(-10px);
             }
         }
     }
@@ -1338,7 +1351,7 @@ nav {
 
                 .inner {
                     @include breakpoint(medium down) {
-                        margin: -69px 0;
+                        margin: -61px 0;
                     }
                 }
             }
@@ -1350,7 +1363,10 @@ nav {
 
                 .inner {
                     @include breakpoint(medium down) {
-                        margin: -69px 0;
+                        margin: -50px 0;
+                    }
+                    @include breakpoint(small down) {
+                        margin: -61px 0;
                     }
                 }
             }
@@ -1362,7 +1378,10 @@ nav {
 
                 .inner {
                     @include breakpoint(medium down) {
-                        margin: -69px 0;
+                        margin: -50px 0;
+                    }
+                    @include breakpoint(small down) {
+                        margin: -61px 0;
                     }
                 }
             }
@@ -1374,7 +1393,10 @@ nav {
 
                 .inner {
                     @include breakpoint(medium down) {
-                        margin: -69px 0;
+                        margin: -50px 0;
+                    }
+                    @include breakpoint(small down) {
+                        margin: -61px 0;
                     }
                 }
             }
@@ -1416,14 +1438,13 @@ nav {
                 text-wrap: nowrap;
 
                 @include breakpoint(xlarge down) {
-                    margin-top: 30px;
-                    margin-bottom: 30px;
-                    font-size: 36px;
+                    margin-top: 50px;
+                    margin-bottom: 50px;
                 }
 
                 @include breakpoint(medium down) {
                     font-size: 24px;
-                    margin-bottom: 35px;
+                    margin-bottom: 38px;
                     margin-top: 35px;
                 }
             }
@@ -1847,7 +1868,7 @@ nav {
 
                 @include breakpoint(small down) {
                     left: -100%;
-                    margin-bottom: 50px;
+                    margin-bottom: 70px;
                 }
 
                 &.is-show {
@@ -1857,9 +1878,9 @@ nav {
             }
             .ch {
                 font-family: $ch-family;
-                font-size: 32px;
+                font-size: 36px;
                 color: #0b0b0b;
-                letter-spacing: 0px;
+                letter-spacing: -1px;
                 font-weight: 400;
                 // line-height: 1.05;
                 opacity: 0;
@@ -1867,8 +1888,13 @@ nav {
                 transition: 0.5s all;
 
                 @include breakpoint(medium down) {
-                    font-size: 18px;
+                    font-size: 32px;
+                    font-weight: 500;
                     transition: 1s all;
+                }
+                @include breakpoint(small down) {
+                    font-size: 22px;
+                    font-weight: 400;
                 }
 
                 &.is-show {
@@ -1877,19 +1903,38 @@ nav {
                 }
 
                 &.left {
-                    margin-right: 350px;
-
+                    margin-right: 650px;
+                    @include breakpoint(large down) {
+                        margin-right: 300px;
+                    }
                     @include breakpoint(medium down) {
                         margin-right: 0;
-                        margin-left: -150px;
+                        margin-left: -80px;
                         margin-bottom: 20px;
+                    }
+                    &.style-2 {
+                        margin-right: 550px;
+                        @include breakpoint(large down) {
+                            margin-right: 300px;
+                        }
+                        @include breakpoint(medium down) {
+                            margin-right: -50px;
+                            margin-left: -150px;
+                            // margin-bottom: 20px;
+                        }
                     }
                 }
 
                 &.right {
                     @include breakpoint(medium down) {
-                        margin-right: -180px;
+                        margin-right: -130px;
                         margin-left: 0;
+                    }
+                    &.style-2 {
+                        @include breakpoint(medium down) {
+                            margin-right: -130px;
+                            margin-left: 0;
+                        }
                     }
                 }
             }
@@ -2329,6 +2374,9 @@ nav {
                 @include breakpoint(xlarge down) {
                     width: 350px !important;
                 }
+                @include breakpoint(large down) {
+                    width: 400px !important;
+                }
                 @include breakpoint(medium down) {
                     width: 450px !important;
                 }
@@ -2349,6 +2397,11 @@ nav {
                     @include breakpoint(xlarge down) {
                         width: 350px;
                         height: 350px;
+                    }
+
+                    @include breakpoint(large down) {
+                        width: 400px;
+                        height: 400px;
                     }
 
                     @include breakpoint(medium down) {
@@ -2381,27 +2434,34 @@ nav {
             .article-area {
                 .icon {
                     margin-right: 8px;
+                    margin-top: -5px;
                     // @include breakpoint(medium down) {
                     //     width: 36px;
                     // }
                 }
 
                 .ch {
-                    font-family: $ch-family;
+                    font-family: $en-family;
                     font-size: 26px;
-                    letter-spacing: 2px;
+                    // letter-spacing: 2px;
                     font-weight: 800;
                     color: #0b0b0b;
                     @include breakpoint(xlarge down) {
                         font-size: 24px;
                     }
+                    @include breakpoint(large down) {
+                        font-size: 22px;
+                    }
+                    // @include breakpoint(large only) {
+                    //     max-width: 170px;
+                    // }
                     @include breakpoint(small down) {
-                        font-size: 20px;
+                        font-size: 18px;
                     }
                 }
 
                 .en {
-                    font-family: $en-family;
+                    font-family: $ch-family;
                     color: #da5e29;
                     font-size: 12px;
                     letter-spacing: 0.5px;
@@ -2531,11 +2591,11 @@ nav {
                 }
 
                 .title {
-                    font-family: $ch-family;
-                    font-size: 18px;
-                    letter-spacing: 2px;
+                    font-family: $en-family;
+                    font-size: 24px;
+                    letter-spacing: 1px;
                     line-height: 1.7;
-                    font-weight: 600;
+                    font-weight: 700;
                     margin-bottom: 45px;
                     max-width: 600px;
 
@@ -3075,7 +3135,7 @@ nav {
                 // min-height: 667px;
                 // height: 100%;
                 // // width: initial;
-                padding: 95px 18px;
+                padding: 95px 20px;
             }
 
             .pic-area {
@@ -3132,13 +3192,13 @@ nav {
 
                     .en {
                         font-family: $en-family;
-                        font-size: 34px;
+                        font-size: 45px;
                         font-weight: 900;
-                        letter-spacing: 3px;
+                        letter-spacing: 2px;
                         color: #fff;
                         // margin-bottom: 25px;
                         text-align: center;
-                        line-height: 1.4;
+                        line-height: 1.2;
 
                         @include breakpoint(xlarge down) {
                             font-size: 30px;
@@ -3147,42 +3207,39 @@ nav {
 
                     .deco {
                         &.top {
-                            margin-bottom: 30px;
+                            margin-bottom: 55px;
                         }
 
                         &.bottom {
-                            margin-top: 35px;
+                            margin-top: 58px;
                         }
                     }
                 }
 
                 .content {
                     max-width: 590px;
-                    font-family: $ch-family;
+                    font-family: $en-family;
                     font-size: 16px;
-                    letter-spacing: 0.5px;
+                    letter-spacing: 1px;
                     line-height: 1.8;
                     color: #fff;
-
+                    // font-style: italic;
+                    text-align: justify;
+                    font-weight: 500;
                     @include breakpoint(xlarge down) {
                         font-size: 15px;
-                        // letter-spacing: 3px;
+                        line-height: 1.6;
                     }
 
                     @include breakpoint(medium down) {
                         max-width: 500px;
                         margin: 0 auto;
-                        // font-size: 14px;
-                        letter-spacing: 0px;
-                        line-height: 1.6;
-                        font-style: italic;
-                        text-align: justify;
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                        line-height: 1.7;
                     }
                     @include breakpoint(small down) {
                         max-width: 100%;
-                        font-size: 13px;
-                        // letter-spacing: 0.5px;
-                        line-height: 1.7;
                     }
                 }
             }
@@ -3314,7 +3371,7 @@ nav {
             }
 
             .triangle {
-                width: 460px;
+                width: 480px;
                 height: 450px;
                 position: relative;
                 margin: 0 auto;
@@ -3357,16 +3414,18 @@ nav {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-size: 24px;
+                    font-size: 32px;
                     font-weight: 800;
                     letter-spacing: 0px;
                     // color: #ffffff;
                     background-color: #faeede;
                     color: #999999;
-                    font-family: $ch-family;
+                    font-family: $en-family;
                     cursor: pointer;
                     transition: 0.5s all;
-
+                    @include breakpoint(medium down) {
+                        letter-spacing: 0.5px;
+                    }
                     &:after {
                         position: absolute;
                         content: "";
@@ -3381,6 +3440,10 @@ nav {
                         transition: 0.5s all;
                         opacity: 0;
                         pointer-events: none;
+                        @include breakpoint(medium down) {
+                            width: 250px;
+                            height: 250px;
+                        }
                     }
 
                     @include breakpoint(xlarge down) {
@@ -3474,6 +3537,9 @@ nav {
             .title {
                 margin-bottom: 135px;
 
+                @include breakpoint(xlarge down) {
+                    margin-bottom: 50px;
+                }
                 @include breakpoint(medium down) {
                     margin-bottom: 30px;
                 }
@@ -3492,13 +3558,13 @@ nav {
                     }
 
                     @include breakpoint(medium down) {
-                        // font-size: 18px;
+                        font-size: 24px;
                         margin-bottom: 7px;
                         line-height: 1.3;
+                        letter-spacing: 0px;
                     }
 
                     @include breakpoint(small down) {
-                        font-size: 18px;
                         // margin-bottom: 7px;
                         // line-height: 1.3;
                     }
@@ -3522,9 +3588,9 @@ nav {
                         margin-bottom: 10px;
                     }
 
-                    @include breakpoint(medium down) {
-                        font-style: italic;
-                    }
+                    // @include breakpoint(medium down) {
+                    //     font-style: italic;
+                    // }
 
                     @include breakpoint(small down) {
                         font-size: 14px;
@@ -3548,22 +3614,23 @@ nav {
 
                 li.slick-slide {
                     position: relative;
-                    height: 160px;
-                    padding-bottom: 25px;
+                    height: 150px;
+                    // padding-bottom: 25px;
                     // border-bottom: 3px solid #000;
-                    margin-bottom: 50px;
+                    margin-bottom: 10px;
                     opacity: 0.2;
                     transition: 0.5s all;
                     cursor: pointer;
 
                     @include breakpoint(xlarge down) {
-                        margin-bottom: 40px;
+                        height: 130px;
+                        margin-bottom: 20px;
                     }
 
                     @include breakpoint(medium down) {
                         height: auto;
                         padding-bottom: 18px;
-                        margin-bottom: 20px;
+                        margin-bottom: 10px;
                     }
 
                     &:hover {
@@ -3599,45 +3666,49 @@ nav {
 
                     .en {
                         font-family: $en-family;
-                        font-size: 20px;
+                        font-size: 32px;
                         font-weight: 900;
                         letter-spacing: 1px;
                         margin-bottom: 13px;
                         line-height: 1.4;
-
+                        @include breakpoint(xlarge down) {
+                            font-size: 28px;
+                        }
                         @include breakpoint(medium down) {
-                            font-size: 19px;
+                            font-size: 27px;
                             margin-bottom: 0;
                             margin-right: 6px;
                         }
                     }
 
-                    .ch {
-                        font-family: $ch-family;
-                        font-size: 16px;
-                        letter-spacing: 12px;
-                        color: #000;
-                        font-weight: 900;
-                        margin-bottom: 28px;
+                    // .ch {
+                    //     font-family: $ch-family;
+                    //     font-size: 16px;
+                    //     letter-spacing: 12px;
+                    //     color: #000;
+                    //     font-weight: 900;
+                    //     margin-bottom: 28px;
 
-                        @include breakpoint(medium down) {
-                            // font-size: 19px;
-                            margin-bottom: 0;
-                            letter-spacing: 1px;
-                        }
-                    }
+                    //     @include breakpoint(medium down) {
+                    //         // font-size: 19px;
+                    //         margin-bottom: 0;
+                    //         letter-spacing: 1px;
+                    //     }
+                    // }
 
                     .content {
                         // max-width: 590px;
-                        font-family: $ch-family;
-                        font-size: 13px;
+                        font-family: $en-family;
+                        font-size: 15px;
                         letter-spacing: 0.5px;
-                        line-height: 1.4;
+                        line-height: 1.3;
                         color: #999999;
-                        font-style: italic;
-
+                        text-align: justify;
+                        @include breakpoint(xlarge down) {
+                            font-size: 14px;
+                        }
                         @include breakpoint(medium down) {
-                            font-size: 12px;
+                            font-size: 13px;
                             line-height: 1.3;
                             letter-spacing: 0px;
                         }
@@ -4068,7 +4139,7 @@ nav {
                 font-family: $en-family;
                 font-size: 18px;
                 letter-spacing: 1px;
-                line-height: 1.4;
+                line-height: 1.6;
                 color: #fff;
 
                 @include breakpoint(xlarge down) {
@@ -4079,6 +4150,7 @@ nav {
                 @include breakpoint(medium down) {
                     // font-size: 15px;
                     height: 50px;
+                    line-height: 1.4;
                 }
                 @include breakpoint(small down) {
                     font-size: 15px;
@@ -4138,7 +4210,7 @@ nav {
                 bottom: 12.75%;
                 left: 0;
                 padding: 0 20vw;
-                justify-content: space-between;
+                // justify-content: space-between;
             }
             @include breakpoint(small down) {
                 bottom: 23px;
@@ -4176,7 +4248,7 @@ nav {
             .prev {
                 margin-right: 75px;
                 @include breakpoint(medium down) {
-                    margin-right: 0px;
+                    margin-right: 20px;
                 }
             }
         }
@@ -4553,6 +4625,7 @@ nav {
             // width: 375px;
             @include breakpoint(medium down) {
                 overflow-x: auto;
+                direction: rtl;
             }
 
             &::-webkit-scrollbar {
@@ -4634,7 +4707,7 @@ nav {
                 }
 
                 .name {
-                    font-family: $ch-family;
+                    font-family: $en-family;
                     // position: absolute;
                     // width: max-content;
                     font-size: 12px;
@@ -4644,6 +4717,9 @@ nav {
                     font-weight: 600;
                     margin-top: -5px;
                     margin-left: 7px;
+                    @include breakpoint(medium down) {
+                        font-size: 10px;
+                    }
                 }
             }
 
@@ -4654,22 +4730,38 @@ nav {
             }
 
             .japan {
-                right: 37px;
+                right: 24px;
                 top: 232px;
 
-                @include breakpoint(large only) {
-                    right: 20px;
+                @include breakpoint(large down) {
+                    right: 188px;
+                }
+                @include breakpoint(medium down) {
+                    right: 10px;
+                }
+                a {
+                    @include breakpoint(large down) {
+                        flex-direction: row-reverse;
+                    }
                 }
             }
 
             .china {
                 right: 261px;
                 top: 295px;
+                @include breakpoint(medium down) {
+                    right: 329px;
+                }
             }
 
             .bangladesh {
-                right: 367px;
                 top: 370px;
+                right: 320px;
+                a {
+                    @include breakpoint(medium down) {
+                        flex-direction: row-reverse;
+                    }
+                }
             }
 
             .myanmar {
@@ -4682,10 +4774,20 @@ nav {
             }
 
             .thailand {
-                right: 373px;
-                top: 416px;
+                right: 360px;
+                top: 433px;
+                @include breakpoint(large down) {
+                    top: 436px;
+                }
+                @include breakpoint(medium down) {
+                    top: 430px;
+                    right: 365px;
+                }
                 a {
                     flex-direction: row-reverse;
+                    @include breakpoint(medium down) {
+                        flex-direction: row;
+                    }
                 }
                 .name {
                     margin-left: 0px;
@@ -4699,53 +4801,149 @@ nav {
             .laos {
                 right: 293px;
                 top: 407px;
-
+                a {
+                    @include breakpoint(medium down) {
+                        flex-direction: row-reverse;
+                    }
+                }
                 @include breakpoint(large only) {
                     top: 410px;
                 }
+                @include breakpoint(medium down) {
+                    right: 265px;
+                }
             }
             .cambodia {
-                right: 282px;
-                top: 456px;
+                right: 330px;
+                top: 464px;
+                @include breakpoint(medium down) {
+                    right: 335px;
+                    top: 461px;
+                }
+                .name {
+                    margin-left: 0px;
+                    margin-right: 7px;
+                }
+                a {
+                    flex-direction: row-reverse;
+                    @include breakpoint(medium down) {
+                        flex-direction: row;
+                    }
+                }
             }
 
             .vietnam {
-                right: 279px;
-                top: 480px;
+                right: 227px;
+                top: 475px;
+                @include breakpoint(large down) {
+                    right: 185px;
+                }
+                @include breakpoint(medium down) {
+                    top: 450px;
+                    right: 200px;
+                }
+                .name {
+                    @include breakpoint(medium down) {
+                        margin-left: 0px;
+                        margin-right: 7px;
+                    }
+                }
+                a {
+                    // flex-direction: row-reverse;
+                    @include breakpoint(medium down) {
+                        flex-direction: row-reverse;
+                    }
+                }
             }
 
             .philippines {
-                right: 159px;
-                top: 457px;
+                right: 111px;
+                top: 441px;
+                @include breakpoint(large down) {
+                    right: 70px;
+                }
+                @include breakpoint(medium down) {
+                    top: 420px;
+                    right: 80px;
+                }
+                a {
+                    @include breakpoint(medium down) {
+                        flex-direction: row-reverse;
+                    }
+                }
             }
 
             .malaysia {
-                right: 284px;
-                top: 521px;
+                right: 270px;
+                top: 511px;
+                @include breakpoint(large down) {
+                    right: 220px;
+                }
+                @include breakpoint(medium down) {
+                    right: 253px;
+                }
+                a {
+                    @include breakpoint(medium down) {
+                        flex-direction: row-reverse;
+                    }
+                }
             }
 
             .singapore {
-                right: 274px;
-                top: 546px;
+                right: 246px;
+                top: 533px;
+                @include breakpoint(large down) {
+                    right: 190px;
+                }
+                @include breakpoint(medium down) {
+                    right: 250px;
+                }
+                a {
+                    @include breakpoint(medium down) {
+                        flex-direction: row-reverse;
+                    }
+                }
             }
 
             .indonesia {
-                right: 288px;
-                top: 594px;
+                right: 133px;
+                top: 567px;
+                @include breakpoint(medium down) {
+                    right: 210px;
+                }
+                a {
+                    @include breakpoint(medium down) {
+                        flex-direction: row-reverse;
+                    }
+                }
             }
 
             .dubai {
                 right: 639px;
                 top: 373px;
+                @include breakpoint(medium down) {
+                    right: 610px;
+                }
+                a {
+                    @include breakpoint(medium down) {
+                        flex-direction: row-reverse;
+                    }
+                }
             }
 
             .usa {
                 left: 141px;
                 top: 258px;
+                @include breakpoint(medium down) {
+                    left: 120px;
+                }
             }
             .canada {
                 left: 82px;
                 top: 93px;
+                @include breakpoint(medium down) {
+                    left: 70px;
+                }
             }
         }
 
@@ -5031,10 +5229,10 @@ nav {
         }
 
         .note {
-            font-family: $ch-family;
+            font-family: $en-family;
             font-size: 20px;
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             margin-top: 65px;
             line-height: 1.5;
             @include breakpoint(xlarge only) {
@@ -5055,10 +5253,10 @@ nav {
         }
 
         .other {
-            font-family: $ch-family;
+            font-family: $en-family;
             font-size: 16px;
             font-weight: 500;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             margin-top: 50px;
             color: #ff4d00;
             line-height: 1.5;
@@ -5082,30 +5280,30 @@ nav {
         position: relative;
         width: 100%;
         flex: 1 1 0;
-        height: 1470px;
+        // height: 1470px;
 
-        @include breakpoint(xlarge down) {
-            height: 1250px;
-        }
+        // @include breakpoint(xlarge down) {
+        //     height: 1250px;
+        // }
 
         @include breakpoint(medium down) {
             flex: initial;
-            height: 700px;
+            // height: 800px;
         }
 
         @include breakpoint(small down) {
             flex: initial;
-            height: 620px;
+            // height: 700px;
         }
 
         form {
             width: 100%;
-            position: absolute;
-            right: 0;
-            top: 200px;
-            transition: 0.5s all;
-            opacity: 0;
-            pointer-events: none;
+            // position: absolute;
+            // right: 0;
+            // top: 200px;
+            // transition: 0.5s all;
+            // opacity: 0;
+            // pointer-events: none;
 
             @include breakpoint(xlarge down) {
                 top: 100px;
@@ -5118,6 +5316,7 @@ nav {
             &.is-show {
                 opacity: 1;
                 pointer-events: all;
+                z-index: 6;
             }
 
             .title-area {
@@ -5131,6 +5330,9 @@ nav {
                     width: 6px;
                     background-color: #f7e0c0;
                     margin-right: 15px;
+                    @include breakpoint(medium down) {
+                        margin-right: 9px;
+                    }
                 }
 
                 .en {
@@ -5144,7 +5346,9 @@ nav {
                         font-size: 26px;
                     }
                     @include breakpoint(medium down) {
-                        font-size: 16px;
+                        font-size: 24px;
+                        margin-bottom: 0;
+                        letter-spacing: 0;
                     }
                 }
 
@@ -5166,9 +5370,19 @@ nav {
 
             .item {
                 margin-bottom: 58px;
-
+                position: relative;
                 @include breakpoint(medium down) {
                     margin-bottom: 30px;
+                }
+                &.required {
+                    &::before {
+                        position: absolute;
+                        left: -10px;
+                        top: -2px;
+                        content: "*";
+                        font-family: $ch-family;
+                        color: #606060;
+                    }
                 }
             }
 
@@ -5178,6 +5392,7 @@ nav {
                 font-weight: 700;
                 margin-bottom: 30px;
                 font-family: $en-family;
+                line-height: 1.4;
                 @include breakpoint(medium down) {
                     font-size: 16px;
                     margin-bottom: 12px;
@@ -5193,16 +5408,16 @@ nav {
                 border: 2px solid #231815;
                 border-radius: 0;
                 box-shadow: none;
-                font-family: $ch-family;
+                font-family: $en-family;
                 color: #606060;
                 font-size: 16px;
-                letter-spacing: 5px;
+                letter-spacing: 2px;
                 font-weight: 500;
 
                 @include breakpoint(medium down) {
                     height: 40px;
                     font-size: 13px;
-                    letter-spacing: 3px;
+                    letter-spacing: 1px;
                 }
 
                 &::placeholder {
@@ -5211,7 +5426,80 @@ nav {
                     /* Firefox */
                 }
             }
+            input[type="date"] {
+                // font-family: $Montserrat;
+                width: 100%;
+                height: 64px;
+                padding: 12px 16px;
+                background-color: #fff;
+                border: 2px solid #231815;
+                border-radius: 0;
+                box-shadow: none;
+                font-family: $en-family;
+                color: #606060;
+                font-size: 16px;
+                letter-spacing: 2px;
+                font-weight: 500;
 
+                @include breakpoint(medium down) {
+                    height: 40px;
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                }
+
+                &::placeholder {
+                    color: #606060;
+                    opacity: 1;
+                    /* Firefox */
+                }
+            }
+            input[type="radio"] {
+                display: none;
+            }
+            input[type="radio"] + label {
+                font-family: $en-family;
+                font-size: 18px;
+                letter-spacing: 1px;
+                font-weight: 500px;
+                @include breakpoint(medium down) {
+                    font-size: 14px;
+                }
+
+                &.left {
+                    margin-right: 10px;
+                }
+            }
+            .radio {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                border: 1px solid #000;
+                position: relative;
+                margin-right: 5px;
+                margin-top: 2px;
+                @include breakpoint(medium down) {
+                    width: 10px;
+                    height: 10px;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    left: 2px;
+                    top: 2px;
+                    opacity: 0;
+                    @include breakpoint(medium down) {
+                        width: 4px;
+                        height: 4px;
+                    }
+                }
+            }
+            input[type="radio"]:checked + label .radio::after {
+                opacity: 1;
+            }
             .nice-select {
                 width: 100%;
                 height: 64px;
@@ -5224,8 +5512,8 @@ nav {
                 font-size: 16px;
 
                 font-weight: 500;
-                font-family: $ch-family;
-                letter-spacing: 5px;
+                font-family: $en-family;
+                letter-spacing: 2px;
                 float: inherit;
 
                 @include breakpoint(medium down) {
@@ -5313,11 +5601,33 @@ nav {
                     }
                 }
             }
-
-            .note {
-                font-family: $ch-family;
+            .experience {
+                margin-bottom: 20px;
+            }
+            textarea {
+                width: 100%;
+                height: 216px;
+                padding: 12px 16px;
+                background-color: #fff;
+                border: 2px solid #231815;
+                border-radius: 0;
+                font-family: $en-family;
+                color: #606060;
                 font-size: 16px;
                 letter-spacing: 2px;
+                font-weight: 500;
+                resize: none;
+                @include breakpoint(medium down) {
+                    height: 120px;
+                    padding: 6px 8px;
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                }
+            }
+            .note {
+                font-family: $en-family;
+                font-size: 16px;
+                letter-spacing: 1px;
                 line-height: 1.4;
                 color: #ff4d00;
                 font-weight: 600;
@@ -5391,6 +5701,15 @@ nav {
         }
 
         li {
+            &:nth-child(1) {
+                .title {
+                    &::after {
+                        @include breakpoint(medium down) {
+                            bottom: -20px;
+                        }
+                    }
+                }
+            }
             .title {
                 position: relative;
                 font-size: 26px;
@@ -5401,12 +5720,16 @@ nav {
                 @include breakpoint(xlarge down) {
                     font-size: 24px;
                 }
+                // @include breakpoint(large down) {
+                //     font-size: 22px;
+                // }
                 @include breakpoint(medium down) {
                     font-size: 20px;
+                    letter-spacing: 0px;
                 }
 
                 @include breakpoint(small down) {
-                    font-size: 16px;
+                    font-size: 18px;
                 }
 
                 &::after {
@@ -5414,10 +5737,13 @@ nav {
                     content: "";
                     width: 0%;
                     height: 5px;
-                    bottom: -7px;
+                    bottom: -10px;
                     left: 0;
                     background-color: #ff4d00;
                     transition: 0.5s all;
+                    @include breakpoint(medium down) {
+                        height: 8px;
+                    }
                 }
             }
 
@@ -5432,9 +5758,15 @@ nav {
                     width: 30px;
                     height: 30px;
                 }
+                @include breakpoint(large down) {
+                    width: 28px;
+                    height: 28px;
+                    margin-right: 10px;
+                }
                 @include breakpoint(medium down) {
                     width: 21px;
                     height: 21px;
+                    margin-right: 5px;
                 }
 
                 &::before {
@@ -5524,8 +5856,8 @@ nav {
         .en {
             font-family: $en-family;
             font-size: 18px;
-            letter-spacing: 2px;
-            font-weight: 700;
+            letter-spacing: 1px;
+            font-weight: 900;
             text-align: center;
             line-height: 1.2;
         }
@@ -5560,7 +5892,7 @@ nav {
         overflow: hidden;
 
         @include breakpoint(medium down) {
-            padding-bottom: 15px;
+            // padding-bottom: 15px;
             margin-bottom: 40px;
         }
 
@@ -5734,6 +6066,9 @@ nav {
                 stroke-miterlimit: 10;
                 stroke-width: 3px;
                 transition: 0.3s all;
+                @include breakpoint(medium down) {
+                    stroke-width: 2px;
+                }
             }
 
             .f {
@@ -5906,21 +6241,28 @@ nav {
             }
 
             .title {
-                font-family: $ch-family;
-                font-size: 45px;
+                font-family: $en-family;
+                font-size: 56px;
                 font-weight: 900;
-                letter-spacing: 4px;
+                letter-spacing: 1px;
                 color: $black;
                 margin-bottom: 30px;
+                line-height: 1.2;
 
                 @include breakpoint(xlarge down) {
                     font-size: 40px;
                 }
-
+                @include breakpoint(large down) {
+                    font-size: 36px;
+                }
                 @include breakpoint(medium down) {
-                    font-size: 24px;
+                    font-size: 30px;
                     letter-spacing: 1px;
                     margin-bottom: 17px;
+                    line-height: 1.4;
+                }
+                @include breakpoint(small down) {
+                    font-size: 18px;
                 }
             }
 
@@ -5942,14 +6284,23 @@ nav {
             }
 
             .top {
-                font-family: $ch-family;
+                font-family: $en-family;
                 font-size: 15px;
-                font-weight: 400;
+                font-weight: 500;
                 letter-spacing: 1px;
                 color: #727171;
                 padding: 10px 0;
                 border-bottom: 1px solid rgba(35, 24, 21, 0.274);
                 line-height: 1.2;
+                div {
+                    &.two {
+                        align-items: end;
+                        @include breakpoint(small down) {
+                            display: block;
+                        }
+                    }
+                }
+
                 @include breakpoint(large down) {
                     font-size: 13px;
                 }
@@ -5966,6 +6317,7 @@ nav {
                 }
                 .little {
                     font-size: 12px;
+                    margin-bottom: 2px;
 
                     @include breakpoint(large down) {
                         font-size: 8px;
@@ -5974,14 +6326,15 @@ nav {
             }
 
             .content {
-                font-family: $ch-family;
-                font-size: 16px;
+                font-family: $en-family;
+                font-size: 17px;
                 // font-weight: 400;
-                letter-spacing: 1px;
+                letter-spacing: 0.5px;
                 color: $black;
                 padding: 10px 0;
                 border-bottom: 1px solid rgba(35, 24, 21, 0.274);
                 line-height: 1.2;
+                font-weight: 600;
                 @include breakpoint(xlarge down) {
                     font-size: 14px;
                 }
@@ -6012,21 +6365,49 @@ nav {
             .content {
                 div {
                     flex: 1 1 0;
+                    display: flex;
+                    align-items: center;
                     // &.small{
                     //     @include breakpoint(medium down) {
                     //         flex: 0.75 1 0;
                     //     }
                     // }
+                    &.medium-short {
+                        flex: 0.75 1 0;
+                    }
+                    &.uk {
+                        span {
+                            margin-left: -35px;
+                            @include breakpoint(large down) {
+                                margin-left: -30px;
+                            }
+                            @include breakpoint(medium down) {
+                                margin-left: 0px;
+                            }
+                            @include breakpoint(small down) {
+                                margin-left: 0px;
+                            }
+                        }
+                    }
+                    &.mobile-little {
+                        span {
+                            @include breakpoint(small down) {
+                                display: block;
+                            }
+                        }
+                    }
                 }
             }
 
             .note {
-                font-family: $ch-family;
+                font-family: $en-family;
                 font-size: 14px;
                 font-weight: 400;
                 letter-spacing: 0.5px;
                 color: #727171;
                 line-height: 1.6;
+                max-width: 810px;
+                text-align: justify;
 
                 @include breakpoint(xlarge down) {
                     font-size: 13px;
@@ -6034,7 +6415,6 @@ nav {
 
                 @include breakpoint(medium down) {
                     font-size: 14px;
-                    
                 }
 
                 @include breakpoint(small down) {
@@ -6045,16 +6425,16 @@ nav {
 
         .recruit-otherList {
             width: 1075px;
-            margin: 400px 0 0 auto;
+            margin: 500px 0 0 auto;
 
             @include breakpoint(xlarge down) {
                 width: 800px;
-                margin: 300px 0 0 auto;
+                margin: 450px 0 0 auto;
             }
 
             @include breakpoint(large down) {
                 width: 600px;
-                margin: 280px 0 0 auto;
+                margin: 420px 0 0 auto;
             }
 
             @include breakpoint(medium down) {
@@ -6064,33 +6444,41 @@ nav {
             }
 
             @include breakpoint(small down) {
-                margin: 160px 0 0;
+                margin: 70px 0 0;
             }
 
             .title {
-                font-family: $ch-family;
-                font-size: 45px;
+                font-family: $en-family;
+                font-size: 56px;
                 font-weight: 900;
-                letter-spacing: 4px;
+                letter-spacing: 1px;
                 color: $black;
                 margin-bottom: 30px;
+                line-height: 1.2;
 
                 @include breakpoint(xlarge down) {
                     font-size: 40px;
                 }
+                @include breakpoint(large down) {
+                    font-size: 36px;
+                }
 
                 @include breakpoint(medium down) {
-                    font-size: 24px;
+                    font-size: 30px;
                     letter-spacing: 1px;
                     margin-bottom: 17px;
+                    line-height: 1.4;
+                }
+                @include breakpoint(small down) {
+                    font-size: 18px;
                 }
             }
 
             .articleList {
                 li {
                     padding: 10px 0;
-                    font-family: $ch-family;
-                    font-size: 20px;
+                    font-family: $en-family;
+                    font-size: 23px;
                     font-weight: 500;
                     letter-spacing: 1px;
                     color: $black;
@@ -6107,24 +6495,23 @@ nav {
                     @include breakpoint(small down) {
                         font-size: 12px;
                     }
-                    
-                   
                 }
             }
 
             .note {
-                font-family: $ch-family;
-                font-size: 14px;
+                font-family: $en-family;
+                font-size: 16px;
                 font-weight: 400;
                 letter-spacing: 0.5px;
                 color: #727171;
                 line-height: 1.4;
-                margin-left: 27px;
+                margin-left: 20px;
                 margin-top: 10px;
 
                 @include breakpoint(medium down) {
                     font-size: 12px;
                     letter-spacing: 0px;
+                    margin-left: 10px;
                 }
             }
         }
@@ -6209,24 +6596,28 @@ nav {
             .fancy-inner {
                 // position: sticky;
                 // top: 40%;
+                width: 550px;
                 opacity: 0;
                 transform: translateY(30px);
                 padding: 35px;
                 background-color: #f9efe1;
                 text-align: center;
+                @include breakpoint(medium down) {
+                    width: 100%;
+                }
             }
 
             .top-area {
-                margin-bottom: 20px;
+                margin-bottom: -5px;
                 opacity: 0;
                 transform: translateY(30px);
 
                 .title {
-                    font-family: $ch-family;
+                    font-family: $en-family;
                     color: $black;
                     font-size: 40px;
-                    font-weight: 800;
-                    letter-spacing: 4px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
                     margin-bottom: 15px;
 
                     @include breakpoint(xlarge down) {
@@ -6251,11 +6642,14 @@ nav {
                 }
 
                 .content {
-                    font-family: $ch-family;
-                    color: #898989;
+                    font-family: $en-family;
+                    color: #727171;
                     font-size: 14px;
-                    letter-spacing: 1px;
+                    letter-spacing: 0.5px;
                     line-height: 1.6;
+                    max-width: 330px;
+                    // text-align: justify;
+                    margin: 0 auto;
 
                     @include breakpoint(medium down) {
                         // font-size: 12px;
@@ -6273,7 +6667,7 @@ nav {
                 li {
                     opacity: 0;
                     transform: translateY(30px);
-                    padding: 30px 7px 10px;
+                    padding: 25px 7px 10px;
                     border-bottom: 1px solid $black;
                     transition: 0.5s all;
 
@@ -6282,10 +6676,10 @@ nav {
                     }
 
                     .title {
-                        font-size: 30px;
+                        font-size: 27px;
                         color: $black;
-                        font-weight: 900;
-                        font-family: $ch-family;
+                        font-weight: 400;
+                        font-family: $en-family;
                         letter-spacing: 1px;
                         margin-bottom: 15px;
                         transition: 0.5s all;
@@ -6295,14 +6689,15 @@ nav {
                             letter-spacing: 1px;
                             margin-bottom: 10px;
                             line-height: 1.4;
+                            font-weight: 600;
                         }
                     }
 
                     .note {
-                        font-family: $ch-family;
-                        font-size: 13px;
-                        letter-spacing: 1px;
-                        color: $black;
+                        font-family: $en-family;
+                        font-size: 14px;
+                        letter-spacing: 0.5px;
+                        color: #727171;
                         margin-bottom: 10px;
                         transition: 0.5s all;
 
@@ -6384,6 +6779,7 @@ nav {
             .head-2 {
                 position: relative;
                 overflow: hidden;
+                color: #231814;
             }
 
             .quote {
@@ -6445,22 +6841,24 @@ nav {
             }
 
             .ch {
-                font-family: $ch-family;
-                font-size: 32px;
-                letter-spacing: 2px;
+                font-family: $en-family;
+                font-size: 26px;
+                letter-spacing: 1px;
                 font-weight: 900;
                 line-height: 1.4;
                 text-align: left;
 
                 @include breakpoint(xlarge down) {
-                    font-size: 26px;
+                    font-size: 22px;
                 }
 
                 @include breakpoint(medium down) {
-                    font-size: 22px;
-                    letter-spacing: 1px;
+                    letter-spacing: 0px;
                     text-align: center;
                     line-height: 1.8;
+                }
+                @include breakpoint(small down) {
+                    font-size: 16px;
                 }
             }
         }
@@ -6564,11 +6962,11 @@ nav {
             }
 
             .title {
-                font-family: $ch-family;
-                font-size: 32px;
-                letter-spacing: 2px;
+                font-family: $en-family;
+                font-size: 40px;
+                letter-spacing: 1px;
                 line-height: 1.4;
-                font-weight: 600;
+                font-weight: 700;
 
                 @include breakpoint(medium down) {
                     font-size: 23px;
@@ -6776,9 +7174,9 @@ nav {
 
             .title {
                 flex: 5 1 0;
-                font-family: $ch-family;
-                font-size: 16px;
-                letter-spacing: 2px;
+                font-family: $en-family;
+                font-size: 20px;
+                letter-spacing: 1px;
                 line-height: 1.9;
                 font-weight: 600;
                 transition: 0.5s all;
@@ -6996,7 +7394,7 @@ nav {
         .title {
             position: relative;
             left: 27%;
-            font-family: $ch-family;
+            font-family: $en-family;
             font-size: 48px;
             letter-spacing: 2px;
             line-height: 1.4;
@@ -7358,7 +7756,7 @@ nav {
                         opacity: 0;
                         transform: translateY(20px);
                         margin-bottom: 15px;
-
+                        line-height: 1.2;
                         &::before {
                             position: absolute;
                             width: 40px;
@@ -7641,11 +8039,11 @@ nav {
 
         @include breakpoint(xlarge down) {
             // height: auto;
-            padding: 15vh 50px 67px;
+            padding: 15vh 80px 67px 50px;
         }
 
         @include breakpoint(large down) {
-            padding: 20vh 40px 40px;
+            padding: 10vh 40px 40px;
         }
 
         @include breakpoint(medium down) {
@@ -7659,6 +8057,7 @@ nav {
         }
 
         .vegas-content-scrollable {
+            width: 100%;
             overflow: hidden;
         }
 
@@ -7675,7 +8074,7 @@ nav {
 
         .title {
             margin-right: 20px;
-            max-width: 380px;
+            max-width: 440px;
 
             @include breakpoint(xlarge down) {
                 margin-right: 50px;
@@ -7714,9 +8113,9 @@ nav {
 
             .en {
                 font-family: $en-family;
-                font-size: 76px;
+                font-size: 86px;
                 font-weight: 900;
-                letter-spacing: 10px;
+                letter-spacing: 5px;
                 color: #fff;
 
                 @include breakpoint(xlarge down) {
@@ -7724,7 +8123,7 @@ nav {
                 }
 
                 @include breakpoint(large down) {
-                    font-size: 50px;
+                    font-size: 60px;
                 }
 
                 @include breakpoint(medium down) {
@@ -7745,7 +8144,7 @@ nav {
             @include breakpoint(xlarge down) {
                 width: 500px;
                 height: 500px;
-                margin-right: 130px;
+                margin-right: 150px;
             }
 
             @include breakpoint(large down) {
@@ -7899,13 +8298,14 @@ nav {
 
                 .en {
                     font-family: $en-family;
-                    font-size: 18px;
+                    font-size: 24px;
                     font-weight: 900;
                     letter-spacing: 1px;
                     color: #fff;
-
+                    line-height: 1.2;
+                    // text-wrap: nowrap;
                     @include breakpoint(xlarge down) {
-                        font-size: 16px;
+                        font-size: 20px;
                     }
                     @include breakpoint(medium down) {
                         font-size: 18px;
@@ -7919,11 +8319,11 @@ nav {
 
                 .region {
                     font-family: $en-family;
-                    font-size: 12px;
+                    font-size: 14px;
                     font-style: italic;
                     font-weight: 500;
                     color: #fff;
-                    margin-bottom: 18px;
+                    margin-bottom: 10px;
 
                     @include breakpoint(xlarge down) {
                         margin-bottom: 10px;
@@ -8092,15 +8492,16 @@ nav {
                 font-size: 16px;
 
                 font-weight: 500;
-                font-family: $normal-family;
+                font-family: $en-family;
                 letter-spacing: 2px;
                 float: inherit;
 
                 @include breakpoint(medium down) {
                     height: 40px;
-                    font-size: 16px;
+                    font-size: 14px;
                     letter-spacing: 0.5px;
                     padding: 12px 15px;
+                    font-weight: 900;
                 }
 
                 &::after {
@@ -8135,7 +8536,9 @@ nav {
                     box-sizing: border-box;
                     transform-origin: 50% 0;
                     transition: 0.3s all;
-
+                    @include breakpoint(medium down) {
+                        font-weight: 400;
+                    }
                     .option {
                         position: relative;
                         color: $black;
@@ -8154,6 +8557,7 @@ nav {
                             // font-size: 13px;
                             padding: 10px 15px;
                             opacity: 0.5;
+                            font-size: 15px;
                         }
 
                         &::after {
@@ -8346,7 +8750,8 @@ nav {
                     font-weight: 900;
                     letter-spacing: 5px;
                     color: #000;
-                    max-width: 500px;
+                    width: 500px;
+                    // width: 100%;
 
                     @include breakpoint(xlarge down) {
                         font-size: 70px;
@@ -8354,6 +8759,7 @@ nav {
 
                     @include breakpoint(medium down) {
                         // font-size: 50px;
+                        width: 100%;
                         letter-spacing: 0.5px;
                         margin-bottom: 10px;
                     }
@@ -8497,7 +8903,8 @@ nav {
                         color: #999999;
                         font-weight: 500;
                         text-align: justify;
-
+                        max-width: 350px;
+                        line-height: 1.4;
                         @include breakpoint(xlarge down) {
                             font-size: 13px;
                             max-width: 300px;
@@ -8522,7 +8929,7 @@ nav {
             .menu {
                 margin-bottom: 20px;
 
-                @include breakpoint(xlarge down) {
+                @include breakpoint(large down) {
                     margin-bottom: 10px;
                 }
 
@@ -8532,6 +8939,7 @@ nav {
 
                 @include breakpoint(large only) {
                     zoom: 0.8;
+                    margin-bottom: 20px;
                 }
                 &:hover {
                     .arrow {
@@ -8558,14 +8966,22 @@ nav {
                 flex-direction: column;
                 flex-wrap: wrap;
                 width: 200px;
-                height: 155px;
+                height: 170px;
+                @include breakpoint(xlarge down) {
+                    height: 135px;
+                }
+                @include breakpoint(large down) {
+                    height: 125px;
+                }
+
                 li {
                     cursor: pointer;
                     margin-bottom: 20px;
                     opacity: 0.1;
                     transition: 0.5s all;
+                    margin-right: 5px;
                     @include breakpoint(xlarge down) {
-                        margin-bottom: 16px;
+                        margin-bottom: 14px;
                     }
                     @include breakpoint(large down) {
                         margin-bottom: 12px;
@@ -8580,7 +8996,7 @@ nav {
                         height: 10px;
                         background-color: #ff4d00;
                         border-radius: 50%;
-                        margin-right: 15px;
+                        margin-right: 10px;
                         // opacity: 0;
                         transition: 0.5s all;
 
@@ -8589,23 +9005,29 @@ nav {
                             height: 8px;
                             margin-right: 10px;
                         }
+                        @include breakpoint(large down) {
+                            width: 6px;
+                            height: 6px;
+                            margin-right: 5px;
+                        }
                     }
 
                     .title {
                         position: relative;
                         width: fit-content;
-                        font-size: 17px;
+                        font-size: 16px;
                         font-weight: 600;
-                        font-family: $ch-family;
+                        font-family: $en-family;
                         color: #ff4d00;
-                        letter-spacing: 1px;
+                        letter-spacing: 0.5px;
                         padding-bottom: 1px;
 
                         @include breakpoint(xlarge down) {
-                            font-size: 15px;
+                            font-size: 13.5px;
+                            letter-spacing: 0px;
                         }
                         @include breakpoint(large down) {
-                            font-size: 14px;
+                            font-size: 13px;
                         }
 
                         &::after {
@@ -9360,7 +9782,7 @@ nav {
     position: fixed;
     bottom: 40px;
     right: 30px;
-    z-index: 5;
+    z-index: 6;
 
     transition: 0.5s all;
     // cursor: pointer;
@@ -9423,8 +9845,9 @@ nav {
             top: 5px;
 
             @include breakpoint(medium down) {
-                zoom: 1.1;
-                left: 8px;
+                zoom: 1.25;
+                left: 2px;
+                top: 3px;
             }
         }
     }
@@ -9450,6 +9873,10 @@ nav {
             a {
                 display: block;
                 margin-top: 5px;
+                transition: 0.5s all;
+                &:hover {
+                    opacity: 0.6;
+                }
             }
         }
 
@@ -9463,6 +9890,10 @@ nav {
             a {
                 display: block;
                 margin-top: 5px;
+                transition: 0.5s all;
+                &:hover {
+                    opacity: 0.6;
+                }
             }
         }
     }
@@ -9785,7 +10216,7 @@ footer {
             }
 
             .footerList {
-                font-family: $ch-family;
+                font-family: $en-family;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 10px 30px;
@@ -9825,27 +10256,61 @@ footer {
             }
             .language {
                 position: absolute;
-                bottom: 3px;
+                bottom: 9px;
                 left: 75px;
                 font-size: 18px;
                 letter-spacing: 1px;
                 font-family: $ch-family;
+                color: #aaacaf;
+                @include breakpoint(xlarge down) {
+                    left: -25px;
+                }
+                @include breakpoint(large down) {
+                    bottom: 41px;
+                    left: auto;
+                    right: 0;
+                }
                 @include breakpoint(medium down) {
                     width: 100%;
                     position: static;
                     font-size: 15px;
                     justify-content: left;
+                    margin-bottom: 15px;
+                }
+                @include breakpoint(small down) {
                     margin-bottom: 10px;
+                }
+                .unit {
+                    margin: 0 5px;
                 }
                 a {
                     display: block;
                     position: relative;
                     padding-bottom: 3px;
-
-                    &.current {
-                        border-bottom: 5px solid #ff4d00;
+                    transition: 0.5s all;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        bottom: -5px;
+                        width: 0%;
+                        height: 5px;
+                        background-color: #ff4d00;
+                        transition: 0.5s all;
                         @include breakpoint(medium down) {
-                            border-bottom: 3px solid #ff4d00;
+                            height: 3px;
+                        }
+                    }
+                    &.current {
+                        color: #0c1219;
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                    &:hover {
+                        color: #0c1219;
+                        &::after {
+                            width: 100%;
                         }
                     }
                 }
@@ -9917,7 +10382,9 @@ footer {
             }
 
             .siteby {
+                text-align: right;
                 color: #83817e;
+                font-size: 10.5px;
                 // @include breakpoint(medium down) {
                 //     zoom: 0.7;
                 //  }
@@ -10248,15 +10715,15 @@ footer {
 
 @keyframes a-scroll {
     0% {
-        transform: translateX(0px);
+        transform: translateX(35px);
     }
 
     85% {
-        transform: translateX(35px);
+        transform: translateX(0px);
     }
 
     100% {
-        transform: translateX(35px);
+        transform: translateX(0px);
     }
 }
 

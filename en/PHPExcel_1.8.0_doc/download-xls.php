@@ -1,4 +1,4 @@
-<?php require_once 'Connections/connect2data.php';?>
+<?php require_once '../Connections/connect2data.php';?>
 <?php
 /**
  * PHPExcel

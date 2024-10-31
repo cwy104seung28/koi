@@ -12,7 +12,7 @@
 <meta name="description" content="Happiness is to share special moments with friends.
 A celebration, a date or just a relaxing break in the day, there is always a reason to get together around a cup of KOI tea. KOI brings joy to the world. Freshly brewed tea and flavorful ingredients, prepared with passion are the key to KOI’s authentic taste and the reason why people come back again and again.">
 
-<meta property="og:image" content="images/html_share.jpg">
+<meta property="og:image" content="<?= (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] ?>/images/html_share.jpg">
 </meta>
 
 <meta name="viewport" content="width=device-width, minimum-scale=1.0">

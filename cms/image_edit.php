@@ -75,6 +75,12 @@ if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsCover') {
     $not = $imagesSize['storeCover']['note'];
     $IWidth = $imagesSize['storeCover']['IW'];
     $IHeight = $imagesSize['storeCover']['IH'];
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'storeBrandCover') {
+    $type = $_REQUEST['type'];
+    $fileType = "file_type='storeBrandCover' AND";
+    $not = $imagesSize['storeBrandCover']['note'];
+    $IWidth = $imagesSize['storeBrandCover']['IW'];
+    $IHeight = $imagesSize['storeBrandCover']['IH'];
 } else {
     $type = '-1';
     $fileType = "file_type='image' AND";

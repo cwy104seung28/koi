@@ -1,5 +1,5 @@
 <?php
-require_once 'Connections/connect2data.php';
+require_once '../Connections/connect2data.php';
 require_once 'paginator.class.php';
 
 function isMobileCheck()
@@ -234,7 +234,7 @@ foreach ($brand_total as $total) {
                             <div class="deco"><img src="./images/s-deco-top.svg"></div>
                             <div class="head flex-container align-justify">
                                 <div class="title"><?= $row['d_title_en']; ?></div>
-                                <div class="brand"><img src="<?= $brand['file_link1']; ?>" alt=""></div>
+                                <div class="brand"><img src="../<?= $brand['file_link1']; ?>" alt=""></div>
                             </div>
                             <div class="phone"><a href="javascript:;"><?= $row['d_data1']; ?></a></div>
                             <div class="time"><?= $row['d_data2']; ?></div>

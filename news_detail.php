@@ -38,7 +38,7 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
             <div class="head-area">
                 <div class="info-area">
                     <div class="cat"><?= $work['c_title'] ?></div>
-                    <div class="date">(<?= date("F d, Y", strtotime($row['d_date'])) ?>)</div>
+                    <div class="date">(<?= date("F d, Y", strtotime($work['d_date'])) ?>)</div>
                 </div>
                 <div class="title">
                     <?= $work['d_title'] ?>

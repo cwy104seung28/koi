@@ -30,6 +30,9 @@ else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="ourteaIconCover")){
 else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="storeCover")){
     $fileType = "file_type='storeCover' AND";
 }
+else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="storeBrandCover")){
+    $fileType = "file_type='storeCover' AND";
+}
 //else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="eventCover")){
 //     $fileType = "file_type='eventCover' AND";
 // } else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="sampleCover")){

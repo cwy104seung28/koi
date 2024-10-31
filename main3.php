@@ -21,7 +21,7 @@ $ran = rand(1, 3);
     <div id="index-preload" style="z-index: 2;" class="index-preload flex-container align-center-middle">
         <!-- <div class="logo"><img src="./images/index-preload-logo.svg" alt=""></div> -->
         <!-- <video src="https://player.vimeo.com/progressive_redirect/playback/991515014/rendition/1080p/file.mp4?loc=external&log_user=0&signature=f9060f8dabe3c6d8e5675bbc22b946d7c80e8612893fa39a4487e13ca4275155" autoplay muted playsinline></video> -->
-        <video data-dashjs-player="" src="https://customer-2m570twtvas9nf5x.cloudflarestream.com/0934b4f6eab03ebf46984761fabc6a1a/manifest/video.mpd" autoplay muted playsinline></video>
+        <video src="https://video.server-goods-design.com/Items/0e3491c738cd5254e062e9781d823de1/Download?api_key=348e934ed2794799bb33ace0587204a9" autoplay muted playsinline></video>
         <div class="skip" id="skip">
             <svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="47.22" height="36.96" viewBox="0 0 47.22 36.96">
                 <g id="c" data-name="圖層 1">
@@ -739,7 +739,7 @@ $ran = rand(1, 3);
                                 <div class="bg">
                                     <div class="note">
                                         OUR<br>
-                                        RECOMMAND
+                                        <span class="bottom">RECOMMENDATION</span>
                                     </div>
                                     <div class="en">
                                         PEACH GREEN TEA<br>

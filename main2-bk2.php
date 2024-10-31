@@ -715,7 +715,7 @@ $drink = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='ourteaC' 
                             <div class="bg">
                                 <div class="note">
                                     OUR<br>
-                                    RECOMMAND
+                                    RECOMMENDATION
                                 </div>
                                 <div class="en">
                                     PEACH GREEN TEA<br>

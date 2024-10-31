@@ -1,5 +1,5 @@
 <?php
-require_once 'Connections/connect2data.php';
+require_once '../Connections/connect2data.php';
 require_once 'paginator.class.php';
 
 $ryder_cat = (isset($_GET['c'])) ? $_GET['c'] : 0;

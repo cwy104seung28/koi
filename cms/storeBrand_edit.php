@@ -36,12 +36,12 @@ $RecCover->execute();
 $row_RecCover = $RecCover->fetch();
 $totalRows_RecCover = $RecCover->rowCount();
 
-$query_RecCenterCover = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'storeBrandCenterCover'";
-$RecCenterCover = $conn->prepare($query_RecCenterCover);
-$RecCenterCover->bindParam(':file_d_id', $colname_RecstoreBrand, PDO::PARAM_INT);
-$RecCenterCover->execute();
-$row_RecCenterCover = $RecCenterCover->fetch();
-$totalRows_RecCenterCover = $RecCenterCover->rowCount();
+// $query_RecCenterCover = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'storeBrandCenterCover'";
+// $RecCenterCover = $conn->prepare($query_RecCenterCover);
+// $RecCenterCover->bindParam(':file_d_id', $colname_RecstoreBrand, PDO::PARAM_INT);
+// $RecCenterCover->execute();
+// $row_RecCenterCover = $RecCenterCover->fetch();
+// $totalRows_RecCenterCover = $RecCenterCover->rowCount();
 
 
 $query_RecFile = "SELECT * FROM file_set WHERE file_d_id = :file_d_id AND file_type = 'file'";

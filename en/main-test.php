@@ -691,7 +691,7 @@
                             <div class="bg">
                                 <div class="note">
                                     OUR<br>
-                                    RECOMMAND
+                                    RECOMMENDATION
                                 </div>
                                 <div class="en">
                                     PEACH GREEN TEA<br>

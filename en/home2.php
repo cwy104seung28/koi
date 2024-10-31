@@ -1,5 +1,5 @@
 <?php
-require_once 'Connections/connect2data.php';
+require_once '../Connections/connect2data.php';
 require_once 'paginator.class.php';
 
 $work = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE c_parent='newsC' AND c_id=d_class2 AND d_class1='news' AND d_data1='yes' AND d_id=file_d_id AND file_type='newsTopCover' AND d_active_en=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC");
@@ -740,7 +740,7 @@ $ran = rand(1, 3);
                                 <div class="bg">
                                     <div class="note">
                                         OUR<br>
-                                        RECOMMAND
+                                        RECOMMENDATION
                                     </div>
                                     <div class="en">
                                         GOLDEN BUBBLE MILK TEA<br>
@@ -830,12 +830,12 @@ $ran = rand(1, 3);
 
                                 <li>
                                     <a href="./ourtea.php#<?= $drink_row['c_id'] ?>">
-                                        <div class="pic-area" style="background: url('<?= $drink_row['file_link1'] ?>') center/cover no-repeat;">
+                                        <div class="pic-area" style="background: url('../<?= $drink_row['file_link1'] ?>') center/cover no-repeat;">
                                             <div class="circle">
                                                 <div class="view-more hide-for-xlarge">
                                                     <img src="./images/view-more.svg">
                                                 </div>
-                                                <img src="<?= $drink_row['file_link1'] ?>" alt="">
+                                                <img src="../<?= $drink_row['file_link1'] ?>" alt="">
                                             </div>
                                         </div>
                                         <div class="article-area flex-container">
@@ -843,7 +843,7 @@ $ran = rand(1, 3);
                                                 <div class="icon"><img src="../<?= $drinkIcon['file_link1'] ?>" alt=""></div>
                                             <?php endif ?>
                                             <div class="ch"><?= $drink_row['c_title_en'] ?></div>
-                                            <!-- <div class="en">(<?= $drink_row['c_title_en'] ?>)</div> -->
+                                            <div class="en">(<?= $drink_row['c_title'] ?>)</div>
                                         </div>
                                     </a>
                                 </li>
@@ -875,7 +875,7 @@ $ran = rand(1, 3);
                         <?php foreach ($work as $row) : ?>
                             <li>
                                 <a href="./news_detail.php?id=<?= $row['d_id'] ?>" class="flex-container">
-                                    <div class="pic"><img src="<?= $row['file_link1'] ?>" alt=""></div>
+                                    <div class="pic"><img src="../<?= $row['file_link1'] ?>" alt=""></div>
                                     <div class="article-area">
                                         <div class="cat hide-for-large"><?= $row['c_title'] ?></div>
                                         <div class="date">(<?= date("F d, Y", strtotime($row['d_date'])) ?>)</div>
@@ -914,4 +914,5 @@ $ran = rand(1, 3);
 </body>
 <?php include 'script.php'; ?>
 <?php include 'home-script.php'; ?>
+
 </html>

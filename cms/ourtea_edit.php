@@ -161,6 +161,19 @@ $ifFile = 0;
                                                 </tr>
                                                 <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6"
+                                                        class="table_col_title">英文簡述</td>
+                                                    <td width="532">
+                                                        <input name="d_data3" type="text" class="table_data"
+                                                            value="<?php echo $row_Recourtea['d_data3']; ?>"
+                                                            id="d_data3" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p class="red_letter">*建議在30字以內
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6"
                                                         class="table_col_title">地區</td>
                                                     <td width="532">
                                                         <input name="d_data2" type="text" class="table_data"
@@ -673,7 +686,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 
-    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_class2=:d_class2, d_data1=:d_data1, d_data2=:d_data2, d_date=:d_date, d_active=:d_active, d_active_en=:d_active_en WHERE d_id=:d_id";
+    $updateSQL = "UPDATE data_set SET d_title=:d_title, d_title_en=:d_title_en, d_class2=:d_class2, d_data1=:d_data1, d_data2=:d_data2, d_data3=:d_data3, d_date=:d_date, d_active=:d_active, d_active_en=:d_active_en WHERE d_id=:d_id";
 
     $stat = $conn->prepare($updateSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -681,7 +694,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_data1', $_POST['d_data1'], PDO::PARAM_STR);
     $stat->bindParam(':d_data2', $_POST['d_data2'], PDO::PARAM_STR);
-
+    $stat->bindParam(':d_data3', $_POST['d_data3'], PDO::PARAM_STR);
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
     $stat->bindParam(':d_active_en', $_POST['d_active_en'], PDO::PARAM_INT);

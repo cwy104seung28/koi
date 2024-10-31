@@ -300,7 +300,7 @@
                     </li>
                     <li data-ing="3">
                         <div class="title-area">
-                            <div class="en">Ice</div>
+                            <div class="en">Ice Cubes</div>
                             <!-- <div class="ch">冰块</div> -->
                         </div>
                         <div class="content">
@@ -401,7 +401,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="arrow-area flex-container align-middle align-right hide-for-large">
+                <div class="arrow-area flex-container align-middle hide-for-large">
                     <div class="prev">
                         <img src="./images/about-prev.svg">
                     </div>
@@ -580,6 +580,12 @@
                                     <div class="name">( THAILAND )</div>
                                 </a>
                             </div>
+                            <div class="pin laos">
+                                <a href="./store.php">
+                                    <div class="dot"></div>
+                                    <div class="name">( LAOS )</div>
+                                </a>
+                            </div>
                             <div class="pin cambodia">
                                 <a href="./store.php">
                                     <div class="dot"></div>
@@ -622,12 +628,12 @@
                                     <div class="name">( DUBAI )</div>
                                 </a>
                             </div>
-                            <div class="pin usa">
+                            <!-- <div class="pin usa">
                                 <a href="./store.php">
                                     <div class="dot"></div>
                                     <div class="name">( USA )</div>
                                 </a>
-                            </div>
+                            </div> -->
                         </li>
                         <li v-if="map == 2" key="map2">
                             <div class="pin thailand">
@@ -636,12 +642,12 @@
                                     <div class="name">( THAILAND )</div>
                                 </a>
                             </div>
-                            <div class="pin vietnam">
+                            <!-- <div class="pin vietnam">
                                 <a href="./store.php">
                                     <div class="dot"></div>
                                     <div class="name">( VIETNAM )</div>
                                 </a>
-                            </div>
+                            </div> -->
                             <div class="pin singapore">
                                 <a href="./store.php">
                                     <div class="dot"></div>
@@ -654,6 +660,12 @@
                                 <a href="./store.php">
                                     <div class="dot"></div>
                                     <div class="name">( USA )</div>
+                                </a>
+                            </div>
+                            <div class="pin canada">
+                                <a href="./store.php">
+                                    <div class="dot"></div>
+                                    <div class="name">( CANADA )</div>
                                 </a>
                             </div>
                         </li>
@@ -1125,32 +1137,86 @@
 
     if (window.device == 'desktop') {
         horizonHandler('.about-infoWrap#horizontalWrap');
+        $('.slick-article').slick({
+            dots: true,
+            // centerMode: false,
+            speed: 1000,
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            vertical: true,
+            verticalSwiping: true,
+            arrows: false,
+            infinite: false,
+            asNavFor: '.about-ingredient .bg',
+        });
     } else {
-        // $('.about-infoWrap').slick({
-        //     dots: true,
-        //     speed: 1000,
-        //     slidesToShow: 1,
-        //     slidesToScroll: 1,
-        //     autoplay: true,
-        //     autoplaySpeed: 5000,
-        //     fade: true,
-        //     arrows: false,
-        // });
+        $(window).on("resize", function() {
+                if ($(this).width() > 640) {
+                    $('.slick-article').slick({
+                        dots: true,
+                        // centerMode: false,
+                        speed: 1000,
+                        slidesToShow: 2.5,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                        vertical: true,
+                        verticalSwiping: true,
+                        arrows: false,
+                        infinite: false,
+                        asNavFor: '.about-ingredient .bg',
+                    });
+                } else {
+                    $('.slick-article').slick({
+                        dots: true,
+                        // centerMode: false,
+                        speed: 1000,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                        vertical: true,
+                        verticalSwiping: true,
+                        arrows: false,
+                        infinite: false,
+                        asNavFor: '.about-ingredient .bg',
+                    });
+                }
+            })
+            .trigger("resize");
+
     }
+    // $('.slick-article').slick({
+    //     dots: true,
+    //     // centerMode: false,
+    //     speed: 1000,
+    //     slidesToShow: 2.5,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     autoplaySpeed: 5000,
+    //     vertical: true,
+    //     verticalSwiping: true,
+    //     arrows: false,
+    //     infinite: false,
+    //     asNavFor: '.about-ingredient .bg',
+    // });
 
 
-    $('.slick-article').slick({
-        dots: true,
-        speed: 1000,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        vertical: true,
-        verticalSwiping: true,
-        arrows: false,
-        asNavFor: '.about-ingredient .bg',
-    });
+    // $('.slick-article').slick({
+    //     dots: true,
+    //     speed: 1000,
+    //     slidesToShow: 3,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     autoplaySpeed: 5000,
+    //     vertical: true,
+    //     verticalSwiping: true,
+    //     arrows: false,
+    //     loop: true,
+    //     asNavFor: '.about-ingredient .bg',
+    // });
     $('.slick-article').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
         $(`.triangle .triangle-${nextSlide + 1}`).addClass('is-show').siblings().removeClass('is-show');
     });
@@ -1246,6 +1312,7 @@
             prevNextButtons: false,
             pageDots: false,
             fade: true,
+            draggable: false,
         });
         var $carousel_ch = $('.about-event .ch').flickity({
             // options
@@ -1255,6 +1322,7 @@
             prevNextButtons: false,
             pageDots: false,
             fade: true,
+            draggable: false,
         });
         var $carousel_en = $('.about-event .en').flickity({
             // options
@@ -1264,6 +1332,7 @@
             prevNextButtons: false,
             pageDots: false,
             fade: true,
+            draggable: false,
         });
 
         $('.arrow-area .prev').on('click', function() {
@@ -1322,7 +1391,7 @@
             // contain: true,
             wrapAround: true,
             prevNextButtons: false,
-            pageDots: true,
+            pageDots: false,
             fade: true,
             draggable: false,
             autoPlay: 3000,

@@ -132,6 +132,16 @@ $ifFile = 0;
                                                     </td>
                                                 </tr>
                                                 <tr>
+                                                    <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">英文簡述</td>
+                                                    <td width="532">
+                                                        <input name="d_data3" type="text" class="table_data" id="d_data3" size="80" />
+                                                    </td>
+                                                    <td width="250" bgcolor="#e5ecf6" class="table_col_title">
+                                                        <p class="red_letter">*建議在30字以內
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
                                                     <td width="200" align="center" bgcolor="#e5ecf6" class="table_col_title">地區</td>
                                                     <td width="532">
                                                         <input name="d_data2" type="text" class="table_data" id="d_data2" size="80" />
@@ -289,7 +299,7 @@ $ifFile = 0;
 <?php
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
-    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_class1, d_class2, d_data1, d_data2, d_date, d_active, d_active_en) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_data1, :d_data2, :d_date, :d_active, :d_active_en)";
+    $insertSQL = "INSERT INTO data_set (d_title, d_title_en, d_class1, d_class2, d_data1, d_data2, d_data3, d_date, d_active, d_active_en) VALUES (:d_title, :d_title_en, :d_class1, :d_class2, :d_data1, :d_data2, :d_data3, :d_date, :d_active, :d_active_en)";
 
     $stat = $conn->prepare($insertSQL);
     $stat->bindParam(':d_title', $_POST['d_title'], PDO::PARAM_STR);
@@ -298,7 +308,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $stat->bindParam(':d_class2', $_POST['d_class2'], PDO::PARAM_STR);
     $stat->bindParam(':d_data1', $_POST['d_data1'], PDO::PARAM_STR);
     $stat->bindParam(':d_data2', $_POST['d_data2'], PDO::PARAM_STR);
-
+    $stat->bindParam(':d_data3', $_POST['d_data3'], PDO::PARAM_STR);
     $stat->bindParam(':d_date', $_POST['d_date'], PDO::PARAM_STR);
     $stat->bindParam(':d_active', $_POST['d_active'], PDO::PARAM_INT);
     $stat->bindParam(':d_active_en', $_POST['d_active_en'], PDO::PARAM_INT);

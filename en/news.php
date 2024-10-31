@@ -1,5 +1,5 @@
 <?php
-require_once 'Connections/connect2data.php';
+require_once '../Connections/connect2data.php';
 require_once 'paginator.class.php';
 
 $ryder_cat = (isset($_GET['c'])) ? $_GET['c'] : 0;
@@ -124,7 +124,7 @@ if ($ryder_cat == 0) {
                         <div class="date show-for-large">(<?= date("F d, Y", strtotime($work_top['d_date'])) ?>)</div>
                         <div class="pic">
                             <?php if ($work_top_pic['file_link1']) : ?>
-                                <img src="<?= $work_top_pic['file_link1'] ?>">
+                                <img src="../<?= $work_top_pic['file_link1'] ?>">
                             <?php else : ?>
                                 <img src="./images/news-top-init.jpg">
                             <?php endif ?>
@@ -178,7 +178,7 @@ if ($ryder_cat == 0) {
                         <div class="date show-for-large">(<?= date("F d, Y", strtotime($cat_top['d_date'])) ?>)</div>
                         <div class="pic">
                             <?php if ($cat_top_pic['file_link1']) : ?>
-                                <img src="<?= $cat_top_pic['file_link1'] ?>">
+                                <img src="../<?= $cat_top_pic['file_link1'] ?>">
                             <?php else : ?>
                                 <img src="./images/news-top-init.jpg">
                             <?php endif ?>
@@ -223,7 +223,7 @@ if ($ryder_cat == 0) {
                                         </div>
                                         <div class="pic">
                                             <?php if ($pic['file_link1']) : ?>
-                                                <img src="<?= $pic['file_link1'] ?>" alt="">
+                                                <img src="../<?= $pic['file_link1'] ?>" alt="">
                                             <?php else : ?>
                                                 <img src="./images/news-init.jpg">
                                             <?php endif ?>
@@ -242,7 +242,7 @@ if ($ryder_cat == 0) {
 
                                     <div class="pic show-for-large">
                                         <?php if ($pic['file_link1']) : ?>
-                                            <img src="<?= $pic['file_link1'] ?>" alt="">
+                                            <img src="../<?= $pic['file_link1'] ?>" alt="">
                                         <?php else : ?>
                                             <img src="./images/news-init.jpg">
                                         <?php endif ?>

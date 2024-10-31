@@ -541,7 +541,7 @@
                     scrollTrigger: {
                         toggleActions: "play pause resume reverse",
                         trigger: "#drinkHorizontal",
-                        start: "top 30%",
+                        start: "top 35%",
                         end: `+=${_x}`,
                         pin: ".drink-outter",
                         pinSpace: false,

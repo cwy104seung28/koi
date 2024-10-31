@@ -1,5 +1,5 @@
 <?php
-require_once 'Connections/connect2data.php';
+require_once '../Connections/connect2data.php';
 
 // $catAll = $DB->query("SELECT * FROM class_set WHERE c_parent='newsC' AND c_active=1 ORDER BY c_sort ASC");
 
@@ -38,7 +38,7 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
             <div class="head-area">
                 <div class="info-area">
                     <div class="cat"><?= $work['c_title'] ?></div>
-                    <div class="date">(<?= date("F d, Y", strtotime($row['d_date'])) ?>)</div>
+                    <div class="date">(<?= date("F d, Y", strtotime($work['d_date'])) ?>)</div>
                 </div>
                 <div class="title">
                     <?= $work['d_title_en'] ?>
@@ -49,7 +49,7 @@ $work_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='ne
                     <iframe width="560" height="315" src="<?= $work['d_data4'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <?php else : ?>
                     <?php if ($work_pic['file_link1']) : ?>
-                        <img src="<?= $work_pic['file_link1'] ?>">
+                        <img src="../<?= $work_pic['file_link1'] ?>">
                     <?php endif ?>
                 <?php endif ?>
             </div>

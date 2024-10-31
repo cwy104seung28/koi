@@ -18,6 +18,19 @@ $RecData->execute();
 $row_RecData = $RecData->fetch();
 $totalRows_RecData = $RecData->rowCount();
 
+//依照國家做篩選
+$query_RecstoreC = "SELECT * FROM class_set WHERE c_parent = 'storeC' AND c_active='1' AND c_level=1 ORDER BY c_sort ASC, c_id DESC";
+$RecstoreC = $conn->query($query_RecstoreC);
+$row_RecstoreC = $RecstoreC->fetch();
+$totalRowsC = $RecstoreC->rowCount();
+
+
+if (isset($_GET['selected1'])) {
+  $_SESSION['selected_storeC'] = $G_selected1 = $_GET['selected1'];
+} else {
+  $G_selected1 = $_SESSION['selected_storeC'] = $row_RecstoreC['c_title'];
+}
+
 $menu_is = "oversea";
 
 ?>
@@ -92,6 +105,22 @@ $menu_is = "oversea";
                           <td align="center" class="table_title">諮詢時間</td>
                           <td class="table_data"><?php echo $row_RecData['d_date']; ?></td>
                         </tr>
+                        <tr>
+                          <td align="center" class="table_title">目前處理狀況</td>
+                          <td class="table_data" bgcolor="#E4E4E4">
+                            <?php
+                            if (!(strcmp(1, $row_RecData['d_authorize']))) {
+                              echo "未檢視";
+                            }
+                            if (!(strcmp(2, $row_RecData['d_authorize']))) {
+                              echo "審查中";
+                            }
+                            if (!(strcmp(3, $row_RecData['d_authorize']))) {
+                              echo "已檢視";
+                            }
+                            ?>
+                          </td>
+                        </tr>
                       </table>
                     </td>
                   </tr>
@@ -142,7 +171,7 @@ if ((isset($_REQUEST['d_id'])) && ($_REQUEST['d_id'] != "") && (isset($_REQUEST[
   $sth->bindParam(':d_id', $_REQUEST['d_id'], PDO::PARAM_INT);
   $sth->execute();
 
-  $deleteGoTo = "oversea_list.php?delchangeSort=1";
+  $deleteGoTo = "oversea_list.php?delchangeSort=1&selected1=" . $G_selected1;
   if (isset($_SERVER['QUERY_STRING'])) {
     $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";
     $deleteGoTo .= $_SERVER['QUERY_STRING'] . "&pageNum=" . $_SESSION["ToPage"];

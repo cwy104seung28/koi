@@ -1,5 +1,5 @@
 <?php
-require_once 'Connections/connect2data.php';
+require_once '../Connections/connect2data.php';
 require_once 'paginator.class.php';
 
 $cat = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_level=1 AND c_active=1 ORDER BY c_sort ASC");
@@ -37,7 +37,7 @@ $cat = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_level=1
                             <?php $work = $DB->query("SELECT * FROM data_set, file_set WHERE d_class1='menu' AND d_class2=? AND d_id=file_d_id AND file_type='file' AND d_active=1 ORDER BY d_sort ASC, d_date DESC", [$row['c_id']]); ?>
                             <?php foreach ($work as $row2) : ?>
                                 <li>
-                                    <a href="<?= $row2['file_link1'] ?>" target="_blank" class="flex-container align-middle">
+                                    <a href="../<?= $row2['file_link1'] ?>" target="_blank" class="flex-container align-middle">
                                         <div class="store"><?= $row2['d_title_en'] ?></div>
                                         <div class="arrow">
                                             <svg class="show-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.68" height="30.19" viewBox="0 0 34.68 30.19">
@@ -51,8 +51,8 @@ $cat = $DB->query("SELECT * FROM class_set WHERE c_parent='storeC' AND c_level=1
                                             <svg class="hide-for-large" id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="24.68" height="20.12" viewBox="0 0 24.68 20.12">
                                                 <g id="c" data-name="設計">
                                                     <g>
-                                                        <line y1="10.06" x2="22.28" y2="10.06" style="fill: none; stroke: #0c131b; stroke-miterlimit: 10; stroke-width: 2px;" />
-                                                        <path d="M8.61,19.66c-.3-.46-.16-1.08,.31-1.38l12.9-8.22L8.92,1.84c-.47-.3-.61-.92-.31-1.38s.92-.6,1.38-.31l14.23,9.06c.29,.18,.46,.5,.46,.84s-.18,.66-.46,.84l-14.23,9.06c-.17,.11-.35,.16-.54,.16-.33,0-.65-.16-.85-.46Z" style="fill: #0c131b;" />
+                                                        <line class="e" y1="10.06" x2="22.28" y2="10.06" />
+                                                        <path class="d" d="M8.61,19.66c-.3-.46-.16-1.08,.31-1.38l12.9-8.22L8.92,1.84c-.47-.3-.61-.92-.31-1.38s.92-.6,1.38-.31l14.23,9.06c.29,.18,.46,.5,.46,.84s-.18,.66-.46,.84l-14.23,9.06c-.17,.11-.35,.16-.54,.16-.33,0-.65-.16-.85-.46Z"/>
                                                     </g>
                                                 </g>
                                             </svg>

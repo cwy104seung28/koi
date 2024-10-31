@@ -1,5 +1,5 @@
 <?php
-require_once 'Connections/connect2data.php';
+require_once '../Connections/connect2data.php';
 
 if (!ini_get('display_errors')) {
     ini_set('display_errors', '1');

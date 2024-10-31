@@ -747,7 +747,7 @@ $ran = rand(1, 3);
                                 <div class="bg">
                                     <div class="note">
                                         OUR<br>
-                                        RECOMMAND
+                                        RECOMMENDATION
                                     </div>
                                     <div class="en">
                                         GOLDEN BUBBLE MILK TEA<br>

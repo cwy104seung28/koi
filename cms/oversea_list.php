@@ -1,6 +1,10 @@
 <?php require_once('../Connections/connect2data.php'); ?>
 
 <?php
+
+ini_set('display_errors', 'Off');
+error_reporting(0);
+
 $menu_is = "oversea";
 
 $currentPage = $_SERVER["PHP_SELF"];
@@ -27,7 +31,7 @@ if (isset($_GET['selected1'])) {
   $G_selected1 = $_SESSION['selected_storeC'] = $row_RecstoreC['c_title'];
 }
 
-$query_Recoversea = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' AND d_data2='" . $G_selected1 . "'  ORDER BY d_date DESC";
+$query_Recoversea = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' AND d_data3='" . $G_selected1 . "'  ORDER BY d_date DESC";
 $query_limit_Recoversea = sprintf("%s LIMIT %d, %d", $query_Recoversea, $startRow_Recoversea, $maxRows_Recoversea);
 $Recoversea = $conn->query($query_limit_Recoversea);
 $row_Recoversea = $Recoversea->fetch();
@@ -129,7 +133,7 @@ if ($G_changeSort == 1 || $G_delchangeSort == 1) {
 
   $sort_num = 1;
 
-  $query_Recoversea = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' AND d_data1='" . $G_selected1 . "'  ORDER BY d_date DESC";
+  $query_Recoversea = "SELECT * FROM data_set WHERE d_class1 = '$menu_is' AND d_data3='" . $G_selected1 . "'  ORDER BY d_date DESC";
 
   $_SESSION['selected_storeC'] = $G_selected1;
   $Recoversea = $conn->query($query_Recoversea);
@@ -276,6 +280,7 @@ require_once('display_page.php');
                       <td width="150" align="center" class="table_title">日期</td>
                       <td width="150" align="center" class="table_title">姓名</td>
                       <td width="300" align="center" class="table_title">您代表的公司名称</td>
+                      <td width="40" align="center" class="table_title">處理狀態</td>
                       <td width="40" align="center" class="table_title">編輯</td>
                       <td width="40" align="center" class="table_title">刪除</td>
                     </tr>
@@ -302,13 +307,50 @@ require_once('display_page.php');
                         </td>
                         <td align="center" class="table_data">
                           <a href="oversea_edit.php?d_id=<?php echo $row_Recoversea['d_id']; ?>">
-                            <?php echo $row_Recoversea['d_title']; ?>
+                            <?php echo $row_Recoversea['d_title']; ?> <?php echo $row_Recoversea['d_data1']; ?>
                           </a>
                         </td>
                         <td align="center" class="table_data">
                           <a href="oversea_edit.php?d_id=<?php echo $row_Recoversea['d_id']; ?>">
-                            <?php echo $row_Recoversea['d_data4']; ?>
+                            <?php echo $row_Recoversea['d_data5']; ?>
                           </a>
+                        </td>
+                        <td align="center" class="table_data">
+                          <!--<div id="status_<?php echo $row_Recoversea['d_id']; ?>" class="status" data-id="<?php echo $row_Recoversea['d_id']; ?>" data-act="<?php echo $row_Recoversea['d_authorize']; ?>"></div>-->
+                          <!-- 
+                          <label>
+                            <select class="status" data-id="<?php echo $row_Recoversea['d_id']; ?>">
+                              <option value="1" <?php if (!(strcmp(1, $row_Recoversea['d_authorize']))) {
+                                                  echo "selected=\"selected\"";
+                                                } ?>>未檢視</option>
+                              <option value="2" <?php if (!(strcmp(2, $row_Recoversea['d_authorize']))) {
+                                                  echo "selected=\"selected\"";
+                                                } ?>>審查中</option>
+                              <option value="3" <?php if (!(strcmp(3, $row_Recoversea['d_authorize']))) {
+                                                  echo "selected=\"selected\"";
+                                                } ?>>已檢視</option>
+                            </select>
+                          </label> -->
+                          <?php if (!(strcmp(1, $row_Recoversea['d_authorize']))) {
+                            echo "未檢視";
+                          } else if (!(strcmp(2, $row_Recoversea['d_authorize']))) {
+                            echo "審查中";
+                          }else{
+                            echo "已檢視";
+                          } ?>
+                          <!-- <label>
+                            <select class="status" data-id="<?php echo $row_Recoversea['d_id']; ?>">
+                              <option value="1" <?php if (!(strcmp(1, $row_Recoversea['d_authorize']))) {
+                                                  echo "selected=\"selected\"";
+                                                } ?>>未檢視</option>
+                              <option value="2" <?php if (!(strcmp(2, $row_Recoversea['d_authorize']))) {
+                                                  echo "selected=\"selected\"";
+                                                } ?>>審查中</option>
+                              <option value="3" <?php if (!(strcmp(3, $row_Recoversea['d_authorize']))) {
+                                                  echo "selected=\"selected\"";
+                                                } ?>>已檢視</option>
+                            </select>
+                          </label> -->
                         </td>
                         <td align="center" class="table_data"><a href="oversea_edit.php?d_id=<?php echo $row_Recoversea['d_id']; ?>"><img src="image/pencil.png" width="16" height="16" /></a></td>
                         <td align="center" class="table_data"><a href="oversea_del.php?d_id=<?php echo $row_Recoversea['d_id']; ?>"><img src="image/cross.png" width="16" height="16" /></a></td>
@@ -360,6 +402,17 @@ require_once('display_page.php');
   $(document).ready(function() {
     $('#select1').change(function() {
       window.location.href = "oversea_list.php?changeSort=1&selected1=" + $(this).val();
+    });
+    $('.status').change(function() {
+      var id = $(this).data("id");
+      var act = $(this).val();
+      $.post("status_process.php", {
+          id: id,
+          act: act
+        })
+        .done(function(data) {
+          //alert( "Data Loaded: " + data );
+        });
     });
   });
 </script>

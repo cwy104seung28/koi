@@ -88,7 +88,7 @@ $check = 0;
 $num = $DB->row("SELECT * FROM data_set WHERE d_class1='storeNum' AND d_active=1 AND d_sort=1");
 
 //搜尋當前brand
-$brand_total = $DB->query("SELECT * FROM class_set, data_set, file_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND file_type='storeCover' AND file_d_id=d_id AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub]);
+$brand_total = $DB->query("SELECT * FROM class_set, data_set WHERE d_class1='store' AND c_parent='storeC' AND c_id=d_class3 AND (d_class3=? || $ryder_cat = 0) AND (d_class2=? || $ryder_cat_sub = 0) AND d_active=1 AND c_active=1 ORDER BY d_sort ASC, d_date DESC", [$ryder_cat, $ryder_cat_sub]);
 $brand_array = array();
 foreach ($brand_total as $total) {
     array_push($brand_array, $total['d_class4']);
@@ -178,7 +178,7 @@ foreach ($brand_total as $total) {
                                 </div>
                             </a>
                         </li>
-                        <?php $work_brand = $DB->query("SELECT * FROM data_set WHERE d_class1='storeBrand' AND d_active=1") ?>
+                        <?php $work_brand = $DB->query("SELECT * FROM data_set WHERE d_class1='storeBrand' AND d_active=1 ORDER BY d_sort ASC") ?>
                         <?php foreach ($work_brand as $row_brand) : ?>
                             <?php if ((in_array($row_brand['d_id'], $brand_array)) != NULL) : ?>
                                 <li class="<?php if ($ryder_cat_brand == $row_brand['d_id']) : ?>current<?php endif ?>">

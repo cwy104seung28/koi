@@ -530,10 +530,12 @@ $("footer .top").on("click", function () {
 $(".hamburger").click(function (e) {
   $(".bg-hover").addClass("is-show");
   $(".menu-mobileWrap .menu").addClass("is-show");
+  $('html').addClass("is-lock");
 });
 $(".menu-mobileWrap .close").click(function (e) {
   $(".bg-hover").removeClass("is-show");
   $(".menu-mobileWrap .menu").removeClass("is-show");
+  $('html').removeClass("is-lock");
 });
 
 /***/ })

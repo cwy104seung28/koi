@@ -50,9 +50,9 @@ $imagesSize = [
         'note' => "圖片請上傳寬 466pixel、高 466pixel之圖檔。 $maxFileSize",
     ],
     "storeBrandCover" => [
-        'IW' => 55,
-        'IH' => 30,
-        'note' => "圖片請上傳寬 55pixel、高 30pixel之圖檔。 $maxFileSize",
+        'IW' => 110,
+        'IH' => 60,
+        'note' => "圖片請上傳寬 110pixel、高 60pixel之圖檔。 $maxFileSize",
     ],
 ];
 ?>

@@ -195,10 +195,12 @@ nav {
         position: relative;
         z-index: 1;
         padding-top: 20px;
-        margin-left: -50px;
+        margin-left: -25px;
+
         @include breakpoint(medium down) {
             margin-left: 0px;
         }
+
         .e {
             fill: none;
             stroke: #eee852;
@@ -300,6 +302,17 @@ nav {
                     transform: rotate(5deg);
 
                     @include breakpoint(large down) {
+                        // bottom: 44px;
+                        // left: 266px;
+                        // transform: rotate(0);
+
+                        bottom: 92px;
+                        left: 165px;
+                        // -webkit-transform: rotate(0);
+                        // -ms-transform: rotate(0);
+                        transform: rotate(10deg);
+                    }
+                    @include breakpoint(small down) {
                         bottom: 44px;
                         left: 266px;
                         transform: rotate(0);
@@ -618,7 +631,20 @@ nav {
         right: 120px;
         bottom: 40px;
         transform: rotate(12deg);
+
+        @include breakpoint(large down) {
+            font-size: 15px;
+            right: 128px;
+            bottom: 48px;
+            transform: rotate(17deg);
+        }
         @include breakpoint(medium down) {
+            font-size: 15px;
+            right: 35px;
+            bottom: 22px;
+            transform: rotate(9deg);
+        }
+        @include breakpoint(small down) {
             font-size: 15px;
             right: 43px;
             bottom: 29px;
@@ -1395,6 +1421,7 @@ nav {
                 font-weight: 800;
                 letter-spacing: 4px;
                 margin-bottom: 45px;
+                margin-left: 4px;
 
                 @include breakpoint(xlarge down) {
                     font-size: 26px;
@@ -1405,6 +1432,7 @@ nav {
                     font-size: 22px;
                     margin-bottom: 33px;
                     letter-spacing: 2px;
+                    margin-left: 2px;
                 }
             }
 
@@ -1820,6 +1848,9 @@ nav {
                 &.is-show {
                     opacity: 1;
                     transform: scale(1);
+                }
+                .bottom {
+                    margin-left: 3px;
                 }
             }
 
@@ -2392,6 +2423,7 @@ nav {
             .article-area {
                 .icon {
                     margin-right: 8px;
+                    margin-top: -5px;
                     // @include breakpoint(medium down) {
                     //     width: 36px;
                     // }
@@ -4024,10 +4056,12 @@ nav {
                 font-weight: 600;
                 color: #fff;
                 margin-bottom: 20px;
+                line-height: 1.6;
 
                 @include breakpoint(xlarge down) {
                     font-size: 18px;
                     margin-bottom: 15px;
+                    line-height: 1.6;
                 }
                 @include breakpoint(large down) {
                     line-height: 1.4;
@@ -4160,7 +4194,7 @@ nav {
                 bottom: 12.75%;
                 left: 0;
                 padding: 0 20vw;
-                justify-content: space-between;
+                // justify-content: space-between;
             }
             @include breakpoint(small down) {
                 bottom: 23px;
@@ -4198,7 +4232,7 @@ nav {
             .prev {
                 margin-right: 75px;
                 @include breakpoint(medium down) {
-                    margin-right: 0px;
+                    margin-right: 20px;
                 }
             }
         }
@@ -5191,30 +5225,30 @@ nav {
         position: relative;
         width: 100%;
         flex: 1 1 0;
-        height: 1470px;
+        // height: 1470px;
 
         @include breakpoint(xlarge down) {
-            height: 1250px;
+            // height: 1250px;
         }
 
         @include breakpoint(medium down) {
             flex: initial;
-            height: 700px;
+            // height: 800px;
         }
 
         @include breakpoint(small down) {
             flex: initial;
-            height: 620px;
+            // height: 700px;
         }
 
         form {
             width: 100%;
-            position: absolute;
-            right: 0;
-            top: 200px;
-            transition: 0.5s all;
-            opacity: 0;
-            pointer-events: none;
+            // position: absolute;
+            // right: 0;
+            // top: 200px;
+            // transition: 0.5s all;
+            // opacity: 0;
+            // pointer-events: none;
 
             @include breakpoint(xlarge down) {
                 top: 100px;
@@ -5224,10 +5258,11 @@ nav {
                 top: 0;
             }
 
-            &.is-show {
-                opacity: 1;
-                pointer-events: all;
-            }
+            // &.is-show {
+            //     opacity: 1;
+            //     pointer-events: all;
+            //     z-index: 6;
+            // }
 
             .title-area {
                 margin-bottom: 60px;
@@ -5338,7 +5373,69 @@ nav {
                     /* Firefox */
                 }
             }
+            input[type="date"] {
+                // font-family: $Montserrat;
+                width: 100%;
+                height: 64px;
+                padding: 12px 16px;
+                background-color: #fff;
+                border: 2px solid #231815;
+                border-radius: 0;
+                box-shadow: none;
+                font-family: $ch-family;
+                color: #606060;
+                font-size: 16px;
+                letter-spacing: 5px;
+                font-weight: 500;
 
+                @include breakpoint(medium down) {
+                    height: 40px;
+                    font-size: 13px;
+                    letter-spacing: 3px;
+                }
+
+                &::placeholder {
+                    color: #606060;
+                    opacity: 1;
+                    /* Firefox */
+                }
+            }
+            input[type="radio"] {
+                display: none;
+            }
+            input[type="radio"] + label {
+                font-family: $ch-family;
+                font-size: 18px;
+                letter-spacing: 1px;
+                font-weight: 500px;
+                &.left {
+                    margin-right: 10px;
+                }
+            }
+            .radio {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                border: 1px solid #000;
+                position: relative;
+                margin-right: 5px;
+                margin-top: 2px;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    left: 2px;
+                    top: 2px;
+                    opacity: 0;
+                }
+            }
+            input[type="radio"]:checked + label .radio::after {
+                opacity: 1;
+            }
             .nice-select {
                 width: 100%;
                 height: 64px;
@@ -5440,6 +5537,9 @@ nav {
                     }
                 }
             }
+            .experience{
+                margin-bottom: 20px;
+            }
             textarea {
                 width: 100%;
                 height: 216px;
@@ -5453,6 +5553,9 @@ nav {
                 letter-spacing: 5px;
                 font-weight: 500;
                 resize: none;
+                @include breakpoint(medium down) {
+                    height: 120px;
+                }
             }
             .note {
                 font-family: $ch-family;
@@ -5876,6 +5979,9 @@ nav {
                 stroke-miterlimit: 10;
                 stroke-width: 3px;
                 transition: 0.3s all;
+                @include breakpoint(medium down) {
+                    stroke-width: 2px;
+                }
             }
 
             .f {
@@ -9014,7 +9120,7 @@ nav {
                     width: fit-content;
                     font-size: 18px;
                     font-weight: 900;
-                    font-family: $en-family;
+                    font-family: $ch-family;
                     color: #0b1118;
                     letter-spacing: 1px;
                     padding-bottom: 1px;
@@ -9188,6 +9294,12 @@ nav {
 
                 @include breakpoint(medium down) {
                     margin-right: 5px;
+                }
+                img {
+                    max-height: 24px;
+                    @include breakpoint(medium down) {
+                        max-height: 16px;
+                    }
                 }
             }
         }
@@ -9997,7 +10109,7 @@ footer {
             }
             .language {
                 position: absolute;
-                bottom: 3px;
+                bottom: 9px;
                 left: 75px;
                 font-size: 18px;
                 letter-spacing: 1px;
@@ -10005,6 +10117,11 @@ footer {
                 color: #aaacaf;
                 @include breakpoint(xlarge down) {
                     left: -25px;
+                }
+                @include breakpoint(large down) {
+                    bottom: 41px;
+                    left: auto;
+                    right: 0;
                 }
                 @include breakpoint(medium down) {
                     width: 100%;
@@ -10101,7 +10218,7 @@ footer {
                 font-size: 12px;
                 letter-spacing: 0.5px;
                 font-weight: 600;
-
+                margin-top: 3px;
                 @include breakpoint(medium down) {
                     font-size: 9px;
                     letter-spacing: 0;
@@ -10114,7 +10231,9 @@ footer {
             }
 
             .siteby {
+                text-align: right;
                 color: #83817e;
+                font-size: 10.5px;
                 // @include breakpoint(medium down) {
                 //     zoom: 0.7;
                 //  }
